@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Update wording of README.md;">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2220/Solution.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Add solution to problem 2220;">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -143,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662621963966</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Add solution to problem 2220;">
+      <created>1662629112544</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1662629112544</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -181,6 +186,7 @@
     <MESSAGE value="Update format of CHANGE.md and README.md;&#10;&#10;- Add a Discuss column to the README.md table that shows the thread I posted in LeetCode (if any);&#10;&#10;- Remove the solution table presented in CHANGE.md and use the one in README.md as single source of truth;" />
     <MESSAGE value="Update local variable name in problem 2210 solution;" />
     <MESSAGE value="Update wording of README.md;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update wording of README.md;" />
+    <MESSAGE value="Add solution to problem 2220;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 2220;" />
   </component>
 </project>
