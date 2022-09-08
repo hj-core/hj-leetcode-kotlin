@@ -10,10 +10,12 @@ class Solution {
     fun largestInteger(num: Int): Int {
         val digits = num.toString().map { it.toString().toInt() }
         val (oddDigitsSorted, evenDigitsSorted) = getSortedOddAndEvenDigits(digits)
+
+        var largestInteger = 0
+        var digitValueMultiplier = 1
         var availableLeastOddDigitIndex = 0
         var availableLeastEvenDigitIndex = 0
-        var digitValueMultiplier = 1
-        var largestInteger = 0
+
         for (index in digits.indices.reversed()) {
             val digit = digits[index]
             if (digit and 1 == 0) {
@@ -25,10 +27,10 @@ class Solution {
             }
             digitValueMultiplier *= 10
         }
+
         return largestInteger
     }
 
-    // Return Pair(oddDigitsSortedDescending, evenDigitsSortedDescending) of given digits;
     private fun getSortedOddAndEvenDigits(digits: List<Int>): Pair<List<Int>, List<Int>> {
         val oddDigits = mutableListOf<Int>()
         val evenDigits = mutableListOf<Int>()
