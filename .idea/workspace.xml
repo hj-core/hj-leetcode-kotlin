@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Add solution to problem 2248;">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2180/Solution.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Add solution to problem 2180;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -216,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662653491809</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Add solution to problem 2180;">
+      <created>1662655100811</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1662655100811</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -263,7 +266,8 @@
     <MESSAGE value="Fix incorrect comment in problem 2231 solution;&#10;&#10;- Remove the comment on getSortedOddAndEvenDigits() as it contains incorrect information and is not necessary;&#10;&#10;- Adjust vertical formatting of code;" />
     <MESSAGE value="Add solution to problem 2243;" />
     <MESSAGE value="Add solution to problem 2248;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 2248;" />
+    <MESSAGE value="Add solution to problem 2180;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 2180;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
