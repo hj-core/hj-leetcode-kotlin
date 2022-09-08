@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="[New] (project) Initial setup of project;">
-      <change afterPath="$PROJECT_DIR$/CHANGE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/common/model/ListNode.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/common/model/Node.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/common/model/TreeNode.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem94/Solution.kt" afterDir="false" />
+    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Add solution to problem 94;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +25,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <branch-grouping />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -76,7 +71,42 @@
       <option name="project" value="LOCAL" />
       <updated>1662611841838</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="[New] (project) Initial setup of project;">
+      <created>1662612116105</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1662612116105</updated>
+    </task>
+    <task id="LOCAL-00004" summary="initial setup of project;">
+      <created>1662612127651</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1662612127651</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Initial setup of project;">
+      <created>1662612146375</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1662612146375</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add data structures commonly used by LeetCode;">
+      <created>1662612334721</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1662612334722</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add solution to problem 94;">
+      <created>1662612383853</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1662612383853</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -93,6 +123,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[New](project) Initial setup of project;" />
     <MESSAGE value="[New] (project) Initial setup of project;" />
-    <option name="LAST_COMMIT_MESSAGE" value="[New] (project) Initial setup of project;" />
+    <MESSAGE value="initial setup of project;" />
+    <MESSAGE value="Initial setup of project;" />
+    <MESSAGE value="Add data structures commonly used by LeetCode;" />
+    <MESSAGE value="Add solution to problem 94;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 94;" />
   </component>
 </project>

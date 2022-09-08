@@ -8,4 +8,4 @@
 
 | No. | Title                                                                                        | Difficulty | Solution                                                               | Status |
 |-----|----------------------------------------------------------------------------------------------|------------|------------------------------------------------------------------------|--------|
-| 94  | [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal) | Easy       | [Kotlin](src/main/kotlin/com/hj/leetcode/kotlin/problem94/solution.kt) | New    |
+| 94  | [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal) | Easy       | [Kotlin](src/main/kotlin/com/hj/leetcode/kotlin/problem94/Solution.kt) | New    |
