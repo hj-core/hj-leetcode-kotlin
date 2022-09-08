@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Add solution to problem 2220;">
+    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Update format of README.md;&#10;&#10;- Rename Title column to Problem;&#10;&#10;- Merge No column to Problem column;">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2224/Solution.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662629112544</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Update format of README.md;&#10;&#10;- Rename Title column to Problem;&#10;&#10;- Merge No column to Problem column;">
+      <created>1662629429237</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1662629429237</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -187,6 +196,7 @@
     <MESSAGE value="Update local variable name in problem 2210 solution;" />
     <MESSAGE value="Update wording of README.md;" />
     <MESSAGE value="Add solution to problem 2220;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 2220;" />
+    <MESSAGE value="Update format of README.md;&#10;&#10;- Rename Title column to Problem;&#10;&#10;- Merge No column to Problem column;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update format of README.md;&#10;&#10;- Rename Title column to Problem;&#10;&#10;- Merge No column to Problem column;" />
   </component>
 </project>
