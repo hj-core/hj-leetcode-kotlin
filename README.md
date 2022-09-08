@@ -1,8 +1,10 @@
 # hj-leetcode-kotlin
 
-Solving LeetCode is fun! This repository records my kotlin solution to solved problems.
+Solving LeetCode is fun! This repository records my kotlin solution to solved problems. You can also visit me
+at [LeetCode](https://leetcode.com/hj-core/).
 
 ## Solutions
+
 | Problem                                                                                                                           | Difficulty | Solution                                                                   | Discuss | Last Modified |
 |-----------------------------------------------------------------------------------------------------------------------------------|------------|----------------------------------------------------------------------------|---------|---------------|
 | [94. Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal)                                  | Easy       | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem94/Solution.kt)   | -       | 2022-09-08    |
