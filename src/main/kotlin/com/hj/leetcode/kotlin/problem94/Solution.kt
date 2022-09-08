@@ -2,6 +2,9 @@ package com.hj.leetcode.kotlin.problem94
 
 import com.hj.leetcode.kotlin.common.model.TreeNode
 
+/**
+ * LeetCode page: [94. Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal);
+ */
 class Solution {
     /* Complexity:
      * Time O(N) and Space O(LogN) where N is the number of nodes in root;
