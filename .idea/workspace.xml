@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Add solution to problem 2255;">
+    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Add solution to problem 2259;">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2269/Solution.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662656252975</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Add solution to problem 2259;">
+      <created>1662718471767</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1662718471767</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -277,7 +286,8 @@
     <MESSAGE value="Add solution to problem 2248;" />
     <MESSAGE value="Add solution to problem 2180;" />
     <MESSAGE value="Update the format of README.md;&#10;&#10;- Decide to provide tables for each difficulty;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update the format of README.md;&#10;&#10;- Decide to provide tables for each difficulty;" />
+    <MESSAGE value="Add solution to problem 2259;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 2259;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
