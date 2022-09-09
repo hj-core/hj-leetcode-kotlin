@@ -9,7 +9,7 @@ class Solution {
      */
     fun largestInteger(num: Int): Int {
         val digits = num.toString().map { it.toString().toInt() }
-        val (oddDigitsSorted, evenDigitsSorted) = getSortedOddAndEvenDigits(digits)
+        val (oddDigitsSorted, evenDigitsSorted) = getSortedOddAndSortedEvenDigits(digits)
 
         var largestInteger = 0
         var digitValueMultiplier = 1
@@ -31,7 +31,7 @@ class Solution {
         return largestInteger
     }
 
-    private fun getSortedOddAndEvenDigits(digits: List<Int>): Pair<List<Int>, List<Int>> {
+    private fun getSortedOddAndSortedEvenDigits(digits: List<Int>): Pair<List<Int>, List<Int>> {
         val oddDigits = mutableListOf<Int>()
         val evenDigits = mutableListOf<Int>()
         for (digit in digits) {
