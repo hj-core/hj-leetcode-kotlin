@@ -12,12 +12,12 @@ class Solution {
         var countValid = 0
 
         var windowValue = getFirstWindowValue(digits, k)
-        if (windowValue.isGood(num)) countValid++
+        if (windowValue.isBeauty(num)) countValid++
 
         val multiplierToLeadingDigit = getMultiplierToLeadingDigit(k)
         for (index in digits.lastIndex - k downTo 0) {
             windowValue = updateWindowValue(windowValue, digits, index, multiplierToLeadingDigit)
-            if (windowValue.isGood(num)) countValid++
+            if (windowValue.isBeauty(num)) countValid++
         }
 
         return countValid
@@ -29,7 +29,7 @@ class Solution {
             .map { it - '0' }
     }
 
-    private fun Int.isGood(num: Int) = this != 0 && num % this == 0
+    private fun Int.isBeauty(num: Int) = this != 0 && num % this == 0
 
     private fun getFirstWindowValue(digits: List<Int>, size: Int): Int {
         var windowValue = 0
