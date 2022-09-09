@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Add solution to problem 2180;" />
+    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Update the format of README.md;&#10;&#10;- Decide to provide tables for each difficulty;">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1996/Solution.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,14 +40,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "settings.editor.selected.configurable": "fileTemplates"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="com.hj.leetcode.kotlin.common.model" />
@@ -219,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662655100811</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Update the format of README.md;&#10;&#10;- Decide to provide tables for each difficulty;">
+      <created>1662656252975</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1662656252975</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -267,7 +278,8 @@
     <MESSAGE value="Add solution to problem 2243;" />
     <MESSAGE value="Add solution to problem 2248;" />
     <MESSAGE value="Add solution to problem 2180;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 2180;" />
+    <MESSAGE value="Update the format of README.md;&#10;&#10;- Decide to provide tables for each difficulty;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update the format of README.md;&#10;&#10;- Decide to provide tables for each difficulty;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

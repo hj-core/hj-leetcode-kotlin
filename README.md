@@ -5,6 +5,11 @@ at [LeetCode](https://leetcode.com/hj-core/).
 
 ## Solutions
 
+### Medium
+| Problem                                                                                                                           | Solution                                                                   | Discuss | Last Modified |
+|-----------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|---------|---------------|
+| [1996. The Number of Weak Characters in the Game](https://leetcode.com/problems/the-number-of-weak-characters-in-the-game/)       | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem1996/Solution.kt) | -       | 2022-09-09    |
+
 ### Easy
 
 | Problem                                                                                                                           | Solution                                                                   | Discuss                                                                                                                                                                  | Last Modified |
