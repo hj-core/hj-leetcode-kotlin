@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Add solution to problem 2287;">
+    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Update problem 2231 Last modified date at README.md ;&#10;&#10;- As an amendment to commit 27645e76;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2231/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2231/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,7 +256,28 @@
       <option name="project" value="LOCAL" />
       <updated>1662728689111</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Update problem2231 solution that revise a function name;">
+      <created>1662730361288</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1662730361288</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Update problem2269 solution that revise a function name;">
+      <created>1662730520467</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1662730520467</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Update problem 2231 Last modified date at README.md ;&#10;&#10;- As an amendment to commit 27645e76;">
+      <created>1662730672341</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1662730672341</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -284,9 +304,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[New] (project) Initial setup of project;" />
-    <MESSAGE value="initial setup of project;" />
-    <MESSAGE value="Initial setup of project;" />
     <MESSAGE value="Add data structures commonly used by LeetCode;" />
     <MESSAGE value="Add solution to problem 94;" />
     <MESSAGE value="Update problem94 solution to include a link to LeetCode page;" />
@@ -309,7 +326,10 @@
     <MESSAGE value="Add solution to problem 2269;" />
     <MESSAGE value="Add solution to problem 2273;" />
     <MESSAGE value="Add solution to problem 2287;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 2287;" />
+    <MESSAGE value="Update problem2231 solution that revise a function name;" />
+    <MESSAGE value="Update problem2269 solution that revise a function name;" />
+    <MESSAGE value="Update problem 2231 Last modified date at README.md ;&#10;&#10;- As an amendment to commit 27645e76;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 2231 Last modified date at README.md ;&#10;&#10;- As an amendment to commit 27645e76;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

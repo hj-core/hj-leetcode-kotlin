@@ -4,36 +4,48 @@ package com.hj.leetcode.kotlin.problem2210
  * LeetCode page: [2210. Count Hills and Valleys in an Array](https://leetcode.com/problems/count-hills-and-valleys-in-an-array/);
  */
 class Solution {
+    private var countHillValley = 0
+    private var prevLevelTrend = LevelTrend.UNKNOWN
 
-    private enum class LevelChange { INCREASE, DECREASE, EQUAL }
+    private enum class LevelTrend { INCREASE, DECREASE, UNKNOWN }
 
     /* Complexity:
      * Time O(N) and Space O(1) where N is the size of nums;
      */
     fun countHillValley(nums: IntArray): Int {
-        var count = 0
-        var prevLevelTrend = LevelChange.EQUAL
-        for (index in 1..nums.lastIndex) {
-            val currLevelChange = getLevelChange(nums, index)
-            if (isTurningPoint(prevLevelTrend, currLevelChange)) count++
-            if (currLevelChange != LevelChange.EQUAL) prevLevelTrend = currLevelChange
+        resetStates()
+
+        for (index in 0 until nums.lastIndex) {
+            val currLevelTrend = getLevelTrend(index, nums)
+            updateCountHillValley(currLevelTrend)
+            updatePrevLevelTrend(currLevelTrend)
         }
-        return count
+
+        return countHillValley
     }
 
-    private fun getLevelChange(levels: IntArray, index: Int): LevelChange {
+    private fun resetStates() {
+        countHillValley = 0
+        prevLevelTrend = LevelTrend.UNKNOWN
+    }
+
+    private fun getLevelTrend(indexOfLevel: Int, levels: IntArray): LevelTrend {
         return when {
-            levels[index] > levels[index - 1] -> LevelChange.INCREASE
-            levels[index] < levels[index - 1] -> LevelChange.DECREASE
-            else -> LevelChange.EQUAL
+            levels[indexOfLevel] > levels[indexOfLevel + 1] -> LevelTrend.DECREASE
+            levels[indexOfLevel] < levels[indexOfLevel + 1] -> LevelTrend.INCREASE
+            else -> LevelTrend.UNKNOWN
         }
     }
 
-    private fun isTurningPoint(prevLevelTrend: LevelChange, currLevelChange: LevelChange): Boolean {
-        return when (currLevelChange) {
-            LevelChange.INCREASE -> prevLevelTrend == LevelChange.DECREASE
-            LevelChange.DECREASE -> prevLevelTrend == LevelChange.INCREASE
-            LevelChange.EQUAL -> false
+    private fun updateCountHillValley(currLevelTrend: LevelTrend) {
+        when (currLevelTrend) {
+            LevelTrend.INCREASE -> if (prevLevelTrend == LevelTrend.DECREASE) countHillValley++
+            LevelTrend.DECREASE -> if (prevLevelTrend == LevelTrend.INCREASE) countHillValley++
+            LevelTrend.UNKNOWN -> {}
         }
+    }
+
+    private fun updatePrevLevelTrend(currLevelTrend: LevelTrend) {
+        if (currLevelTrend != LevelTrend.UNKNOWN) prevLevelTrend = currLevelTrend
     }
 }
