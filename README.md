@@ -5,6 +5,12 @@ at [LeetCode](https://leetcode.com/hj-core/).
 
 ## Solutions
 
+### Hard
+| Problem                                                                                             | Solution                                                                   | Discuss                                                                                                                                                 | Last Modified |
+|-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| [1383. Maximum Performance of a Team](https://leetcode.com/problems/maximum-performance-of-a-team/) | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem1383/Solution.kt) | [Discuss](https://leetcode.com/problems/maximum-performance-of-a-team/discuss/2560866/My-kotlin-solution-with-explanation-time-O(NLogN)-and-space-O(N)) | 2022-09-11    |
+
+
 ### Medium
 | Problem                                                                                                                           | Solution                                                                   | Discuss | Last Modified |
 |-----------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|---------|---------------|
