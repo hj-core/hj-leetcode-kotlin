@@ -12,9 +12,10 @@ at [LeetCode](https://leetcode.com/hj-core/).
 
 
 ### Medium
-| Problem                                                                                                                           | Solution                                                                   | Discuss | Last Modified |
-|-----------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|---------|---------------|
-| [1996. The Number of Weak Characters in the Game](https://leetcode.com/problems/the-number-of-weak-characters-in-the-game/)       | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem1996/Solution.kt) | -       | 2022-09-09    |
+| Problem                                                                                                                     | Solution                                                                   | Discuss | Last Modified |
+|-----------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|---------|---------------|
+| [6. Zigzag Conversion](https://leetcode.com/problems/zigzag-conversion/)                                                    | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem6/Solution.kt)    | -       | 2022-09-11    |
+| [1996. The Number of Weak Characters in the Game](https://leetcode.com/problems/the-number-of-weak-characters-in-the-game/) | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem1996/Solution.kt) | -       | 2022-09-09    |
 
 ### Easy
 
