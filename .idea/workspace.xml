@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Add solution to problem 2404;">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem6/Solution.kt" afterDir="false" />
+    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Add solution to problem 6;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -300,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662883170660</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Add solution to problem 6;">
+      <created>1662893241932</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1662893241933</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -327,7 +332,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution to problem 2210;" />
     <MESSAGE value="Update format of CHANGE.md and README.md;&#10;&#10;- Add a Discuss column to the README.md table that shows the thread I posted in LeetCode (if any);&#10;&#10;- Remove the solution table presented in CHANGE.md and use the one in README.md as single source of truth;" />
     <MESSAGE value="Update local variable name in problem 2210 solution;" />
     <MESSAGE value="Update wording of README.md;" />
@@ -352,7 +356,8 @@
     <MESSAGE value="Update problem 2210 solution that refactor the implementation;" />
     <MESSAGE value="Add solution to problem 1383;" />
     <MESSAGE value="Add solution to problem 2404;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 2404;" />
+    <MESSAGE value="Add solution to problem 6;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 6;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
