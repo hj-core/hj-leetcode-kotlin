@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Add solution to problem 7;">
+    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Add solution to problem 15;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -312,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662896832121</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Add solution to problem 15;">
+      <created>1662903442480</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1662903442480</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -339,7 +346,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update local variable name in problem 2210 solution;" />
     <MESSAGE value="Update wording of README.md;" />
     <MESSAGE value="Add solution to problem 2220;" />
     <MESSAGE value="Update format of README.md;&#10;&#10;- Rename Title column to Problem;&#10;&#10;- Merge No column to Problem column;" />
@@ -364,7 +370,8 @@
     <MESSAGE value="Add solution to problem 2404;" />
     <MESSAGE value="Add solution to problem 6;" />
     <MESSAGE value="Add solution to problem 7;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 7;" />
+    <MESSAGE value="Add solution to problem 15;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 15;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
