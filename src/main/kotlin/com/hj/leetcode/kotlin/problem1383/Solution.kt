@@ -15,7 +15,9 @@ class Solution {
      */
     fun maxPerformance(n: Int, speed: IntArray, efficiency: IntArray, k: Int): Int {
         updateAgileSortedByEfficiency(speed, efficiency)
-        return getMaxPerformance(k)
+        val maxPerformance = getMaxPerformance(k)
+        clearStates()
+        return maxPerformance
     }
 
     private fun updateAgileSortedByEfficiency(speed: IntArray, efficiency: IntArray) {
@@ -39,8 +41,6 @@ class Solution {
             val leastMaxPerformance = maxTeamSpeedSum * currEfficiency
             maxPerformance = maxOf(maxPerformance, leastMaxPerformance)
         }
-
-        resetStates()
         return maxPerformance.toOutputFormat()
     }
 
@@ -49,7 +49,7 @@ class Solution {
         return (this % requiredModulo).toInt()
     }
 
-    private fun resetStates() {
+    private fun clearStates() {
         agileSortedByEfficiency = listOf()
     }
 }
