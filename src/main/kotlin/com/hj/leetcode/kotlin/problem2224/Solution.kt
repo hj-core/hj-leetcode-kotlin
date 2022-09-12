@@ -4,15 +4,16 @@ package com.hj.leetcode.kotlin.problem2224
  * LeetCode page: [2224. Minimum Number of Operations to Convert Time](https://leetcode.com/problems/minimum-number-of-operations-to-convert-time/);
  */
 class Solution {
+    private val incrementInMinutesDescending = listOf(60, 15, 5, 1)
+
     /* Complexity:
      * Time O(1) and Space O(1);
      */
     fun convertTime(current: String, correct: String): Int {
-        val allowedIncrementInMinutesSortedDescending = listOf(60, 15, 5, 1)
         var remainingTimeDiffInMinutes = getTimeDifferentInMinutes(current, correct)
         var minNumberOfOperation = 0
 
-        for (increment in allowedIncrementInMinutesSortedDescending) {
+        for (increment in incrementInMinutesDescending) {
             val maxNumberOfCurrentOperation = remainingTimeDiffInMinutes / increment
             minNumberOfOperation += maxNumberOfCurrentOperation
             remainingTimeDiffInMinutes -= maxNumberOfCurrentOperation * increment
