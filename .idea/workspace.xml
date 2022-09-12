@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Update a bit the problem 1383 solution;&#10;&#10;- As an amendment to commit 46c1d7c3;">
+    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Update a bit the problem 2404 solution;&#10;&#10;- As an amendment to commit ac3d93cb;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2404/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2404/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,13 +59,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Add solution to problem 2210;">
-      <created>1662615960835</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1662615960836</updated>
     </task>
     <task id="LOCAL-00010" summary="Update format of CHANGE.md and README.md;&#10;&#10;- Add a Discuss column to the README.md table that shows the thread I posted in LeetCode (if any);&#10;&#10;- Remove the solution table presented in CHANGE.md and use the one in README.md as single source of truth;">
       <created>1662616684987</created>
@@ -404,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662992509064</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Update a bit the problem 2404 solution;&#10;&#10;- As an amendment to commit ac3d93cb;">
+      <created>1662993167858</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1662993167858</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -431,7 +430,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 2231 Last modified date at README.md ;&#10;&#10;- As an amendment to commit 27645e76;" />
     <MESSAGE value="Update problem 2210 solution that refactor the implementation;" />
     <MESSAGE value="Add solution to problem 1383;" />
     <MESSAGE value="Add solution to problem 2404;" />
@@ -456,7 +454,8 @@
     <MESSAGE value="Update a bit the problem 2404 solution;&#10;&#10;- As an amendment to commit 76f1ce2b;" />
     <MESSAGE value="Update a bit the problem 2210 solution;&#10;&#10;- As an amendment to commit 581d5099;" />
     <MESSAGE value="Update a bit the problem 1383 solution;&#10;&#10;- As an amendment to commit 46c1d7c3;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update a bit the problem 1383 solution;&#10;&#10;- As an amendment to commit 46c1d7c3;" />
+    <MESSAGE value="Update a bit the problem 2404 solution;&#10;&#10;- As an amendment to commit ac3d93cb;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update a bit the problem 2404 solution;&#10;&#10;- As an amendment to commit ac3d93cb;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

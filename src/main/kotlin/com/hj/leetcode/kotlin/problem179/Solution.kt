@@ -4,26 +4,26 @@ package com.hj.leetcode.kotlin.problem179
  * LeetCode page: [179. Largest Number](https://leetcode.com/problems/largest-number/);
  */
 class Solution {
-    private val sortedDigitBuckets = List(10) { mutableListOf<String>() }
-
     /* Complexity:
      * Time O(NLogN) and Space O(N) where N is the size of nums;
      */
     fun largestNumber(nums: IntArray): String {
-        updateSortedDigitBuckets(nums)
-        return getLargestNumber()
+        val sortedBuckets = getSortedDigitBuckets(nums)
+        return getLargestNumber(sortedBuckets)
     }
 
-    private fun updateSortedDigitBuckets(nums: IntArray) {
+    private fun getSortedDigitBuckets(nums: IntArray): List<List<String>> {
+        val sortedBucket = List(10) { mutableListOf<String>() }
         for (num in nums) {
             val strForm = num.toString()
-            sortedDigitBuckets[strForm[0] - '0'].add(strForm)
+            sortedBucket[strForm[0] - '0'].add(strForm)
         }
 
         val comparator = getDesiredComparator()
-        for (bucket in sortedDigitBuckets) {
+        for (bucket in sortedBucket) {
             bucket.sortWith(comparator)
         }
+        return sortedBucket
     }
 
     private fun getDesiredComparator(): Comparator<String> {
@@ -40,28 +40,22 @@ class Solution {
         return comparator
     }
 
-    private fun getLargestNumber(): String {
-        if (containsZerosOnly()) return "0"
+    private fun getLargestNumber(sortedDigitBuckets: List<List<String>>): String {
+        if (containsZerosOnly(sortedDigitBuckets)) return "0"
+
         val largestNumber = StringBuilder()
         for (digit in sortedDigitBuckets.indices.reversed()) {
             for (strNum in sortedDigitBuckets[digit]) {
                 largestNumber.append(strNum)
             }
         }
-        resetBuckets()
         return largestNumber.toString()
     }
 
-    private fun containsZerosOnly(): Boolean {
+    private fun containsZerosOnly(sortedDigitBuckets: List<List<String>>): Boolean {
         for (digit in 1..9) {
             if (sortedDigitBuckets[digit].isNotEmpty()) return false
         }
         return true
-    }
-
-    private fun resetBuckets() {
-        for (bucket in sortedDigitBuckets) {
-            bucket.clear()
-        }
     }
 }
