@@ -12,7 +12,9 @@ class Solution {
      */
     fun reverse(x: Int): Int {
         updateReversedDigits(x)
-        return getReversedNumber(x < 0)
+        val reversed = getReversedNumber(x < 0)
+        clearStates()
+        return reversed
     }
 
     private fun updateReversedDigits(number: Int) {
@@ -29,8 +31,9 @@ class Solution {
     }
 
     private fun getReversedNumber(isNegative: Boolean): Int {
-        val abs = if (isReversedOverflow()) 0 else reversedDigits.fold(0) { acc, i -> acc * 10 + i }
-        resetState()
+        if (isReversedOverflow()) return 0
+
+        val abs = reversedDigits.fold(0) { acc, i -> acc * 10 + i }
         return if (isNegative) -abs else abs
     }
 
@@ -52,7 +55,7 @@ class Solution {
         return false
     }
 
-    private fun resetState() {
+    private fun clearStates() {
         reversedDigits.clear()
     }
 }
