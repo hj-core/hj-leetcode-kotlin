@@ -13,7 +13,9 @@ class Solution {
      */
     fun nthUglyNumber(n: Int, a: Int, b: Int, c: Int): Int {
         updateDivisorsAndLcms(a, b, c)
-        return getNthUglyNumber(n)
+        val nthUgly = getNthUglyNumber(n)
+        clearStates()
+        return nthUgly
     }
 
     private fun updateDivisorsAndLcms(num1: Int, num2: Int, num3: Int) {
@@ -49,8 +51,6 @@ class Solution {
             val remThUgly = getNthUglyNumberWithinLcm(rem.toInt())
             nThUgly += remThUgly
         }
-
-        resetStates()
         return nThUgly.toInt()
     }
 
@@ -74,7 +74,7 @@ class Solution {
         return leftBound
     }
 
-    private fun resetStates() {
+    private fun clearStates() {
         divisors.fill(0L)
         lcmBetweenDivisors.fill(0L)
         lcm = 0L
