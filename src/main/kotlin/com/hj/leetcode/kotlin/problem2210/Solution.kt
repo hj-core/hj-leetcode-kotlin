@@ -15,10 +15,12 @@ class Solution {
     fun countHillValley(nums: IntArray): Int {
         for (index in 0 until nums.lastIndex) {
             val currLevelTrend = getLevelTrend(index, nums)
-            updateCountHillValley(currLevelTrend)
-            updatePrevLevelTrend(currLevelTrend)
+            updateHillValleyCountAndPreLevelTrend(currLevelTrend)
         }
-        return getHillValleyCount()
+
+        val count = hillValleyCount
+        clearStates()
+        return count
     }
 
     private fun getLevelTrend(indexOfLevel: Int, levels: IntArray): LevelTrend {
@@ -29,25 +31,17 @@ class Solution {
         }
     }
 
-    private fun updateCountHillValley(currLevelTrend: LevelTrend) {
+    private fun updateHillValleyCountAndPreLevelTrend(currLevelTrend: LevelTrend) {
         when (currLevelTrend) {
             LevelTrend.INCREASE -> if (prevLevelTrend == LevelTrend.DECREASE) hillValleyCount++
             LevelTrend.DECREASE -> if (prevLevelTrend == LevelTrend.INCREASE) hillValleyCount++
             LevelTrend.UNKNOWN -> {}
         }
-    }
 
-    private fun updatePrevLevelTrend(currLevelTrend: LevelTrend) {
         if (currLevelTrend != LevelTrend.UNKNOWN) prevLevelTrend = currLevelTrend
     }
 
-    private fun getHillValleyCount(): Int {
-        val count = hillValleyCount
-        resetStates()
-        return count
-    }
-
-    private fun resetStates() {
+    private fun clearStates() {
         hillValleyCount = 0
         prevLevelTrend = LevelTrend.UNKNOWN
     }

@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Update a bit the problem 15 solution;&#10;&#10;- As an amendment to commit 4deb29fc;">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem7/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem7/Solution.kt" afterDir="false" />
+    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Update a bit the problem 2404 solution;&#10;&#10;- As an amendment to commit 76f1ce2b;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2210/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2210/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,20 +60,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Initial setup of project;">
-      <created>1662612146375</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1662612146375</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Add data structures commonly used by LeetCode;">
-      <created>1662612334721</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1662612334722</updated>
     </task>
     <task id="LOCAL-00007" summary="Add solution to problem 94;">
       <created>1662612383853</created>
@@ -403,7 +390,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662990008369</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Update a bit the problem 7 solution;&#10;&#10;- As an amendment to commit d9de8896;">
+      <created>1662990210866</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1662990210866</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Update a bit the problem 2404 solution;&#10;&#10;- As an amendment to commit 76f1ce2b;">
+      <created>1662990430635</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1662990430635</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -430,8 +431,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution to problem 2273;" />
-    <MESSAGE value="Add solution to problem 2287;" />
     <MESSAGE value="Update problem2231 solution that revise a function name;" />
     <MESSAGE value="Update problem2269 solution that revise a function name;" />
     <MESSAGE value="Update problem 2231 Last modified date at README.md ;&#10;&#10;- As an amendment to commit 27645e76;" />
@@ -455,7 +454,9 @@
     <MESSAGE value="Update a bit the problem 1383 solution;&#10;&#10;- As an amendment to commit 74d5127f;" />
     <MESSAGE value="Update a bit the problem 1201 solution;&#10;&#10;- As an amendment to commit c665d0be;" />
     <MESSAGE value="Update a bit the problem 15 solution;&#10;&#10;- As an amendment to commit 4deb29fc;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update a bit the problem 15 solution;&#10;&#10;- As an amendment to commit 4deb29fc;" />
+    <MESSAGE value="Update a bit the problem 7 solution;&#10;&#10;- As an amendment to commit d9de8896;" />
+    <MESSAGE value="Update a bit the problem 2404 solution;&#10;&#10;- As an amendment to commit 76f1ce2b;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update a bit the problem 2404 solution;&#10;&#10;- As an amendment to commit 76f1ce2b;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
