@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Update a bit the problem 2404 solution;&#10;&#10;- As an amendment to commit ac3d93cb;">
+    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Update problem 179 solution that clean up the code;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,13 +59,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Update format of CHANGE.md and README.md;&#10;&#10;- Add a Discuss column to the README.md table that shows the thread I posted in LeetCode (if any);&#10;&#10;- Remove the solution table presented in CHANGE.md and use the one in README.md as single source of truth;">
-      <created>1662616684987</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1662616684987</updated>
     </task>
     <task id="LOCAL-00011" summary="Update local variable name in problem 2210 solution;">
       <created>1662618143530</created>
@@ -403,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662993167858</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Update problem 179 solution that clean up the code;">
+      <created>1662999768442</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1662999768442</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -430,7 +430,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 2210 solution that refactor the implementation;" />
     <MESSAGE value="Add solution to problem 1383;" />
     <MESSAGE value="Add solution to problem 2404;" />
     <MESSAGE value="Add solution to problem 6;" />
@@ -455,7 +454,8 @@
     <MESSAGE value="Update a bit the problem 2210 solution;&#10;&#10;- As an amendment to commit 581d5099;" />
     <MESSAGE value="Update a bit the problem 1383 solution;&#10;&#10;- As an amendment to commit 46c1d7c3;" />
     <MESSAGE value="Update a bit the problem 2404 solution;&#10;&#10;- As an amendment to commit ac3d93cb;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update a bit the problem 2404 solution;&#10;&#10;- As an amendment to commit ac3d93cb;" />
+    <MESSAGE value="Update problem 179 solution that clean up the code;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 179 solution that clean up the code;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
