@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Update a bit the problem 2404 solution;&#10;&#10;- As an amendment to commit 76f1ce2b;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2210/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2210/Solution.kt" afterDir="false" />
-    </list>
+    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Update a bit the problem 2210 solution;&#10;&#10;- As an amendment to commit 581d5099;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,13 +57,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Add solution to problem 94;">
-      <created>1662612383853</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1662612383853</updated>
     </task>
     <task id="LOCAL-00008" summary="Update problem94 solution to include a link to LeetCode page;">
       <created>1662615465751</created>
@@ -404,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662990430635</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Update a bit the problem 2210 solution;&#10;&#10;- As an amendment to commit 581d5099;">
+      <created>1662991188583</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1662991188583</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -431,7 +428,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem2231 solution that revise a function name;" />
     <MESSAGE value="Update problem2269 solution that revise a function name;" />
     <MESSAGE value="Update problem 2231 Last modified date at README.md ;&#10;&#10;- As an amendment to commit 27645e76;" />
     <MESSAGE value="Update problem 2210 solution that refactor the implementation;" />
@@ -456,7 +452,8 @@
     <MESSAGE value="Update a bit the problem 15 solution;&#10;&#10;- As an amendment to commit 4deb29fc;" />
     <MESSAGE value="Update a bit the problem 7 solution;&#10;&#10;- As an amendment to commit d9de8896;" />
     <MESSAGE value="Update a bit the problem 2404 solution;&#10;&#10;- As an amendment to commit 76f1ce2b;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update a bit the problem 2404 solution;&#10;&#10;- As an amendment to commit 76f1ce2b;" />
+    <MESSAGE value="Update a bit the problem 2210 solution;&#10;&#10;- As an amendment to commit 581d5099;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update a bit the problem 2210 solution;&#10;&#10;- As an amendment to commit 581d5099;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
