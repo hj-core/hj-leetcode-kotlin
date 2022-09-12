@@ -6,7 +6,6 @@ import java.util.*
  * LeetCode page: [1383. Maximum Performance of a Team](https://leetcode.com/problems/maximum-performance-of-a-team/);
  */
 class Solution {
-    private var maxPerformance = 0L
     private var agileSortedByEfficiency = listOf<Agile>()
 
     private data class Agile(val speed: Int, val efficiency: Int)
@@ -15,15 +14,8 @@ class Solution {
      * Time O(NLogN) and Space O(N) where N equals n;
      */
     fun maxPerformance(n: Int, speed: IntArray, efficiency: IntArray, k: Int): Int {
-        resetStates()
         updateAgileSortedByEfficiency(speed, efficiency)
-        updateMaxPerformance(k)
-        return maxPerformance.toOutputFormat()
-    }
-
-    private fun resetStates() {
-        maxPerformance = 0L
-        agileSortedByEfficiency = listOf()
+        return getMaxPerformance(k)
     }
 
     private fun updateAgileSortedByEfficiency(speed: IntArray, efficiency: IntArray) {
@@ -34,7 +26,8 @@ class Solution {
             .toList()
     }
 
-    private fun updateMaxPerformance(maxTeamSize: Int) {
+    private fun getMaxPerformance(maxTeamSize: Int): Int {
+        var maxPerformance = 0L
         val teamSpeedMinPq = PriorityQueue<Int>()
         var maxTeamSpeedSum = 0L
         for (index in agileSortedByEfficiency.indices.reversed()) {
@@ -46,10 +39,17 @@ class Solution {
             val leastMaxPerformance = maxTeamSpeedSum * currEfficiency
             maxPerformance = maxOf(maxPerformance, leastMaxPerformance)
         }
+
+        resetStates()
+        return maxPerformance.toOutputFormat()
     }
 
     private fun Long.toOutputFormat(): Int {
         val requiredModulo = 1_000_000_007
         return (this % requiredModulo).toInt()
+    }
+
+    private fun resetStates() {
+        agileSortedByEfficiency = listOf()
     }
 }

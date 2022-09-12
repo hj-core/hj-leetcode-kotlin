@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Update a bit the problem 7 solution;" />
+    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Update a bit the problem 1201 solution;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1383/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1383/Solution.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -387,7 +390,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662988280877</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Update a bit the problem 15 solution;">
+      <created>1662988449025</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1662988449025</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Update a bit the problem 1201 solution;">
+      <created>1662988616529</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1662988616529</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -414,7 +431,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution to problem 2180;" />
     <MESSAGE value="Update the format of README.md;&#10;&#10;- Decide to provide tables for each difficulty;" />
     <MESSAGE value="Add solution to problem 2259;" />
     <MESSAGE value="Add solution to problem 2269;" />
@@ -434,12 +450,13 @@
     <MESSAGE value="Add solution to problem 948;" />
     <MESSAGE value="Update problem 948 solution that clean up the code;" />
     <MESSAGE value="Update a bit the problem 948 solution;" />
-    <MESSAGE value="Update a bit the problem 1201 solution;" />
     <MESSAGE value="Add solution to problem 179;" />
     <MESSAGE value="Update a bit the problem 2210 solution;" />
     <MESSAGE value="Update a bit the problem 2404 solution;" />
     <MESSAGE value="Update a bit the problem 7 solution;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update a bit the problem 7 solution;" />
+    <MESSAGE value="Update a bit the problem 15 solution;" />
+    <MESSAGE value="Update a bit the problem 1201 solution;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update a bit the problem 1201 solution;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
