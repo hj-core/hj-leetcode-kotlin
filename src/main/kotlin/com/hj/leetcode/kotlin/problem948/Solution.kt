@@ -12,21 +12,19 @@ class Solution {
         var maxScore = 0
         var currScore = 0
         var currPower = power
-        var flippedMinMaxPairs = 0
+        var indexMaxAvailableToken = sortedTokens.lastIndex
         var nextTokenIndex = 0
+        val isNextTokenPlayable = { nextTokenIndex <= indexMaxAvailableToken }
 
-        fun isNextTokenPlayable() = nextTokenIndex <= sortedTokens.lastIndex - flippedMinMaxPairs
-        fun isHigherScorePossible() = maxScore < tokens.size - (flippedMinMaxPairs shl 1)
-
-        while (isNextTokenPlayable() && isHigherScorePossible()) {
+        while (isNextTokenPlayable()) {
             currPower -= sortedTokens[nextTokenIndex]
             if (currPower >= 0) {
                 currScore++
                 maxScore = maxOf(maxScore, currScore)
             } else {
                 if (currScore == 0) break
-                currPower += sortedTokens[sortedTokens.lastIndex - flippedMinMaxPairs]
-                flippedMinMaxPairs++
+                currPower += sortedTokens[indexMaxAvailableToken]
+                indexMaxAvailableToken--
             }
             nextTokenIndex++
         }
