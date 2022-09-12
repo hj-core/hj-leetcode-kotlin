@@ -4,23 +4,22 @@ package com.hj.leetcode.kotlin.problem2210
  * LeetCode page: [2210. Count Hills and Valleys in an Array](https://leetcode.com/problems/count-hills-and-valleys-in-an-array/);
  */
 class Solution {
-    private var hillValleyCount = 0
-    private var prevLevelTrend = LevelTrend.UNKNOWN
-
     private enum class LevelTrend { INCREASE, DECREASE, UNKNOWN }
 
     /* Complexity:
      * Time O(N) and Space O(1) where N is the size of nums;
      */
     fun countHillValley(nums: IntArray): Int {
+        var hillValleyCount = 0
+        var prevLevelTrend = LevelTrend.UNKNOWN
+
         for (index in 0 until nums.lastIndex) {
             val currLevelTrend = getLevelTrend(index, nums)
-            updateHillValleyCountAndPreLevelTrend(currLevelTrend)
+            if (isHillOrValley(currLevelTrend, prevLevelTrend)) hillValleyCount++
+            if (currLevelTrend != LevelTrend.UNKNOWN) prevLevelTrend = currLevelTrend
         }
 
-        val count = hillValleyCount
-        clearStates()
-        return count
+        return hillValleyCount
     }
 
     private fun getLevelTrend(indexOfLevel: Int, levels: IntArray): LevelTrend {
@@ -31,18 +30,11 @@ class Solution {
         }
     }
 
-    private fun updateHillValleyCountAndPreLevelTrend(currLevelTrend: LevelTrend) {
-        when (currLevelTrend) {
-            LevelTrend.INCREASE -> if (prevLevelTrend == LevelTrend.DECREASE) hillValleyCount++
-            LevelTrend.DECREASE -> if (prevLevelTrend == LevelTrend.INCREASE) hillValleyCount++
-            LevelTrend.UNKNOWN -> {}
+    private fun isHillOrValley(currLevelTrend: LevelTrend, prevLevelTrend: LevelTrend): Boolean {
+        return when (currLevelTrend) {
+            LevelTrend.INCREASE -> prevLevelTrend == LevelTrend.DECREASE
+            LevelTrend.DECREASE -> prevLevelTrend == LevelTrend.INCREASE
+            LevelTrend.UNKNOWN -> false
         }
-
-        if (currLevelTrend != LevelTrend.UNKNOWN) prevLevelTrend = currLevelTrend
-    }
-
-    private fun clearStates() {
-        hillValleyCount = 0
-        prevLevelTrend = LevelTrend.UNKNOWN
     }
 }

@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Update problem 7 solution that refactor the implementation;&#10;&#10;- Decide to eliminate the state variable so that all functions become pure function and no concurrency concern;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Update problem 2224 solution that clean up code;">
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2210/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2210/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,13 +59,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Add solution to problem 2220;">
-      <created>1662629112544</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1662629112544</updated>
     </task>
     <task id="LOCAL-00014" summary="Update format of README.md;&#10;&#10;- Rename Title column to Problem;&#10;&#10;- Merge No column to Problem column;">
       <created>1662629429237</created>
@@ -403,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663005605066</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Update problem 2224 solution that clean up code;">
+      <created>1663007647586</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1663007647587</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -430,7 +430,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution to problem 6;" />
     <MESSAGE value="Add solution to problem 7;" />
     <MESSAGE value="Add solution to problem 15;" />
     <MESSAGE value="Add solution to problem 1201;" />
@@ -455,7 +454,8 @@
     <MESSAGE value="Update problem 179 solution that clean up the code;" />
     <MESSAGE value="Update problem 15 solution that refactor the implementation;&#10;&#10;- Decide to eliminate the state variable so that all function become pure function and no concurrency concern;" />
     <MESSAGE value="Update problem 7 solution that refactor the implementation;&#10;&#10;- Decide to eliminate the state variable so that all functions become pure function and no concurrency concern;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 7 solution that refactor the implementation;&#10;&#10;- Decide to eliminate the state variable so that all functions become pure function and no concurrency concern;" />
+    <MESSAGE value="Update problem 2224 solution that clean up code;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 2224 solution that clean up code;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
