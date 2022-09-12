@@ -17,7 +17,7 @@ at [LeetCode](https://leetcode.com/hj-core/).
 | [6. Zigzag Conversion](https://leetcode.com/problems/zigzag-conversion/)                                                    | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem6/Solution.kt)    | -       | 2022-09-11    |
 | [7. Reverse Integer](https://leetcode.com/problems/reverse-integer/)                                                        | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem7/Solution.kt)    | -       | 2022-09-11    |
 | [15. 3Sum](https://leetcode.com/problems/3sum/)                                                                             | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem15/Solution.kt)   | -       | 2022-09-11    |
-| [1201. Ugly Number III](https://leetcode.com/problems/ugly-number-iii/)                                                     | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem1201/Solution.kt) | -       | 2022-09-09    |
+| [1201. Ugly Number III](https://leetcode.com/problems/ugly-number-iii/)                                                     | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem1201/Solution.kt) | -       | 2022-09-12    |
 | [1996. The Number of Weak Characters in the Game](https://leetcode.com/problems/the-number-of-weak-characters-in-the-game/) | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem1996/Solution.kt) | -       | 2022-09-09    |
 
 ### Easy
