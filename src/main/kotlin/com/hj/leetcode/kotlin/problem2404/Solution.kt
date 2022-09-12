@@ -10,13 +10,8 @@ class Solution {
      * Time O(N) and Space O(N) where N is the size of nums;
      */
     fun mostFrequentEven(nums: IntArray): Int {
-        restStates()
         updateEvenNumberFrequency(nums)
         return getMostFrequentEven()
-    }
-
-    private fun restStates() {
-        evenNumberFrequency.clear()
     }
 
     private fun updateEvenNumberFrequency(numbers: IntArray) {
@@ -41,6 +36,12 @@ class Solution {
                 }
             }
         }
+
+        restStates()
         return mostFrequentEven
+    }
+
+    private fun restStates() {
+        evenNumberFrequency.clear()
     }
 }
