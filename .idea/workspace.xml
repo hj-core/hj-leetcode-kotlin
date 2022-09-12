@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Update a bit the problem 2404 solution;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem7/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem7/Solution.kt" afterDir="false" />
-    </list>
+    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Update a bit the problem 7 solution;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -383,7 +380,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662987310571</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Update a bit the problem 7 solution;">
+      <created>1662988280877</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1662988280877</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -410,7 +414,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution to problem 2248;" />
     <MESSAGE value="Add solution to problem 2180;" />
     <MESSAGE value="Update the format of README.md;&#10;&#10;- Decide to provide tables for each difficulty;" />
     <MESSAGE value="Add solution to problem 2259;" />
@@ -435,7 +438,8 @@
     <MESSAGE value="Add solution to problem 179;" />
     <MESSAGE value="Update a bit the problem 2210 solution;" />
     <MESSAGE value="Update a bit the problem 2404 solution;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update a bit the problem 2404 solution;" />
+    <MESSAGE value="Update a bit the problem 7 solution;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update a bit the problem 7 solution;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

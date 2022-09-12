@@ -10,13 +10,8 @@ class Solution {
      * Time O(N^2) and Space O(N) where N is the size of nums;
      */
     fun threeSum(nums: IntArray): List<List<Int>> {
-        resetState()
         updateSortedNumber(nums)
         return getValidTriplets()
-    }
-
-    private fun resetState() {
-        sortedNumber = intArrayOf()
     }
 
     private fun updateSortedNumber(numbers: IntArray) {
@@ -43,6 +38,7 @@ class Solution {
             availableThirdNumbers.add(sortedNumber[firstIndex])
         }
 
+        resetState()
         return validTriplets.toList()
     }
 
@@ -61,5 +57,9 @@ class Solution {
             .binarySearch(-minTwoSum, 2, sortedNumber.size)
             .let { biIndex -> if (biIndex < 0) -(biIndex + 1) else biIndex }
             .coerceAtMost(sortedNumber.lastIndex)
+    }
+
+    private fun resetState() {
+        sortedNumber = intArrayOf()
     }
 }
