@@ -14,10 +14,11 @@ class Solution {
         var currPower = power
         var flippedMinMaxPairs = 0
         var nextTokenIndex = 0
-        while (
-            nextTokenIndex <= sortedTokens.lastIndex - flippedMinMaxPairs &&
-            maxScore < tokens.size - (flippedMinMaxPairs shl 1)
-        ) {
+
+        fun isNextTokenPlayable() = nextTokenIndex <= sortedTokens.lastIndex - flippedMinMaxPairs
+        fun isHigherScorePossible() = maxScore < tokens.size - (flippedMinMaxPairs shl 1)
+
+        while (isNextTokenPlayable() && isHigherScorePossible()) {
             currPower -= sortedTokens[nextTokenIndex]
             if (currPower >= 0) {
                 currScore++
