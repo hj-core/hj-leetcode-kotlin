@@ -11,7 +11,9 @@ class Solution {
      */
     fun threeSum(nums: IntArray): List<List<Int>> {
         updateSortedNumber(nums)
-        return getValidTriplets()
+        val validTriplets = getValidTriplets()
+        clearState()
+        return validTriplets
     }
 
     private fun updateSortedNumber(numbers: IntArray) {
@@ -37,8 +39,6 @@ class Solution {
             }
             availableThirdNumbers.add(sortedNumber[firstIndex])
         }
-
-        resetState()
         return validTriplets.toList()
     }
 
@@ -59,7 +59,7 @@ class Solution {
             .coerceAtMost(sortedNumber.lastIndex)
     }
 
-    private fun resetState() {
+    private fun clearState() {
         sortedNumber = intArrayOf()
     }
 }
