@@ -12,15 +12,8 @@ class Solution {
      * Time O(Log(NMK)) and Space O(1) where N, M, K equal a, b and c;
      */
     fun nthUglyNumber(n: Int, a: Int, b: Int, c: Int): Int {
-        resetStates()
         updateDivisorsAndLcms(a, b, c)
         return getNthUglyNumber(n)
-    }
-
-    private fun resetStates() {
-        divisors.fill(0L)
-        lcmBetweenDivisors.fill(0L)
-        lcm = 0L
     }
 
     private fun updateDivisorsAndLcms(num1: Int, num2: Int, num3: Int) {
@@ -56,6 +49,8 @@ class Solution {
             val remThUgly = getNthUglyNumberWithinLcm(rem.toInt())
             nThUgly += remThUgly
         }
+
+        resetStates()
         return nThUgly.toInt()
     }
 
@@ -77,5 +72,11 @@ class Solution {
             if (numberOfUglyAtMid >= n) rightBound = midValue - 1 else leftBound = midValue + 1
         }
         return leftBound
+    }
+
+    private fun resetStates() {
+        divisors.fill(0L)
+        lcmBetweenDivisors.fill(0L)
+        lcm = 0L
     }
 }
