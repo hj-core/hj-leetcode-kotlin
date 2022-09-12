@@ -13,8 +13,7 @@ class Solution {
      */
     fun nthUglyNumber(n: Int, a: Int, b: Int, c: Int): Int {
         resetStates()
-        updateDivisors(a, b, c)
-        updateLcmAndLcmBetweenDivisors()
+        updateDivisorsAndLcms(a, b, c)
         return getNthUglyNumber(n)
     }
 
@@ -24,13 +23,10 @@ class Solution {
         lcm = 0L
     }
 
-    private fun updateDivisors(num1: Int, num2: Int, num3: Int) {
+    private fun updateDivisorsAndLcms(num1: Int, num2: Int, num3: Int) {
         divisors[0] = num1.toLong()
         divisors[1] = num2.toLong()
         divisors[2] = num3.toLong()
-    }
-
-    private fun updateLcmAndLcmBetweenDivisors() {
         lcmBetweenDivisors[0] = divisors[0].leastCommonMultiple(divisors[1])
         lcmBetweenDivisors[1] = divisors[1].leastCommonMultiple(divisors[2])
         lcmBetweenDivisors[2] = divisors[2].leastCommonMultiple(divisors[0])

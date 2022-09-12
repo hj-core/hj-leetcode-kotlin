@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Update problem 948 solution that clean up the code;" />
+    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Update a bit the problem 948 solution;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1201/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1201/Solution.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -345,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662971435885</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Update a bit the problem 948 solution;">
+      <created>1662973206538</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1662973206538</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -372,7 +382,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update README.md to include a link to my LeetCode page;" />
     <MESSAGE value="Add solution to problem 2231;" />
     <MESSAGE value="Add solution to problem 1380;" />
     <MESSAGE value="Fix incorrect comment in problem 2231 solution;&#10;&#10;- Remove the comment on getSortedOddAndEvenDigits() as it contains incorrect information and is not necessary;&#10;&#10;- Adjust vertical formatting of code;" />
@@ -397,7 +406,8 @@
     <MESSAGE value="Update problem 1201 Last modified date at README.md;&#10;&#10;- As an amendment to commit b506c46e;" />
     <MESSAGE value="Add solution to problem 948;" />
     <MESSAGE value="Update problem 948 solution that clean up the code;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 948 solution that clean up the code;" />
+    <MESSAGE value="Update a bit the problem 948 solution;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update a bit the problem 948 solution;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
