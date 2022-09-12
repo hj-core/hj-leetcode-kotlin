@@ -5,23 +5,22 @@ package com.hj.leetcode.kotlin.problem7
  */
 class Solution {
     private val digitsOfIntMax = intArrayOf(2, 1, 4, 7, 4, 8, 3, 6, 4, 7)
-    private val reversedDigits = mutableListOf<Int>()
 
     /* Complexity:
      * Time O(LogN) and Space (LogN) where N equals x;
      */
     fun reverse(x: Int): Int {
-        updateReversedDigits(x)
-        val reversed = getReversedNumber(x < 0)
-        clearStates()
-        return reversed
+        val reversedDigits = getReversedDigits(x)
+        return getReversedNumber(x < 0, reversedDigits)
     }
 
-    private fun updateReversedDigits(number: Int) {
-        if (number == 0) reversedDigits.add(0) else updateReversedDigitsOfNonZero(number)
+    private fun getReversedDigits(number: Int): List<Int> {
+        val reversedDigits = mutableListOf<Int>()
+        if (number == 0) reversedDigits.add(0) else updateReversedDigitsForNonZero(number, reversedDigits)
+        return reversedDigits
     }
 
-    private fun updateReversedDigitsOfNonZero(number: Int) {
+    private fun updateReversedDigitsForNonZero(number: Int, reversedDigits: MutableList<Int>) {
         require(number != 0)
         var num = Math.abs(number)
         while (num > 0) {
@@ -30,22 +29,22 @@ class Solution {
         }
     }
 
-    private fun getReversedNumber(isNegative: Boolean): Int {
-        if (isReversedOverflow()) return 0
+    private fun getReversedNumber(isNegative: Boolean, reversedDigits: List<Int>): Int {
+        if (isReversedOverflow(reversedDigits)) return 0
 
         val abs = reversedDigits.fold(0) { acc, i -> acc * 10 + i }
         return if (isNegative) -abs else abs
     }
 
-    private fun isReversedOverflow(): Boolean {
+    private fun isReversedOverflow(reversedDigits: List<Int>): Boolean {
         return when {
             reversedDigits.size < digitsOfIntMax.size -> false
             reversedDigits.size > digitsOfIntMax.size -> throw IllegalStateException()
-            else -> checkOverflowOfSameNumberOfDigits()
+            else -> checkOverflowOfSameNumberOfDigits(reversedDigits)
         }
     }
 
-    private fun checkOverflowOfSameNumberOfDigits(): Boolean {
+    private fun checkOverflowOfSameNumberOfDigits(reversedDigits: List<Int>): Boolean {
         for (index in reversedDigits.indices) {
             when {
                 reversedDigits[index] < digitsOfIntMax[index] -> return false
@@ -53,9 +52,5 @@ class Solution {
             }
         }
         return false
-    }
-
-    private fun clearStates() {
-        reversedDigits.clear()
     }
 }
