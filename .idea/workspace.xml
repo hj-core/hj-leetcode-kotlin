@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Add solution to problem 1201;" />
+    <list default="true" id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="Update problem 1201 Last modified date at README.md;&#10;&#10;- As an amendment to commit b506c46e;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -324,7 +326,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662953854814</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Fix incorrect Last Modified of problem 1201 in README.md;&#10;&#10;- As an amendment to commit b506c46e;">
+      <created>1662954218514</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1662954218514</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -351,7 +360,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution to problem 2220;" />
     <MESSAGE value="Update format of README.md;&#10;&#10;- Rename Title column to Problem;&#10;&#10;- Merge No column to Problem column;" />
     <MESSAGE value="Add solution to problem 2224;" />
     <MESSAGE value="Update README.md to include a link to my LeetCode page;" />
@@ -376,7 +384,8 @@
     <MESSAGE value="Add solution to problem 7;" />
     <MESSAGE value="Add solution to problem 15;" />
     <MESSAGE value="Add solution to problem 1201;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 1201;" />
+    <MESSAGE value="Update problem 1201 Last modified date at README.md;&#10;&#10;- As an amendment to commit b506c46e;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 1201 Last modified date at README.md;&#10;&#10;- As an amendment to commit b506c46e;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
