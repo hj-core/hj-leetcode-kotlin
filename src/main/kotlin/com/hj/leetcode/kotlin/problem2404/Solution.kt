@@ -11,7 +11,9 @@ class Solution {
      */
     fun mostFrequentEven(nums: IntArray): Int {
         updateEvenNumberFrequency(nums)
-        return getMostFrequentEven()
+        val mostFrequentEven = getMostFrequentEven()
+        clearStates()
+        return mostFrequentEven
     }
 
     private fun updateEvenNumberFrequency(numbers: IntArray) {
@@ -36,12 +38,10 @@ class Solution {
                 }
             }
         }
-
-        restStates()
         return mostFrequentEven
     }
 
-    private fun restStates() {
+    private fun clearStates() {
         evenNumberFrequency.clear()
     }
 }
