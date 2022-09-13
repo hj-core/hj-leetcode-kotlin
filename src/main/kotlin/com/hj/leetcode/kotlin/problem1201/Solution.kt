@@ -13,25 +13,27 @@ class Solution {
     }
 
     private data class Divisors(val d1: Long, val d2: Long, val d3: Long) {
-        val lcmD1D2 = d1.leastCommonMultiple(d2)
-        val lcmD2D3 = d2.leastCommonMultiple(d3)
-        val lcmD3D1 = d3.leastCommonMultiple(d1)
-        val lcmD1D2D3 = lcmD1D2.leastCommonMultiple(d3)
+        val lcmD1D2 = leastCommonMultiple(d1, d2)
+        val lcmD2D3 = leastCommonMultiple(d2, d3)
+        val lcmD3D1 = leastCommonMultiple(d3, d1)
+        val lcmD1D2D3 = leastCommonMultiple(lcmD1D2, d3)
 
-        private fun Long.leastCommonMultiple(other: Long): Long {
-            require(this > 0L && other > 0L) { "Require positive inputs." }
-            val gcd = this.greatestCommonDivisor(other)
-            return this * other / gcd
+        private fun leastCommonMultiple(long1: Long, long2: Long): Long {
+            require(long1 > 0L && long2 > 0L) { "Require positive arguments." }
+            val gcd = greatestCommonDivisor(long1, long2)
+            return long1 * long2 / gcd
         }
 
-        private fun Long.greatestCommonDivisor(other: Long): Long {
-            require(this > 0L && other > 0L) { "Require positive inputs." }
-            val (smaller, larger) = if (this < other) this to other else other to this
+        private fun greatestCommonDivisor(long1: Long, long2: Long): Long {
+            require(long1 > 0L && long2 > 0L) { "Require positive arguments." }
+            val (smaller, larger) = if (long1 < long2) long1 to long2 else long2 to long1
             return if (larger % smaller == 0L) smaller else euclideanGcdAlgorithm(smaller, larger)
         }
 
-        private tailrec fun euclideanGcdAlgorithm(smaller: Long, larger: Long): Long =
-            if (smaller == 0L) larger else euclideanGcdAlgorithm(larger % smaller, smaller)
+        private tailrec fun euclideanGcdAlgorithm(smaller: Long, larger: Long): Long {
+            require(smaller <= larger)
+            return if (smaller == 0L) larger else euclideanGcdAlgorithm(larger % smaller, smaller)
+        }
     }
 
     private fun getNthUglyNumber(n: Int, divisors: Divisors): Int {
