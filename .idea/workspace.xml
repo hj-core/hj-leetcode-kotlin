@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 393;">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 393 solution that slightly refactored;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem393/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem393/Solution.kt" afterDir="false" />
     </list>
@@ -70,13 +70,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Add solution to problem 2243;">
-      <created>1662651172474</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1662651172474</updated>
     </task>
     <task id="LOCAL-00022" summary="Add solution to problem 2248;">
       <created>1662653491809</created>
@@ -414,7 +407,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663044641253</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Update problem 393 solution that slightly refactored;">
+      <created>1663049398084</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1663049398084</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -441,7 +441,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution to problem 948;" />
     <MESSAGE value="Update problem 948 solution that clean up the code;" />
     <MESSAGE value="Update a bit the problem 948 solution;" />
     <MESSAGE value="Add solution to problem 179;" />
@@ -466,7 +465,8 @@
     <MESSAGE value="workspace.xml" />
     <MESSAGE value="Update problem 15 Last modified date at README.md (amend commit af1d8f78);" />
     <MESSAGE value="Add solution to problem 393;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 393;" />
+    <MESSAGE value="Update problem 393 solution that slightly refactored;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 393 solution that slightly refactored;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

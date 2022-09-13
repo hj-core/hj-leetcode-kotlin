@@ -28,6 +28,17 @@ class Solution {
         return true
     }
 
+    private fun Utf8ByteType(utf8Byte: Int): Utf8ByteType {
+        return when (utf8Byte) {
+            in 0..127 -> Utf8HeadByte.ZeroBodyByte
+            in 128..191 -> Utf8BodyByte
+            in 192..223 -> Utf8HeadByte.OneBodyByte
+            in 224..239 -> Utf8HeadByte.TwoBodyBytes
+            in 240..247 -> Utf8HeadByte.ThreeBodyBytes
+            else -> InvalidUtf8Byte
+        }
+    }
+
     private interface Utf8ByteType
 
     private enum class Utf8HeadByte(val bytesOfBody: Int) : Utf8ByteType {
@@ -40,15 +51,4 @@ class Solution {
     private object Utf8BodyByte : Utf8ByteType
 
     private object InvalidUtf8Byte : Utf8ByteType
-
-    private fun Utf8ByteType(utf8Byte: Int): Utf8ByteType {
-        return when (utf8Byte) {
-            in 0..127 -> Utf8HeadByte.ZeroBodyByte
-            in 128..191 -> Utf8BodyByte
-            in 192..223 -> Utf8HeadByte.OneBodyByte
-            in 224..239 -> Utf8HeadByte.TwoBodyBytes
-            in 240..247 -> Utf8HeadByte.ThreeBodyBytes
-            else -> InvalidUtf8Byte
-        }
-    }
 }
