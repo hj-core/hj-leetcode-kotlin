@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 1383 : improve naming;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 46 : refactor local functions;">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem46/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem46/Solution.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem7/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem7/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,13 +70,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Update problem2269 solution that revise a function name;">
-      <created>1662730520467</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1662730520467</updated>
     </task>
     <task id="LOCAL-00031" summary="Update problem 2231 Last modified date at README.md ;&#10;&#10;- As an amendment to commit 27645e76;">
       <created>1662730672341</created>
@@ -415,7 +407,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663086227836</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="Update problem 46 : refactor local functions;">
+      <created>1663086739122</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1663086739122</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -442,7 +441,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update a bit the problem 1201 solution;" />
     <MESSAGE value="Update a bit the problem 1383 solution;&#10;&#10;- As an amendment to commit 74d5127f;" />
     <MESSAGE value="Update a bit the problem 1201 solution;&#10;&#10;- As an amendment to commit c665d0be;" />
     <MESSAGE value="Update a bit the problem 15 solution;&#10;&#10;- As an amendment to commit 4deb29fc;" />
@@ -467,7 +465,8 @@
     <MESSAGE value="Add solution to problem 46;" />
     <MESSAGE value="Revert &quot;Update problem 7 : improve naming;&quot;&#10;&#10;- This reverts commit f5a25ea7;&#10;&#10;- Decide to keep original naming;" />
     <MESSAGE value="Update problem 1383 : improve naming;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 1383 : improve naming;" />
+    <MESSAGE value="Update problem 46 : refactor local functions;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 46 : refactor local functions;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
