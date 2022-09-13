@@ -14,8 +14,8 @@ class Solution {
             if (headType !is Utf8HeadByte) return false
 
             val bodyLength = headType.bytesOfBody
-            val hasEnoughBody = headByteIndex + bodyLength < data.size
-            if (!hasEnoughBody) return false
+            val notEnoughBody = headByteIndex + bodyLength > data.lastIndex
+            if (notEnoughBody) return false
 
             val bodyByteIndices = headByteIndex + 1..headByteIndex + bodyLength
             for (bodyByteIndex in bodyByteIndices) {
