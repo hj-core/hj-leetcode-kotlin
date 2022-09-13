@@ -10,11 +10,11 @@ class Solution {
      * Time O(LogN) and Space (LogN) where N equals x;
      */
     fun reverse(x: Int): Int {
-        val reversedDigits = getReversedDigits(x)
+        val reversedDigits = createReversedDigits(x)
         return getReversedNumber(x < 0, reversedDigits)
     }
 
-    private fun getReversedDigits(number: Int): List<Int> {
+    private fun createReversedDigits(number: Int): List<Int> {
         val reversedDigits = mutableListOf<Int>()
         if (number == 0) reversedDigits.add(0) else updateReversedDigitsForNonZero(number, reversedDigits)
         return reversedDigits
