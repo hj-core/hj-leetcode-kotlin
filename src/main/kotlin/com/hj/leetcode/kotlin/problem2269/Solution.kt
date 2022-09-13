@@ -11,13 +11,13 @@ class Solution {
         val digits = num.getDigits()
         var countValid = 0
 
-        var windowValue = getFirstWindowValue(digits, k)
-        if (windowValue.isBeauty(num)) countValid++
+        var currWindowValue = getFirstWindowValue(digits, k)
+        if (currWindowValue.isBeauty(num)) countValid++
 
-        val multiplierToLeadingDigit = getMultiplierToLeadingDigit(k)
+        val multiplierOfLeadingDigit = getMultiplierOfLeadingDigit(k)
         for (index in digits.lastIndex - k downTo 0) {
-            windowValue = updateWindowValue(windowValue, digits, index, multiplierToLeadingDigit)
-            if (windowValue.isBeauty(num)) countValid++
+            currWindowValue = currWindowValue / 10 + digits[index] * multiplierOfLeadingDigit
+            if (currWindowValue.isBeauty(num)) countValid++
         }
 
         return countValid
@@ -39,18 +39,9 @@ class Solution {
         return windowValue
     }
 
-    private fun getMultiplierToLeadingDigit(size: Int): Int {
+    private fun getMultiplierOfLeadingDigit(size: Int): Int {
         var multiplier = 1
         repeat(size - 1) { multiplier *= 10 }
         return multiplier
-    }
-
-    private fun updateWindowValue(
-        previousValue: Int,
-        digits: List<Int>,
-        index: Int,
-        multiplierToLeadingDigit: Int
-    ): Int {
-        return previousValue / 10 + digits[index] * multiplierToLeadingDigit
     }
 }
