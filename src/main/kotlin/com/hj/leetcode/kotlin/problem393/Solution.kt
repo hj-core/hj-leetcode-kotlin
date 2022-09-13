@@ -23,7 +23,8 @@ class Solution {
                 if (bodyType !is Utf8BodyByte) return false
             }
 
-            headByteIndex += bodyLength + 1
+            val stepToNextHeadByte = bodyLength + 1
+            headByteIndex += stepToNextHeadByte
         }
         return true
     }

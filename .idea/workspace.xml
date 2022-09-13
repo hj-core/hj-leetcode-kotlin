@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 393 solution: local clean up;" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 393 : local clean up;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,13 +69,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Add solution to problem 2259;">
-      <created>1662718471767</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1662718471767</updated>
     </task>
     <task id="LOCAL-00026" summary="Add solution to problem 2269;">
       <created>1662725683248</created>
@@ -411,7 +406,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663058710784</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Update problem 393 : local clean up;">
+      <created>1663058820105</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1663058820105</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -438,7 +440,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update a bit the problem 2210 solution;" />
     <MESSAGE value="Update a bit the problem 2404 solution;" />
     <MESSAGE value="Update a bit the problem 7 solution;" />
     <MESSAGE value="Update a bit the problem 15 solution;" />
@@ -463,7 +464,8 @@
     <MESSAGE value="Update problem 393 solution that rearrange the methods;" />
     <MESSAGE value="Update problem 1201 solution that refactor lcm and gcd methods;" />
     <MESSAGE value="Update problem 393 solution: local clean up;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 393 solution: local clean up;" />
+    <MESSAGE value="Update problem 393 : local clean up;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 393 : local clean up;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
