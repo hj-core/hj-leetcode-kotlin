@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 393;">
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem393/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem393/Solution.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +28,16 @@
   <component name="Git.Settings">
     <branch-grouping />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="workspace.xml" />
+        <option name="rewordedMessage" value="Revert &quot;Update problem 1201 Last modified date at README.md (amend commit af1d8f78);&quot;&#10;&#10;- This reverts commit 4d9ca445dfa31b08b0eb5d74c6ad220e5c99ff8f;&#10;&#10;- The commit message is incorrect, should be problem 15;" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="4d9ca445dfa31b08b0eb5d74c6ad220e5c99ff8f" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -52,39 +64,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2c2aaf01-ab5a-4aaa-bf2d-8659c18b25be" name="Changes" comment="" />
+      <changelist id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="" />
       <created>1662609069590</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Add solution to problem 2224;">
-      <created>1662633779059</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1662633779059</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Update README.md to include a link to my LeetCode page;">
-      <created>1662634067611</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1662634067611</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Add solution to problem 2231;">
-      <created>1662638807124</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1662638807124</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Add solution to problem 2231;">
-      <created>1662639175719</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1662639175719</updated>
     </task>
     <task id="LOCAL-00019" summary="Add solution to problem 1380;">
       <created>1662640758840</created>
@@ -401,7 +385,35 @@
       <option name="project" value="LOCAL" />
       <updated>1663007967056</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="workspace.xml">
+      <created>1663010783947</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1663010783947</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Update problem 15 Last modified date at README.md (amend commit af1d8f78);">
+      <created>1663010999367</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1663010999368</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Add solution to problem 393;">
+      <created>1663043846600</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1663043846601</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Add solution to problem 393;">
+      <created>1663044181125</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1663044181125</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -428,9 +440,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution to problem 15;" />
-    <MESSAGE value="Add solution to problem 1201;" />
-    <MESSAGE value="Update problem 1201 Last modified date at README.md;&#10;&#10;- As an amendment to commit b506c46e;" />
     <MESSAGE value="Add solution to problem 948;" />
     <MESSAGE value="Update problem 948 solution that clean up the code;" />
     <MESSAGE value="Update a bit the problem 948 solution;" />
@@ -453,7 +462,10 @@
     <MESSAGE value="Update problem 7 solution that refactor the implementation;&#10;&#10;- Decide to eliminate the state variable so that all functions become pure function and no concurrency concern;" />
     <MESSAGE value="Update problem 2224 solution that clean up code;" />
     <MESSAGE value="Update problem 2210 solution that refactor the implementation;&#10;&#10;- Decide to eliminate the state variable so that all functions become pure function and no concurrency concern;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 2210 solution that refactor the implementation;&#10;&#10;- Decide to eliminate the state variable so that all functions become pure function and no concurrency concern;" />
+    <MESSAGE value="workspace.xml" />
+    <MESSAGE value="Update problem 15 Last modified date at README.md (amend commit af1d8f78);" />
+    <MESSAGE value="Add solution to problem 393;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 393;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
