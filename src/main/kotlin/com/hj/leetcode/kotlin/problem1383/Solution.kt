@@ -12,11 +12,11 @@ class Solution {
      * Time O(NLogN) and Space O(N) where N equals n;
      */
     fun maxPerformance(n: Int, speed: IntArray, efficiency: IntArray, k: Int): Int {
-        val sortedEngineers = createEngineersSortedByEfficiency(speed, efficiency)
-        return findMaxPerformance(k, sortedEngineers)
+        val sortedEngineers = getEngineersSortedByEfficiency(speed, efficiency)
+        return getMaxPerformance(k, sortedEngineers)
     }
 
-    private fun createEngineersSortedByEfficiency(speed: IntArray, efficiency: IntArray): List<Engineer> {
+    private fun getEngineersSortedByEfficiency(speed: IntArray, efficiency: IntArray): List<Engineer> {
         return speed
             .asSequence()
             .zip(efficiency.asSequence()) { spd, eff -> Engineer(spd, eff) }
@@ -24,7 +24,7 @@ class Solution {
             .toList()
     }
 
-    private fun findMaxPerformance(maxTeamSize: Int, engineersSortedByEfficiency: List<Engineer>): Int {
+    private fun getMaxPerformance(maxTeamSize: Int, engineersSortedByEfficiency: List<Engineer>): Int {
         var maxPerformance = 0L
         val teamSpeedMinPq = PriorityQueue<Int>()
         var maxTeamSpeedSum = 0L
