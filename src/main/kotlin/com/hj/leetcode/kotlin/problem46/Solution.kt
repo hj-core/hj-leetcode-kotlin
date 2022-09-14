@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem46
  */
 class Solution {
     /* Complexity:
-     * Time O(N * N!) and Space O(N!) where N is the size of nums;
+     * Time O(N * N!) and Space O(N * N!) where N is the size of nums;
      */
     fun permute(nums: IntArray): List<List<Int>> {
         val permutes = mutableListOf(mutableListOf(nums[0]))
