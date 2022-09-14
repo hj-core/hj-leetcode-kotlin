@@ -7,7 +7,7 @@ import com.hj.leetcode.kotlin.common.model.TreeNode
  */
 class Solution {
     /* Complexity:
-     * Time O(N) and Space O(LogN) where N is the number of TreeNode in root;
+     * Time O(N) and Space O(H) where N and H are the number of nodes and height of root;
      */
     fun pseudoPalindromicPaths(root: TreeNode?): Int {
         var pseudoPalindromicPaths = 0
