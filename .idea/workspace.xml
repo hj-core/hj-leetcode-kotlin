@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 1317;" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 1317;">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem45/Solution.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,17 +29,22 @@
   </component>
   <component name="Git.Settings">
     <branch-grouping />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="add-license-1" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitRewordedCommitMessages">
     <option name="commitMessagesMapping">
       <RewordedCommitMessageMapping>
-        <option name="originalMessage" value="workspace" />
-        <option name="rewordedMessage" value="Revert &quot;Update problem 7 : improve naming;&quot;&#10;&#10;- This reverts commit f5a25ea7;&#10;&#10;- Decide to keep original naming;" />
+        <option name="originalMessage" value="Create LICENSE" />
+        <option name="rewordedMessage" value="Add LICENSE;" />
       </RewordedCommitMessageMapping>
     </option>
     <option name="currentCommit" value="1" />
-    <option name="onto" value="f5a25ea79dccac176db5590136720a35a439b657" />
+    <option name="onto" value="78a08a4da0ba57f8bdfc2bbc95e24cea98ea1dcc" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
