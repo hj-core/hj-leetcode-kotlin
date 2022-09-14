@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Fix problem 46 : incorrect space complexity;">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1457/Solution.kt" afterDir="false" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Fix problem 1457 : incorrect space complexity;">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem47/Solution.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,27 +70,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Add solution to problem 6;">
-      <created>1662893241932</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1662893241933</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Add solution to problem 7;">
-      <created>1662896832120</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1662896832121</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Add solution to problem 15;">
-      <created>1662903442480</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1662903442480</updated>
     </task>
     <task id="LOCAL-00038" summary="Add solution to problem 1201;">
       <created>1662953854814</created>
@@ -415,7 +393,28 @@
       <option name="project" value="LOCAL" />
       <updated>1663120113454</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Add solution of problem 1457;">
+      <created>1663124387488</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1663124387489</updated>
+    </task>
+    <task id="LOCAL-00085" summary="Fix problem 94 : incorrect space complexity;">
+      <created>1663124567890</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1663124567890</updated>
+    </task>
+    <task id="LOCAL-00086" summary="Fix problem 1457 : incorrect space complexity;">
+      <created>1663124669926</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1663124669927</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -442,9 +441,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update a bit the problem 2404 solution;&#10;&#10;- As an amendment to commit 76f1ce2b;" />
-    <MESSAGE value="Update a bit the problem 2210 solution;&#10;&#10;- As an amendment to commit 581d5099;" />
-    <MESSAGE value="Update a bit the problem 1383 solution;&#10;&#10;- As an amendment to commit 46c1d7c3;" />
     <MESSAGE value="Update a bit the problem 2404 solution;&#10;&#10;- As an amendment to commit ac3d93cb;" />
     <MESSAGE value="Update problem 179 solution that clean up the code;" />
     <MESSAGE value="Update problem 15 solution that refactor the implementation;&#10;&#10;- Decide to eliminate the state variable so that all function become pure function and no concurrency concern;" />
@@ -467,7 +463,10 @@
     <MESSAGE value="Update problem 2248 : refactor local functions;" />
     <MESSAGE value="Update problem 2269 : improve readability;" />
     <MESSAGE value="Fix problem 46 : incorrect space complexity;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix problem 46 : incorrect space complexity;" />
+    <MESSAGE value="Add solution of problem 1457;" />
+    <MESSAGE value="Fix problem 94 : incorrect space complexity;" />
+    <MESSAGE value="Fix problem 1457 : incorrect space complexity;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix problem 1457 : incorrect space complexity;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
