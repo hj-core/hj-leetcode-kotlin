@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 143;">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem143/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem143/Solution.kt" afterDir="false" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 2007;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2007/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2007/Solution.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2007/Solution2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2007/Solution2.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
         <option value="LeetCode Solution" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -74,27 +76,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Update a bit the problem 948 solution;">
-      <created>1662973206538</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1662973206538</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Update a bit the problem 1201 solution;">
-      <created>1662974813899</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1662974813899</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Add solution to problem 179;">
-      <created>1662986566158</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1662986566158</updated>
     </task>
     <task id="LOCAL-00045" summary="Update a bit the problem 2210 solution;">
       <created>1662986980846</created>
@@ -418,7 +399,28 @@
       <option name="project" value="LOCAL" />
       <updated>1663210613400</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="Add solution of problem 143;">
+      <created>1663210994575</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1663210994576</updated>
+    </task>
+    <task id="LOCAL-00092" summary="Add solution of problem 143;">
+      <created>1663211039853</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1663211039853</updated>
+    </task>
+    <task id="LOCAL-00093" summary="Add solution of problem 2007;">
+      <created>1663232733167</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1663232733167</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -445,7 +447,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 2224 solution that clean up code;" />
     <MESSAGE value="Update problem 2210 solution that refactor the implementation;&#10;&#10;- Decide to eliminate the state variable so that all functions become pure function and no concurrency concern;" />
     <MESSAGE value="workspace.xml" />
     <MESSAGE value="Update problem 15 Last modified date at README.md (amend commit af1d8f78);" />
@@ -470,7 +471,8 @@
     <MESSAGE value="Add solution of problem 1317;" />
     <MESSAGE value="Add solution of problem 45;" />
     <MESSAGE value="Add solution of problem 143;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 143;" />
+    <MESSAGE value="Add solution of problem 2007;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 2007;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
