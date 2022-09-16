@@ -9,55 +9,65 @@ class Solution {
      */
     fun maximumScore(nums: IntArray, multipliers: IntArray): Int {
         val totalSteps = multipliers.size
-        val maxScoreDp = getMaxScoreEachStepEachLeftStep(nums, multipliers)
+        val maxScoreDp = getMaxScoreEachStepEachLeftSteps(nums, multipliers)
         return getMaxScore(totalSteps, maxScoreDp)
     }
 
-    private fun getMaxScoreEachStepEachLeftStep(nums: IntArray, multipliers: IntArray): List<List<Int>> {
+    private fun getMaxScoreEachStepEachLeftSteps(nums: IntArray, multipliers: IntArray): List<List<Int>> {
         val totalSteps = multipliers.size
-        val container = getContainerForMaxScoreEachStepEachLeftStep(totalSteps)
+        val container = getContainer(totalSteps)
 
         container[0][0] = 0
         for (step in 1..totalSteps) {
-            val multiplier = getMultiplier(step, multipliers)
-
-            val scoreWhenAllStepIsRight = container[step - 1][0] + multiplier * getNumberAtRight(step, nums)
-            container[step][0] = scoreWhenAllStepIsRight
-
-            val scoreWhenAllStepIsLeft = container[step - 1][step - 1] + multiplier * getNumberAtLeft(step, nums)
-            container[step][step] = scoreWhenAllStepIsLeft
-
-            for (leftStep in 1 until step) {
-                val maxScoreIfCurrStepIsLeft =
-                    container[step - 1][leftStep - 1] + multiplier * getNumberAtLeft(leftStep, nums)
-
-                val rightStep = getRightStep(step, leftStep)
-                val maxScoreIfCurrStepIsRight =
-                    container[step - 1][leftStep] + multiplier * getNumberAtRight(rightStep, nums)
-
-                container[step][leftStep] = maxOf(maxScoreIfCurrStepIsLeft, maxScoreIfCurrStepIsRight)
-            }
+            updateMaxScoreOfEachLeftSteps(container, step, nums, multipliers)
         }
         return container
     }
 
-    private fun getContainerForMaxScoreEachStepEachLeftStep(totalSteps: Int): List<MutableList<Int>> {
-        val sizeIncludeZeroStep = totalSteps + 1
-        val container = List(sizeIncludeZeroStep) { maxLeftStep ->
-            val sizeIncludeZeroLeftStep = maxLeftStep + 1
-            MutableList(sizeIncludeZeroLeftStep) { 0 }
+    private fun getContainer(totalSteps: Int): List<MutableList<Int>> {
+        val includeZeroStep = totalSteps + 1
+        val container = List(includeZeroStep) { maxLeftSteps ->
+            val includeZeroLeftStep = maxLeftSteps + 1
+            MutableList(includeZeroLeftStep) { 0 }
         }
         return container
+    }
+
+    private fun updateMaxScoreOfEachLeftSteps(
+        container:List<MutableList<Int>>,
+        step: Int,
+        nums: IntArray,
+        multipliers: IntArray
+    ) {
+        val multiplier = getMultiplier(step, multipliers)
+
+        val scoreWhenAllStepsIsRight = container[step - 1][0] + multiplier * getRightNumber(step, nums)
+        container[step][0] = scoreWhenAllStepsIsRight
+
+        val scoreWhenAllStepsIsLeft = container[step - 1][step - 1] + multiplier * getLeftNumber(step, nums)
+        container[step][step] = scoreWhenAllStepsIsLeft
+
+        for (leftSteps in 1 until step) {
+            val rightSteps = getRightSteps(step, leftSteps)
+            val maxScoreIfCurrStepIsRight =
+                container[step - 1][leftSteps] + multiplier * getRightNumber(rightSteps, nums)
+
+            val maxScoreIfCurrStepIsLeft =
+                container[step - 1][leftSteps - 1] + multiplier * getLeftNumber(leftSteps, nums)
+
+            val maxScore = maxOf(maxScoreIfCurrStepIsRight, maxScoreIfCurrStepIsLeft)
+            container[step][leftSteps] = maxScore
+        }
     }
 
     private fun getMultiplier(step: Int, multipliers: IntArray) = multipliers[step - 1]
 
-    private fun getNumberAtRight(rightStep: Int, nums: IntArray) = nums[nums.size - rightStep]
+    private fun getRightNumber(rightSteps: Int, nums: IntArray) = nums[nums.size - rightSteps]
 
-    private fun getNumberAtLeft(leftStep: Int, nums: IntArray) = nums[leftStep - 1]
+    private fun getLeftNumber(leftSteps: Int, nums: IntArray) = nums[leftSteps - 1]
 
-    private fun getRightStep(step: Int, leftStep: Int) = step - leftStep
+    private fun getRightSteps(totalSteps: Int, leftSteps: Int) = totalSteps - leftSteps
 
-    private fun getMaxScore(totalSteps: Int, maxScoreEachStepEachLeftStep: List<List<Int>>) =
-        maxScoreEachStepEachLeftStep[totalSteps].max()!!
+    private fun getMaxScore(step: Int, maxScoreEachStepEachLeftStep: List<List<Int>>) =
+        maxScoreEachStepEachLeftStep[step].max()!!
 }
