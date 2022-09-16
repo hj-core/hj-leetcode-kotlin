@@ -5,69 +5,82 @@ package com.hj.leetcode.kotlin.problem1770
  */
 class Solution {
     /* Complexity:
-     * Time O(M^2) and Space O(M^2) where M is the size of multipliers;
+     * Time O(M^2) and Space O(M) where M is the size of multipliers;
      */
     fun maximumScore(nums: IntArray, multipliers: IntArray): Int {
-        val totalSteps = multipliers.size
-        val maxScoreDp = getMaxScoreEachStepEachLeftSteps(nums, multipliers)
-        return getMaxScore(totalSteps, maxScoreDp)
+        val maxScoreDP = getMaxScoreForEachLeftOperand(nums, multipliers)
+        return maxScoreDP.max()!!
     }
 
-    private fun getMaxScoreEachStepEachLeftSteps(nums: IntArray, multipliers: IntArray): List<List<Int>> {
-        val totalSteps = multipliers.size
-        val container = getContainer(totalSteps)
+    private fun getMaxScoreForEachLeftOperand(nums: IntArray, multipliers: IntArray): IntArray {
+        val totalOperand = multipliers.size
+        val scoreContainer = createAndInitializeScoreContainer(totalOperand)
 
-        container[0][0] = 0
-        for (step in 1..totalSteps) {
-            updateMaxScoreOfEachLeftSteps(container, step, nums, multipliers)
+        for (operand in 1..totalOperand) {
+            updateScoreContainer(operand, scoreContainer, nums, multipliers)
         }
-        return container
+        return scoreContainer
     }
 
-    private fun getContainer(totalSteps: Int): List<MutableList<Int>> {
-        val includeZeroStep = totalSteps + 1
-        val container = List(includeZeroStep) { maxLeftSteps ->
-            val includeZeroLeftStep = maxLeftSteps + 1
-            MutableList(includeZeroLeftStep) { 0 }
-        }
-        return container
+    private fun createAndInitializeScoreContainer(totalOperands: Int): IntArray {
+        val sizeIncludeZeroOperand = totalOperands + 1
+        return IntArray(sizeIncludeZeroOperand) { 0 }
     }
 
-    private fun updateMaxScoreOfEachLeftSteps(
-        container:List<MutableList<Int>>,
-        step: Int,
+    private fun updateScoreContainer(
+        currOperand: Int,
+        scoreContainer: IntArray,
         nums: IntArray,
         multipliers: IntArray
     ) {
-        val multiplier = getMultiplier(step, multipliers)
+        val multiplier = getMultiplier(currOperand, multipliers)
+        updateMaxScoreOfPureLeftOperations(currOperand, scoreContainer, nums, multiplier)
+        updateMaxScoreOfCompoundOperations(currOperand, scoreContainer, nums, multiplier)
+        updateMaxScoreOfPureRightOperations(currOperand, scoreContainer, nums, multiplier)
+    }
 
-        val scoreWhenAllStepsIsRight = container[step - 1][0] + multiplier * getRightNumber(step, nums)
-        container[step][0] = scoreWhenAllStepsIsRight
+    private fun getMultiplier(operand: Int, multipliers: IntArray) = multipliers[operand - 1]
 
-        val scoreWhenAllStepsIsLeft = container[step - 1][step - 1] + multiplier * getLeftNumber(step, nums)
-        container[step][step] = scoreWhenAllStepsIsLeft
+    private fun updateMaxScoreOfPureLeftOperations(
+        currOperand: Int,
+        scoreContainer: IntArray,
+        nums: IntArray,
+        multiplier: Int
+    ) {
+        val score = scoreContainer[currOperand - 1] + multiplier * getLeftNumber(currOperand, nums)
+        scoreContainer[currOperand] = score
+    }
 
-        for (leftSteps in 1 until step) {
-            val rightSteps = getRightSteps(step, leftSteps)
-            val maxScoreIfCurrStepIsRight =
-                container[step - 1][leftSteps] + multiplier * getRightNumber(rightSteps, nums)
+    private fun getLeftNumber(leftOperand: Int, nums: IntArray) = nums[leftOperand - 1]
 
-            val maxScoreIfCurrStepIsLeft =
-                container[step - 1][leftSteps - 1] + multiplier * getLeftNumber(leftSteps, nums)
+    private fun updateMaxScoreOfCompoundOperations(
+        currOperand: Int,
+        scoreContainer: IntArray,
+        nums: IntArray,
+        multiplier: Int
+    ) {
+        for (leftOperand in currOperand - 1 downTo 1) {
+            val rightOperand = currOperand - leftOperand
 
-            val maxScore = maxOf(maxScoreIfCurrStepIsRight, maxScoreIfCurrStepIsLeft)
-            container[step][leftSteps] = maxScore
+            val maxScoreIfCurrOperationIsLeft =
+                scoreContainer[leftOperand - 1] + multiplier * getLeftNumber(leftOperand, nums)
+            val maxScoreIfCurrOperationIsRight =
+                scoreContainer[leftOperand] + multiplier * getRightNumber(rightOperand, nums)
+
+            val maxScore = maxOf(maxScoreIfCurrOperationIsLeft, maxScoreIfCurrOperationIsRight)
+            scoreContainer[leftOperand] = maxScore
         }
     }
 
-    private fun getMultiplier(step: Int, multipliers: IntArray) = multipliers[step - 1]
+    private fun getRightNumber(rightOperand: Int, nums: IntArray) = nums[nums.size - rightOperand]
 
-    private fun getRightNumber(rightSteps: Int, nums: IntArray) = nums[nums.size - rightSteps]
-
-    private fun getLeftNumber(leftSteps: Int, nums: IntArray) = nums[leftSteps - 1]
-
-    private fun getRightSteps(totalSteps: Int, leftSteps: Int) = totalSteps - leftSteps
-
-    private fun getMaxScore(step: Int, maxScoreEachStepEachLeftStep: List<List<Int>>) =
-        maxScoreEachStepEachLeftStep[step].max()!!
+    private fun updateMaxScoreOfPureRightOperations(
+        currOperand: Int,
+        scoreContainer: IntArray,
+        nums: IntArray,
+        multiplier: Int
+    ) {
+        val score = scoreContainer[0] + multiplier * getRightNumber(currOperand, nums)
+        scoreContainer[0] = score
+    }
 }
