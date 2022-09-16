@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 1770 : Change implementation that improve space complexity;&#10;&#10;- Zip the previous dp matrix to array and modify in place;" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 1770 : Improve readability;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1770/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1770/Solution.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,27 +78,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00055" summary="Update a bit the problem 2404 solution;&#10;&#10;- As an amendment to commit 76f1ce2b;">
-      <created>1662990430635</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1662990430635</updated>
-    </task>
-    <task id="LOCAL-00056" summary="Update a bit the problem 2210 solution;&#10;&#10;- As an amendment to commit 581d5099;">
-      <created>1662991188583</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1662991188583</updated>
-    </task>
-    <task id="LOCAL-00057" summary="Update a bit the problem 1383 solution;&#10;&#10;- As an amendment to commit 46c1d7c3;">
-      <created>1662992509064</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1662992509064</updated>
     </task>
     <task id="LOCAL-00058" summary="Update a bit the problem 2404 solution;&#10;&#10;- As an amendment to commit ac3d93cb;">
       <created>1662993167858</created>
@@ -419,7 +401,28 @@
       <option name="project" value="LOCAL" />
       <updated>1663331744687</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="Update problem 1770 : Refactor and Improve space complexity;&#10;&#10;- Zip the previous dp matrix to array and modify in place;">
+      <created>1663332037363</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1663332037363</updated>
+    </task>
+    <task id="LOCAL-00105" summary="Update problem 1770 : Improve readability;">
+      <created>1663337697413</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1663337697413</updated>
+    </task>
+    <task id="LOCAL-00106" summary="Update problem 1770 : Improve readability;">
+      <created>1663337917950</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1663337917950</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -468,10 +471,10 @@
     <MESSAGE value="Add solution of problem 2007;" />
     <MESSAGE value="Add solution of problem 78;" />
     <MESSAGE value="Add solution of problem 1770;" />
-    <MESSAGE value="Update problem 1770 : Improve readability;" />
-    <MESSAGE value="Update problem 1770 : Change implementation that improve space complexity;&#10;&#10;- Zip the previous dp matrix to array and modify in place;" />
     <MESSAGE value="Update problem 1770 : Refactor and improve space complexity;&#10;&#10;- Zip the previous dp matrix to array and modify in place;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 1770 : Change implementation that improve space complexity;&#10;&#10;- Zip the previous dp matrix to array and modify in place;" />
+    <MESSAGE value="Update problem 1770 : Refactor and Improve space complexity;&#10;&#10;- Zip the previous dp matrix to array and modify in place;" />
+    <MESSAGE value="Update problem 1770 : Improve readability;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 1770 : Improve readability;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
