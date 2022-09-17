@@ -64,7 +64,7 @@ class Solution {
     ) {
         val trie = createTrieWithEmptyStringExcluded(words)
         for ((index, word) in words.withIndex()) {
-            if (word.isNotEmpty()) addPairsThatHasWord(container, word, index, trie.root)
+            if (word.isNotEmpty()) addPairsThatWordIsSuffix(container, word, index, trie.root)
         }
     }
 
@@ -110,7 +110,7 @@ class Solution {
         }
     }
 
-    private fun addPairsThatHasWord(
+    private fun addPairsThatWordIsSuffix(
         container: MutableList<List<Int>>,
         word: String,
         wordIndex: Int,
@@ -120,7 +120,6 @@ class Solution {
         for (index in word.indices.reversed()) {
             val char = word[index]
             val nodeOfChar = currNode.getNext(char)
-
             val nodeNotExist = nodeOfChar == null
             if (nodeNotExist) return
 
@@ -132,7 +131,6 @@ class Solution {
 
             currNode = nodeOfChar
         }
-
         addPairsWhenComplementOfWordIsLonger(container, wordIndex, currNode)
     }
 
