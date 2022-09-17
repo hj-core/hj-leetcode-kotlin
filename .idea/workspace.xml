@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 336 : Improve readability;" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Fix problem 336 : Revise implementation and improve readability;&#10;&#10;- Now empty string is a valid palindrome;&#10;&#10;- Now Root of trie is associated with the empty string;">
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem336/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem336/Solution.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,41 +77,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00075" summary="Update problem 393 : local clean up;">
-      <created>1663059917134</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1663059917134</updated>
-    </task>
-    <task id="LOCAL-00076" summary="Add solution to problem 46;">
-      <created>1663077413788</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1663077413788</updated>
-    </task>
-    <task id="LOCAL-00077" summary="Revert &quot;Update problem 7 : improve naming;&quot;&#10;&#10;- This reverts commit f5a25ea7;&#10;&#10;- Decide to keep original naming;">
-      <created>1663086062677</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1663086062677</updated>
-    </task>
-    <task id="LOCAL-00078" summary="Update problem 1383 : improve naming;">
-      <created>1663086227836</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1663086227836</updated>
-    </task>
-    <task id="LOCAL-00079" summary="Update problem 46 : refactor local functions;">
-      <created>1663086739122</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1663086739122</updated>
     </task>
     <task id="LOCAL-00080" summary="Update problem 7 : improve naming and function signatures;">
       <created>1663087052792</created>
@@ -419,7 +386,42 @@
       <option name="project" value="LOCAL" />
       <updated>1663430218668</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="Update problem 336 : Improve readability;">
+      <created>1663430296093</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1663430296093</updated>
+    </task>
+    <task id="LOCAL-00125" summary="Update problem 336 : Refactor and improve readability;">
+      <created>1663436916379</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1663436916379</updated>
+    </task>
+    <task id="LOCAL-00126" summary="Update problem 336 : Refactor and improve readability;">
+      <created>1663469283157</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1663469283157</updated>
+    </task>
+    <task id="LOCAL-00127" summary="Update problem 336 : Revise implementation and improve readability;&#10;&#10;- Now empty string is a valid palindrome;&#10;&#10;- Root of trie is associated with the empty string;">
+      <created>1663473104787</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1663473104787</updated>
+    </task>
+    <task id="LOCAL-00128" summary="Fix problem 336 : Revise implementation and improve readability;&#10;&#10;- Now empty string is a valid palindrome;&#10;&#10;- Now Root of trie is associated with the empty string;">
+      <created>1663473346187</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1663473346188</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -446,9 +448,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Revert &quot;Update problem 7 : improve naming;&quot;&#10;&#10;- This reverts commit f5a25ea7;&#10;&#10;- Decide to keep original naming;" />
-    <MESSAGE value="Update problem 1383 : improve naming;" />
-    <MESSAGE value="Update problem 46 : refactor local functions;" />
     <MESSAGE value="Update problem 7 : improve naming and function signatures;" />
     <MESSAGE value="Update problem 2248 : refactor local functions;" />
     <MESSAGE value="Update problem 2269 : improve readability;" />
@@ -471,7 +470,10 @@
     <MESSAGE value="Fix problem 336 : Revise time complexity and improve readability;" />
     <MESSAGE value="Fix problem 336 : Provide time complexity and improve readability;" />
     <MESSAGE value="Update problem 336 : Improve readability;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 336 : Improve readability;" />
+    <MESSAGE value="Update problem 336 : Refactor and improve readability;" />
+    <MESSAGE value="Update problem 336 : Revise implementation and improve readability;&#10;&#10;- Now empty string is a valid palindrome;&#10;&#10;- Root of trie is associated with the empty string;" />
+    <MESSAGE value="Fix problem 336 : Revise implementation and improve readability;&#10;&#10;- Now empty string is a valid palindrome;&#10;&#10;- Now Root of trie is associated with the empty string;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix problem 336 : Revise implementation and improve readability;&#10;&#10;- Now empty string is a valid palindrome;&#10;&#10;- Now Root of trie is associated with the empty string;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
