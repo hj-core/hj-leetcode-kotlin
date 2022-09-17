@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 1770 : Improve readability;">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem11/Solution.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 336;">
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem336/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem336/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,20 +77,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00059" summary="Update problem 179 solution that clean up the code;">
-      <created>1662999768442</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1662999768442</updated>
-    </task>
-    <task id="LOCAL-00060" summary="Update problem 15 solution that refactor the implementation;&#10;&#10;- Decide to eliminate the state variable so that all function become pure function and no concurrency concern;">
-      <created>1663005129201</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1663005129201</updated>
     </task>
     <task id="LOCAL-00061" summary="Update problem 7 solution that refactor the implementation;&#10;&#10;- Decide to eliminate the state variable so that all functions become pure function and no concurrency concern;">
       <created>1663005605066</created>
@@ -423,7 +407,21 @@
       <option name="project" value="LOCAL" />
       <updated>1663342952233</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="Add solution of problem 11;">
+      <created>1663346411710</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1663346411710</updated>
+    </task>
+    <task id="LOCAL-00109" summary="Add solution of problem 336;">
+      <created>1663411379456</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1663411379456</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -450,8 +448,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 393 solution that rearrange the methods;" />
-    <MESSAGE value="Update problem 1201 solution that refactor lcm and gcd methods;" />
     <MESSAGE value="Update problem 393 solution: local clean up;" />
     <MESSAGE value="Update problem 393 : local clean up;" />
     <MESSAGE value="Add solution to problem 46;" />
@@ -475,7 +471,9 @@
     <MESSAGE value="Update problem 1770 : Refactor and improve space complexity;&#10;&#10;- Zip the previous dp matrix to array and modify in place;" />
     <MESSAGE value="Update problem 1770 : Refactor and Improve space complexity;&#10;&#10;- Zip the previous dp matrix to array and modify in place;" />
     <MESSAGE value="Update problem 1770 : Improve readability;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 1770 : Improve readability;" />
+    <MESSAGE value="Add solution of problem 11;" />
+    <MESSAGE value="Add solution of problem 336;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 336;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
