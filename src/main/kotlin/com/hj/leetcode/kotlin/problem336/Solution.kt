@@ -3,28 +3,33 @@ package com.hj.leetcode.kotlin.problem336
 /**
  * LeetCode page: [336. Palindrome Pairs](https://leetcode.com/problems/palindrome-pairs/);
  *
- * TODO 336-1 : Determine the time complexity;
- * TODO 336-2 : Improve readability;
+ * TODO : There is an implementation of trieNode that also records the indices of all words whose subString start
+ *    from there is a palindrome. It provides fast answer needed when finding pairs of unequal length, but requires
+ *    checking of subString at each start index of each word is a palindrome. Not sure is a good deal or not,
+ *    e.g. if all the words have similar length, this seems not a good option?
+ *    See [O(n * k^2) java solution with Trie structure](https://leetcode.com/problems/palindrome-pairs/discuss/79195/O(n-*-k2)-java-solution-with-Trie-structure);
+ *
  */
 class Solution {
     /* Complexity:
-     * Time O(??) and Aux_Space O(M) where M is the flat length of words;
+     * Time O(N * K^2) and Aux_Space O(M) where N is the size of words, K the longest length of word in words
+     * and M is the flat length of words;
      */
     fun palindromePairs(words: Array<String>): List<List<Int>> {
         val pairs = mutableListOf<List<Int>>()
-        addPalindromePairsOfWords(pairs, words)
+        addPalindromePairsInWords(pairs, words)
         return pairs
     }
 
-    private fun addPalindromePairsOfWords(
+    private fun addPalindromePairsInWords(
         container: MutableList<List<Int>>,
         words: Array<String>
     ) {
-        addPalindromePairsThatHasEmptyString(container, words)
-        addPalindromePairsWithNonEmptyStrings(container, words)
+        addPairsThatHasEmptyString(container, words)
+        addPairsWithoutEmptyString(container, words)
     }
 
-    private fun addPalindromePairsThatHasEmptyString(
+    private fun addPairsThatHasEmptyString(
         container: MutableList<List<Int>>,
         words: Array<String>
     ) {
@@ -53,18 +58,17 @@ class Solution {
         return true
     }
 
-    private fun addPalindromePairsWithNonEmptyStrings(
+    private fun addPairsWithoutEmptyString(
         container: MutableList<List<Int>>,
         words: Array<String>
     ) {
-        val trie = createTrieExcludingEmptyString(words)
+        val trie = createTrieWithEmptyStringExcluded(words)
         for ((index, word) in words.withIndex()) {
-            if (word.isEmpty()) continue
-            addPalindromePairsOfWord(container, word, index, trie.root)
+            if (word.isNotEmpty()) addPairsThatHasWord(container, word, index, trie.root)
         }
     }
 
-    private fun createTrieExcludingEmptyString(words: Array<String>): CustomTrie {
+    private fun createTrieWithEmptyStringExcluded(words: Array<String>): CustomTrie {
         val trie = CustomTrie()
         for ((index, word) in words.withIndex()) {
             if (word.isNotEmpty()) trie.insert(word, index)
@@ -77,13 +81,12 @@ class Solution {
 
         fun insert(lowercaseOnly: String, wordIndex: Int) {
             var currNode = root
+
             for (char in lowercaseOnly) {
-                val childIndex = currNode.getChildIndex(char)
-                val childNotExist = currNode.children[childIndex] == null
-                if (childNotExist) {
-                    currNode.children[childIndex] = CustomTrieNode(char)
-                }
-                currNode = checkNotNull(currNode.children[childIndex])
+                val nodeNoExist = currNode.getNext(char) == null
+                if (nodeNoExist) currNode.setNext(CustomTrieNode(char))
+
+                currNode = checkNotNull(currNode.getNext(char))
             }
             currNode.wordIndex = wordIndex
         }
@@ -94,68 +97,58 @@ class Solution {
             require(char == null || char in 'a'..'z')
         }
 
-        val children = MutableList<CustomTrieNode?>(26) { null }
+        val nextNodes = MutableList<CustomTrieNode?>(26) { null }
         var wordIndex = -1
         val isTermination get() = wordIndex >= 0
 
-        fun getChildIndex(char: Char) = char - 'a'
+        fun getNext(char: Char) = nextNodes[char - 'a']
+
+        fun setNext(node: CustomTrieNode): Boolean {
+            val char = node.char ?: return false
+            nextNodes[char - 'a'] = node
+            return true
+        }
     }
 
-    private fun addPalindromePairsOfWord(
+    private fun addPairsThatHasWord(
         container: MutableList<List<Int>>,
         word: String,
         wordIndex: Int,
         trieRoot: CustomTrieNode
     ) {
-        val lastMatchedNode =
-            addPalindromePairThatCounterPartIsNotLongerAndReturnLastMatchedNode(container, word, wordIndex, trieRoot)
-
-        if (lastMatchedNode != null) {
-            addPalindromePairThatCounterPartIsLonger(container, wordIndex, lastMatchedNode)
-        }
-    }
-
-    private fun addPalindromePairThatCounterPartIsNotLongerAndReturnLastMatchedNode(
-        container: MutableList<List<Int>>,
-        word: String,
-        wordIndex: Int,
-        trieRoot: CustomTrieNode
-    ): CustomTrieNode? {
         var currNode = trieRoot
-        for (charIndex in word.indices.reversed()) {
-            val char = word[charIndex]
-            val childIndex = currNode.getChildIndex(char)
-            val matchedChild = currNode.children[childIndex]
+        for (index in word.indices.reversed()) {
+            val char = word[index]
+            val nodeOfChar = currNode.getNext(char)
 
-            val noMatchedChild = matchedChild == null
-            if (noMatchedChild) return null
+            val nodeNotExist = nodeOfChar == null
+            if (nodeNotExist) return
 
-            checkNotNull(matchedChild)
-            val canFormPalindromePairs = matchedChild.isTermination &&
-                    matchedChild.wordIndex != wordIndex &&
-                    word.isPalindrome(0 until charIndex)
-            if (canFormPalindromePairs) {
-                container.add(listOf(matchedChild.wordIndex, wordIndex))
-            }
+            checkNotNull(nodeOfChar)
+            val isPalindromePairs = nodeOfChar.isTermination &&
+                    nodeOfChar.wordIndex != wordIndex &&
+                    word.isPalindrome(0 until index)
+            if (isPalindromePairs) container.add(listOf(nodeOfChar.wordIndex, wordIndex))
 
-            currNode = matchedChild
+            currNode = nodeOfChar
         }
-        return currNode
+
+        addPairsWhenComplementOfWordIsLonger(container, wordIndex, currNode)
     }
 
-    private fun addPalindromePairThatCounterPartIsLonger(
+    private fun addPairsWhenComplementOfWordIsLonger(
         container: MutableList<List<Int>>,
         wordIndex: Int,
         lastMatchedNode: CustomTrieNode,
         accString: StringBuilder = StringBuilder()
     ) {
-        for (child in lastMatchedNode.children) {
-            if (child != null) {
-                accString.append(child.char)
-                if (child.isTermination && accString.isPalindrome()) {
-                    container.add(listOf(child.wordIndex, wordIndex))
-                }
-                addPalindromePairThatCounterPartIsLonger(container, wordIndex, child, accString)
+        for (nodeOfChar in lastMatchedNode.nextNodes) {
+            if (nodeOfChar != null) {
+                accString.append(nodeOfChar.char)
+                val isPalindromePairs = nodeOfChar.isTermination && accString.isPalindrome()
+                if (isPalindromePairs) container.add(listOf(nodeOfChar.wordIndex, wordIndex))
+
+                addPairsWhenComplementOfWordIsLonger(container, wordIndex, nodeOfChar, accString)
                 accString.deleteCharAt(accString.lastIndex)
             }
         }
