@@ -10,18 +10,18 @@ class Solution {
     fun convert(s: String, numRows: Int): String {
         if (numRows == 1) return s
 
-        val stringPerRow = List(numRows) { StringBuilder() }
-        val lastRowIndex = numRows - 1
-        var rowToAppend = 0
-        var rowStepToNextAppend = 1
+        val strEachRow = List(numRows) { StringBuilder() }
+        val lastRow = numRows - 1
+        var currRow = 0
+        var step = 1
         for (char in s) {
-            stringPerRow[rowToAppend].append(char)
-            rowToAppend += rowStepToNextAppend
-            when (rowToAppend) {
-                0 -> rowStepToNextAppend = 1
-                lastRowIndex -> rowStepToNextAppend = -1
+            strEachRow[currRow].append(char)
+            currRow += step
+            when (currRow) {
+                0 -> step = 1
+                lastRow -> step = -1
             }
         }
-        return stringPerRow.joinToString(separator = "")
+        return strEachRow.joinToString(separator = "")
     }
 }
