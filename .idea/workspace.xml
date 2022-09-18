@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Fix problem 336 : Revise implementation and improve readability;&#10;&#10;- Now empty string is a valid palindrome;&#10;&#10;- Now Root of trie is associated with the empty string;">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem336/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem336/Solution.kt" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Fix problem 336 : Revise implementation and improve readability;&#10;&#10;- Now empty string is a valid palindrome;&#10;&#10;- Now Root of trie is associated with the empty string;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,13 +75,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00080" summary="Update problem 7 : improve naming and function signatures;">
-      <created>1663087052792</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1663087052792</updated>
     </task>
     <task id="LOCAL-00081" summary="Update problem 2248 : refactor local functions;">
       <created>1663087992018</created>
@@ -421,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663473346188</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="Fix problem 336 : Revise implementation and improve readability;&#10;&#10;- Now empty string is a valid palindrome;&#10;&#10;- Now Root of trie is associated with the empty string;">
+      <created>1663473747509</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1663473747509</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

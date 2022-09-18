@@ -91,7 +91,7 @@ class Solution {
         trieRoot: CustomTrieNode
     ): CustomTrieNode? {
 
-        addPairsOfEmptyStringPrefixIfExist(container, word, wordIndex, trieRoot)
+        addPairsThatPrefixIsEmptyIfExist(container, word, wordIndex, trieRoot)
 
         var currNode = trieRoot
         for (index in word.indices.reversed()) {
@@ -110,7 +110,7 @@ class Solution {
         return currNode
     }
 
-    private fun addPairsOfEmptyStringPrefixIfExist(
+    private fun addPairsThatPrefixIsEmptyIfExist(
         container: MutableList<List<Int>>,
         word: String,
         wordIndex: Int,
