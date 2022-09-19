@@ -37,11 +37,11 @@ class Solution {
 
     private fun groupFilesByContent(
         paths: Array<String>,
-        pathIndexToDirectory: Map<Int, String>
+        directoryPerPathIndex: Map<Int, String>
     ): Map<String, List<File>> {
         val group = hashMapOf<String, MutableList<File>>()
         for ((index, path) in paths.withIndex()) {
-            val directory = pathIndexToDirectory[index]
+            val directory = directoryPerPathIndex[index]
             checkNotNull(directory)
             addFilesToFilesGroupByContent(path, index, directory.length, group)
         }
@@ -83,13 +83,13 @@ class Solution {
 
     private fun getFilePathsHavingDuplicateContent(
         contentToFiles: Map<String, List<File>>,
-        pathIndexToDirectory: Map<Int, String>
+        directoryPerPathIndex: Map<Int, String>
     ): List<List<String>> {
         val container = mutableListOf<List<String>>()
         for ((_, files) in contentToFiles) {
             val hasDuplicate = files.size > 1
             if (hasDuplicate) {
-                val paths = getPathsOfFiles(files, pathIndexToDirectory)
+                val paths = getPathsOfFiles(files, directoryPerPathIndex)
                 container.add(paths)
             }
         }
@@ -98,10 +98,10 @@ class Solution {
 
     private fun getPathsOfFiles(
         files: List<File>,
-        pathIndexToDirectory: Map<Int, String>
+        directoryPerPathIndex: Map<Int, String>
     ): List<String> {
         val paths = files.map { file ->
-            val directory = pathIndexToDirectory[file.pathIndex]
+            val directory = directoryPerPathIndex[file.pathIndex]
             checkNotNull(directory)
             getPathOfFile(file, directory)
         }
