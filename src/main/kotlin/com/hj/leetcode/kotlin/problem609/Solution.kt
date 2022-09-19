@@ -8,12 +8,12 @@ class Solution {
      * Time O(NM) and Aux_Space O(NM) where N is size of paths and M is the average length of path;
      */
     fun findDuplicate(paths: Array<String>): List<List<String>> {
-        val directoryByPathIndex = groupDirectoryByPathIndex(paths)
-        val filesByContent = groupFilesByContent(paths, directoryByPathIndex)
-        return getFilePathsHavingDuplicateContent(filesByContent, directoryByPathIndex)
+        val directoryPerPathIndex = groupDirectoryPerPathIndex(paths)
+        val filesByContent = groupFilesByContent(paths, directoryPerPathIndex)
+        return getFilePathsHavingDuplicateContent(filesByContent, directoryPerPathIndex)
     }
 
-    private fun groupDirectoryByPathIndex(paths: Array<String>): Map<Int, String> {
+    private fun groupDirectoryPerPathIndex(paths: Array<String>): Map<Int, String> {
         val group = hashMapOf<Int, String>()
         for ((index, path) in paths.withIndex()) {
             val directory = getDirectoryOfPath(path)
