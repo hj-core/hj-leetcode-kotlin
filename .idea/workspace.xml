@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 609 : Refactor and improve readability;">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 609 : Minor format issue;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem609/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem609/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,27 +78,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00098" summary="Update problem 1770 : Improve readability;">
-      <created>1663322077364</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1663322077365</updated>
-    </task>
-    <task id="LOCAL-00099" summary="Update problem 1770 : Refactor and improve space complexity;">
-      <created>1663328143957</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1663328143957</updated>
-    </task>
-    <task id="LOCAL-00100" summary="Update problem 1770 : Refactor and improve space complexity;">
-      <created>1663329690065</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1663329690065</updated>
     </task>
     <task id="LOCAL-00101" summary="Update problem 1770 : Refactor and improve space complexity;">
       <created>1663330020308</created>
@@ -421,7 +401,28 @@
       <option name="project" value="LOCAL" />
       <updated>1663574944329</updated>
     </task>
-    <option name="localTasksCounter" value="147" />
+    <task id="LOCAL-00147" summary="Update problem 609 : Refactor and improve readability;">
+      <created>1663575175628</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1663575175628</updated>
+    </task>
+    <task id="LOCAL-00148" summary="Update problem 609 : Minor change;">
+      <created>1663576921235</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1663576921235</updated>
+    </task>
+    <task id="LOCAL-00149" summary="Update problem 609 : Minor change;">
+      <created>1663581256784</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1663581256784</updated>
+    </task>
+    <option name="localTasksCounter" value="150" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -471,9 +472,9 @@
     <MESSAGE value="Update problem 6 : Improve readability;" />
     <MESSAGE value="Add solution of problem 210;" />
     <MESSAGE value="Add solution of problem 609;" />
-    <MESSAGE value="Update problem 609 : Minor change;" />
     <MESSAGE value="Update problem 609 : Refactor and improve readability;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 609 : Refactor and improve readability;" />
+    <MESSAGE value="Update problem 609 : Minor format issue;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 609 : Minor format issue;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
