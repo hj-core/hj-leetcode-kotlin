@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 609 : Minor format issue;">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 609 : Improve readability;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem609/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem609/Solution.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem210/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem210/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,13 +78,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00101" summary="Update problem 1770 : Refactor and improve space complexity;">
-      <created>1663330020308</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1663330020308</updated>
     </task>
     <task id="LOCAL-00102" summary="Update problem 1770 : Refactor and improve space complexity;">
       <created>1663331464693</created>
@@ -422,7 +415,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663581256784</updated>
     </task>
-    <option name="localTasksCounter" value="150" />
+    <task id="LOCAL-00150" summary="Update problem 609 : Minor format issue;">
+      <created>1663582466495</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1663582466495</updated>
+    </task>
+    <option name="localTasksCounter" value="151" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -449,7 +449,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix problem 1457 : incorrect space complexity;" />
     <MESSAGE value="Add solution of problem 47;" />
     <MESSAGE value="Add solution of problem 1317;" />
     <MESSAGE value="Add solution of problem 45;" />
@@ -473,8 +472,9 @@
     <MESSAGE value="Add solution of problem 210;" />
     <MESSAGE value="Add solution of problem 609;" />
     <MESSAGE value="Update problem 609 : Refactor and improve readability;" />
-    <MESSAGE value="Update problem 609 : Minor format issue;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 609 : Minor format issue;" />
+    <MESSAGE value="Update problem 609 : Minor change;" />
+    <MESSAGE value="Update problem 609 : Improve readability;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 609 : Improve readability;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

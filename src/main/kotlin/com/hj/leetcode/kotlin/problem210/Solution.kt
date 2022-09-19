@@ -8,12 +8,12 @@ class Solution {
      * Time O(V+E) and Space O(V+E) where V is numCourses and E is size of prerequisites;
      */
     fun findOrder(numCourses: Int, prerequisites: Array<IntArray>): IntArray {
-        val graph = createPrerequisiteToCourses(numCourses, prerequisites)
-        val count = createCourseToNumPendingPrerequisite(numCourses, prerequisites)
-        return findPathToFinishAllCourses(numCourses, count, graph)
+        val coursesByPrerequisite = groupCoursesByPrerequisite(numCourses, prerequisites)
+        val pendingCount = getNumPendingPrerequisitePerCourse(numCourses, prerequisites)
+        return findPathToFinishAllCourses(numCourses, pendingCount, coursesByPrerequisite)
     }
 
-    private fun createPrerequisiteToCourses(
+    private fun groupCoursesByPrerequisite(
         numCourses: Int,
         prerequisites: Array<IntArray>
     ): List<List<Int>> {
@@ -26,7 +26,7 @@ class Solution {
         return graph
     }
 
-    private fun createCourseToNumPendingPrerequisite(
+    private fun getNumPendingPrerequisitePerCourse(
         numCourses: Int,
         prerequisites: Array<IntArray>
     ): IntArray {
@@ -40,14 +40,15 @@ class Solution {
 
     private fun findPathToFinishAllCourses(
         numCourses: Int,
-        courseToNumPendingPrerequisite: IntArray,
-        prerequisiteToCourses: List<List<Int>>
+        numPendingPrerequisitePerCourse: IntArray,
+        coursesByPrerequisite: List<List<Int>>
     ): IntArray {
+        val pendingCount = numPendingPrerequisitePerCourse
         val path = IntArray(numCourses)
 
         var indexNextCourse = 0
-        for (course in courseToNumPendingPrerequisite.indices) {
-            val noPrerequisite = courseToNumPendingPrerequisite[course] == 0
+        for (course in pendingCount.indices) {
+            val noPrerequisite = pendingCount[course] == 0
             if (noPrerequisite) {
                 path[indexNextCourse] = course
                 indexNextCourse++
@@ -57,11 +58,11 @@ class Solution {
         var indexPrevCourse = 0
         while (indexPrevCourse < indexNextCourse) {
             val completedCourse = path[indexPrevCourse]
-            val coursesRequiringIt = prerequisiteToCourses[completedCourse]
+            val coursesRequiringIt = coursesByPrerequisite[completedCourse]
 
             for (course in coursesRequiringIt) {
-                courseToNumPendingPrerequisite[course]--
-                val canBeCompleted = courseToNumPendingPrerequisite[course] == 0
+                pendingCount[course]--
+                val canBeCompleted = pendingCount[course] == 0
                 if (canBeCompleted) {
                     path[indexNextCourse] = course
                     indexNextCourse++
