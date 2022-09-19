@@ -12,28 +12,36 @@ class Solution {
      * Time O(N) and Space O(1) where N is the size of nums;
      */
     fun sortColors(nums: IntArray): Unit {
+        val numReds = sortRedAndReturnNumReds(nums)
+        sortOthersAfterRedAreSorted(nums, numReds)
+    }
+
+    private fun sortRedAndReturnNumReds(colors: IntArray): Int {
         var indexNextRed = 0
-        for ((index, color) in nums.withIndex()) {
+        for ((index, color) in colors.withIndex()) {
             if (color == red) {
-                nums.swap(index, indexNextRed)
+                colors.swap(index, indexNextRed)
                 indexNextRed++
             }
         }
+        return indexNextRed
+    }
 
-        var index = indexNextRed
-        var indexNextBlue = nums.lastIndex
+    private fun IntArray.swap(index: Int, withIndex: Int) {
+        this[index] = this[withIndex].also { this[withIndex] = this[index] }
+    }
+
+    private fun sortOthersAfterRedAreSorted(colors: IntArray, numReds: Int) {
+        var index = numReds
+        var indexNextBlue = colors.lastIndex
         while (index < indexNextBlue) {
-            val color = nums[index]
+            val color = colors[index]
             if (color == blue) {
-                nums.swap(index, indexNextBlue)
+                colors.swap(index, indexNextBlue)
                 indexNextBlue--
             } else {
                 index++
             }
         }
-    }
-
-    private fun IntArray.swap(index: Int, withIndex: Int) {
-        this[index] = this[withIndex].also { this[withIndex] = this[index] }
     }
 }
