@@ -8,12 +8,12 @@ class Solution {
      * Time O(NM) and Aux_Space O(NM) where N is size of paths and M is the average length of path;
      */
     fun findDuplicate(paths: Array<String>): List<List<String>> {
-        val directoryPerPathIndex = groupDirectoryPerPathIndex(paths)
+        val directoryPerPathIndex = getDirectoryPerPathIndex(paths)
         val filesByContent = groupFilesByContent(paths, directoryPerPathIndex)
         return getFilePathsHavingDuplicateContent(filesByContent, directoryPerPathIndex)
     }
 
-    private fun groupDirectoryPerPathIndex(paths: Array<String>): Map<Int, String> {
+    private fun getDirectoryPerPathIndex(paths: Array<String>): Map<Int, String> {
         val group = hashMapOf<Int, String>()
         for ((index, path) in paths.withIndex()) {
             val directory = getDirectoryOfPath(path)
@@ -43,20 +43,20 @@ class Solution {
         for ((index, path) in paths.withIndex()) {
             val directory = pathIndexToDirectory[index]
             checkNotNull(directory)
-            addFilesToCollectionByContent(path, index, directory.length, group)
+            addFilesToFilesGroupByContent(path, index, directory.length, group)
         }
         return group
     }
 
     private data class File(val name: String, val pathIndex: Int)
 
-    private fun addFilesToCollectionByContent(
+    private fun addFilesToFilesGroupByContent(
         path: String,
         pathIndex: Int,
         directoryLength: Int,
         container: MutableMap<String, MutableList<File>>
     ) {
-        var index = getStartIndexOfFirstFile(directoryLength)
+        var index = directoryLength + 1
         val builder = StringBuilder()
         var fileName = ""
 
@@ -80,8 +80,6 @@ class Solution {
             index++
         }
     }
-
-    private fun getStartIndexOfFirstFile(directoryLength: Int) = directoryLength + 1
 
     private fun getFilePathsHavingDuplicateContent(
         contentToFiles: Map<String, List<File>>,

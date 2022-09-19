@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 609 : Improve readability;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem210/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem210/Solution.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem609/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem609/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,20 +77,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00102" summary="Update problem 1770 : Refactor and improve space complexity;">
-      <created>1663331464693</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1663331464693</updated>
-    </task>
-    <task id="LOCAL-00103" summary="Update problem 1770 : Refactor and improve space complexity;">
-      <created>1663331744687</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1663331744687</updated>
     </task>
     <task id="LOCAL-00104" summary="Update problem 1770 : Refactor and Improve space complexity;&#10;&#10;- Zip the previous dp matrix to array and modify in place;">
       <created>1663332037363</created>
@@ -422,7 +407,21 @@
       <option name="project" value="LOCAL" />
       <updated>1663582466495</updated>
     </task>
-    <option name="localTasksCounter" value="151" />
+    <task id="LOCAL-00151" summary="Update problem 210 : Improve readability;">
+      <created>1663583616847</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1663583616847</updated>
+    </task>
+    <task id="LOCAL-00152" summary="Update problem 609 : Improve readability;">
+      <created>1663583753693</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1663583753693</updated>
+    </task>
+    <option name="localTasksCounter" value="153" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -449,7 +448,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution of problem 47;" />
     <MESSAGE value="Add solution of problem 1317;" />
     <MESSAGE value="Add solution of problem 45;" />
     <MESSAGE value="Add solution of problem 143;" />
@@ -473,6 +471,7 @@
     <MESSAGE value="Add solution of problem 609;" />
     <MESSAGE value="Update problem 609 : Refactor and improve readability;" />
     <MESSAGE value="Update problem 609 : Minor change;" />
+    <MESSAGE value="Update problem 210 : Improve readability;" />
     <MESSAGE value="Update problem 609 : Improve readability;" />
     <option name="LAST_COMMIT_MESSAGE" value="Update problem 609 : Improve readability;" />
   </component>
