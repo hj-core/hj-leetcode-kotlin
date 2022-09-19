@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 609;" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 609 : Refactor and improve readability;">
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem609/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem609/Solution.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,41 +77,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00093" summary="Add solution of problem 2007;">
-      <created>1663232733167</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1663232733167</updated>
-    </task>
-    <task id="LOCAL-00094" summary="Add solution of problem 2007;">
-      <created>1663235311232</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1663235311232</updated>
-    </task>
-    <task id="LOCAL-00095" summary="Add solution of problem 78;">
-      <created>1663244959068</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1663244959068</updated>
-    </task>
-    <task id="LOCAL-00096" summary="Add solution of problem 1770;">
-      <created>1663317509732</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1663317509733</updated>
-    </task>
-    <task id="LOCAL-00097" summary="Update problem 1770 : Improve readability;">
-      <created>1663321872984</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1663321872984</updated>
     </task>
     <task id="LOCAL-00098" summary="Update problem 1770 : Improve readability;">
       <created>1663322077364</created>
@@ -419,7 +386,42 @@
       <option name="project" value="LOCAL" />
       <updated>1663568637639</updated>
     </task>
-    <option name="localTasksCounter" value="142" />
+    <task id="LOCAL-00142" summary="Add solution of problem 609;">
+      <created>1663569472823</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1663569472823</updated>
+    </task>
+    <task id="LOCAL-00143" summary="Update problem 609 : Minor change;">
+      <created>1663571864714</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1663571864714</updated>
+    </task>
+    <task id="LOCAL-00144" summary="Update problem 609 : Minor change;">
+      <created>1663572883512</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1663572883512</updated>
+    </task>
+    <task id="LOCAL-00145" summary="Update problem 609 : Refactor and improve readability;">
+      <created>1663572956466</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1663572956466</updated>
+    </task>
+    <task id="LOCAL-00146" summary="Update problem 609 : Refactor and improve readability;">
+      <created>1663574944329</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1663574944329</updated>
+    </task>
+    <option name="localTasksCounter" value="147" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -446,8 +448,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution of problem 1457;" />
-    <MESSAGE value="Fix problem 94 : incorrect space complexity;" />
     <MESSAGE value="Fix problem 1457 : incorrect space complexity;" />
     <MESSAGE value="Add solution of problem 47;" />
     <MESSAGE value="Add solution of problem 1317;" />
@@ -471,7 +471,9 @@
     <MESSAGE value="Update problem 6 : Improve readability;" />
     <MESSAGE value="Add solution of problem 210;" />
     <MESSAGE value="Add solution of problem 609;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 609;" />
+    <MESSAGE value="Update problem 609 : Minor change;" />
+    <MESSAGE value="Update problem 609 : Refactor and improve readability;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 609 : Refactor and improve readability;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -10,19 +10,19 @@ class Solution {
     fun findDuplicate(paths: Array<String>): List<List<String>> {
         val directoryTable = createPathIndexToDirectory(paths)
         val contentTable = createContentToFiles(paths, directoryTable)
-        return getPathsOfDuplicate(contentTable, directoryTable)
+        return getFilePathsPerDuplicateContent(contentTable, directoryTable)
     }
 
     private fun createPathIndexToDirectory(paths: Array<String>): Map<Int, String> {
         val table = hashMapOf<Int, String>()
         for ((index, path) in paths.withIndex()) {
-            val directory = getDirectory(path)
+            val directory = getDirectoryOfPath(path)
             table[index] = directory
         }
         return table
     }
 
-    private fun getDirectory(path: String): String {
+    private fun getDirectoryOfPath(path: String): String {
         val directory = StringBuilder()
         var index = 0
         while (index < path.length) {
@@ -41,7 +41,8 @@ class Solution {
     ): Map<String, List<File>> {
         val table = hashMapOf<String, MutableList<File>>()
         for ((index, path) in paths.withIndex()) {
-            val directory = checkNotNull(pathIndexToDirectory[index])
+            val directory = pathIndexToDirectory[index]
+            checkNotNull(directory)
             updateContentToFiles(path, index, directory.length, table)
         }
         return table
@@ -60,8 +61,7 @@ class Solution {
         var fileName = ""
 
         while (index < path.length) {
-            val char = path[index]
-            when (path[index]) {
+            when (val char = path[index]) {
                 ' ' -> builder.clear()
                 '(' -> {
                     fileName = builder.toString()
@@ -83,33 +83,34 @@ class Solution {
 
     private fun getStartIndexOfFirstFile(directoryLength: Int) = directoryLength + 1
 
-    private fun getPathsOfDuplicate(
+    private fun getFilePathsPerDuplicateContent(
         contentToFiles: Map<String, List<File>>,
         pathIndexToDirectory: Map<Int, String>
     ): List<List<String>> {
         val container = mutableListOf<List<String>>()
         for ((_, files) in contentToFiles) {
             val hasDuplicate = files.size > 1
-            if (hasDuplicate) addPathsOfDuplicate(files, pathIndexToDirectory, container)
+            if (hasDuplicate) {
+                val paths = getPathsOfFiles(files, pathIndexToDirectory)
+                container.add(paths)
+            }
         }
         return container
     }
 
-    private fun addPathsOfDuplicate(
+    private fun getPathsOfFiles(
         files: List<File>,
-        pathIndexToDirectory: Map<Int, String>,
-        container: MutableList<List<String>>
-    ) {
-        val paths = mutableListOf<String>()
-        for (file in files) {
-            val directory = checkNotNull(pathIndexToDirectory[file.pathIndex])
-            val filePath = getFilePath(file, directory)
-            paths.add(filePath)
+        pathIndexToDirectory: Map<Int, String>
+    ): List<String> {
+        val paths = files.map {  file ->
+            val directory = pathIndexToDirectory[file.pathIndex]
+            checkNotNull(directory)
+            getPathOfFile(file, directory)
         }
-        container.add(paths)
+        return paths
     }
 
-    private fun getFilePath(file: File, directory: String): String {
+    private fun getPathOfFile(file: File, directory: String): String {
         val pathLength = directory.length + 1 + file.name.length
         val path = StringBuilder(pathLength)
             .append(directory)
