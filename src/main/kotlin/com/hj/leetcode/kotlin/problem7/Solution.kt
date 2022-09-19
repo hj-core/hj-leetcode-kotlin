@@ -10,45 +10,36 @@ class Solution {
      * Time O(LogN) and Space (LogN) where N equals x;
      */
     fun reverse(x: Int): Int {
-        val reversedDigits = getReversedDigits(x)
-        return getReversedNumber(reversedDigits, x < 0)
+        val reversedDigits = getDigitsInReversedOrder(x)
+        return getNumberFormedByDigits(reversedDigits, x < 0)
     }
 
-    private fun getReversedDigits(number: Int): List<Int> {
+    private fun getDigitsInReversedOrder(number: Int): List<Int> {
+        if (number == 0) return mutableListOf(0)
+
         val reversedDigits = mutableListOf<Int>()
-        if (number == 0) reversedDigits.add(0) else updateReversedDigitsForNonZero(reversedDigits, number)
-        return reversedDigits
-    }
-
-    private fun updateReversedDigitsForNonZero(reversedDigits: MutableList<Int>, number: Int) {
-        require(number != 0)
         var num = Math.abs(number)
         while (num > 0) {
             reversedDigits.add(num % 10)
             num /= 10
         }
+        return reversedDigits
     }
 
-    private fun getReversedNumber(reversedDigits: List<Int>, isNegative: Boolean): Int {
-        if (isReversedOverflow(reversedDigits)) return 0
+    private fun getNumberFormedByDigits(digits: List<Int>, isNegative: Boolean): Int {
+        if (isNumberOverflow(digits)) return 0
 
-        val abs = reversedDigits.fold(0) { acc, i -> acc * 10 + i }
+        val abs = digits.fold(0) { acc, i -> acc * 10 + i }
         return if (isNegative) -abs else abs
     }
 
-    private fun isReversedOverflow(reversedDigits: List<Int>): Boolean {
-        return when {
-            reversedDigits.size < digitsOfIntMax.size -> false
-            reversedDigits.size > digitsOfIntMax.size -> throw IllegalStateException()
-            else -> checkOverflowForEqualNumberOfDigits(reversedDigits)
-        }
-    }
+    private fun isNumberOverflow(digits: List<Int>): Boolean {
+        if (digits.size < digitsOfIntMax.size) return false
 
-    private fun checkOverflowForEqualNumberOfDigits(reversedDigits: List<Int>): Boolean {
-        for (index in reversedDigits.indices) {
+        for (index in digits.indices) {
             when {
-                reversedDigits[index] < digitsOfIntMax[index] -> return false
-                reversedDigits[index] > digitsOfIntMax[index] -> return true
+                digits[index] < digitsOfIntMax[index] -> return false
+                digits[index] > digitsOfIntMax[index] -> return true
             }
         }
         return false

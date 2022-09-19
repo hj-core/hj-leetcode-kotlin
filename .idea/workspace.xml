@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 75 : Refactor and improve readability;">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 609 : Improve readability;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem7/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem7/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,13 +82,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00106" summary="Update problem 1770 : Improve readability;">
-      <created>1663337917950</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1663337917950</updated>
     </task>
     <task id="LOCAL-00107" summary="Update problem 1770 : Improve readability;">
       <created>1663342952233</created>
@@ -425,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663586945664</updated>
     </task>
-    <option name="localTasksCounter" value="155" />
+    <task id="LOCAL-00155" summary="Update problem 609 : Improve readability;">
+      <created>1663588084615</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1663588084615</updated>
+    </task>
+    <option name="localTasksCounter" value="156" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -452,7 +453,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution of problem 45;" />
     <MESSAGE value="Add solution of problem 143;" />
     <MESSAGE value="Add solution of problem 2007;" />
     <MESSAGE value="Add solution of problem 78;" />
@@ -477,7 +477,8 @@
     <MESSAGE value="Update problem 210 : Improve readability;" />
     <MESSAGE value="Update problem 609 : Refactor and improve readability;" />
     <MESSAGE value="Update problem 75 : Refactor and improve readability;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 75 : Refactor and improve readability;" />
+    <MESSAGE value="Update problem 609 : Improve readability;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 609 : Improve readability;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
