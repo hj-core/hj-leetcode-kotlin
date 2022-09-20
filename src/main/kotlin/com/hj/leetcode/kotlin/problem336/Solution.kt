@@ -12,33 +12,6 @@ package com.hj.leetcode.kotlin.problem336
  * Note2: There is an algorithm called Manacher's algorithm which seems can improve time complexity;
  */
 class Solution {
-    /* Complexity:
-     * Time O(N * K^2) and Aux_Space O(M) where N is the size of words, K the longest length of word in words
-     * and M is the flat length of words;
-     */
-    fun palindromePairs(words: Array<String>): List<List<Int>> {
-        val pairs = mutableListOf<List<Int>>()
-        addPalindromePairsInWords(pairs, words)
-        return pairs
-    }
-
-    private fun addPalindromePairsInWords(
-        container: MutableList<List<Int>>,
-        words: Array<String>
-    ) {
-        val trieRoot = createTrie(words)
-        for ((index, word) in words.withIndex()) {
-            addPairsThatWordIsSuffix(container, word, index, trieRoot)
-        }
-    }
-
-    private fun createTrie(words: Array<String>): CustomTrieNode {
-        val root = CustomTrieNode(null)
-        for ((index, word) in words.withIndex()) {
-            root.insert(word, index)
-        }
-        return root
-    }
 
     private class CustomTrieNode(val char: Char?) {
         init {
@@ -60,6 +33,29 @@ class Solution {
         }
     }
 
+    /* Complexity:
+     * Time O(N * K^2) and Aux_Space O(M) where N is the size of words, K the longest length of word in words
+     * and M is the flat length of words;
+     */
+    fun palindromePairs(words: Array<String>): List<List<Int>> {
+        val trie = createTrie(words)
+        val palindromePairs = mutableListOf<List<Int>>()
+        for (index in words.indices) {
+            val word = words[index]
+            addPairsThatWordIsSuffix(word, index, trie, palindromePairs)
+        }
+        return palindromePairs
+    }
+
+    private fun createTrie(words: Array<String>): CustomTrieNode {
+        val root = CustomTrieNode(null)
+        for (index in words.indices) {
+            val word = words[index]
+            root.insert(word, index)
+        }
+        return root
+    }
+
     private fun CustomTrieNode.insert(lowercaseOnly: String, wordIndex: Int) {
         var currNode = this
 
@@ -73,27 +69,27 @@ class Solution {
     }
 
     private fun addPairsThatWordIsSuffix(
-        container: MutableList<List<Int>>,
         word: String,
         wordIndex: Int,
-        trieRoot: CustomTrieNode
+        wordsTrie: CustomTrieNode,
+        container: MutableList<List<Int>>
     ) {
         val lastMatchedNode =
-            addPairsThatPrefixIsNotLongerAndReturnLastMatchedNode(container, word, wordIndex, trieRoot)
+            addPairsThatWordIsNotShorterAndReturnLastMatchedNode(word, wordIndex, wordsTrie, container)
 
-        addPairsThatPrefixIsLonger(container, wordIndex, lastMatchedNode)
+        addPairsThatWordIsShorter(wordIndex, lastMatchedNode, container)
     }
 
-    private fun addPairsThatPrefixIsNotLongerAndReturnLastMatchedNode(
-        container: MutableList<List<Int>>,
+    private fun addPairsThatWordIsNotShorterAndReturnLastMatchedNode(
         word: String,
         wordIndex: Int,
-        trieRoot: CustomTrieNode
+        wordsTrie: CustomTrieNode,
+        container: MutableList<List<Int>>
     ): CustomTrieNode? {
+        var currNode = wordsTrie
+        val hasEmpty = currNode.wordIndex >= 0
+        if (hasEmpty) addPairIfEmptyIsValidPrefix(word, wordIndex, currNode.wordIndex, container)
 
-        addPairsThatPrefixIsEmptyIfExist(container, word, wordIndex, trieRoot)
-
-        var currNode = trieRoot
         for (index in word.indices.reversed()) {
             val char = word[index]
             val nodeNotExist = currNode.getNext(char) == null
@@ -110,17 +106,15 @@ class Solution {
         return currNode
     }
 
-    private fun addPairsThatPrefixIsEmptyIfExist(
-        container: MutableList<List<Int>>,
+    private fun addPairIfEmptyIsValidPrefix(
         word: String,
         wordIndex: Int,
-        trieRoot: CustomTrieNode
+        indexOfEmpty: Int,
+        container: MutableList<List<Int>>
     ) {
-        val indexOfEmptyString = trieRoot.wordIndex
-        val isPalindromePairs =
-            indexOfEmptyString >= 0 && indexOfEmptyString != wordIndex && word.isPalindrome()
+        val isPalindromePairs = indexOfEmpty != wordIndex && word.isPalindrome()
         if (isPalindromePairs) {
-            container.add(listOf(indexOfEmptyString, wordIndex))
+            container.add(listOf(indexOfEmpty, wordIndex))
         }
     }
 
@@ -136,10 +130,10 @@ class Solution {
         return true
     }
 
-    private fun addPairsThatPrefixIsLonger(
-        container: MutableList<List<Int>>,
+    private fun addPairsThatWordIsShorter(
         wordIndex: Int,
         lastMatchedNode: CustomTrieNode?,
+        container: MutableList<List<Int>>,
         accString: StringBuilder = StringBuilder()
     ) {
         if (lastMatchedNode == null) return
@@ -150,7 +144,7 @@ class Solution {
                 val isPalindromePairs = nodeOfChar.isTermination && accString.isPalindrome()
                 if (isPalindromePairs) container.add(listOf(nodeOfChar.wordIndex, wordIndex))
 
-                addPairsThatPrefixIsLonger(container, wordIndex, nodeOfChar, accString)
+                addPairsThatWordIsShorter(wordIndex, nodeOfChar, container, accString)
                 accString.deleteCharAt(accString.lastIndex)
             }
         }
