@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 336 : Refactor and improve readability;">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 985;">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem934/Solution.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,13 +82,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00113" summary="Fix problem 336 : Revise time complexity and improve readability;">
-      <created>1663422672622</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1663422672622</updated>
     </task>
     <task id="LOCAL-00114" summary="Fix problem 336 : Revise time complexity and improve readability;">
       <created>1663422939655</created>
@@ -425,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663677584326</updated>
     </task>
-    <option name="localTasksCounter" value="162" />
+    <task id="LOCAL-00162" summary="Add solution of problem 985;">
+      <created>1663727342876</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1663727342877</updated>
+    </task>
+    <option name="localTasksCounter" value="163" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -452,7 +453,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution of problem 78;" />
     <MESSAGE value="Add solution of problem 1770;" />
     <MESSAGE value="Update problem 1770 : Refactor and improve space complexity;&#10;&#10;- Zip the previous dp matrix to array and modify in place;" />
     <MESSAGE value="Update problem 1770 : Refactor and Improve space complexity;&#10;&#10;- Zip the previous dp matrix to array and modify in place;" />
@@ -477,7 +477,8 @@
     <MESSAGE value="Update problem 75 : Refactor and improve readability;" />
     <MESSAGE value="Add solution of problem 1234;" />
     <MESSAGE value="Update problem 336 : Refactor and improve readability;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 336 : Refactor and improve readability;" />
+    <MESSAGE value="Add solution of problem 985;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 985;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
