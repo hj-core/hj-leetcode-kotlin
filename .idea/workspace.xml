@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 47 : Refactor and adopt backtracking solution;">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 934 : Revise and improve readability;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem934/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem934/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,13 +81,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00118" summary="Fix problem 336 : Provide time complexity and improve readability;">
-      <created>1663424267843</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1663424267843</updated>
     </task>
     <task id="LOCAL-00119" summary="Fix problem 336 : Provide time complexity and improve readability;">
       <created>1663424683988</created>
@@ -426,7 +418,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663748799452</updated>
     </task>
-    <option name="localTasksCounter" value="167" />
+    <task id="LOCAL-00167" summary="Update problem 934 : Revise and improve readability;">
+      <created>1663750092919</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1663750092919</updated>
+    </task>
+    <option name="localTasksCounter" value="168" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -440,7 +439,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="problem934" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -453,7 +452,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 1770 : Refactor and Improve space complexity;&#10;&#10;- Zip the previous dp matrix to array and modify in place;" />
     <MESSAGE value="Update problem 1770 : Improve readability;" />
     <MESSAGE value="Add solution of problem 11;" />
     <MESSAGE value="Add solution of problem 336;" />
@@ -478,7 +476,8 @@
     <MESSAGE value="Add solution of problem 985;" />
     <MESSAGE value="Add solution of problem 934;" />
     <MESSAGE value="Update problem 47 : Refactor and adopt backtracking solution;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 47 : Refactor and adopt backtracking solution;" />
+    <MESSAGE value="Update problem 934 : Revise and improve readability;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 934 : Revise and improve readability;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
