@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 985;">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem934/Solution.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 47 : Refactor and adopt backtracking solution;">
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem47/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem47/Solution.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem934/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem934/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +30,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="rearrange_package" />
+        <entry key="$PROJECT_DIR$" value="problem934" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -82,34 +82,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00114" summary="Fix problem 336 : Revise time complexity and improve readability;">
-      <created>1663422939655</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1663422939655</updated>
-    </task>
-    <task id="LOCAL-00115" summary="Fix problem 336 : Revise time complexity and improve readability;">
-      <created>1663423910283</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1663423910283</updated>
-    </task>
-    <task id="LOCAL-00116" summary="Fix problem 336 : Provide time complexity and improve readability;">
-      <created>1663424010656</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1663424010656</updated>
-    </task>
-    <task id="LOCAL-00117" summary="Fix problem 336 : Provide time complexity and improve readability;">
-      <created>1663424148740</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1663424148740</updated>
     </task>
     <task id="LOCAL-00118" summary="Fix problem 336 : Provide time complexity and improve readability;">
       <created>1663424267843</created>
@@ -426,7 +398,35 @@
       <option name="project" value="LOCAL" />
       <updated>1663727342877</updated>
     </task>
-    <option name="localTasksCounter" value="163" />
+    <task id="LOCAL-00163" summary="Add solution of problem 934;">
+      <created>1663740265243</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1663740265243</updated>
+    </task>
+    <task id="LOCAL-00164" summary="Update problem 47 : Refactor and adopt backtracking solution;">
+      <created>1663748458998</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1663748458998</updated>
+    </task>
+    <task id="LOCAL-00165" summary="Update problem 47 : Refactor and adopt backtracking solution;">
+      <created>1663748701515</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1663748701515</updated>
+    </task>
+    <task id="LOCAL-00166" summary="Update problem 47 : Refactor and adopt backtracking solution;">
+      <created>1663748799452</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1663748799452</updated>
+    </task>
+    <option name="localTasksCounter" value="167" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -453,8 +453,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution of problem 1770;" />
-    <MESSAGE value="Update problem 1770 : Refactor and improve space complexity;&#10;&#10;- Zip the previous dp matrix to array and modify in place;" />
     <MESSAGE value="Update problem 1770 : Refactor and Improve space complexity;&#10;&#10;- Zip the previous dp matrix to array and modify in place;" />
     <MESSAGE value="Update problem 1770 : Improve readability;" />
     <MESSAGE value="Add solution of problem 11;" />
@@ -478,7 +476,9 @@
     <MESSAGE value="Add solution of problem 1234;" />
     <MESSAGE value="Update problem 336 : Refactor and improve readability;" />
     <MESSAGE value="Add solution of problem 985;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 985;" />
+    <MESSAGE value="Add solution of problem 934;" />
+    <MESSAGE value="Update problem 47 : Refactor and adopt backtracking solution;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 47 : Refactor and adopt backtracking solution;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

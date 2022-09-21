@@ -2,48 +2,47 @@ package com.hj.leetcode.kotlin.problem47
 
 /**
  * LeetCode page: [47. Permutations II](https://leetcode.com/problems/permutations-ii/);
- *
- * TODO 47-1 : Current implementation does not take effort to handle the duplication.
- * TODO 47-2 : Is it a good idea to handle repeated and distinct numbers separately?
  */
 class Solution {
     /* Complexity:
-     * Time O(N * N!) and Space O(N * N!) where N is the size of nums;
+     * Time O(N * N!) and Aux_Space O(N) where N is the size of nums;
      */
     fun permuteUnique(nums: IntArray): List<List<Int>> {
-        val permutes = mutableListOf(mutableListOf(nums[0]))
+        val frequencyPerNum = getFrequencyPerNum(nums)
+        val uniquePermutations = mutableListOf<List<Int>>()
 
-        for (index in 1..nums.lastIndex) {
-            addNumberToEachPermute(nums[index], permutes)
-            addRotationOfExistingPermutes(permutes)
-        }
-
-        val uniquePermutes = permutes.distinct()
-        return uniquePermutes
+        addUniquePermutations(frequencyPerNum, nums.size, uniquePermutations)
+        return uniquePermutations
     }
 
-    private fun addNumberToEachPermute(newNumber: Int, permutes: MutableList<MutableList<Int>>) {
-        for (permute in permutes) {
-            permute.add(newNumber)
+    private fun getFrequencyPerNum(nums: IntArray): MutableMap<Int, Int> {
+        val frequency = hashMapOf<Int, Int>()
+        for (num in nums) {
+            frequency[num] = frequency.getOrDefault(num, 0) + 1
         }
+        return frequency
     }
 
-    private fun addRotationOfExistingPermutes(permutes: MutableList<MutableList<Int>>) {
-        repeat(permutes.size) { index ->
-            addRotationOfSpecificPermute(index, permutes)
+    private fun addUniquePermutations(
+        frequencyPerNum: MutableMap<Int, Int>,
+        length: Int,
+        container: MutableList<List<Int>>,
+        accList: MutableList<Int> = mutableListOf(),
+    ) {
+        val hasCompleted = accList.size == length
+        if (hasCompleted) {
+            val copy = accList.toList()
+            container.add(copy)
+            return
         }
-    }
 
-    private fun addRotationOfSpecificPermute(permuteIndex: Int, permutes: MutableList<MutableList<Int>>) {
-        val permuteToRotate = permutes[permuteIndex]
-        val greatestShift = permuteToRotate.size - 1
-        for (shift in 1..greatestShift) {
-            permutes.add(mutableListOf())
-            for (index in shift..permuteToRotate.lastIndex) {
-                permutes.last().add(permuteToRotate[index])
-            }
-            for (index in 0 until shift) {
-                permutes.last().add(permuteToRotate[index])
+        for ((num, freq) in frequencyPerNum) {
+            if (freq > 0) {
+                frequencyPerNum[num] = freq - 1
+                accList.add(num)
+                addUniquePermutations(frequencyPerNum, length, container, accList)
+                accList.removeAt(accList.lastIndex)
+                frequencyPerNum[num] = freq
             }
         }
     }
