@@ -9,26 +9,26 @@ class Solution {
      */
     fun shortestBridge(grid: Array<IntArray>): Int {
         val visited = List(grid.size) { BooleanArray(grid.size) }
-        var surrounding = findSurroundingOfIslandAndUpdateVisited(visited, grid)
+        var surrounding = findCellsAroundIslandAndUpdateVisited(visited, grid)
 
         var shortest = 0
         while (surrounding.isNotEmpty()) {
             val reachSecondIsland = surrounding.any { grid[it.row][it.column] == 1 }
             if (reachSecondIsland) return shortest
 
-            surrounding = findUnvisitedSurroundingAndUpdateVisited(surrounding, visited, grid)
+            surrounding = findUnvisitedAroundCellsAndUpdateVisited(surrounding, visited, grid)
             shortest++
         }
         throw IllegalStateException("Cannot reach second island.")
     }
 
-    private fun findSurroundingOfIslandAndUpdateVisited(
+    private fun findCellsAroundIslandAndUpdateVisited(
         visited: List<BooleanArray>,
         grid: Array<IntArray>
     ): List<Cell> {
         val seedLand = findSeedLand(grid)
         val surrounding = mutableListOf<Cell>()
-        addSurroundingOfIslandAndUpdateVisited(seedLand, visited, grid, surrounding)
+        addCellsAroundIslandAndUpdateVisited(seedLand, visited, grid, surrounding)
         return surrounding
     }
 
@@ -49,7 +49,7 @@ class Solution {
         val east get() = Cell(row, column + 1)
     }
 
-    private fun addSurroundingOfIslandAndUpdateVisited(
+    private fun addCellsAroundIslandAndUpdateVisited(
         seedLand: Cell,
         visited: List<BooleanArray>,
         grid: Array<IntArray>,
@@ -65,32 +65,32 @@ class Solution {
             if (isSurrounding) {
                 container.add(this)
             } else {
-                addSurroundingOfIslandAndUpdateVisited(north, visited, grid, container)
-                addSurroundingOfIslandAndUpdateVisited(south, visited, grid, container)
-                addSurroundingOfIslandAndUpdateVisited(west, visited, grid, container)
-                addSurroundingOfIslandAndUpdateVisited(east, visited, grid, container)
+                addCellsAroundIslandAndUpdateVisited(north, visited, grid, container)
+                addCellsAroundIslandAndUpdateVisited(south, visited, grid, container)
+                addCellsAroundIslandAndUpdateVisited(west, visited, grid, container)
+                addCellsAroundIslandAndUpdateVisited(east, visited, grid, container)
             }
         }
     }
 
     private fun Cell.isInvalid(grid: Array<IntArray>) = row !in grid.indices || column !in grid[row].indices
 
-    private fun findUnvisitedSurroundingAndUpdateVisited(
+    private fun findUnvisitedAroundCellsAndUpdateVisited(
         cells: List<Cell>,
         visited: List<BooleanArray>,
         grid: Array<IntArray>
     ): List<Cell> {
         val newSurrounding = mutableListOf<Cell>()
         for (cell in cells) {
-            addUnvisitedSurroundingAndUpdateVisited(cell.north, visited, grid, newSurrounding)
-            addUnvisitedSurroundingAndUpdateVisited(cell.south, visited, grid, newSurrounding)
-            addUnvisitedSurroundingAndUpdateVisited(cell.west, visited, grid, newSurrounding)
-            addUnvisitedSurroundingAndUpdateVisited(cell.east, visited, grid, newSurrounding)
+            addCellIfUnvisitedAndUpdateVisited(cell.north, visited, grid, newSurrounding)
+            addCellIfUnvisitedAndUpdateVisited(cell.south, visited, grid, newSurrounding)
+            addCellIfUnvisitedAndUpdateVisited(cell.west, visited, grid, newSurrounding)
+            addCellIfUnvisitedAndUpdateVisited(cell.east, visited, grid, newSurrounding)
         }
         return newSurrounding
     }
 
-    private fun addUnvisitedSurroundingAndUpdateVisited(
+    private fun addCellIfUnvisitedAndUpdateVisited(
         cell: Cell,
         visited: List<BooleanArray>,
         grid: Array<IntArray>,
