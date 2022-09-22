@@ -10,9 +10,9 @@ class Solution2 {
     fun singleNumber(nums: IntArray): Int {
         /* The core of this algorithm is still to find the single number through the frequency of each bit.
          * However, it uses two integers to track the frequency of each bit. Take nth bit as example:
-         *   | nth bit freq     | 0 | 1 | 2 | 3 |
-         *   | nth bit of once  | 0 | 1 | 0 | 0 |
-         *   | nth bit of twice | 0 | 0 | 1 | 0 |
+         *   | nth bit freq     | 0 | 1 | 2 | 3 | 4 |
+         *   | nth bit of once  | 0 | 1 | 0 | 0 | 1 |
+         *   | nth bit of twice | 0 | 0 | 1 | 0 | 0 |
          */
         var once = 0
         var twice = 0
