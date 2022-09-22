@@ -11,7 +11,10 @@ class Solution {
      */
     fun reverse(x: Int): Int {
         val reversedDigits = getDigitsInReversedOrder(x)
-        return getNumberFormedByDigits(reversedDigits, x < 0)
+        if (isNumberOverflow(reversedDigits)) return 0
+
+        val abs = reversedDigits.fold(0) { acc, i -> acc * 10 + i }
+        return if (x > 0) abs else -abs
     }
 
     private fun getDigitsInReversedOrder(number: Int): List<Int> {
@@ -24,13 +27,6 @@ class Solution {
             num /= 10
         }
         return reversedDigits
-    }
-
-    private fun getNumberFormedByDigits(digits: List<Int>, isNegative: Boolean): Int {
-        if (isNumberOverflow(digits)) return 0
-
-        val abs = digits.fold(0) { acc, i -> acc * 10 + i }
-        return if (isNegative) -abs else abs
     }
 
     private fun isNumberOverflow(digits: List<Int>): Boolean {
