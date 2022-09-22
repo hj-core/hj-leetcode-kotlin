@@ -8,19 +8,23 @@ class Solution {
      * Time O(N) and Space O(1) where N is the size of height;
      */
     fun trap(height: IntArray): Int {
-        var trapped = 0
-        var leftIndex = 0
-        var rightIndex = height.lastIndex
-        var maxHeightCanTrap = minOf(height[leftIndex], height[rightIndex])
+        var totalTrapped = 0
 
-        while (leftIndex < rightIndex) {
-            val leftHeight = height[leftIndex]
-            val rightHeight = height[rightIndex]
+        var left = 0
+        var right = height.lastIndex
+        var maxHeightCanTrap = minOf(height[left], height[right])
+
+        while (left < right) {
+            val leftHeight = height[left]
+            val rightHeight = height[right]
             val minHeight = minOf(leftHeight, rightHeight)
-            trapped += (maxHeightCanTrap - minHeight).coerceAtLeast(0)
+
+            val currTrapped = (maxHeightCanTrap - minHeight).coerceAtLeast(0)
+            totalTrapped += currTrapped
             maxHeightCanTrap = maxOf(maxHeightCanTrap, minHeight)
-            if (leftHeight <= rightHeight) leftIndex++ else rightIndex--
+
+            if (leftHeight <= rightHeight) left++ else right--
         }
-        return trapped
+        return totalTrapped
     }
 }
