@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 137;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 137 : Revise explanation of algorithm;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,13 +79,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00123" summary="Update problem 336 : Improve readability;">
-      <created>1663430218668</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1663430218668</updated>
     </task>
     <task id="LOCAL-00124" summary="Update problem 336 : Improve readability;">
       <created>1663430296093</created>
@@ -425,7 +416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663840118062</updated>
     </task>
-    <option name="localTasksCounter" value="172" />
+    <task id="LOCAL-00172" summary="Update problem 137 : Revise explanation of algorithm;">
+      <created>1663841339995</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1663841339995</updated>
+    </task>
+    <option name="localTasksCounter" value="173" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -452,7 +450,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix problem 336 : Revise time complexity and improve readability;" />
     <MESSAGE value="Fix problem 336 : Provide time complexity and improve readability;" />
     <MESSAGE value="Update problem 336 : Revise implementation and improve readability;&#10;&#10;- Now empty string is a valid palindrome;&#10;&#10;- Root of trie is associated with the empty string;" />
     <MESSAGE value="Fix problem 336 : Revise implementation and improve readability;&#10;&#10;- Now empty string is a valid palindrome;&#10;&#10;- Now Root of trie is associated with the empty string;" />
@@ -477,7 +474,8 @@
     <MESSAGE value="Add solution of problem 1696;" />
     <MESSAGE value="Add solution of problem 557;" />
     <MESSAGE value="Add solution of problem 137;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 137;" />
+    <MESSAGE value="Update problem 137 : Revise explanation of algorithm;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 137 : Revise explanation of algorithm;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
