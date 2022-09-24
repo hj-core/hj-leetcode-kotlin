@@ -15,7 +15,7 @@ class Solution {
             return
         }
 
-        val indexSwap = findIndexOfFirstHigherFromEnd(nums, leftIndex + 1, nums[leftIndex])
+        val indexSwap = findIndexOfFirstHigherFromEnd(nums[leftIndex], nums, leftIndex + 1)
         nums.swap(leftIndex, indexSwap)
         nums.reverse(leftIndex + 1..nums.lastIndex)
     }
@@ -30,12 +30,12 @@ class Solution {
     }
 
     private fun IntArray.reverse(range: IntRange) {
-        var left = range.first
-        var right = range.last
-        while (left < right) {
-            swap(left, right)
-            left++
-            right--
+        var leftIndex = range.first
+        var rightIndex = range.last
+        while (leftIndex < rightIndex) {
+            swap(leftIndex, rightIndex)
+            leftIndex++
+            rightIndex--
         }
     }
 
@@ -43,17 +43,17 @@ class Solution {
         this[index] = this[withIndex].also { this[withIndex] = this[index] }
     }
 
-    private fun findIndexOfFirstHigherFromEnd(nums: IntArray, leftBound: Int, target: Int): Int {
+    private fun findIndexOfFirstHigherFromEnd(target: Int, sortedDescending: IntArray, downToIndex: Int): Int {
         val higher = target + 1
-        var leftIndex = leftBound
-        var rightIndex = nums.lastIndex
+        var leftIndex = downToIndex
+        var rightIndex = sortedDescending.lastIndex
         while (leftIndex <= rightIndex) {
             val midIndex = (leftIndex + rightIndex) ushr 1
-            val mid = nums[midIndex]
+            val mid = sortedDescending[midIndex]
             if (mid >= higher) leftIndex = midIndex + 1 else rightIndex = midIndex - 1
         }
 
-        val higherNotFound = nums[rightIndex] < higher
+        val higherNotFound = sortedDescending[rightIndex] < higher
         return if (higherNotFound) -1 else rightIndex
     }
 }

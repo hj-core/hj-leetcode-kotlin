@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 16;" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 31 : Revise and improve readability;">
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem31/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem31/Solution.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,34 +81,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00146" summary="Update problem 609 : Refactor and improve readability;">
-      <created>1663574944329</created>
-      <option name="number" value="00146" />
-      <option name="presentableId" value="LOCAL-00146" />
-      <option name="project" value="LOCAL" />
-      <updated>1663574944329</updated>
-    </task>
-    <task id="LOCAL-00147" summary="Update problem 609 : Refactor and improve readability;">
-      <created>1663575175628</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1663575175628</updated>
-    </task>
-    <task id="LOCAL-00148" summary="Update problem 609 : Minor change;">
-      <created>1663576921235</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
-      <option name="project" value="LOCAL" />
-      <updated>1663576921235</updated>
-    </task>
-    <task id="LOCAL-00149" summary="Update problem 609 : Minor change;">
-      <created>1663581256784</created>
-      <option name="number" value="00149" />
-      <option name="presentableId" value="LOCAL-00149" />
-      <option name="project" value="LOCAL" />
-      <updated>1663581256784</updated>
     </task>
     <task id="LOCAL-00150" summary="Update problem 609 : Minor format issue;">
       <created>1663582466495</created>
@@ -423,7 +397,35 @@
       <option name="project" value="LOCAL" />
       <updated>1664006346446</updated>
     </task>
-    <option name="localTasksCounter" value="195" />
+    <task id="LOCAL-00195" summary="Add solution of problem 31;">
+      <created>1664023451424</created>
+      <option name="number" value="00195" />
+      <option name="presentableId" value="LOCAL-00195" />
+      <option name="project" value="LOCAL" />
+      <updated>1664023451424</updated>
+    </task>
+    <task id="LOCAL-00196" summary="Update problem 31 : Revise and improve readability;">
+      <created>1664025215588</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
+      <option name="project" value="LOCAL" />
+      <updated>1664025215588</updated>
+    </task>
+    <task id="LOCAL-00197" summary="Update problem 31 : Revise and improve readability;">
+      <created>1664028941349</created>
+      <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
+      <option name="project" value="LOCAL" />
+      <updated>1664028941349</updated>
+    </task>
+    <task id="LOCAL-00198" summary="Update problem 31 : Revise and improve readability;">
+      <created>1664029093106</created>
+      <option name="number" value="00198" />
+      <option name="presentableId" value="LOCAL-00198" />
+      <option name="project" value="LOCAL" />
+      <updated>1664029093106</updated>
+    </task>
+    <option name="localTasksCounter" value="199" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -465,8 +467,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 609 : Refactor and improve readability;" />
-    <MESSAGE value="Update problem 609 : Minor change;" />
     <MESSAGE value="Update problem 210 : Improve readability;" />
     <MESSAGE value="Update problem 609 : Refactor and improve readability;" />
     <MESSAGE value="Update problem 609 : Improve readability;" />
@@ -490,7 +490,9 @@
     <MESSAGE value="Update problem 1680 : Add solution with better time complexity;" />
     <MESSAGE value="Add solution of problem 113;" />
     <MESSAGE value="Add solution of problem 16;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 16;" />
+    <MESSAGE value="Add solution of problem 31;" />
+    <MESSAGE value="Update problem 31 : Revise and improve readability;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 31 : Revise and improve readability;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
