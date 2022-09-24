@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 1680 : Minor revise and add new solution;">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1680/Solution2.kt" afterDir="false" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 1680 : Add solution has better time complexity;">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem113/Solution.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1680/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1680/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="LeetCode Solution" />
         <option value="Kotlin Class" />
+        <option value="LeetCode Solution" />
       </list>
     </option>
   </component>
@@ -40,12 +39,12 @@
   <component name="GitRewordedCommitMessages">
     <option name="commitMessagesMapping">
       <RewordedCommitMessageMapping>
-        <option name="originalMessage" value="Create LICENSE" />
-        <option name="rewordedMessage" value="Add LICENSE;" />
+        <option name="originalMessage" value="Update problem 1680 : Minor revise and add new solution;" />
+        <option name="rewordedMessage" value="Update problem 1680 : Add solution with better time complexity;" />
       </RewordedCommitMessageMapping>
     </option>
     <option name="currentCommit" value="1" />
-    <option name="onto" value="78a08a4da0ba57f8bdfc2bbc95e24cea98ea1dcc" />
+    <option name="onto" value="7bfecc54cae2345eb9ca0091539e26d4ab74dd26" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -84,13 +83,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00142" summary="Add solution of problem 609;">
-      <created>1663569472823</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1663569472823</updated>
     </task>
     <task id="LOCAL-00143" summary="Update problem 609 : Minor change;">
       <created>1663571864714</created>
@@ -428,7 +420,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663919221409</updated>
     </task>
-    <option name="localTasksCounter" value="191" />
+    <task id="LOCAL-00191" summary="Update problem 1680 : Add solution has better time complexity;">
+      <created>1663942392293</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
+      <option name="project" value="LOCAL" />
+      <updated>1663942392294</updated>
+    </task>
+    <option name="localTasksCounter" value="192" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -470,7 +469,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 6 : Improve readability;" />
     <MESSAGE value="Add solution of problem 210;" />
     <MESSAGE value="Add solution of problem 609;" />
     <MESSAGE value="Update problem 609 : Refactor and improve readability;" />
@@ -495,7 +493,8 @@
     <MESSAGE value="Update problem 42 : Refactor and improve readability;" />
     <MESSAGE value="Add solution of problem 1680;" />
     <MESSAGE value="Update problem 1680 : Minor revise and add new solution;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 1680 : Minor revise and add new solution;" />
+    <MESSAGE value="Update problem 1680 : Add solution with better time complexity;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 1680 : Add solution with better time complexity;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
