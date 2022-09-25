@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Fix problem 1680 : Incorrect space complexity of solution 2;&#10;&#10;- I think the space complexity should be O(LogN) because the power function is called recursively;" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 1014;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="LeetCode Solution" />
         <option value="Kotlin Class" />
+        <option value="LeetCode Solution" />
       </list>
     </option>
   </component>
@@ -79,34 +81,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00163" summary="Add solution of problem 934;">
-      <created>1663740265243</created>
-      <option name="number" value="00163" />
-      <option name="presentableId" value="LOCAL-00163" />
-      <option name="project" value="LOCAL" />
-      <updated>1663740265243</updated>
-    </task>
-    <task id="LOCAL-00164" summary="Update problem 47 : Refactor and adopt backtracking solution;">
-      <created>1663748458998</created>
-      <option name="number" value="00164" />
-      <option name="presentableId" value="LOCAL-00164" />
-      <option name="project" value="LOCAL" />
-      <updated>1663748458998</updated>
-    </task>
-    <task id="LOCAL-00165" summary="Update problem 47 : Refactor and adopt backtracking solution;">
-      <created>1663748701515</created>
-      <option name="number" value="00165" />
-      <option name="presentableId" value="LOCAL-00165" />
-      <option name="project" value="LOCAL" />
-      <updated>1663748701515</updated>
-    </task>
-    <task id="LOCAL-00166" summary="Update problem 47 : Refactor and adopt backtracking solution;">
-      <created>1663748799452</created>
-      <option name="number" value="00166" />
-      <option name="presentableId" value="LOCAL-00166" />
-      <option name="project" value="LOCAL" />
-      <updated>1663748799452</updated>
     </task>
     <task id="LOCAL-00167" summary="Update problem 934 : Revise and improve readability;">
       <created>1663750092919</created>
@@ -423,7 +397,35 @@
       <option name="project" value="LOCAL" />
       <updated>1664102816552</updated>
     </task>
-    <option name="localTasksCounter" value="212" />
+    <task id="LOCAL-00212" summary="Fix problem 1680 : Incorrect space complexity of solution 2;&#10;&#10;- I think the space complexity should be O(LogN) because of the stack used when call power function recursively;">
+      <created>1664108314999</created>
+      <option name="number" value="00212" />
+      <option name="presentableId" value="LOCAL-00212" />
+      <option name="project" value="LOCAL" />
+      <updated>1664108314999</updated>
+    </task>
+    <task id="LOCAL-00213" summary="Add solution of problem 1014;">
+      <created>1664116454965</created>
+      <option name="number" value="00213" />
+      <option name="presentableId" value="LOCAL-00213" />
+      <option name="project" value="LOCAL" />
+      <updated>1664116454965</updated>
+    </task>
+    <task id="LOCAL-00214" summary="Add solution of problem 1014;">
+      <created>1664116648443</created>
+      <option name="number" value="00214" />
+      <option name="presentableId" value="LOCAL-00214" />
+      <option name="project" value="LOCAL" />
+      <updated>1664116648443</updated>
+    </task>
+    <task id="LOCAL-00215" summary="Add solution of problem 1014;">
+      <created>1664116763055</created>
+      <option name="number" value="00215" />
+      <option name="presentableId" value="LOCAL-00215" />
+      <option name="project" value="LOCAL" />
+      <updated>1664116763055</updated>
+    </task>
+    <option name="localTasksCounter" value="216" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -465,8 +467,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 75 : Refactor and improve readability;" />
-    <MESSAGE value="Add solution of problem 1234;" />
     <MESSAGE value="Update problem 336 : Refactor and improve readability;" />
     <MESSAGE value="Add solution of problem 985;" />
     <MESSAGE value="Add solution of problem 934;" />
@@ -490,7 +490,9 @@
     <MESSAGE value="Add solution of problem 622;" />
     <MESSAGE value="Add solution of problem 189;" />
     <MESSAGE value="Fix problem 1680 : Incorrect space complexity of solution 2;&#10;&#10;- I think the space complexity should be O(LogN) because the power function is called recursively;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix problem 1680 : Incorrect space complexity of solution 2;&#10;&#10;- I think the space complexity should be O(LogN) because the power function is called recursively;" />
+    <MESSAGE value="Fix problem 1680 : Incorrect space complexity of solution 2;&#10;&#10;- I think the space complexity should be O(LogN) because of the recursive call of power function;" />
+    <MESSAGE value="Add solution of problem 1014;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 1014;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
