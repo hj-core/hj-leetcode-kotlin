@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 1014;">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem230/Solution.kt" afterDir="false" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 230;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem137/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem137/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,13 +83,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00169" summary="Add solution of problem 557;">
-      <created>1663814549693</created>
-      <option name="number" value="00169" />
-      <option name="presentableId" value="LOCAL-00169" />
-      <option name="project" value="LOCAL" />
-      <updated>1663814549693</updated>
     </task>
     <task id="LOCAL-00170" summary="Add solution of problem 137;">
       <created>1663840019797</created>
@@ -426,7 +420,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664117469685</updated>
     </task>
-    <option name="localTasksCounter" value="218" />
+    <task id="LOCAL-00218" summary="Add solution of problem 230;">
+      <created>1664123632121</created>
+      <option name="number" value="00218" />
+      <option name="presentableId" value="LOCAL-00218" />
+      <option name="project" value="LOCAL" />
+      <updated>1664123632121</updated>
+    </task>
+    <option name="localTasksCounter" value="219" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -468,7 +469,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 336 : Refactor and improve readability;" />
     <MESSAGE value="Add solution of problem 985;" />
     <MESSAGE value="Add solution of problem 934;" />
     <MESSAGE value="Update problem 47 : Refactor and adopt backtracking solution;" />
@@ -493,7 +493,8 @@
     <MESSAGE value="Fix problem 1680 : Incorrect space complexity of solution 2;&#10;&#10;- I think the space complexity should be O(LogN) because the power function is called recursively;" />
     <MESSAGE value="Fix problem 1680 : Incorrect space complexity of solution 2;&#10;&#10;- I think the space complexity should be O(LogN) because of the recursive call of power function;" />
     <MESSAGE value="Add solution of problem 1014;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 1014;" />
+    <MESSAGE value="Add solution of problem 230;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 230;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

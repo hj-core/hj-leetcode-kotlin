@@ -9,11 +9,12 @@ class Solution {
      */
     fun singleNumber(nums: IntArray): Int {
         var single = 0
+        var bitMask = 1
         for (shift in 0..31) {
-            val bitMask = 1 shl shift
             val bitFrequency = nums.count { num -> num and bitMask == bitMask }
             val isSingle = bitFrequency % 3 != 0
             if (isSingle) single += bitMask
+            bitMask = bitMask shl 1
         }
         return single
     }
