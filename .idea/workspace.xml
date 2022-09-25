@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 189;" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Fix problem 1680 : Incorrect space complexity of solution 2;&#10;&#10;- I think the space complexity should be O(LogN) because the power function is called recursively;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -465,7 +465,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 609 : Improve readability;" />
     <MESSAGE value="Update problem 75 : Refactor and improve readability;" />
     <MESSAGE value="Add solution of problem 1234;" />
     <MESSAGE value="Update problem 336 : Refactor and improve readability;" />
@@ -490,7 +489,8 @@
     <MESSAGE value="Update problem 31 : Revise and improve readability;" />
     <MESSAGE value="Add solution of problem 622;" />
     <MESSAGE value="Add solution of problem 189;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 189;" />
+    <MESSAGE value="Fix problem 1680 : Incorrect space complexity of solution 2;&#10;&#10;- I think the space complexity should be O(LogN) because the power function is called recursively;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix problem 1680 : Incorrect space complexity of solution 2;&#10;&#10;- I think the space complexity should be O(LogN) because the power function is called recursively;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

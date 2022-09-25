@@ -8,7 +8,7 @@ package com.hj.leetcode.kotlin.problem1680
  */
 class Solution2 {
     /* Complexity:
-     * Time O((LogN)^2) and Space O(1) where N equals n;
+     * Time O((LogN)^2) and Space O(LogN) where N equals n;
      */
     fun concatenatedBinary(n: Int): Int {
         /* The idea is to represent the concatenation through a series of matrix operations, which contains
