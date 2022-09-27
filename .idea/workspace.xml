@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 838;" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 838 : Slightly refactored;">
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem838/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem838/Solution.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,7 +29,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem990" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -79,34 +81,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00171" summary="Add solution of problem 137;">
-      <created>1663840118062</created>
-      <option name="number" value="00171" />
-      <option name="presentableId" value="LOCAL-00171" />
-      <option name="project" value="LOCAL" />
-      <updated>1663840118062</updated>
-    </task>
-    <task id="LOCAL-00172" summary="Update problem 137 : Revise explanation of algorithm;">
-      <created>1663841339995</created>
-      <option name="number" value="00172" />
-      <option name="presentableId" value="LOCAL-00172" />
-      <option name="project" value="LOCAL" />
-      <updated>1663841339995</updated>
-    </task>
-    <task id="LOCAL-00173" summary="Update problem 137 : Revise explanation of algorithm;">
-      <created>1663844152504</created>
-      <option name="number" value="00173" />
-      <option name="presentableId" value="LOCAL-00173" />
-      <option name="project" value="LOCAL" />
-      <updated>1663844152505</updated>
-    </task>
-    <task id="LOCAL-00174" summary="Update problem 137 : Revise explanation of algorithm;">
-      <created>1663844277873</created>
-      <option name="number" value="00174" />
-      <option name="presentableId" value="LOCAL-00174" />
-      <option name="project" value="LOCAL" />
-      <updated>1663844277873</updated>
     </task>
     <task id="LOCAL-00175" summary="Add solution of problem 260;">
       <created>1663860373441</created>
@@ -423,7 +397,35 @@
       <option name="project" value="LOCAL" />
       <updated>1664272568378</updated>
     </task>
-    <option name="localTasksCounter" value="220" />
+    <task id="LOCAL-00220" summary="Add solution of problem 838;">
+      <created>1664272739886</created>
+      <option name="number" value="00220" />
+      <option name="presentableId" value="LOCAL-00220" />
+      <option name="project" value="LOCAL" />
+      <updated>1664272739886</updated>
+    </task>
+    <task id="LOCAL-00221" summary="Update problem 838 : Mark internal class private;">
+      <created>1664273303592</created>
+      <option name="number" value="00221" />
+      <option name="presentableId" value="LOCAL-00221" />
+      <option name="project" value="LOCAL" />
+      <updated>1664273303592</updated>
+    </task>
+    <task id="LOCAL-00222" summary="Update problem 838 : slightly refactored;">
+      <created>1664273612400</created>
+      <option name="number" value="00222" />
+      <option name="presentableId" value="LOCAL-00222" />
+      <option name="project" value="LOCAL" />
+      <updated>1664273612400</updated>
+    </task>
+    <task id="LOCAL-00223" summary="Update problem 838 : slightly refactored;">
+      <created>1664273618092</created>
+      <option name="number" value="00223" />
+      <option name="presentableId" value="LOCAL-00223" />
+      <option name="project" value="LOCAL" />
+      <updated>1664273618092</updated>
+    </task>
+    <option name="localTasksCounter" value="224" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -437,7 +439,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="problem838" />
                       </list>
                     </value>
                   </entry>
@@ -465,8 +467,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution of problem 934;" />
-    <MESSAGE value="Update problem 47 : Refactor and adopt backtracking solution;" />
     <MESSAGE value="Update problem 934 : Revise and improve readability;" />
     <MESSAGE value="Add solution of problem 1696;" />
     <MESSAGE value="Add solution of problem 557;" />
@@ -490,7 +490,9 @@
     <MESSAGE value="Add solution of problem 1014;" />
     <MESSAGE value="Add solution of problem 230;" />
     <MESSAGE value="Add solution of problem 838;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 838;" />
+    <MESSAGE value="Update problem 838 : Mark internal class private;" />
+    <MESSAGE value="Update problem 838 : Slightly refactored;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 838 : Slightly refactored;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

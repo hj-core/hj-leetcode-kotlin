@@ -8,7 +8,7 @@ class Solution {
      * Time O(N) and Space O(N) where N is the length of dominoes;
      */
     fun pushDominoes(dominoes: String): String {
-        val ans = StringBuilder(dominoes)
+        val pushed = StringBuilder(dominoes)
         var leftBound = 0
 
         loop@ for (rightBound in 1..dominoes.lastIndex) {
@@ -16,15 +16,15 @@ class Solution {
             val range = leftBound..rightBound
 
             when (fallDirection) {
-                FallDirection.Left -> fallToLeft(ans, range)
-                FallDirection.Right -> fallToRight(ans, range)
-                FallDirection.Inward -> fallInward(ans, range)
+                FallDirection.Left -> fallToLeft(pushed, range)
+                FallDirection.Right -> fallToRight(pushed, range)
+                FallDirection.Inward -> fallInward(pushed, range)
                 FallDirection.Unchanged -> {}
                 FallDirection.Unknown -> continue@loop
             }
             leftBound = rightBound
         }
-        return ans.toString()
+        return pushed.toString()
     }
 
     private fun getFallDirection(dominoes: String, leftBound: Int, rightBound: Int): FallDirection {
@@ -46,15 +46,15 @@ class Solution {
         }
     }
 
-    enum class FallDirection { Left, Right, Inward, Unchanged, Unknown }
+    private enum class FallDirection { Left, Right, Inward, Unchanged, Unknown }
 
     private fun fallToLeft(dominoes: StringBuilder, range: IntRange) {
         fall(dominoes, range, 'L')
     }
 
-    private fun fall(dominoes: StringBuilder, range: IntRange, direction: Char) {
+    private fun fall(dominoes: StringBuilder, range: IntRange, directionSymbol: Char) {
         for (index in range) {
-            dominoes[index] = direction
+            dominoes[index] = directionSymbol
         }
     }
 
