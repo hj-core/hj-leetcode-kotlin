@@ -9,7 +9,7 @@ class Solution {
      */
     fun countEven(num: Int): Int {
         /* The idea is by pairing (0, 1), (2, 3), .., (10, 11), (12, 13) and so on, each pair will contain
-         * an even and an odd digit sum because the two numbers are different only at the last digit. Also
+         * one even and one odd digit sum because the two numbers only differ by 1 at its last digit. Also
          * note the exclusion of zero in this problem.
          */
         val numPairsIncludingZero = (num + 1) shr 1
