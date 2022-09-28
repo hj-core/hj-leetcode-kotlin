@@ -5,19 +5,31 @@ package com.hj.leetcode.kotlin.problem2180
  */
 class Solution {
     /* Complexity:
-     * Time O(LogN) and Space O(LogN) where N equals num;
+     * Time O(LogN) and Space O(1) where N equals num;
      */
     fun countEven(num: Int): Int {
-        val isNumEvenDigitSum = num.isEvenDigitSum()
-        val isNumEven = num and 1 == 0
-        return ((num + 1) shr 1) - 1 + (if (isNumEven && isNumEvenDigitSum) 1 else 0)
+        /* The idea is by pairing (0, 1), (2, 3), .., (10, 11), (12, 13) and so on, each pair will contain
+         * an even and an odd digit sum because the two numbers are different only at the last digit. Also
+         * note the exclusion of zero in this problem.
+         */
+        val numPairsIncludingZero = (num + 1) shr 1
+
+        val isNumOdd = num and 1 == 1
+        if (isNumOdd) return numPairsIncludingZero - 1
+
+        val digitSumOfNum = num.sumDigits()
+        val isNumEvenDigitSum = digitSumOfNum and 1 == 0
+        return if (isNumEvenDigitSum) numPairsIncludingZero else numPairsIncludingZero - 1
     }
 
-    private fun Int.isEvenDigitSum(): Boolean = digitSum() and 1 == 0
+    private fun Int.sumDigits(): Int {
+        var sum = 0
+        var num = this
 
-    private fun Int.digitSum(): Int {
-        return this
-            .toString()
-            .fold(0) { acc, char -> acc + (char - '0') }
+        while (num > 0) {
+            sum += num % 10
+            num /= 10
+        }
+        return sum
     }
 }
