@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 835;" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 19;">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem19/Solution2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem19/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem19/Solution.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
         <option value="LeetCode Solution" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -79,20 +84,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00181" summary="Update problem 42 : Refactor and improve readability;">
-      <created>1663866670852</created>
-      <option name="number" value="00181" />
-      <option name="presentableId" value="LOCAL-00181" />
-      <option name="project" value="LOCAL" />
-      <updated>1663866670852</updated>
-    </task>
-    <task id="LOCAL-00182" summary="Add solution of problem 1680;">
-      <created>1663907384665</created>
-      <option name="number" value="00182" />
-      <option name="presentableId" value="LOCAL-00182" />
-      <option name="project" value="LOCAL" />
-      <updated>1663907384665</updated>
     </task>
     <task id="LOCAL-00183" summary="Add solution of problem 1680;">
       <created>1663907494104</created>
@@ -423,7 +414,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664298294872</updated>
     </task>
-    <option name="localTasksCounter" value="230" />
+    <task id="LOCAL-00230" summary="Add solution of problem 835;">
+      <created>1664298466051</created>
+      <option name="number" value="00230" />
+      <option name="presentableId" value="LOCAL-00230" />
+      <option name="project" value="LOCAL" />
+      <updated>1664298466051</updated>
+    </task>
+    <task id="LOCAL-00231" summary="Add solution of problem 19;">
+      <created>1664337098030</created>
+      <option name="number" value="00231" />
+      <option name="presentableId" value="LOCAL-00231" />
+      <option name="project" value="LOCAL" />
+      <updated>1664337098031</updated>
+    </task>
+    <option name="localTasksCounter" value="232" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -465,7 +470,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution of problem 557;" />
     <MESSAGE value="Add solution of problem 137;" />
     <MESSAGE value="Update problem 137 : Revise explanation of algorithm;" />
     <MESSAGE value="Add solution of problem 260;" />
@@ -490,7 +494,8 @@
     <MESSAGE value="Update problem 838 : Slightly refactored;" />
     <MESSAGE value="Add solution of problem 848;" />
     <MESSAGE value="Add solution of problem 835;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 835;" />
+    <MESSAGE value="Add solution of problem 19;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 19;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
