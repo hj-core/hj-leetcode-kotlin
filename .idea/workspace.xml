@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 2180 : Improve comment of algorithm;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2180/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2180/Solution.kt" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 658;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,34 +79,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00191" summary="Update problem 1680 : Add solution has better time complexity;">
-      <created>1663942392293</created>
-      <option name="number" value="00191" />
-      <option name="presentableId" value="LOCAL-00191" />
-      <option name="project" value="LOCAL" />
-      <updated>1663942392294</updated>
-    </task>
-    <task id="LOCAL-00192" summary="Add solution of problem 113;">
-      <created>1663990339178</created>
-      <option name="number" value="00192" />
-      <option name="presentableId" value="LOCAL-00192" />
-      <option name="project" value="LOCAL" />
-      <updated>1663990339178</updated>
-    </task>
-    <task id="LOCAL-00193" summary="Add solution of problem 16;">
-      <created>1664005615750</created>
-      <option name="number" value="00193" />
-      <option name="presentableId" value="LOCAL-00193" />
-      <option name="project" value="LOCAL" />
-      <updated>1664005615751</updated>
-    </task>
-    <task id="LOCAL-00194" summary="Add solution of problem 16;">
-      <created>1664006346446</created>
-      <option name="number" value="00194" />
-      <option name="presentableId" value="LOCAL-00194" />
-      <option name="project" value="LOCAL" />
-      <updated>1664006346446</updated>
     </task>
     <task id="LOCAL-00195" summary="Add solution of problem 31;">
       <created>1664023451424</created>
@@ -426,7 +395,35 @@
       <option name="project" value="LOCAL" />
       <updated>1664375653846</updated>
     </task>
-    <option name="localTasksCounter" value="240" />
+    <task id="LOCAL-00240" summary="Update problem 2180 : Improve comment of algorithm;">
+      <created>1664376385114</created>
+      <option name="number" value="00240" />
+      <option name="presentableId" value="LOCAL-00240" />
+      <option name="project" value="LOCAL" />
+      <updated>1664376385114</updated>
+    </task>
+    <task id="LOCAL-00241" summary="Add solution of problem 658;">
+      <created>1664448381684</created>
+      <option name="number" value="00241" />
+      <option name="presentableId" value="LOCAL-00241" />
+      <option name="project" value="LOCAL" />
+      <updated>1664448381684</updated>
+    </task>
+    <task id="LOCAL-00242" summary="Add solution of problem 658;">
+      <created>1664449381603</created>
+      <option name="number" value="00242" />
+      <option name="presentableId" value="LOCAL-00242" />
+      <option name="project" value="LOCAL" />
+      <updated>1664449381603</updated>
+    </task>
+    <task id="LOCAL-00243" summary="Add solution of problem 658;">
+      <created>1664449686177</created>
+      <option name="number" value="00243" />
+      <option name="presentableId" value="LOCAL-00243" />
+      <option name="project" value="LOCAL" />
+      <updated>1664449686177</updated>
+    </task>
+    <option name="localTasksCounter" value="244" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -468,7 +465,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 1680 : Minor revise and add new solution;" />
     <MESSAGE value="Update problem 1680 : Add solution with better time complexity;" />
     <MESSAGE value="Add solution of problem 113;" />
     <MESSAGE value="Add solution of problem 16;" />
@@ -493,7 +489,8 @@
     <MESSAGE value="Add solution of problem 61;" />
     <MESSAGE value="Update problem 2180 : Improve readability and space complexity;" />
     <MESSAGE value="Update problem 2180 : Improve comment of algorithm;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 2180 : Improve comment of algorithm;" />
+    <MESSAGE value="Add solution of problem 658;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 658;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
