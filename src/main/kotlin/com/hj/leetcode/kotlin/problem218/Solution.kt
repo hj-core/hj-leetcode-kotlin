@@ -10,24 +10,24 @@ class Solution {
      * Time O(NLogN) and Space O(N) where N is the size of buildings;
      */
     fun getSkyline(buildings: Array<IntArray>): List<List<Int>> {
-        val walls = getWallsSortedByLocationThenSignedHeight(buildings)
+        val sortedWalls = getWallsSortedByLocationThenSignedHeight(buildings)
 
         val skyline = mutableListOf<List<Int>>()
-        val firstWall = walls.first()
+        val firstWall = sortedWalls.first()
         val firstSkylinePoint = listOf(firstWall.location, firstWall.unsignedHeight)
         skyline.add(firstSkylinePoint)
 
-        val countPerActiveHeights = TreeMap<Int, Int>(reverseOrder<Int>())
-        countPerActiveHeights[0] = 1 // Use to connect discrete building groups;
+        val countPerActiveWallHeight = TreeMap<Int, Int>(reverseOrder<Int>())
+        countPerActiveWallHeight[0] = 1 // Use to connect discrete building groups;
 
-        for (wall in walls) {
-            updateCountPerActiveHeights(wall, countPerActiveHeights)
+        for (wall in sortedWalls) {
+            updateCountPerActiveWallHeight(wall, countPerActiveWallHeight)
 
-            val maxActiveHeight: Int = countPerActiveHeights.firstKey()
+            val maxActiveWallHeight: Int = countPerActiveWallHeight.firstKey()
             val heightOfLastSkylinePoint = skyline.last()[1]
-            val isNewSkylinePoint = maxActiveHeight != heightOfLastSkylinePoint
+            val isNewSkylinePoint = maxActiveWallHeight != heightOfLastSkylinePoint
             if (isNewSkylinePoint) {
-                val newPoint = listOf(wall.location, maxActiveHeight)
+                val newPoint = listOf(wall.location, maxActiveWallHeight)
                 skyline.add(newPoint)
             }
         }
@@ -62,7 +62,7 @@ class Solution {
         return Wall(location, signedHeight)
     }
 
-    private fun updateCountPerActiveHeights(currWall: Wall, counts: MutableMap<Int, Int>) {
+    private fun updateCountPerActiveWallHeight(currWall: Wall, counts: MutableMap<Int, Int>) {
         val unsignedHeight = currWall.unsignedHeight
         val currCount = counts[unsignedHeight] ?: 0
         val newCount = if (currWall.isLeft()) currCount + 1 else currCount - 1
