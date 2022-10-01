@@ -8,8 +8,8 @@ class Solution {
      * Time O(N) and Space O(1) where N is the length of s;
      */
     fun numDecodings(s: String): Int {
-        val cannotDecodeLastDigit = cannotDecode(s, s.lastIndex)
-        if (cannotDecodeLastDigit) return 0
+        val isLastDigitInvalid = isInvalidDigit(s, s.lastIndex)
+        if (isLastDigitInvalid) return 0
 
         val lastDigit = getDigit(s, s.lastIndex)
         val numWaysOfLastDigit = if (lastDigit == 0) 0 else 1
@@ -22,7 +22,7 @@ class Solution {
         )
     }
 
-    private fun cannotDecode(digits: String, index: Int): Boolean {
+    private fun isInvalidDigit(digits: String, index: Int): Boolean {
         val isNonZero = digits[index] != '0'
         if (isNonZero) return false
 
@@ -45,7 +45,9 @@ class Solution {
         prevPrevNumWays: Int
     ): Int {
         if (currIndex == -1) return prevNumWays
-        if (cannotDecode(digits, currIndex)) return 0
+
+        val isCurrDigitInvalid = isInvalidDigit(digits, currIndex)
+        if (isCurrDigitInvalid) return 0
 
         val keyDigits = getSubDigits(digits, currIndex..currIndex + 1)
         val currNumWays = when {
