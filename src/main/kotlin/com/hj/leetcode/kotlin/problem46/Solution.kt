@@ -12,33 +12,35 @@ class Solution {
 
         for (index in 1..nums.lastIndex) {
             addNumberToEachPermute(nums[index], permutes)
-            addRotationOfExistingPermutes(permutes)
+            addRotationsOfEachPermute(permutes)
         }
         return permutes
     }
 
-    private fun addNumberToEachPermute(newNumber: Int, permutes: MutableList<MutableList<Int>>) {
+    private fun addNumberToEachPermute(number: Int, permutes: MutableList<MutableList<Int>>) {
         for (permute in permutes) {
-            permute.add(newNumber)
+            permute.add(number)
         }
     }
 
-    private fun addRotationOfExistingPermutes(permutes: MutableList<MutableList<Int>>) {
+    private fun addRotationsOfEachPermute(permutes: MutableList<MutableList<Int>>) {
         repeat(permutes.size) { index ->
-            addRotationOfSpecificPermute(index, permutes)
+            addRotationsOfPermute(permutes[index], permutes)
         }
     }
 
-    private fun addRotationOfSpecificPermute(permuteIndex: Int, permutes: MutableList<MutableList<Int>>) {
-        val permuteToRotate = permutes[permuteIndex]
-        val greatestShift = permuteToRotate.size - 1
+    private fun addRotationsOfPermute(permute: List<Int>, container: MutableList<MutableList<Int>>) {
+        val greatestShift = permute.size - 1
+
         for (shift in 1..greatestShift) {
-            permutes.add(mutableListOf())
-            for (index in shift..permuteToRotate.lastIndex) {
-                permutes.last().add(permuteToRotate[index])
+            container.add(mutableListOf())
+
+            for (index in shift..permute.lastIndex) {
+                container.last().add(permute[index])
             }
+
             for (index in 0 until shift) {
-                permutes.last().add(permuteToRotate[index])
+                container.last().add(permute[index])
             }
         }
     }
