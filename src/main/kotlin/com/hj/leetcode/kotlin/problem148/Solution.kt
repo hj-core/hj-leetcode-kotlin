@@ -14,7 +14,7 @@ class Solution {
         if (lessThenTwoNodes) return head
 
         val midNode = head.splitAtMidAndReturnMidNode()
-        return mergeSortedList(sortList(head), sortList(midNode))
+        return mergeSortedAndReturnNewHead(sortList(head), sortList(midNode))
     }
 
     private fun ListNode?.splitAtMidAndReturnMidNode(): ListNode? {
@@ -36,7 +36,7 @@ class Solution {
         return slow
     }
 
-    private fun mergeSortedList(sorted1: ListNode?, sorted2: ListNode?): ListNode? {
+    private fun mergeSortedAndReturnNewHead(sorted1: ListNode?, sorted2: ListNode?): ListNode? {
         val dummyHead = ListNode(-1)
 
         var currTail = dummyHead
