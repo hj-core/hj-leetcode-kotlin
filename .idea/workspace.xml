@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 1155;" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 1155 : Refactor and improve readability;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,83 +79,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00228" summary="Add solution of problem 835;">
-      <created>1664298163464</created>
-      <option name="number" value="00228" />
-      <option name="presentableId" value="LOCAL-00228" />
-      <option name="project" value="LOCAL" />
-      <updated>1664298163464</updated>
-    </task>
-    <task id="LOCAL-00229" summary="Add solution of problem 835;">
-      <created>1664298294872</created>
-      <option name="number" value="00229" />
-      <option name="presentableId" value="LOCAL-00229" />
-      <option name="project" value="LOCAL" />
-      <updated>1664298294872</updated>
-    </task>
-    <task id="LOCAL-00230" summary="Add solution of problem 835;">
-      <created>1664298466051</created>
-      <option name="number" value="00230" />
-      <option name="presentableId" value="LOCAL-00230" />
-      <option name="project" value="LOCAL" />
-      <updated>1664298466051</updated>
-    </task>
-    <task id="LOCAL-00231" summary="Add solution of problem 19;">
-      <created>1664337098030</created>
-      <option name="number" value="00231" />
-      <option name="presentableId" value="LOCAL-00231" />
-      <option name="project" value="LOCAL" />
-      <updated>1664337098031</updated>
-    </task>
-    <task id="LOCAL-00232" summary="Add solution of problem 19;">
-      <created>1664338844290</created>
-      <option name="number" value="00232" />
-      <option name="presentableId" value="LOCAL-00232" />
-      <option name="project" value="LOCAL" />
-      <updated>1664338844290</updated>
-    </task>
-    <task id="LOCAL-00233" summary="Update README: Additional solution now don't break line;">
-      <created>1664339550964</created>
-      <option name="number" value="00233" />
-      <option name="presentableId" value="LOCAL-00233" />
-      <option name="project" value="LOCAL" />
-      <updated>1664339550964</updated>
-    </task>
-    <task id="LOCAL-00234" summary="Add solution of problem 49;">
-      <created>1664355758273</created>
-      <option name="number" value="00234" />
-      <option name="presentableId" value="LOCAL-00234" />
-      <option name="project" value="LOCAL" />
-      <updated>1664355758273</updated>
-    </task>
-    <task id="LOCAL-00235" summary="Add Validator for quick tests;">
-      <created>1664356396689</created>
-      <option name="number" value="00235" />
-      <option name="presentableId" value="LOCAL-00235" />
-      <option name="project" value="LOCAL" />
-      <updated>1664356396689</updated>
-    </task>
-    <task id="LOCAL-00236" summary="Add util Validator for quick testing;">
-      <created>1664356680655</created>
-      <option name="number" value="00236" />
-      <option name="presentableId" value="LOCAL-00236" />
-      <option name="project" value="LOCAL" />
-      <updated>1664356680655</updated>
-    </task>
-    <task id="LOCAL-00237" summary="Add solution of problem 61;">
-      <created>1664361229021</created>
-      <option name="number" value="00237" />
-      <option name="presentableId" value="LOCAL-00237" />
-      <option name="project" value="LOCAL" />
-      <updated>1664361229021</updated>
-    </task>
-    <task id="LOCAL-00238" summary="Update problem 2180 : Improve readability and space complexity;">
-      <created>1664375197830</created>
-      <option name="number" value="00238" />
-      <option name="presentableId" value="LOCAL-00238" />
-      <option name="project" value="LOCAL" />
-      <updated>1664375197830</updated>
     </task>
     <task id="LOCAL-00239" summary="Update problem 2180 : Improve comment of algorithm;">
       <created>1664375653846</created>
@@ -423,7 +346,84 @@
       <option name="project" value="LOCAL" />
       <updated>1664748124896</updated>
     </task>
-    <option name="localTasksCounter" value="277" />
+    <task id="LOCAL-00277" summary="Add solution of problem 1155;">
+      <created>1664748163694</created>
+      <option name="number" value="00277" />
+      <option name="presentableId" value="LOCAL-00277" />
+      <option name="project" value="LOCAL" />
+      <updated>1664748163694</updated>
+    </task>
+    <task id="LOCAL-00278" summary="Update problem 1155 : Improve readability;">
+      <created>1664767964365</created>
+      <option name="number" value="00278" />
+      <option name="presentableId" value="LOCAL-00278" />
+      <option name="project" value="LOCAL" />
+      <updated>1664767964365</updated>
+    </task>
+    <task id="LOCAL-00279" summary="Update problem 1155 : Improve readability;">
+      <created>1664768106204</created>
+      <option name="number" value="00279" />
+      <option name="presentableId" value="LOCAL-00279" />
+      <option name="project" value="LOCAL" />
+      <updated>1664768106204</updated>
+    </task>
+    <task id="LOCAL-00280" summary="Update problem 1155 : Improve readability;">
+      <created>1664768491524</created>
+      <option name="number" value="00280" />
+      <option name="presentableId" value="LOCAL-00280" />
+      <option name="project" value="LOCAL" />
+      <updated>1664768491524</updated>
+    </task>
+    <task id="LOCAL-00281" summary="Update problem 1155 : Improve readability;">
+      <created>1664768692573</created>
+      <option name="number" value="00281" />
+      <option name="presentableId" value="LOCAL-00281" />
+      <option name="project" value="LOCAL" />
+      <updated>1664768692573</updated>
+    </task>
+    <task id="LOCAL-00282" summary="Update problem 1155 : Refactor and improve readability;">
+      <created>1664769340876</created>
+      <option name="number" value="00282" />
+      <option name="presentableId" value="LOCAL-00282" />
+      <option name="project" value="LOCAL" />
+      <updated>1664769340876</updated>
+    </task>
+    <task id="LOCAL-00283" summary="Update problem 1155 : Refactor and improve readability;">
+      <created>1664770150157</created>
+      <option name="number" value="00283" />
+      <option name="presentableId" value="LOCAL-00283" />
+      <option name="project" value="LOCAL" />
+      <updated>1664770150157</updated>
+    </task>
+    <task id="LOCAL-00284" summary="Update problem 1155 : Refactor and improve readability;">
+      <created>1664770230350</created>
+      <option name="number" value="00284" />
+      <option name="presentableId" value="LOCAL-00284" />
+      <option name="project" value="LOCAL" />
+      <updated>1664770230350</updated>
+    </task>
+    <task id="LOCAL-00285" summary="Update problem 1155 : Refactor and improve readability;">
+      <created>1664770408078</created>
+      <option name="number" value="00285" />
+      <option name="presentableId" value="LOCAL-00285" />
+      <option name="project" value="LOCAL" />
+      <updated>1664770408078</updated>
+    </task>
+    <task id="LOCAL-00286" summary="Update problem 1155 : Refactor and improve readability;">
+      <created>1664770556385</created>
+      <option name="number" value="00286" />
+      <option name="presentableId" value="LOCAL-00286" />
+      <option name="project" value="LOCAL" />
+      <updated>1664770556385</updated>
+    </task>
+    <task id="LOCAL-00287" summary="Update problem 1155 : Refactor and improve readability;">
+      <created>1664770675718</created>
+      <option name="number" value="00287" />
+      <option name="presentableId" value="LOCAL-00287" />
+      <option name="project" value="LOCAL" />
+      <updated>1664770675718</updated>
+    </task>
+    <option name="localTasksCounter" value="288" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -465,8 +465,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 838 : Slightly refactored;" />
-    <MESSAGE value="Add solution of problem 848;" />
     <MESSAGE value="Add solution of problem 835;" />
     <MESSAGE value="Add solution of problem 19;" />
     <MESSAGE value="Update README : Additional solution now don't break line;" />
@@ -490,7 +488,9 @@
     <MESSAGE value="Update problem 148 : Improve readability and add solution2;" />
     <MESSAGE value="Improve readability;" />
     <MESSAGE value="Add solution of problem 1155;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 1155;" />
+    <MESSAGE value="Update problem 1155 : Improve readability;" />
+    <MESSAGE value="Update problem 1155 : Refactor and improve readability;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 1155 : Refactor and improve readability;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

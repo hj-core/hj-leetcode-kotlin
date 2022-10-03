@@ -39,53 +39,64 @@ class Solution {
     }
 
     private fun updateForFirstDice(container: IntArray, numFaces: Int) {
-        val activeLastIndex = getActiveLastIndex(1, numFaces, container.lastIndex)
+        val activeLastIndex = getCurrActiveLastIndex(1, numFaces, container.lastIndex)
 
         for (index in 0..activeLastIndex) {
             container[index] = 1
         }
     }
 
-    private fun getActiveLastIndex(minSum: Int, maxSum: Int, containerLastIndex: Int): Int {
-        val rangeSize = maxSum - minSum + 1
+    private fun getCurrActiveLastIndex(currMinSum: Int, currMaxSum: Int, containerLastIndex: Int): Int {
+        val rangeSize = currMaxSum - currMinSum + 1
         val isRangeSizeEven = rangeSize and 1 == 0
         val indexAtSymmetricStart = if (isRangeSizeEven) rangeSize shr 1 else 1 + (rangeSize shr 1)
         return minOf(indexAtSymmetricStart - 1, containerLastIndex)
     }
 
     private fun updateForRemainingDices(container: IntArray, numFaces: Int, numRemainingDices: Int) {
-        repeat(numRemainingDices) { count ->
-            val currNumDices = count + 1
-            val nextNumDices = currNumDices + 1
-            val nextMaxSum = nextNumDices * numFaces
-            val nextActiveLastIndex = getActiveLastIndex(nextNumDices, nextMaxSum, container.lastIndex)
+        var currNumDices = 1
+        var currMaxSum = currNumDices * numFaces
+        var currActiveLastIndex = getCurrActiveLastIndex(currNumDices, currMaxSum, container.lastIndex)
 
-            fillSymmetricBeforeUpdateNewDice(container, currNumDices, numFaces, nextActiveLastIndex)
-            updateForNewDice(container, numFaces, nextActiveLastIndex)
+        repeat(numRemainingDices) {
+            val newNumDices = currNumDices + 1
+            val newMaxSum = newNumDices * numFaces
+            val newActiveLastIndex = getCurrActiveLastIndex(newNumDices, newMaxSum, container.lastIndex)
+
+            fillSymmetricBeforeUpdateNewDice(
+                container,
+                currNumDices,
+                currMaxSum,
+                currActiveLastIndex,
+                newActiveLastIndex
+            )
+            updateForNewDice(container, numFaces, newActiveLastIndex)
+
+            currNumDices = newNumDices
+            currMaxSum = newMaxSum
+            currActiveLastIndex = newActiveLastIndex
         }
     }
 
     private fun fillSymmetricBeforeUpdateNewDice(
         container: IntArray,
-        currNumDice: Int,
-        numFaces: Int,
-        nextEffectiveLastIndex: Int
+        currNumDices: Int,
+        currMaxSum: Int,
+        currActiveLastIndex: Int,
+        newActiveLastIndex: Int
     ) {
-        val currMaxSum = currNumDice * numFaces
-        val currActiveLastIndex = getActiveLastIndex(currNumDice, currMaxSum, container.lastIndex)
-
-        for (index in currActiveLastIndex + 1..nextEffectiveLastIndex) {
-            val symmetricIndex = currMaxSum - index - currNumDice
+        for (index in currActiveLastIndex + 1..newActiveLastIndex) {
+            val symmetricIndex = currMaxSum - index - currNumDices
             container[index] = container[symmetricIndex]
         }
     }
 
-    private fun updateForNewDice(container: IntArray, numFaces: Int, newEffectiveLastIndex: Int) {
-        var windowEndIndex = newEffectiveLastIndex
-        val windowSumOfEnd = getWindowSum(container, numFaces, windowEndIndex)
+    private fun updateForNewDice(container: IntArray, numFaces: Int, newActiveLastIndex: Int) {
+        var windowEndIndex = newActiveLastIndex
+        val windowSumAtEnd = getWindowSum(container, numFaces, windowEndIndex)
 
         var prevWindowEndValue = container[windowEndIndex]
-        container[windowEndIndex] = windowSumOfEnd
+        container[windowEndIndex] = windowSumAtEnd
 
         while (windowEndIndex > 1) {
             windowEndIndex--
