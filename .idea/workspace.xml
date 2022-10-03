@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 1155 : Refactor and improve readability;">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1578/Solution.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 1578;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,20 +79,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00240" summary="Update problem 2180 : Improve comment of algorithm;">
-      <created>1664376385114</created>
-      <option name="number" value="00240" />
-      <option name="presentableId" value="LOCAL-00240" />
-      <option name="project" value="LOCAL" />
-      <updated>1664376385114</updated>
-    </task>
-    <task id="LOCAL-00241" summary="Add solution of problem 658;">
-      <created>1664448381684</created>
-      <option name="number" value="00241" />
-      <option name="presentableId" value="LOCAL-00241" />
-      <option name="project" value="LOCAL" />
-      <updated>1664448381684</updated>
     </task>
     <task id="LOCAL-00242" summary="Add solution of problem 658;">
       <created>1664449381603</created>
@@ -427,7 +409,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664770889903</updated>
     </task>
-    <option name="localTasksCounter" value="289" />
+    <task id="LOCAL-00289" summary="Add solution of problem 1578;">
+      <created>1664791932904</created>
+      <option name="number" value="00289" />
+      <option name="presentableId" value="LOCAL-00289" />
+      <option name="project" value="LOCAL" />
+      <updated>1664791932905</updated>
+    </task>
+    <task id="LOCAL-00290" summary="Add solution of problem 1578;">
+      <created>1664791998884</created>
+      <option name="number" value="00290" />
+      <option name="presentableId" value="LOCAL-00290" />
+      <option name="project" value="LOCAL" />
+      <updated>1664791998884</updated>
+    </task>
+    <option name="localTasksCounter" value="291" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -469,7 +465,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution of problem 835;" />
     <MESSAGE value="Add solution of problem 19;" />
     <MESSAGE value="Update README : Additional solution now don't break line;" />
     <MESSAGE value="Add solution of problem 49;" />
@@ -494,7 +489,8 @@
     <MESSAGE value="Add solution of problem 1155;" />
     <MESSAGE value="Update problem 1155 : Improve readability;" />
     <MESSAGE value="Update problem 1155 : Refactor and improve readability;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 1155 : Refactor and improve readability;" />
+    <MESSAGE value="Add solution of problem 1578;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 1578;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
