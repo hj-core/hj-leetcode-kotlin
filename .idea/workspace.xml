@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 1578;" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 74;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,13 +79,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00242" summary="Add solution of problem 658;">
-      <created>1664449381603</created>
-      <option name="number" value="00242" />
-      <option name="presentableId" value="LOCAL-00242" />
-      <option name="project" value="LOCAL" />
-      <updated>1664449381603</updated>
     </task>
     <task id="LOCAL-00243" summary="Add solution of problem 658;">
       <created>1664449686177</created>
@@ -423,7 +416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664791998884</updated>
     </task>
-    <option name="localTasksCounter" value="291" />
+    <task id="LOCAL-00291" summary="Add solution of problem 74;">
+      <created>1664805088187</created>
+      <option name="number" value="00291" />
+      <option name="presentableId" value="LOCAL-00291" />
+      <option name="project" value="LOCAL" />
+      <updated>1664805088187</updated>
+    </task>
+    <option name="localTasksCounter" value="292" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -465,7 +465,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution of problem 19;" />
     <MESSAGE value="Update README : Additional solution now don't break line;" />
     <MESSAGE value="Add solution of problem 49;" />
     <MESSAGE value="Add Validator for quick tests;" />
@@ -490,7 +489,8 @@
     <MESSAGE value="Update problem 1155 : Improve readability;" />
     <MESSAGE value="Update problem 1155 : Refactor and improve readability;" />
     <MESSAGE value="Add solution of problem 1578;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 1578;" />
+    <MESSAGE value="Add solution of problem 74;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 74;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
