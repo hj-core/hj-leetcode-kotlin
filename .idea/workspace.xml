@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 112;">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1401/Solution.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 1401 : Refactor and improve readability;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,20 +79,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00244" summary="Add solution of problem 658;">
-      <created>1664450334926</created>
-      <option name="number" value="00244" />
-      <option name="presentableId" value="LOCAL-00244" />
-      <option name="project" value="LOCAL" />
-      <updated>1664450334926</updated>
-    </task>
-    <task id="LOCAL-00245" summary="Update README : Shorten Uri of Discuss;">
-      <created>1664450677768</created>
-      <option name="number" value="00245" />
-      <option name="presentableId" value="LOCAL-00245" />
-      <option name="project" value="LOCAL" />
-      <updated>1664450677768</updated>
     </task>
     <task id="LOCAL-00246" summary="Update build : Update kotlin 1.7.20 and some configuration change;&#10;&#10;- change target jvm to 11;&#10;&#10;- opt-in k2 compiler">
       <created>1664508670214</created>
@@ -427,7 +409,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664851689055</updated>
     </task>
-    <option name="localTasksCounter" value="293" />
+    <task id="LOCAL-00293" summary="Add solution of problem 1401;">
+      <created>1664864586467</created>
+      <option name="number" value="00293" />
+      <option name="presentableId" value="LOCAL-00293" />
+      <option name="project" value="LOCAL" />
+      <updated>1664864586467</updated>
+    </task>
+    <task id="LOCAL-00294" summary="Update problem 1401 : Refactor and improve readability;">
+      <created>1664875324839</created>
+      <option name="number" value="00294" />
+      <option name="presentableId" value="LOCAL-00294" />
+      <option name="project" value="LOCAL" />
+      <updated>1664875324839</updated>
+    </task>
+    <option name="localTasksCounter" value="295" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -469,8 +465,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution of problem 49;" />
-    <MESSAGE value="Add Validator for quick tests;" />
     <MESSAGE value="Add util Validator for quick testing;" />
     <MESSAGE value="Add solution of problem 61;" />
     <MESSAGE value="Update problem 2180 : Improve readability and space complexity;" />
@@ -494,7 +488,9 @@
     <MESSAGE value="Add solution of problem 1578;" />
     <MESSAGE value="Add solution of problem 74;" />
     <MESSAGE value="Add solution of problem 112;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 112;" />
+    <MESSAGE value="Add solution of problem 1401;" />
+    <MESSAGE value="Update problem 1401 : Refactor and improve readability;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 1401 : Refactor and improve readability;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

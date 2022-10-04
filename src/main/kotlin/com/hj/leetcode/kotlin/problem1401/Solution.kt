@@ -8,19 +8,21 @@ class Solution {
      * Time O(1) and Space O(1);
      */
     fun checkOverlap(radius: Int, xCenter: Int, yCenter: Int, x1: Int, y1: Int, x2: Int, y2: Int): Boolean {
-        val closestX = when {
-            xCenter < x1 -> x1
-            xCenter > x2 -> x2
-            else -> xCenter
-        }
+        val rangeOfX = x1..x2
+        val xClosestToCenter = rangeOfX.findClosest(xCenter)
 
-        val closestY = when {
-            yCenter < y1 -> y1
-            yCenter > y2 -> y2
-            else -> yCenter
-        }
+        val rangeOfY = y1..y2
+        val yClosestToCenter = rangeOfY.findClosest(yCenter)
 
-        return square(closestX - xCenter) + square(closestY - yCenter) <= square(radius)
+        return square(xClosestToCenter - xCenter) + square(yClosestToCenter - yCenter) <= square(radius)
+    }
+
+    private fun IntRange.findClosest(target: Int): Int {
+        return when {
+            target < first -> first
+            target > last -> last
+            else -> target
+        }
     }
 
     private fun square(i: Int) = i * i
