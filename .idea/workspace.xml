@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 1401 : Refactor and improve readability;">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1072/Solution.kt" afterDir="false" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 623;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,20 +81,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00247" summary="Update build : Update kotlin 1.7.20 and some configuration change;&#10;&#10;- change target jvm to 11;&#10;&#10;- opt-in k2 compiler;">
-      <created>1664509302394</created>
-      <option name="number" value="00247" />
-      <option name="presentableId" value="LOCAL-00247" />
-      <option name="project" value="LOCAL" />
-      <updated>1664509302394</updated>
-    </task>
-    <task id="LOCAL-00248" summary="Update build : Update kotlin to 1.7.20;">
-      <created>1664509547093</created>
-      <option name="number" value="00248" />
-      <option name="presentableId" value="LOCAL-00248" />
-      <option name="project" value="LOCAL" />
-      <updated>1664509547093</updated>
     </task>
     <task id="LOCAL-00249" summary="Update build : Update kotlin to 1.7.20;">
       <created>1664509595171</created>
@@ -427,7 +411,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664877516755</updated>
     </task>
-    <option name="localTasksCounter" value="296" />
+    <task id="LOCAL-00296" summary="Add solution of problem 1072;">
+      <created>1664892861199</created>
+      <option name="number" value="00296" />
+      <option name="presentableId" value="LOCAL-00296" />
+      <option name="project" value="LOCAL" />
+      <updated>1664892861199</updated>
+    </task>
+    <task id="LOCAL-00297" summary="Add solution of problem 623;">
+      <created>1664949025239</created>
+      <option name="number" value="00297" />
+      <option name="presentableId" value="LOCAL-00297" />
+      <option name="project" value="LOCAL" />
+      <updated>1664949025239</updated>
+    </task>
+    <option name="localTasksCounter" value="298" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -469,8 +467,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add util Validator for quick testing;" />
-    <MESSAGE value="Add solution of problem 61;" />
     <MESSAGE value="Update problem 2180 : Improve readability and space complexity;" />
     <MESSAGE value="Update problem 2180 : Improve comment of algorithm;" />
     <MESSAGE value="Add solution of problem 658;" />
@@ -494,7 +490,9 @@
     <MESSAGE value="Add solution of problem 112;" />
     <MESSAGE value="Add solution of problem 1401;" />
     <MESSAGE value="Update problem 1401 : Refactor and improve readability;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 1401 : Refactor and improve readability;" />
+    <MESSAGE value="Add solution of problem 1072;" />
+    <MESSAGE value="Add solution of problem 623;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 623;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
