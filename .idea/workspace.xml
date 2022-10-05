@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update README : Revised format when having several solutions;" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 1296;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
         <option value="LeetCode Solution" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -79,27 +79,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00251" summary="Add solution of problem 218;">
-      <created>1664542578145</created>
-      <option name="number" value="00251" />
-      <option name="presentableId" value="LOCAL-00251" />
-      <option name="project" value="LOCAL" />
-      <updated>1664542578145</updated>
-    </task>
-    <task id="LOCAL-00252" summary="Add solution of problem 148;">
-      <created>1664558074055</created>
-      <option name="number" value="00252" />
-      <option name="presentableId" value="LOCAL-00252" />
-      <option name="project" value="LOCAL" />
-      <updated>1664558074055</updated>
-    </task>
-    <task id="LOCAL-00253" summary="Add solution of problem 148;">
-      <created>1664612980058</created>
-      <option name="number" value="00253" />
-      <option name="presentableId" value="LOCAL-00253" />
-      <option name="project" value="LOCAL" />
-      <updated>1664612980058</updated>
     </task>
     <task id="LOCAL-00254" summary="Add solution of problem 148;">
       <created>1664614501090</created>
@@ -423,7 +402,28 @@
       <option name="project" value="LOCAL" />
       <updated>1664955145298</updated>
     </task>
-    <option name="localTasksCounter" value="300" />
+    <task id="LOCAL-00300" summary="Update README : Change the separation of multi-solutions;">
+      <created>1664955417346</created>
+      <option name="number" value="00300" />
+      <option name="presentableId" value="LOCAL-00300" />
+      <option name="project" value="LOCAL" />
+      <updated>1664955417346</updated>
+    </task>
+    <task id="LOCAL-00301" summary="Add solution of problem 1296;">
+      <created>1664975444631</created>
+      <option name="number" value="00301" />
+      <option name="presentableId" value="LOCAL-00301" />
+      <option name="project" value="LOCAL" />
+      <updated>1664975444631</updated>
+    </task>
+    <task id="LOCAL-00302" summary="Add solution of problem 1296;">
+      <created>1664976417820</created>
+      <option name="number" value="00302" />
+      <option name="presentableId" value="LOCAL-00302" />
+      <option name="project" value="LOCAL" />
+      <updated>1664976417820</updated>
+    </task>
+    <option name="localTasksCounter" value="303" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -465,8 +465,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 2180 : Improve comment of algorithm;" />
-    <MESSAGE value="Add solution of problem 658;" />
     <MESSAGE value="Update README : Shorten Uri of Discuss;" />
     <MESSAGE value="Update build : Update kotlin 1.7.20 and some configuration change;&#10;&#10;- change target jvm to 11;&#10;&#10;- opt-in k2 compiler" />
     <MESSAGE value="Update build : Update kotlin 1.7.20 and some configuration change;&#10;&#10;- change target jvm to 11;&#10;&#10;- opt-in k2 compiler;" />
@@ -489,8 +487,10 @@
     <MESSAGE value="Update problem 1401 : Refactor and improve readability;" />
     <MESSAGE value="Add solution of problem 1072;" />
     <MESSAGE value="Add solution of problem 623;" />
-    <MESSAGE value="Update README : Revised format when having several solutions;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update README : Revised format when having several solutions;" />
+    <MESSAGE value="Update README : Revised format when several solutions;" />
+    <MESSAGE value="Update README : Change the separation of multi-solutions;" />
+    <MESSAGE value="Add solution of problem 1296;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 1296;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
