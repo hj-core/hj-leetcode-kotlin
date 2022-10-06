@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 981;">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem636/Solution.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Fix problem 636 : Incorrect space complexity;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,20 +79,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00258" summary="Update problem 218 : Improve readability;">
-      <created>1664619019527</created>
-      <option name="number" value="00258" />
-      <option name="presentableId" value="LOCAL-00258" />
-      <option name="project" value="LOCAL" />
-      <updated>1664619019527</updated>
-    </task>
-    <task id="LOCAL-00259" summary="Update problem 218 : Improve readability;">
-      <created>1664619090307</created>
-      <option name="number" value="00259" />
-      <option name="presentableId" value="LOCAL-00259" />
-      <option name="project" value="LOCAL" />
-      <updated>1664619090307</updated>
     </task>
     <task id="LOCAL-00260" summary="Update problem 218 : Improve readability;">
       <created>1664619793083</created>
@@ -426,7 +409,21 @@
       <option name="project" value="LOCAL" />
       <updated>1665037541069</updated>
     </task>
-    <option name="localTasksCounter" value="307" />
+    <task id="LOCAL-00307" summary="Add solution of problem 636;">
+      <created>1665057311145</created>
+      <option name="number" value="00307" />
+      <option name="presentableId" value="LOCAL-00307" />
+      <option name="project" value="LOCAL" />
+      <updated>1665057311145</updated>
+    </task>
+    <task id="LOCAL-00308" summary="Fix problem 636 : Incorrect space complexity;">
+      <created>1665063878594</created>
+      <option name="number" value="00308" />
+      <option name="presentableId" value="LOCAL-00308" />
+      <option name="project" value="LOCAL" />
+      <updated>1665063878594</updated>
+    </task>
+    <option name="localTasksCounter" value="309" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -468,8 +465,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update build : Update kotlin 1.7.20 and some configuration change;&#10;&#10;- change target jvm to 11;&#10;&#10;- opt-in k2 compiler" />
-    <MESSAGE value="Update build : Update kotlin 1.7.20 and some configuration change;&#10;&#10;- change target jvm to 11;&#10;&#10;- opt-in k2 compiler;" />
     <MESSAGE value="Update build : Update kotlin to 1.7.20;" />
     <MESSAGE value="Add solution of problem 218;" />
     <MESSAGE value="Add solution of problem 148;" />
@@ -493,7 +488,9 @@
     <MESSAGE value="Update README : Change the separation of multi-solutions;" />
     <MESSAGE value="Add solution of problem 1296;" />
     <MESSAGE value="Add solution of problem 981;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 981;" />
+    <MESSAGE value="Add solution of problem 636;" />
+    <MESSAGE value="Fix problem 636 : Incorrect space complexity;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix problem 636 : Incorrect space complexity;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

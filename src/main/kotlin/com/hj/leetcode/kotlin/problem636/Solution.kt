@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem636
  */
 class Solution {
     /* Complexity:
-     * Time O(M+L) and Space O(N+K) where
+     * Time O(M+L) and Space O(M+N+K) where
      *    M is the size of logs,
      *    L is the flat length of logs,
      *    N equals n,
