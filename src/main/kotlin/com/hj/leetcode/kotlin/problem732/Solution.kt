@@ -9,7 +9,7 @@ import java.util.*
  */
 class MyCalendarThree {
 
-    private val changePerTimestamp = containerOfChangeInActiveBookingsPerTimestamp()
+    private val changePerTimestamp = containerOfChangeInTotalActiveBookingsPerTimestamp()
 
     /* Complexity of N calls:
      * Time O(N^2) and Space O(N);
@@ -24,7 +24,7 @@ class MyCalendarThree {
 
         var maxActiveBookings = 0
         var currActiveBookings = 0
-        val sortedChanges = getChangeInActiveBookingsSortedByTimestamp()
+        val sortedChanges = getChangeInTotalActiveBookingsSortedByTimestamp()
 
         for (change in sortedChanges) {
             currActiveBookings += change
@@ -33,11 +33,11 @@ class MyCalendarThree {
         return maxActiveBookings
     }
 
-    private fun containerOfChangeInActiveBookingsPerTimestamp(): TreeMap<Int, Int> {
+    private fun containerOfChangeInTotalActiveBookingsPerTimestamp(): TreeMap<Int, Int> {
         return TreeMap<Int, Int>()
     }
 
-    private fun getChangeInActiveBookingsSortedByTimestamp(): Collection<Int> {
+    private fun getChangeInTotalActiveBookingsSortedByTimestamp(): Collection<Int> {
         check(changePerTimestamp is TreeMap)
         return changePerTimestamp.values
     }
