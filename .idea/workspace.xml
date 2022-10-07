@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Fix problem 636 : Incorrect space complexity;" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 732;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,7 +29,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem91" />
+        <entry key="$PROJECT_DIR$" value="problem640" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -79,69 +81,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00260" summary="Update problem 218 : Improve readability;">
-      <created>1664619793083</created>
-      <option name="number" value="00260" />
-      <option name="presentableId" value="LOCAL-00260" />
-      <option name="project" value="LOCAL" />
-      <updated>1664619793083</updated>
-    </task>
-    <task id="LOCAL-00261" summary="Add solution of problem 91;">
-      <created>1664620249336</created>
-      <option name="number" value="00261" />
-      <option name="presentableId" value="LOCAL-00261" />
-      <option name="project" value="LOCAL" />
-      <updated>1664620249336</updated>
-    </task>
-    <task id="LOCAL-00262" summary="Add solution of problem 91;">
-      <created>1664621200545</created>
-      <option name="number" value="00262" />
-      <option name="presentableId" value="LOCAL-00262" />
-      <option name="project" value="LOCAL" />
-      <updated>1664621200545</updated>
-    </task>
-    <task id="LOCAL-00263" summary="Add solution of problem 91;">
-      <created>1664621512401</created>
-      <option name="number" value="00263" />
-      <option name="presentableId" value="LOCAL-00263" />
-      <option name="project" value="LOCAL" />
-      <updated>1664621512401</updated>
-    </task>
-    <task id="LOCAL-00264" summary="Add solution of problem 91;">
-      <created>1664621619297</created>
-      <option name="number" value="00264" />
-      <option name="presentableId" value="LOCAL-00264" />
-      <option name="project" value="LOCAL" />
-      <updated>1664621619297</updated>
-    </task>
-    <task id="LOCAL-00265" summary="Add solution of problem 91;">
-      <created>1664621905497</created>
-      <option name="number" value="00265" />
-      <option name="presentableId" value="LOCAL-00265" />
-      <option name="project" value="LOCAL" />
-      <updated>1664621905497</updated>
-    </task>
-    <task id="LOCAL-00266" summary="Add solution of problem 91;">
-      <created>1664622059055</created>
-      <option name="number" value="00266" />
-      <option name="presentableId" value="LOCAL-00266" />
-      <option name="project" value="LOCAL" />
-      <updated>1664622059055</updated>
-    </task>
-    <task id="LOCAL-00267" summary="Add solution of problem 91;">
-      <created>1664622178497</created>
-      <option name="number" value="00267" />
-      <option name="presentableId" value="LOCAL-00267" />
-      <option name="project" value="LOCAL" />
-      <updated>1664622178497</updated>
-    </task>
-    <task id="LOCAL-00268" summary="Update problem 91 : Improve readability;">
-      <created>1664623249714</created>
-      <option name="number" value="00268" />
-      <option name="presentableId" value="LOCAL-00268" />
-      <option name="project" value="LOCAL" />
-      <updated>1664623249714</updated>
     </task>
     <task id="LOCAL-00269" summary="Update problem 91 : Improve readability;">
       <created>1664623499404</created>
@@ -423,7 +362,70 @@
       <option name="project" value="LOCAL" />
       <updated>1665063878594</updated>
     </task>
-    <option name="localTasksCounter" value="309" />
+    <task id="LOCAL-00309" summary="Fix problem 636 : Incorrect space complexity;">
+      <created>1665064420048</created>
+      <option name="number" value="00309" />
+      <option name="presentableId" value="LOCAL-00309" />
+      <option name="project" value="LOCAL" />
+      <updated>1665064420048</updated>
+    </task>
+    <task id="LOCAL-00310" summary="initial solution;">
+      <created>1665111190409</created>
+      <option name="number" value="00310" />
+      <option name="presentableId" value="LOCAL-00310" />
+      <option name="project" value="LOCAL" />
+      <updated>1665111190409</updated>
+    </task>
+    <task id="LOCAL-00311" summary="Add solution of problem 732;">
+      <created>1665121579885</created>
+      <option name="number" value="00311" />
+      <option name="presentableId" value="LOCAL-00311" />
+      <option name="project" value="LOCAL" />
+      <updated>1665121579885</updated>
+    </task>
+    <task id="LOCAL-00312" summary="Add solution of problem 732;">
+      <created>1665123573943</created>
+      <option name="number" value="00312" />
+      <option name="presentableId" value="LOCAL-00312" />
+      <option name="project" value="LOCAL" />
+      <updated>1665123573943</updated>
+    </task>
+    <task id="LOCAL-00313" summary="Add solution of problem 732;">
+      <created>1665126820429</created>
+      <option name="number" value="00313" />
+      <option name="presentableId" value="LOCAL-00313" />
+      <option name="project" value="LOCAL" />
+      <updated>1665126820429</updated>
+    </task>
+    <task id="LOCAL-00314" summary="Add solution of problem 732;">
+      <created>1665126983728</created>
+      <option name="number" value="00314" />
+      <option name="presentableId" value="LOCAL-00314" />
+      <option name="project" value="LOCAL" />
+      <updated>1665126983728</updated>
+    </task>
+    <task id="LOCAL-00315" summary="Add solution of problem 732;">
+      <created>1665127218786</created>
+      <option name="number" value="00315" />
+      <option name="presentableId" value="LOCAL-00315" />
+      <option name="project" value="LOCAL" />
+      <updated>1665127218786</updated>
+    </task>
+    <task id="LOCAL-00316" summary="Add solution of problem 732;">
+      <created>1665127255821</created>
+      <option name="number" value="00316" />
+      <option name="presentableId" value="LOCAL-00316" />
+      <option name="project" value="LOCAL" />
+      <updated>1665127255822</updated>
+    </task>
+    <task id="LOCAL-00317" summary="Add solution of problem 732;">
+      <created>1665128219326</created>
+      <option name="number" value="00317" />
+      <option name="presentableId" value="LOCAL-00317" />
+      <option name="project" value="LOCAL" />
+      <updated>1665128219326</updated>
+    </task>
+    <option name="localTasksCounter" value="318" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -465,8 +467,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update build : Update kotlin to 1.7.20;" />
-    <MESSAGE value="Add solution of problem 218;" />
     <MESSAGE value="Add solution of problem 148;" />
     <MESSAGE value="Update problem 218 : Improve readability;" />
     <MESSAGE value="temp;" />
@@ -490,7 +490,9 @@
     <MESSAGE value="Add solution of problem 981;" />
     <MESSAGE value="Add solution of problem 636;" />
     <MESSAGE value="Fix problem 636 : Incorrect space complexity;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix problem 636 : Incorrect space complexity;" />
+    <MESSAGE value="initial solution;" />
+    <MESSAGE value="Add solution of problem 732;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 732;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
