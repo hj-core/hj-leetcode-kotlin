@@ -36,14 +36,14 @@ class Solution2 {
 
         private val nodeStack = ArrayDeque<TreeNode>()
 
+        private val getChildCorrespondingToOrder: (parentNode: TreeNode) -> TreeNode? =
+            if (reverse) { parentNode -> parentNode.right } else { parentNode -> parentNode.left }
+
         init {
             updateNodeStack(root)
         }
 
         private fun updateNodeStack(parentNode: TreeNode?) {
-            val getChildCorrespondingToOrder: (parentNode: TreeNode) -> TreeNode? =
-                if (reverse) { node -> node.right } else { node -> node.left }
-
             var currParentNode = parentNode
 
             while (currParentNode != null) {
