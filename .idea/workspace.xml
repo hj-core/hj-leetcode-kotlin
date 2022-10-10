@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 653 : Lift the getChild value function to instant variable;" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 1328;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="LeetCode Solution" />
         <option value="Kotlin Class" />
+        <option value="LeetCode Solution" />
       </list>
     </option>
   </component>
@@ -27,7 +27,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem91" />
+        <entry key="$PROJECT_DIR$" value="problem229" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -79,13 +79,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00272" summary="Improve readability;">
-      <created>1664747158342</created>
-      <option name="number" value="00272" />
-      <option name="presentableId" value="LOCAL-00272" />
-      <option name="project" value="LOCAL" />
-      <updated>1664747158342</updated>
     </task>
     <task id="LOCAL-00273" summary="Add solution of problem 1155;">
       <created>1664747361139</created>
@@ -423,7 +416,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665323609602</updated>
     </task>
-    <option name="localTasksCounter" value="321" />
+    <task id="LOCAL-00321" summary="Add solution of problem 1328;">
+      <created>1665374194314</created>
+      <option name="number" value="00321" />
+      <option name="presentableId" value="LOCAL-00321" />
+      <option name="project" value="LOCAL" />
+      <updated>1665374194314</updated>
+    </task>
+    <option name="localTasksCounter" value="322" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -437,7 +437,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="problem229" />
                       </list>
                     </value>
                   </entry>
@@ -465,7 +465,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="temp;" />
     <MESSAGE value="Add solution of problem 91;" />
     <MESSAGE value="Update problem 91 : Improve readability;" />
     <MESSAGE value="Update problem 148 : Improve readability and add solution2;" />
@@ -490,7 +489,8 @@
     <MESSAGE value="Add solution of problem 169;" />
     <MESSAGE value="Add solution of problem 653;" />
     <MESSAGE value="Update problem 653 : Lift the getChild value function to instant variable;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 653 : Lift the getChild value function to instant variable;" />
+    <MESSAGE value="Add solution of problem 1328;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 1328;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
