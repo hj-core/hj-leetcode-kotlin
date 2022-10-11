@@ -8,18 +8,18 @@ class Solution {
      * Time O(N) and Space O(1) where N is the size of nums;
      */
     fun increasingTriplet(nums: IntArray): Boolean {
-        val auxList = mutableListOf<Int>().also { it.add(nums[0]) }
+        val auxTriplet = mutableListOf<Int>().also { it.add(nums[0]) }
 
         for (index in 1..nums.lastIndex) {
             val num = nums[index]
 
             when {
-                num < auxList.first() -> auxList[0] = num
-                num > auxList.first() && num < auxList.last() -> auxList[1] = num
-                num > auxList.last() -> auxList.add(num)
+                num > auxTriplet.last() -> auxTriplet.add(num)
+                num < auxTriplet.first() -> auxTriplet[0] = num
+                num > auxTriplet.first() && num < auxTriplet.last() -> auxTriplet[1] = num
             }
 
-            if (auxList.size == 3) return true
+            if (auxTriplet.size == 3) return true
         }
         return false
     }
