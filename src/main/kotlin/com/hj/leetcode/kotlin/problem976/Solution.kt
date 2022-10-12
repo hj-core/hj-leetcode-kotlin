@@ -13,10 +13,10 @@ class Solution {
 
         for (index in sortedLengths.lastIndex downTo 2) {
             val longestSide = sortedLengths[index]
-            val sumOfShorterSides = sortedLengths[index - 1] + sortedLengths[index - 2]
+            val sumOfRemainingSides = sortedLengths[index - 1] + sortedLengths[index - 2]
 
-            val canFormTriangle = sumOfShorterSides > longestSide
-            if (canFormTriangle) return sumOfShorterSides + longestSide
+            val canFormTriangle = sumOfRemainingSides > longestSide
+            if (canFormTriangle) return sumOfRemainingSides + longestSide
         }
         return 0
     }
