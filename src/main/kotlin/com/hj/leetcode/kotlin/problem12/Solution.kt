@@ -23,9 +23,9 @@ class Solution {
     fun intToRoman(num: Int): String {
         require(num in 1..3999) // Constraint from problem;
 
-        val sortedDigitUnit = listOf(DigitUnit.Thousand, DigitUnit.Hundred, DigitUnit.Ten, DigitUnit.One)
+        val sortedUnits = listOf(DigitUnit.Thousand, DigitUnit.Hundred, DigitUnit.Ten, DigitUnit.One)
 
-        val roman = sortedDigitUnit.joinToString("") { digitUnit ->
+        val roman = sortedUnits.joinToString("") { digitUnit ->
             val digit = num.digitAt(digitUnit)
             getRomanNumeral(digit, digitUnit)
         }
