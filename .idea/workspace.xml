@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 219;">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem54/Solution.kt" afterDir="false" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 54;">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem645/Solution.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -76,13 +76,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00351" summary="Add solution of problem 264;">
-      <created>1665740435574</created>
-      <option name="number" value="00351" />
-      <option name="presentableId" value="LOCAL-00351" />
-      <option name="project" value="LOCAL" />
-      <updated>1665740435574</updated>
     </task>
     <task id="LOCAL-00352" summary="Update problem 264 : Improve performance;">
       <created>1665741199667</created>
@@ -420,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666321369449</updated>
     </task>
-    <option name="localTasksCounter" value="400" />
+    <task id="LOCAL-00400" summary="Add solution of problem 54;">
+      <created>1666356684444</created>
+      <option name="number" value="00400" />
+      <option name="presentableId" value="LOCAL-00400" />
+      <option name="project" value="LOCAL" />
+      <updated>1666356684444</updated>
+    </task>
+    <option name="localTasksCounter" value="401" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -462,7 +462,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 334 : Refactor and Improve readability;" />
     <MESSAGE value="Add solution of problem 223;" />
     <MESSAGE value="Add solution of problem 655;" />
     <MESSAGE value="Update problem 19 : Improve readability;" />
@@ -487,7 +486,8 @@
     <MESSAGE value="Add solution of problem 692;" />
     <MESSAGE value="Add solution of problem 18;" />
     <MESSAGE value="Add solution of problem 219;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 219;" />
+    <MESSAGE value="Add solution of problem 54;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 54;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
