@@ -5,30 +5,21 @@ package com.hj.leetcode.kotlin.problem49
  */
 class Solution {
     /* Complexity:
-     * Time O(K) and Space O(K) where K is the flat length of strs;
+     * Time O(L) and Space O(L) where L is the flat length of strs;
      */
     fun groupAnagrams(strs: Array<String>): List<List<String>> {
-        val groups = groupByCharFrequency(strs)
-        return groups.values.toList()
+        return strs
+            .groupBy { str -> getCountPerLowercase(str) }
+            .map { it.value }
     }
 
-    private fun groupByCharFrequency(strings: Array<String>): Map<List<Int>, List<String>> {
-        val groups = hashMapOf<List<Int>, MutableList<String>>()
+    private fun getCountPerLowercase(lowercaseOnly: String): List<Int> {
+        val counts = MutableList(26) { 0 }
 
-        for (string in strings) {
-            val charFrequency = countCharFrequency(string)
-            groups
-                .getOrPut(charFrequency) { mutableListOf() }
-                .add(string)
+        for (char in lowercaseOnly) {
+            counts[char - 'a']++
         }
-        return groups
-    }
 
-    private fun countCharFrequency(lowercase: String): List<Int> {
-        val frequency = MutableList(26) { 0 }
-        for (char in lowercase) {
-            frequency[char - 'a']++
-        }
-        return frequency
+        return counts
     }
 }
