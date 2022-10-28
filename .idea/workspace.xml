@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 523;">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 49: Refactor and improve readability;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,13 +74,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00358" summary="Add solution of problem 1335;">
-      <created>1665926235083</created>
-      <option name="number" value="00358" />
-      <option name="presentableId" value="LOCAL-00358" />
-      <option name="project" value="LOCAL" />
-      <updated>1665926235083</updated>
     </task>
     <task id="LOCAL-00359" summary="Add solution of problem 1335;">
       <created>1665926813723</created>
@@ -418,7 +411,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666878940093</updated>
     </task>
-    <option name="localTasksCounter" value="407" />
+    <task id="LOCAL-00407" summary="Update problem 49: Refactor and improve readability;">
+      <created>1666932624824</created>
+      <option name="number" value="00407" />
+      <option name="presentableId" value="LOCAL-00407" />
+      <option name="project" value="LOCAL" />
+      <updated>1666932624825</updated>
+    </task>
+    <option name="localTasksCounter" value="408" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -460,7 +460,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 976 : Improve readability;" />
     <MESSAGE value="Add solution of problem 241;" />
     <MESSAGE value="Update problem 241 : Delete discuss in README.md;&#10;&#10;- Need careful rethink;" />
     <MESSAGE value="Add solution of problem 237;" />
@@ -485,7 +484,8 @@
     <MESSAGE value="Add solution of problem 1662;" />
     <MESSAGE value="draft;" />
     <MESSAGE value="Add solution of problem 523;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 523;" />
+    <MESSAGE value="Update problem 49 : Refactor and improve readability;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 49 : Refactor and improve readability;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -14,7 +14,7 @@ class Solution {
         if (minNumOnes == 0 || minNumOnes == 1) return minNumOnes
 
         val (lessContent, moreContent) = if (numOnesInImg1 < numOnesInImg2) img1 to img2 else img2 to img1
-        val coordinateOfOnes = findCoordinatesOfOnes(lessContent)
+        val coordinatesOfOnes = findCoordinatesOfOnes(lessContent)
 
         val size = img1.size
         val possibleShift = -(size - 1) until size
@@ -22,13 +22,14 @@ class Solution {
 
         for (rowShift in possibleShift) {
             for (columnShift in possibleShift) {
-                val overlap = countOverlap(moreContent, rowShift, columnShift, coordinateOfOnes)
+                val overlap = countOverlap(moreContent, rowShift, columnShift, coordinatesOfOnes)
                 largestOverlap = maxOf(largestOverlap, overlap)
 
                 val reachLargestPossible = largestOverlap == minNumOnes
                 if (reachLargestPossible) return largestOverlap
             }
         }
+
         return largestOverlap
     }
 
@@ -36,10 +37,9 @@ class Solution {
         var count = 0
 
         for (row in image.indices) {
-            for (column in image[row].indices) {
-                if (image[row][column] == 1) count++
-            }
+            count += image[row].count { it == 1 }
         }
+
         return count
     }
 
@@ -51,6 +51,7 @@ class Solution {
                 if (image[row][column] == 1) coordinates.add(Coordinates(row, column))
             }
         }
+
         return coordinates
     }
 
@@ -60,16 +61,19 @@ class Solution {
         imageToShift: Array<IntArray>,
         rowShift: Int,
         columnShift: Int,
-        coordinateOfOnes: List<Coordinates>
+        coordinatesOfOnesInBaseImage: List<Coordinates>
     ): Int {
         var overlap = 0
 
-        for (coordinate in coordinateOfOnes) {
+        for (coordinate in coordinatesOfOnesInBaseImage) {
             val isOverlap = with(coordinate) {
-                imageToShift.getOrNull(row - rowShift)?.getOrNull(column - columnShift) == 1
+                1 == imageToShift
+                    .getOrNull(row - rowShift)
+                    ?.getOrNull(column - columnShift)
             }
             if (isOverlap) overlap++
         }
+
         return overlap
     }
 }
