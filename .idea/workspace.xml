@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 49: Refactor and improve readability;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 1239;">
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1239/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1239/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,34 +74,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00359" summary="Add solution of problem 1335;">
-      <created>1665926813723</created>
-      <option name="number" value="00359" />
-      <option name="presentableId" value="LOCAL-00359" />
-      <option name="project" value="LOCAL" />
-      <updated>1665926813723</updated>
-    </task>
-    <task id="LOCAL-00360" summary="Add solution of problem 1335;">
-      <created>1665927265522</created>
-      <option name="number" value="00360" />
-      <option name="presentableId" value="LOCAL-00360" />
-      <option name="project" value="LOCAL" />
-      <updated>1665927265522</updated>
-    </task>
-    <task id="LOCAL-00361" summary="1;">
-      <created>1665927325115</created>
-      <option name="number" value="00361" />
-      <option name="presentableId" value="LOCAL-00361" />
-      <option name="project" value="LOCAL" />
-      <updated>1665927325115</updated>
-    </task>
-    <task id="LOCAL-00362" summary="Add solution of problem 1335;">
-      <created>1665927514246</created>
-      <option name="number" value="00362" />
-      <option name="presentableId" value="LOCAL-00362" />
-      <option name="project" value="LOCAL" />
-      <updated>1665927514246</updated>
     </task>
     <task id="LOCAL-00363" summary="Add solution of problem 1335;">
       <created>1665928035447</created>
@@ -418,7 +390,35 @@
       <option name="project" value="LOCAL" />
       <updated>1666932624825</updated>
     </task>
-    <option name="localTasksCounter" value="408" />
+    <task id="LOCAL-00408" summary="Update problem 835 : Improve readability;">
+      <created>1666944346910</created>
+      <option name="number" value="00408" />
+      <option name="presentableId" value="LOCAL-00408" />
+      <option name="project" value="LOCAL" />
+      <updated>1666944346911</updated>
+    </task>
+    <task id="LOCAL-00409" summary="Add solution of problem 1239;">
+      <created>1666953374450</created>
+      <option name="number" value="00409" />
+      <option name="presentableId" value="LOCAL-00409" />
+      <option name="project" value="LOCAL" />
+      <updated>1666953374450</updated>
+    </task>
+    <task id="LOCAL-00410" summary="Add solution of problem 1239;">
+      <created>1666954230708</created>
+      <option name="number" value="00410" />
+      <option name="presentableId" value="LOCAL-00410" />
+      <option name="project" value="LOCAL" />
+      <updated>1666954230708</updated>
+    </task>
+    <task id="LOCAL-00411" summary="Add solution of problem 1239;">
+      <created>1666954819813</created>
+      <option name="number" value="00411" />
+      <option name="presentableId" value="LOCAL-00411" />
+      <option name="project" value="LOCAL" />
+      <updated>1666954819814</updated>
+    </task>
+    <option name="localTasksCounter" value="412" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -460,8 +460,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution of problem 241;" />
-    <MESSAGE value="Update problem 241 : Delete discuss in README.md;&#10;&#10;- Need careful rethink;" />
     <MESSAGE value="Add solution of problem 237;" />
     <MESSAGE value="Add solution of problem 162;" />
     <MESSAGE value="Add solution of problem 142;" />
@@ -485,7 +483,9 @@
     <MESSAGE value="draft;" />
     <MESSAGE value="Add solution of problem 523;" />
     <MESSAGE value="Update problem 49 : Refactor and improve readability;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 49 : Refactor and improve readability;" />
+    <MESSAGE value="Update problem 835 : Improve readability;" />
+    <MESSAGE value="Add solution of problem 1239;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution of problem 1239;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
