@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 766;">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution of problem 1293;">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1706/Solution.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +31,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem1239" />
+        <entry key="$PROJECT_DIR$" value="problem1293" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -74,34 +76,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00365" summary="Add solution of problem 1335;">
-      <created>1665928730758</created>
-      <option name="number" value="00365" />
-      <option name="presentableId" value="LOCAL-00365" />
-      <option name="project" value="LOCAL" />
-      <updated>1665928730758</updated>
-    </task>
-    <task id="LOCAL-00366" summary="Add solution of problem 1335;">
-      <created>1665928877882</created>
-      <option name="number" value="00366" />
-      <option name="presentableId" value="LOCAL-00366" />
-      <option name="project" value="LOCAL" />
-      <updated>1665928877883</updated>
-    </task>
-    <task id="LOCAL-00367" summary="Add solution of problem 1335;">
-      <created>1665929033804</created>
-      <option name="number" value="00367" />
-      <option name="presentableId" value="LOCAL-00367" />
-      <option name="project" value="LOCAL" />
-      <updated>1665929033805</updated>
-    </task>
-    <task id="LOCAL-00368" summary="Add solution of problem 1335;">
-      <created>1665929085024</created>
-      <option name="number" value="00368" />
-      <option name="presentableId" value="LOCAL-00368" />
-      <option name="project" value="LOCAL" />
-      <updated>1665929085024</updated>
     </task>
     <task id="LOCAL-00369" summary="Add solution of problem 1335;">
       <created>1665929209207</created>
@@ -418,7 +392,35 @@
       <option name="project" value="LOCAL" />
       <updated>1667044388908</updated>
     </task>
-    <option name="localTasksCounter" value="414" />
+    <task id="LOCAL-00414" summary="Add solution of problem 2136;">
+      <created>1667046626705</created>
+      <option name="number" value="00414" />
+      <option name="presentableId" value="LOCAL-00414" />
+      <option name="project" value="LOCAL" />
+      <updated>1667046626705</updated>
+    </task>
+    <task id="LOCAL-00415" summary="Add solution of problem 2136;">
+      <created>1667046684341</created>
+      <option name="number" value="00415" />
+      <option name="presentableId" value="LOCAL-00415" />
+      <option name="project" value="LOCAL" />
+      <updated>1667046684341</updated>
+    </task>
+    <task id="LOCAL-00416" summary="Add solution of problem 2136;">
+      <created>1667046729966</created>
+      <option name="number" value="00416" />
+      <option name="presentableId" value="LOCAL-00416" />
+      <option name="project" value="LOCAL" />
+      <updated>1667046729966</updated>
+    </task>
+    <task id="LOCAL-00417" summary="Add solution of problem 2136;">
+      <created>1667046872205</created>
+      <option name="number" value="00417" />
+      <option name="presentableId" value="LOCAL-00417" />
+      <option name="project" value="LOCAL" />
+      <updated>1667046872205</updated>
+    </task>
+    <option name="localTasksCounter" value="418" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -432,7 +434,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="problem1293" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
