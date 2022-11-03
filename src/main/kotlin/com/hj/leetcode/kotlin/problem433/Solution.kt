@@ -8,46 +8,49 @@ class Solution {
      * Time O(N^2) and Space O(N) where N is the size of bank;
      */
     fun minMutation(start: String, end: String, bank: Array<String>): Int {
-        val allowedMutations = bank.toHashSet().apply { remove(start) }
+        val noMutationRequired = start == end
+        if (noMutationRequired) return 0
 
-        if (start == end) return 0
-        if (end !in allowedMutations) return -1
+        val validGenes = bank.toHashSet().apply { remove(start) }
 
-        return findMinNonZeroMutation(0, listOf(start), allowedMutations, end)
+        val isInvalidEndGene = end !in validGenes
+        if (isInvalidEndGene) return -1
+
+        return findMinNonZeroStepsToEndGene(0, listOf(start), validGenes, end)
     }
 
-    private tailrec fun findMinNonZeroMutation(
-        currDepth: Int,
-        genesAtCurrDepth: List<String>,
-        allowedMutations: MutableSet<String>,
-        end: String
+    private tailrec fun findMinNonZeroStepsToEndGene(
+        currStep: Int,
+        genesAtCurrStep: List<String>,
+        validGenes: MutableSet<String>,
+        endGene: String
     ): Int {
-        val genesAtNextDepth = mutableListOf<String>()
+        val genesAtNextStep = mutableListOf<String>()
 
-        for (gene in genesAtCurrDepth) {
-            val mutationsIterator = allowedMutations.iterator()
+        for (gene in genesAtCurrStep) {
+            val validGenesIterator = validGenes.iterator()
 
-            while (mutationsIterator.hasNext()) {
-                val mutation = mutationsIterator.next()
-                val isValidMutation = isValidMutation(gene, mutation)
+            while (validGenesIterator.hasNext()) {
+                val validGene = validGenesIterator.next()
+                val inOneMutation = inOneMutation(gene, validGene)
 
-                if (isValidMutation) {
-                    if (mutation == end) return currDepth + 1
+                if (inOneMutation) {
+                    if (validGene == endGene) return currStep + 1
 
-                    genesAtNextDepth.add(mutation)
-                    mutationsIterator.remove()
+                    genesAtNextStep.add(validGene)
+                    validGenesIterator.remove()
                 }
             }
         }
 
-        return if (genesAtNextDepth.isEmpty()) {
+        return if (genesAtNextStep.isEmpty()) {
             -1
         } else {
-            findMinNonZeroMutation(currDepth + 1, genesAtNextDepth, allowedMutations, end)
+            findMinNonZeroStepsToEndGene(currStep + 1, genesAtNextStep, validGenes, endGene)
         }
     }
 
-    private fun isValidMutation(gene: String, target: String): Boolean {
+    private fun inOneMutation(gene: String, target: String): Boolean {
         require(gene.length == target.length)
         var numDiff = 0
 
