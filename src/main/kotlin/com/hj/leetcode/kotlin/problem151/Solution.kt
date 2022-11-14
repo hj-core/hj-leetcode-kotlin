@@ -13,20 +13,20 @@ class Solution {
 
         for (index in s.indices.reversed()) {
             if (s[index] == ' ') {
-                processCurrWord(reversedWord, result)
+                appendAndClearWord(result, reversedWord)
             } else {
                 reversedWord.append(s[index])
             }
         }
 
-        processCurrWord(reversedWord, result)
+        appendAndClearWord(result, reversedWord)
 
         return result
             .removeTrailingSpace()
             .toString()
     }
 
-    private fun processCurrWord(reversedWord: StringBuilder, accumulatedWords: StringBuilder) {
+    private fun appendAndClearWord(accumulatedWords: StringBuilder, reversedWord: StringBuilder) {
         if (reversedWord.isEmpty()) return
 
         for (index in reversedWord.indices.reversed()) {
