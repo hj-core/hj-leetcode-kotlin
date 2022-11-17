@@ -8,21 +8,21 @@ class Solution {
      * Time O(1) and Space O(1);
      */
     fun computeArea(ax1: Int, ay1: Int, ax2: Int, ay2: Int, bx1: Int, by1: Int, bx2: Int, by2: Int): Int {
-        val rec1 = Rectangle(ax1, ax2, ay1, ay2)
-        val rec2 = Rectangle(bx1, bx2, by1, by2)
+        val rec1Area = calculateRectangleArea(ax1, ax2, ay1, ay2)
+        val rec2Area = calculateRectangleArea(bx1, bx2, by1, by2)
 
         val xOverlapLen = findOverlapLength(ax1..ax2, bx1..bx2)
         val yOverlapLen = findOverlapLength(ay1..ay2, by1..by2)
         val overlapArea = xOverlapLen * yOverlapLen
 
-        return rec1.area + rec2.area - overlapArea
+        return rec1Area + rec2Area - overlapArea
     }
 
-    private class Rectangle(
+    private fun calculateRectangleArea(
         xBottomLeft: Int, xTopRight: Int,
         yBottomLeft: Int, yTopRight: Int
-    ) {
-        val area = (xTopRight - xBottomLeft) * (yTopRight - yBottomLeft)
+    ): Int {
+        return (xTopRight - xBottomLeft) * (yTopRight - yBottomLeft)
     }
 
     private fun findOverlapLength(intRange1: IntRange, intRange2: IntRange): Int {
