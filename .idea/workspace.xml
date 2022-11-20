@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 1926;" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 224;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,7 +27,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem2131" />
+        <entry key="$PROJECT_DIR$" value="problem224" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,12 +35,12 @@
   <component name="GitRewordedCommitMessages">
     <option name="commitMessagesMapping">
       <RewordedCommitMessageMapping>
-        <option name="originalMessage" value="initial draft;" />
-        <option name="rewordedMessage" value="Add solution of problem 433;" />
+        <option name="originalMessage" value="draft Solution.kt;" />
+        <option name="rewordedMessage" value="Add solution to problem 224;" />
       </RewordedCommitMessageMapping>
     </option>
     <option name="currentCommit" value="1" />
-    <option name="onto" value="26f43b61ea55d5773077fef9a8781c0f529dad96" />
+    <option name="onto" value="dc9122641b08c1266997392c26ddbaf77243dee6" />
   </component>
   <component name="GithubProjectSettings">
     <option name="branchProtectionPatterns">
@@ -86,20 +86,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00422" summary="Add solution of problem 1293;">
-      <created>1667310165960</created>
-      <option name="number" value="00422" />
-      <option name="presentableId" value="LOCAL-00422" />
-      <option name="project" value="LOCAL" />
-      <updated>1667310165960</updated>
-    </task>
-    <task id="LOCAL-00423" summary="workspace.xml;">
-      <created>1667470928637</created>
-      <option name="number" value="00423" />
-      <option name="presentableId" value="LOCAL-00423" />
-      <option name="project" value="LOCAL" />
-      <updated>1667470928637</updated>
     </task>
     <task id="LOCAL-00424" summary="Update solution;">
       <created>1667471354714</created>
@@ -430,7 +416,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669041722831</updated>
     </task>
-    <option name="localTasksCounter" value="471" />
+    <task id="LOCAL-00471" summary="Add solution to problem 224;">
+      <created>1669043493988</created>
+      <option name="number" value="00471" />
+      <option name="presentableId" value="LOCAL-00471" />
+      <option name="project" value="LOCAL" />
+      <updated>1669043493988</updated>
+    </task>
+    <task id="LOCAL-00472" summary="Add solution to problem 224;">
+      <created>1669043669529</created>
+      <option name="number" value="00472" />
+      <option name="presentableId" value="LOCAL-00472" />
+      <option name="project" value="LOCAL" />
+      <updated>1669043669529</updated>
+    </task>
+    <option name="localTasksCounter" value="473" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -472,8 +472,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution of problem 523;" />
-    <MESSAGE value="Update problem 49 : Refactor and improve readability;" />
     <MESSAGE value="Update problem 835 : Improve readability;" />
     <MESSAGE value="Add solution of problem 1239;" />
     <MESSAGE value="Add solution of problem 2136;" />
@@ -497,7 +495,9 @@
     <MESSAGE value="Update problem 223 : Refactor and improve readability;" />
     <MESSAGE value="Update problem 223 : Improve performance;" />
     <MESSAGE value="Add solution to problem 1926;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 1926;" />
+    <MESSAGE value="improve;" />
+    <MESSAGE value="Add solution to problem 224;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 224;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
