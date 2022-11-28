@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="initial draft;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 2225;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,20 +86,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00430" summary="Update problem 433 : Improve readability and performance;">
-      <created>1667479783200</created>
-      <option name="number" value="00430" />
-      <option name="presentableId" value="LOCAL-00430" />
-      <option name="project" value="LOCAL" />
-      <updated>1667479783200</updated>
-    </task>
-    <task id="LOCAL-00431" summary="Update problem 433 : Improve readability and performance;">
-      <created>1667480123066</created>
-      <option name="number" value="00431" />
-      <option name="presentableId" value="LOCAL-00431" />
-      <option name="project" value="LOCAL" />
-      <updated>1667480123066</updated>
     </task>
     <task id="LOCAL-00432" summary="Update problem 433 : Improve readability and performance;">
       <created>1667480155595</created>
@@ -432,7 +416,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669196659307</updated>
     </task>
-    <option name="localTasksCounter" value="479" />
+    <task id="LOCAL-00479" summary="Add solution to problem 1235;">
+      <created>1669472551490</created>
+      <option name="number" value="00479" />
+      <option name="presentableId" value="LOCAL-00479" />
+      <option name="project" value="LOCAL" />
+      <updated>1669472551490</updated>
+    </task>
+    <task id="LOCAL-00480" summary="Add solution to problem 2225;">
+      <created>1669598845364</created>
+      <option name="number" value="00480" />
+      <option name="presentableId" value="LOCAL-00480" />
+      <option name="project" value="LOCAL" />
+      <updated>1669598845364</updated>
+    </task>
+    <option name="localTasksCounter" value="481" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -474,8 +472,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution of problem 1706;" />
-    <MESSAGE value="Add solution of problem 1293;" />
     <MESSAGE value="workspace.xml;" />
     <MESSAGE value="Update solution;" />
     <MESSAGE value="Add solution of problem 433;" />
@@ -499,7 +495,9 @@
     <MESSAGE value="Add solution to problem 279;" />
     <MESSAGE value="Add solutions to problem 279;" />
     <MESSAGE value="Add solutions to problem 36;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solutions to problem 36;" />
+    <MESSAGE value="Add solution to problem 1235;" />
+    <MESSAGE value="Add solution to problem 2225;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 2225;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
