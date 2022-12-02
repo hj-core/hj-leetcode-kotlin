@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 1657;">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1657/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1657/Solution.kt" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 1657 : Improve readability;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,6 +60,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2ETABv6HUAfXkVo9azJjuSbYvwh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -74,7 +75,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.41494253&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
@@ -85,6 +86,7 @@
       <recent name="D:\gaps-\Documents\GitHub\hj-leetcode-kotlin\src\main\kotlin\com\hj\leetcode\kotlin\medium" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.hj.leetcode.kotlin.problem1657" />
       <recent name="com.hj.leetcode.kotlin.common.model" />
     </key>
   </component>
@@ -103,27 +105,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00441" summary="initial solution;">
-      <created>1667487085092</created>
-      <option name="number" value="00441" />
-      <option name="presentableId" value="LOCAL-00441" />
-      <option name="project" value="LOCAL" />
-      <updated>1667487085093</updated>
-    </task>
-    <task id="LOCAL-00442" summary="Add solution of problem 2131;">
-      <created>1667566166732</created>
-      <option name="number" value="00442" />
-      <option name="presentableId" value="LOCAL-00442" />
-      <option name="project" value="LOCAL" />
-      <updated>1667566166733</updated>
-    </task>
-    <task id="LOCAL-00443" summary="Add solution of problem 2131;">
-      <created>1667566303965</created>
-      <option name="number" value="00443" />
-      <option name="presentableId" value="LOCAL-00443" />
-      <option name="project" value="LOCAL" />
-      <updated>1667566303965</updated>
     </task>
     <task id="LOCAL-00444" summary="Add solution of problem 2131;">
       <created>1667566367668</created>
@@ -447,7 +428,28 @@
       <option name="project" value="LOCAL" />
       <updated>1669980428435</updated>
     </task>
-    <option name="localTasksCounter" value="490" />
+    <task id="LOCAL-00490" summary="Add solution to problem 1657;">
+      <created>1669980546103</created>
+      <option name="number" value="00490" />
+      <option name="presentableId" value="LOCAL-00490" />
+      <option name="project" value="LOCAL" />
+      <updated>1669980546103</updated>
+    </task>
+    <task id="LOCAL-00491" summary="Update problem 1657 : Improve readability;">
+      <created>1669981205417</created>
+      <option name="number" value="00491" />
+      <option name="presentableId" value="LOCAL-00491" />
+      <option name="project" value="LOCAL" />
+      <updated>1669981205418</updated>
+    </task>
+    <task id="LOCAL-00492" summary="Update problem 1657 : Improve readability;">
+      <created>1669981684354</created>
+      <option name="number" value="00492" />
+      <option name="presentableId" value="LOCAL-00492" />
+      <option name="project" value="LOCAL" />
+      <updated>1669981684354</updated>
+    </task>
+    <option name="localTasksCounter" value="493" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -489,7 +491,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="initial solution;" />
     <MESSAGE value="Add solution of problem 2131;" />
     <MESSAGE value="Add solution of problem 1323;" />
     <MESSAGE value="Add solution to problem 901;" />
@@ -514,7 +515,8 @@
     <MESSAGE value="Add solution to problem 907;" />
     <MESSAGE value="Add solution to problem 1704;" />
     <MESSAGE value="Add solution to problem 1657;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 1657;" />
+    <MESSAGE value="Update problem 1657 : Improve readability;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 1657 : Improve readability;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

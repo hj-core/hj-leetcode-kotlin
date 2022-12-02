@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem1657
  */
 class Solution {
     /* Complexity:
-     * Time O(|word1|) & Space O(1);
+     * Time O(|word1|) and Space O(1);
      */
     fun closeStrings(word1: String, word2: String): Boolean {
         /* Despite the operations, there are three invariants of the state:
@@ -17,10 +17,10 @@ class Solution {
         val hasSameLength = word1.length == word2.length
         if (!hasSameLength) return false
 
-        val counter1 = countEachLowercase(word1)
-        val counter2 = countEachLowercase(word2)
+        val count1 = countEachLowercase(word1)
+        val count2 = countEachLowercase(word2)
 
-        return hasSameKindsOfLowercase(counter1, counter2) && hasSameGroupSizesByKinds(counter1, counter2)
+        return hasSameKindsOfLowercase(count1, count2) && hasSameGroupSizesByKinds(count1, count2)
     }
 
     private fun countEachLowercase(lowercaseOnly: String): IntArray {
@@ -31,15 +31,15 @@ class Solution {
         return countPerLowercase
     }
 
-    private fun hasSameKindsOfLowercase(counter1: IntArray, counter2: IntArray): Boolean {
-        return counter1.indices.all { index ->
-            (counter1[index] == 0) == (counter2[index] == 0)
+    private fun hasSameKindsOfLowercase(countPerLowercase1: IntArray, countPerLowercase2: IntArray): Boolean {
+        return countPerLowercase1.indices.all { index ->
+            (countPerLowercase1[index] == 0) == (countPerLowercase2[index] == 0)
         }
     }
 
-    private fun hasSameGroupSizesByKinds(counter1: IntArray, counter2: IntArray): Boolean {
-        val sortedSize1 = counter1.sorted()
-        val sortedSize2 = counter2.sorted()
-        return sortedSize1 == sortedSize2
+    private fun hasSameGroupSizesByKinds(countPerLowercase1: IntArray, countPerLowercase2: IntArray): Boolean {
+        val sortedSizes1 = countPerLowercase1.sorted()
+        val sortedSizes2 = countPerLowercase2.sorted()
+        return sortedSizes1 == sortedSizes2
     }
 }
