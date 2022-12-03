@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 1657 : Improve readability;">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem451/Solution.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 451 : Refactor solution;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,7 +23,12 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="hj-leetcode-kotlin" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -82,7 +83,7 @@
     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.41494253&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;Settings.Markdown&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -102,20 +103,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00445" summary="Add solution of problem 1323;">
-      <created>1667797721772</created>
-      <option name="number" value="00445" />
-      <option name="presentableId" value="LOCAL-00445" />
-      <option name="project" value="LOCAL" />
-      <updated>1667797721773</updated>
-    </task>
-    <task id="LOCAL-00446" summary="Add solution to problem 901;">
-      <created>1668013043751</created>
-      <option name="number" value="00446" />
-      <option name="presentableId" value="LOCAL-00446" />
-      <option name="project" value="LOCAL" />
-      <updated>1668013043751</updated>
     </task>
     <task id="LOCAL-00447" summary="Add solution to problem 26;">
       <created>1668136196683</created>
@@ -446,7 +433,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669981767742</updated>
     </task>
-    <option name="localTasksCounter" value="494" />
+    <task id="LOCAL-00494" summary="Add solution to problem 451;">
+      <created>1670064656576</created>
+      <option name="number" value="00494" />
+      <option name="presentableId" value="LOCAL-00494" />
+      <option name="project" value="LOCAL" />
+      <updated>1670064656576</updated>
+    </task>
+    <task id="LOCAL-00495" summary="Update problem 451 : Refactor solution;">
+      <created>1670080879282</created>
+      <option name="number" value="00495" />
+      <option name="presentableId" value="LOCAL-00495" />
+      <option name="project" value="LOCAL" />
+      <updated>1670080879283</updated>
+    </task>
+    <option name="localTasksCounter" value="496" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -488,8 +489,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution of problem 2131;" />
-    <MESSAGE value="Add solution of problem 1323;" />
     <MESSAGE value="Add solution to problem 901;" />
     <MESSAGE value="Add solution to problem 26;" />
     <MESSAGE value="improve readability;" />
@@ -513,7 +512,9 @@
     <MESSAGE value="Add solution to problem 1704;" />
     <MESSAGE value="Add solution to problem 1657;" />
     <MESSAGE value="Update problem 1657 : Improve readability;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 1657 : Improve readability;" />
+    <MESSAGE value="Add solution to problem 451;" />
+    <MESSAGE value="Update problem 451 : Refactor solution;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 451 : Refactor solution;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
