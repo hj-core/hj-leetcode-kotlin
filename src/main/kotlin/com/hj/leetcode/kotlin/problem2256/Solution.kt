@@ -10,13 +10,12 @@ class Solution {
     fun minimumAverageDifference(nums: IntArray): Int {
         val totalSum = nums.fold(0L) { acc, i -> acc + i }
         var leftSum = 0L
-        var leftSize = 0
         var minAbsAverageDiff = Long.MAX_VALUE
         var indexOfMin = -1
 
         for ((index, num) in nums.withIndex()) {
             leftSum += num
-            leftSize++
+            val leftSize = index + 1
             val leftAverage = leftSum / leftSize
 
             val rightSum = totalSum - leftSum
