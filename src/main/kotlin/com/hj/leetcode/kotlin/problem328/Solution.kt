@@ -10,17 +10,17 @@ class Solution {
      * Time O(N) and Space O(1) where N is the number of nodes in head;
      */
     fun oddEvenList(head: ListNode?): ListNode? {
-        var currOdd = head
         val headOfEven = head?.next
-        var currEven = headOfEven
+        var currOddNode = head
+        var currEvenNode = headOfEven
 
-        while (currEven?.next != null) {
-            currOdd?.next = currEven.next
-            currOdd = currOdd?.next
-            currEven.next = currOdd?.next
-            currEven = currEven.next
+        while (currEvenNode?.next != null) {
+            currOddNode?.next = currEvenNode.next
+            currOddNode = currOddNode?.next
+            currEvenNode.next = currOddNode?.next
+            currEvenNode = currEvenNode.next
         }
-        currOdd?.next = headOfEven
+        currOddNode?.next = headOfEven
         return head
     }
 }
