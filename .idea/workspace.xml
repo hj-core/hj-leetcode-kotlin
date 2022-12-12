@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 1339;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="draft solution;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +48,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem907" />
+        <entry key="$PROJECT_DIR$" value="problem124" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -467,7 +465,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="problem124" />
                       </list>
                     </value>
                   </entry>
@@ -495,7 +493,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="improve;" />
     <MESSAGE value="Add solution to problem 224;" />
     <MESSAGE value="Add solution to problem 279;" />
     <MESSAGE value="Add solutions to problem 279;" />
@@ -520,7 +517,8 @@
     <MESSAGE value="Add solution to problem 872;" />
     <MESSAGE value="Add solution to problem 1026;" />
     <MESSAGE value="Add solution to problem 1339;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 1339;" />
+    <MESSAGE value="draft solution;" />
+    <option name="LAST_COMMIT_MESSAGE" value="draft solution;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
