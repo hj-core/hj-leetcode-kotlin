@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 931;">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem198/Solution.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 198;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,13 +104,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00472" summary="Add solution to problem 224;">
-      <created>1669043669529</created>
-      <option name="number" value="00472" />
-      <option name="presentableId" value="LOCAL-00472" />
-      <option name="project" value="LOCAL" />
-      <updated>1669043669529</updated>
     </task>
     <task id="LOCAL-00473" summary="Add solution to problem 224;">
       <created>1669043713471</created>
@@ -452,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670933443934</updated>
     </task>
-    <option name="localTasksCounter" value="521" />
+    <task id="LOCAL-00521" summary="Add solution to problem 198;">
+      <created>1671019149037</created>
+      <option name="number" value="00521" />
+      <option name="presentableId" value="LOCAL-00521" />
+      <option name="project" value="LOCAL" />
+      <updated>1671019149038</updated>
+    </task>
+    <option name="localTasksCounter" value="522" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -497,7 +493,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solutions to problem 36;" />
     <MESSAGE value="Add solution to problem 1235;" />
     <MESSAGE value="Add solution to problem 2225;" />
     <MESSAGE value="Add solution to problem 380;" />
@@ -522,7 +517,8 @@
     <MESSAGE value="Add solution to problem 70;" />
     <MESSAGE value="Add solution to problem 124;" />
     <MESSAGE value="Add solution to problem 931;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 931;" />
+    <MESSAGE value="Add solution to problem 198;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 198;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
