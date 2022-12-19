@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 739;">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem739/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem739/Solution.kt" afterDir="false" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 1971;">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1971/Solution2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,9 +42,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
         <option value="package-info" />
         <option value="LeetCode Solution" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -106,41 +108,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00476" summary="Add solution to problem 279;">
-      <created>1669130278357</created>
-      <option name="number" value="00476" />
-      <option name="presentableId" value="LOCAL-00476" />
-      <option name="project" value="LOCAL" />
-      <updated>1669130278358</updated>
-    </task>
-    <task id="LOCAL-00477" summary="Add solutions to problem 279;">
-      <created>1669132036342</created>
-      <option name="number" value="00477" />
-      <option name="presentableId" value="LOCAL-00477" />
-      <option name="project" value="LOCAL" />
-      <updated>1669132036343</updated>
-    </task>
-    <task id="LOCAL-00478" summary="Add solutions to problem 36;">
-      <created>1669196659307</created>
-      <option name="number" value="00478" />
-      <option name="presentableId" value="LOCAL-00478" />
-      <option name="project" value="LOCAL" />
-      <updated>1669196659307</updated>
-    </task>
-    <task id="LOCAL-00479" summary="Add solution to problem 1235;">
-      <created>1669472551490</created>
-      <option name="number" value="00479" />
-      <option name="presentableId" value="LOCAL-00479" />
-      <option name="project" value="LOCAL" />
-      <updated>1669472551490</updated>
-    </task>
-    <task id="LOCAL-00480" summary="Add solution to problem 2225;">
-      <created>1669598845364</created>
-      <option name="number" value="00480" />
-      <option name="presentableId" value="LOCAL-00480" />
-      <option name="project" value="LOCAL" />
-      <updated>1669598845364</updated>
     </task>
     <task id="LOCAL-00481" summary="Add solution to problem 2225;">
       <created>1669599190307</created>
@@ -450,7 +417,42 @@
       <option name="project" value="LOCAL" />
       <updated>1671361074266</updated>
     </task>
-    <option name="localTasksCounter" value="525" />
+    <task id="LOCAL-00525" summary="Add solution to problem 739;">
+      <created>1671361386802</created>
+      <option name="number" value="00525" />
+      <option name="presentableId" value="LOCAL-00525" />
+      <option name="project" value="LOCAL" />
+      <updated>1671361386802</updated>
+    </task>
+    <task id="LOCAL-00526" summary="Add solution to problem 1971;">
+      <created>1671464744964</created>
+      <option name="number" value="00526" />
+      <option name="presentableId" value="LOCAL-00526" />
+      <option name="project" value="LOCAL" />
+      <updated>1671464744965</updated>
+    </task>
+    <task id="LOCAL-00527" summary="Add solution to problem 1971;">
+      <created>1671525476062</created>
+      <option name="number" value="00527" />
+      <option name="presentableId" value="LOCAL-00527" />
+      <option name="project" value="LOCAL" />
+      <updated>1671525476063</updated>
+    </task>
+    <task id="LOCAL-00528" summary="Add solution to problem 1971;">
+      <created>1671525584360</created>
+      <option name="number" value="00528" />
+      <option name="presentableId" value="LOCAL-00528" />
+      <option name="project" value="LOCAL" />
+      <updated>1671525584360</updated>
+    </task>
+    <task id="LOCAL-00529" summary="Add solution to problem 1971;">
+      <created>1671526015016</created>
+      <option name="number" value="00529" />
+      <option name="presentableId" value="LOCAL-00529" />
+      <option name="project" value="LOCAL" />
+      <updated>1671526015016</updated>
+    </task>
+    <option name="localTasksCounter" value="530" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -495,7 +497,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ws;" />
     <MESSAGE value="Add solution to problem 907;" />
     <MESSAGE value="Add solution to problem 1704;" />
     <MESSAGE value="Add solution to problem 1657;" />
@@ -520,7 +521,8 @@
     <MESSAGE value="Add solution to problem 232;" />
     <MESSAGE value="Add solution to problem 150;" />
     <MESSAGE value="Add solution to problem 739;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 739;" />
+    <MESSAGE value="Add solution to problem 1971;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 1971;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
