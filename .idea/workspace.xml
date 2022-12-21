@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Fix problem 841 : Correct typo in filename;">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 886;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,14 +54,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitRewordedCommitMessages">
-    <option name="commitMessagesMapping">
-      <RewordedCommitMessageMapping>
-        <option name="originalMessage" value="draft Solution.kt;" />
-        <option name="rewordedMessage" value="Add solution to problem 224;" />
-      </RewordedCommitMessageMapping>
-    </option>
-    <option name="currentCommit" value="1" />
-    <option name="onto" value="dc9122641b08c1266997392c26ddbaf77243dee6" />
+    <option name="onto" value="3080d9bd45da929837a25de17b0afc34220afca6" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -106,13 +97,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00485" summary="Add solution to problem 907;">
-      <created>1669832060864</created>
-      <option name="number" value="00485" />
-      <option name="presentableId" value="LOCAL-00485" />
-      <option name="project" value="LOCAL" />
-      <updated>1669832060864</updated>
     </task>
     <task id="LOCAL-00486" summary="Add solution to problem 907;">
       <created>1669832157852</created>
@@ -437,20 +421,27 @@
       <updated>1671549208313</updated>
     </task>
     <task id="LOCAL-00532" summary="Add solution to problem 886;">
-      <created>1671638804203</created>
+      <created>1671719657264</created>
       <option name="number" value="00532" />
       <option name="presentableId" value="LOCAL-00532" />
       <option name="project" value="LOCAL" />
-      <updated>1671638804204</updated>
+      <updated>1671719657264</updated>
     </task>
-    <task id="LOCAL-00533" summary="Fix problem 841 : Correct typo in filename;">
-      <created>1671638936789</created>
+    <task id="LOCAL-00533" summary="Add solution to problem 886;">
+      <created>1671720485813</created>
       <option name="number" value="00533" />
       <option name="presentableId" value="LOCAL-00533" />
       <option name="project" value="LOCAL" />
-      <updated>1671638936789</updated>
+      <updated>1671720485814</updated>
     </task>
-    <option name="localTasksCounter" value="534" />
+    <task id="LOCAL-00534" summary="Add solution to problem 886;">
+      <created>1671720499007</created>
+      <option name="number" value="00534" />
+      <option name="presentableId" value="LOCAL-00534" />
+      <option name="project" value="LOCAL" />
+      <updated>1671720499007</updated>
+    </task>
+    <option name="localTasksCounter" value="535" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -518,9 +509,9 @@
     <MESSAGE value="Add solution to problem 1971;" />
     <MESSAGE value="Add solutions to problem 1971;" />
     <MESSAGE value="Add solution to problem 841;" />
-    <MESSAGE value="Add solution to problem 886;" />
     <MESSAGE value="Fix problem 841 : Correct typo in filename;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix problem 841 : Correct typo in filename;" />
+    <MESSAGE value="Add solution to problem 886;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 886;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
