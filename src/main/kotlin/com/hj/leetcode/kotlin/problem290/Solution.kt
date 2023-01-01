@@ -11,18 +11,22 @@ class Solution {
         val words = s.split(' ')
         if (pattern.length != words.size) return false
 
-        val f = Array(26) { "" } // mapping from pattern to s;
-        val g = hashMapOf<String, Char>() // mapping from s to pattern;
+        val charIndexToWord = Array(26) { "" }
+        val wordToCharIndex = hashMapOf<String, Int>()
 
         for ((index, word) in words.withIndex()) {
             val char = pattern[index]
             val charIndex = char - 'a'
 
-            if (f[charIndex] != "" && f[charIndex] != word) return false
-            if (g[word] != null && g[word] != char) return false
+            if (charIndexToWord[charIndex] != "" && charIndexToWord[charIndex] != word) {
+                return false
+            }
+            if (wordToCharIndex[word] != null && wordToCharIndex[word] != charIndex) {
+                return false
+            }
 
-            f[charIndex] = word
-            g[word] = char
+            charIndexToWord[charIndex] = word
+            wordToCharIndex[word] = charIndex
         }
         return true
     }
