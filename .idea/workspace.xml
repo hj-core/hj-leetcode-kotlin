@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 290 : Improve code cleanness;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 520;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,8 +39,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Kotlin Class" />
         <option value="LeetCode Solution" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -100,41 +97,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00505" summary="Update problem 328 : Improve readability;">
-      <created>1670305275591</created>
-      <option name="number" value="00505" />
-      <option name="presentableId" value="LOCAL-00505" />
-      <option name="project" value="LOCAL" />
-      <updated>1670305275592</updated>
-    </task>
-    <task id="LOCAL-00506" summary="Add solution to problem 5;">
-      <created>1670343722128</created>
-      <option name="number" value="00506" />
-      <option name="presentableId" value="LOCAL-00506" />
-      <option name="project" value="LOCAL" />
-      <updated>1670343722128</updated>
-    </task>
-    <task id="LOCAL-00507" summary="Add solution to problem 5;">
-      <created>1670343807891</created>
-      <option name="number" value="00507" />
-      <option name="presentableId" value="LOCAL-00507" />
-      <option name="project" value="LOCAL" />
-      <updated>1670343807891</updated>
-    </task>
-    <task id="LOCAL-00508" summary="Add solution to problem 5;">
-      <created>1670345206300</created>
-      <option name="number" value="00508" />
-      <option name="presentableId" value="LOCAL-00508" />
-      <option name="project" value="LOCAL" />
-      <updated>1670345206300</updated>
-    </task>
-    <task id="LOCAL-00509" summary="Add solution to problem 938;">
-      <created>1670389955304</created>
-      <option name="number" value="00509" />
-      <option name="presentableId" value="LOCAL-00509" />
-      <option name="project" value="LOCAL" />
-      <updated>1670389955304</updated>
     </task>
     <task id="LOCAL-00510" summary="Add solution to problem 872;">
       <created>1670513519323</created>
@@ -444,7 +406,42 @@
       <option name="project" value="LOCAL" />
       <updated>1672547386006</updated>
     </task>
-    <option name="localTasksCounter" value="554" />
+    <task id="LOCAL-00554" summary="Update Dependency : update Kotlin to 1.8.0;">
+      <created>1672562049845</created>
+      <option name="number" value="00554" />
+      <option name="presentableId" value="LOCAL-00554" />
+      <option name="project" value="LOCAL" />
+      <updated>1672562049845</updated>
+    </task>
+    <task id="LOCAL-00555" summary="Add solution to problem 520;">
+      <created>1672635227544</created>
+      <option name="number" value="00555" />
+      <option name="presentableId" value="LOCAL-00555" />
+      <option name="project" value="LOCAL" />
+      <updated>1672635227544</updated>
+    </task>
+    <task id="LOCAL-00556" summary="Add solution to problem 520;">
+      <created>1672635621010</created>
+      <option name="number" value="00556" />
+      <option name="presentableId" value="LOCAL-00556" />
+      <option name="project" value="LOCAL" />
+      <updated>1672635621010</updated>
+    </task>
+    <task id="LOCAL-00557" summary="Add solution to problem 520;">
+      <created>1672636144610</created>
+      <option name="number" value="00557" />
+      <option name="presentableId" value="LOCAL-00557" />
+      <option name="project" value="LOCAL" />
+      <updated>1672636144610</updated>
+    </task>
+    <task id="LOCAL-00558" summary="Add solution to problem 520;">
+      <created>1672636174332</created>
+      <option name="number" value="00558" />
+      <option name="presentableId" value="LOCAL-00558" />
+      <option name="project" value="LOCAL" />
+      <updated>1672636174332</updated>
+    </task>
+    <option name="localTasksCounter" value="559" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -489,8 +486,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution to problem 5;" />
-    <MESSAGE value="Add solution to problem 938;" />
     <MESSAGE value="Add solution to problem 872;" />
     <MESSAGE value="Add solution to problem 1026;" />
     <MESSAGE value="Add solution to problem 1339;" />
@@ -514,7 +509,9 @@
     <MESSAGE value="Add solution to problem 790;" />
     <MESSAGE value="Add solution to problem 290;" />
     <MESSAGE value="Update problem 290 : Improve code cleanness;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 290 : Improve code cleanness;" />
+    <MESSAGE value="Update dependency : Update Kotlin to 1.8.0;" />
+    <MESSAGE value="Add solution to problem 520;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 520;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
