@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 1834;">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem797/Solution.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 797;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,13 +97,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00502" summary="Add solution to problem 328;">
-      <created>1670302906014</created>
-      <option name="number" value="00502" />
-      <option name="presentableId" value="LOCAL-00502" />
-      <option name="project" value="LOCAL" />
-      <updated>1670302906014</updated>
     </task>
     <task id="LOCAL-00503" summary="Update problem 328 : Improve readability;">
       <created>1670305136044</created>
@@ -444,7 +434,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672651165116</updated>
     </task>
-    <option name="localTasksCounter" value="551" />
+    <task id="LOCAL-00551" summary="Add solution to problem 797;">
+      <created>1672659392937</created>
+      <option name="number" value="00551" />
+      <option name="presentableId" value="LOCAL-00551" />
+      <option name="project" value="LOCAL" />
+      <updated>1672659392937</updated>
+    </task>
+    <option name="localTasksCounter" value="552" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -461,7 +458,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="problem797" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -489,7 +486,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 328 : Improve readability;" />
     <MESSAGE value="Add solution to problem 5;" />
     <MESSAGE value="Add solution to problem 938;" />
     <MESSAGE value="Add solution to problem 872;" />
@@ -514,7 +510,8 @@
     <MESSAGE value="Add solution to problem 1962;" />
     <MESSAGE value="Add solution to problem 790;" />
     <MESSAGE value="Add solution to problem 1834;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 1834;" />
+    <MESSAGE value="Add solution to problem 797;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 797;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
