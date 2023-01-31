@@ -12,7 +12,7 @@ class Solution {
      * 3. Apply dynamic programming:
      * a) Sub-Problem: X(i), the max overall score includes player i for sub-array of P from index 0 to index i.
      *    Array Dp stores the result of each sub-problem;
-     * b) Relation: X(i) = maxOf({P[i]+Dp[j] | j = 0 until i and P[j] <= P[i]} U {P[i]})
+     * b) Relation: X(i) = maxOf({P[i]+Dp[j] | j = 0 until i and P[j] <= P[i]} U {P[i]});
      * c) Topological order: Solve X(i) from 0 to P.lastIndex;
      * d) Base Case: Dp[0] = P[0];
      * e) Original Problem: Max value in Dp;
