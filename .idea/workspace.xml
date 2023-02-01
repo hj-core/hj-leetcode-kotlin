@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 1071 : Remove a redundant check step;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 1071 : Add tailrec to function gcd;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,13 +97,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00537" summary="Add solution to problem 2389;">
-      <created>1672050501394</created>
-      <option name="number" value="00537" />
-      <option name="presentableId" value="LOCAL-00537" />
-      <option name="project" value="LOCAL" />
-      <updated>1672050501394</updated>
     </task>
     <task id="LOCAL-00538" summary="Add solution to problem 2389;">
       <created>1672050659312</created>
@@ -443,7 +434,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675264634573</updated>
     </task>
-    <option name="localTasksCounter" value="586" />
+    <task id="LOCAL-00586" summary="Update problem 1071 : Add tailrec to function gcd;">
+      <created>1675266305685</created>
+      <option name="number" value="00586" />
+      <option name="presentableId" value="LOCAL-00586" />
+      <option name="project" value="LOCAL" />
+      <updated>1675266305685</updated>
+    </task>
+    <option name="localTasksCounter" value="587" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -488,7 +486,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution to problem 2389;" />
     <MESSAGE value="Add solution to problem 2279;" />
     <MESSAGE value="Add solution to problem 1962;" />
     <MESSAGE value="Add solution to problem 790;" />
@@ -513,7 +510,8 @@
     <MESSAGE value="Add solution to problem 1071;" />
     <MESSAGE value="Update problem 1071 : Add step to verify gcd;&#10;&#10;- previous solution requires proposition str1+str2 == str2+str1 implies the existence of gcd. Since I cannot prove it, I add a step to verify the gcd;&#10;&#10;- the official solution uses the above proposition without proof;" />
     <MESSAGE value="Update problem 1071 : Remove a redundant check step;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 1071 : Remove a redundant check step;" />
+    <MESSAGE value="Update problem 1071 : Add tailrec to function gcd;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 1071 : Add tailrec to function gcd;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

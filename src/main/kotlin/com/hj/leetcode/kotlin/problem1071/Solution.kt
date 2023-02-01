@@ -9,8 +9,8 @@ class Solution {
      */
     fun gcdOfStrings(str1: String, str2: String): String {
         val potentialGcd = getPotentialGcd(str1, str2)
-        val isGcd = verifyGcd(str1, str2, potentialGcd)
-        return if (isGcd) potentialGcd else ""
+        val isTrueGcd = str1.isRepeating(potentialGcd) && str2.isRepeating(potentialGcd)
+        return if (isTrueGcd) potentialGcd else ""
     }
 
     private fun getPotentialGcd(str1: String, str2: String): String {
@@ -25,10 +25,6 @@ class Solution {
         require(a >= 0 && b >= 0)
         val (large, small) = if (a >= b) a to b else b to a
         return if (small == 0) large else gcd(small, large % small)
-    }
-
-    private fun verifyGcd(str1: String, str2: String, potentialGcd: String): Boolean {
-        return str1.isRepeating(potentialGcd) && str2.isRepeating(potentialGcd)
     }
 
     private fun String.isRepeating(baseStr: String): Boolean {
