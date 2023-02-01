@@ -21,7 +21,7 @@ class Solution {
         return str1.slice(0 until length)
     }
 
-    private fun gcd(a: Int, b: Int): Int {
+    private tailrec fun gcd(a: Int, b: Int): Int {
         require(a >= 0 && b >= 0)
         val (large, small) = if (a >= b) a to b else b to a
         return if (small == 0) large else gcd(small, large % small)
