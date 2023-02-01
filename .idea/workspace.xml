@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 1626;">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1626/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1626/Solution.kt" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 1626 : Missing semicolon in comment;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,20 +97,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00532" summary="Add solution to problem 886;">
-      <created>1671719657264</created>
-      <option name="number" value="00532" />
-      <option name="presentableId" value="LOCAL-00532" />
-      <option name="project" value="LOCAL" />
-      <updated>1671719657264</updated>
-    </task>
-    <task id="LOCAL-00533" summary="Add solution to problem 886;">
-      <created>1671720485813</created>
-      <option name="number" value="00533" />
-      <option name="presentableId" value="LOCAL-00533" />
-      <option name="project" value="LOCAL" />
-      <updated>1671720485814</updated>
     </task>
     <task id="LOCAL-00534" summary="Add solution to problem 886;">
       <created>1671720499007</created>
@@ -443,7 +427,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675179816095</updated>
     </task>
-    <option name="localTasksCounter" value="581" />
+    <task id="LOCAL-00581" summary="Update problem 1626 : Add the missing semicolon in comment;">
+      <created>1675180086284</created>
+      <option name="number" value="00581" />
+      <option name="presentableId" value="LOCAL-00581" />
+      <option name="project" value="LOCAL" />
+      <updated>1675180086285</updated>
+    </task>
+    <task id="LOCAL-00582" summary="Update problem 1626 : Missing semicolon in comment;">
+      <created>1675180123094</created>
+      <option name="number" value="00582" />
+      <option name="presentableId" value="LOCAL-00582" />
+      <option name="project" value="LOCAL" />
+      <updated>1675180123094</updated>
+    </task>
+    <option name="localTasksCounter" value="583" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -488,8 +486,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solutions to problem 1971;" />
-    <MESSAGE value="Add solution to problem 841;" />
     <MESSAGE value="Fix problem 841 : Correct typo in filename;" />
     <MESSAGE value="Add solution to problem 886;" />
     <MESSAGE value="Add solution to problem 55;" />
@@ -513,7 +509,9 @@
     <MESSAGE value="Update problem 997 : Add solution 2;" />
     <MESSAGE value="Add solution to problem 1137;" />
     <MESSAGE value="Add solution to problem 1626;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 1626;" />
+    <MESSAGE value="Update problem 1626 : Add the missing semicolon in comment;" />
+    <MESSAGE value="Update problem 1626 : Missing semicolon in comment;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 1626 : Missing semicolon in comment;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
