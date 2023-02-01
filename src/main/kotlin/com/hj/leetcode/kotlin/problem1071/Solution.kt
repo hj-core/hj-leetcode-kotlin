@@ -8,25 +8,15 @@ class Solution {
      * Time O(|str1|+|str2|) & Space O(min(|str1|, |str2|));
      */
     fun gcdOfStrings(str1: String, str2: String): String {
-        val hasNoGcd = hasNoGcd(str1, str2)
-        if (hasNoGcd) return ""
-
-        val potentialGcd = findPotentialGcd(str1, str2)
-        val isValidGcd = verifyGcd(str1, str2, potentialGcd)
-        return if (isValidGcd) potentialGcd else ""
+        val potentialGcd = getPotentialGcd(str1, str2)
+        val isGcd = verifyGcd(str1, str2, potentialGcd)
+        return if (isGcd) potentialGcd else ""
     }
 
-    private fun hasNoGcd(str1: String, str2: String): Boolean {
-        val (long, short) = if (str1.length >= str2.length) str1 to str2 else str2 to str1
-        val lengthDiff = long.length - short.length
-
-        // Check str1 + str2 == str2 + str1
-        return short.indices.any { short[it] != long[it] } &&
-                short.indices.any { short[it] != long[lengthDiff + it] } &&
-                (0 until lengthDiff).any { long[it] != long[short.length + it] }
-    }
-
-    private fun findPotentialGcd(str1: String, str2: String): String {
+    private fun getPotentialGcd(str1: String, str2: String): String {
+        /* If gcd exists, one can prove that the length of gcd is the gcd of str1.length
+         * and str2.length.
+         */
         val length = gcd(str1.length, str2.length)
         return str1.slice(0 until length)
     }
