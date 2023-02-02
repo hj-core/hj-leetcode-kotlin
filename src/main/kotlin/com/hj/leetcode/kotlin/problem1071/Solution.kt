@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem1071
  */
 class Solution {
     /* Complexity:
-     * Time O(|str1|+|str2|) & Space O(min(|str1|, |str2|));
+     * Time O(|str1|+|str2|) and Space O(min(|str1|, |str2|));
      */
     fun gcdOfStrings(str1: String, str2: String): String {
         val potentialGcd = getPotentialGcd(str1, str2)
