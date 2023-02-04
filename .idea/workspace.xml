@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 1071 : Minor change to comment;">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 6 : Add Solution 2;">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem567/Solution.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,13 +101,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00541" summary="Add solution to problem 790;">
-      <created>1672146044850</created>
-      <option name="number" value="00541" />
-      <option name="presentableId" value="LOCAL-00541" />
-      <option name="project" value="LOCAL" />
-      <updated>1672146044850</updated>
     </task>
     <task id="LOCAL-00542" summary="Add solution to problem 790;">
       <created>1672146300667</created>
@@ -443,7 +438,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675310494275</updated>
     </task>
-    <option name="localTasksCounter" value="590" />
+    <task id="LOCAL-00590" summary="Update problem 6 : Add Solution 2;">
+      <created>1675427430669</created>
+      <option name="number" value="00590" />
+      <option name="presentableId" value="LOCAL-00590" />
+      <option name="project" value="LOCAL" />
+      <updated>1675427430670</updated>
+    </task>
+    <option name="localTasksCounter" value="591" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -460,7 +462,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="problem947" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -488,7 +490,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution to problem 1834;" />
     <MESSAGE value="Add solution to problem 797;" />
     <MESSAGE value="Add solution to problem 944;" />
     <MESSAGE value="Add solution to problem 2244;" />
@@ -513,7 +514,8 @@
     <MESSAGE value="Update problem 1071 : Rearrange the solution;&#10;&#10;- inline the verifyGcd function since it does not provide full verification;" />
     <MESSAGE value="Add solution to problem 953;" />
     <MESSAGE value="Update problem 1071 : Minor change to comment;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 1071 : Minor change to comment;" />
+    <MESSAGE value="Update problem 6 : Add Solution 2;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 6 : Add Solution 2;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
