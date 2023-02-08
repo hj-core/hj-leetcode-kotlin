@@ -40,8 +40,8 @@ class Solution2 {
             dp[i] = subResult
         }
 
-        check(dp[0] < valueWhenCannotReach) {
-            "Reachability is guaranteed in the problem description."
+        check(dp[0] < nums.size) {
+            "Cannot reach last index although is guaranteed in the problem statement."
         }
         return dp[0]
     }

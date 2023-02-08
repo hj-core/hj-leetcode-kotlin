@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 45 : Add Solution 2;">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 45 : Refactor first solution;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem45/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem45/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,20 +99,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00549" summary="Add solution to problem 790;">
-      <created>1672241301898</created>
-      <option name="number" value="00549" />
-      <option name="presentableId" value="LOCAL-00549" />
-      <option name="project" value="LOCAL" />
-      <updated>1672241301898</updated>
-    </task>
-    <task id="LOCAL-00550" summary="Add solution to problem 1834;">
-      <created>1672651165116</created>
-      <option name="number" value="00550" />
-      <option name="presentableId" value="LOCAL-00550" />
-      <option name="project" value="LOCAL" />
-      <updated>1672651165116</updated>
     </task>
     <task id="LOCAL-00551" summary="Add solution to problem 797;">
       <created>1672659392937</created>
@@ -444,7 +429,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675852064235</updated>
     </task>
-    <option name="localTasksCounter" value="598" />
+    <task id="LOCAL-00598" summary="Update problem 45 : Refactor first solution;">
+      <created>1675860262623</created>
+      <option name="number" value="00598" />
+      <option name="presentableId" value="LOCAL-00598" />
+      <option name="project" value="LOCAL" />
+      <updated>1675860262623</updated>
+    </task>
+    <task id="LOCAL-00599" summary="Update problem 45 : Refactor first solution;">
+      <created>1675860283734</created>
+      <option name="number" value="00599" />
+      <option name="presentableId" value="LOCAL-00599" />
+      <option name="project" value="LOCAL" />
+      <updated>1675860283734</updated>
+    </task>
+    <option name="localTasksCounter" value="600" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -500,7 +499,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution to problem 134;" />
     <MESSAGE value="Add solution to problem 1061;" />
     <MESSAGE value="Add solution to problem 57;" />
     <MESSAGE value="Add solution to problem 926;" />
@@ -525,7 +523,8 @@
     <MESSAGE value="Add solutions to problem 1470;" />
     <MESSAGE value="Add solution to problem 904;" />
     <MESSAGE value="Update problem 45 : Add Solution 2;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 45 : Add Solution 2;" />
+    <MESSAGE value="Update problem 45 : Refactor Solution;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 45 : Refactor Solution;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
