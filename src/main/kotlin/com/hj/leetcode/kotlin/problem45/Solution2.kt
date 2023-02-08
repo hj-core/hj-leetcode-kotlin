@@ -29,13 +29,13 @@ class Solution2 {
         val valueWhenCannotReach = nums.size // Special value if the last index can not be reached
 
         for (i in dp.lastIndex - 1 downTo 0) {
-            val step = nums[i]
-            if (step == 0) {
+            val jumpLength = nums[i]
+            if (jumpLength == 0) {
                 dp[i] = valueWhenCannotReach
                 continue
             }
 
-            val furthest = (i + step).coerceAtMost(nums.lastIndex)
+            val furthest = (i + jumpLength).coerceAtMost(nums.lastIndex)
             val subResult = 1 + dp.min(i + 1..furthest)
             dp[i] = subResult
         }
