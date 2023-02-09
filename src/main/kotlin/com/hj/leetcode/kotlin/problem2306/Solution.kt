@@ -8,7 +8,7 @@ class Solution {
      * Time O(L) and Space O(L) where L is the flat length of ideas;
      */
     fun distinctNames(ideas: Array<String>): Long {
-        val suffixGroups = groupIdeaSuffixByPrefix(ideas)
+        val suffixGroups = groupSuffixByFirstLetter(ideas)
         var numDistinctNames = 0L
         for (i in 0 until suffixGroups.lastIndex) {
             val group1 = suffixGroups[i]
@@ -18,27 +18,31 @@ class Solution {
                 val group2 = suffixGroups[j]
                 if (group2.isEmpty()) continue
 
-                val numCandidates1 = group1.count { it !in group2 }
-                val numCandidates2 = group2.count { it !in group1 }
+                val numCommonSuffix = group1.count { it in group2 }
+                val numExclusiveSuffix1 = group1.size - numCommonSuffix
+                val numExclusiveSuffix2 = group2.size - numCommonSuffix
                 // times 2 since if idea1+idea2 is valid, then idea2+idea1 is also valid
-                numDistinctNames += numCandidates1 * numCandidates2 * 2
+                numDistinctNames += numExclusiveSuffix1 * numExclusiveSuffix2 * 2
             }
         }
         return numDistinctNames
     }
 
     /**
-     * Return a list of size 26 that element at index 0 to 25 is corresponding to the found
-     * suffix of prefix 'a' to 'z'.
+     * Group the suffix (from index 1) of each idea by first letter of the idea.
      *
-     * Require the constraints that each idea starts with a lowercase english letter.
+     * Return a list of size 26 that element at index 0 to 25 corresponding to the found suffix
+     * of first letter 'a' to 'z'.
+     *
+     * Require each idea starts with a lowercase english letter, which is stated in the problem
+     * constraints.
      */
-    private fun groupIdeaSuffixByPrefix(ideas: Array<String>): List<Set<String>> {
+    private fun groupSuffixByFirstLetter(ideas: Array<String>): List<Set<String>> {
         val groups = List(26) { hashSetOf<String>() }
         for (idea in ideas) {
-            val prefix = idea[0]
+            val firstLetter = idea[0]
             val suffix = idea.slice(1 until idea.length)
-            groups[prefix - 'a'].add(suffix)
+            groups[firstLetter - 'a'].add(suffix)
         }
         return groups
     }
