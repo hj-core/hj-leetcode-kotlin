@@ -22,6 +22,7 @@ at [LeetCode](https://leetcode.com/hj-core/).
 | [1383. Maximum Performance of a Team](https://leetcode.com/problems/maximum-performance-of-a-team/)                                           | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem1383/Solution.kt) | [Discuss](https://leetcode.com/problems/maximum-performance-of-a-team/discuss/2560866/)  | 2022-09-23    |
 | [1293. Shortest Path in a Grid with Obstacles Elimination](https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/) | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem1293/Solution.kt) | -                                                                                        | 2022-11-01    |
 | [2136. Earliest Possible Day of Full Bloom](https://leetcode.com/problems/earliest-possible-day-of-full-bloom/)                               | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem2136/Solution.kt) | -                                                                                        | 2022-10-29    |
+| [2306. Naming a Company](https://leetcode.com/problems/naming-a-company/)                                                                     | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem2306/Solution.kt) | -                                                                                        | 2023-02-09    |
 
 ### Medium
 

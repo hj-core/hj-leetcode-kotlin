@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 45 : Correct Solution 2;&#10;&#10;- dp[0] &lt; valueWhenCannotReach makes no sense if valueWhenCannotReach is not nums.size;" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 2306;">
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2306/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2306/Solution.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,8 +41,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="LeetCode Solution" />
         <option value="Kotlin Class" />
+        <option value="LeetCode Solution" />
       </list>
     </option>
   </component>
@@ -97,20 +99,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00552" summary="Add solution to problem 944;">
-      <created>1672719622460</created>
-      <option name="number" value="00552" />
-      <option name="presentableId" value="LOCAL-00552" />
-      <option name="project" value="LOCAL" />
-      <updated>1672719622460</updated>
-    </task>
-    <task id="LOCAL-00553" summary="Add solution to problem 2244;">
-      <created>1672802934524</created>
-      <option name="number" value="00553" />
-      <option name="presentableId" value="LOCAL-00553" />
-      <option name="project" value="LOCAL" />
-      <updated>1672802934524</updated>
     </task>
     <task id="LOCAL-00554" summary="Add solution to problem 2244;">
       <created>1672803032191</created>
@@ -441,7 +429,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675861664655</updated>
     </task>
-    <option name="localTasksCounter" value="601" />
+    <task id="LOCAL-00601" summary="Update problem 45 : Improve readability;">
+      <created>1675861919807</created>
+      <option name="number" value="00601" />
+      <option name="presentableId" value="LOCAL-00601" />
+      <option name="project" value="LOCAL" />
+      <updated>1675861919808</updated>
+    </task>
+    <task id="LOCAL-00602" summary="Add solution to problem 2306;">
+      <created>1675916848623</created>
+      <option name="number" value="00602" />
+      <option name="presentableId" value="LOCAL-00602" />
+      <option name="project" value="LOCAL" />
+      <updated>1675916848624</updated>
+    </task>
+    <option name="localTasksCounter" value="603" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -497,8 +499,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution to problem 57;" />
-    <MESSAGE value="Add solution to problem 926;" />
     <MESSAGE value="Add solution to problem 974;" />
     <MESSAGE value="Add solution to problem 997;" />
     <MESSAGE value="Update problem 997 : Add solution 2;" />
@@ -522,7 +522,9 @@
     <MESSAGE value="Update problem 45 : Add Solution 2;" />
     <MESSAGE value="Update problem 45 : Refactor Solution;" />
     <MESSAGE value="Update problem 45 : Correct Solution 2;&#10;&#10;- dp[0] &lt; valueWhenCannotReach makes no sense if valueWhenCannotReach is not nums.size;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 45 : Correct Solution 2;&#10;&#10;- dp[0] &lt; valueWhenCannotReach makes no sense if valueWhenCannotReach is not nums.size;" />
+    <MESSAGE value="Update problem 45 : Improve readability;" />
+    <MESSAGE value="Add solution to problem 2306;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 2306;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
