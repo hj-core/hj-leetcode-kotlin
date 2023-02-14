@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 2477;" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 1523;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,13 +97,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00564" summary="Add solution to problem 1061;">
-      <created>1673699256670</created>
-      <option name="number" value="00564" />
-      <option name="presentableId" value="LOCAL-00564" />
-      <option name="project" value="LOCAL" />
-      <updated>1673699256671</updated>
     </task>
     <task id="LOCAL-00565" summary="Add solution to problem 1061;">
       <created>1673699516812</created>
@@ -441,7 +434,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676215121580</updated>
     </task>
-    <option name="localTasksCounter" value="613" />
+    <task id="LOCAL-00613" summary="Add solution to problem 1523;">
+      <created>1676258974732</created>
+      <option name="number" value="00613" />
+      <option name="presentableId" value="LOCAL-00613" />
+      <option name="project" value="LOCAL" />
+      <updated>1676258974732</updated>
+    </task>
+    <option name="localTasksCounter" value="614" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -497,7 +497,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 1626 : Add the missing semicolon in comment;" />
     <MESSAGE value="Update problem 1626 : Missing semicolon in comment;" />
     <MESSAGE value="Add solution to problem 1071;" />
     <MESSAGE value="Update problem 1071 : Add step to verify gcd;&#10;&#10;- previous solution requires proposition str1+str2 == str2+str1 implies the existence of gcd. Since I cannot prove it, I add a step to verify the gcd;&#10;&#10;- the official solution uses the above proposition without proof;" />
@@ -522,7 +521,8 @@
     <MESSAGE value="Add solution to problem 1162;" />
     <MESSAGE value="Add solution to problem 1129;" />
     <MESSAGE value="Add solution to problem 2477;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 2477;" />
+    <MESSAGE value="Add solution to problem 1523;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 1523;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
