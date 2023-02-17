@@ -18,7 +18,7 @@ class Solution {
         inOrderTraversal(root) { currValue ->
             prevValue?.let { prevValue ->
                 val diff = currValue - prevValue
-                minDiff = minDiff?.let { minOf(it, diff) } ?: diff
+                minDiff = minOf(minDiff ?: diff, diff)
             }
             prevValue = currValue
         }
