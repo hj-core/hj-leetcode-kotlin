@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 989;">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem104/Solution.kt" afterDir="false" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solutions to problem 104;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,13 +99,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00568" summary="Add solution to problem 57;">
-      <created>1673949575083</created>
-      <option name="number" value="00568" />
-      <option name="presentableId" value="LOCAL-00568" />
-      <option name="project" value="LOCAL" />
-      <updated>1673949575083</updated>
     </task>
     <task id="LOCAL-00569" summary="Add solution to problem 57;">
       <created>1673949770188</created>
@@ -444,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676437076641</updated>
     </task>
-    <option name="localTasksCounter" value="617" />
+    <task id="LOCAL-00617" summary="Add solutions to problem 104;">
+      <created>1676515363600</created>
+      <option name="number" value="00617" />
+      <option name="presentableId" value="LOCAL-00617" />
+      <option name="project" value="LOCAL" />
+      <updated>1676515363600</updated>
+    </task>
+    <option name="localTasksCounter" value="618" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -500,7 +499,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 1071 : Remove a redundant check step;" />
     <MESSAGE value="Update problem 1071 : Add tailrec to function gcd;" />
     <MESSAGE value="Update problem 1071 : Rearrange the solution;&#10;&#10;- inline the verifyGcd function since it does not provide full verification;" />
     <MESSAGE value="Add solution to problem 953;" />
@@ -525,7 +523,8 @@
     <MESSAGE value="Add solution to problem 67;" />
     <MESSAGE value="Update problem 67 : Rename local variables for clarity;" />
     <MESSAGE value="Add solution to problem 989;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 989;" />
+    <MESSAGE value="Add solutions to problem 104;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solutions to problem 104;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
