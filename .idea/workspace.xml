@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 783;" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 783 : Add Solution 2;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,8 +41,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Kotlin Class" />
         <option value="LeetCode Solution" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -69,17 +71,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.41494253",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.41494253&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\gaps-\Documents\GitHub\hj-leetcode-kotlin\src\main\kotlin\com\hj\leetcode\kotlin\medium" />
@@ -97,20 +99,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00570" summary="Add solution to problem 926;">
-      <created>1673970495857</created>
-      <option name="number" value="00570" />
-      <option name="presentableId" value="LOCAL-00570" />
-      <option name="project" value="LOCAL" />
-      <updated>1673970495858</updated>
-    </task>
-    <task id="LOCAL-00571" summary="Add solution to problem 974;">
-      <created>1674181577438</created>
-      <option name="number" value="00571" />
-      <option name="presentableId" value="LOCAL-00571" />
-      <option name="project" value="LOCAL" />
-      <updated>1674181577438</updated>
     </task>
     <task id="LOCAL-00572" summary="Add solution to problem 997;">
       <created>1674442846714</created>
@@ -441,7 +429,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676606886310</updated>
     </task>
-    <option name="localTasksCounter" value="619" />
+    <task id="LOCAL-00619" summary="Update problem 783 : Improve readability;">
+      <created>1676611999091</created>
+      <option name="number" value="00619" />
+      <option name="presentableId" value="LOCAL-00619" />
+      <option name="project" value="LOCAL" />
+      <updated>1676611999091</updated>
+    </task>
+    <task id="LOCAL-00620" summary="Update problem 783 : Add Solution 2;">
+      <created>1676612135034</created>
+      <option name="number" value="00620" />
+      <option name="presentableId" value="LOCAL-00620" />
+      <option name="project" value="LOCAL" />
+      <updated>1676612135034</updated>
+    </task>
+    <option name="localTasksCounter" value="621" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -497,8 +499,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 1071 : Rearrange the solution;&#10;&#10;- inline the verifyGcd function since it does not provide full verification;" />
-    <MESSAGE value="Add solution to problem 953;" />
     <MESSAGE value="Update problem 1071 : Minor change to comment;" />
     <MESSAGE value="Update problem 6 : Add Solution 2;" />
     <MESSAGE value="Update kotlin to 1.8.10;" />
@@ -522,7 +522,9 @@
     <MESSAGE value="Add solution to problem 989;" />
     <MESSAGE value="Add solutions to problem 104;" />
     <MESSAGE value="Add solution to problem 783;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 783;" />
+    <MESSAGE value="Update problem 783 : Improve readability;" />
+    <MESSAGE value="Update problem 783 : Add Solution 2;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 783 : Add Solution 2;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
