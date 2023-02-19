@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 226;" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 103;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,34 +97,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00573" summary="Update problem 997 : Add solution 2;">
-      <created>1674444257048</created>
-      <option name="number" value="00573" />
-      <option name="presentableId" value="LOCAL-00573" />
-      <option name="project" value="LOCAL" />
-      <updated>1674444257048</updated>
-    </task>
-    <task id="LOCAL-00574" summary="Add solution to problem 1137;">
-      <created>1675044615474</created>
-      <option name="number" value="00574" />
-      <option name="presentableId" value="LOCAL-00574" />
-      <option name="project" value="LOCAL" />
-      <updated>1675044615474</updated>
-    </task>
-    <task id="LOCAL-00575" summary="Add solution to problem 1626;">
-      <created>1675177802911</created>
-      <option name="number" value="00575" />
-      <option name="presentableId" value="LOCAL-00575" />
-      <option name="project" value="LOCAL" />
-      <updated>1675177802912</updated>
-    </task>
-    <task id="LOCAL-00576" summary="Add solution to problem 1626;">
-      <created>1675177932248</created>
-      <option name="number" value="00576" />
-      <option name="presentableId" value="LOCAL-00576" />
-      <option name="project" value="LOCAL" />
-      <updated>1675177932248</updated>
     </task>
     <task id="LOCAL-00577" summary="Add solution to problem 1626;">
       <created>1675177956502</created>
@@ -441,7 +413,35 @@
       <option name="project" value="LOCAL" />
       <updated>1676691933104</updated>
     </task>
-    <option name="localTasksCounter" value="622" />
+    <task id="LOCAL-00622" summary="Update problem 226 : Add Solution 2;">
+      <created>1676713919866</created>
+      <option name="number" value="00622" />
+      <option name="presentableId" value="LOCAL-00622" />
+      <option name="project" value="LOCAL" />
+      <updated>1676713919866</updated>
+    </task>
+    <task id="LOCAL-00623" summary="Add solution to problem 103;">
+      <created>1676776779867</created>
+      <option name="number" value="00623" />
+      <option name="presentableId" value="LOCAL-00623" />
+      <option name="project" value="LOCAL" />
+      <updated>1676776779867</updated>
+    </task>
+    <task id="LOCAL-00624" summary="Add solution to problem 103;">
+      <created>1676777039662</created>
+      <option name="number" value="00624" />
+      <option name="presentableId" value="LOCAL-00624" />
+      <option name="project" value="LOCAL" />
+      <updated>1676777039662</updated>
+    </task>
+    <task id="LOCAL-00625" summary="Add solution to problem 103;">
+      <created>1676777400551</created>
+      <option name="number" value="00625" />
+      <option name="presentableId" value="LOCAL-00625" />
+      <option name="project" value="LOCAL" />
+      <updated>1676777400551</updated>
+    </task>
+    <option name="localTasksCounter" value="626" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -497,8 +497,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 6 : Add Solution 2;" />
-    <MESSAGE value="Update kotlin to 1.8.10;" />
     <MESSAGE value="Add solution to problem 438;" />
     <MESSAGE value="Add solution to problem 1470;" />
     <MESSAGE value="Add solutions to problem 1470;" />
@@ -522,7 +520,9 @@
     <MESSAGE value="Update problem 783 : Improve readability;" />
     <MESSAGE value="Update problem 783 : Add Solution 2;" />
     <MESSAGE value="Add solution to problem 226;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 226;" />
+    <MESSAGE value="Update problem 226 : Add Solution 2;" />
+    <MESSAGE value="Add solution to problem 103;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 103;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
