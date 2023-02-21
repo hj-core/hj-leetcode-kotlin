@@ -1,7 +1,5 @@
 package com.hj.leetcode.kotlin.problem540
 
-import java.lang.IllegalStateException
-
 /**
  * LeetCode page: [540. Single Element in a Sorted Array](https://leetcode.com/problems/single-element-in-a-sorted-array/);
  */
@@ -32,7 +30,6 @@ class Solution {
                 }
             }
         }
-
         return nums[left]
     }
 }

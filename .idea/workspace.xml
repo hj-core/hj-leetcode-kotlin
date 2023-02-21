@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 460" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 540">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,13 +99,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00583" summary="Add solution of problem 1071;">
-      <created>1675257279777</created>
-      <option name="number" value="00583" />
-      <option name="presentableId" value="LOCAL-00583" />
-      <option name="project" value="LOCAL" />
-      <updated>1675257279778</updated>
     </task>
     <task id="LOCAL-00584" summary="Update problem 1071 : Add step to verify gcd;&#10;&#10;- previous solution requires a proposition that str1+str2 == str2+str1 implies the existence of gcd that I cannot proof (the official solution also based on this without proof), so I add a step to verify the gcd;">
       <created>1675263593991</created>
@@ -441,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676900724204</updated>
     </task>
-    <option name="localTasksCounter" value="632" />
+    <task id="LOCAL-00632" summary="Add solution to problem 540">
+      <created>1676951377340</created>
+      <option name="number" value="00632" />
+      <option name="presentableId" value="LOCAL-00632" />
+      <option name="project" value="LOCAL" />
+      <updated>1676951377340</updated>
+    </task>
+    <option name="localTasksCounter" value="633" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -497,7 +499,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution to problem 904;" />
     <MESSAGE value="Update problem 45 : Add Solution 2;" />
     <MESSAGE value="Update problem 45 : Refactor Solution;" />
     <MESSAGE value="Update problem 45 : Correct Solution 2;&#10;&#10;- dp[0] &lt; valueWhenCannotReach makes no sense if valueWhenCannotReach is not nums.size;" />
@@ -522,7 +523,8 @@
     <MESSAGE value="Update problem 103 : Add Solution 2;" />
     <MESSAGE value="Add solution to problem 35" />
     <MESSAGE value="Add solution to problem 460" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 460" />
+    <MESSAGE value="Add solution to problem 540" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 540" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
