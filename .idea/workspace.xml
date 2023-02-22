@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 540 : Use kotlin built-in exception">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 540 : Add Solution 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,8 +41,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Kotlin Class" />
         <option value="LeetCode Solution" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -99,20 +99,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00585" summary="Update problem 1071 : Remove a redundant check step;">
-      <created>1675264634573</created>
-      <option name="number" value="00585" />
-      <option name="presentableId" value="LOCAL-00585" />
-      <option name="project" value="LOCAL" />
-      <updated>1675264634573</updated>
-    </task>
-    <task id="LOCAL-00586" summary="Update problem 1071 : Add tailrec to function gcd;">
-      <created>1675266305685</created>
-      <option name="number" value="00586" />
-      <option name="presentableId" value="LOCAL-00586" />
-      <option name="project" value="LOCAL" />
-      <updated>1675266305685</updated>
     </task>
     <task id="LOCAL-00587" summary="Update problem 1071 : Rearrange the solution;&#10;&#10;- inline the verifyGcd function since it does not provide full verification;">
       <created>1675266800346</created>
@@ -443,7 +429,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676956088210</updated>
     </task>
-    <option name="localTasksCounter" value="634" />
+    <task id="LOCAL-00634" summary="Update problem 540 : Use kotlin built-in exception">
+      <created>1676960403177</created>
+      <option name="number" value="00634" />
+      <option name="presentableId" value="LOCAL-00634" />
+      <option name="project" value="LOCAL" />
+      <updated>1676960403177</updated>
+    </task>
+    <task id="LOCAL-00635" summary="Update problem 540 : Add Solution 2">
+      <created>1676960473603</created>
+      <option name="number" value="00635" />
+      <option name="presentableId" value="LOCAL-00635" />
+      <option name="project" value="LOCAL" />
+      <updated>1676960473603</updated>
+    </task>
+    <option name="localTasksCounter" value="636" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -499,7 +499,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 45 : Refactor Solution;" />
     <MESSAGE value="Update problem 45 : Correct Solution 2;&#10;&#10;- dp[0] &lt; valueWhenCannotReach makes no sense if valueWhenCannotReach is not nums.size;" />
     <MESSAGE value="Update problem 45 : Improve readability;" />
     <MESSAGE value="Add solution to problem 2306;" />
@@ -524,7 +523,8 @@
     <MESSAGE value="Add solution to problem 460" />
     <MESSAGE value="Add solution to problem 540" />
     <MESSAGE value="Update problem 540 : Use kotlin built-in exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 540 : Use kotlin built-in exception" />
+    <MESSAGE value="Update problem 540 : Add Solution 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update problem 540 : Add Solution 2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
