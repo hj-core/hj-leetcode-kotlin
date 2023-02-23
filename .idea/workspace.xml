@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 540 : Add Solution 2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 502" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,8 +39,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="LeetCode Solution" />
         <option value="Kotlin Class" />
+        <option value="LeetCode Solution" />
       </list>
     </option>
   </component>
@@ -99,34 +97,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00587" summary="Update problem 1071 : Rearrange the solution;&#10;&#10;- inline the verifyGcd function since it does not provide full verification;">
-      <created>1675266800346</created>
-      <option name="number" value="00587" />
-      <option name="presentableId" value="LOCAL-00587" />
-      <option name="project" value="LOCAL" />
-      <updated>1675266800347</updated>
-    </task>
-    <task id="LOCAL-00588" summary="Add solution to problem 953;">
-      <created>1675310117686</created>
-      <option name="number" value="00588" />
-      <option name="presentableId" value="LOCAL-00588" />
-      <option name="project" value="LOCAL" />
-      <updated>1675310117686</updated>
-    </task>
-    <task id="LOCAL-00589" summary="Update problem 1071 : Minor change to comment;">
-      <created>1675310494275</created>
-      <option name="number" value="00589" />
-      <option name="presentableId" value="LOCAL-00589" />
-      <option name="project" value="LOCAL" />
-      <updated>1675310494275</updated>
-    </task>
-    <task id="LOCAL-00590" summary="Update problem 6 : Add Solution 2;">
-      <created>1675427430669</created>
-      <option name="number" value="00590" />
-      <option name="presentableId" value="LOCAL-00590" />
-      <option name="project" value="LOCAL" />
-      <updated>1675427430670</updated>
     </task>
     <task id="LOCAL-00591" summary="Update kotlin to 1.8.10;">
       <created>1675563037692</created>
@@ -443,7 +413,35 @@
       <option name="project" value="LOCAL" />
       <updated>1676960473603</updated>
     </task>
-    <option name="localTasksCounter" value="636" />
+    <task id="LOCAL-00636" summary="Add solution to problem 1011">
+      <created>1677046672450</created>
+      <option name="number" value="00636" />
+      <option name="presentableId" value="LOCAL-00636" />
+      <option name="project" value="LOCAL" />
+      <updated>1677046672451</updated>
+    </task>
+    <task id="LOCAL-00637" summary="Add solution to problem 502">
+      <created>1677148381657</created>
+      <option name="number" value="00637" />
+      <option name="presentableId" value="LOCAL-00637" />
+      <option name="project" value="LOCAL" />
+      <updated>1677148381658</updated>
+    </task>
+    <task id="LOCAL-00638" summary="Add solution to problem 502">
+      <created>1677148455516</created>
+      <option name="number" value="00638" />
+      <option name="presentableId" value="LOCAL-00638" />
+      <option name="project" value="LOCAL" />
+      <updated>1677148455516</updated>
+    </task>
+    <task id="LOCAL-00639" summary="Add solution to problem 502">
+      <created>1677148659486</created>
+      <option name="number" value="00639" />
+      <option name="presentableId" value="LOCAL-00639" />
+      <option name="project" value="LOCAL" />
+      <updated>1677148659486</updated>
+    </task>
+    <option name="localTasksCounter" value="640" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -499,8 +497,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 45 : Correct Solution 2;&#10;&#10;- dp[0] &lt; valueWhenCannotReach makes no sense if valueWhenCannotReach is not nums.size;" />
-    <MESSAGE value="Update problem 45 : Improve readability;" />
     <MESSAGE value="Add solution to problem 2306;" />
     <MESSAGE value="Update problem 2306 : Improve readability and performance;" />
     <MESSAGE value="Update problem 2306 : Add Solution 2;" />
@@ -524,7 +520,9 @@
     <MESSAGE value="Add solution to problem 540" />
     <MESSAGE value="Update problem 540 : Use kotlin built-in exception" />
     <MESSAGE value="Update problem 540 : Add Solution 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 540 : Add Solution 2" />
+    <MESSAGE value="Add solution to problem 1011" />
+    <MESSAGE value="Add solution to problem 502" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 502" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
