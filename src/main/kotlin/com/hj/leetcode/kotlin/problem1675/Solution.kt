@@ -10,9 +10,9 @@ class Solution {
      * Time O(NLogN) and Space O(N);
      */
     fun minimumDeviation(nums: IntArray): Int {
-        /* We build the maxPq from nums, using the original even numbers but doubling the odd number.
-         * Doing so will not affect the result since we can divide it back if necessary.
-         * However, we reduce the two possible operations into one, i.e. only divide even number by two.
+        /* We build the maxPq from nums, using the original even numbers but doubling the odd numbers.
+         * Doing so will not affect the result, since we can divide the number back if necessary.
+         * However, we now reduce these two possible operations to one, i.e. division only.
          */
         val numMaxPq = buildMaxPqWithAllOddNumbersDoubled(nums)
         return findMinimumDeviation(numMaxPq)
