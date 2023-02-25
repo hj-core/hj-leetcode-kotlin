@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solutions to problem 121" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solutions to problem 121">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1675/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1675/Solution.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,13 +100,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00600" summary="Update problem 45 : Correct Solution 2;&#10;&#10;- dp[0] &lt; valueWhenCannotReach makes no sense if valueWhenCannotReach is not nums.size;">
-      <created>1675861664655</created>
-      <option name="number" value="00600" />
-      <option name="presentableId" value="LOCAL-00600" />
-      <option name="project" value="LOCAL" />
-      <updated>1675861664655</updated>
     </task>
     <task id="LOCAL-00601" summary="Update problem 45 : Improve readability;">
       <created>1675861919807</created>
@@ -441,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677303344885</updated>
     </task>
-    <option name="localTasksCounter" value="649" />
+    <task id="LOCAL-00649" summary="Add solutions to problem 121">
+      <created>1677305458742</created>
+      <option name="number" value="00649" />
+      <option name="presentableId" value="LOCAL-00649" />
+      <option name="project" value="LOCAL" />
+      <updated>1677305458742</updated>
+    </task>
+    <option name="localTasksCounter" value="650" />
     <servers />
   </component>
   <component name="UnknownFeatures">
