@@ -11,10 +11,10 @@ class Solution {
         // holder[i][j] = minDistance(word1[i:], word2[j:])
         val holder = createSubResultHolder(word1, word2)
 
-        return holder.run {
-            setBaseCases(this, word1, word2)
-            propagateRelation(this, word1, word2)
-            solveOriginalProblem(this)
+        return holder.let {
+            setBaseCases(it, word1, word2)
+            propagateRelation(it, word1, word2)
+            solveOriginalProblem(it)
         }
     }
 
@@ -54,9 +54,9 @@ class Solution {
             subResultHolder[i + 1][j + 1]
         } else {
             1 + minOf(
-                subResultHolder[i][j + 1],
-                subResultHolder[i + 1][j],
-                subResultHolder[i + 1][j + 1]
+                subResultHolder[i][j + 1], // apply insertion
+                subResultHolder[i + 1][j], // apply deletion
+                subResultHolder[i + 1][j + 1] // apply replacement
             )
         }
         subResultHolder[i][j] = subResult
