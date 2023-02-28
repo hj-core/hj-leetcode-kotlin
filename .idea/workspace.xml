@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 427">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 652" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,13 +104,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00608" summary="Update problem 2306 : Improve readability and performance;">
-      <created>1675929431393</created>
-      <option name="number" value="00608" />
-      <option name="presentableId" value="LOCAL-00608" />
-      <option name="project" value="LOCAL" />
-      <updated>1675929431393</updated>
     </task>
     <task id="LOCAL-00609" summary="Update problem 2306 : Add Solution 2;">
       <created>1675934681946</created>
@@ -450,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677476331152</updated>
     </task>
-    <option name="localTasksCounter" value="657" />
+    <task id="LOCAL-00657" summary="Add solution to problem 652">
+      <created>1677598121291</created>
+      <option name="number" value="00657" />
+      <option name="presentableId" value="LOCAL-00657" />
+      <option name="project" value="LOCAL" />
+      <updated>1677598121291</updated>
+    </task>
+    <option name="localTasksCounter" value="658" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -506,7 +504,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution to problem 67;" />
     <MESSAGE value="Update problem 67 : Rename local variables for clarity;" />
     <MESSAGE value="Add solution to problem 989;" />
     <MESSAGE value="Add solutions to problem 104;" />
@@ -531,7 +528,8 @@
     <MESSAGE value="Add solution to problem 72" />
     <MESSAGE value="Update problem 72 : Improve readability" />
     <MESSAGE value="Add solution to problem 427" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 427" />
+    <MESSAGE value="Add solution to problem 652" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 652" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -26,9 +26,10 @@ class Solution {
 
     private class State(
         val nodeToId: MutableMap<TreeNode, Int> = hashMapOf(),
-        val stringFromToId: MutableMap<String, Int> = hashMapOf(),
         val idFrequency: MutableMap<Int, Int> = hashMapOf()
     ) {
+        private val stringFromToId: MutableMap<String, Int> = hashMapOf()
+
         fun update(node: TreeNode) {
             if (nodeToId.containsKey(node)) return
 
