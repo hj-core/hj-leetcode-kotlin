@@ -56,7 +56,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitRewordedCommitMessages">
-    <option name="onto" value="5014d0d49a1f6a418e70b82b07a98be5519a5496" />
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="Add solution to problem 427" />
+        <option name="rewordedMessage" value="Add solution to problem 427" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="cfd7d241f3b02948da014d112147d984ebbb4b28" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -99,27 +106,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00605" summary="Update problem 2306 : Improve readability and performance;">
-      <created>1675928563534</created>
-      <option name="number" value="00605" />
-      <option name="presentableId" value="LOCAL-00605" />
-      <option name="project" value="LOCAL" />
-      <updated>1675928563534</updated>
-    </task>
-    <task id="LOCAL-00606" summary="Update problem 2306 : Improve readability and performance;">
-      <created>1675928872656</created>
-      <option name="number" value="00606" />
-      <option name="presentableId" value="LOCAL-00606" />
-      <option name="project" value="LOCAL" />
-      <updated>1675928872656</updated>
-    </task>
-    <task id="LOCAL-00607" summary="Update problem 2306 : Improve readability and performance;">
-      <created>1675928954646</created>
-      <option name="number" value="00607" />
-      <option name="presentableId" value="LOCAL-00607" />
-      <option name="project" value="LOCAL" />
-      <updated>1675928954646</updated>
     </task>
     <task id="LOCAL-00608" summary="Update problem 2306 : Improve readability and performance;">
       <created>1675929431393</created>
@@ -443,7 +429,28 @@
       <option name="project" value="LOCAL" />
       <updated>1677475529193</updated>
     </task>
-    <option name="localTasksCounter" value="654" />
+    <task id="LOCAL-00654" summary="Add solution to problem 427">
+      <created>1677476184161</created>
+      <option name="number" value="00654" />
+      <option name="presentableId" value="LOCAL-00654" />
+      <option name="project" value="LOCAL" />
+      <updated>1677476184161</updated>
+    </task>
+    <task id="LOCAL-00655" summary="Add solution to problem 427">
+      <created>1677476188365</created>
+      <option name="number" value="00655" />
+      <option name="presentableId" value="LOCAL-00655" />
+      <option name="project" value="LOCAL" />
+      <updated>1677476188365</updated>
+    </task>
+    <task id="LOCAL-00656" summary="Add solution to problem 427">
+      <created>1677476331152</created>
+      <option name="number" value="00656" />
+      <option name="presentableId" value="LOCAL-00656" />
+      <option name="project" value="LOCAL" />
+      <updated>1677476331152</updated>
+    </task>
+    <option name="localTasksCounter" value="657" />
     <servers />
   </component>
   <component name="UnknownFeatures">
