@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 652" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solution to problem 912" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,20 +104,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00609" summary="Update problem 2306 : Add Solution 2;">
-      <created>1675934681946</created>
-      <option name="number" value="00609" />
-      <option name="presentableId" value="LOCAL-00609" />
-      <option name="project" value="LOCAL" />
-      <updated>1675934681946</updated>
-    </task>
-    <task id="LOCAL-00610" summary="Add solution to problem 1162;">
-      <created>1676044085429</created>
-      <option name="number" value="00610" />
-      <option name="presentableId" value="LOCAL-00610" />
-      <option name="project" value="LOCAL" />
-      <updated>1676044085429</updated>
     </task>
     <task id="LOCAL-00611" summary="Add solution to problem 1129;">
       <created>1676130503902</created>
@@ -448,7 +434,21 @@
       <option name="project" value="LOCAL" />
       <updated>1677598121291</updated>
     </task>
-    <option name="localTasksCounter" value="658" />
+    <task id="LOCAL-00658" summary="Update problem 652 : Make stringFormToId private">
+      <created>1677599091515</created>
+      <option name="number" value="00658" />
+      <option name="presentableId" value="LOCAL-00658" />
+      <option name="project" value="LOCAL" />
+      <updated>1677599091515</updated>
+    </task>
+    <task id="LOCAL-00659" summary="Add solution to problem 912">
+      <created>1677679428539</created>
+      <option name="number" value="00659" />
+      <option name="presentableId" value="LOCAL-00659" />
+      <option name="project" value="LOCAL" />
+      <updated>1677679428539</updated>
+    </task>
+    <option name="localTasksCounter" value="660" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -504,8 +504,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 67 : Rename local variables for clarity;" />
-    <MESSAGE value="Add solution to problem 989;" />
     <MESSAGE value="Add solutions to problem 104;" />
     <MESSAGE value="Add solution to problem 783;" />
     <MESSAGE value="Update problem 783 : Improve readability;" />
@@ -529,7 +527,9 @@
     <MESSAGE value="Update problem 72 : Improve readability" />
     <MESSAGE value="Add solution to problem 427" />
     <MESSAGE value="Add solution to problem 652" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 652" />
+    <MESSAGE value="Update problem 652 : Make stringFormToId private" />
+    <MESSAGE value="Add solution to problem 912" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add solution to problem 912" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
