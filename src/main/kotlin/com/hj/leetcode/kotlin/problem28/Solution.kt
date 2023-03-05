@@ -33,8 +33,8 @@ class Solution {
     }
 
     private fun buildPrefixFunctionForKmp(pattern: String): IntArray {
-        /* pi(q) ::= max { k : k < q and P_k is suffix of P_q } where P_k and P_q means
-         * prefix of P up to index k and q inclusively.
+        /* pi(q) ::= max { k : k < q and P_k is suffix of P_q } where P_k and P_q are
+         * the prefix of P up to index k and q inclusively.
          */
         val pi = IntArray(pattern.length).apply { this[0] = -1 }
         var k = pi[0]
