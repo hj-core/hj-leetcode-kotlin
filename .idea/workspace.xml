@@ -105,20 +105,6 @@
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
     </task>
-    <task id="LOCAL-00622" summary="Update problem 226 : Add Solution 2;">
-      <created>1676713919866</created>
-      <option name="number" value="00622" />
-      <option name="presentableId" value="LOCAL-00622" />
-      <option name="project" value="LOCAL" />
-      <updated>1676713919866</updated>
-    </task>
-    <task id="LOCAL-00623" summary="Add solution to problem 103;">
-      <created>1676776779867</created>
-      <option name="number" value="00623" />
-      <option name="presentableId" value="LOCAL-00623" />
-      <option name="project" value="LOCAL" />
-      <updated>1676776779867</updated>
-    </task>
     <task id="LOCAL-00624" summary="Add solution to problem 103;">
       <created>1676777039662</created>
       <option name="number" value="00624" />
@@ -448,7 +434,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678353397437</updated>
     </task>
-    <option name="localTasksCounter" value="671" />
+    <task id="LOCAL-00671" summary="Update problem 142 : Improve readability">
+      <created>1678353541678</created>
+      <option name="number" value="00671" />
+      <option name="presentableId" value="LOCAL-00671" />
+      <option name="project" value="LOCAL" />
+      <updated>1678353541678</updated>
+    </task>
+    <task id="LOCAL-00672" summary="Update problem 142 : Improve readability">
+      <created>1678353694525</created>
+      <option name="number" value="00672" />
+      <option name="presentableId" value="LOCAL-00672" />
+      <option name="project" value="LOCAL" />
+      <updated>1678353694525</updated>
+    </task>
+    <option name="localTasksCounter" value="673" />
     <servers />
   </component>
   <component name="UnknownFeatures">
