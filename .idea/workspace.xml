@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add solutions to problem 129" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 208" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,20 +104,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00639" summary="Add solution to problem 502">
-      <created>1677148659486</created>
-      <option name="number" value="00639" />
-      <option name="presentableId" value="LOCAL-00639" />
-      <option name="project" value="LOCAL" />
-      <updated>1677148659486</updated>
-    </task>
-    <task id="LOCAL-00640" summary="Add solution to problem 502">
-      <created>1677148940638</created>
-      <option name="number" value="00640" />
-      <option name="presentableId" value="LOCAL-00640" />
-      <option name="project" value="LOCAL" />
-      <updated>1677148940638</updated>
     </task>
     <task id="LOCAL-00641" summary="Add solution to problem 1675">
       <created>1677232917581</created>
@@ -448,7 +434,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678773664264</updated>
     </task>
-    <option name="localTasksCounter" value="688" />
+    <task id="LOCAL-00688" summary="Add solution to problem 106">
+      <created>1678949598881</created>
+      <option name="number" value="00688" />
+      <option name="presentableId" value="LOCAL-00688" />
+      <option name="project" value="LOCAL" />
+      <updated>1678949598881</updated>
+    </task>
+    <task id="LOCAL-00689" summary="Add solution to problem 208">
+      <created>1679027758808</created>
+      <option name="number" value="00689" />
+      <option name="presentableId" value="LOCAL-00689" />
+      <option name="project" value="LOCAL" />
+      <updated>1679027758808</updated>
+    </task>
+    <option name="localTasksCounter" value="690" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -504,8 +504,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution to problem 1675" />
-    <MESSAGE value="Add solution to problem 121" />
     <MESSAGE value="Add solutions to problem 121" />
     <MESSAGE value="Update problem 1675 : Improve wording in comment" />
     <MESSAGE value="Add solution to problem 72" />
@@ -529,7 +527,9 @@
     <MESSAGE value="Add solution to problem 101" />
     <MESSAGE value="Add solutions to problem 101" />
     <MESSAGE value="Add solutions to problem 129" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add solutions to problem 129" />
+    <MESSAGE value="Add solution to problem 106" />
+    <MESSAGE value="Add a solution to problem 208" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 208" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
