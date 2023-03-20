@@ -39,6 +39,7 @@ class Solution {
     }
 
     private fun computeEffectiveEmptyLength(flowerbed: IntArray, currPlot: Int, emptyLength: Int): Int {
+        require(emptyLength >= 0)
         return emptyLength
             .let {
                 val hasFlowerBefore = flowerbed.getOrNull(currPlot - 1) == 1
@@ -51,6 +52,6 @@ class Solution {
     }
 
     private fun computeMaxFlowers(effectiveEmptyLength: Int): Int {
-        return (effectiveEmptyLength + 1) shr 1
+        return ((effectiveEmptyLength + 1) shr 1).coerceAtLeast(0)
     }
 }
