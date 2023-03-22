@@ -22,9 +22,10 @@ class Solution2 {
     }
 
     private class UnionFind(size: Int) {
-        private val parent = IntArray(size) { it }
 
+        private val parent = IntArray(size) { it }
         private val rank = IntArray(size)
+
         fun union(u: Int, v: Int) {
             val uParent = find(u)
             val vParent = find(v)
