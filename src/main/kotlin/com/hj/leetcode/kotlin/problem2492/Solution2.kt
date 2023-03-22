@@ -48,7 +48,6 @@ class Solution2 {
         }
 
         fun inSameUnion(u: Int, v: Int): Boolean = find(u) == find(v)
-
     }
 
     private fun findMinScore(origin: Int, roads: Array<IntArray>, cityUnionFind: UnionFind): Int {
