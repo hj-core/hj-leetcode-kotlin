@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update problem 2492 according to comments" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Rename function that is closer to its intent" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -123,55 +123,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00656" summary="Add solution to problem 427">
-      <created>1677476331152</created>
-      <option name="number" value="00656" />
-      <option name="presentableId" value="LOCAL-00656" />
-      <option name="project" value="LOCAL" />
-      <updated>1677476331152</updated>
-    </task>
-    <task id="LOCAL-00657" summary="Add solution to problem 652">
-      <created>1677598121291</created>
-      <option name="number" value="00657" />
-      <option name="presentableId" value="LOCAL-00657" />
-      <option name="project" value="LOCAL" />
-      <updated>1677598121291</updated>
-    </task>
-    <task id="LOCAL-00658" summary="Update problem 652 : Make stringFormToId private">
-      <created>1677599091515</created>
-      <option name="number" value="00658" />
-      <option name="presentableId" value="LOCAL-00658" />
-      <option name="project" value="LOCAL" />
-      <updated>1677599091515</updated>
-    </task>
-    <task id="LOCAL-00659" summary="Add solution to problem 912">
-      <created>1677679428539</created>
-      <option name="number" value="00659" />
-      <option name="presentableId" value="LOCAL-00659" />
-      <option name="project" value="LOCAL" />
-      <updated>1677679428539</updated>
-    </task>
-    <task id="LOCAL-00660" summary="Add solution to problem 912">
-      <created>1677679892927</created>
-      <option name="number" value="00660" />
-      <option name="presentableId" value="LOCAL-00660" />
-      <option name="project" value="LOCAL" />
-      <updated>1677679892927</updated>
-    </task>
-    <task id="LOCAL-00661" summary="Add solution to problem 2444">
-      <created>1677947089256</created>
-      <option name="number" value="00661" />
-      <option name="presentableId" value="LOCAL-00661" />
-      <option name="project" value="LOCAL" />
-      <updated>1677947089257</updated>
-    </task>
-    <task id="LOCAL-00662" summary="Add solution to problem 1345">
-      <created>1678016081855</created>
-      <option name="number" value="00662" />
-      <option name="presentableId" value="LOCAL-00662" />
-      <option name="project" value="LOCAL" />
-      <updated>1678016081855</updated>
     </task>
     <task id="LOCAL-00663" summary="Add solution to problem 28">
       <created>1678028935949</created>
@@ -467,7 +418,56 @@
       <option name="project" value="LOCAL" />
       <updated>1679475719818</updated>
     </task>
-    <option name="localTasksCounter" value="705" />
+    <task id="LOCAL-00705" summary="Improve formatting">
+      <created>1679475959273</created>
+      <option name="number" value="00705" />
+      <option name="presentableId" value="LOCAL-00705" />
+      <option name="project" value="LOCAL" />
+      <updated>1679475959273</updated>
+    </task>
+    <task id="LOCAL-00706" summary="Improve formatting">
+      <created>1679476059476</created>
+      <option name="number" value="00706" />
+      <option name="presentableId" value="LOCAL-00706" />
+      <option name="project" value="LOCAL" />
+      <updated>1679476059476</updated>
+    </task>
+    <task id="LOCAL-00707" summary="Rename parameter from numCities to maxCityLabel">
+      <created>1679476307976</created>
+      <option name="number" value="00707" />
+      <option name="presentableId" value="LOCAL-00707" />
+      <option name="project" value="LOCAL" />
+      <updated>1679476307976</updated>
+    </task>
+    <task id="LOCAL-00708" summary="Rename parameter from numCities to maxLabel">
+      <created>1679476337715</created>
+      <option name="number" value="00708" />
+      <option name="presentableId" value="LOCAL-00708" />
+      <option name="project" value="LOCAL" />
+      <updated>1679476337715</updated>
+    </task>
+    <task id="LOCAL-00709" summary="Rename parameter and function">
+      <created>1679476442505</created>
+      <option name="number" value="00709" />
+      <option name="presentableId" value="LOCAL-00709" />
+      <option name="project" value="LOCAL" />
+      <updated>1679476442505</updated>
+    </task>
+    <task id="LOCAL-00710" summary="Rename parameter and function">
+      <created>1679476463805</created>
+      <option name="number" value="00710" />
+      <option name="presentableId" value="LOCAL-00710" />
+      <option name="project" value="LOCAL" />
+      <updated>1679476463805</updated>
+    </task>
+    <task id="LOCAL-00711" summary="Rename function">
+      <created>1679478467055</created>
+      <option name="number" value="00711" />
+      <option name="presentableId" value="LOCAL-00711" />
+      <option name="project" value="LOCAL" />
+      <updated>1679478467055</updated>
+    </task>
+    <option name="localTasksCounter" value="712" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -523,11 +523,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution to problem 912" />
-    <MESSAGE value="Add solution to problem 2444" />
-    <MESSAGE value="Add solution to problem 1345" />
-    <MESSAGE value="Add solution to problem 28" />
-    <MESSAGE value="Update problem 28 : Improve wording in comment" />
     <MESSAGE value="Add solution to problem 1539" />
     <MESSAGE value="Add solution to problem 875" />
     <MESSAGE value="Update problem 142 : Improve readability" />
@@ -548,7 +543,12 @@
     <MESSAGE value="Add a solution to problem 2492" />
     <MESSAGE value="Add solutions to problem 2492" />
     <MESSAGE value="Update problem 2492 according to comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update problem 2492 according to comments" />
+    <MESSAGE value="Improve formatting" />
+    <MESSAGE value="Rename parameter from numCities to maxCityLabel" />
+    <MESSAGE value="Rename parameter from numCities to maxLabel" />
+    <MESSAGE value="Rename parameter and function" />
+    <MESSAGE value="Rename function that is closer to its intent" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename function that is closer to its intent" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

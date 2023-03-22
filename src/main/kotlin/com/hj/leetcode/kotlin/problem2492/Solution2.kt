@@ -10,7 +10,7 @@ class Solution2 {
     fun minScore(n: Int, roads: Array<IntArray>): Int {
         val cityUnionFind = buildUnionFindOfCity(n, roads)
         check(cityUnionFind.inSameUnion(1, n))
-        return findMinDistanceOfReachableRoads(1, roads, cityUnionFind)
+        return minDistanceAmongReachableRoads(1, roads, cityUnionFind)
     }
 
     private fun buildUnionFindOfCity(maxLabel: Int, roads: Array<IntArray>): UnionFind {
@@ -50,7 +50,11 @@ class Solution2 {
         fun inSameUnion(u: Int, v: Int): Boolean = find(u) == find(v)
     }
 
-    private fun findMinDistanceOfReachableRoads(origin: Int, roads: Array<IntArray>, cityUnionFind: UnionFind): Int {
+    private fun minDistanceAmongReachableRoads(
+        origin: Int,
+        roads: Array<IntArray>,
+        cityUnionFind: UnionFind
+    ): Int {
         var minScore = Int.MAX_VALUE
         for ((u, _, distance) in roads) {
             if (cityUnionFind.inSameUnion(u, origin) && distance < minScore) {
