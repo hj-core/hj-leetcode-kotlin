@@ -55,12 +55,12 @@ class Solution2 {
         roads: Array<IntArray>,
         cityUnionFind: UnionFind
     ): Int {
-        var minScore = Int.MAX_VALUE
+        var minDistance = Int.MAX_VALUE
         for ((u, _, distance) in roads) {
-            if (cityUnionFind.inSameUnion(u, origin) && distance < minScore) {
-                minScore = distance
+            if (cityUnionFind.inSameUnion(u, origin) && distance < minDistance) {
+                minDistance = distance
             }
         }
-        return minScore
+        return minDistance
     }
 }
