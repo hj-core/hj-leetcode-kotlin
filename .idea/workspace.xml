@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 2316">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a UnionFind solution to problem 2316">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,14 +61,7 @@
   }
 }</component>
   <component name="GitRewordedCommitMessages">
-    <option name="commitMessagesMapping">
-      <RewordedCommitMessageMapping>
-        <option name="originalMessage" value="Add solution to problem 427" />
-        <option name="rewordedMessage" value="Add solution to problem 427" />
-      </RewordedCommitMessageMapping>
-    </option>
-    <option name="currentCommit" value="1" />
-    <option name="onto" value="cfd7d241f3b02948da014d112147d984ebbb4b28" />
+    <option name="onto" value="013ebcaeffd95abaf2b236acaf3e66971dee7fc2" />
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="recentNewPullRequestHead">
@@ -125,13 +118,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00666" summary="Add solution to problem 1539">
-      <created>1678078548202</created>
-      <option name="number" value="00666" />
-      <option name="presentableId" value="LOCAL-00666" />
-      <option name="project" value="LOCAL" />
-      <updated>1678078548202</updated>
     </task>
     <task id="LOCAL-00667" summary="Add solution to problem 1539">
       <created>1678078798372</created>
@@ -469,7 +455,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679723280406</updated>
     </task>
-    <option name="localTasksCounter" value="715" />
+    <task id="LOCAL-00715" summary="Add a UnionFind solution to problem 2316">
+      <created>1679726707472</created>
+      <option name="number" value="00715" />
+      <option name="presentableId" value="LOCAL-00715" />
+      <option name="project" value="LOCAL" />
+      <updated>1679726707472</updated>
+    </task>
+    <option name="localTasksCounter" value="716" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -525,8 +518,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution to problem 875" />
-    <MESSAGE value="Update problem 142 : Improve readability" />
     <MESSAGE value="Add solution to problem 382" />
     <MESSAGE value="Add solution to problem 109" />
     <MESSAGE value="Add solutions to problem 109" />
@@ -550,7 +541,9 @@
     <MESSAGE value="Rename parameter and function" />
     <MESSAGE value="Rename function that is closer to its intent" />
     <MESSAGE value="Add a solution to problem 2316" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 2316" />
+    <MESSAGE value="echo" />
+    <MESSAGE value="Add a UnionFind solution to problem 2316" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a UnionFind solution to problem 2316" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

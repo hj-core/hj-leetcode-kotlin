@@ -38,7 +38,7 @@ class Solution2 {
             }
         }
 
-        fun find(node: Int): Int {
+        tailrec fun find(node: Int): Int {
             return if (node == parent[node]) node else find(parent[node])
         }
     }
