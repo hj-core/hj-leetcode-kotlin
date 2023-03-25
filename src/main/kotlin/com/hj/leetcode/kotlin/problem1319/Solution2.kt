@@ -44,7 +44,7 @@ class Solution2 {
             }
         }
 
-        private fun find(computer: Int): Int {
+        private tailrec fun find(computer: Int): Int {
             val isRoot = parent[computer] == computer
             return if (isRoot) computer else find(parent[computer])
         }
