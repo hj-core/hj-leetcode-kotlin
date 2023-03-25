@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Rename local variable to match context" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a UnionFind solution to problem 2316">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,7 +50,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem1319" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,14 +61,7 @@
   }
 }</component>
   <component name="GitRewordedCommitMessages">
-    <option name="commitMessagesMapping">
-      <RewordedCommitMessageMapping>
-        <option name="originalMessage" value="Add solution to problem 427" />
-        <option name="rewordedMessage" value="Add solution to problem 427" />
-      </RewordedCommitMessageMapping>
-    </option>
-    <option name="currentCommit" value="1" />
-    <option name="onto" value="cfd7d241f3b02948da014d112147d984ebbb4b28" />
+    <option name="onto" value="013ebcaeffd95abaf2b236acaf3e66971dee7fc2" />
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="recentNewPullRequestHead">
@@ -123,34 +118,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00663" summary="Add solution to problem 28">
-      <created>1678028935949</created>
-      <option name="number" value="00663" />
-      <option name="presentableId" value="LOCAL-00663" />
-      <option name="project" value="LOCAL" />
-      <updated>1678028935949</updated>
-    </task>
-    <task id="LOCAL-00664" summary="Update problem 28 : Improve wording in comment">
-      <created>1678029321908</created>
-      <option name="number" value="00664" />
-      <option name="presentableId" value="LOCAL-00664" />
-      <option name="project" value="LOCAL" />
-      <updated>1678029321908</updated>
-    </task>
-    <task id="LOCAL-00665" summary="Add solution to problem 1539">
-      <created>1678074559326</created>
-      <option name="number" value="00665" />
-      <option name="presentableId" value="LOCAL-00665" />
-      <option name="project" value="LOCAL" />
-      <updated>1678074559326</updated>
-    </task>
-    <task id="LOCAL-00666" summary="Add solution to problem 1539">
-      <created>1678078548202</created>
-      <option name="number" value="00666" />
-      <option name="presentableId" value="LOCAL-00666" />
-      <option name="project" value="LOCAL" />
-      <updated>1678078548202</updated>
     </task>
     <task id="LOCAL-00667" summary="Add solution to problem 1539">
       <created>1678078798372</created>
@@ -467,7 +434,35 @@
       <option name="project" value="LOCAL" />
       <updated>1679478467055</updated>
     </task>
-    <option name="localTasksCounter" value="712" />
+    <task id="LOCAL-00712" summary="Add a solution to problem 2316">
+      <created>1679722294777</created>
+      <option name="number" value="00712" />
+      <option name="presentableId" value="LOCAL-00712" />
+      <option name="project" value="LOCAL" />
+      <updated>1679722294777</updated>
+    </task>
+    <task id="LOCAL-00713" summary="Add a solution to problem 2316">
+      <created>1679722789527</created>
+      <option name="number" value="00713" />
+      <option name="presentableId" value="LOCAL-00713" />
+      <option name="project" value="LOCAL" />
+      <updated>1679722789527</updated>
+    </task>
+    <task id="LOCAL-00714" summary="Add a solution to problem 2316">
+      <created>1679723280406</created>
+      <option name="number" value="00714" />
+      <option name="presentableId" value="LOCAL-00714" />
+      <option name="project" value="LOCAL" />
+      <updated>1679723280406</updated>
+    </task>
+    <task id="LOCAL-00715" summary="Add a UnionFind solution to problem 2316">
+      <created>1679726707472</created>
+      <option name="number" value="00715" />
+      <option name="presentableId" value="LOCAL-00715" />
+      <option name="project" value="LOCAL" />
+      <updated>1679726707472</updated>
+    </task>
+    <option name="localTasksCounter" value="716" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -495,7 +490,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="problem2316" />
                       </list>
                     </value>
                   </entry>
@@ -523,9 +518,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solution to problem 1539" />
-    <MESSAGE value="Add solution to problem 875" />
-    <MESSAGE value="Update problem 142 : Improve readability" />
     <MESSAGE value="Add solution to problem 382" />
     <MESSAGE value="Add solution to problem 109" />
     <MESSAGE value="Add solutions to problem 109" />
@@ -548,7 +540,10 @@
     <MESSAGE value="Rename parameter from numCities to maxLabel" />
     <MESSAGE value="Rename parameter and function" />
     <MESSAGE value="Rename function that is closer to its intent" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename function that is closer to its intent" />
+    <MESSAGE value="Add a solution to problem 2316" />
+    <MESSAGE value="echo" />
+    <MESSAGE value="Add a UnionFind solution to problem 2316" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a UnionFind solution to problem 2316" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
