@@ -8,15 +8,16 @@ class Solution {
      * Time O(MN) and Space O(N) where M and N are the number of rows and columns of grid;
      */
     fun minPathSum(grid: Array<IntArray>): Int {
-        val columnMinPathSum = columnMinPathSumOfFirstRow(grid)
+        // rowMinPathSum[i] ::= min path sum to reach column i of current row
+        val rowMinPathSum = minPathSumOfFirstRow(grid)
         val numRows = grid.size
         repeat(numRows - 1) { currentRow ->
-            updateColumnMinPathSumToNextRow(currentRow, grid, columnMinPathSum)
+            updateMinPathSumToNextRow(currentRow, grid, rowMinPathSum)
         }
-        return columnMinPathSum.last()
+        return rowMinPathSum.last()
     }
 
-    private fun columnMinPathSumOfFirstRow(grid: Array<IntArray>): IntArray {
+    private fun minPathSumOfFirstRow(grid: Array<IntArray>): IntArray {
         val minPathSum = grid.first().clone()
         for (column in 1 until minPathSum.size) {
             minPathSum[column] += minPathSum[column - 1]
@@ -24,13 +25,13 @@ class Solution {
         return minPathSum
     }
 
-    private fun updateColumnMinPathSumToNextRow(currentRow: Int, grid: Array<IntArray>, columnMinPathSum: IntArray) {
+    private fun updateMinPathSumToNextRow(currentRow: Int, grid: Array<IntArray>, rowMinPathSum: IntArray) {
         val nextRow = currentRow + 1
         val numColumns = grid[currentRow].size
-        columnMinPathSum[0] = grid[nextRow][0] + columnMinPathSum[0]
+        rowMinPathSum[0] = grid[nextRow][0] + rowMinPathSum[0]
         for (column in 1 until numColumns) {
-            columnMinPathSum[column] = grid[nextRow][column] +
-                    minOf(columnMinPathSum[column - 1], columnMinPathSum[column])
+            rowMinPathSum[column] = grid[nextRow][column] +
+                    minOf(rowMinPathSum[column - 1], rowMinPathSum[column])
         }
     }
 }
