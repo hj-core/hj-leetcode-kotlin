@@ -12,15 +12,15 @@ class Solution {
         val suffixMinCost = IntArray(days.size + 1)
         for (i in days.indices.reversed()) {
             // Case 1: We buy a day pass on day[i]
-            val today = days[i]
+            val firstDay = days[i]
             val dayPassMinCost =
-                costs[0] + suffixMinCost[days.firstIndex(fromIndex = i) { day -> day > today }]
+                costs[0] + suffixMinCost[days.firstIndex(fromIndex = i) { day -> day > firstDay }]
             // Case 2: We buy a week pass on day[i]
-            val weekPassExpiryDay = today + 6
+            val weekPassExpiryDay = firstDay + 6
             val weekPassMinCost =
                 costs[1] + suffixMinCost[days.firstIndex(fromIndex = i) { day -> day > weekPassExpiryDay }]
             // Case 3: We buy a month pass on day[i]
-            val monthPassExpiryDay = today + 29
+            val monthPassExpiryDay = firstDay + 29
             val monthPassMinCost =
                 costs[2] + suffixMinCost[days.firstIndex(fromIndex = i) { day -> day > monthPassExpiryDay }]
             // The min cost is the min among possible cases
