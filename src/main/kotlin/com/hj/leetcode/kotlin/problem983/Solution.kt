@@ -10,28 +10,37 @@ class Solution {
     fun mincostTickets(days: IntArray, costs: IntArray): Int {
         // suffixMinCost[i] ::= the min cost of the suffix array of days start from index i
         val suffixMinCost = IntArray(days.size + 1)
-        for (index in days.indices.reversed()) {
-            val day = days[index]
-            suffixMinCost[index] = minOf(
-                costs[0] + suffixMinCost[indexOfFirstGreaterThan(day, days, index)],
-                costs[1] + suffixMinCost[indexOfFirstGreaterThan(day + 6, days, index)],
-                costs[2] + suffixMinCost[indexOfFirstGreaterThan(day + 29, days, index)]
-            )
+        for (i in days.indices.reversed()) {
+            // Case 1: We buy a day pass on day[i]
+            val today = days[i]
+            val dayPassMinCost =
+                costs[0] + suffixMinCost[days.firstIndex(fromIndex = i) { day -> day > today }]
+            // Case 2: We buy a week pass on day[i]
+            val weekPassExpiryDay = today + 6
+            val weekPassMinCost =
+                costs[1] + suffixMinCost[days.firstIndex(fromIndex = i) { day -> day > weekPassExpiryDay }]
+            // Case 3: We buy a month pass on day[i]
+            val monthPassExpiryDay = today + 29
+            val monthPassMinCost =
+                costs[2] + suffixMinCost[days.firstIndex(fromIndex = i) { day -> day > monthPassExpiryDay }]
+            // The min cost is the min among possible cases
+            suffixMinCost[i] = minOf(dayPassMinCost, weekPassMinCost, monthPassMinCost)
         }
         return suffixMinCost[0]
     }
 
-    private fun indexOfFirstGreaterThan(target: Int, sorted: IntArray, fromIndex: Int = 0): Int {
-        val lessThanMin = target < sorted[fromIndex]
-        if (lessThanMin) return fromIndex
-
-        val notLessThanMax = target >= sorted.last()
-        if (notLessThanMax) return sorted.size
-
-        var resultIndex = fromIndex
-        while (sorted[resultIndex] <= target) {
-            resultIndex++
+    private fun IntArray.firstIndex(
+        fromIndex: Int = 0,
+        fallBackValue: Int = size,
+        predicate: (element: Int) -> Boolean = { true }
+    ): Int {
+        var index = fromIndex
+        while (index < size) {
+            val element = this[index]
+            val isMatched = predicate(element)
+            if (isMatched) return index
+            index++
         }
-        return resultIndex
+        return fallBackValue
     }
 }
