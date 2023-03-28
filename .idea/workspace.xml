@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 64">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem983/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem983/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,20 +119,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00669" summary="Add solution to problem 875">
-      <created>1678270435911</created>
-      <option name="number" value="00669" />
-      <option name="presentableId" value="LOCAL-00669" />
-      <option name="project" value="LOCAL" />
-      <updated>1678270435911</updated>
-    </task>
-    <task id="LOCAL-00670" summary="Update problem 142 : Improve readability">
-      <created>1678353397437</created>
-      <option name="number" value="00670" />
-      <option name="presentableId" value="LOCAL-00670" />
-      <option name="project" value="LOCAL" />
-      <updated>1678353397437</updated>
     </task>
     <task id="LOCAL-00671" summary="Update problem 142 : Improve readability">
       <created>1678353541678</created>
@@ -462,7 +449,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679885064388</updated>
     </task>
-    <option name="localTasksCounter" value="718" />
+    <task id="LOCAL-00718" summary="Add a solution to problem 983">
+      <created>1679985956353</created>
+      <option name="number" value="00718" />
+      <option name="presentableId" value="LOCAL-00718" />
+      <option name="project" value="LOCAL" />
+      <updated>1679985956354</updated>
+    </task>
+    <task id="LOCAL-00719" summary="Improve readability">
+      <created>1679995949225</created>
+      <option name="number" value="00719" />
+      <option name="presentableId" value="LOCAL-00719" />
+      <option name="project" value="LOCAL" />
+      <updated>1679995949225</updated>
+    </task>
+    <option name="localTasksCounter" value="720" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -506,8 +507,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solutions to problem 109" />
-    <MESSAGE value="Add solution to problem 23" />
     <MESSAGE value="Add solutions to problem 23" />
     <MESSAGE value="Add solution to problem 101" />
     <MESSAGE value="Add solutions to problem 101" />
@@ -531,7 +530,9 @@
     <MESSAGE value="Add a UnionFind solution to problem 2316" />
     <MESSAGE value="Update solution 2 : Mark find() tailrec" />
     <MESSAGE value="Add a solution to problem 64" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 64" />
+    <MESSAGE value="Add a solution to problem 983" />
+    <MESSAGE value="Improve readability" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
