@@ -13,7 +13,7 @@ class Solution {
         var maxResult = 0
         for (index in sortedSatisfaction.indices.reversed()) {
             suffixSum += sortedSatisfaction[index]
-            val noBenefitFromNewDish = suffixSum < 0
+            val noBenefitFromNewDish = suffixSum <= 0
             if (noBenefitFromNewDish) break
             maxResult += suffixSum
         }
