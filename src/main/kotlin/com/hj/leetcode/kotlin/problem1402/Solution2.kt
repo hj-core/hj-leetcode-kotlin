@@ -9,38 +9,37 @@ class Solution2 {
      */
     fun maxSatisfaction(satisfaction: IntArray): Int {
         val sortedSatisfaction = satisfaction.sorted()
-        /* prefixMaxResult[d] ::= the max result of the current sortedSatisfaction prefix
-         * array when total d dishes are prepared
-         */
+        val maxDishes = satisfaction.size
         var end = -1
-        val prefixMaxResult = IntArray(satisfaction.size + 1)
+        /* prefixResult[j] ::= when j dishes are prepared, the result of current sortedSatisfaction
+         * prefix array
+         */
+        val prefixResult = IntArray(maxDishes + 1)
         var maxResult = 0
         repeat(sortedSatisfaction.size) {
-            updateToNextPrefix(end, sortedSatisfaction, prefixMaxResult)
+            updateNextPrefixResult(end, sortedSatisfaction, prefixResult)
             end++
-            maxResult = maxOf(maxResult, prefixMaxResult.max()!!)
+            maxResult = maxOf(maxResult, prefixResult.max()!!)
         }
         return maxResult
     }
 
-    private fun updateToNextPrefix(
+    private fun updateNextPrefixResult(
         currentEnd: Int,
         sortedSatisfaction: List<Int>,
-        prefixMaxResult: IntArray
+        currentResult: IntArray
     ) {
-        val nextEnd = currentEnd + 1
-        val maxDishes = nextEnd + 1
-        val likeOfNewDish = sortedSatisfaction[nextEnd]
+        val newEnd = currentEnd + 1
+        val maxDishes = newEnd + 1
+        val likeOfNewDish = sortedSatisfaction[newEnd]
         // update for the case that all dishes are prepared
-        prefixMaxResult[maxDishes] = prefixMaxResult[maxDishes - 1] + maxDishes * likeOfNewDish
-        // update for cases that some dishes are prepared but not all
+        currentResult[maxDishes] = currentResult[maxDishes - 1] + maxDishes * likeOfNewDish
+        // update for the remaining cases
         for (numDishes in maxDishes - 1 downTo 1) {
-            prefixMaxResult[numDishes] = maxOf(
-                // case that the new dish is not prepared
-                prefixMaxResult[numDishes],
-                // case that the new dish is prepared
-                prefixMaxResult[numDishes - 1] + numDishes * likeOfNewDish
-            )
+            val resultIfDiscardNewDish = currentResult[numDishes]
+            val resultIfPrepareNewDish =
+                currentResult[numDishes - 1] + numDishes * likeOfNewDish
+            currentResult[numDishes] = maxOf(resultIfDiscardNewDish, resultIfPrepareNewDish)
         }
     }
 }
