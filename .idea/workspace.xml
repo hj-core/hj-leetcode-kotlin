@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 87" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,7 +113,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem1402",
+    "git-widget-placeholder": "problem87",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41494253",
@@ -139,20 +137,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00675" summary="Add solution to problem 109">
-      <created>1678515501837</created>
-      <option name="number" value="00675" />
-      <option name="presentableId" value="LOCAL-00675" />
-      <option name="project" value="LOCAL" />
-      <updated>1678515501837</updated>
-    </task>
-    <task id="LOCAL-00676" summary="Add solution to problem 109">
-      <created>1678515628405</created>
-      <option name="number" value="00676" />
-      <option name="presentableId" value="LOCAL-00676" />
-      <option name="project" value="LOCAL" />
-      <updated>1678515628405</updated>
     </task>
     <task id="LOCAL-00677" summary="Add solutions to problem 109">
       <created>1678522740609</created>
@@ -483,7 +467,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680085360006</updated>
     </task>
-    <option name="localTasksCounter" value="724" />
+    <task id="LOCAL-00724" summary="Fix the wrong order of problem 1293 and 1335">
+      <created>1680091345897</created>
+      <option name="number" value="00724" />
+      <option name="presentableId" value="LOCAL-00724" />
+      <option name="project" value="LOCAL" />
+      <updated>1680091345897</updated>
+    </task>
+    <task id="LOCAL-00725" summary="Add a solution to problem 87">
+      <created>1680169862723</created>
+      <option name="number" value="00725" />
+      <option name="presentableId" value="LOCAL-00725" />
+      <option name="project" value="LOCAL" />
+      <updated>1680169862723</updated>
+    </task>
+    <option name="localTasksCounter" value="726" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -520,15 +518,25 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="problem87" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solutions to problem 101" />
-    <MESSAGE value="Add solutions to problem 129" />
     <MESSAGE value="Add solution to problem 106" />
     <MESSAGE value="Add a solution to problem 208" />
     <MESSAGE value="Update problem 211 : Group Trie implementation into separate class" />
@@ -552,7 +560,9 @@
     <MESSAGE value="Add a solution to problem 1402" />
     <MESSAGE value="Add solutions to the problem 1402" />
     <MESSAGE value="Improve readability" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
+    <MESSAGE value="Fix the wrong order of problem 1293 and 1335" />
+    <MESSAGE value="Add a solution to problem 87" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 87" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
