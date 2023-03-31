@@ -30,18 +30,18 @@ class Solution {
     private fun suffixesAppleCount(pizza: Array<String>): Array<IntArray> {
         val numRows = pizza.size
         val numColumns = pizza[0].length
-        val suffixAppleCount = Array(numRows + 1) { IntArray(numColumns + 1) }
+        val suffixesAppleCount = Array(numRows + 1) { IntArray(numColumns + 1) }
         for (row in numRows - 1 downTo 0) {
             for (column in numColumns - 1 downTo 0) {
                 val cellValue = pizza[row][column]
                 val cellCount = if (isApple(cellValue)) 1 else 0
-                suffixAppleCount[row][column] = cellCount +
-                        suffixAppleCount[row + 1][column] +
-                        suffixAppleCount[row][column + 1] -
-                        suffixAppleCount[row + 1][column + 1]
+                suffixesAppleCount[row][column] = cellCount +
+                        suffixesAppleCount[row + 1][column] +
+                        suffixesAppleCount[row][column + 1] -
+                        suffixesAppleCount[row + 1][column + 1]
             }
         }
-        return suffixAppleCount
+        return suffixesAppleCount
     }
 
     private fun isApple(value: Char): Boolean = value == 'A'
