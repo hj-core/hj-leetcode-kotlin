@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 1444" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Rename suffixAppleCount for consistency" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,7 +68,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="problem1444" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -113,7 +113,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem1444",
+    "git-widget-placeholder": "main",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41494253",
@@ -137,13 +137,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00679" summary="Add solution to problem 23">
-      <created>1678594236979</created>
-      <option name="number" value="00679" />
-      <option name="presentableId" value="LOCAL-00679" />
-      <option name="project" value="LOCAL" />
-      <updated>1678594236980</updated>
     </task>
     <task id="LOCAL-00680" summary="Add solutions to problem 23">
       <created>1678596401065</created>
@@ -481,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680273138233</updated>
     </task>
-    <option name="localTasksCounter" value="728" />
+    <task id="LOCAL-00728" summary="Rename suffixAppleCount for consistency">
+      <created>1680274704542</created>
+      <option name="number" value="00728" />
+      <option name="presentableId" value="LOCAL-00728" />
+      <option name="project" value="LOCAL" />
+      <updated>1680274704542</updated>
+    </task>
+    <option name="localTasksCounter" value="729" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -525,7 +525,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add a solution to problem 208" />
     <MESSAGE value="Update problem 211 : Group Trie implementation into separate class" />
     <MESSAGE value="Add a solution to problem 605" />
     <MESSAGE value="Update problem 605 : Handle negative effectiveEmptyLength" />
@@ -550,7 +549,8 @@
     <MESSAGE value="Fix the wrong order of problem 1293 and 1335" />
     <MESSAGE value="Add a solution to problem 87" />
     <MESSAGE value="Add a solution to problem 1444" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 1444" />
+    <MESSAGE value="Rename suffixAppleCount for consistency" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename suffixAppleCount for consistency" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
