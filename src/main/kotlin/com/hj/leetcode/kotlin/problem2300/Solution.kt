@@ -10,21 +10,21 @@ class Solution {
     fun successfulPairs(spells: IntArray, potions: IntArray, success: Long): IntArray {
         val sortedPotions = potions.sorted()
         return IntArray(spells.size) { index ->
-            numSuccessPairs(spells[index], sortedPotions, success)
+            numSuccessfulPairs(spells[index], sortedPotions, success)
         }
     }
 
-    private fun numSuccessPairs(spell: Int, sortedPotions: List<Int>, success: Long): Int {
+    private fun numSuccessfulPairs(spell: Int, sortedPotions: List<Int>, success: Long): Int {
         var left = 0
         var right = sortedPotions.lastIndex
         while (left <= right) {
             val mid = (left + right) ushr 1
-            val potion = sortedPotions[mid]
-            val product = spell.toLong() * potion
-            if (product < success) {
-                left = mid + 1
-            } else {
+            val midPotion = sortedPotions[mid]
+            val isSuccess = spell.toLong() * midPotion >= success
+            if (isSuccess) {
                 right = mid - 1
+            } else {
+                left = mid + 1
             }
         }
         // left is the first index in sortedPotions that forms a successful pair
