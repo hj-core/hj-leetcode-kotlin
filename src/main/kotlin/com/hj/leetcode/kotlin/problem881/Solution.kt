@@ -13,8 +13,8 @@ class Solution {
         var front = 0
         var back = sortedPeople.lastIndex
         while (front <= back) {
-            val canCarryFront = sortedPeople[front] + sortedPeople[back] <= limit
-            if (canCarryFront) {
+            val canCarryBoth = sortedPeople[front] + sortedPeople[back] <= limit
+            if (canCarryBoth) {
                 front++
             }
             back--
