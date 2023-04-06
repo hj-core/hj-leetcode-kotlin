@@ -12,14 +12,14 @@ class Solution {
         val numColumns = grid[0].size
         val visited = Array(numRows) { row ->
             BooleanArray(numColumns) { column ->
-                isWater(grid[row][column]) // set water visited
+                isWater(grid[row][column]) // set visited if it is water
             }
         }
-        var numClosedIsland = 0
+        var numClosedIslands = 0
         visitAllLands(grid, visited) { isClosed ->
-            if (isClosed) numClosedIsland++
+            if (isClosed) numClosedIslands++
         }
-        return numClosedIsland
+        return numClosedIslands
     }
 
     private fun isWater(gridValue: Int): Boolean = gridValue == 1
@@ -31,39 +31,41 @@ class Solution {
     ) {
         for (row in grid.indices) {
             for (column in grid[row].indices) {
-                visitAllConnectedLands(Land(row, column), grid, visited, onEachIsland)
+                visitAllConnectedLands(Cell(row, column), grid, visited, onEachIsland)
             }
         }
     }
 
     private fun visitAllConnectedLands(
-        sourceLand: Land,
+        origin: Cell,
         grid: Array<IntArray>,
         visited: Array<BooleanArray>,
         onEachIsland: (isClosed: Boolean) -> Unit
     ) {
-        if (sourceLand.isOutOfBoundary(grid)) {
+        if (origin.isOutOfBounds(grid)) {
             onEachIsland(false)
             return
         }
 
-        val (row, column) = sourceLand
+        val (row, column) = origin
         val hasVisited = visited[row][column]
-        val isWater = isWater(grid[row][column])
-        if (hasVisited || isWater) return
+        val noConnectedLands = isWater(grid[row][column])
+        if (hasVisited || noConnectedLands) {
+            return
+        }
 
         visited[row][column] = true
         var isClosed = true
-        visitAllConnectedLands(Land(row + 1, column), grid, visited) { isClosed = isClosed && it}
-        visitAllConnectedLands(Land(row - 1, column), grid, visited) { isClosed = isClosed && it}
-        visitAllConnectedLands(Land(row, column + 1), grid, visited) { isClosed = isClosed && it}
-        visitAllConnectedLands(Land(row, column - 1), grid, visited) { isClosed = isClosed && it}
+        visitAllConnectedLands(Cell(row + 1, column), grid, visited) { isClosed = isClosed && it}
+        visitAllConnectedLands(Cell(row - 1, column), grid, visited) { isClosed = isClosed && it}
+        visitAllConnectedLands(Cell(row, column + 1), grid, visited) { isClosed = isClosed && it}
+        visitAllConnectedLands(Cell(row, column - 1), grid, visited) { isClosed = isClosed && it}
         onEachIsland(isClosed)
     }
 
-    private data class Land(val row: Int, val column: Int)
+    private data class Cell(val row: Int, val column: Int)
 
-    private fun Land.isOutOfBoundary(grid: Array<IntArray>): Boolean {
+    private fun Cell.isOutOfBounds(grid: Array<IntArray>): Boolean {
         return row !in grid.indices || column !in grid[row].indices
     }
 }
