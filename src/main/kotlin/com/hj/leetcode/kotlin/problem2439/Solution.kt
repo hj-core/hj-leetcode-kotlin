@@ -8,15 +8,15 @@ class Solution {
      * Time O(N) and Space O(1) where N is the size of nums;
      */
     fun minimizeArrayValue(nums: IntArray): Int {
-        var minValue = 0L
+        var result = 0L
         var prefixSum = 0L
         for ((index, num) in nums.withIndex()) {
             prefixSum += num
-            val size = index + 1
-            val ceilingAverage = prefixSum.ceilingDivide(size)
-            minValue = maxOf(minValue, ceilingAverage)
+            val prefixSize = index + 1
+            val ceilingAverage = prefixSum.ceilingDivide(prefixSize)
+            result = maxOf(result, ceilingAverage)
         }
-        return minValue.toInt()
+        return result.toInt()
     }
 
     private fun Long.ceilingDivide(other: Int): Long {
