@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update kotlin version to 1.8.20">
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +71,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="update_kotlin" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -116,7 +116,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "update__kotlin",
+    "git-widget-placeholder": "main",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41494253",
@@ -140,13 +140,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00683" summary="Add solutions to problem 23">
-      <created>1678597677691</created>
-      <option name="number" value="00683" />
-      <option name="presentableId" value="LOCAL-00683" />
-      <option name="project" value="LOCAL" />
-      <updated>1678597677691</updated>
     </task>
     <task id="LOCAL-00684" summary="Add solutions to problem 23">
       <created>1678597713916</created>
@@ -484,7 +477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680720152935</updated>
     </task>
-    <option name="localTasksCounter" value="732" />
+    <task id="LOCAL-00732" summary="Update kotlin version to 1.8.20">
+      <created>1680766810536</created>
+      <option name="number" value="00732" />
+      <option name="presentableId" value="LOCAL-00732" />
+      <option name="project" value="LOCAL" />
+      <updated>1680766810536</updated>
+    </task>
+    <option name="localTasksCounter" value="733" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -540,7 +540,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 605 : Handle negative effectiveEmptyLength" />
     <MESSAGE value="Add solutions to problem 2348" />
     <MESSAGE value="Add a solution to problem 2492" />
     <MESSAGE value="Add solutions to problem 2492" />
@@ -565,7 +564,8 @@
     <MESSAGE value="Rename suffixAppleCount for consistency" />
     <MESSAGE value="Add a solution to the problem 2300" />
     <MESSAGE value="Add a solution to problem 2439" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 2439" />
+    <MESSAGE value="Update kotlin version to 1.8.20" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update kotlin version to 1.8.20" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
