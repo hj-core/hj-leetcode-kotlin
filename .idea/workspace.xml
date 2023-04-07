@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Refactor for clearer logic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1254/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1254/Solution.kt" afterDir="false" />
     </list>
@@ -140,13 +140,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00687" summary="Add solutions to problem 129">
-      <created>1678773664264</created>
-      <option name="number" value="00687" />
-      <option name="presentableId" value="LOCAL-00687" />
-      <option name="project" value="LOCAL" />
-      <updated>1678773664264</updated>
     </task>
     <task id="LOCAL-00688" summary="Add solution to problem 106">
       <created>1678949598881</created>
@@ -484,7 +477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680834575347</updated>
     </task>
-    <option name="localTasksCounter" value="736" />
+    <task id="LOCAL-00736" summary="Refactor for clearer logic">
+      <created>1680847833938</created>
+      <option name="number" value="00736" />
+      <option name="presentableId" value="LOCAL-00736" />
+      <option name="project" value="LOCAL" />
+      <updated>1680847833938</updated>
+    </task>
+    <option name="localTasksCounter" value="737" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -540,7 +540,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solutions to problem 2348" />
     <MESSAGE value="Add a solution to problem 2492" />
     <MESSAGE value="Add solutions to problem 2492" />
     <MESSAGE value="Update problem 2492 according to comments" />
@@ -565,7 +564,8 @@
     <MESSAGE value="Add a solution to problem 2439" />
     <MESSAGE value="Update kotlin version to 1.8.20" />
     <MESSAGE value="Improve readability" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
+    <MESSAGE value="Refactor for clearer logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor for clearer logic" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
