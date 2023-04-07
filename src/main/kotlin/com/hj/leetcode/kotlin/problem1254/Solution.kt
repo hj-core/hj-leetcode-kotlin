@@ -41,14 +41,14 @@ class Solution {
     private data class Cell(val row: Int, val column: Int)
 
     private fun Cell.isNotUnvisitedLand(grid: Array<IntArray>, visited: Array<BooleanArray>): Boolean {
-        return isOutOfBounds(grid) || isWater(grid[row][column]) || visited[row][column]
+        return isOutOfBounds(grid) || !isLand(grid[row][column]) || visited[row][column]
     }
 
     private fun Cell.isOutOfBounds(grid: Array<IntArray>): Boolean {
         return row !in grid.indices || column !in grid[row].indices
     }
 
-    private fun isWater(gridValue: Int): Boolean = gridValue == 1
+    private fun isLand(gridValue: Int): Boolean = gridValue == 0
 
     private fun visitAllConnectedUnvisitedLands(
         source: Cell,
