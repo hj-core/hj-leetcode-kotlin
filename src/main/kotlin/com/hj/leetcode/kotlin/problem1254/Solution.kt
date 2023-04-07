@@ -10,11 +10,7 @@ class Solution {
     fun closedIsland(grid: Array<IntArray>): Int {
         val numRows = grid.size
         val numColumns = grid[0].size
-        val visited = Array(numRows) { row ->
-            BooleanArray(numColumns) { column ->
-                isWater(grid[row][column]) // set visited if it is water
-            }
-        }
+        val visited = Array(numRows) { BooleanArray(numColumns) }
         var numClosedIslands = 0
         visitAllLands(grid, visited) { isClosed ->
             if (isClosed) numClosedIslands++
@@ -56,10 +52,10 @@ class Solution {
 
         visited[row][column] = true
         var isClosed = true
-        visitAllConnectedLands(Cell(row + 1, column), grid, visited) { isClosed = isClosed && it}
-        visitAllConnectedLands(Cell(row - 1, column), grid, visited) { isClosed = isClosed && it}
-        visitAllConnectedLands(Cell(row, column + 1), grid, visited) { isClosed = isClosed && it}
-        visitAllConnectedLands(Cell(row, column - 1), grid, visited) { isClosed = isClosed && it}
+        visitAllConnectedLands(Cell(row + 1, column), grid, visited) { isClosed = isClosed && it }
+        visitAllConnectedLands(Cell(row - 1, column), grid, visited) { isClosed = isClosed && it }
+        visitAllConnectedLands(Cell(row, column + 1), grid, visited) { isClosed = isClosed && it }
+        visitAllConnectedLands(Cell(row, column - 1), grid, visited) { isClosed = isClosed && it }
         onEachIsland(isClosed)
     }
 

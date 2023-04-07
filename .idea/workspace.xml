@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update kotlinc.xml in .idea">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1254/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1254/Solution.kt" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -141,20 +137,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00684" summary="Add solutions to problem 23">
-      <created>1678597713916</created>
-      <option name="number" value="00684" />
-      <option name="presentableId" value="LOCAL-00684" />
-      <option name="project" value="LOCAL" />
-      <updated>1678597713916</updated>
-    </task>
-    <task id="LOCAL-00685" summary="Add solution to problem 101">
-      <created>1678698393538</created>
-      <option name="number" value="00685" />
-      <option name="presentableId" value="LOCAL-00685" />
-      <option name="project" value="LOCAL" />
-      <updated>1678698393538</updated>
     </task>
     <task id="LOCAL-00686" summary="Add solutions to problem 101">
       <created>1678699424568</created>
@@ -485,7 +467,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680766810536</updated>
     </task>
-    <option name="localTasksCounter" value="733" />
+    <task id="LOCAL-00733" summary="Improve readability">
+      <created>1680796734745</created>
+      <option name="number" value="00733" />
+      <option name="presentableId" value="LOCAL-00733" />
+      <option name="project" value="LOCAL" />
+      <updated>1680796734745</updated>
+    </task>
+    <task id="LOCAL-00734" summary="Improve readability">
+      <created>1680834482413</created>
+      <option name="number" value="00734" />
+      <option name="presentableId" value="LOCAL-00734" />
+      <option name="project" value="LOCAL" />
+      <updated>1680834482414</updated>
+    </task>
+    <option name="localTasksCounter" value="735" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -558,7 +554,6 @@
     <MESSAGE value="Add a solution to problem 983" />
     <MESSAGE value="Add a solution to problem 1402" />
     <MESSAGE value="Add solutions to the problem 1402" />
-    <MESSAGE value="Improve readability" />
     <MESSAGE value="Fix the wrong order of problem 1293 and 1335" />
     <MESSAGE value="Add a solution to problem 87" />
     <MESSAGE value="Add a solution to problem 1444" />
@@ -566,7 +561,8 @@
     <MESSAGE value="Add a solution to the problem 2300" />
     <MESSAGE value="Add a solution to problem 2439" />
     <MESSAGE value="Update kotlin version to 1.8.20" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update kotlin version to 1.8.20" />
+    <MESSAGE value="Improve readability" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
