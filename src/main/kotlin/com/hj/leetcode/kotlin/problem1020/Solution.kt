@@ -42,8 +42,8 @@ class Solution {
         }
 
         val boundaryColumns = hashSetOf(0, numColumns - 1)
-        for (column in boundaryColumns) {
-            for (row in 0 until numRows) {
+        for (row in 0 until numRows) {
+            for (column in boundaryColumns) {
                 visitAllConnectedUnvisitedLands(Cell(row, column), grid, visited, onEachLand)
             }
         }
