@@ -12,7 +12,10 @@ class Solution {
         return cloneGraph(node, hashMapOf())
     }
 
-    private fun cloneGraph(node: Node, nodeClone: MutableMap<Node, Node>): Node {
+    private fun cloneGraph(
+        node: Node,
+        nodeClone: MutableMap<Node, Node> // (key, value) = (origin, clone)
+    ): Node {
         if (nodeClone[node] != null) {
             return nodeClone[node]!!
         }
