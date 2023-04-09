@@ -92,7 +92,7 @@ class Solution {
         // subResults[i][j] ::= the largest value color 'a'+j can be among the paths start at node i
         val subResults = hashMapOf<Int, IntArray>()
         updateSubResults(colors, adjacency, finishingOrder, subResults)
-        return originalProblem(subResults)
+        return originalProblem(colors, subResults)
     }
 
     private fun updateSubResults(
@@ -118,10 +118,14 @@ class Solution {
         }
     }
 
-    private fun originalProblem(subResults: MutableMap<Int, IntArray>): Int {
+    private fun originalProblem(colors: String, subResults: MutableMap<Int, IntArray>): Int {
         var largestValue = 0
-        for (subResult in subResults.values) {
-            largestValue = maxOf(largestValue, subResult.max()!!)
+        for ((node, nodeLargestValues) in subResults) {
+            val nodeColorIndex = colors[node] - 'a'
+            /* Compare with the current node color value only since other colors will be covered by the
+             * rest nodes in the paths.
+             */
+            largestValue = maxOf(largestValue, nodeLargestValues[nodeColorIndex])
         }
         return largestValue
     }
