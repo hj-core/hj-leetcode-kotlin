@@ -5,19 +5,19 @@ class Solution2 {
      * Time O(N) and Space O(N) where N is the length of s;
      */
     fun isValid(s: String): Boolean {
-        val pendingBrackets = ArrayDeque<Char>()
+        val demandStack = ArrayDeque<Char>()
         for (char in s) {
             when (char) {
-                '(' -> pendingBrackets.addLast(')')
-                '[' -> pendingBrackets.addLast(']')
-                '{' -> pendingBrackets.addLast('}')
+                '(' -> demandStack.addLast(')')
+                '[' -> demandStack.addLast(']')
+                '{' -> demandStack.addLast('}')
                 else -> {
-                    val isInvalid = pendingBrackets.isEmpty() || char != pendingBrackets.last()
+                    val isInvalid = demandStack.isEmpty() || char != demandStack.last()
                     if (isInvalid) return false
-                    pendingBrackets.removeLast()
+                    demandStack.removeLast()
                 }
             }
         }
-        return pendingBrackets.isEmpty()
+        return demandStack.isEmpty()
     }
 }

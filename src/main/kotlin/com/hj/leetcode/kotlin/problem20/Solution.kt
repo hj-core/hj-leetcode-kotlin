@@ -8,19 +8,19 @@ class Solution {
      * Time O(N) and Space O(N) where N is the length of s;
      */
     fun isValid(s: String): Boolean {
-        val parentheses = hashMapOf<Char, Char>().apply {
+        val brackets = hashMapOf<Char, Char>().apply {
             put(')', '(')
             put(']', '[')
             put('}', '{')
         }
-        val openingBrackets = parentheses.values
-        val closingBrackets = parentheses.keys
+        val openingBrackets = brackets.values
+        val closingBrackets = brackets.keys
         val stack = ArrayDeque<Char>()
         for (char in s) {
             when (char) {
                 in openingBrackets -> stack.addLast(char)
                 in closingBrackets -> {
-                    val itsOpeningPair = parentheses[char]
+                    val itsOpeningPair = brackets[char]
                     val isInvalid = stack.isEmpty() || stack.last() != itsOpeningPair
                     if (isInvalid) return false
                     stack.removeLast()
