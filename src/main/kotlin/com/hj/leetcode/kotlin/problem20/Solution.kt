@@ -1,7 +1,5 @@
 package com.hj.leetcode.kotlin.problem20
 
-import java.lang.IllegalArgumentException
-
 /**
  * LeetCode page: [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/);
  */
@@ -27,7 +25,7 @@ class Solution {
                     if (isInvalid) return false
                     stack.removeLast()
                 }
-                else -> throw IllegalArgumentException()
+                else -> return false
             }
         }
         return stack.isEmpty()
