@@ -15,15 +15,15 @@ class Solution {
             put(']', '[')
             put('}', '{')
         }
-        val openBrackets = parentheses.values
-        val closedBrackets = parentheses.keys
+        val openingBrackets = parentheses.values
+        val closingBrackets = parentheses.keys
         val stack = ArrayDeque<Char>()
         for (char in s) {
             when (char) {
-                in openBrackets -> stack.addLast(char)
-                in closedBrackets -> {
-                    val itsOpenPair = parentheses[char]
-                    val isInvalid = stack.isEmpty() || stack.last() != itsOpenPair
+                in openingBrackets -> stack.addLast(char)
+                in closingBrackets -> {
+                    val itsOpeningPair = parentheses[char]
+                    val isInvalid = stack.isEmpty() || stack.last() != itsOpeningPair
                     if (isInvalid) return false
                     stack.removeLast()
                 }
