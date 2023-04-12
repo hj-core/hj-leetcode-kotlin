@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Introduce segments() for consistent level of abstraction">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem71/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem71/Solution.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,8 +42,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="LeetCode Solution" />
         <option value="Kotlin Class" />
+        <option value="LeetCode Solution" />
       </list>
     </option>
   </component>
@@ -68,7 +71,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem20" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -79,7 +82,7 @@
   }
 }</component>
   <component name="GitRewordedCommitMessages">
-    <option name="onto" value="013ebcaeffd95abaf2b236acaf3e66971dee7fc2" />
+    <option name="onto" value="9ed2c7122c2e21e6c2768303ac0be9f234af735c" />
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="recentNewPullRequestHead">
@@ -108,18 +111,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.41494253",
-    "settings.editor.selected.configurable": "configurable.group.editor"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;problem71&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.41494253&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\gaps-\Documents\GitHub\hj-leetcode-kotlin\src\main\kotlin\com\hj\leetcode\kotlin\medium" />
@@ -137,20 +140,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00692" summary="Update problem 211 : Group Trie implementation into separate class">
-      <created>1679233260917</created>
-      <option name="number" value="00692" />
-      <option name="presentableId" value="LOCAL-00692" />
-      <option name="project" value="LOCAL" />
-      <updated>1679233260917</updated>
-    </task>
-    <task id="LOCAL-00693" summary="Add a solution to problem 605">
-      <created>1679285283971</created>
-      <option name="number" value="00693" />
-      <option name="presentableId" value="LOCAL-00693" />
-      <option name="project" value="LOCAL" />
-      <updated>1679285283972</updated>
     </task>
     <task id="LOCAL-00694" summary="Update problem 605 : Add guarding code for negative effectiveEmptyLength">
       <created>1679289601067</created>
@@ -481,7 +470,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681095452544</updated>
     </task>
-    <option name="localTasksCounter" value="741" />
+    <task id="LOCAL-00741" summary="Add a solution to problem 71">
+      <created>1681282504759</created>
+      <option name="number" value="00741" />
+      <option name="presentableId" value="LOCAL-00741" />
+      <option name="project" value="LOCAL" />
+      <updated>1681282504759</updated>
+    </task>
+    <task id="LOCAL-00742" summary="Introduce segments() for consistent level of abstraction">
+      <created>1681293955592</created>
+      <option name="number" value="00742" />
+      <option name="presentableId" value="LOCAL-00742" />
+      <option name="project" value="LOCAL" />
+      <updated>1681293955592</updated>
+    </task>
+    <option name="localTasksCounter" value="743" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -524,7 +527,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="problem20" />
+                        <option value="problem71" />
                       </list>
                     </value>
                   </entry>
@@ -537,8 +540,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update problem 2492 according to comments" />
-    <MESSAGE value="Improve formatting" />
     <MESSAGE value="Rename parameter from numCities to maxCityLabel" />
     <MESSAGE value="Rename parameter from numCities to maxLabel" />
     <MESSAGE value="Rename parameter and function" />
@@ -562,7 +563,9 @@
     <MESSAGE value="Skip unnecessary comparison" />
     <MESSAGE value="Add a solution to problem 20" />
     <MESSAGE value="Improve readability" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
+    <MESSAGE value="Add a solution to problem 71" />
+    <MESSAGE value="Introduce segments() for consistent level of abstraction" />
+    <option name="LAST_COMMIT_MESSAGE" value="Introduce segments() for consistent level of abstraction" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
