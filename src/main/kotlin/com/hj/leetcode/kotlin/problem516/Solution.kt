@@ -31,12 +31,12 @@ class Solution {
     }
 
     private fun updateRemainingCases(inputString: String, subResultHolder: Array<IntArray>) {
-        val inputLength = subResultHolder.size
+        val inputLength = inputString.length
         for (length in 2..inputLength) {
             val maxSubStringStart = inputLength - length
             for (start in 0..maxSubStringStart) {
-                val isHeadTailTheSame =  inputString[start] == inputString[start + length - 1]
-                val subResult = if (isHeadTailTheSame) {
+                val isStartEndSameChar =  inputString[start] == inputString[start + length - 1]
+                val subResult = if (isStartEndSameChar) {
                     2 + subResultHolder[start + 1][length - 2]
                 } else {
                     maxOf(subResultHolder[start][length - 1], subResultHolder[start + 1][length - 1])
