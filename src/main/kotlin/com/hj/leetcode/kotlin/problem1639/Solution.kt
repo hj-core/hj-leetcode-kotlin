@@ -8,61 +8,76 @@ class Solution {
     private val mod = 1_000_000_007
 
     /* Complexity:
-     * Time O(MN+KN) and Space O(MN) where M, N and K are the size of words, length of each word,
-     * and length of target, respectively.
+     * Time O(MN+KN) and Space O(K) where M, N and K are the size of words, the length of each word,
+     * and the length of target, respectively.
      */
     fun numWays(words: Array<String>, target: String): Int {
-        // charCounts[i][j] ::= the number of words that its jth char is the same as target's ith char;
-        val charCounts = charCountAtEachColumn(words)
-        // subResults[i][j] ::= the number of ways using word from column i to form suffix of target from index j
-        val subResults = subResultHolder(words, target).apply {
+        val wordCount = WordCount(words)
+        /* subResult[i]@j ::= number of ways to form suffix of target that starts from index i,
+         * using the columns starting from j;
+         */
+        val subResult = subResultHolder(target).apply {
+            // Base case is j equals length of word
             updateBaseCases(target, this)
-            updateRemainingCases(target, charCounts, this)
+            // Update the sub result in decreasing j, until j equals 0
+            updateRemainingCases(words, target, wordCount, this)
         }
-        return originalProblem(subResults)
+        return originalProblem(subResult)
     }
 
-    private fun charCountAtEachColumn(words: Array<String>): Array<IntArray> {
-        val numColumns = words[0].length
-        val count = Array(numColumns) { IntArray(26) }
-        for (word in words) {
-            for ((column, char) in word.withIndex()) {
-                count[column][char.intIndex()]++
+    private class WordCount(words: Array<String>) {
+
+        private val count = count(words)
+
+        private fun count(words: Array<String>): Array<IntArray> {
+            val wordLength = words[0].length
+            val count = Array(wordLength) { IntArray(26) }
+            for (word in words) {
+                for ((index, char) in word.withIndex()) {
+                    count[index][char.intIndex()]++
+                }
             }
+            return count
         }
-        return count
+
+        private fun Char.intIndex(): Int = this - 'a'
+
+        fun count(matching: Char, atIndex: Int): Int {
+            return count[atIndex][matching.intIndex()]
+        }
     }
 
-    private fun Char.intIndex(): Int = this - 'a'
-
-    private fun subResultHolder(words: Array<String>, target: String): Array<IntArray> {
-        val numColumns = words[0].length
-        return Array(numColumns + 1) { IntArray(target.length) }
+    private fun subResultHolder(target: String): IntArray {
+        return IntArray(target.length + 1)
     }
 
-    private fun updateBaseCases(target: String, subResultHolder: Array<IntArray>) {
-        for (start in target.indices.reversed()) {
-            subResultHolder.last()[start] = 0
+    private fun updateBaseCases(target: String, subResultHolder: IntArray) {
+        // Using column at word.length, i.e. empty column, to form suffixes of target
+        for (suffixStart in target.indices) {
+            subResultHolder[suffixStart] = 0
         }
+        subResultHolder[target.length] = 1
     }
 
     private fun updateRemainingCases(
+        words: Array<String>,
         target: String,
-        charCounts: Array<IntArray>,
-        subResultHolder: Array<IntArray>
+        wordCount: WordCount,
+        subResultHolder: IntArray
     ) {
-        for (column in subResultHolder.lastIndex - 1 downTo 0) {
-            for (start in target.indices.reversed()) {
-                val charCount = charCounts[column][target[start].intIndex()]
-                val numWaysUsingColumn = charCount.toLong() * subResultHolder[column + 1].getOrElse(start + 1) { 1 }
-                val numWaysNotUsingColumn = subResultHolder[column + 1][start]
-                val subResult = ((numWaysUsingColumn + numWaysNotUsingColumn) % mod).toInt()
-                subResultHolder[column][start] = subResult
+        val wordLength = words[0].length
+        for (startColumn in wordLength - 1 downTo 0) {
+            for (startSuffix in target.indices) {
+                val numWaysUsingColumn =
+                    wordCount.count(target[startSuffix], startColumn).toLong() * subResultHolder[startSuffix + 1]
+                val numWaysNotUsingColumn = subResultHolder[startSuffix]
+                val subResult = (numWaysUsingColumn + numWaysNotUsingColumn) % mod
+                subResultHolder[startSuffix] = subResult.toInt()
             }
         }
     }
 
-    private fun originalProblem(subResultHolder: Array<IntArray>): Int {
-        return subResultHolder[0][0]
+    private fun originalProblem(subResultHolder: IntArray): Int {
+        return subResultHolder[0]
     }
 }
