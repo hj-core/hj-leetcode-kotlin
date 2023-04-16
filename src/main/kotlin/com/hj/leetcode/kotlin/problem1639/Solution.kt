@@ -14,10 +14,10 @@ class Solution {
     fun numWays(words: Array<String>, target: String): Int {
         val wordCount = WordCount(words)
         /* subResult[i]@j ::= number of ways to form suffix of target that starts from index i,
-         * using the columns starting from j;
+         * using the columns starting from index j;
          */
         val subResult = subResultHolder(target).apply {
-            // Base case is j equals length of word
+            // Base case is j equals the length of word
             updateBaseCases(target, this)
             // Update the sub result in decreasing j, until j equals 0
             updateRemainingCases(words, target, wordCount, this)
@@ -68,10 +68,10 @@ class Solution {
         val wordLength = words[0].length
         for (startColumn in wordLength - 1 downTo 0) {
             for (startSuffix in target.indices) {
-                val numWaysUsingColumn =
+                val numWaysUsingStartColumn =
                     wordCount.count(target[startSuffix], startColumn).toLong() * subResultHolder[startSuffix + 1]
-                val numWaysNotUsingColumn = subResultHolder[startSuffix]
-                val subResult = (numWaysUsingColumn + numWaysNotUsingColumn) % mod
+                val numWaysNotUsingStartColumn = subResultHolder[startSuffix]
+                val subResult = (numWaysUsingStartColumn + numWaysNotUsingStartColumn) % mod
                 subResultHolder[startSuffix] = subResult.toInt()
             }
         }
