@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Refactor and improve readability" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 1768" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,7 +68,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem1639" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -113,7 +113,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "problem1768",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41494253",
@@ -137,13 +137,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00698" summary="Add solutions to problem 2348">
-      <created>1679368075117</created>
-      <option name="number" value="00698" />
-      <option name="presentableId" value="LOCAL-00698" />
-      <option name="project" value="LOCAL" />
-      <updated>1679368075117</updated>
     </task>
     <task id="LOCAL-00699" summary="Add solutions to problem 2348">
       <created>1679368307927</created>
@@ -481,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681642932059</updated>
     </task>
-    <option name="localTasksCounter" value="747" />
+    <task id="LOCAL-00747" summary="Add a solution to problem 1768">
+      <created>1681784654556</created>
+      <option name="number" value="00747" />
+      <option name="presentableId" value="LOCAL-00747" />
+      <option name="project" value="LOCAL" />
+      <updated>1681784654556</updated>
+    </task>
+    <option name="localTasksCounter" value="748" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -524,7 +524,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="problem1639" />
+                        <option value="problem1768" />
                       </list>
                     </value>
                   </entry>
@@ -537,7 +537,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Rename function that is closer to its intent" />
     <MESSAGE value="Add a solution to problem 2316" />
     <MESSAGE value="echo" />
     <MESSAGE value="Add a UnionFind solution to problem 2316" />
@@ -562,7 +561,8 @@
     <MESSAGE value="Add a solution to problem 516" />
     <MESSAGE value="Draft solution" />
     <MESSAGE value="Refactor and improve readability" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor and improve readability" />
+    <MESSAGE value="Add a solution to problem 1768" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 1768" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

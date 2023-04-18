@@ -10,16 +10,15 @@ class Solution {
     fun mergeAlternately(word1: String, word2: String): String {
         val (short, long) =
             if (word1.length < word2.length) word1 to word2 else word2 to word1
-        val result = StringBuilder()
 
-        for (index in short.indices) {
-            result
-                .append(word1[index])
-                .append(word2[index])
+        return buildString {
+            for (index in short.indices) {
+                append(word1[index])
+                append(word2[index])
+            }
+            for (index in short.length until long.length) {
+                append(long[index])
+            }
         }
-        for (index in short.length until long.length) {
-            result.append(long[index])
-        }
-        return result.toString()
     }
 }
