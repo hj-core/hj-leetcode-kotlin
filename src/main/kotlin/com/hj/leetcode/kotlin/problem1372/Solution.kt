@@ -19,13 +19,13 @@ class Solution {
 
     private fun dfsZigZag(
         root: TreeNode?,
-        lengthFromLeft: Int,
-        lengthFromRight: Int,
+        lengthFromLeftEdge: Int,
+        lengthFromRightEdge: Int,
         sideEffect: (maxLengthToNode: Int) -> Unit
     ) {
         if (root == null) return
-        sideEffect(maxOf(lengthFromLeft, lengthFromRight))
-        dfsZigZag(root.left, 1 + lengthFromRight, 0, sideEffect)
-        dfsZigZag(root.right, 0, 1 + lengthFromLeft, sideEffect)
+        sideEffect(maxOf(lengthFromLeftEdge, lengthFromRightEdge))
+        dfsZigZag(root.left, 1 + lengthFromRightEdge, 0, sideEffect)
+        dfsZigZag(root.right, 0, 1 + lengthFromLeftEdge, sideEffect)
     }
 }

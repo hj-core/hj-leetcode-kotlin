@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 1372">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1372/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1372/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,20 +139,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00700" summary="Add a solution to problem 2492">
-      <created>1679468175723</created>
-      <option name="number" value="00700" />
-      <option name="presentableId" value="LOCAL-00700" />
-      <option name="project" value="LOCAL" />
-      <updated>1679468175723</updated>
-    </task>
-    <task id="LOCAL-00701" summary="Add a solution to problem 2492">
-      <created>1679469598449</created>
-      <option name="number" value="00701" />
-      <option name="presentableId" value="LOCAL-00701" />
-      <option name="project" value="LOCAL" />
-      <updated>1679469598450</updated>
     </task>
     <task id="LOCAL-00702" summary="Add a solution to problem 2492">
       <created>1679470072361</created>
@@ -484,7 +469,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681883381968</updated>
     </task>
-    <option name="localTasksCounter" value="749" />
+    <task id="LOCAL-00749" summary="Add a solution to problem 1372">
+      <created>1681885644817</created>
+      <option name="number" value="00749" />
+      <option name="presentableId" value="LOCAL-00749" />
+      <option name="project" value="LOCAL" />
+      <updated>1681885644817</updated>
+    </task>
+    <task id="LOCAL-00750" summary="Add a solution to problem 1372">
+      <created>1681885925736</created>
+      <option name="number" value="00750" />
+      <option name="presentableId" value="LOCAL-00750" />
+      <option name="project" value="LOCAL" />
+      <updated>1681885925736</updated>
+    </task>
+    <option name="localTasksCounter" value="751" />
     <servers />
   </component>
   <component name="UnknownFeatures">
