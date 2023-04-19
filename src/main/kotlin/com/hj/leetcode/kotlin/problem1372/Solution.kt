@@ -11,21 +11,26 @@ class Solution {
      */
     fun longestZigZag(root: TreeNode?): Int {
         var longestZigZag = 0
-        dfsZigZag(root, 0, 0) { maxLengthToNode ->
-            if (maxLengthToNode > longestZigZag) longestZigZag = maxLengthToNode
+        dfs(root) { maxLengthToNode ->
+            if (longestZigZag < maxLengthToNode) longestZigZag = maxLengthToNode
         }
         return longestZigZag
     }
 
-    private fun dfsZigZag(
+    /**
+     * Perform a DFS and calls [onEachNode] passing the length of longest zigzag path to the node as an argument.
+     * [zigzagLengthLeft] and [zigzagLengthRight] are the length of longest zigzag paths incident to the node through
+     * a left edge and right edge respectively.
+     */
+    private fun dfs(
         root: TreeNode?,
-        lengthFromLeftEdge: Int,
-        lengthFromRightEdge: Int,
-        sideEffect: (maxLengthToNode: Int) -> Unit
+        zigzagLengthLeft: Int = 0,
+        zigzagLengthRight: Int = 0,
+        onEachNode: (maxLengthToNode: Int) -> Unit
     ) {
         if (root == null) return
-        sideEffect(maxOf(lengthFromLeftEdge, lengthFromRightEdge))
-        dfsZigZag(root.left, 1 + lengthFromRightEdge, 0, sideEffect)
-        dfsZigZag(root.right, 0, 1 + lengthFromLeftEdge, sideEffect)
+        onEachNode(maxOf(zigzagLengthLeft, zigzagLengthRight))
+        dfs(root.left, 1 + zigzagLengthRight, 0, onEachNode)
+        dfs(root.right, 0, 1 + zigzagLengthLeft, onEachNode)
     }
 }
