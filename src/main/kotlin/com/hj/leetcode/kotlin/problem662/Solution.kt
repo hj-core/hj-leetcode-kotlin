@@ -13,10 +13,11 @@ class Solution {
         if (root == null) return 0
 
         var maxWidth = 0L
-        /* In order to avoid number overflow(for example, in the case of a vertical zigzag tree), the indices
-         * of nodes are computed as following: During a BFS, when computing the indices of nodes in next level,
-         * the indices of nodes in current level are normalized such that the leftmost node in current level
-         * has an index of 0.
+        /* It is intent to be the level-ordered index of node.
+         * However, in order to avoid number overflow(for example, in the case of a vertical zigzag tree),
+         * the indices are normalized as following:
+         * When computing the indices of nodes in next level using BFS, the indices of nodes in current level
+         * are shifted such that the leftmost node in current level has an index of 0.
          */
         val nodeIndex = hashMapOf<TreeNode, Long>()
         val bfsQueue = ArrayDeque<TreeNode>()
