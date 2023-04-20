@@ -12,12 +12,16 @@ class Solution {
     fun widthOfBinaryTree(root: TreeNode?): Int {
         if (root == null) return 0
 
-        var maxWidth = 0
-        // nodeIndex[node] ::= index of node in level order
-        val nodeIndex = hashMapOf<TreeNode, Int>()
+        var maxWidth = 0L
+        /* In order to avoid number overflow(for example, in the case of a vertical zigzag tree), the indices
+         * of nodes are computed as following: During a BFS, when computing the indices of nodes in next level,
+         * the indices of nodes in current level are normalized such that the leftmost node in current level
+         * has an index of 0.
+         */
+        val nodeIndex = hashMapOf<TreeNode, Long>()
         val bfsQueue = ArrayDeque<TreeNode>()
 
-        nodeIndex[root] = 0
+        nodeIndex[root] = 0L
         bfsQueue.addLast(root)
         while (bfsQueue.isNotEmpty()) {
             val levelMaxWidth = levelMaxWidth(bfsQueue, nodeIndex)
@@ -26,13 +30,13 @@ class Solution {
             }
             updateNextLevel(bfsQueue, nodeIndex)
         }
-        return maxWidth
+        return maxWidth.toInt()
     }
 
     private fun levelMaxWidth(
         bfsQueue: ArrayDeque<TreeNode>,
-        nodeIndex: Map<TreeNode, Int>
-    ): Int {
+        nodeIndex: Map<TreeNode, Long>
+    ): Long {
         val leftmostIndex = checkNotNull(nodeIndex[bfsQueue.first()])
         val rightmostIndex = checkNotNull(nodeIndex[bfsQueue.last()])
         return rightmostIndex - leftmostIndex + 1
@@ -40,17 +44,21 @@ class Solution {
 
     private fun updateNextLevel(
         bfsQueue: ArrayDeque<TreeNode>,
-        nodeIndex: MutableMap<TreeNode, Int>
+        nodeIndex: MutableMap<TreeNode, Long>
     ) {
+        val indexShift = checkNotNull(nodeIndex[bfsQueue.first()]) * (-1)
+
         repeat(bfsQueue.size) {
             val node = bfsQueue.removeFirst()
-            val index = checkNotNull(nodeIndex[node])
+            // Normalize the index to avoid number overflow of indices in next level
+            val normalizedIndex = checkNotNull(nodeIndex[node]) + indexShift
+
             node.left?.let {
-                nodeIndex[it] = index * 2 + 1
+                nodeIndex[it] = normalizedIndex * 2
                 bfsQueue.addLast(it)
             }
             node.right?.let {
-                nodeIndex[it] = index * 2 + 2
+                nodeIndex[it] = normalizedIndex * 2 + 1
                 bfsQueue.addLast(it)
             }
         }

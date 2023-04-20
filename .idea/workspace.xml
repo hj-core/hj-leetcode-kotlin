@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Fix the issue of potential number overflow" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -144,41 +144,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00703" summary="Add solutions to problem 2492">
-      <created>1679471725399</created>
-      <option name="number" value="00703" />
-      <option name="presentableId" value="LOCAL-00703" />
-      <option name="project" value="LOCAL" />
-      <updated>1679471725399</updated>
-    </task>
-    <task id="LOCAL-00704" summary="Update problem 2492 according to comments">
-      <created>1679475719818</created>
-      <option name="number" value="00704" />
-      <option name="presentableId" value="LOCAL-00704" />
-      <option name="project" value="LOCAL" />
-      <updated>1679475719818</updated>
-    </task>
-    <task id="LOCAL-00705" summary="Improve formatting">
-      <created>1679475959273</created>
-      <option name="number" value="00705" />
-      <option name="presentableId" value="LOCAL-00705" />
-      <option name="project" value="LOCAL" />
-      <updated>1679475959273</updated>
-    </task>
-    <task id="LOCAL-00706" summary="Improve formatting">
-      <created>1679476059476</created>
-      <option name="number" value="00706" />
-      <option name="presentableId" value="LOCAL-00706" />
-      <option name="project" value="LOCAL" />
-      <updated>1679476059476</updated>
-    </task>
-    <task id="LOCAL-00707" summary="Rename parameter from numCities to maxCityLabel">
-      <created>1679476307976</created>
-      <option name="number" value="00707" />
-      <option name="presentableId" value="LOCAL-00707" />
-      <option name="project" value="LOCAL" />
-      <updated>1679476307976</updated>
     </task>
     <task id="LOCAL-00708" summary="Rename parameter from numCities to maxLabel">
       <created>1679476337715</created>
@@ -488,7 +453,42 @@
       <option name="project" value="LOCAL" />
       <updated>1681985809023</updated>
     </task>
-    <option name="localTasksCounter" value="752" />
+    <task id="LOCAL-00752" summary="Improve readability">
+      <created>1681986785259</created>
+      <option name="number" value="00752" />
+      <option name="presentableId" value="LOCAL-00752" />
+      <option name="project" value="LOCAL" />
+      <updated>1681986785259</updated>
+    </task>
+    <task id="LOCAL-00753" summary="Fix the issue of potential number overflow">
+      <created>1681991676625</created>
+      <option name="number" value="00753" />
+      <option name="presentableId" value="LOCAL-00753" />
+      <option name="project" value="LOCAL" />
+      <updated>1681991676625</updated>
+    </task>
+    <task id="LOCAL-00754" summary="Fix the issue of potential number overflow">
+      <created>1681991711289</created>
+      <option name="number" value="00754" />
+      <option name="presentableId" value="LOCAL-00754" />
+      <option name="project" value="LOCAL" />
+      <updated>1681991711289</updated>
+    </task>
+    <task id="LOCAL-00755" summary="Fix the issue of potential number overflow">
+      <created>1681991814664</created>
+      <option name="number" value="00755" />
+      <option name="presentableId" value="LOCAL-00755" />
+      <option name="project" value="LOCAL" />
+      <updated>1681991814664</updated>
+    </task>
+    <task id="LOCAL-00756" summary="Fix the issue of potential number overflow">
+      <created>1681991856310</created>
+      <option name="number" value="00756" />
+      <option name="presentableId" value="LOCAL-00756" />
+      <option name="project" value="LOCAL" />
+      <updated>1681991856310</updated>
+    </task>
+    <option name="localTasksCounter" value="757" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -544,7 +544,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add a UnionFind solution to problem 2316" />
     <MESSAGE value="Update solution 2 : Mark find() tailrec" />
     <MESSAGE value="Add a solution to problem 64" />
     <MESSAGE value="Add a solution to problem 983" />
@@ -569,7 +568,8 @@
     <MESSAGE value="Add a solution to problem 662" />
     <MESSAGE value="Change the type of index from Int to Long and improve readability&#10;&#10;- Although the answer is guaranteed to be within 32-bit signed Int, the index could be Long" />
     <MESSAGE value="Improve readability" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
+    <MESSAGE value="Fix the issue of potential number overflow" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix the issue of potential number overflow" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
