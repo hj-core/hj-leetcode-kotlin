@@ -10,18 +10,27 @@ class Solution {
      * Time O(NLogN) and Space O(N) where N is the size of stones;
      */
     fun lastStoneWeight(stones: IntArray): Int {
-        val stonePq = PriorityQueue<Int>(reverseOrder()).apply {
-            for (stone in stones) {
-                offer(stone)
+        val stoneMaxPq = PriorityQueue<Int>(reverseOrder()).apply {
+            offerStones(stones)
+            playUntilEndOfGame()
+        }
+        val lastStone = stoneMaxPq.firstOrNull()
+        return lastStone ?: 0
+    }
+
+    private fun PriorityQueue<Int>.offerStones(stones: IntArray) {
+        for (stone in stones) {
+            offer(stone)
+        }
+    }
+
+    private fun PriorityQueue<Int>.playUntilEndOfGame() {
+        while (size >= 2) {
+            val heaviestStone = poll()
+            val secondHeaviestStone = poll()
+            if (heaviestStone != secondHeaviestStone) {
+                offer(heaviestStone - secondHeaviestStone)
             }
         }
-        while (stonePq.size >= 2) {
-            val stone1 = stonePq.poll()
-            val stone2 = stonePq.poll()
-            if (stone1 != stone2) {
-                stonePq.offer(stone1 - stone2)
-            }
-        }
-        return if(stonePq.isEmpty()) 0 else stonePq.peek()
     }
 }
