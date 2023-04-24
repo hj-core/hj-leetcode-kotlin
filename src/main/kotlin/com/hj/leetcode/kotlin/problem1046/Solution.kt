@@ -10,37 +10,41 @@ class Solution {
      * Time O(NLogN) and Space O(N) where N is the size of stones;
      */
     fun lastStoneWeight(stones: IntArray): Int {
-        val stoneMaxPq = StoneMaxPq().apply {
+        val stoneGame = StoneGame().apply {
             offerStones(stones)
             playUntilEndOfGame()
         }
-        val lastStoneWeight = stoneMaxPq.firstOrNull
-        return lastStoneWeight ?: 0
+        return stoneGame.lastStoneWeight()
     }
 
-    private class StoneMaxPq {
+    private class StoneGame {
 
-        private val maxPq = PriorityQueue<Int>(reverseOrder())
-        val firstOrNull get() = maxPq.firstOrNull()
+        private val weightMaxPq = PriorityQueue<Int>(reverseOrder())
+        private val weightIfNoStone = 0
 
         fun offerStones(stones: IntArray) {
             for (stone in stones) {
-                maxPq.offer(stone)
+                weightMaxPq.offer(stone)
             }
         }
 
         fun playUntilEndOfGame() {
-            while (maxPq.size >= 2) {
+            while (weightMaxPq.size > 1) {
                 chooseHeaviestTwoAndSmash()
             }
         }
 
         private fun chooseHeaviestTwoAndSmash() {
-            val heaviest = maxPq.poll()
-            val secondHeaviest = maxPq.poll()
+            val heaviest = weightMaxPq.poll()
+            val secondHeaviest = weightMaxPq.poll()
             if (heaviest != secondHeaviest) {
-                maxPq.offer(heaviest - secondHeaviest)
+                weightMaxPq.offer(heaviest - secondHeaviest)
             }
+        }
+
+        fun lastStoneWeight(): Int {
+            check(weightMaxPq.size <= 1)
+            return weightMaxPq.firstOrNull() ?: weightIfNoStone
         }
     }
 }
