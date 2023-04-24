@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.8.20"
+    alias(libs.plugins.kotlinJvm)
 }
 
 group = "com.hj"
@@ -17,6 +17,11 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.wrapper {
+    gradleVersion = "8.1.1"
+    distributionType = Wrapper.DistributionType.ALL
 }
 
 tasks.withType<KotlinCompile> {
