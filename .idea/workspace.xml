@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve comment" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,7 +120,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;problem662&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;problem1046&quot;,
     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.41494253&quot;,
@@ -144,34 +144,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00711" summary="Rename function">
-      <created>1679478467055</created>
-      <option name="number" value="00711" />
-      <option name="presentableId" value="LOCAL-00711" />
-      <option name="project" value="LOCAL" />
-      <updated>1679478467055</updated>
-    </task>
-    <task id="LOCAL-00712" summary="Add a solution to problem 2316">
-      <created>1679722294777</created>
-      <option name="number" value="00712" />
-      <option name="presentableId" value="LOCAL-00712" />
-      <option name="project" value="LOCAL" />
-      <updated>1679722294777</updated>
-    </task>
-    <task id="LOCAL-00713" summary="Add a solution to problem 2316">
-      <created>1679722789527</created>
-      <option name="number" value="00713" />
-      <option name="presentableId" value="LOCAL-00713" />
-      <option name="project" value="LOCAL" />
-      <updated>1679722789527</updated>
-    </task>
-    <task id="LOCAL-00714" summary="Add a solution to problem 2316">
-      <created>1679723280406</created>
-      <option name="number" value="00714" />
-      <option name="presentableId" value="LOCAL-00714" />
-      <option name="project" value="LOCAL" />
-      <updated>1679723280406</updated>
     </task>
     <task id="LOCAL-00715" summary="Add a UnionFind solution to problem 2316">
       <created>1679726707472</created>
@@ -488,7 +460,35 @@
       <option name="project" value="LOCAL" />
       <updated>1681998565117</updated>
     </task>
-    <option name="localTasksCounter" value="760" />
+    <task id="LOCAL-00760" summary="Add a solution to problem 1046">
+      <created>1682302166816</created>
+      <option name="number" value="00760" />
+      <option name="presentableId" value="LOCAL-00760" />
+      <option name="project" value="LOCAL" />
+      <updated>1682302166817</updated>
+    </task>
+    <task id="LOCAL-00761" summary="Improve naming of variables">
+      <created>1682318376681</created>
+      <option name="number" value="00761" />
+      <option name="presentableId" value="LOCAL-00761" />
+      <option name="project" value="LOCAL" />
+      <updated>1682318376682</updated>
+    </task>
+    <task id="LOCAL-00762" summary="Improve readability">
+      <created>1682318889111</created>
+      <option name="number" value="00762" />
+      <option name="presentableId" value="LOCAL-00762" />
+      <option name="project" value="LOCAL" />
+      <updated>1682318889111</updated>
+    </task>
+    <task id="LOCAL-00763" summary="Improve readability">
+      <created>1682319005383</created>
+      <option name="number" value="00763" />
+      <option name="presentableId" value="LOCAL-00763" />
+      <option name="project" value="LOCAL" />
+      <updated>1682319005384</updated>
+    </task>
+    <option name="localTasksCounter" value="764" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -531,7 +531,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="problem662" />
+                        <option value="problem1046" />
                       </list>
                     </value>
                   </entry>
@@ -544,8 +544,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add a solution to problem 64" />
-    <MESSAGE value="Add a solution to problem 983" />
     <MESSAGE value="Add a solution to problem 1402" />
     <MESSAGE value="Add solutions to the problem 1402" />
     <MESSAGE value="Fix the wrong order of problem 1293 and 1335" />
@@ -566,10 +564,12 @@
     <MESSAGE value="Add a solution to problem 1768" />
     <MESSAGE value="Add a solution to problem 662" />
     <MESSAGE value="Change the type of index from Int to Long and improve readability&#10;&#10;- Although the answer is guaranteed to be within 32-bit signed Int, the index could be Long" />
-    <MESSAGE value="Improve readability" />
     <MESSAGE value="Fix the issue of potential number overflow" />
     <MESSAGE value="Improve comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve comment" />
+    <MESSAGE value="Add a solution to problem 1046" />
+    <MESSAGE value="Improve naming of variables" />
+    <MESSAGE value="Improve readability" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
