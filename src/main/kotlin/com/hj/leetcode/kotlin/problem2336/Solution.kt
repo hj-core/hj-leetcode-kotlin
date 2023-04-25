@@ -12,11 +12,11 @@ class SmallestInfiniteSet() {
      * Time O(NLogN) and Space O(1);
      */
     fun popSmallest(): Int {
-        return if (sortedEffectivelyAdded.isNotEmpty()) {
-            checkNotNull(sortedEffectivelyAdded.pollFirst())
-        } else {
+        return if (sortedEffectivelyAdded.isEmpty()) {
             largestPopped++
             largestPopped
+        } else {
+            checkNotNull(sortedEffectivelyAdded.pollFirst())
         }
     }
 

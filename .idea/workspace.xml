@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update to Gradle 8.1.1 and adopt version catalog">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 2336">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2336/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2336/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +76,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="update_gradle" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -122,18 +123,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.41494253&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "problem2336",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.41494253",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\gaps-\Documents\GitHub\hj-leetcode-kotlin\src\main\kotlin\com\hj\leetcode\kotlin\medium" />
@@ -151,13 +152,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00716" summary="Update solution 2 : Mark find() tailrec">
-      <created>1679739042482</created>
-      <option name="number" value="00716" />
-      <option name="presentableId" value="LOCAL-00716" />
-      <option name="project" value="LOCAL" />
-      <updated>1679739042482</updated>
     </task>
     <task id="LOCAL-00717" summary="Add a solution to problem 64">
       <created>1679885064388</created>
@@ -495,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682342100056</updated>
     </task>
-    <option name="localTasksCounter" value="765" />
+    <task id="LOCAL-00765" summary="Add a solution to problem 2336">
+      <created>1682407386152</created>
+      <option name="number" value="00765" />
+      <option name="presentableId" value="LOCAL-00765" />
+      <option name="project" value="LOCAL" />
+      <updated>1682407386152</updated>
+    </task>
+    <option name="localTasksCounter" value="766" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -532,26 +533,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="problem1046" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solutions to the problem 1402" />
     <MESSAGE value="Fix the wrong order of problem 1293 and 1335" />
     <MESSAGE value="Add a solution to problem 87" />
     <MESSAGE value="Add a solution to problem 1444" />
@@ -576,7 +564,8 @@
     <MESSAGE value="Improve naming of variables" />
     <MESSAGE value="Improve readability" />
     <MESSAGE value="Update to Gradle 8.1.1 and adopt version catalog" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update to Gradle 8.1.1 and adopt version catalog" />
+    <MESSAGE value="Add a solution to problem 2336" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 2336" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
