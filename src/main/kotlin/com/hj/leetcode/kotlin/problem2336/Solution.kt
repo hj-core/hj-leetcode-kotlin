@@ -6,17 +6,17 @@ package com.hj.leetcode.kotlin.problem2336
 class SmallestInfiniteSet() {
 
     private var largestPopped = 0
-    private var sortedEffectivelyAdded = sortedSetOf<Int>()
+    private var sortedAddedBack = sortedSetOf<Int>()
 
     /* Complexity for N calls:
      * Time O(NLogN) and Space O(1);
      */
     fun popSmallest(): Int {
-        return if (sortedEffectivelyAdded.isEmpty()) {
+        return if (sortedAddedBack.isEmpty()) {
             largestPopped++
             largestPopped
         } else {
-            checkNotNull(sortedEffectivelyAdded.pollFirst())
+            checkNotNull(sortedAddedBack.pollFirst())
         }
     }
 
@@ -24,8 +24,9 @@ class SmallestInfiniteSet() {
      * Time O(NLogN) and Space O(N);
      */
     fun addBack(num: Int) {
-        if (num <= largestPopped) {
-            sortedEffectivelyAdded.add(num)
+        val isPopped = num <= largestPopped
+        if (isPopped) {
+            sortedAddedBack.add(num)
         }
     }
 }
