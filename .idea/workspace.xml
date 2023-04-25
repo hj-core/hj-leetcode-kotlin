@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve logic">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,7 +75,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem2336" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -125,7 +127,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "problem2336",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41494253",
@@ -149,13 +151,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00717" summary="Add a solution to problem 64">
-      <created>1679885064388</created>
-      <option name="number" value="00717" />
-      <option name="presentableId" value="LOCAL-00717" />
-      <option name="project" value="LOCAL" />
-      <updated>1679885064388</updated>
     </task>
     <task id="LOCAL-00718" summary="Add a solution to problem 983">
       <created>1679985956353</created>
@@ -493,7 +488,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682407386152</updated>
     </task>
-    <option name="localTasksCounter" value="766" />
+    <task id="LOCAL-00766" summary="Improve logic">
+      <created>1682432221855</created>
+      <option name="number" value="00766" />
+      <option name="presentableId" value="LOCAL-00766" />
+      <option name="project" value="LOCAL" />
+      <updated>1682432221855</updated>
+    </task>
+    <option name="localTasksCounter" value="767" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -530,14 +532,25 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="problem2336" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix the wrong order of problem 1293 and 1335" />
     <MESSAGE value="Add a solution to problem 87" />
     <MESSAGE value="Add a solution to problem 1444" />
     <MESSAGE value="Rename suffixAppleCount for consistency" />
@@ -562,7 +575,8 @@
     <MESSAGE value="Improve readability" />
     <MESSAGE value="Update to Gradle 8.1.1 and adopt version catalog" />
     <MESSAGE value="Add a solution to problem 2336" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 2336" />
+    <MESSAGE value="Improve logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve logic" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
