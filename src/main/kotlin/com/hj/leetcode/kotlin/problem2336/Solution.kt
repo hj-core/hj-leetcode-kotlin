@@ -24,7 +24,7 @@ class SmallestInfiniteSet() {
      * Time O(NLogN) and Space O(N);
      */
     fun addBack(num: Int) {
-        val isPopped = num <= largestPopped
+        val isPopped = num <= largestPopped && num !in sortedAddedBack
         if (isPopped) {
             sortedAddedBack.add(num)
         }
