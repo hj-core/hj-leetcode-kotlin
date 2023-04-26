@@ -8,8 +8,7 @@ class Solution {
      * Time O(1) and Space O(1);
      */
     fun addDigits(num: Int): Int {
-        return (num % 9).let {
-            if (it == 0 && num != 0) 9 else it
-        }
+        if (num == 0) return 0
+        return (num % 9).let { if (it == 0) 9 else it }
     }
 }
