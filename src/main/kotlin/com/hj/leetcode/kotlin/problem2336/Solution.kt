@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem2336
  */
 class SmallestInfiniteSet() {
 
-    private var largestPopped = 0
+    private var maxEverPopped = 0
     private var sortedAddedBack = sortedSetOf<Int>()
 
     /* Complexity for N calls:
@@ -13,8 +13,8 @@ class SmallestInfiniteSet() {
      */
     fun popSmallest(): Int {
         return if (sortedAddedBack.isEmpty()) {
-            largestPopped++
-            largestPopped
+            maxEverPopped++
+            maxEverPopped
         } else {
             checkNotNull(sortedAddedBack.pollFirst())
         }
@@ -24,7 +24,7 @@ class SmallestInfiniteSet() {
      * Time O(NLogN) and Space O(N);
      */
     fun addBack(num: Int) {
-        val isPopped = num <= largestPopped && num !in sortedAddedBack
+        val isPopped = num <= maxEverPopped && num !in sortedAddedBack
         if (isPopped) {
             sortedAddedBack.add(num)
         }
