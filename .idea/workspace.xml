@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 258" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add complexity analysis">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem319/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem319/Solution.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,18 +123,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem258",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.41494253",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;problem319&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.41494253&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\gaps-\Documents\GitHub\hj-leetcode-kotlin\src\main\kotlin\com\hj\leetcode\kotlin\medium" />
@@ -149,34 +152,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00720" summary="Add a solution to problem 1402">
-      <created>1680079802845</created>
-      <option name="number" value="00720" />
-      <option name="presentableId" value="LOCAL-00720" />
-      <option name="project" value="LOCAL" />
-      <updated>1680079802846</updated>
-    </task>
-    <task id="LOCAL-00721" summary="Add solutions to the problem 1402">
-      <created>1680080167931</created>
-      <option name="number" value="00721" />
-      <option name="presentableId" value="LOCAL-00721" />
-      <option name="project" value="LOCAL" />
-      <updated>1680080167931</updated>
-    </task>
-    <task id="LOCAL-00722" summary="Add solutions to the problem 1402">
-      <created>1680080249028</created>
-      <option name="number" value="00722" />
-      <option name="presentableId" value="LOCAL-00722" />
-      <option name="project" value="LOCAL" />
-      <updated>1680080249028</updated>
-    </task>
-    <task id="LOCAL-00723" summary="Improve readability">
-      <created>1680085360006</created>
-      <option name="number" value="00723" />
-      <option name="presentableId" value="LOCAL-00723" />
-      <option name="project" value="LOCAL" />
-      <updated>1680085360006</updated>
     </task>
     <task id="LOCAL-00724" summary="Fix the wrong order of problem 1293 and 1335">
       <created>1680091345897</created>
@@ -493,7 +468,35 @@
       <option name="project" value="LOCAL" />
       <updated>1682479939669</updated>
     </task>
-    <option name="localTasksCounter" value="769" />
+    <task id="LOCAL-00769" summary="Add a solution to problem 319">
+      <created>1682569749986</created>
+      <option name="number" value="00769" />
+      <option name="presentableId" value="LOCAL-00769" />
+      <option name="project" value="LOCAL" />
+      <updated>1682569749986</updated>
+    </task>
+    <task id="LOCAL-00770" summary="Add a solution to problem 319">
+      <created>1682569830025</created>
+      <option name="number" value="00770" />
+      <option name="presentableId" value="LOCAL-00770" />
+      <option name="project" value="LOCAL" />
+      <updated>1682569830025</updated>
+    </task>
+    <task id="LOCAL-00771" summary="Add a solution to problem 319">
+      <created>1682571890671</created>
+      <option name="number" value="00771" />
+      <option name="presentableId" value="LOCAL-00771" />
+      <option name="project" value="LOCAL" />
+      <updated>1682571890671</updated>
+    </task>
+    <task id="LOCAL-00772" summary="Add complexity analysis">
+      <created>1682572061643</created>
+      <option name="number" value="00772" />
+      <option name="presentableId" value="LOCAL-00772" />
+      <option name="project" value="LOCAL" />
+      <updated>1682572061643</updated>
+    </task>
+    <option name="localTasksCounter" value="773" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -536,7 +539,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="problem2336" />
+                        <option value="problem319" />
                       </list>
                     </value>
                   </entry>
@@ -549,8 +552,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Rename suffixAppleCount for consistency" />
-    <MESSAGE value="Add a solution to the problem 2300" />
     <MESSAGE value="Add a solution to problem 2439" />
     <MESSAGE value="Update kotlin version to 1.8.20" />
     <MESSAGE value="Refactor for clearer logic" />
@@ -574,7 +575,9 @@
     <MESSAGE value="Improve logic" />
     <MESSAGE value="Improve naming" />
     <MESSAGE value="Add a solution to problem 258" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 258" />
+    <MESSAGE value="Add a solution to problem 319" />
+    <MESSAGE value="Add complexity analysis" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add complexity analysis" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
