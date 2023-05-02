@@ -8,8 +8,7 @@ class Solution {
      * Time O(N) and Space O(1) where N is the size of nums;
      */
     fun arraySign(nums: IntArray): Int {
-        val hasZero = nums.any { it == 0 }
-        if (hasZero) {
+        if (nums.contains(0)) {
             return 0
         }
 
