@@ -8,42 +8,48 @@ class Solution {
      * Time O(N) and Space O(1) where N is the length of s;
      */
     fun maxVowels(s: String, k: Int): Int {
-        val vowels = charArrayOf('a', 'e', 'i', 'o', 'u')
-
-        // (By sliding window)
-        // Store the max number of vowels with an initial value 0.
         var maxVowels = 0
 
-        // Count the number of vowels in the first window and update the max number of vowels
+        slidingWindow(s, k) { windowVowels ->
+            if (maxVowels < windowVowels) {
+                maxVowels = windowVowels
+            }
+        }
+        return maxVowels
+    }
+
+    private fun slidingWindow(
+        s: String,
+        windowSize: Int,
+        onEachWindow: (numVowels: Int) -> Unit
+    ) {
+        val vowels = charArrayOf('a', 'e', 'i', 'o', 'u')
         var windowVowels = 0
-        for (index in 0 until k) {
+
+        // Update the vowels count for the first window and call onEachWindow
+        for (index in 0 until windowSize) {
             val char = s[index]
             if (char in vowels) {
                 windowVowels++
             }
         }
-        maxVowels = windowVowels
+        onEachWindow(windowVowels)
 
-        /* Slide the window, update the vowel count and the max number of vowels, until reach
+        /* Slide the window, update the vowels count and call onEachWindow for each window, until reach
          * the end of s.
          */
-        for (windowEnd in k until s.length) {
+        for (windowEnd in windowSize until s.length) {
             val newChar = s[windowEnd]
             if (newChar in vowels) {
                 windowVowels++
             }
 
-            val popChar = s[windowEnd - k]
+            val popChar = s[windowEnd - windowSize]
             if (popChar in vowels) {
                 windowVowels--
             }
 
-            if (maxVowels < windowVowels) {
-                maxVowels = windowVowels
-            }
+            onEachWindow(windowVowels)
         }
-
-        // return the max number of vowels
-        return maxVowels
     }
 }
