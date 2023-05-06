@@ -40,8 +40,7 @@ class Solution {
                 maxTailLength == 0 -> 1
                 else -> normalizedNumSubsequences(maxTailLength, mod)
             }
-            result += subResult
-            result %= mod
+            result = (result + subResult) % mod
 
             suffixStart++
         }
