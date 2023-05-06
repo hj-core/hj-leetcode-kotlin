@@ -22,21 +22,19 @@ class Solution {
          * can extend to.
          */
         var suffixStart = 0
-        var maxValidIndex = nums.lastIndex
+        var maxEndIndex = nums.lastIndex
 
-        while (suffixStart <= maxValidIndex) {
-            // Find the max index that the subsequence can extend to for the current suffix start.
+        while (suffixStart <= maxEndIndex) {
+            // Find the max index that the subsequence can extend to
             while (
-                suffixStart <= maxValidIndex &&
-                sortedNums[suffixStart] + sortedNums[maxValidIndex] > target
+                suffixStart <= maxEndIndex &&
+                sortedNums[suffixStart] + sortedNums[maxEndIndex] > target
             ) {
-                maxValidIndex--
+                maxEndIndex--
             }
 
-            /* Compute the number of valid subsequences with the first element included and
-             * add it to the final result.
-             */
-            val maxTailLength = maxValidIndex - suffixStart
+            // Compute the sub result and add it to the final result
+            val maxTailLength = maxEndIndex - suffixStart
             val subResult = when {
                 maxTailLength < 0 -> 0
                 maxTailLength == 0 -> 1
