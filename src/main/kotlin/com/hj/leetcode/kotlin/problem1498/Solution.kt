@@ -8,7 +8,7 @@ class Solution {
      * Time O(NLogN) and Space O(N) where N is the size of nums;
      */
     fun numSubseq(nums: IntArray, target: Int): Int {
-        /* Instead of finding the result of nums, we will find the result of the sorted nums
+        /* Instead of finding the result of nums, we can find the result of the sorted nums
          * since their subsequences are one to one mapping.
          */
         val sortedNums = nums.sorted()
