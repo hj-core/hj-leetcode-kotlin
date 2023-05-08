@@ -8,22 +8,22 @@ class Solution {
      * Time O(E) and Space O(n) where E is the size of edges;
      */
     fun maxNumEdgesToRemove(n: Int, edges: Array<IntArray>): Int {
-        /* Check whether there are at least n-1 edges, otherwise the graph can not be connected and
-         * should return -1
+        /* Return -1 if the number of edges is less than n-1, which is the minimum number of edges
+         * required for the graph to be connected.
          */
         val noEnoughEdges = edges.size < n - 1
         if (noEnoughEdges) {
             return -1
         }
 
-        /* UnionFind helps determine whether two nodes in a graph are in the same connected component.
-         * Create two UnionFind, one for Alice and another for Bob
+        /* The idea is to construct the spanning tree for Alice and Bob respectively.
+         * During the construction, UnionFind is used to determine whether the two nodes of an edge
+         * are already in the same connected component.
+         * If it is the case, we know the edge can be removed.
          */
+        var numRemovedEdges = 0
         val alice = UnionFind(n + 1) // additional size accounts for the unused label 0
         val bob = UnionFind(n + 1) // additional size accounts for the unused label 0
-
-        // Use a variable to count the number of edges that can be removed
-        var numRemovedEdges = 0
 
         // First, iterate all the type 3 edges, which can be traversed by both Alice and Bob
         for ((type, u, v) in edges) {
@@ -58,7 +58,7 @@ class Solution {
         /* Check the number of connected components in Alice. If it is not one, then Alice cannot fully
          * traverse the graph and should return -1
          */
-        val aliceNumComponents = alice.numComponents - 1 // Reduce 1 for the unused label 0
+        val aliceNumComponents = alice.numUnions - 1 // Reduce 1 for the unused label 0
         if (aliceNumComponents != 1) {
             return -1
         }
@@ -80,7 +80,7 @@ class Solution {
         /* Check the number of connected components in Bob. If it is not one, then Bob cannot fully
          * traverse the graph and should return -1
          */
-        val bobNumComponents = bob.numComponents - 1 // Reduce 1 for the unused label 0
+        val bobNumComponents = bob.numUnions - 1 // Reduce 1 for the unused label 0
         if (bobNumComponents != 1) {
             return -1
         }
@@ -91,17 +91,17 @@ class Solution {
 
     private class UnionFind(size: Int) {
 
-        private val parent = IntArray(size) { node -> node }
+        private val parent = IntArray(size) { it }
         private val rank = IntArray(size)
 
-        var numComponents = size
+        var numUnions = size
             private set
 
-        fun union(aNode: Int, bNode: Int): Boolean {
-            val aParent = find(aNode)
-            val bParent = find(bNode)
-            val isSameParent = aParent == bParent
-            if (isSameParent) {
+        fun union(a: Int, b: Int): Boolean {
+            val aParent = find(a)
+            val bParent = find(b)
+            val isNoop = aParent == bParent
+            if (isNoop) {
                 return false
             }
 
@@ -116,7 +116,7 @@ class Solution {
                 }
             }
 
-            numComponents--
+            numUnions--
             return true
         }
 
