@@ -26,7 +26,7 @@ class Solution {
             return
         }
 
-        // Traversal the spiral layer at fromLayer
+        // Traversal the fromLayer
         spiralTraversalAt(fromLayer, onEachElement)
 
         // Recursive call for next layer
@@ -73,8 +73,8 @@ class Solution {
             }
         }
 
-        /* If left and right are different, traversal the left column in reversed order, except the
-         * first and last elements.
+        /* If left and right are different, traversal the left column in reversed order,
+         * except its first and last elements.
          */
         if (left != right) {
             for (row in bottom - 1 downTo top + 1) {
