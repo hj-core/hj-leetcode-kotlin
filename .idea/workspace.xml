@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 1456">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Refactor the solution" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -122,18 +120,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.41494253&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "problem54",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.41494253",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\gaps-\Documents\GitHub\hj-leetcode-kotlin\src\main\kotlin\com\hj\leetcode\kotlin\medium" />
@@ -151,41 +149,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00731" summary="Add a solution to problem 2439">
-      <created>1680720152934</created>
-      <option name="number" value="00731" />
-      <option name="presentableId" value="LOCAL-00731" />
-      <option name="project" value="LOCAL" />
-      <updated>1680720152935</updated>
-    </task>
-    <task id="LOCAL-00732" summary="Update kotlin version to 1.8.20">
-      <created>1680766810536</created>
-      <option name="number" value="00732" />
-      <option name="presentableId" value="LOCAL-00732" />
-      <option name="project" value="LOCAL" />
-      <updated>1680766810536</updated>
-    </task>
-    <task id="LOCAL-00733" summary="Improve readability">
-      <created>1680796734745</created>
-      <option name="number" value="00733" />
-      <option name="presentableId" value="LOCAL-00733" />
-      <option name="project" value="LOCAL" />
-      <updated>1680796734745</updated>
-    </task>
-    <task id="LOCAL-00734" summary="Improve readability">
-      <created>1680834482413</created>
-      <option name="number" value="00734" />
-      <option name="presentableId" value="LOCAL-00734" />
-      <option name="project" value="LOCAL" />
-      <updated>1680834482414</updated>
-    </task>
-    <task id="LOCAL-00735" summary="Improve readability">
-      <created>1680834575347</created>
-      <option name="number" value="00735" />
-      <option name="presentableId" value="LOCAL-00735" />
-      <option name="project" value="LOCAL" />
-      <updated>1680834575347</updated>
     </task>
     <task id="LOCAL-00736" summary="Refactor for clearer logic">
       <created>1680847833938</created>
@@ -495,7 +458,42 @@
       <option name="project" value="LOCAL" />
       <updated>1683255494448</updated>
     </task>
-    <option name="localTasksCounter" value="780" />
+    <task id="LOCAL-00780" summary="Refactor the solution">
+      <created>1683616146793</created>
+      <option name="number" value="00780" />
+      <option name="presentableId" value="LOCAL-00780" />
+      <option name="project" value="LOCAL" />
+      <updated>1683616146793</updated>
+    </task>
+    <task id="LOCAL-00781" summary="Refactor the solution">
+      <created>1683616277311</created>
+      <option name="number" value="00781" />
+      <option name="presentableId" value="LOCAL-00781" />
+      <option name="project" value="LOCAL" />
+      <updated>1683616277311</updated>
+    </task>
+    <task id="LOCAL-00782" summary="Refactor the solution">
+      <created>1683616335496</created>
+      <option name="number" value="00782" />
+      <option name="presentableId" value="LOCAL-00782" />
+      <option name="project" value="LOCAL" />
+      <updated>1683616335496</updated>
+    </task>
+    <task id="LOCAL-00783" summary="Refactor the solution">
+      <created>1683616463549</created>
+      <option name="number" value="00783" />
+      <option name="presentableId" value="LOCAL-00783" />
+      <option name="project" value="LOCAL" />
+      <updated>1683616463549</updated>
+    </task>
+    <task id="LOCAL-00784" summary="Refactor the solution">
+      <created>1683616708330</created>
+      <option name="number" value="00784" />
+      <option name="presentableId" value="LOCAL-00784" />
+      <option name="project" value="LOCAL" />
+      <updated>1683616708330</updated>
+    </task>
+    <option name="localTasksCounter" value="785" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -551,7 +549,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactor for clearer logic" />
     <MESSAGE value="Skip unnecessary comparison" />
     <MESSAGE value="Add a solution to problem 20" />
     <MESSAGE value="Add a solution to problem 71" />
@@ -576,7 +573,8 @@
     <MESSAGE value="Add complexity analysis" />
     <MESSAGE value="Add a solution to problem 1822" />
     <MESSAGE value="Add a solution to problem 1456" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 1456" />
+    <MESSAGE value="Refactor the solution" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor the solution" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
