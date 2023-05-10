@@ -28,10 +28,10 @@ class Solution {
             return
         }
 
-        // Traversal the fromLayer
+        // Traverse the fromLayer
         spiralTraversalAt(fromLayer, atEachPosition)
 
-        // Recursive call for next layer
+        // Recursive call for the next layer
         spiralTraversal(fromLayer + 1, atEachPosition)
     }
 
@@ -58,24 +58,24 @@ class Solution {
         check(top <= bottom)
         check(left <= right)
 
-        // Traversal the top row
+        // Traverse the top row
         for (column in left..right) {
             atEachPosition(top, column)
         }
 
-        // Traversal the right column, except its first and last elements
+        // Traverse the right column, except its first and last elements
         for (row in top + 1 until bottom) {
             atEachPosition(row, right)
         }
 
-        // If bottom and top are different, traversal the bottom row in reversed order
+        // If bottom and top are different, traverse the bottom row in reversed order
         if (bottom != top) {
             for (column in right downTo left) {
                 atEachPosition(bottom, column)
             }
         }
 
-        /* If left and right are different, traversal the left column in reversed order,
+        /* If left and right are different, traverse the left column in reversed order,
          * except its first and last elements.
          */
         if (left != right) {
