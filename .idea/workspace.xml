@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 59">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,7 +75,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem1579" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -125,7 +127,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "problem59",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41494253",
@@ -149,27 +151,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00736" summary="Refactor for clearer logic">
-      <created>1680847833938</created>
-      <option name="number" value="00736" />
-      <option name="presentableId" value="LOCAL-00736" />
-      <option name="project" value="LOCAL" />
-      <updated>1680847833938</updated>
-    </task>
-    <task id="LOCAL-00737" summary="Skip unnecessary comparison">
-      <created>1681053194046</created>
-      <option name="number" value="00737" />
-      <option name="presentableId" value="LOCAL-00737" />
-      <option name="project" value="LOCAL" />
-      <updated>1681053194046</updated>
-    </task>
-    <task id="LOCAL-00738" summary="Skip unnecessary comparison">
-      <created>1681053217166</created>
-      <option name="number" value="00738" />
-      <option name="presentableId" value="LOCAL-00738" />
-      <option name="project" value="LOCAL" />
-      <updated>1681053217166</updated>
     </task>
     <task id="LOCAL-00739" summary="Add a solution to problem 20">
       <created>1681094731552</created>
@@ -493,7 +474,28 @@
       <option name="project" value="LOCAL" />
       <updated>1683616708330</updated>
     </task>
-    <option name="localTasksCounter" value="785" />
+    <task id="LOCAL-00785" summary="Add a solution to problem 59">
+      <created>1683685900627</created>
+      <option name="number" value="00785" />
+      <option name="presentableId" value="LOCAL-00785" />
+      <option name="project" value="LOCAL" />
+      <updated>1683685900627</updated>
+    </task>
+    <task id="LOCAL-00786" summary="Add a solution to problem 59">
+      <created>1683686054131</created>
+      <option name="number" value="00786" />
+      <option name="presentableId" value="LOCAL-00786" />
+      <option name="project" value="LOCAL" />
+      <updated>1683686054131</updated>
+    </task>
+    <task id="LOCAL-00787" summary="Add a solution to problem 59">
+      <created>1683686124720</created>
+      <option name="number" value="00787" />
+      <option name="presentableId" value="LOCAL-00787" />
+      <option name="project" value="LOCAL" />
+      <updated>1683686124720</updated>
+    </task>
+    <option name="localTasksCounter" value="788" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -536,7 +538,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="problem59" />
                       </list>
                     </value>
                   </entry>
@@ -549,7 +551,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Skip unnecessary comparison" />
     <MESSAGE value="Add a solution to problem 20" />
     <MESSAGE value="Add a solution to problem 71" />
     <MESSAGE value="Introduce segments() for consistent level of abstraction" />
@@ -574,7 +575,8 @@
     <MESSAGE value="Add a solution to problem 1822" />
     <MESSAGE value="Add a solution to problem 1456" />
     <MESSAGE value="Refactor the solution" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor the solution" />
+    <MESSAGE value="Add a solution to problem 59" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 59" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
