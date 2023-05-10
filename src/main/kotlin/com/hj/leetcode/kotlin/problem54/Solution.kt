@@ -78,7 +78,7 @@ class Solution {
          */
         if (left != right) {
             for (row in bottom - 1 downTo top + 1) {
-                onEachElement(this[row][layer])
+                onEachElement(this[row][left])
             }
         }
     }
