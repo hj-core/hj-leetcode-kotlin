@@ -33,11 +33,12 @@ class Solution {
         subResults: HashMap<Int, Int>
     ) {
         /* Solve the sub results in increasing order of length using the relation that
-         * subResults[i] = subResults[i-zero] + subResults[i-one].
+         * subResults[i-zero] + subResults[i-one] = subResults[i].
          */
         for (length in 0..high) {
             val subResult = subResults[length] ?: continue
 
+            // Contribute the sub result of length to the cases that are related to it
             subResults[length + zero] = subResults[length + zero]
                 ?.let { (it + subResult) % mod }
                 ?: subResult
