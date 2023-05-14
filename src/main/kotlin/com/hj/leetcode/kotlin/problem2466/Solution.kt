@@ -16,7 +16,7 @@ class Solution {
          */
         val subResults = hashMapOf<Int, Int>().apply {
             updateBaseCases(this)
-            updateRemainingCase(low, high, zero, one, this)
+            updateRemainingCases(low, high, zero, one, this)
         }
 
         return originalProblem(low, high, subResults)
@@ -27,7 +27,7 @@ class Solution {
         subResults[0] = 1
     }
 
-    private fun updateRemainingCase(
+    private fun updateRemainingCases(
         low: Int, high: Int,
         zero: Int, one: Int,
         subResults: HashMap<Int, Int>
