@@ -7,47 +7,46 @@ import com.hj.leetcode.kotlin.common.model.ListNode
  */
 class Solution {
     /* Complexity:
-     * Time O(N) and Space O(N) where N is the number of nodes in head;
+     * Time O(N) and Space O(1) where N is the number of nodes in head;
      */
     fun swapNodes(head: ListNode?, k: Int): ListNode? {
         if (head == null) {
             return null
         }
 
+        val kthNode = kthNode(head, k)
+        val kthNodeFromEnd = kthNodeFromEnd(head, kthNode)
+        swapValue(kthNode, kthNodeFromEnd)
         return head
-            .split()
-            .apply { swap(k - 1, size - k) }
-            .link()
     }
 
-    /**
-     * Remove links between nodes and return a collection of the nodes in their original order.
-     */
-    private fun ListNode.split(): MutableList<ListNode> {
-        val result = mutableListOf<ListNode>()
-        var currentNode: ListNode? = this
+    private fun kthNode(head: ListNode, k: Int): ListNode {
+        var currentPosition = 1
+        var currentNode = head
 
-        while (currentNode != null) {
-            result.add(currentNode)
-            val nextNode = currentNode.next
-            currentNode.next = null
-            currentNode = nextNode
+        while (currentPosition < k) {
+            currentPosition++
+            currentNode = checkNotNull(currentNode.next)
         }
-        return result
+        return currentNode
     }
 
-    private fun <T> MutableList<T>.swap(index: Int, withIndex: Int): MutableList<T> {
-        this[index] = this[withIndex].also { this[withIndex] = this[index] }
-        return this
-    }
+    private fun kthNodeFromEnd(head: ListNode, kthNode: ListNode): ListNode {
+        /* Use two-pointers technique to find the kth node from the end.
+         * The invariance that for each node the sum of its one-indexed position from the beginning and
+         * from the end equals the size of the head plus one helps to justify the correctness.
+         */
+        var slow = head
+        var fast = kthNode.next
 
-    /**
-     * Link the nodes according to their order in the list and return the head.
-     */
-    private fun List<ListNode>.link(): ListNode {
-        for ((index, node) in this.withIndex()) {
-            node.next = this.getOrNull(index + 1)
+        while (fast != null) {
+            slow = checkNotNull(slow.next)
+            fast = fast.next
         }
-        return this.first()
+        return slow
+    }
+
+    private fun swapValue(node: ListNode, withNode: ListNode) {
+        node.`val` = withNode.`val`.also { withNode.`val` = node.`val` }
     }
 }
