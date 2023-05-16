@@ -14,20 +14,24 @@ class Solution {
         val dummyHead = ListNode(-1).apply { next = head }
 
         // Track the parent node of the pair and initialize it with the dummy head
-        var pairParent = dummyHead
+        var parentNode = dummyHead
 
-        // While there is a pair, we swap them and update parent for the next pair
-        while (pairParent.next != null && pairParent.next?.next != null) {
-            val pairFirst = checkNotNull(pairParent.next)
-            val pairSecond = checkNotNull(pairFirst.next)
+        // While there is a pair, we swap them and update the parent node for the next pair
+        while (hasNextPair(parentNode)) {
+            val first = checkNotNull(parentNode.next)
+            val second = checkNotNull(first.next)
 
-            pairParent.next = pairSecond
-            pairFirst.next = pairSecond.next
-            pairSecond.next = pairFirst
-            pairParent = pairFirst
+            parentNode.next = second
+            first.next = second.next
+            second.next = first
+            parentNode = first
         }
 
         // Return the new head
         return dummyHead.next
+    }
+
+    private fun hasNextPair(parentNode: ListNode): Boolean {
+        return parentNode.next != null && parentNode.next?.next != null
     }
 }
