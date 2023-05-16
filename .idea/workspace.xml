@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Fix solution&#10;&#10;- Previous solution swaps the two nodes. However, the problem explicitly asks to swap their values">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1721/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1721/Solution.kt" afterDir="false" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 24">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem24/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem24/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +128,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem1721",
+    "git-widget-placeholder": "problem24",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41494253",
@@ -151,13 +152,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00744" summary="Draft solution">
-      <created>1681629487412</created>
-      <option name="number" value="00744" />
-      <option name="presentableId" value="LOCAL-00744" />
-      <option name="project" value="LOCAL" />
-      <updated>1681629487412</updated>
     </task>
     <task id="LOCAL-00745" summary="Refactor and improve readability">
       <created>1681642730398</created>
@@ -495,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684160388035</updated>
     </task>
-    <option name="localTasksCounter" value="793" />
+    <task id="LOCAL-00793" summary="Add a solution to problem 24">
+      <created>1684210403572</created>
+      <option name="number" value="00793" />
+      <option name="presentableId" value="LOCAL-00793" />
+      <option name="project" value="LOCAL" />
+      <updated>1684210403572</updated>
+    </task>
+    <option name="localTasksCounter" value="794" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -538,7 +539,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="problem1721" />
+                        <option value="problem24" />
                       </list>
                     </value>
                   </entry>
@@ -551,7 +552,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Draft solution" />
     <MESSAGE value="Refactor and improve readability" />
     <MESSAGE value="Add a solution to problem 1768" />
     <MESSAGE value="Add a solution to problem 662" />
@@ -576,7 +576,8 @@
     <MESSAGE value="Improve naming of function" />
     <MESSAGE value="Add a solution to problem 1721" />
     <MESSAGE value="Fix solution&#10;&#10;- Previous solution swaps the two nodes. However, the problem explicitly asks to swap their values" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix solution&#10;&#10;- Previous solution swaps the two nodes. However, the problem explicitly asks to swap their values" />
+    <MESSAGE value="Add a solution to problem 24" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 24" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
