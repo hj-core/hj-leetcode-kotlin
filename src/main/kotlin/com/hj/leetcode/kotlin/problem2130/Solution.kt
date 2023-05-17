@@ -15,9 +15,8 @@ class Solution {
     }
 
     private fun ListNode?.values(): List<Int> {
-        val result = mutableListOf<Int>().apply {
-            linearTraversal { node -> add(node.`val`) }
-        }
+        val result = mutableListOf<Int>()
+        linearTraversal { node -> result.add(node.`val`) }
         return result
     }
 
@@ -36,9 +35,9 @@ class Solution {
         // Compute all twin sums and track the maximum
         var maxTwinSum = 0
         for (index in 0 until (values.size / 2)) {
-            val nodeValue = values[index]
+            val value = values[index]
             val twinValue = values[values.lastIndex - index]
-            val twinSum = nodeValue + twinValue
+            val twinSum = value + twinValue
 
             if (twinSum > maxTwinSum) {
                 maxTwinSum = twinSum

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 24" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 2130" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,7 +73,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem24" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -125,7 +125,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "problem2130",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41494253",
@@ -149,27 +149,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00745" summary="Refactor and improve readability">
-      <created>1681642730398</created>
-      <option name="number" value="00745" />
-      <option name="presentableId" value="LOCAL-00745" />
-      <option name="project" value="LOCAL" />
-      <updated>1681642730398</updated>
-    </task>
-    <task id="LOCAL-00746" summary="Refactor and improve readability">
-      <created>1681642932059</created>
-      <option name="number" value="00746" />
-      <option name="presentableId" value="LOCAL-00746" />
-      <option name="project" value="LOCAL" />
-      <updated>1681642932059</updated>
-    </task>
-    <task id="LOCAL-00747" summary="Add a solution to problem 1768">
-      <created>1681784654556</created>
-      <option name="number" value="00747" />
-      <option name="presentableId" value="LOCAL-00747" />
-      <option name="project" value="LOCAL" />
-      <updated>1681784654556</updated>
     </task>
     <task id="LOCAL-00748" summary="Add a solution to problem 662">
       <created>1681968581680</created>
@@ -493,7 +472,28 @@
       <option name="project" value="LOCAL" />
       <updated>1684210403572</updated>
     </task>
-    <option name="localTasksCounter" value="794" />
+    <task id="LOCAL-00794" summary="Add a solution to problem 2130">
+      <created>1684296679730</created>
+      <option name="number" value="00794" />
+      <option name="presentableId" value="LOCAL-00794" />
+      <option name="project" value="LOCAL" />
+      <updated>1684296679731</updated>
+    </task>
+    <task id="LOCAL-00795" summary="Add a solution to problem 2130">
+      <created>1684296732961</created>
+      <option name="number" value="00795" />
+      <option name="presentableId" value="LOCAL-00795" />
+      <option name="project" value="LOCAL" />
+      <updated>1684296732961</updated>
+    </task>
+    <task id="LOCAL-00796" summary="Add a solution to problem 2130">
+      <created>1684296869831</created>
+      <option name="number" value="00796" />
+      <option name="presentableId" value="LOCAL-00796" />
+      <option name="project" value="LOCAL" />
+      <updated>1684296869831</updated>
+    </task>
+    <option name="localTasksCounter" value="797" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -549,7 +549,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactor and improve readability" />
     <MESSAGE value="Add a solution to problem 1768" />
     <MESSAGE value="Add a solution to problem 662" />
     <MESSAGE value="Change the type of index from Int to Long and improve readability&#10;&#10;- Although the answer is guaranteed to be within 32-bit signed Int, the index could be Long" />
@@ -574,7 +573,8 @@
     <MESSAGE value="Add a solution to problem 1721" />
     <MESSAGE value="Fix solution&#10;&#10;- Previous solution swaps the two nodes. However, the problem explicitly asks to swap their values" />
     <MESSAGE value="Add a solution to problem 24" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 24" />
+    <MESSAGE value="Add a solution to problem 2130" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 2130" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
