@@ -10,8 +10,8 @@ class Solution {
      * Time O(N) and Space O(N) where N is the size of head;
      */
     fun pairSum(head: ListNode?): Int {
-        val values = head.values()
-        return maxTwinSum(values)
+        // Collect all values in the linkedList then compute all twin sums and return the maximum
+        return maxTwinSum(head.values())
     }
 
     private fun ListNode?.values(): List<Int> {
@@ -32,7 +32,7 @@ class Solution {
     private fun maxTwinSum(values: List<Int>): Int {
         require(values.size.isEven())
 
-        // Compute all twin sums and track the maximum
+        // Compute all twin sums and return the maximum
         var maxTwinSum = 0
         for (index in 0 until (values.size / 2)) {
             val value = values[index]
