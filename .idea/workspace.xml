@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 2130" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,27 +149,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00748" summary="Add a solution to problem 662">
-      <created>1681968581680</created>
-      <option name="number" value="00748" />
-      <option name="presentableId" value="LOCAL-00748" />
-      <option name="project" value="LOCAL" />
-      <updated>1681968581681</updated>
-    </task>
-    <task id="LOCAL-00749" summary="Change the type of index from Int to Long and improve readability&#10;&#10;- Although the answer is guaranteed to be within 32-bit signed Int, the index could be Long">
-      <created>1681984976504</created>
-      <option name="number" value="00749" />
-      <option name="presentableId" value="LOCAL-00749" />
-      <option name="project" value="LOCAL" />
-      <updated>1681984976504</updated>
-    </task>
-    <task id="LOCAL-00750" summary="Improve readability">
-      <created>1681985360053</created>
-      <option name="number" value="00750" />
-      <option name="presentableId" value="LOCAL-00750" />
-      <option name="project" value="LOCAL" />
-      <updated>1681985360053</updated>
     </task>
     <task id="LOCAL-00751" summary="Improve readability">
       <created>1681985809023</created>
@@ -493,7 +472,28 @@
       <option name="project" value="LOCAL" />
       <updated>1684296869831</updated>
     </task>
-    <option name="localTasksCounter" value="797" />
+    <task id="LOCAL-00797" summary="Improve readability">
+      <created>1684297064586</created>
+      <option name="number" value="00797" />
+      <option name="presentableId" value="LOCAL-00797" />
+      <option name="project" value="LOCAL" />
+      <updated>1684297064586</updated>
+    </task>
+    <task id="LOCAL-00798" summary="Improve readability">
+      <created>1684305654120</created>
+      <option name="number" value="00798" />
+      <option name="presentableId" value="LOCAL-00798" />
+      <option name="project" value="LOCAL" />
+      <updated>1684305654120</updated>
+    </task>
+    <task id="LOCAL-00799" summary="Improve readability">
+      <created>1684305742453</created>
+      <option name="number" value="00799" />
+      <option name="presentableId" value="LOCAL-00799" />
+      <option name="project" value="LOCAL" />
+      <updated>1684305742453</updated>
+    </task>
+    <option name="localTasksCounter" value="800" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -536,7 +536,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="problem24" />
+                        <option value="problem2130" />
                       </list>
                     </value>
                   </entry>
@@ -556,7 +556,6 @@
     <MESSAGE value="Improve comment" />
     <MESSAGE value="Add a solution to problem 1046" />
     <MESSAGE value="Improve naming of variables" />
-    <MESSAGE value="Improve readability" />
     <MESSAGE value="Update to Gradle 8.1.1 and adopt version catalog" />
     <MESSAGE value="Add a solution to problem 2336" />
     <MESSAGE value="Improve logic" />
@@ -574,7 +573,8 @@
     <MESSAGE value="Fix solution&#10;&#10;- Previous solution swaps the two nodes. However, the problem explicitly asks to swap their values" />
     <MESSAGE value="Add a solution to problem 24" />
     <MESSAGE value="Add a solution to problem 2130" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 2130" />
+    <MESSAGE value="Improve readability" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -30,10 +30,11 @@ class Solution {
     }
 
     private fun maxTwinSum(values: List<Int>): Int {
+        require(values.isNotEmpty())
         require(values.size.isEven())
 
         // Compute all twin sums and return the maximum
-        var maxTwinSum = 0
+        var maxTwinSum = values[0] + values[values.lastIndex]
         for (index in 0 until (values.size / 2)) {
             val value = values[index]
             val twinValue = values[values.lastIndex - index]
