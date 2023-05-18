@@ -8,8 +8,8 @@ class Solution {
      * Time O(n+E) and Space O(n) where E is the size of edges;
      */
     fun findSmallestSetOfVertices(n: Int, edges: List<List<Int>>): List<Int> {
-        // Find the in-degree of each node, i.e. nodeInDegree[i] ::= the in-degree of node i
-        val nodeInDegree = nodeInDegree(n, edges)
+        // Find the in-degree of each node
+        val nodeInDegree = nodeInDegree(n, edges) // nodeInDegree[i] ::= the in-degree of node i
 
         // The smallest set consists of those vertices with zero in-degree
         val nodes = 0 until n
@@ -17,10 +17,10 @@ class Solution {
     }
 
     private fun nodeInDegree(n: Int, edges: List<List<Int>>): IntArray {
-        val nodeInDegree = IntArray(n)
+        val result = IntArray(n) // result[i] ::= the in-degree of node i
         for ((_, v) in edges) {
-            nodeInDegree[v]++
+            result[v]++
         }
-        return nodeInDegree
+        return result
     }
 }
