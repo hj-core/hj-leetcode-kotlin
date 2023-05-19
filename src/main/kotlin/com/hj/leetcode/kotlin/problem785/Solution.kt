@@ -16,15 +16,13 @@ class Solution {
          * is bipartite; otherwise it is not.
          */
         for (node in nodes) {
-            // If the node is colored, it belongs to one of the colored component
-            val isColored = nodeColors[node] != Color.Unspecified
-            if (isColored) {
+            val inColoredComponent = nodeColors[node] != Color.Unspecified
+            if (inColoredComponent) {
                 continue
             }
 
-            // If the node is not colored, try to color the component it belongs to
-            val canBeColored = colorConnectedComponent(node, Color.White, nodeColors, graph)
-            if (!canBeColored) {
+            val canColorComponent = colorConnectedComponent(node, Color.White, nodeColors, graph)
+            if (!canColorComponent) {
                 return false
             }
         }
@@ -41,20 +39,20 @@ class Solution {
         nodeColors: MutableList<Color>,
         graph: Array<IntArray>
     ): Boolean {
-        // If the node is colored, check if its color is correct
+        // If the node is colored, check if its color matches the desired color
         val isColored = nodeColors[source] != Color.Unspecified
         if (isColored) {
             return nodeColors[source] == sourceColor
         }
 
-        // If the node is not colored, color it and perform DFS to color the whole component
+        // If the node is not colored, color it and further color the component
         nodeColors[source] = sourceColor
         val neighbourNodes = graph[source]
         val neighbourColor = oppositeColor(sourceColor)
 
         for (node in neighbourNodes) {
-            val canBeColored = colorConnectedComponent(node, neighbourColor, nodeColors, graph)
-            if (!canBeColored) {
+            val canColorComponent = colorConnectedComponent(node, neighbourColor, nodeColors, graph)
+            if (!canColorComponent) {
                 return false
             }
         }
