@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a draft solution to 934&#10;&#10;- Require refactor&#10;- May supersede the existing solution" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,7 +125,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem934",
+    "git-widget-placeholder": "problem347",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41494253",
@@ -152,34 +152,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00755" summary="Fix the issue of potential number overflow">
-      <created>1681991814664</created>
-      <option name="number" value="00755" />
-      <option name="presentableId" value="LOCAL-00755" />
-      <option name="project" value="LOCAL" />
-      <updated>1681991814664</updated>
-    </task>
-    <task id="LOCAL-00756" summary="Fix the issue of potential number overflow">
-      <created>1681991856310</created>
-      <option name="number" value="00756" />
-      <option name="presentableId" value="LOCAL-00756" />
-      <option name="project" value="LOCAL" />
-      <updated>1681991856310</updated>
-    </task>
-    <task id="LOCAL-00757" summary="Fix the issue of potential number overflow">
-      <created>1681992013982</created>
-      <option name="number" value="00757" />
-      <option name="presentableId" value="LOCAL-00757" />
-      <option name="project" value="LOCAL" />
-      <updated>1681992013982</updated>
-    </task>
-    <task id="LOCAL-00758" summary="Improve comment">
-      <created>1681998444599</created>
-      <option name="number" value="00758" />
-      <option name="presentableId" value="LOCAL-00758" />
-      <option name="project" value="LOCAL" />
-      <updated>1681998444599</updated>
     </task>
     <task id="LOCAL-00759" summary="Improve comment">
       <created>1681998565117</created>
@@ -496,7 +468,35 @@
       <option name="project" value="LOCAL" />
       <updated>1684683740596</updated>
     </task>
-    <option name="localTasksCounter" value="804" />
+    <task id="LOCAL-00804" summary="Add a solution to problem 347">
+      <created>1684740409253</created>
+      <option name="number" value="00804" />
+      <option name="presentableId" value="LOCAL-00804" />
+      <option name="project" value="LOCAL" />
+      <updated>1684740409253</updated>
+    </task>
+    <task id="LOCAL-00805" summary="Improve readability">
+      <created>1684740925124</created>
+      <option name="number" value="00805" />
+      <option name="presentableId" value="LOCAL-00805" />
+      <option name="project" value="LOCAL" />
+      <updated>1684740925124</updated>
+    </task>
+    <task id="LOCAL-00806" summary="Improve readability">
+      <created>1684741209600</created>
+      <option name="number" value="00806" />
+      <option name="presentableId" value="LOCAL-00806" />
+      <option name="project" value="LOCAL" />
+      <updated>1684741209600</updated>
+    </task>
+    <task id="LOCAL-00807" summary="Improve readability">
+      <created>1684741440894</created>
+      <option name="number" value="00807" />
+      <option name="presentableId" value="LOCAL-00807" />
+      <option name="project" value="LOCAL" />
+      <updated>1684741440894</updated>
+    </task>
+    <option name="localTasksCounter" value="808" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -539,7 +539,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="problem347" />
                       </list>
                     </value>
                   </entry>
@@ -552,7 +552,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix the issue of potential number overflow" />
     <MESSAGE value="Improve comment" />
     <MESSAGE value="Add a solution to problem 1046" />
     <MESSAGE value="Improve naming of variables" />
@@ -573,11 +572,12 @@
     <MESSAGE value="Fix solution&#10;&#10;- Previous solution swaps the two nodes. However, the problem explicitly asks to swap their values" />
     <MESSAGE value="Add a solution to problem 24" />
     <MESSAGE value="Add a solution to problem 2130" />
-    <MESSAGE value="Improve readability" />
     <MESSAGE value="Add a solution to problem 1557" />
     <MESSAGE value="Add a solution to problem 785" />
     <MESSAGE value="Add a draft solution to 934&#10;&#10;- Require refactor&#10;- May supersede the existing solution" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a draft solution to 934&#10;&#10;- Require refactor&#10;- May supersede the existing solution" />
+    <MESSAGE value="Add a solution to problem 347" />
+    <MESSAGE value="Improve readability" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
