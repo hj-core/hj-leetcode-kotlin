@@ -11,7 +11,7 @@ class Solution {
         val visited = Array(grid.size) { BooleanArray(grid[it].size) }
         val currentLayer = waterSurroundingIsland(firstLand(grid), grid, visited)
 
-        /* Search for the second island, layer by layer, and return the distance
+        /* Search for the second island layer by layer, and return the distance
          * when it is found.
          */
         var result = 1
@@ -38,7 +38,12 @@ class Solution {
 
     /**
      * Return the water that surrounds the island containing [seedLand].
-     * This function will set [visited] of all lands of the island and the surrounding water.
+     * The passed in [visited] should be all false, otherwise the behavior of this function may
+     * be incorrect.
+     *
+     * SIDE EFFECT:
+     * This function will set all lands of the island containing [seedLand] and its surrounding
+     * water visited.
      */
     private fun waterSurroundingIsland(
         seedLand: Cell,
