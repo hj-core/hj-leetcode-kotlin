@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update last modified">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Revise comment to state the precondition and side effect">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem934/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem934/Solution.kt" afterDir="false" />
     </list>
@@ -152,13 +152,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00756" summary="Fix the issue of potential number overflow">
-      <created>1681991856310</created>
-      <option name="number" value="00756" />
-      <option name="presentableId" value="LOCAL-00756" />
-      <option name="project" value="LOCAL" />
-      <updated>1681991856310</updated>
     </task>
     <task id="LOCAL-00757" summary="Fix the issue of potential number overflow">
       <created>1681992013982</created>
@@ -496,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684764347223</updated>
     </task>
-    <option name="localTasksCounter" value="805" />
+    <task id="LOCAL-00805" summary="Revise comment to state the precondition and side effect">
+      <created>1684767779221</created>
+      <option name="number" value="00805" />
+      <option name="presentableId" value="LOCAL-00805" />
+      <option name="project" value="LOCAL" />
+      <updated>1684767779221</updated>
+    </task>
+    <option name="localTasksCounter" value="806" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -552,7 +552,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Improve comment" />
     <MESSAGE value="Add a solution to problem 1046" />
     <MESSAGE value="Improve naming of variables" />
     <MESSAGE value="Update to Gradle 8.1.1 and adopt version catalog" />
@@ -577,7 +576,8 @@
     <MESSAGE value="Add a solution to problem 785" />
     <MESSAGE value="Refactor solution" />
     <MESSAGE value="Update last modified" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update last modified" />
+    <MESSAGE value="Revise comment to state the precondition and side effect" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revise comment to state the precondition and side effect" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
