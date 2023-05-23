@@ -97,25 +97,27 @@ class Solution {
         var numUnions = size
             private set
 
+        /**
+         * Union the two elements.
+         * Return false if the two elements are already in the same union, otherwise return true.
+         */
         fun union(a: Int, b: Int): Boolean {
-            val aParent = find(a)
-            val bParent = find(b)
-            val isNoop = aParent == bParent
-            if (isNoop) {
+            val aRoot = find(a)
+            val bRoot = find(b)
+
+            val inSameUnion = aRoot == bRoot
+            if (inSameUnion) {
                 return false
             }
 
-            val aParentRank = rank[aParent]
-            val bParentRank = rank[bParent]
             when {
-                aParentRank < bParentRank -> parent[aParent] = bParent
-                aParentRank > bParentRank -> parent[bParent] = aParent
+                rank[aRoot] < rank[bRoot] -> parent[aRoot] = bRoot
+                rank[aRoot] > rank[bRoot] -> parent[bRoot] = aRoot
                 else -> {
-                    parent[bParent] = aParent
-                    rank[aParent]++
+                    parent[bRoot] = aRoot
+                    rank[aRoot]++
                 }
             }
-
             numUnions--
             return true
         }
