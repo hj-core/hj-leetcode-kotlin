@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 703">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem703/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem703/Solution.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,7 +128,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem347",
+    "git-widget-placeholder": "problem703",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41494253",
@@ -152,13 +155,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00759" summary="Improve comment">
-      <created>1681998565117</created>
-      <option name="number" value="00759" />
-      <option name="presentableId" value="LOCAL-00759" />
-      <option name="project" value="LOCAL" />
-      <updated>1681998565117</updated>
     </task>
     <task id="LOCAL-00760" summary="Add a solution to problem 1046">
       <created>1682302166816</created>
@@ -496,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684741440894</updated>
     </task>
-    <option name="localTasksCounter" value="808" />
+    <task id="LOCAL-00808" summary="Add a solution to problem 703">
+      <created>1684816651711</created>
+      <option name="number" value="00808" />
+      <option name="presentableId" value="LOCAL-00808" />
+      <option name="project" value="LOCAL" />
+      <updated>1684816651712</updated>
+    </task>
+    <option name="localTasksCounter" value="809" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -552,7 +555,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Improve comment" />
     <MESSAGE value="Add a solution to problem 1046" />
     <MESSAGE value="Improve naming of variables" />
     <MESSAGE value="Update to Gradle 8.1.1 and adopt version catalog" />
@@ -577,7 +579,8 @@
     <MESSAGE value="Add a draft solution to 934&#10;&#10;- Require refactor&#10;- May supersede the existing solution" />
     <MESSAGE value="Add a solution to problem 347" />
     <MESSAGE value="Improve readability" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
+    <MESSAGE value="Add a solution to problem 703" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 703" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
