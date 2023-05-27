@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a draft solution to problem 2542" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a draft solution to problem 1406" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,7 +125,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem2542",
+    "git-widget-placeholder": "problem1406",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41494253",
@@ -152,13 +152,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00761" summary="Improve naming of variables">
-      <created>1682318376681</created>
-      <option name="number" value="00761" />
-      <option name="presentableId" value="LOCAL-00761" />
-      <option name="project" value="LOCAL" />
-      <updated>1682318376682</updated>
     </task>
     <task id="LOCAL-00762" summary="Improve readability">
       <created>1682318889111</created>
@@ -496,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684940824645</updated>
     </task>
-    <option name="localTasksCounter" value="810" />
+    <task id="LOCAL-00810" summary="Add a draft solution to problem 1406">
+      <created>1685176518192</created>
+      <option name="number" value="00810" />
+      <option name="presentableId" value="LOCAL-00810" />
+      <option name="project" value="LOCAL" />
+      <updated>1685176518192</updated>
+    </task>
+    <option name="localTasksCounter" value="811" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -552,7 +552,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Improve naming of variables" />
     <MESSAGE value="Update to Gradle 8.1.1 and adopt version catalog" />
     <MESSAGE value="Add a solution to problem 2336" />
     <MESSAGE value="Improve logic" />
@@ -577,7 +576,8 @@
     <MESSAGE value="Improve readability" />
     <MESSAGE value="Add a solution to problem 703" />
     <MESSAGE value="Add a draft solution to problem 2542" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a draft solution to problem 2542" />
+    <MESSAGE value="Add a draft solution to problem 1406" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a draft solution to problem 1406" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
