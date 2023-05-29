@@ -9,9 +9,9 @@ class ParkingSystem(big: Int, medium: Int, small: Int) {
     private val typeMedium = 2
     private val typeSmall = 3
 
-    private val bigSlot = CarSlot(limit = big)
-    private val mediumSlot = CarSlot(limit = medium)
-    private val smallSlot = CarSlot(limit = small)
+    private val bigSlots = CarSlot(limit = big)
+    private val mediumSlots = CarSlot(limit = medium)
+    private val smallSlots = CarSlot(limit = small)
 
     private class CarSlot(val limit: Int) {
 
@@ -33,9 +33,9 @@ class ParkingSystem(big: Int, medium: Int, small: Int) {
      */
     fun addCar(carType: Int): Boolean {
         return when (carType) {
-            typeBig -> bigSlot.addCar()
-            typeMedium -> mediumSlot.addCar()
-            typeSmall -> smallSlot.addCar()
+            typeBig -> bigSlots.addCar()
+            typeMedium -> mediumSlots.addCar()
+            typeSmall -> smallSlots.addCar()
             else -> throw NoWhenBranchMatchedException("Unknown car type.")
         }
     }
