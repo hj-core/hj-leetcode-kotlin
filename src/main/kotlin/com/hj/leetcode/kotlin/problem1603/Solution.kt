@@ -36,7 +36,7 @@ class ParkingSystem(big: Int, medium: Int, small: Int) {
             typeBig -> bigSlots.addCar()
             typeMedium -> mediumSlots.addCar()
             typeSmall -> smallSlots.addCar()
-            else -> throw NoWhenBranchMatchedException("Unknown car type.")
+            else -> throw IllegalArgumentException("Unknown car type.")
         }
     }
 }
