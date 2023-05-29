@@ -8,35 +8,42 @@ class Solution {
      * Time O(N) and Space O(1) where N is the size of stoneValue;
      */
     fun stoneGameIII(stoneValue: IntArray): String {
-        val (aliceScore, bobScore) = scores(stoneValue)
+        val (aliceScore, bobScore) = playerScores(stoneValue)
         return gameResult(aliceScore, bobScore)
     }
 
-    private fun scores(stoneValue: IntArray): List<Int> {
-        /* Store the three most recent stoneValue suffix results, initialize with the
-         * results of stoneValue[size:], stoneValue[size+1:] and stoneValue[size+2:].
+    private fun playerScores(stoneValue: IntArray): Pair<Int, Int> {
+        /* (By dynamic programming)
+         * Define the sub problem as the score of the first player when playing game with
+         * the suffix arrays of stoneValue.
+         *
+         * Only the three most recent sub results are stored, which is sufficient to solve
+         * the original problem.
          */
-        val suffixResults = ArrayDeque<Int>().apply {
+        val subProblemResults = ArrayDeque<Int>()
+
+        /* Add base cases that 0 score for suffix arrays stoneValue[size:], stoneValue[size+1:]
+         * and stoneValue[size+2:].
+         */
+        subProblemResults.apply {
             addLast(0)
             addLast(0)
             addLast(0)
         }
 
-        /* The goal is to compute the result of stoneValue[0:], which is the score of Alice.
-         * We solve the result of suffix in an order of decreasing suffix start.
-         */
+        // Solve the sub problem in descending order of the suffix array start index
         var suffixSum = 0
-        for (suffixStart in stoneValue.lastIndex downTo 0) {
-            suffixSum += stoneValue[suffixStart]
-            val suffixResult = suffixSum - suffixResults.min()!!
-            suffixResults.addFirst(suffixResult)
-            suffixResults.removeLast()
+        for (start in stoneValue.lastIndex downTo 0) {
+            suffixSum += stoneValue[start]
+            val currentResult = suffixSum - subProblemResults.min()!!
+            subProblemResults.addFirst(currentResult)
+            subProblemResults.removeLast()
         }
 
-        // Return the score of Alice and Bob
-        val aliceScore = suffixResults.first()
-        val bobScore = suffixSum - aliceScore
-        return listOf(aliceScore, bobScore)
+        // Compute and return the play scores
+        val firstPlayerScore = subProblemResults.first()
+        val secondPlayerScore = suffixSum - firstPlayerScore
+        return Pair(firstPlayerScore, secondPlayerScore)
     }
 
     private fun gameResult(aliceScore: Int, bobScore: Int): String = when {
