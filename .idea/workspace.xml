@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 1603">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1603/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1603/Solution.kt" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve naming" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,13 +152,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00761" summary="Improve naming of variables">
-      <created>1682318376681</created>
-      <option name="number" value="00761" />
-      <option name="presentableId" value="LOCAL-00761" />
-      <option name="project" value="LOCAL" />
-      <updated>1682318376682</updated>
     </task>
     <task id="LOCAL-00762" summary="Improve readability">
       <created>1682318889111</created>
@@ -498,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685329389466</updated>
     </task>
-    <option name="localTasksCounter" value="810" />
+    <task id="LOCAL-00810" summary="Improve naming">
+      <created>1685329750018</created>
+      <option name="number" value="00810" />
+      <option name="presentableId" value="LOCAL-00810" />
+      <option name="project" value="LOCAL" />
+      <updated>1685329750018</updated>
+    </task>
+    <option name="localTasksCounter" value="811" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -558,7 +556,6 @@
     <MESSAGE value="Update to Gradle 8.1.1 and adopt version catalog" />
     <MESSAGE value="Add a solution to problem 2336" />
     <MESSAGE value="Improve logic" />
-    <MESSAGE value="Improve naming" />
     <MESSAGE value="Add a solution to problem 258" />
     <MESSAGE value="Add a solution to problem 319" />
     <MESSAGE value="Add complexity analysis" />
@@ -579,7 +576,8 @@
     <MESSAGE value="Improve readability" />
     <MESSAGE value="Add a solution to problem 703" />
     <MESSAGE value="Add a solution to problem 1603" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 1603" />
+    <MESSAGE value="Improve naming" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve naming" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

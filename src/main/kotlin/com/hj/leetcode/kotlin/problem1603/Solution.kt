@@ -9,11 +9,11 @@ class ParkingSystem(big: Int, medium: Int, small: Int) {
     private val typeMedium = 2
     private val typeSmall = 3
 
-    private val bigSlots = CarSlot(limit = big)
-    private val mediumSlots = CarSlot(limit = medium)
-    private val smallSlots = CarSlot(limit = small)
+    private val bigSlots = CarSlots(limit = big)
+    private val mediumSlots = CarSlots(limit = medium)
+    private val smallSlots = CarSlots(limit = small)
 
-    private class CarSlot(val limit: Int) {
+    private class CarSlots(val limit: Int) {
 
         private var used: Int = 0
 
