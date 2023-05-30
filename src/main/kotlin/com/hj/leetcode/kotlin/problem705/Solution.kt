@@ -9,6 +9,7 @@ class MyHashSet() {
     private var table = Array(initialTableSize) { mutableListOf<Int>() }
     private var numElements = 0
 
+    // TODO : Judgement on the time and space complexity
     fun add(key: Int) {
         val slot = hashSlot(key)
         if (slot.contains(key)) {
@@ -49,6 +50,7 @@ class MyHashSet() {
         }
     }
 
+    // TODO : Judgement on the time and space complexity
     fun remove(key: Int) {
         val slot = hashSlot(key)
         if (slot.remove(key)) {
@@ -56,6 +58,7 @@ class MyHashSet() {
         }
     }
 
+    // TODO : Judgement on the time and space complexity
     fun contains(key: Int): Boolean {
         return key in hashSlot(key)
     }
