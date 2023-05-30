@@ -125,7 +125,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem1603",
+    "git-widget-placeholder": "problem705",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41494253",
@@ -152,27 +152,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00762" summary="Improve readability">
-      <created>1682318889111</created>
-      <option name="number" value="00762" />
-      <option name="presentableId" value="LOCAL-00762" />
-      <option name="project" value="LOCAL" />
-      <updated>1682318889111</updated>
-    </task>
-    <task id="LOCAL-00763" summary="Improve readability">
-      <created>1682319005383</created>
-      <option name="number" value="00763" />
-      <option name="presentableId" value="LOCAL-00763" />
-      <option name="project" value="LOCAL" />
-      <updated>1682319005384</updated>
-    </task>
-    <task id="LOCAL-00764" summary="Update to Gradle 8.1.1 and adopt version catalog">
-      <created>1682342100056</created>
-      <option name="number" value="00764" />
-      <option name="presentableId" value="LOCAL-00764" />
-      <option name="project" value="LOCAL" />
-      <updated>1682342100056</updated>
     </task>
     <task id="LOCAL-00765" summary="Add a solution to problem 2336">
       <created>1682407386152</created>
@@ -496,7 +475,28 @@
       <option name="project" value="LOCAL" />
       <updated>1685329750018</updated>
     </task>
-    <option name="localTasksCounter" value="811" />
+    <task id="LOCAL-00811" summary="Throw IllegalArgumentException for unknown carType">
+      <created>1685371782918</created>
+      <option name="number" value="00811" />
+      <option name="presentableId" value="LOCAL-00811" />
+      <option name="project" value="LOCAL" />
+      <updated>1685371782918</updated>
+    </task>
+    <task id="LOCAL-00812" summary="Add a solution to problem 705">
+      <created>1685435133391</created>
+      <option name="number" value="00812" />
+      <option name="presentableId" value="LOCAL-00812" />
+      <option name="project" value="LOCAL" />
+      <updated>1685435133392</updated>
+    </task>
+    <task id="LOCAL-00813" summary="Improve naming">
+      <created>1685436236224</created>
+      <option name="number" value="00813" />
+      <option name="presentableId" value="LOCAL-00813" />
+      <option name="project" value="LOCAL" />
+      <updated>1685436236224</updated>
+    </task>
+    <option name="localTasksCounter" value="814" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -533,27 +533,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="problem347" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Improve naming of variables" />
-    <MESSAGE value="Update to Gradle 8.1.1 and adopt version catalog" />
     <MESSAGE value="Add a solution to problem 2336" />
     <MESSAGE value="Improve logic" />
     <MESSAGE value="Add a solution to problem 258" />
@@ -576,6 +562,8 @@
     <MESSAGE value="Improve readability" />
     <MESSAGE value="Add a solution to problem 703" />
     <MESSAGE value="Add a solution to problem 1603" />
+    <MESSAGE value="Throw IllegalArgumentException for unknown carType" />
+    <MESSAGE value="Add a solution to problem 705" />
     <MESSAGE value="Improve naming" />
     <option name="LAST_COMMIT_MESSAGE" value="Improve naming" />
   </component>
