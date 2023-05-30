@@ -17,7 +17,7 @@ class MyHashSet() {
 
         slot.add(key)
         numElements++
-        migrateToLargerTableAsNeed()
+        migrateToLargerTableAsNeeded()
     }
 
     private fun hashSlot(key: Int): MutableList<Int> {
@@ -28,7 +28,7 @@ class MyHashSet() {
         return Math.floorMod(key, table.size)
     }
 
-    private fun migrateToLargerTableAsNeed() {
+    private fun migrateToLargerTableAsNeeded() {
         if (shouldMigrateToLargerTable()) {
             migrateToLargerTable()
         }
