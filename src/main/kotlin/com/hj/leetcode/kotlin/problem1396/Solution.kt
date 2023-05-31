@@ -35,11 +35,11 @@ class UndergroundSystem() {
      * Time O(N) and Space O(N);
      */
     fun checkOut(id: Int, stationName: String, t: Int) {
-        val previousInRecord = activeCheckIn[CustomerID(id)] ?: throw IllegalStateException()
+        val checkInRecord = activeCheckIn[CustomerID(id)] ?: throw IllegalStateException()
         activeCheckIn.remove(CustomerID(id))
 
-        val trip = Trip(previousInRecord.stationName, stationName)
-        val tripDuration = t - previousInRecord.timeStamp
+        val trip = Trip(checkInRecord.stationName, stationName)
+        val tripDuration = t - checkInRecord.timeStamp
         val oldSummary = tripTimeSummary[trip] ?: TimeSummary(0, 0)
         val newSummary = TimeSummary(oldSummary.totalTimes + tripDuration, oldSummary.numTrips + 1)
         tripTimeSummary[trip] = newSummary
