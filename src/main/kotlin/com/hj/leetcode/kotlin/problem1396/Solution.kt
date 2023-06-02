@@ -35,7 +35,8 @@ class UndergroundSystem() {
      * Time O(N) and Space O(N);
      */
     fun checkOut(id: Int, stationName: String, t: Int) {
-        val checkInRecord = activeCheckIn[CustomerID(id)] ?: throw IllegalStateException()
+        val checkInRecord = activeCheckIn[CustomerID(id)]
+            ?: throw IllegalStateException("The corresponding check in record is not found.")
         activeCheckIn.remove(CustomerID(id))
 
         val trip = Trip(checkInRecord.stationName, stationName)
