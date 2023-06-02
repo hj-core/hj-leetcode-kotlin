@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add an exception message for no check-in record match check-out" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 2101">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,7 +75,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem1091" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -125,7 +127,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "problem2101",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41494253",
@@ -152,20 +154,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00765" summary="Add a solution to problem 2336">
-      <created>1682407386152</created>
-      <option name="number" value="00765" />
-      <option name="presentableId" value="LOCAL-00765" />
-      <option name="project" value="LOCAL" />
-      <updated>1682407386152</updated>
-    </task>
-    <task id="LOCAL-00766" summary="Improve logic">
-      <created>1682432221855</created>
-      <option name="number" value="00766" />
-      <option name="presentableId" value="LOCAL-00766" />
-      <option name="project" value="LOCAL" />
-      <updated>1682432221855</updated>
     </task>
     <task id="LOCAL-00767" summary="Improve naming">
       <created>1682437337901</created>
@@ -496,7 +484,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685436236224</updated>
     </task>
-    <option name="localTasksCounter" value="814" />
+    <task id="LOCAL-00814" summary="Add a solution to problem 2101">
+      <created>1685716968470</created>
+      <option name="number" value="00814" />
+      <option name="presentableId" value="LOCAL-00814" />
+      <option name="project" value="LOCAL" />
+      <updated>1685716968470</updated>
+    </task>
+    <task id="LOCAL-00815" summary="Add a solution to problem 2101">
+      <created>1685717123292</created>
+      <option name="number" value="00815" />
+      <option name="presentableId" value="LOCAL-00815" />
+      <option name="project" value="LOCAL" />
+      <updated>1685717123292</updated>
+    </task>
+    <option name="localTasksCounter" value="816" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -540,7 +542,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add a solution to problem 2336" />
     <MESSAGE value="Improve logic" />
     <MESSAGE value="Add a solution to problem 258" />
     <MESSAGE value="Add a solution to problem 319" />
@@ -565,7 +566,8 @@
     <MESSAGE value="Throw IllegalArgumentException for unknown carType" />
     <MESSAGE value="Add a solution to problem 705" />
     <MESSAGE value="Improve naming" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve naming" />
+    <MESSAGE value="Add a solution to problem 2101" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 2101" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

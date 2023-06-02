@@ -58,8 +58,8 @@ class Solution {
         hasBeenDetonated[sourceBombIndex] = true
 
         var result = 1
-        val adjacentBombIndex = bombAdjacencyInIndex[sourceBombIndex]
-        for (index in adjacentBombIndex) {
+        val adjacentBombIndices = bombAdjacencyInIndex[sourceBombIndex]
+        for (index in adjacentBombIndices) {
             result += numDetonatedBombs(index, bombs, bombAdjacencyInIndex, hasBeenDetonated)
         }
         return result
