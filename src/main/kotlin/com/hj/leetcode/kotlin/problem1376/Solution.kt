@@ -9,54 +9,44 @@ class Solution {
      */
     fun numOfMinutes(n: Int, headID: Int, manager: IntArray, informTime: IntArray): Int {
         var result = 0
-        traverseOrganization(
-            headId = headID,
-            organization = organization(n, headID, manager),
-            informTime = informTime,
-            informedTime = 0
-        ) { informedTime ->
+        val cachedInformedTime = hashMapOf<Int, Int>() // entry = (employeeId, informedTime)
 
-            if (result < informedTime) {
-                result = informedTime
+        for (employeeId in 0 until n) {
+            if (isLeafEmployee(employeeId, informTime)) {
+                val informedTime =
+                    informedTime(employeeId, headID, manager, informTime, cachedInformedTime)
+                if (result < informedTime) {
+                    result = informedTime
+                }
             }
         }
         return result
     }
 
-    /**
-     * Return a list that its value at index i is the employee ids which are the subordinates
-     * of employee id i.
-     */
-    private fun organization(n: Int, headID: Int, manager: IntArray): List<List<Int>> {
-        val result = List(n) { mutableListOf<Int>() }
-        for ((id, managerId) in manager.withIndex()) {
-            if (id == headID) {
-                continue
-            }
-            result[managerId].add(id)
-        }
-        return result
+    private fun isLeafEmployee(employeeId: Int, informTime: IntArray): Boolean {
+        return informTime[employeeId] == 0
     }
 
-    private fun traverseOrganization(
-        headId: Int,
-        organization: List<List<Int>>,
+    private fun informedTime(
+        employeeId: Int,
+        headID: Int,
+        manager: IntArray,
         informTime: IntArray,
-        informedTime: Int,
-        onEachEmployee: (informedTime: Int) -> Unit
-    ) {
-        onEachEmployee(informedTime)
+        cachedResult: MutableMap<Int, Int>
+    ): Int {
 
-        val subordinates = organization[headId]
-        val subordinatesInformedTime = informedTime + informTime[headId]
-        for (subordinate in subordinates) {
-            traverseOrganization(
-                headId = subordinate,
-                organization = organization,
-                informTime = informTime,
-                informedTime = subordinatesInformedTime,
-                onEachEmployee = onEachEmployee
-            )
+        if (employeeId in cachedResult) {
+            return checkNotNull(cachedResult[employeeId])
         }
+
+        if (employeeId == headID) {
+            return 0
+        }
+
+        val managerId = manager[employeeId]
+        val result =
+            informTime[managerId] + informedTime(managerId, headID, manager, informTime, cachedResult)
+        cachedResult[employeeId] = result
+        return result
     }
 }
