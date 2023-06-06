@@ -11,17 +11,17 @@ class Solution {
         val min = arr.min()!!
         val max = arr.max()!!
 
-        val isNonIntDifference = (max - min) % (arr.size - 1) != 0
-        if (isNonIntDifference) {
+        val isNonIntCommonDifference = (max - min) % (arr.size - 1) != 0
+        if (isNonIntCommonDifference) {
             return false
         }
 
-        val difference = (max - min) / (arr.size - 1)
-        if (difference == 0) {
+        val commonDifference = (max - min) / (arr.size - 1)
+        if (commonDifference == 0) {
             return true
         }
 
-        return arr.all { (it - min) % difference == 0 } && arr.noDuplicates()
+        return arr.all { (it - min) % commonDifference == 0 } && arr.noDuplicates()
     }
 
     private fun IntArray.noDuplicates(): Boolean {
