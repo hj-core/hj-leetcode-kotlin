@@ -12,13 +12,16 @@ class Solution {
         require(index in 0 until n)
         require(maxSum >= n)
 
-        /* To maximize the value at the given index, we use a greedy approach where the value at
-         * each index i in the resulting array is calculated by subtracting the distance between
-         * the given index and i from the index value, with the resulting value constrained to be
-         * at least 1.
+        /* The idea is to form the resulting array using a greedy approach, where the value at
+         * each index i is calculated by subtracting the distance between index i and the given
+         * index from the value at the given index, with the resulting value constrained to be
+         * at least one.
+         *
+         * Since the sum of the resulting array is directly proportional to the value at the
+         * given index, we can perform a binary search to find the maximum value at the given
+         * index.
          */
 
-        // Use binary search to find the max value at index
         var minValue = 1
         var maxValue = maxSum
         while (minValue <= maxValue) {
