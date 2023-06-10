@@ -25,24 +25,24 @@ class Solution {
         var minValue = 1
         var maxValue = maxSum
         while (minValue <= maxValue) {
-            val midValue = (minValue + maxValue) ushr 1
-            val sum = sumGreedy(n, index, midValue)
+            val guessValue = (minValue + maxValue) ushr 1
+            val sum = sumGreedyArray(n, index, guessValue)
             when {
-                sum < maxSum -> minValue = midValue + 1
-                sum > maxSum -> maxValue = midValue - 1
-                else -> return midValue
+                sum < maxSum -> minValue = guessValue + 1
+                sum > maxSum -> maxValue = guessValue - 1
+                else -> return guessValue
             }
         }
         return maxValue
     }
 
-    private fun sumGreedy(n: Int, index: Int, indexValue: Int): Long {
-        return (sumGreedyUpToIndex(index, indexValue)
-                + sumGreedyFromIndex(n, index, indexValue)
+    private fun sumGreedyArray(n: Int, index: Int, indexValue: Int): Long {
+        return (sumGreedyArrayUpToIndex(index, indexValue)
+                + sumGreedyArrayFromIndex(n, index, indexValue)
                 - indexValue)
     }
 
-    private fun sumGreedyUpToIndex(index: Int, indexValue: Int): Long {
+    private fun sumGreedyArrayUpToIndex(index: Int, indexValue: Int): Long {
         require(index >= 0)
         require(indexValue >= 1)
 
@@ -56,7 +56,7 @@ class Solution {
         }
     }
 
-    private fun sumGreedyFromIndex(n: Int, index: Int, indexValue: Int): Long {
+    private fun sumGreedyArrayFromIndex(n: Int, index: Int, indexValue: Int): Long {
         require(index in 0 until n)
         require(indexValue >= 1)
 
