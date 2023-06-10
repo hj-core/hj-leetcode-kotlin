@@ -46,7 +46,9 @@ class Solution {
         require(index >= 0)
         require(indexValue >= 1)
 
-        val looseFirst = indexValue - index // value if it can be zero or negative
+        // First value of the resulting array if it can be zero or negative
+        val looseFirst = indexValue - index
+
         return if (looseFirst >= 1) {
             (looseFirst.toLong() + indexValue) * (index + 1) / 2
         } else {
@@ -58,7 +60,9 @@ class Solution {
         require(index in 0 until n)
         require(indexValue >= 1)
 
-        val looseLast = indexValue + index - (n - 1) // value if it can be zero or negative
+        // Last value of the resulting array if it can be zero or negative
+        val looseLast = indexValue + index - (n - 1)
+
         return if (looseLast >= 1) {
             (indexValue.toLong() + looseLast) * (n - index) / 2
         } else {
