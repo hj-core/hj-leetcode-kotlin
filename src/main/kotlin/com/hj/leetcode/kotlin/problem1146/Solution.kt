@@ -19,7 +19,7 @@ class SnapshotArray(length: Int) {
     }
 
     /* Complexity:
-     * Time O(N) and Space O(N) where N is the size of currentArray;
+     * Time O(N) and Space O(N) where N is the size of pendingChanges;
      */
     fun snap(): Int {
         latestSnapId++
