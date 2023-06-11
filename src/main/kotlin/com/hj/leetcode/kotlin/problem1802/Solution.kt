@@ -17,23 +17,23 @@ class Solution {
          * index from the value at the given index, with the resulting value constrained to be
          * at least one.
          *
-         * Since the sum of the resulting array is directly proportional to the value at the
-         * given index, we can perform a binary search to find the maximum value at the given
-         * index.
+         * Since the sum of the resulting array increases or decreases as the value at the given
+         * index increases or decreases, we can perform a binary search to find the maximum value
+         * at the given index.
          */
 
-        var minValue = 1
-        var maxValue = maxSum
-        while (minValue <= maxValue) {
-            val guessValue = (minValue + maxValue) ushr 1
+        var lowerBound = 1
+        var upperBound = maxSum
+        while (lowerBound <= upperBound) {
+            val guessValue = (lowerBound + upperBound) ushr 1
             val sum = sumGreedyArray(n, index, guessValue)
             when {
-                sum < maxSum -> minValue = guessValue + 1
-                sum > maxSum -> maxValue = guessValue - 1
+                sum < maxSum -> lowerBound = guessValue + 1
+                sum > maxSum -> upperBound = guessValue - 1
                 else -> return guessValue
             }
         }
-        return maxValue
+        return upperBound
     }
 
     private fun sumGreedyArray(n: Int, index: Int, indexValue: Int): Long {
