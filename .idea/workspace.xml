@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 1502">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem744/Solution.kt" afterDir="false" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1802/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1802/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,18 +124,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem744",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.41494253",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;problem1802&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.41494253&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\gaps-\Documents\GitHub\hj-leetcode-kotlin\src\main\kotlin\com\hj\leetcode\kotlin\medium" />
@@ -156,48 +156,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00770" summary="Add a solution to problem 319">
-      <created>1682569830025</created>
-      <option name="number" value="00770" />
-      <option name="presentableId" value="LOCAL-00770" />
-      <option name="project" value="LOCAL" />
-      <updated>1682569830025</updated>
-    </task>
-    <task id="LOCAL-00771" summary="Add a solution to problem 319">
-      <created>1682571890671</created>
-      <option name="number" value="00771" />
-      <option name="presentableId" value="LOCAL-00771" />
-      <option name="project" value="LOCAL" />
-      <updated>1682571890671</updated>
-    </task>
-    <task id="LOCAL-00772" summary="Add complexity analysis">
-      <created>1682572061643</created>
-      <option name="number" value="00772" />
-      <option name="presentableId" value="LOCAL-00772" />
-      <option name="project" value="LOCAL" />
-      <updated>1682572061643</updated>
-    </task>
-    <task id="LOCAL-00773" summary="Add a solution to problem 1822">
-      <created>1682997397239</created>
-      <option name="number" value="00773" />
-      <option name="presentableId" value="LOCAL-00773" />
-      <option name="project" value="LOCAL" />
-      <updated>1682997397239</updated>
-    </task>
-    <task id="LOCAL-00774" summary="Add a solution to problem 1456">
-      <created>1683255016206</created>
-      <option name="number" value="00774" />
-      <option name="presentableId" value="LOCAL-00774" />
-      <option name="project" value="LOCAL" />
-      <updated>1683255016206</updated>
-    </task>
-    <task id="LOCAL-00775" summary="Add a solution to problem 1456">
-      <created>1683255126705</created>
-      <option name="number" value="00775" />
-      <option name="presentableId" value="LOCAL-00775" />
-      <option name="project" value="LOCAL" />
-      <updated>1683255126705</updated>
     </task>
     <task id="LOCAL-00776" summary="Add a solution to problem 1456">
       <created>1683255141797</created>
@@ -500,7 +458,49 @@
       <option name="project" value="LOCAL" />
       <updated>1686022576256</updated>
     </task>
-    <option name="localTasksCounter" value="819" />
+    <task id="LOCAL-00819" summary="Add a solution to problem 1802">
+      <created>1686400919888</created>
+      <option name="number" value="00819" />
+      <option name="presentableId" value="LOCAL-00819" />
+      <option name="project" value="LOCAL" />
+      <updated>1686400919888</updated>
+    </task>
+    <task id="LOCAL-00820" summary="Add a solution to problem 1802">
+      <created>1686402096800</created>
+      <option name="number" value="00820" />
+      <option name="presentableId" value="LOCAL-00820" />
+      <option name="project" value="LOCAL" />
+      <updated>1686402096800</updated>
+    </task>
+    <task id="LOCAL-00821" summary="Improve comment">
+      <created>1686403411190</created>
+      <option name="number" value="00821" />
+      <option name="presentableId" value="LOCAL-00821" />
+      <option name="project" value="LOCAL" />
+      <updated>1686403411191</updated>
+    </task>
+    <task id="LOCAL-00822" summary="Improve comment">
+      <created>1686403752370</created>
+      <option name="number" value="00822" />
+      <option name="presentableId" value="LOCAL-00822" />
+      <option name="project" value="LOCAL" />
+      <updated>1686403752370</updated>
+    </task>
+    <task id="LOCAL-00823" summary="Improve readability">
+      <created>1686404028366</created>
+      <option name="number" value="00823" />
+      <option name="presentableId" value="LOCAL-00823" />
+      <option name="project" value="LOCAL" />
+      <updated>1686404028366</updated>
+    </task>
+    <task id="LOCAL-00824" summary="Improve readability">
+      <created>1686404104240</created>
+      <option name="number" value="00824" />
+      <option name="presentableId" value="LOCAL-00824" />
+      <option name="project" value="LOCAL" />
+      <updated>1686404104240</updated>
+    </task>
+    <option name="localTasksCounter" value="825" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -544,8 +544,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add complexity analysis" />
-    <MESSAGE value="Add a solution to problem 1822" />
     <MESSAGE value="Add a solution to problem 1456" />
     <MESSAGE value="Refactor the solution" />
     <MESSAGE value="Add a solution to problem 59" />
@@ -559,7 +557,6 @@
     <MESSAGE value="Add a solution to problem 785" />
     <MESSAGE value="Add a draft solution to 934&#10;&#10;- Require refactor&#10;- May supersede the existing solution" />
     <MESSAGE value="Add a solution to problem 347" />
-    <MESSAGE value="Improve readability" />
     <MESSAGE value="Add a solution to problem 703" />
     <MESSAGE value="Add a solution to problem 1603" />
     <MESSAGE value="Throw IllegalArgumentException for unknown carType" />
@@ -569,7 +566,10 @@
     <MESSAGE value="Revise the whole solution" />
     <MESSAGE value="Add a solution to problem 1232" />
     <MESSAGE value="Add a solution to problem 1502" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 1502" />
+    <MESSAGE value="Add a solution to problem 1802" />
+    <MESSAGE value="Improve comment" />
+    <MESSAGE value="Improve readability" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
