@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 1146" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Correct inconsistent name in comment">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -153,27 +155,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00780" summary="Refactor the solution">
-      <created>1683616146793</created>
-      <option name="number" value="00780" />
-      <option name="presentableId" value="LOCAL-00780" />
-      <option name="project" value="LOCAL" />
-      <updated>1683616146793</updated>
-    </task>
-    <task id="LOCAL-00781" summary="Refactor the solution">
-      <created>1683616277311</created>
-      <option name="number" value="00781" />
-      <option name="presentableId" value="LOCAL-00781" />
-      <option name="project" value="LOCAL" />
-      <updated>1683616277311</updated>
-    </task>
-    <task id="LOCAL-00782" summary="Refactor the solution">
-      <created>1683616335496</created>
-      <option name="number" value="00782" />
-      <option name="presentableId" value="LOCAL-00782" />
-      <option name="project" value="LOCAL" />
-      <updated>1683616335496</updated>
     </task>
     <task id="LOCAL-00783" summary="Refactor the solution">
       <created>1683616463549</created>
@@ -497,7 +478,28 @@
       <option name="project" value="LOCAL" />
       <updated>1686469673461</updated>
     </task>
-    <option name="localTasksCounter" value="829" />
+    <task id="LOCAL-00829" summary="Add a solution to problem 1146">
+      <created>1686469784099</created>
+      <option name="number" value="00829" />
+      <option name="presentableId" value="LOCAL-00829" />
+      <option name="project" value="LOCAL" />
+      <updated>1686469784099</updated>
+    </task>
+    <task id="LOCAL-00830" summary="Add a solution to problem 1146">
+      <created>1686469839242</created>
+      <option name="number" value="00830" />
+      <option name="presentableId" value="LOCAL-00830" />
+      <option name="project" value="LOCAL" />
+      <updated>1686469839242</updated>
+    </task>
+    <task id="LOCAL-00831" summary="Correct inconsistent name in comment">
+      <created>1686469944921</created>
+      <option name="number" value="00831" />
+      <option name="presentableId" value="LOCAL-00831" />
+      <option name="project" value="LOCAL" />
+      <updated>1686469944921</updated>
+    </task>
+    <option name="localTasksCounter" value="832" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -541,7 +543,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactor the solution" />
     <MESSAGE value="Add a solution to problem 59" />
     <MESSAGE value="Add a solution to problem 2466" />
     <MESSAGE value="Improve naming of function" />
@@ -566,7 +567,8 @@
     <MESSAGE value="Improve comment" />
     <MESSAGE value="Improve readability" />
     <MESSAGE value="Add a solution to problem 1146" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 1146" />
+    <MESSAGE value="Correct inconsistent name in comment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correct inconsistent name in comment" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

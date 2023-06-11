@@ -42,7 +42,7 @@ class SnapshotArray(length: Int) {
     }
 
     private fun equivalentRecord(index: Int, snapId: Int): Record {
-        check(snapId >= snapshots[index][0].snapId)
+        require(snapId >= snapshots[index][0].snapId)
 
         if (snapId >= snapshots[index].last().snapId) {
             return snapshots[index].last()
