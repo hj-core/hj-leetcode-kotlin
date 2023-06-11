@@ -34,7 +34,7 @@ class SnapshotArray(length: Int) {
     }
 
     /* Complexity:
-     * Time O(Log(snap_id)) and Space O(1);
+     * Time O(Log(latestSnapId)) and Space O(1);
      */
     fun get(index: Int, snap_id: Int): Int {
         require(snap_id in 0..latestSnapId)
