@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Correct time complexity of get" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 530">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,7 +75,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem1146" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -126,7 +128,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "problem530",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41494253",
@@ -153,20 +155,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00784" summary="Refactor the solution">
-      <created>1683616708330</created>
-      <option name="number" value="00784" />
-      <option name="presentableId" value="LOCAL-00784" />
-      <option name="project" value="LOCAL" />
-      <updated>1683616708330</updated>
-    </task>
-    <task id="LOCAL-00785" summary="Add a solution to problem 59">
-      <created>1683685900627</created>
-      <option name="number" value="00785" />
-      <option name="presentableId" value="LOCAL-00785" />
-      <option name="project" value="LOCAL" />
-      <updated>1683685900627</updated>
     </task>
     <task id="LOCAL-00786" summary="Add a solution to problem 59">
       <created>1683686054131</created>
@@ -497,7 +485,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686471015001</updated>
     </task>
-    <option name="localTasksCounter" value="833" />
+    <task id="LOCAL-00833" summary="Add a solution to problem 2352">
+      <created>1686627959005</created>
+      <option name="number" value="00833" />
+      <option name="presentableId" value="LOCAL-00833" />
+      <option name="project" value="LOCAL" />
+      <updated>1686627959005</updated>
+    </task>
+    <task id="LOCAL-00834" summary="Add a solution to problem 530">
+      <created>1686710518655</created>
+      <option name="number" value="00834" />
+      <option name="presentableId" value="LOCAL-00834" />
+      <option name="project" value="LOCAL" />
+      <updated>1686710518655</updated>
+    </task>
+    <option name="localTasksCounter" value="835" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -541,8 +543,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add a solution to problem 2466" />
-    <MESSAGE value="Improve naming of function" />
     <MESSAGE value="Add a solution to problem 1721" />
     <MESSAGE value="Fix solution&#10;&#10;- Previous solution swaps the two nodes. However, the problem explicitly asks to swap their values" />
     <MESSAGE value="Add a solution to problem 24" />
@@ -566,7 +566,9 @@
     <MESSAGE value="Add a solution to problem 1146" />
     <MESSAGE value="Correct inconsistent name in comment" />
     <MESSAGE value="Use require to validate argument" />
-    <option name="LAST_COMMIT_MESSAGE" value="Use require to validate argument" />
+    <MESSAGE value="Add a solution to problem 2352" />
+    <MESSAGE value="Add a solution to problem 530" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 530" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
