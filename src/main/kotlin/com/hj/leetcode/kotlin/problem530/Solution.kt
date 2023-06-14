@@ -14,7 +14,7 @@ class Solution {
         var result = initialGuessResult(root)
         var previousValue: Int? = null
 
-        root.inOrderTraversal { nodeValue ->
+        root.inorderTraversal { nodeValue ->
             previousValue?.let {
                 result = minOf(result, nodeValue - it)
             }
@@ -29,9 +29,9 @@ class Solution {
         else -> throw IllegalArgumentException()
     }
 
-    private fun TreeNode.inOrderTraversal(onEachNode: (value: Int) -> Unit) {
-        left?.inOrderTraversal(onEachNode)
+    private fun TreeNode.inorderTraversal(onEachNode: (value: Int) -> Unit) {
+        left?.inorderTraversal(onEachNode)
         onEachNode(`val`)
-        right?.inOrderTraversal(onEachNode)
+        right?.inorderTraversal(onEachNode)
     }
 }
