@@ -11,10 +11,13 @@ class Solution {
      */
     fun maxLevelSum(root: TreeNode?): Int {
         checkNotNull(root)
-        val levelSums = levelSums(root)
-        val maxLevelSum = levelSums.values.max()!!
+        return minLevelHavingMaxSum(levelSums(root))
+    }
+
+    private fun minLevelHavingMaxSum(levelSums: Map<Int, Int>): Int {
+        val maxSum = levelSums.values.max()!!
         return levelSums
-            .filter { it.value == maxLevelSum }
+            .filter { it.value == maxSum }
             .keys
             .min()!!
     }
