@@ -16,10 +16,13 @@ class Solution {
 
     private fun minLevelHavingMaxSum(levelSums: Map<Int, Int>): Int {
         val maxSum = levelSums.values.max()!!
-        return levelSums
-            .filter { it.value == maxSum }
-            .keys
-            .min()!!
+        var result: Int? = null
+        for ((level, sum) in levelSums) {
+            if (sum == maxSum) {
+                result = minOf(level, (result ?: level))
+            }
+        }
+        return checkNotNull(result)
     }
 
     private fun levelSums(root: TreeNode): Map<Int, Int> {
