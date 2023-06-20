@@ -23,16 +23,20 @@ class Solution {
         // Apply sliding window technique
         val windowSize = k * 2 + 1
         var windowSum = nums.sum(0 until windowSize)
-        result[k] = (windowSum / windowSize).toInt()
+        result[k] = quotient(windowSum, windowSize)
 
         for (centerIndex in (k + 1) until (nums.size - k)) {
             windowSum = windowSum - nums[centerIndex - k - 1] + nums[centerIndex + k]
-            result[centerIndex] = (windowSum / windowSize).toInt()
+            result[centerIndex] = quotient(windowSum, windowSize)
         }
         return result
     }
 
     private fun IntArray.sum(indexRange: IntRange): Long {
         return indexRange.fold(0L) { acc: Long, index: Int -> acc + this[index] }
+    }
+
+    private fun quotient(dividend: Long, divisor: Int): Int {
+        return (dividend / divisor).toInt()
     }
 }
