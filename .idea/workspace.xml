@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1161/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1161/Solution.kt" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 2090" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,18 +121,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;problem1161&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.41494253&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "problem2090",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.41494253",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\gaps-\Documents\GitHub\hj-leetcode-kotlin\src\main\kotlin\com\hj\leetcode\kotlin\medium" />
@@ -156,27 +153,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
-    </task>
-    <task id="LOCAL-00788" summary="Add a solution to problem 2466">
-      <created>1683995279905</created>
-      <option name="number" value="00788" />
-      <option name="presentableId" value="LOCAL-00788" />
-      <option name="project" value="LOCAL" />
-      <updated>1683995279905</updated>
-    </task>
-    <task id="LOCAL-00789" summary="Improve naming of function">
-      <created>1684031204440</created>
-      <option name="number" value="00789" />
-      <option name="presentableId" value="LOCAL-00789" />
-      <option name="project" value="LOCAL" />
-      <updated>1684031204441</updated>
-    </task>
-    <task id="LOCAL-00790" summary="Add a solution to problem 1721">
-      <created>1684158102756</created>
-      <option name="number" value="00790" />
-      <option name="presentableId" value="LOCAL-00790" />
-      <option name="project" value="LOCAL" />
-      <updated>1684158102757</updated>
     </task>
     <task id="LOCAL-00791" summary="Fix solution&#10;&#10;- Previous solution swaps the two nodes. However, the problem explicitly asks to swap their values">
       <created>1684159957702</created>
@@ -500,7 +476,28 @@
       <option name="project" value="LOCAL" />
       <updated>1686801220036</updated>
     </task>
-    <option name="localTasksCounter" value="837" />
+    <task id="LOCAL-00837" summary="Add a solution to problem 1732">
+      <created>1687157299855</created>
+      <option name="number" value="00837" />
+      <option name="presentableId" value="LOCAL-00837" />
+      <option name="project" value="LOCAL" />
+      <updated>1687157299855</updated>
+    </task>
+    <task id="LOCAL-00838" summary="Add a solution to problem 2090">
+      <created>1687234055254</created>
+      <option name="number" value="00838" />
+      <option name="presentableId" value="LOCAL-00838" />
+      <option name="project" value="LOCAL" />
+      <updated>1687234055254</updated>
+    </task>
+    <task id="LOCAL-00839" summary="Add a solution to problem 2090">
+      <created>1687234982646</created>
+      <option name="number" value="00839" />
+      <option name="presentableId" value="LOCAL-00839" />
+      <option name="project" value="LOCAL" />
+      <updated>1687234982646</updated>
+    </task>
+    <option name="localTasksCounter" value="840" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -544,8 +541,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix solution&#10;&#10;- Previous solution swaps the two nodes. However, the problem explicitly asks to swap their values" />
-    <MESSAGE value="Add a solution to problem 24" />
     <MESSAGE value="Add a solution to problem 2130" />
     <MESSAGE value="Add a solution to problem 1557" />
     <MESSAGE value="Add a solution to problem 785" />
@@ -569,7 +564,9 @@
     <MESSAGE value="Add a solution to problem 530" />
     <MESSAGE value="Add a solution to problem 1161" />
     <MESSAGE value="Improve readability" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
+    <MESSAGE value="Add a solution to problem 1732" />
+    <MESSAGE value="Add a solution to problem 2090" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 2090" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
