@@ -15,18 +15,15 @@ class Solution {
         var result = 0
 
         for (endValue in nums) {
-            val endValueSubsequences = hashMapOf<Int, Int>() // entry = (commonDifference, length)
+            val subsequences = hashMapOf<Int, Int>() // entry = (commonDifference, length)
 
             for (existingEndValue in dp.keys) {
                 val commonDifference = endValue - existingEndValue
-                val length = dp[existingEndValue]
-                    ?.get(commonDifference)
-                    ?.let { it + 1 }
-                    ?: 2
-                endValueSubsequences[commonDifference] = length
+                val length = 1 + (dp[existingEndValue]?.get(commonDifference) ?: 1)
+                subsequences[commonDifference] = length
                 result = maxOf(result, length)
             }
-            dp[endValue] = endValueSubsequences
+            dp[endValue] = subsequences
         }
         return result
     }
