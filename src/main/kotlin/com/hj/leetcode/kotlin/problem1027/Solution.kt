@@ -18,6 +18,9 @@ class Solution {
             val subsequences = hashMapOf<Int, Int>() // entry = (commonDifference, length)
 
             for (existingEndValue in dp.keys) {
+                /* Form/extend an arithmetic subsequence using existingEndValue as the
+                 * second-to-last value;
+                 */
                 val commonDifference = endValue - existingEndValue
                 val length = 1 + (dp[existingEndValue]?.get(commonDifference) ?: 1)
                 subsequences[commonDifference] = length
