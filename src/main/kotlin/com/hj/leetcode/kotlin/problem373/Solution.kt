@@ -10,7 +10,7 @@ class Solution {
      * Time O(kLogk) and Space O(k);
      */
     fun kSmallestPairs(nums1: IntArray, nums2: IntArray, k: Int): List<List<Int>> {
-        // pq of pair(index1, index2) where the values are compared by nums1[index1] + nums2[index2]
+        // pq of pair(index1, index2) where the pairs are compared by nums1[index1] + nums2[index2]
         val pq = PriorityQueue<Pair<Int, Int>>(compareBy { nums1[it.first] + nums2[it.second] })
         val result = mutableListOf<List<Int>>()
         pq.offer(Pair(0, 0))
