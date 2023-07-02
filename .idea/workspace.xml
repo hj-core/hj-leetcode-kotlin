@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 373" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 2305" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,7 +126,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem373",
+    "git-widget-placeholder": "problem2305",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41494253",
@@ -497,7 +497,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="846" />
+    <option name="localTasksCounter" value="847" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -553,7 +553,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add a draft solution to 934&#10;&#10;- Require refactor&#10;- May supersede the existing solution" />
     <MESSAGE value="Add a solution to problem 347" />
     <MESSAGE value="Add a solution to problem 703" />
     <MESSAGE value="Add a solution to problem 1603" />
@@ -578,7 +577,8 @@
     <MESSAGE value="Improve readability" />
     <MESSAGE value="Add a draft solution to problem 2462&#10;&#10;- There are different levels of abstractions in the main function and require refactor" />
     <MESSAGE value="Add a solution to problem 373" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 373" />
+    <MESSAGE value="Add a solution to problem 2305" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 2305" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
