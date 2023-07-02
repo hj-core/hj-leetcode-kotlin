@@ -9,7 +9,7 @@ class Solution {
      */
     fun distributeCookies(cookies: IntArray, k: Int): Int {
         var result = cookies.sum()
-        dfs(0, IntArray(k), cookies) { distribution ->
+        dfs(cookies, 0, IntArray(k)) { distribution ->
             val unfairness = distribution.max()!!
             result = minOf(result, unfairness)
         }
@@ -17,20 +17,20 @@ class Solution {
     }
 
     private fun dfs(
-        cookieIndex: Int,
-        distribution: IntArray,
         cookies: IntArray,
+        nextCookieIndex: Int,
+        distribution: IntArray,
         onDistributionComplete: (distribution: IntArray) -> Unit
     ) {
-        if (cookieIndex >= cookies.size) {
+        if (nextCookieIndex >= cookies.size) {
             onDistributionComplete(distribution)
             return
         }
 
         for (index in distribution.indices) {
-            distribution[index] += cookies[cookieIndex]
-            dfs(cookieIndex + 1, distribution, cookies, onDistributionComplete)
-            distribution[index] -= cookies[cookieIndex]
+            distribution[index] += cookies[nextCookieIndex]
+            dfs(cookies, nextCookieIndex + 1, distribution, onDistributionComplete)
+            distribution[index] -= cookies[nextCookieIndex]
         }
     }
 }
