@@ -18,9 +18,9 @@ class Solution {
             .take(3)
             .toList()
 
-        return when {
-            firstThreeDifferences.isEmpty() -> s.hasRepetition()
-            firstThreeDifferences.size == 2 -> {
+        return when (firstThreeDifferences.size) {
+            0 -> s.hasRepetition()
+            2 -> {
                 val diff1 = firstThreeDifferences[0]
                 val diff2 = firstThreeDifferences[1]
                 diff1.first == diff2.second && diff1.second == diff2.first
