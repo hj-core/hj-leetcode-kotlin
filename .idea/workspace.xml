@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 859">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem859/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem859/Solution.kt" afterDir="false" />
     </list>
@@ -500,7 +500,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="848" />
+    <option name="localTasksCounter" value="849" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -564,12 +564,12 @@
     <MESSAGE value="Add a solution to problem 1732" />
     <MESSAGE value="Add a solution to problem 2090" />
     <MESSAGE value="Add a solution to problem 1027" />
-    <MESSAGE value="Improve readability" />
     <MESSAGE value="Add a draft solution to problem 2462&#10;&#10;- There are different levels of abstractions in the main function and require refactor" />
     <MESSAGE value="Add a solution to problem 373" />
     <MESSAGE value="Add a solution to problem 2305" />
     <MESSAGE value="Add a solution to problem 859" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 859" />
+    <MESSAGE value="Improve readability" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
