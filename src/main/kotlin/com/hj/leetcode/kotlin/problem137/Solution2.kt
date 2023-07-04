@@ -8,11 +8,18 @@ class Solution2 {
      * Time O(N) and Space O(1) where N is the size of nums;
      */
     fun singleNumber(nums: IntArray): Int {
-        /* The core of this algorithm is still to find the single number through the frequency of each bit.
-         * However, it uses two integers to track the frequencies. Take nth bit as example:
-         *   | nth bit freq % 3  | 0 | 1 | 2 |
-         *   | nth bit of once   | 0 | 1 | 0 |
-         *   | nth bit of twice  | 0 | 0 | 1 |
+        /* The idea is to represent each number in binary, and each bit of the single number is
+         * one iff the total number of ones at that bit modulo three equals one.
+         *
+         * While computing the number of ones modulo three at each bit,
+         * the accumulated value is represented by the bit values of two integers as state, and
+         * proper bitwise operation is conceived to handle the state transition.
+         *
+         * Take nth bit as example:
+         *   | totalOnes % 3 | state as (bit_int1, bit_int2)
+         *   |       0       |        (0, 0)
+         *   |       1       |        (1, 0)
+         *   |       2       |        (0, 1)
          */
         var once = 0
         var twice = 0
