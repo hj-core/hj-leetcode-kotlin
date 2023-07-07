@@ -9,9 +9,9 @@ class Solution {
      */
     fun maxConsecutiveAnswers(answerKey: String, k: Int): Int {
 
-        /* Find the earliest starting index of the sub-array ending at each index that
-         * can form a consecutive answer after performing the operation at most k times.
-         * The result will be the maximum length among those sub-arrays.
+        /* For each index, find the earliest starting index of the sub-array ending at that index
+         * that can form a consecutive answer after performing the operation at most k times.
+         * The result will be the length of the longest sub-array.
          */
         var result = 0
         var start = 0
