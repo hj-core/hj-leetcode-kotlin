@@ -28,7 +28,7 @@ class Solution {
         }
 
         val courses = 0 until numCourses
-        return !courses.any { hasCyclicPrerequisites(it, hashSetOf()) }
+        return courses.none { hasCyclicPrerequisites(it, hashSetOf()) }
     }
 
     private fun adjacencyList(prerequisites: Array<IntArray>): Map<Int, List<Int>> {
