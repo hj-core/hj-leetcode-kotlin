@@ -10,17 +10,17 @@ class Solution {
      * Time O(M+N) and Space O(M+N) where M and N are the number of nodes in l1 and l2;
      */
     fun addTwoNumbers(l1: ListNode?, l2: ListNode?): ListNode? {
-        val digits1 = l1.values()
-        val digits2 = l2.values()
+        val l1Stack = Stack(l1)
+        val l2Stack = Stack(l2)
         var result: ListNode? = null
         var carry = 0
-        repeat(maxOf(digits1.size, digits2.size)) {
-            val sum = (carry
-                    + (digits1.removeLastOrNull() ?: 0)
-                    + (digits2.removeLastOrNull() ?: 0))
-            val digit = if (sum < 10) sum else sum - 10
-            result = result.prepended(digit)
-            carry = if (sum >= 10) 1 else 0
+        repeat(maxOf(l1Stack.size, l2Stack.size)) {
+            val sumDigits = (carry
+                    + (l1Stack.removeLastOrNull()?.`val` ?: 0)
+                    + (l2Stack.removeLastOrNull()?.`val` ?: 0))
+            val newDigit = if (sumDigits < 10) sumDigits else sumDigits - 10
+            result = result.prepended(newDigit)
+            carry = if (sumDigits >= 10) 1 else 0
         }
         if (carry == 1) {
             result = result.prepended(1)
@@ -28,11 +28,11 @@ class Solution {
         return result
     }
 
-    private fun ListNode?.values(): MutableList<Int> {
-        val result = mutableListOf<Int>()
-        var currentNode = this
+    private fun Stack(listNode: ListNode?): MutableList<ListNode> {
+        val result = mutableListOf<ListNode>()
+        var currentNode = listNode
         while (currentNode != null) {
-            result.add(currentNode.`val`)
+            result.add(currentNode)
             currentNode = currentNode.next
         }
         return result
