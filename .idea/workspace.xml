@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 1579">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1579/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1579/Solution.kt" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Encapsulate numUnions of UnionFind" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -496,7 +493,7 @@
       <option name="project" value="LOCAL" />
       <updated>1682938742342</updated>
     </task>
-    <option name="localTasksCounter" value="775" />
+    <option name="localTasksCounter" value="777" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -552,8 +549,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactor for clearer logic" />
-    <MESSAGE value="Skip unnecessary comparison" />
     <MESSAGE value="Add a solution to problem 20" />
     <MESSAGE value="Add a solution to problem 71" />
     <MESSAGE value="Introduce segments() for consistent level of abstraction" />
@@ -577,7 +572,9 @@
     <MESSAGE value="Add complexity analysis" />
     <MESSAGE value="Add a solution to problem 1491" />
     <MESSAGE value="Add a solution to problem 1579" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 1579" />
+    <MESSAGE value="Improve UnionFind with path compression" />
+    <MESSAGE value="Encapsulate numUnions of UnionFind" />
+    <option name="LAST_COMMIT_MESSAGE" value="Encapsulate numUnions of UnionFind" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

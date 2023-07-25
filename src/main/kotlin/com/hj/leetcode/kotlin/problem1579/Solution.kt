@@ -58,7 +58,7 @@ class Solution {
         /* Check the number of connected components in Alice. If it is not one, then Alice cannot fully
          * traverse the graph and should return -1
          */
-        val aliceNumComponents = alice.numUnions - 1 // Reduce 1 for the unused label 0
+        val aliceNumComponents = alice.numUnions() - 1 // Reduce 1 for the unused label 0
         if (aliceNumComponents != 1) {
             return -1
         }
@@ -80,7 +80,7 @@ class Solution {
         /* Check the number of connected components in Bob. If it is not one, then Bob cannot fully
          * traverse the graph and should return -1
          */
-        val bobNumComponents = bob.numUnions - 1 // Reduce 1 for the unused label 0
+        val bobNumComponents = bob.numUnions() - 1 // Reduce 1 for the unused label 0
         if (bobNumComponents != 1) {
             return -1
         }
@@ -93,9 +93,7 @@ class Solution {
 
         private val parent = IntArray(size) { it }
         private val rank = IntArray(size)
-
-        var numUnions = size
-            private set
+        private var numUnions = size
 
         /**
          * Union the two elements.
@@ -117,7 +115,7 @@ class Solution {
                     rank[aRoot]++
                 }
             }
-            numUnions--
+            decreaseNumUnions()
             return true
         }
 
@@ -126,6 +124,12 @@ class Solution {
                 parent[node] = find(parent[node])
             }
             return parent[node]
+        }
+
+        fun numUnions(): Int = numUnions
+
+        private fun decreaseNumUnions() {
+            numUnions--
         }
     }
 }
