@@ -105,8 +105,7 @@ class Solution {
             val aRoot = find(a)
             val bRoot = find(b)
 
-            val inSameUnion = aRoot == bRoot
-            if (inSameUnion) {
+            if (aRoot == bRoot) {
                 return false
             }
 
@@ -122,8 +121,11 @@ class Solution {
             return true
         }
 
-        private tailrec fun find(node: Int): Int {
-            return if (parent[node] == node) node else find(parent[node])
+        private fun find(node: Int): Int {
+            if (parent[node] != node) {
+                parent[node] = find(parent[node])
+            }
+            return parent[node]
         }
     }
 }
