@@ -5,6 +5,7 @@ package com.hj.leetcode.kotlin.problem1870
  */
 class Solution {
 
+    private val minPossibleSpeed = 1
     private val maxPossibleSpeed = 10_000_000
     private val valueIfCanNotOnTime = -1
 
@@ -16,7 +17,7 @@ class Solution {
             return valueIfCanNotOnTime
         }
 
-        var lowerBound = 1
+        var lowerBound = minPossibleSpeed
         var upperBound = maxPossibleSpeed
 
         while (lowerBound < upperBound) {

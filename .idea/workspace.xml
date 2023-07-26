@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 59">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1870/Solution.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 1870" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -504,7 +500,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="863" />
+    <option name="localTasksCounter" value="867" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -548,7 +544,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add a solution to problem 2101" />
     <MESSAGE value="Revise the whole solution" />
     <MESSAGE value="Add a solution to problem 1232" />
     <MESSAGE value="Add a solution to problem 1502" />
@@ -573,7 +568,8 @@
     <MESSAGE value="Add a solution to problem 207" />
     <MESSAGE value="Add a solution to problem 445" />
     <MESSAGE value="Add a DRAFT solution to problem 673" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a DRAFT solution to problem 673" />
+    <MESSAGE value="Add a solution to problem 1870" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 1870" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
