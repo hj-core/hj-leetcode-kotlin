@@ -22,8 +22,7 @@ class Solution {
 
         while (lowerBound < upperBound) {
             val mid = lowerBound + (upperBound - lowerBound) / 2
-            val travelTime = travelTime(dist, mid)
-            if (hour < travelTime) {
+            if (hour < travelTime(dist, mid)) {
                 lowerBound = mid + 1
             } else {
                 upperBound = mid
