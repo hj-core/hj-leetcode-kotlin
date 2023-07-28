@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem486
  */
 class Solution {
     /* Complexity:
-     * Time O(N^2) and Space O(N) where N is the size of nums;
+     * Time O(N^2) and Space O(N^2) where N is the size of nums;
      */
     fun PredictTheWinner(nums: IntArray): Boolean {
         if (nums.size.isEven()) {
