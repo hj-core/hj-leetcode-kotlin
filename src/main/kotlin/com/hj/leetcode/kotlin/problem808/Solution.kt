@@ -5,8 +5,9 @@ package com.hj.leetcode.kotlin.problem808
  */
 class Solution {
     /* Complexity:
-     * Time O(1) and Space O(1) since the probability will reach 1.0-tolerance when n is
-     * greater than certain value n0;
+     * Time O(1) and Space O(1) because the number of recursions is bounded by O(n0^2),
+     * where n0 is a constant much smaller than the upper bound of n, and for n is not
+     * less than n0, the probability is not less than 1-tolerance;
      */
     fun soupServings(n: Int): Double {
         val memoization = hashMapOf<RemainingSoup, Double>()
