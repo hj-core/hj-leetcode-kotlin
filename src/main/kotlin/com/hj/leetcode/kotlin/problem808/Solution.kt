@@ -10,21 +10,21 @@ class Solution {
      * less than n0, the probability is not less than 1-tolerance;
      */
     fun soupServings(n: Int): Double {
-        val memoization = hashMapOf<RemainingSoup, Double>()
+        val memoization = hashMapOf<RemainingSoupMl, Double>()
         val tolerance = 1e-5
         val unitServeMl = 25
         for (amount in 0..n step unitServeMl) {
-            if (probabilityAsked(RemainingSoup(amount, amount), memoization) > 1 - tolerance) {
+            if (probabilityAsked(RemainingSoupMl(amount, amount), memoization) > 1 - tolerance) {
                 return 1.0
             }
         }
-        return probabilityAsked(RemainingSoup(n, n), memoization)
+        return probabilityAsked(RemainingSoupMl(n, n), memoization)
     }
 
     private fun probabilityAsked(
-        remainingSoup: RemainingSoup,
-        memoization: MutableMap<RemainingSoup, Double> = hashMapOf()
-    ): Double = with(remainingSoup) {
+        remainingSoupMl: RemainingSoupMl,
+        memoization: MutableMap<RemainingSoupMl, Double> = hashMapOf()
+    ): Double = with(remainingSoupMl) {
         if (this in memoization) {
             return checkNotNull(memoization[this])
         }
@@ -35,19 +35,19 @@ class Solution {
             return if (typeB <= 0) 0.5 else 1.0
         }
 
-        val result = 0.25 * (probabilityAsked(remainingSoup.afterOperation1(), memoization)
-                + probabilityAsked(remainingSoup.afterOperation2(), memoization)
-                + probabilityAsked(remainingSoup.afterOperation3(), memoization)
-                + probabilityAsked(remainingSoup.afterOperation4(), memoization))
-        memoization[remainingSoup] = result
+        val result = 0.25 * (probabilityAsked(remainingSoupMl.afterOperation1(), memoization)
+                + probabilityAsked(remainingSoupMl.afterOperation2(), memoization)
+                + probabilityAsked(remainingSoupMl.afterOperation3(), memoization)
+                + probabilityAsked(remainingSoupMl.afterOperation4(), memoization))
+        memoization[remainingSoupMl] = result
         return result
     }
 
-    private data class RemainingSoup(val typeA: Int, val typeB: Int) {
+    private data class RemainingSoupMl(val typeA: Int, val typeB: Int) {
 
-        fun afterOperation1(): RemainingSoup = RemainingSoup(typeA - 100, typeB)
-        fun afterOperation2(): RemainingSoup = RemainingSoup(typeA - 75, typeB - 25)
-        fun afterOperation3(): RemainingSoup = RemainingSoup(typeA - 50, typeB - 50)
-        fun afterOperation4(): RemainingSoup = RemainingSoup(typeA - 25, typeB - 75)
+        fun afterOperation1(): RemainingSoupMl = RemainingSoupMl(typeA - 100, typeB)
+        fun afterOperation2(): RemainingSoupMl = RemainingSoupMl(typeA - 75, typeB - 25)
+        fun afterOperation3(): RemainingSoupMl = RemainingSoupMl(typeA - 50, typeB - 50)
+        fun afterOperation4(): RemainingSoupMl = RemainingSoupMl(typeA - 25, typeB - 75)
     }
 }
