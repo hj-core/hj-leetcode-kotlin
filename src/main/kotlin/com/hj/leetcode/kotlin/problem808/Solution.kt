@@ -11,10 +11,10 @@ class Solution {
      */
     fun soupServings(n: Int): Double {
         val memoization = hashMapOf<RemainingSoupMl, Double>()
-        val tolerance = 1e-5
-        val unitServeMl = 25
-        for (amount in 0..n step unitServeMl) {
-            if (probabilityAsked(RemainingSoupMl(amount, amount), memoization) > 1 - tolerance) {
+        val resultTolerance = 1e-5
+        val mlPrecision = 25 // 1 to 25 is equivalent to 25, 26 to 50 is equivalent to 50, and so on
+        for (amount in 0..n step mlPrecision) {
+            if (probabilityAsked(RemainingSoupMl(amount, amount), memoization) > 1 - resultTolerance) {
                 return 1.0
             }
         }
