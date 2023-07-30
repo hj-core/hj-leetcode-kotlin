@@ -33,13 +33,19 @@ class Solution {
             return if (typeB <= 0) 0.5 else 1.0
         }
 
-        val result = 0.25 * (probabilityAsked(RemainingSoup(typeA - 100, typeB), memoization)
-                + probabilityAsked(RemainingSoup(typeA - 75, typeB - 25), memoization)
-                + probabilityAsked(RemainingSoup(typeA - 50, typeB - 50), memoization)
-                + probabilityAsked(RemainingSoup(typeA - 25, typeB - 75), memoization))
+        val result = 0.25 * (probabilityAsked(remainingSoup.afterOperation1(), memoization)
+                + probabilityAsked(remainingSoup.afterOperation2(), memoization)
+                + probabilityAsked(remainingSoup.afterOperation3(), memoization)
+                + probabilityAsked(remainingSoup.afterOperation4(), memoization))
         memoization[remainingSoup] = result
         return result
     }
 
-    private data class RemainingSoup(val typeA: Int, val typeB: Int)
+    private data class RemainingSoup(val typeA: Int, val typeB: Int) {
+
+        fun afterOperation1(): RemainingSoup = RemainingSoup(typeA - 100, typeB)
+        fun afterOperation2(): RemainingSoup = RemainingSoup(typeA - 75, typeB - 25)
+        fun afterOperation3(): RemainingSoup = RemainingSoup(typeA - 50, typeB - 50)
+        fun afterOperation4(): RemainingSoup = RemainingSoup(typeA - 25, typeB - 75)
+    }
 }
