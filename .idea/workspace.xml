@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Fix incorrect space complexity">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="rename catalog variables to use the kebab-case">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem808/Solution.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +76,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem486" />
+        <entry key="$PROJECT_DIR$" value="update-version-catalog" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -133,7 +132,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "problem808",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41494253",
@@ -504,7 +503,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="872" />
+    <option name="localTasksCounter" value="873" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -541,14 +540,25 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="update-version-catalog" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add a solution to problem 1802" />
     <MESSAGE value="Improve comment" />
     <MESSAGE value="Add a solution to problem 1146" />
     <MESSAGE value="Correct inconsistent name in comment" />
@@ -573,7 +583,8 @@
     <MESSAGE value="Improve readability&#10;&#10;- Replace the magic number 1 with a variable minPossibleSpeed" />
     <MESSAGE value="Add a solution to problem 486" />
     <MESSAGE value="Fix incorrect space complexity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix incorrect space complexity" />
+    <MESSAGE value="rename catalog variables to use the kebab-case" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename catalog variables to use the kebab-case" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
