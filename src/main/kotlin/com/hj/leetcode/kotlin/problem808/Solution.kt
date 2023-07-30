@@ -11,7 +11,8 @@ class Solution {
     fun soupServings(n: Int): Double {
         val memoization = hashMapOf<RemainingSoup, Double>()
         val tolerance = 1e-5
-        for (amount in 0..n step 25) {
+        val unitServeMl = 25
+        for (amount in 0..n step unitServeMl) {
             if (probabilityAsked(RemainingSoup(amount, amount), memoization) > 1 - tolerance) {
                 return 1.0
             }
