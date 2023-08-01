@@ -22,7 +22,7 @@ class Solution {
 
         for (lengthPrefix1 in 1..s1.length) {
             for (lengthPrefix2 in 1..s2.length) {
-                /* If s1[lengthPrefix1-1] and s2[lengthPrefix2-1] is the same, there is a minimumDeleteSum
+                /* If s1[lengthPrefix1-1] and s2[lengthPrefix2-1] are the same, there is a minimumDeleteSum
                  * case that keeps both characters; otherwise, one of the two characters must be deleted.
                  */
                 dp[lengthPrefix1][lengthPrefix2] = if (s1[lengthPrefix1 - 1] == s2[lengthPrefix2 - 1]) {
