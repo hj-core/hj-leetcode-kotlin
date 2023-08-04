@@ -33,18 +33,18 @@ class Solution {
 
     private fun makeCombination(
         digits: String,
-        currentIndex: Int = 0,
         currentLetters: StringBuilder = StringBuilder(),
         onEachCombination: (combination: String) -> Unit
     ) {
-        if (currentIndex == digits.length) {
+        if (currentLetters.length == digits.length) {
             onEachCombination(currentLetters.toString())
             return
         }
 
-        for (char in checkNotNull(digitChars[digits[currentIndex]])) {
+        val nextDigit = digits[currentLetters.length]
+        for (char in checkNotNull(digitChars[nextDigit])) {
             currentLetters.append(char)
-            makeCombination(digits, currentIndex + 1, currentLetters, onEachCombination)
+            makeCombination(digits, currentLetters, onEachCombination)
             currentLetters.apply { deleteCharAt(lastIndex) }
         }
     }
