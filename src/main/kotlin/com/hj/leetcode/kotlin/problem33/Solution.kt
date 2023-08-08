@@ -8,9 +8,8 @@ class Solution {
      * Time O(LogN) and Space O(1) where N is the size of nums;
      */
     fun search(nums: IntArray, target: Int): Int {
-        val indexOfMin = indexOfMin(nums)
         val (fromIndex, toIndex) =
-            if (target > nums.last()) Pair(0, indexOfMin) else Pair(indexOfMin, nums.size)
+            if (target > nums.last()) Pair(0, indexOfMin(nums)) else Pair(indexOfMin(nums), nums.size)
         return nums
             .binarySearch(target, fromIndex, toIndex)
             .let { if (it < 0) -1 else it }
