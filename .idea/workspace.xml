@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,12 +79,12 @@
   <component name="GitRewordedCommitMessages">
     <option name="commitMessagesMapping">
       <RewordedCommitMessageMapping>
-        <option name="originalMessage" value="Change the type of index from Int to Long and improve readability&#10;&#10;- Although the answer is guaranteed to be within 32-bit signed Int, the index could be Long" />
-        <option name="rewordedMessage" value="Change the type of index from Int to Long and improve readability&#10;&#10;- Although the answer is guaranteed to be within 32-bit signed Int, the index could be Long&#10;&#10;&#10;Improve readability" />
+        <option name="originalMessage" value="Improve readability" />
+        <option name="rewordedMessage" value="Improve readability" />
       </RewordedCommitMessageMapping>
     </option>
     <option name="currentCommit" value="1" />
-    <option name="onto" value="22ccf06f5a5c4c98b0c9567ce4ed2ee0549853e3" />
+    <option name="onto" value="ac31757957c8d7dabfd9844950b8dfdc54e16bfa" />
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="recentNewPullRequestHead">
@@ -490,7 +492,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="888" />
+    <option name="localTasksCounter" value="889" />
     <servers />
   </component>
   <component name="UnknownFeatures">

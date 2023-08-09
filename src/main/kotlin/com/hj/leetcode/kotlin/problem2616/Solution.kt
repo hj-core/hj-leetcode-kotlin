@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem2616
  */
 class Solution {
     /* Complexity:
-     * Time O(NLogN+NLogV) and Space O(1) where N is the size of nums, V is the (maxValue - minValue) of nums;
+     * Time O(NLogN+NLogV) and Space O(N) where N is the size of nums, V is the (maxValue - minValue) of nums;
      */
     fun minimizeMax(nums: IntArray, p: Int): Int {
         if (p == 0) {
