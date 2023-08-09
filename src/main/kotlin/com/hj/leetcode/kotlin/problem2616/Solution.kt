@@ -5,38 +5,41 @@ package com.hj.leetcode.kotlin.problem2616
  */
 class Solution {
     /* Complexity:
-     * Time O(NLogN+NLogV) and Space O(1) where N is the size of nums, V is the (max - min) of nums;
+     * Time O(NLogN+NLogV) and Space O(1) where N is the size of nums, V is the (maxValue - minValue) of nums;
      */
     fun minimizeMax(nums: IntArray, p: Int): Int {
         if (p == 0) {
             return 0
         }
 
-        val sorted = nums.sorted()
-        var low = 0
-        var high = sorted.last() - sorted[0]
-        while (low < high) {
-            val mid = low + (high - low) / 2
-            if (isFeasible(sorted, p, mid)) {
-                high = mid
+        val sortedNums = nums.sorted()
+        var lowerBound = 0
+        var upperBound = sortedNums.last() - sortedNums[0]
+        while (lowerBound < upperBound) {
+            val mid = lowerBound + (upperBound - lowerBound) / 2
+
+            if (hasEnoughPairs(sortedNums, p, mid)) {
+                upperBound = mid
             } else {
-                low = mid + 1
+                lowerBound = mid + 1
             }
         }
-        return high
+        return upperBound
     }
 
-    private fun isFeasible(sorted: List<Int>, p: Int, threshold: Int): Boolean {
-        var count = 0
+    private fun hasEnoughPairs(sortedNums: List<Int>, numPairs: Int, maxDifference: Int): Boolean {
         var index = 0
-        while (index < sorted.lastIndex) {
-            if (sorted[index + 1] - sorted[index] <= threshold) {
-                count++
+        var pairCount = 0
+
+        while (index < sortedNums.lastIndex) {
+            if (sortedNums[index + 1] - sortedNums[index] <= maxDifference) {
+                pairCount++
                 index += 2
             } else {
                 index++
             }
-            if (count >= p) {
+
+            if (pairCount >= numPairs) {
                 return true
             }
         }
