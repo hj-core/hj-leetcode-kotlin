@@ -22,7 +22,6 @@ class Solution {
         return dp[0]
     }
 
-
     private fun IntArray.isAllEqual(indexRange: IntRange): Boolean {
         return indexRange.all { index -> this[index] == this[indexRange.first] }
     }
