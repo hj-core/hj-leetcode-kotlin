@@ -14,10 +14,10 @@ class Solution {
         dp[nums.size + 1] = false
         dp[nums.size + 2] = false
 
-        for (start in nums.indices.reversed()) {
-            dp[start] = ((dp[start + 2] && nums.isAllEqual(start..start + 1))
-                    || (dp[start + 3] && nums.isAllEqual(start..start + 2))
-                    || (dp[start + 3] && nums.isConsecutiveIncreasing(start..start + 2)))
+        for (i in nums.indices.reversed()) {
+            dp[i] = ((dp[i + 2] && nums.isAllEqual(i..i + 1))
+                    || (dp[i + 3] && nums.isAllEqual(i..i + 2))
+                    || (dp[i + 3] && nums.isConsecutiveIncreasing(i..i + 2)))
         }
         return dp[0]
     }
