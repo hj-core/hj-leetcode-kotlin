@@ -10,9 +10,9 @@ class Solution {
      * Time O(N) and Space O(1) where N is the number of nodes in head;
      */
     fun partition(head: ListNode?, x: Int): ListNode? {
-        val leftHead = ListNode(Int.MIN_VALUE)
+        val leftHead = ListNode(Int.MIN_VALUE) // left.values < x
         var leftTail = leftHead
-        val rightHead = ListNode(Int.MIN_VALUE)
+        val rightHead = ListNode(Int.MAX_VALUE) // right.values >= x
         var rightTail = rightHead
 
         var next = head
