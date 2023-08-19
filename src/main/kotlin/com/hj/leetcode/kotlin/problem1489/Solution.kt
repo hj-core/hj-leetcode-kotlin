@@ -36,11 +36,11 @@ class Solution {
             }
         }
 
-        /* Find all non-critical edges:
-         * If including an edge resulting in an increasing on the MST weight, then it is
-         * a non-critical edge;
+        /* Find all pseudo-critical edges:
+         * If an edge is not critical but including it will not increase the MST weight,
+         * then it is a pseudo-critical edge;
          */
-        val nonCriticalEdges = hashSetOf<Edge>()
+        val pseudoCriticalEdges = hashSetOf<Edge>()
 
         for (includedEdge in sortedEdges) {
             if (includedEdge in criticalEdges) {
@@ -59,26 +59,13 @@ class Solution {
                 }
             }
 
-            if (newMstWeight > mstWeight) {
-                nonCriticalEdges.add(includedEdge)
+            if (newMstWeight == mstWeight) {
+                pseudoCriticalEdges.add(includedEdge)
             }
         }
-
-        // Find all pseudo-critical edges:
-        // If an edge is neither critical nor non-critical, then it is a pseudo-critical edge;
 
         // Return the result;
-        val criticalEdgeIndices = mutableListOf<Int>()
-        val pseudoCriticalEdgeIndices = mutableListOf<Int>()
-
-        for (edge in sortedEdges) {
-            when (edge) {
-                in criticalEdges -> criticalEdgeIndices.add(edge.index)
-                in nonCriticalEdges -> {}
-                else -> pseudoCriticalEdgeIndices.add(edge.index)
-            }
-        }
-        return listOf(criticalEdgeIndices, pseudoCriticalEdgeIndices)
+        return listOf(criticalEdges.map { it.index }, pseudoCriticalEdges.map { it.index })
     }
 
     private fun sortedEdges(edges: Array<IntArray>): List<Edge> {
