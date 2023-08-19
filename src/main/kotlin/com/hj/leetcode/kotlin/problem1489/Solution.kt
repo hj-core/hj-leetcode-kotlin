@@ -7,11 +7,14 @@ class Solution {
     fun findCriticalAndPseudoCriticalEdges(n: Int, edges: Array<IntArray>): List<List<Int>> {
         val sortedEdges = sortedEdges(edges) // Sorted by monotonically increasing weight
         val mstWeight = mstWeight(n, sortedEdges)
+
         val criticalEdges = criticalEdges(n, sortedEdges, mstWeight)
         val pseudoCriticalEdges = pseudoCriticalEdges(n, sortedEdges, criticalEdges, mstWeight)
 
         return listOf(criticalEdges.map { it.index }, pseudoCriticalEdges.map { it.index })
     }
+
+    private data class Edge(val u: Int, val v: Int, val weight: Int, val index: Int)
 
     private fun sortedEdges(edges: Array<IntArray>): List<Edge> {
         val result = edges.mapIndexedTo(mutableListOf()) { index, array ->
@@ -20,8 +23,6 @@ class Solution {
         result.sortBy { edge -> edge.weight }
         return result
     }
-
-    private data class Edge(val u: Int, val v: Int, val weight: Int, val index: Int)
 
     private fun mstWeight(n: Int, sortedEdges: List<Edge>): Int {
         var result = 0
