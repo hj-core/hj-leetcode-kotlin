@@ -8,36 +8,8 @@ class Solution {
         val sortedEdges = sortedEdges(edges) // Sorted by monotonically increasing weight
         val mstWeight = mstWeight(n, sortedEdges)
         val criticalEdges = criticalEdges(n, sortedEdges, mstWeight)
+        val pseudoCriticalEdges = pseudoCriticalEdges(n, sortedEdges, criticalEdges, mstWeight)
 
-        /* Find all pseudo-critical edges:
-         * If an edge is not critical but including it will not increase the MST weight,
-         * then it is a pseudo-critical edge;
-         */
-        val pseudoCriticalEdges = hashSetOf<Edge>()
-
-        for (includedEdge in sortedEdges) {
-            if (includedEdge in criticalEdges) {
-                continue
-            }
-
-            var newMstWeight = 0
-            val unionFind = UnionFind(n)
-
-            newMstWeight += includedEdge.weight
-            unionFind.union(includedEdge.u, includedEdge.v)
-
-            for (edge in sortedEdges) {
-                if (unionFind.union(edge.u, edge.v)) {
-                    newMstWeight += edge.weight
-                }
-            }
-
-            if (newMstWeight == mstWeight) {
-                pseudoCriticalEdges.add(includedEdge)
-            }
-        }
-
-        // Return the result;
         return listOf(criticalEdges.map { it.index }, pseudoCriticalEdges.map { it.index })
     }
 
@@ -121,6 +93,42 @@ class Solution {
 
             if (unionFind.numComponents > 1 || newMstWeight > mstWeight) {
                 result.add(excludedEdge)
+            }
+        }
+        return result
+    }
+
+    private fun pseudoCriticalEdges(
+        n: Int,
+        sortedEdges: List<Edge>,
+        criticalEdges: Set<Edge>,
+        mstWeight: Int
+    ): Set<Edge> {
+        val result = hashSetOf<Edge>()
+
+        /* Find all pseudo-critical edges:
+         * If an edge is not critical, but including it does not increase the MST weight,
+         * then it is a pseudo-critical edge;
+         */
+        for (includedEdge in sortedEdges) {
+            if (includedEdge in criticalEdges) {
+                continue
+            }
+
+            var newMstWeight = 0
+            val unionFind = UnionFind(n)
+
+            newMstWeight += includedEdge.weight
+            unionFind.union(includedEdge.u, includedEdge.v)
+
+            for (edge in sortedEdges) {
+                if (unionFind.union(edge.u, edge.v)) {
+                    newMstWeight += edge.weight
+                }
+            }
+
+            if (newMstWeight == mstWeight) {
+                result.add(includedEdge)
             }
         }
         return result
