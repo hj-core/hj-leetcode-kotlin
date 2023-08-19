@@ -4,6 +4,9 @@ package com.hj.leetcode.kotlin.problem1489
  * LeetCode page: [1489. Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree](https://leetcode.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/);
  */
 class Solution {
+    /* Complexity:
+     * Time O(E^2 * Log n) and Space O(E) where E is the size of edges;
+     */
     fun findCriticalAndPseudoCriticalEdges(n: Int, edges: Array<IntArray>): List<List<Int>> {
         val sortedEdges = sortedEdges(edges) // Sorted by monotonically increasing weight
         val mstWeight = mstWeight(n, sortedEdges)
