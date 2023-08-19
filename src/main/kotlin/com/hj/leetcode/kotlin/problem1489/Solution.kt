@@ -5,36 +5,9 @@ package com.hj.leetcode.kotlin.problem1489
  */
 class Solution {
     fun findCriticalAndPseudoCriticalEdges(n: Int, edges: Array<IntArray>): List<List<Int>> {
-        // Sort edges according to its weight in non-descending order;
-        val sortedEdges = sortedEdges(edges)
-
-        // Find the weight of MST;
+        val sortedEdges = sortedEdges(edges) // Sorted by monotonically increasing weight
         val mstWeight = mstWeight(n, sortedEdges)
-
-        /* Find all critical edges:
-         * If excluding an edge resulting in an increasing on the MST weight or make the
-         * graph no longer connected, then it is a critical edge;
-         */
-        val criticalEdges = hashSetOf<Edge>()
-
-        for (excludedEdge in sortedEdges) {
-            var newMstWeight = 0
-            val unionFind = UnionFind(n)
-
-            for (edge in sortedEdges) {
-                if (edge == excludedEdge) {
-                    continue
-                }
-
-                if (unionFind.union(edge.u, edge.v)) {
-                    newMstWeight += edge.weight
-                }
-            }
-
-            if (unionFind.numComponents > 1 || newMstWeight > mstWeight) {
-                criticalEdges.add(excludedEdge)
-            }
-        }
+        val criticalEdges = criticalEdges(n, sortedEdges, mstWeight)
 
         /* Find all pseudo-critical edges:
          * If an edge is not critical but including it will not increase the MST weight,
@@ -123,5 +96,33 @@ class Solution {
             }
             return parents[x]
         }
+    }
+
+    private fun criticalEdges(n: Int, sortedEdges: List<Edge>, mstWeight: Int): Set<Edge> {
+        val result = hashSetOf<Edge>()
+
+        /* Find all critical edges:
+         * If excluding an edge results in an increase in the MST weight or makes the graph
+         * no longer connected, then it is a critical edge;
+         */
+        for (excludedEdge in sortedEdges) {
+            var newMstWeight = 0
+            val unionFind = UnionFind(n)
+
+            for (edge in sortedEdges) {
+                if (edge == excludedEdge) {
+                    continue
+                }
+
+                if (unionFind.union(edge.u, edge.v)) {
+                    newMstWeight += edge.weight
+                }
+            }
+
+            if (unionFind.numComponents > 1 || newMstWeight > mstWeight) {
+                result.add(excludedEdge)
+            }
+        }
+        return result
     }
 }
