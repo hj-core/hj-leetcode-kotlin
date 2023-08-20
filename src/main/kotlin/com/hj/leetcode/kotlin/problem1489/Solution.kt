@@ -9,7 +9,7 @@ class Solution {
      */
     fun findCriticalAndPseudoCriticalEdges(n: Int, edges: Array<IntArray>): List<List<Int>> {
         val sortedEdges = sortedEdges(edges) // Sorted by monotonically increasing weight
-        val mstWeight = mstWeight(n, sortedEdges)
+        val mstWeight = checkNotNull(mstWeight(n, sortedEdges))
 
         val criticalEdges = criticalEdges(n, sortedEdges, mstWeight)
         val pseudoCriticalEdges = pseudoCriticalEdges(n, sortedEdges, criticalEdges, mstWeight)
@@ -27,16 +27,35 @@ class Solution {
         return result
     }
 
-    private fun mstWeight(n: Int, sortedEdges: List<Edge>): Int {
+    /**
+     * Return the MST weight, or null if the graph is not connected.
+     */
+    private fun mstWeight(
+        n: Int,
+        sortedEdges: List<Edge>,
+        mandatedInclusion: Set<Edge> = emptySet(),
+        mandatedExclusion: Set<Edge> = emptySet()
+    ): Int? {
         var result = 0
         val unionFind = UnionFind(n)
 
+        for (edge in mandatedInclusion) {
+            unionFind.union(edge.u, edge.v)
+            result+= edge.weight
+        }
+
         for (edge in sortedEdges) {
+            if (edge in mandatedExclusion) {
+                continue
+            }
+
             if (unionFind.union(edge.u, edge.v)) {
                 result += edge.weight
             }
         }
-        return result
+
+        val isConnected = unionFind.numComponents == 1
+        return if (isConnected) result else null
     }
 
     private class UnionFind(size: Int) {

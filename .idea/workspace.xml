@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Minor formatting improvements">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add functionality to mstWeight(...)&#10;&#10;- Allow including or excluding certain edges">
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1489/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1489/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -493,7 +492,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="900" />
+    <option name="localTasksCounter" value="902" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -537,8 +536,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add a solution to problem 1870" />
-    <MESSAGE value="Improve readability&#10;&#10;- Replace the magic number 1 with a variable minPossibleSpeed" />
     <MESSAGE value="Add a solution to problem 486" />
     <MESSAGE value="Fix incorrect space complexity" />
     <MESSAGE value="rename catalog variables to use the kebab-case" />
@@ -562,7 +559,9 @@
     <MESSAGE value="Extract function finding the critical edges" />
     <MESSAGE value="Extract function finding the pseudo-critical edges" />
     <MESSAGE value="Minor formatting improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor formatting improvements" />
+    <MESSAGE value="Include time and space complexity" />
+    <MESSAGE value="Add functionality to mstWeight(...)&#10;&#10;- Allow including or excluding certain edges" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add functionality to mstWeight(...)&#10;&#10;- Allow including or excluding certain edges" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
