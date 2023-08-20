@@ -101,20 +101,12 @@ class Solution {
          * no longer connected, then it is a critical edge;
          */
         for (excludedEdge in sortedEdges) {
-            var newMstWeight = 0
-            val unionFind = UnionFind(n)
-
-            for (edge in sortedEdges) {
-                if (edge == excludedEdge) {
-                    continue
-                }
-
-                if (unionFind.union(edge.u, edge.v)) {
-                    newMstWeight += edge.weight
-                }
-            }
-
-            if (unionFind.numComponents > 1 || newMstWeight > mstWeight) {
+            val newMstWeight = mstWeight(
+                n = n,
+                sortedEdges = sortedEdges,
+                mandatedExclusion = hashSetOf(excludedEdge)
+            )
+            if (newMstWeight == null || newMstWeight > mstWeight) {
                 result.add(excludedEdge)
             }
         }
