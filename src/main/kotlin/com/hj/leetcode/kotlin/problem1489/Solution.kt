@@ -29,6 +29,9 @@ class Solution {
 
     /**
      * Return the MST weight, or null if the graph is not connected.
+     *
+     * If [mandatedExclusion] and [mandatedInclusion] are not disjoint, the result
+     * is unexpected.
      */
     private fun mstWeight(
         n: Int,
