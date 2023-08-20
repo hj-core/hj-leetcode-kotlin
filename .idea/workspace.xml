@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add functionality to mstWeight(...)&#10;&#10;- Allow including or excluding certain edges">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1489/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1489/Solution.kt" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Refactor duplicated code in pseudoCriticalEdges(...)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -492,7 +490,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="903" />
+    <option name="localTasksCounter" value="907" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -536,8 +534,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix incorrect space complexity" />
-    <MESSAGE value="rename catalog variables to use the kebab-case" />
     <MESSAGE value="Add a solution to problem 808" />
     <MESSAGE value="Improve readability&#10;&#10;- Create member functions of RemainingSoup for each kind of operation" />
     <MESSAGE value="Improve readability&#10;&#10;- Add variable unitServeMl to explain the meaning of number 25" />
@@ -561,7 +557,9 @@
     <MESSAGE value="Include time and space complexity" />
     <MESSAGE value="Add functionality to mstWeight&#10;&#10;- Allow including or excluding certain edges" />
     <MESSAGE value="Add functionality to mstWeight(...)&#10;&#10;- Allow including or excluding certain edges" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add functionality to mstWeight(...)&#10;&#10;- Allow including or excluding certain edges" />
+    <MESSAGE value="Refactor duplicated code in criticalEdges(...)" />
+    <MESSAGE value="Refactor duplicated code in pseudoCriticalEdges(...)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor duplicated code in pseudoCriticalEdges(...)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
