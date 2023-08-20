@@ -130,18 +130,11 @@ class Solution {
                 continue
             }
 
-            var newMstWeight = 0
-            val unionFind = UnionFind(n)
-
-            newMstWeight += includedEdge.weight
-            unionFind.union(includedEdge.u, includedEdge.v)
-
-            for (edge in sortedEdges) {
-                if (unionFind.union(edge.u, edge.v)) {
-                    newMstWeight += edge.weight
-                }
-            }
-
+            val newMstWeight = mstWeight(
+                n = n,
+                sortedEdges = sortedEdges,
+                mandatedInclusion = hashSetOf(includedEdge)
+            )
             if (newMstWeight == mstWeight) {
                 result.add(includedEdge)
             }
