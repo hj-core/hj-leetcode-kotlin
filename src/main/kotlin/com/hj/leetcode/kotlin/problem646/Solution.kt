@@ -10,12 +10,12 @@ class Solution {
     fun findLongestChain(pairs: Array<IntArray>): Int {
         val sortedPairs = pairs.sortedBy { it[1] }
         var result = 0
-        var tailSecond = Int.MIN_VALUE
+        var chainTail = intArrayOf(Int.MIN_VALUE, Int.MIN_VALUE)
 
-        for ((first, second) in sortedPairs) {
-            if (first > tailSecond) {
+        for (pair in sortedPairs) {
+            if (pair[0] > chainTail[1]) {
                 result ++
-                tailSecond = second
+                chainTail = pair
             }
         }
         return result
