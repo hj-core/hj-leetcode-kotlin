@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Rename variable for clarity&#10;&#10;- from `tailSecond` to `chainTailSecond`">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 403" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,7 +63,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem646" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -128,7 +126,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "problem403",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41494253",
@@ -499,7 +497,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="911" />
+    <option name="localTasksCounter" value="913" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -536,14 +534,25 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="problem403" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Rename RemainingSoup to convey its unit" />
     <MESSAGE value="Rename variables to better convey their meaning" />
     <MESSAGE value="Add a solution to problem 712" />
     <MESSAGE value="Add a solution to problem 17" />
@@ -568,7 +577,8 @@
     <MESSAGE value="Add a solution to problem 646" />
     <MESSAGE value="Rename `tailSecond` to `chainTailSecond`" />
     <MESSAGE value="Refactor the solution to make the intent clearer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor the solution to make the intent clearer" />
+    <MESSAGE value="Add a solution to problem 403" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 403" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

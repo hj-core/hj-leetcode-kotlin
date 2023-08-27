@@ -13,7 +13,7 @@ class Solution {
 
     private fun canCross(
         position: Int,
-        lastJumpUnits: Int,
+        lastJumpSpan: Int,
         stones: Set<Int>,
         goal: Int,
         memoization: MutableMap<Pair<Int, Int>, Boolean> // key=Pair(position, lastJumpUnits)
@@ -26,13 +26,13 @@ class Solution {
             return false
         }
 
-        val state = Pair(position, lastJumpUnits)
+        val state = Pair(position, lastJumpSpan)
         if (state in memoization) {
             return checkNotNull(memoization[state])
         }
 
-        val possibleJumps = listOf(lastJumpUnits - 1, lastJumpUnits, lastJumpUnits + 1)
-        val result = possibleJumps.any {
+        val nextJumpSpans = listOf(lastJumpSpan - 1, lastJumpSpan, lastJumpSpan + 1)
+        val result = nextJumpSpans.any {
             it > 0 && canCross(position + it, it, stones, goal, memoization)
         }
         memoization[state] = result
