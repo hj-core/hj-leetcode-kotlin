@@ -1,5 +1,5 @@
 [versions]
-kotlin-jvm = "1.9.0"
+kotlin-jvm = "1.9.10"
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-jvm"}
