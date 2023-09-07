@@ -17,21 +17,11 @@ class Solution {
         val result = Array<ListNode?>(k) { null }
         var partHead = head
 
-        repeat(numLongerParts) { index ->
+        repeat(k) { index ->
             result[index] = partHead
-            var partTail = partHead
-            repeat(averageLength) {
-                partTail = partTail?.next
-            }
-            partHead = partTail?.next
-            partTail?.next = null
-        }
-        repeat(k - numLongerParts) {
-            result[numLongerParts + it] = partHead
-            var partTail = partHead
-            repeat(averageLength - 1) {
-                partTail = partTail?.next
-            }
+            val partLength = if (index < numLongerParts) averageLength + 1 else averageLength
+            val partTail = partTail(partHead, partLength)
+
             partHead = partTail?.next
             partTail?.next = null
         }
@@ -44,6 +34,14 @@ class Solution {
         while (next != null) {
             result += 1
             next = next.next
+        }
+        return result
+    }
+
+    private fun partTail(partHead: ListNode?, partLength: Int): ListNode? {
+        var result = partHead
+        repeat(partLength - 1) {
+            result = result?.next
         }
         return result
     }
