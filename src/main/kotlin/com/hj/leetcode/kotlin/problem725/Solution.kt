@@ -10,16 +10,17 @@ class Solution {
      * Time O(N+k) and Space O(k) where N is the number of nodes in head;
      */
     fun splitListToParts(head: ListNode?, k: Int): Array<ListNode?> {
-        val length = head.length()
-        val averageLength = length / k
-        val numLongerParts = length % k
+        val listLength = head.length()
+        val minPartLength = listLength / k
+        val numLongerParts = listLength % k
 
         val result = Array<ListNode?>(k) { null }
         var partHead = head
 
         repeat(k) { index ->
             result[index] = partHead
-            val partLength = if (index < numLongerParts) averageLength + 1 else averageLength
+            val partLength =
+                if (index < numLongerParts) minPartLength + 1 else minPartLength
             val partEndNode = partEndNode(partHead, partLength)
 
             partHead = partEndNode?.next
