@@ -21,7 +21,7 @@ class Solution {
             result[index] = partHead
             val partLength =
                 if (index < numLongerParts) minPartLength + 1 else minPartLength
-            val partEndNode = partEndNode(partHead, partLength)
+            val partEndNode = partHead?.at(partLength - 1)
 
             partHead = partEndNode?.next
             partEndNode?.next = null
@@ -39,10 +39,10 @@ class Solution {
         return result
     }
 
-    private fun partEndNode(partHead: ListNode?, partLength: Int): ListNode? {
-        var result = partHead
-        repeat(partLength - 1) {
-            result = result?.next
+    private fun ListNode.at(index: Int): ListNode {
+        var result = this
+        repeat(index) {
+            result = result.next ?: throw IndexOutOfBoundsException()
         }
         return result
     }
