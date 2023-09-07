@@ -20,10 +20,10 @@ class Solution {
         repeat(k) { index ->
             result[index] = partHead
             val partLength = if (index < numLongerParts) averageLength + 1 else averageLength
-            val partTail = partTail(partHead, partLength)
+            val partEndNode = partEndNode(partHead, partLength)
 
-            partHead = partTail?.next
-            partTail?.next = null
+            partHead = partEndNode?.next
+            partEndNode?.next = null
         }
         return result
     }
@@ -38,7 +38,7 @@ class Solution {
         return result
     }
 
-    private fun partTail(partHead: ListNode?, partLength: Int): ListNode? {
+    private fun partEndNode(partHead: ListNode?, partLength: Int): ListNode? {
         var result = partHead
         repeat(partLength - 1) {
             result = result?.next
