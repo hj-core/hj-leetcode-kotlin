@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 118">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Refactor the partEndNode(...)&#10;&#10;- It is replaced by the more abstract ListNode.at(...)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +65,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem118" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -499,7 +499,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="921" />
+    <option name="localTasksCounter" value="919" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -543,6 +543,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Improve readability" />
     <MESSAGE value="Add a solution to problem 81" />
     <MESSAGE value="Add a solution to problem 63" />
     <MESSAGE value="Add a solution to problem 2369" />
@@ -567,8 +568,7 @@
     <MESSAGE value="Refactor the duplicated code" />
     <MESSAGE value="Improve variable naming" />
     <MESSAGE value="Refactor the partEndNode(...)&#10;&#10;- It is replaced by the more abstract ListNode.at(...)" />
-    <MESSAGE value="Add a solution to problem 118" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 118" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor the partEndNode(...)&#10;&#10;- It is replaced by the more abstract ListNode.at(...)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
