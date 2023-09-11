@@ -11,6 +11,8 @@ class Solution {
         val people = 0 until groupSizes.size
         return people
             .groupBy { groupSizes[it] }
-            .flatMap { (groupSizes, people) -> people.chunked(groupSizes) }
+            .flatMap { (groupSize, groupPeople) ->
+                groupPeople.asSequence().chunked(groupSize)
+            }
     }
 }
