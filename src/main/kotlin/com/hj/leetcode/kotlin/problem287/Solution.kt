@@ -10,6 +10,7 @@ class Solution {
     fun findDuplicate(nums: IntArray): Int {
         var left = 1
         var right = nums.size - 1
+
         while (left < right) {
             val mid = left + (right - left) / 2
             val isResultInLeftToMid =
