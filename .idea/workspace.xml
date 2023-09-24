@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve code logic" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability">
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem799/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem799/Solution.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -497,7 +499,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="925" />
+    <option name="localTasksCounter" value="930" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -541,7 +543,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add a DRAFT solution to problem 1489" />
     <MESSAGE value="Improve algorithm for finding pseudo-critical edges&#10;&#10;- Now finding the pseudo-critical edges does not resort to the finding of non-critical edges" />
     <MESSAGE value="Extract function finding the critical edges" />
     <MESSAGE value="Extract function finding the pseudo-critical edges" />
@@ -563,10 +564,11 @@
     <MESSAGE value="Improve variable naming" />
     <MESSAGE value="Refactor the partEndNode(...)&#10;&#10;- It is replaced by the more abstract ListNode.at(...)" />
     <MESSAGE value="Add an O(NLogN) solution to problem 287" />
-    <MESSAGE value="Improve readability" />
     <MESSAGE value="Add a DRAFT solution to problem 799" />
     <MESSAGE value="Improve code logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve code logic" />
+    <MESSAGE value="Improve space complexity" />
+    <MESSAGE value="Improve readability" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

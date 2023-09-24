@@ -8,11 +8,13 @@ class Solution {
      * Time O(query_row^2) and Space O(query_row);
      */
     fun champagneTower(poured: Int, query_row: Int, query_glass: Int): Double {
+        // dp[j]@i::= total liquid fall into the j_th glass of the i_th row
         val dp = DoubleArray(query_row + 1)
-        dp[0] = poured.toDouble()
 
-        repeat(query_row) { previousRow ->
-            for (glass in previousRow downTo 0) {
+        dp[0] = poured.toDouble() // Base case dp[0]@i=0
+        for (row in 0 until query_row) {
+            // Update the dp of the next row in place
+            for (glass in row downTo 0) {
                 val halfFall = (dp[glass] - 1.0).coerceAtLeast(0.0) / 2.0
                 dp[glass] = halfFall
                 dp[glass + 1] += halfFall
