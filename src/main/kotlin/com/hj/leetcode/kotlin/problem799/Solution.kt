@@ -13,12 +13,16 @@ class Solution {
         dp[0] = poured.toDouble()
 
         repeat(query_row) { previousRow ->
-            for (glass in previousRow downTo 0) {
-                val halfFall = (dp[glass] - 1.0).coerceAtLeast(0.0) / 2.0
-                dp[glass] = halfFall
-                dp[glass + 1] += halfFall
+            for (glass in previousRow + 1 downTo 1) {
+                val gainFromLeft =
+                    (dp[glass - 1] - 1.0).coerceAtLeast(0.0) / 2.0
+                val gainFromRight =
+                    (dp[glass] - 1.0).coerceAtLeast(0.0) / 2.0
+
+                dp[glass] = gainFromLeft + gainFromRight
             }
+            dp[0] = (dp[0] - 1.0).coerceAtLeast(0.0) / 2.0
         }
-        return dp[query_glass].coerceAtMost(1.0)
+        return minOf(1.0, dp[query_glass])
     }
 }
