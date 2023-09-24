@@ -8,6 +8,10 @@ class Solution {
      * Time O(query_row^2) and Space O(query_row);
      */
     fun champagneTower(poured: Int, query_row: Int, query_glass: Int): Double {
+        if (query_glass > query_row) {
+            return 0.0
+        }
+
         // dp[j]@i::= total liquid fall into the j_th glass of the i_th row
         val dp = DoubleArray(query_row + 1)
 
