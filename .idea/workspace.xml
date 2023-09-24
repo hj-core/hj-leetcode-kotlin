@@ -63,7 +63,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem1048" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -121,18 +121,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.41494253&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Settings.Markdown&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.41494253",
+    "settings.editor.selected.configurable": "Settings.Markdown"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\gaps-\Documents\GitHub\hj-leetcode-kotlin\src\main\kotlin\com\hj\leetcode\kotlin\medium" />
@@ -497,7 +497,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="932" />
+    <option name="localTasksCounter" value="922" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -541,6 +541,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add a solution to problem 63" />
+    <MESSAGE value="Add a solution to problem 2369" />
+    <MESSAGE value="Add a DRAFT solution to problem 1489" />
     <MESSAGE value="Improve algorithm for finding pseudo-critical edges&#10;&#10;- Now finding the pseudo-critical edges does not resort to the finding of non-critical edges" />
     <MESSAGE value="Extract function finding the critical edges" />
     <MESSAGE value="Extract function finding the pseudo-critical edges" />
@@ -562,9 +565,6 @@
     <MESSAGE value="Improve variable naming" />
     <MESSAGE value="Refactor the partEndNode(...)&#10;&#10;- It is replaced by the more abstract ListNode.at(...)" />
     <MESSAGE value="Add an O(NLogN) solution to problem 287" />
-    <MESSAGE value="Add a DRAFT solution to problem 799" />
-    <MESSAGE value="Improve code logic" />
-    <MESSAGE value="Improve space complexity" />
     <MESSAGE value="Improve readability" />
     <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
   </component>
