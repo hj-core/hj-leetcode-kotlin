@@ -5,10 +5,11 @@ package com.hj.leetcode.kotlin.problem799
  */
 class Solution {
     /* Complexity:
-     * Time O(query_row^2) and Space O(query_row);
+     * Time O(query_row^2) and Space O(totalRows);
      */
     fun champagneTower(poured: Int, query_row: Int, query_glass: Int): Double {
-        val dp = DoubleArray(query_row + 1)
+        val totalRows = 100
+        val dp = DoubleArray(totalRows)
         dp[0] = poured.toDouble()
 
         repeat(query_row) { previousRow ->
