@@ -15,7 +15,7 @@ class Solution {
             charFrequencies[char - 'a']++
         }
         for (char in s) {
-            charFrequencies[char -'a']--
+            charFrequencies[char - 'a']--
         }
         return 'a' + charFrequencies.indexOf(1)
     }
