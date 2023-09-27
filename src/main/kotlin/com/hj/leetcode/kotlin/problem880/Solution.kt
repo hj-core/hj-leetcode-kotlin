@@ -11,7 +11,7 @@ class Solution {
         return charAtLength(s, k.toLong(), s.lastIndex, decodedLength(s)).toString()
     }
 
-    private fun charAtLength(
+    private tailrec fun charAtLength(
         encodedString: String,
         targetLength: Long,
         endIndex: Int,
