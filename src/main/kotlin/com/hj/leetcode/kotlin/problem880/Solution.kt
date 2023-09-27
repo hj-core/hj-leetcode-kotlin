@@ -12,7 +12,7 @@ class Solution {
     }
 
     private fun charAtLength(
-        s: String,
+        encodedString: String,
         targetLength: Long,
         endIndex: Int,
         decodedLength: Long
@@ -20,19 +20,22 @@ class Solution {
 
         require(targetLength <= decodedLength)
 
-        if (s[endIndex] in '2'..'9') {
+        if (encodedString[endIndex] in '2'..'9') {
             val prevIndex = endIndex - 1
-            val prevDecodedLength = decodedLength / (s[endIndex] - '0')
+            val prevDecodedLength = decodedLength / (encodedString[endIndex] - '0')
             val newTargetLength = (targetLength % prevDecodedLength).let {
                 if (it == 0L) prevDecodedLength else it
             }
-            return charAtLength(s, newTargetLength, prevIndex, prevDecodedLength)
+            return charAtLength(encodedString, newTargetLength, prevIndex, prevDecodedLength)
         }
 
         if (decodedLength == targetLength) {
-            return s[endIndex]
+            return encodedString[endIndex]
         }
-        return charAtLength(s, targetLength, endIndex - 1, decodedLength - 1)
+
+        val prevIndex = endIndex - 1
+        val prevDecodedLength = decodedLength - 1
+        return charAtLength(encodedString, targetLength, prevIndex, prevDecodedLength)
     }
 
     private fun decodedLength(s: String): Long {
