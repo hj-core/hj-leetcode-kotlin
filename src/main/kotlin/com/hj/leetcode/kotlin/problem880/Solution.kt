@@ -15,7 +15,7 @@ class Solution {
         encodedString: String,
         endIndex: Int,
         decodedLength: Long,
-        targetPosition: Long // 1-indexed index at the decoded string
+        targetPosition: Long // 1-indexed index in the decoded string
     ): Char {
 
         require(targetPosition <= decodedLength)
