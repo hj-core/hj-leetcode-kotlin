@@ -8,28 +8,31 @@ class Solution {
      * Time O(N) and Space O(1) where N is the length of s;
      */
     fun decodeAtIndex(s: String, k: Int): String {
-        return charAtLength(s, s.lastIndex, decodedLength(s), k.toLong()).toString()
+        return charAtLength(s, k.toLong(), s.lastIndex, decodedLength(s)).toString()
     }
 
     private fun charAtLength(
         s: String,
-        index: Int,
-        decodedLength: Long,
-        targetLength: Long
+        targetLength: Long,
+        endIndex: Int,
+        decodedLength: Long
     ): Char {
-        if (s[index] in '2'..'9') {
-            val newDecodedLength = decodedLength / (s[index] - '0')
-            val newTargetLength = (targetLength % newDecodedLength).let {
-                if (it == 0L) newDecodedLength else it
+
+        require(targetLength <= decodedLength)
+
+        if (s[endIndex] in '2'..'9') {
+            val prevIndex = endIndex - 1
+            val prevDecodedLength = decodedLength / (s[endIndex] - '0')
+            val newTargetLength = (targetLength % prevDecodedLength).let {
+                if (it == 0L) prevDecodedLength else it
             }
-            return charAtLength(s, index - 1, newDecodedLength, newTargetLength)
+            return charAtLength(s, newTargetLength, prevIndex, prevDecodedLength)
         }
 
-        if (targetLength == decodedLength) {
-            return s[index]
+        if (decodedLength == targetLength) {
+            return s[endIndex]
         }
-
-        return charAtLength(s, index - 1, decodedLength - 1, targetLength)
+        return charAtLength(s, targetLength, endIndex - 1, decodedLength - 1)
     }
 
     private fun decodedLength(s: String): Long {
