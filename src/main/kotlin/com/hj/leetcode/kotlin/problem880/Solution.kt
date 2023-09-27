@@ -23,10 +23,10 @@ class Solution {
         if (encodedString[endIndex] in '2'..'9') {
             val prevIndex = endIndex - 1
             val prevDecodedLength = decodedLength / (encodedString[endIndex] - '0')
-            val newTargetLength = (targetPosition % prevDecodedLength).let {
+            val newTargetPosition = (targetPosition % prevDecodedLength).let {
                 if (it == 0L) prevDecodedLength else it
             }
-            return charAtPosition(encodedString, prevIndex, prevDecodedLength, newTargetLength)
+            return charAtPosition(encodedString, prevIndex, prevDecodedLength, newTargetPosition)
         }
 
         if (decodedLength == targetPosition) {

@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Make charAtLength(...) tailrec">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Correct grammar mistake in comment" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -499,7 +497,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="938" />
+    <option name="localTasksCounter" value="941" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -543,7 +541,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Include time and space complexity" />
     <MESSAGE value="Add functionality to mstWeight&#10;&#10;- Allow including or excluding certain edges" />
     <MESSAGE value="Add functionality to mstWeight(...)&#10;&#10;- Allow including or excluding certain edges" />
     <MESSAGE value="Refactor duplicated code in criticalEdges(...)" />
@@ -566,9 +563,10 @@
     <MESSAGE value="Add a solution to problem 389" />
     <MESSAGE value="Add a DRAFT solution to problem 880" />
     <MESSAGE value="Refactor decodedLength(...)&#10;&#10;- Use built-in function fold" />
-    <MESSAGE value="Improve readability" />
     <MESSAGE value="Make charAtLength(...) tailrec" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make charAtLength(...) tailrec" />
+    <MESSAGE value="Improve readability" />
+    <MESSAGE value="Correct grammar mistake in comment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correct grammar mistake in comment" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
