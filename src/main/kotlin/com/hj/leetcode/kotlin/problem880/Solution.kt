@@ -38,8 +38,8 @@ class Solution {
         return charAtPosition(encodedString, prevIndex, prevDecodedLength, targetPosition)
     }
 
-    private fun decodedLength(s: String): Long {
-        return s.fold(0L) { acc: Long, c: Char ->
+    private fun decodedLength(encodedString: String): Long {
+        return encodedString.fold(0L) { acc: Long, c: Char ->
             if (c in '2'..'9') acc * (c - '0') else acc + 1
         }
     }
