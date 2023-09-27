@@ -33,15 +33,8 @@ class Solution {
     }
 
     private fun decodedLength(s: String): Long {
-        var result = 0L
-
-        for (char in s) {
-            if (char in '2'..'9') {
-                result *= char - '0'
-            } else {
-                result += 1
-            }
+        return s.fold(0L) { acc: Long, c: Char ->
+            if (c in '2'..'9') acc * (c - '0') else acc + 1
         }
-        return result
     }
 }
