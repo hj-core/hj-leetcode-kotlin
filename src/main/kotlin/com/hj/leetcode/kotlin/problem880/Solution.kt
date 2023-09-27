@@ -8,34 +8,34 @@ class Solution {
      * Time O(N) and Space O(1) where N is the length of s;
      */
     fun decodeAtIndex(s: String, k: Int): String {
-        return charAtLength(s, k.toLong(), s.lastIndex, decodedLength(s)).toString()
+        return charAtPosition(s, s.lastIndex, decodedLength(s), k.toLong()).toString()
     }
 
-    private tailrec fun charAtLength(
+    private tailrec fun charAtPosition(
         encodedString: String,
-        targetLength: Long,
         endIndex: Int,
-        decodedLength: Long
+        decodedLength: Long,
+        targetPosition: Long // 1-indexed index at the decoded string
     ): Char {
 
-        require(targetLength <= decodedLength)
+        require(targetPosition <= decodedLength)
 
         if (encodedString[endIndex] in '2'..'9') {
             val prevIndex = endIndex - 1
             val prevDecodedLength = decodedLength / (encodedString[endIndex] - '0')
-            val newTargetLength = (targetLength % prevDecodedLength).let {
+            val newTargetLength = (targetPosition % prevDecodedLength).let {
                 if (it == 0L) prevDecodedLength else it
             }
-            return charAtLength(encodedString, newTargetLength, prevIndex, prevDecodedLength)
+            return charAtPosition(encodedString, prevIndex, prevDecodedLength, newTargetLength)
         }
 
-        if (decodedLength == targetLength) {
+        if (decodedLength == targetPosition) {
             return encodedString[endIndex]
         }
 
         val prevIndex = endIndex - 1
         val prevDecodedLength = decodedLength - 1
-        return charAtLength(encodedString, targetLength, prevIndex, prevDecodedLength)
+        return charAtPosition(encodedString, prevIndex, prevDecodedLength, targetPosition)
     }
 
     private fun decodedLength(s: String): Long {
