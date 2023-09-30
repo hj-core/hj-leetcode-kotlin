@@ -8,7 +8,7 @@ class Solution2 {
      * Time O(N) and Space O(N) where N is the size of nums;
      */
     fun find132pattern(nums: IntArray): Boolean {
-        val stack = mutableListOf<Int>() // monotonically decreasing
+        val threeStack = mutableListOf<Int>() // monotonically decreasing
         var two = Int.MIN_VALUE
 
         for (index in nums.indices.reversed()) {
@@ -25,10 +25,10 @@ class Solution2 {
             /* Push the value of two as large as possible, then add its
              * corresponding three to stack.
              */
-            while (stack.isNotEmpty() && stack.last() < potentialOne) {
-                two = stack.removeAt(stack.lastIndex)
+            while (threeStack.isNotEmpty() && threeStack.last() < potentialOne) {
+                two = threeStack.removeAt(threeStack.lastIndex)
             }
-            stack.add(potentialOne)
+            threeStack.add(potentialOne)
         }
         return false
     }
