@@ -12,10 +12,10 @@ class Solution {
         val twoStack = mutableListOf<Int>() // monotonically decreasing
 
         for (index in nums.lastIndex downTo 1) {
-            val three = nums[index]
+            val potentialThree = nums[index]
             val one = prefixMin[index - 1]
 
-            if (three <= one) {
+            if (potentialThree <= one) {
                 continue
             }
 
@@ -23,10 +23,10 @@ class Solution {
                 twoStack.removeAt(twoStack.lastIndex)
             }
 
-            if (twoStack.isNotEmpty() && twoStack.last() < three) {
+            if (twoStack.isNotEmpty() && twoStack.last() < potentialThree) {
                 return true
             }
-            twoStack.add(three)
+            twoStack.add(potentialThree)
         }
         return false
     }
