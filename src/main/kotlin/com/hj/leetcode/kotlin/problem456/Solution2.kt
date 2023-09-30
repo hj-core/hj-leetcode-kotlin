@@ -22,9 +22,7 @@ class Solution2 {
                 return true
             }
 
-            /* Push the value of two as large as possible, then add its
-             * corresponding three to stack.
-             */
+            // Raise the value of two whenever possible
             while (threeStack.isNotEmpty() && threeStack.last() < potentialOne) {
                 two = threeStack.removeAt(threeStack.lastIndex)
             }
