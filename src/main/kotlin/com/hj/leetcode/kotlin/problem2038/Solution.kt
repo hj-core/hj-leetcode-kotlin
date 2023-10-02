@@ -13,17 +13,17 @@ class Solution {
 
     private fun maxRemovals(colors: String, targetColor: Char): Int {
         var result = 0
-        var segmentLength = 0 // length of the target color in a row
+        var consecutiveLength = 0
 
         for (color in colors) {
             if (color == targetColor) {
-                segmentLength++
+                consecutiveLength++
             } else {
-                result += (segmentLength - 2).coerceAtLeast(0)
-                segmentLength = 0
+                result += (consecutiveLength - 2).coerceAtLeast(0)
+                consecutiveLength = 0
             }
         }
-        result += (segmentLength - 2).coerceAtLeast(0)
+        result += (consecutiveLength - 2).coerceAtLeast(0)
         return result
     }
 }
