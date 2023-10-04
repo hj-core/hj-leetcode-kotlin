@@ -7,59 +7,59 @@ import java.util.*
  */
 class MyHashMap() {
 
-    private var array = Array(8) { LinkedList<Pair<Int, Int>>() }
+    private var buckets = Array(8) { LinkedList<Pair<Int, Int>>() }
     private var totalEntries = 0
 
     fun get(key: Int): Int {
-        return array[hash(key)]
+        return buckets[hash(key)]
             .firstOrNull { it.first == key }
             ?.second
             ?: -1
     }
 
     private fun hash(key: Int): Int {
-        return key % array.size
+        return key % buckets.size
     }
 
     fun put(key: Int, value: Int) {
         remove(key)
-        array[hash(key)].add(Pair(key, value))
+        buckets[hash(key)].add(Pair(key, value))
         totalEntries++
-        adaptArraySize()
+        adaptBucketsSize()
     }
 
     fun remove(key: Int) {
-        array[hash(key)]
+        buckets[hash(key)]
             .removeAll { it.first == key }
             .let { if (it) totalEntries-- }
-        adaptArraySize()
+        adaptBucketsSize()
     }
 
-    private fun adaptArraySize() {
+    private fun adaptBucketsSize() {
         when {
-            totalEntries < array.size / 4 -> shrinkArray()
-            totalEntries > array.size * 3 / 4 -> expandArray()
+            totalEntries < buckets.size / 4 -> shrinkBuckets()
+            totalEntries > buckets.size * 3 / 4 -> expandBuckets()
         }
     }
 
-    private fun shrinkArray() {
-        val oldArray = array
-        array = Array(array.size / 2) { LinkedList<Pair<Int, Int>>() }
-        copyEntriesFrom(oldArray)
+    private fun shrinkBuckets() {
+        val oldBuckets = buckets
+        buckets = Array(buckets.size / 2) { LinkedList<Pair<Int, Int>>() }
+        copyEntriesFrom(oldBuckets)
     }
 
-    private fun copyEntriesFrom(oldArray: Array<LinkedList<Pair<Int, Int>>>) {
-        for (entries in oldArray) {
-            for (entry in entries) {
-                array[hash(entry.first)].add(entry)
+    private fun copyEntriesFrom(oldBuckets: Array<LinkedList<Pair<Int, Int>>>) {
+        for (bucket in oldBuckets) {
+            for (entry in bucket) {
+                buckets[hash(entry.first)].add(entry)
             }
         }
     }
 
-    private fun expandArray() {
-        val oldArray = array
-        array = Array(array.size * 2) { LinkedList<Pair<Int, Int>>() }
-        copyEntriesFrom(oldArray)
+    private fun expandBuckets() {
+        val oldBuckets = buckets
+        buckets = Array(buckets.size * 2) { LinkedList<Pair<Int, Int>>() }
+        copyEntriesFrom(oldBuckets)
     }
 }
 
