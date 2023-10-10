@@ -14,15 +14,15 @@ class Solution {
         var left = 0
         var right = 0
 
-        while (right < sortedDistinctNums.size) {
-            while (right < sortedDistinctNums.size &&
-                sortedDistinctNums[right] - sortedDistinctNums[left] <= threshold
-            ) {
-                right++
-            }
+        with(sortedDistinctNums) {
+            while (right < size) {
+                while (right < size && this[right] - this[left] <= threshold) {
+                    right++
+                }
 
-            result = minOf(result, nums.size - right + left)
-            left++
+                result = minOf(result, nums.size - right + left)
+                left++
+            }
         }
         return result
     }
