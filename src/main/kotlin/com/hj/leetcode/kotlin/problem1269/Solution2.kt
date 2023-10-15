@@ -5,7 +5,8 @@ package com.hj.leetcode.kotlin.problem1269
  */
 class Solution2 {
     /* Complexity:
-     * Time O(step^2) and Space O(step);
+     * Time O(step * N) and Space O(N) where N represents the minimum
+     * between steps and arrLen;
      */
     fun numWays(steps: Int, arrLen: Int): Int {
         val modulo = 1_000_000_007

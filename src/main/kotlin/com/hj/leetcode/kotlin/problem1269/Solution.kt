@@ -8,7 +8,8 @@ class Solution {
     private val modulo = 1_000_000_007
 
     /* Complexity:
-     * Time O(steps^2) and Space O(steps^2);
+     * Time O(steps * N) and Space O(steps * N) where N represents the minimum
+     * between steps and arrLen;
      */
     fun numWays(steps: Int, arrLen: Int): Int {
         return numWays(0, steps, arrLen, hashMapOf())
