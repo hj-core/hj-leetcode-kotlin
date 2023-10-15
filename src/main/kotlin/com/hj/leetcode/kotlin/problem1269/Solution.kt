@@ -12,31 +12,31 @@ class Solution {
      * between steps and arrLen;
      */
     fun numWays(steps: Int, arrLen: Int): Int {
-        return numWays(0, steps, arrLen, hashMapOf())
+        return numWaysToIndexZero(0, steps, arrLen, hashMapOf())
     }
 
-    private fun numWays(
-        index: Int,
+    private fun numWaysToIndexZero(
+        fromIndex: Int,
         steps: Int,
         arrLen: Int,
-        memoization: MutableMap<Pair<Int, Int>, Int> // key=pair(index, steps)
+        memoization: MutableMap<Pair<Int, Int>, Int> // key=pair(fromIndex, steps)
     ): Int {
-        if (index < 0 || index >= arrLen || steps < index) {
+        if (fromIndex < 0 || fromIndex >= arrLen || steps < fromIndex) {
             return 0
         }
         if (steps == 0) {
             return 1
         }
 
-        val state = Pair(index, steps)
+        val state = Pair(fromIndex, steps)
         if (state in memoization) {
             return checkNotNull(memoization[state])
         }
 
         var result = 0
-        result = (result + numWays(index, steps - 1, arrLen, memoization)) % modulo
-        result = (result + numWays(index + 1, steps - 1, arrLen, memoization)) % modulo
-        result = (result + numWays(index - 1, steps - 1, arrLen, memoization)) % modulo
+        result = (result + numWaysToIndexZero(fromIndex, steps - 1, arrLen, memoization)) % modulo
+        result = (result + numWaysToIndexZero(fromIndex + 1, steps - 1, arrLen, memoization)) % modulo
+        result = (result + numWaysToIndexZero(fromIndex - 1, steps - 1, arrLen, memoization)) % modulo
 
         memoization[state] = result
         return result
