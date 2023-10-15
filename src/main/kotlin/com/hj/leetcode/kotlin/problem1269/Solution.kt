@@ -19,7 +19,7 @@ class Solution {
         index: Int,
         steps: Int,
         arrLen: Int,
-        memoization: MutableMap<Pair<Int, Int>, Int>
+        memoization: MutableMap<Pair<Int, Int>, Int> // key=pair(index, steps)
     ): Int {
         if (index < 0 || index >= arrLen || steps < index) {
             return 0
