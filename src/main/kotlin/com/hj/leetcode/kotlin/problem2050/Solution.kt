@@ -8,6 +8,7 @@ class Solution {
      * Time O(n+E) and Space O(n+E) where E is the size of relation;
      */
     fun minimumTime(n: Int, relations: Array<IntArray>, time: IntArray): Int {
+        // prerequisites[i]::= the prerequisites of course i
         val prerequisites = prerequisites(n, relations)
         val sortedCourses = topologicallySortedCourses(n, prerequisites)
 
@@ -17,6 +18,7 @@ class Solution {
             }
         }
 
+        // nextCourses[i]::= the courses with course i as a prerequisite
         val nextCourses = nextCourses(n, relations)
         for (course in sortedCourses.asReversed()) {
             for (nextCourse in nextCourses[course]) {
