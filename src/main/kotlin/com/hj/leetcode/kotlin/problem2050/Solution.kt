@@ -10,31 +10,25 @@ class Solution {
     fun minimumTime(n: Int, relations: Array<IntArray>, time: IntArray): Int {
         // prerequisites[i]::= the prerequisites of course i
         val prerequisites = prerequisites(n, relations)
-        val sortedCourses = topologicallySortedCourses(n, prerequisites)
-
-        val earliestFinishTimes = IntArray(n + 1).apply {
-            for (i in 1..<size) {
-                this[i] = time[i - 1]
-            }
-        }
-
         // nextCourses[i]::= the courses with course i as a prerequisite
         val nextCourses = nextCourses(n, relations)
-        for (course in sortedCourses.asReversed()) {
-            for (nextCourse in nextCourses[course]) {
-                val finishTime = earliestFinishTimes[course] + time[nextCourse - 1]
-                if (earliestFinishTimes[nextCourse] < finishTime) {
-                    earliestFinishTimes[nextCourse] = finishTime
-                }
-            }
-        }
-        return earliestFinishTimes.max()
+
+        val sortedCourses = topologicallySortedCourses(n, prerequisites)
+        return earliestFinishTimes(n, time, nextCourses, sortedCourses).max()
     }
 
     private fun prerequisites(n: Int, relations: Array<IntArray>): List<List<Int>> {
         val result = List(n + 1) { mutableListOf<Int>() }
         for ((prerequisite, course) in relations) {
             result[course].add(prerequisite)
+        }
+        return result
+    }
+
+    private fun nextCourses(n: Int, relations: Array<IntArray>): List<List<Int>> {
+        val result = List(n + 1) { mutableListOf<Int>() }
+        for ((prerequisite, course) in relations) {
+            result[prerequisite].add(course)
         }
         return result
     }
@@ -72,10 +66,26 @@ class Solution {
         onCompletion(course)
     }
 
-    private fun nextCourses(n: Int, relations: Array<IntArray>): List<List<Int>> {
-        val result = List(n + 1) { mutableListOf<Int>() }
-        for ((prerequisite, course) in relations) {
-            result[prerequisite].add(course)
+    private fun earliestFinishTimes(
+        n: Int,
+        time: IntArray,
+        nextCourses: List<List<Int>>,
+        sortedCourses: List<Int>, // In topological order
+    ): IntArray {
+        val result = IntArray(n + 1).apply {
+            for (i in 1..<size) {
+                this[i] = time[i - 1]
+            }
+        }
+
+
+        for (course in sortedCourses.asReversed()) {
+            for (nextCourse in nextCourses[course]) {
+                val finishTime = result[course] + time[nextCourse - 1]
+                if (result[nextCourse] < finishTime) {
+                    result[nextCourse] = finishTime
+                }
+            }
         }
         return result
     }
