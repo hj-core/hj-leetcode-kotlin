@@ -9,9 +9,9 @@ class Solution {
      */
     fun minimumTime(n: Int, relations: Array<IntArray>, time: IntArray): Int {
         val prerequisites = prerequisites(n, relations)
-        val sortedCourses = topologicalSortedCourses(n, prerequisites)
+        val sortedCourses = topologicallySortedCourses(n, prerequisites)
 
-        val earlyFinishTimes = IntArray(n + 1).apply {
+        val earliestFinishTimes = IntArray(n + 1).apply {
             for (i in 1..<size) {
                 this[i] = time[i - 1]
             }
@@ -20,13 +20,13 @@ class Solution {
         val nextCourses = nextCourses(n, relations)
         for (course in sortedCourses.asReversed()) {
             for (nextCourse in nextCourses[course]) {
-                val finishTime = earlyFinishTimes[course] + time[nextCourse - 1]
-                if (earlyFinishTimes[nextCourse] < finishTime) {
-                    earlyFinishTimes[nextCourse] = finishTime
+                val finishTime = earliestFinishTimes[course] + time[nextCourse - 1]
+                if (earliestFinishTimes[nextCourse] < finishTime) {
+                    earliestFinishTimes[nextCourse] = finishTime
                 }
             }
         }
-        return earlyFinishTimes.max()
+        return earliestFinishTimes.max()
     }
 
     private fun prerequisites(n: Int, relations: Array<IntArray>): List<List<Int>> {
@@ -37,7 +37,7 @@ class Solution {
         return result
     }
 
-    private fun topologicalSortedCourses(n: Int, prerequisites: List<List<Int>>): List<Int> {
+    private fun topologicallySortedCourses(n: Int, prerequisites: List<List<Int>>): List<Int> {
         val result = ArrayDeque<Int>()
         val visited = BooleanArray(n + 1)
         for (course in 1..n) {
