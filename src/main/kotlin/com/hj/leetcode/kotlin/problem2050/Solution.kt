@@ -78,7 +78,6 @@ class Solution {
             }
         }
 
-
         for (course in sortedCourses.asReversed()) {
             for (nextCourse in nextCourses[course]) {
                 val finishTime = result[course] + time[nextCourse - 1]
