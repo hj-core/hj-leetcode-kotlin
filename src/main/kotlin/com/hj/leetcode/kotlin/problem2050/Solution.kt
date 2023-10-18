@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem2050
  */
 class Solution {
     /* Complexity:
-     * Time O(n+E) and Space O(n+E) where E is the size of relation;
+     * Time O(n+E) and Space O(n+E) where E is the size of relations;
      */
     fun minimumTime(n: Int, relations: Array<IntArray>, time: IntArray): Int {
         // prerequisites[i]::= the prerequisites of course i
