@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add descriptive comment to solution 1">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1361/Solution.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Replace the solution by DP approach" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,7 +126,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;problem2050&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.41494253&quot;,
@@ -500,7 +497,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="956" />
+    <option name="localTasksCounter" value="966" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -544,14 +541,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solutions to problem 338" />
-    <MESSAGE value="Add a DRAFT solution to problem 725" />
-    <MESSAGE value="Refactor the duplicated code" />
-    <MESSAGE value="Improve variable naming" />
-    <MESSAGE value="Refactor the partEndNode(...)&#10;&#10;- It is replaced by the more abstract ListNode.at(...)" />
-    <MESSAGE value="Add an O(NLogN) solution to problem 287" />
-    <MESSAGE value="Add a DRAFT solution to problem 799" />
-    <MESSAGE value="Improve code logic" />
     <MESSAGE value="Improve space complexity" />
     <MESSAGE value="Add a solution to problem 389" />
     <MESSAGE value="Add a DRAFT solution to problem 880" />
@@ -569,7 +558,15 @@
     <MESSAGE value="Update README.md to include solution 2" />
     <MESSAGE value="Revise the complexity" />
     <MESSAGE value="Add descriptive comment to solution 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add descriptive comment to solution 1" />
+    <MESSAGE value="Add a solution to problem 2050" />
+    <MESSAGE value="Improve variable naming" />
+    <MESSAGE value="Improve naming" />
+    <MESSAGE value="Add description comment" />
+    <MESSAGE value="Extract function of earliestFinishTime" />
+    <MESSAGE value="Correct typo in complexity" />
+    <MESSAGE value="Remove extra blank line" />
+    <MESSAGE value="Replace the solution by DP approach" />
+    <option name="LAST_COMMIT_MESSAGE" value="Replace the solution by DP approach" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
