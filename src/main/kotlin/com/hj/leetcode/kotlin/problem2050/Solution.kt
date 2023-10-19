@@ -8,9 +8,9 @@ class Solution {
      * Time O(n+E) and Space O(n+E);
      */
     fun minimumTime(n: Int, relations: Array<IntArray>, time: IntArray): Int {
-        // prerequisites[i]::= the prerequisites of the course i
+        // prerequisites[i]::= the prerequisites of course i
         val prerequisites = coursePrerequisites(n, relations)
-        // memoization[i]::= the earliest finish time of the course i
+        // memoization[i]::= the earliest finish time of course i
         val memoization = hashMapOf<Int, Int>()
 
         return (1..n).maxOf { course ->
