@@ -17,10 +17,10 @@ class Solution2 {
             dp[i][1] = true
         }
 
+        // Propagate the DP relation while keeping track of the longest palindrome
         var resultStart = 0
         var resultLength = 1
 
-        // Propagate the DP relation while keeping track of the longest palindrome
         for (length in 2..s.length) {
             for (start in 0..s.length - length) {
                 dp[start][length] =
