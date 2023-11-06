@@ -8,11 +8,11 @@ import java.util.*
 class SeatManager(n: Int) {
 
     private var numReserved = 0
-    private val unreserved = TreeSet<Int>()
+    private val unreserved = PriorityQueue<Int>()
 
     fun reserve(): Int {
         numReserved++
-        return unreserved.pollFirst() ?: numReserved
+        return unreserved.poll() ?: numReserved
     }
 
     fun unreserve(seatNumber: Int) {
