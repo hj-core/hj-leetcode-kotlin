@@ -9,12 +9,8 @@ class Solution {
      */
     fun sortVowels(s: String): String {
         val vowels = charArrayOf('A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u')
-        val vowelCount = IntArray(vowels.size)
-        for (char in s) {
-            val vowelIndex = vowels.indexOf(char)
-            if (vowelIndex != -1) {
-                vowelCount[vowelIndex]++
-            }
+        val vowelsCount = IntArray(vowels.size) { index ->
+            s.count { char -> char == vowels[index] }
         }
 
         val result = StringBuilder(s)
@@ -22,11 +18,11 @@ class Solution {
 
         for ((index, char) in result.withIndex()) {
             if (char in vowels) {
-                while (vowelCount[vowelIndex] == 0) {
+                while (vowelsCount[vowelIndex] == 0) {
                     vowelIndex++
                 }
                 result[index] = vowels[vowelIndex]
-                vowelCount[vowelIndex]--
+                vowelsCount[vowelIndex]--
             }
         }
         return result.toString()
