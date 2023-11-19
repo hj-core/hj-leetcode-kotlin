@@ -10,13 +10,13 @@ class Solution {
     fun reductionOperations(nums: IntArray): Int {
         val sorted = nums.sorted()
         var result = 0
-        var localRequiredOps = 0
+        var localOps = 0
 
         for (index in 1..<sorted.size) {
             if (sorted[index] != sorted[index - 1]) {
-                localRequiredOps++
+                localOps++
             }
-            result += localRequiredOps
+            result += localOps
         }
         return result
     }
