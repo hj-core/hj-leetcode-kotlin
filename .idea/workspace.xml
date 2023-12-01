@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update gradle 8.5">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability">
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1662/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1662/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -501,7 +499,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="986" />
+    <option name="localTasksCounter" value="988" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -545,7 +543,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add descriptive comment to solution 1" />
     <MESSAGE value="Add a solution to problem 2050" />
     <MESSAGE value="Improve variable naming" />
     <MESSAGE value="Improve naming" />
@@ -562,7 +559,6 @@
     <MESSAGE value="Add a solution to problem 1921" />
     <MESSAGE value="Add a solution to problem 1759" />
     <MESSAGE value="Add a solution to problem 2785" />
-    <MESSAGE value="Improve readability" />
     <MESSAGE value="Add a solution to problem 2391" />
     <MESSAGE value="Add a solution to problem 1814" />
     <MESSAGE value="Add a solution to problem 1424" />
@@ -570,7 +566,9 @@
     <MESSAGE value="Add a solution to problem 1685" />
     <MESSAGE value="Add a solution to problem 191" />
     <MESSAGE value="Add another solution" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add another solution" />
+    <MESSAGE value="Correct the time complexity" />
+    <MESSAGE value="Improve readability" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

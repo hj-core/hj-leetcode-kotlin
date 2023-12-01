@@ -20,30 +20,20 @@ class Solution {
         return iterator1.hasNext() == iterator2.hasNext()
     }
 
-    private class CharIterator(private val strings: Array<String>) : Iterator<Char> {
+    private class CharIterator(strings: Array<String>) : Iterator<Char> {
 
-        private var nextStrIndex = 0
-        private var nextCharIndex = 0
+        private var arrayIterator = strings.iterator()
+        private var stringIterator: Iterator<Char>? = null
 
         override fun hasNext(): Boolean {
-            return when {
-                nextStrIndex > strings.lastIndex -> false
-                nextStrIndex < strings.lastIndex -> true
-                else -> nextCharIndex <= strings[nextStrIndex].lastIndex
-            }
+            return arrayIterator.hasNext() || (stringIterator?.hasNext() == true)
         }
 
         override fun next(): Char {
-            val next = strings[nextStrIndex][nextCharIndex]
-
-            if (nextCharIndex < strings[nextStrIndex].lastIndex) {
-                nextCharIndex++
-            } else {
-                nextStrIndex++
-                nextCharIndex = 0
+            if (stringIterator?.hasNext() != true) {
+                stringIterator = arrayIterator.next().iterator()
             }
-
-            return next
+            return checkNotNull(stringIterator).next()
         }
     }
 }
