@@ -13,15 +13,11 @@ class Solution {
         val iterator2 = CharIterator(word2)
 
         while (iterator1.hasNext() && iterator2.hasNext()) {
-            val char1 = iterator1.next()
-            val char2 = iterator2.next()
-            if (char1 != char2) return false
+            if (iterator1.next() != iterator2.next()) {
+                return false
+            }
         }
-
-        val hasDiffLength = iterator1.hasNext() || iterator2.hasNext()
-        if (hasDiffLength) return false
-
-        return true
+        return iterator1.hasNext() == iterator2.hasNext()
     }
 
     private class CharIterator(private val strings: Array<String>) : Iterator<Char> {
