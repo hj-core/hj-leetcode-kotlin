@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Change CharIterator to an adhoc object">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add another solution">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +129,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem1662",
+    "git-widget-placeholder": "update-gradle",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41494253",
@@ -499,7 +500,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="993" />
+    <option name="localTasksCounter" value="986" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -543,6 +544,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add descriptive comment to solution 1" />
+    <MESSAGE value="Add a solution to problem 2050" />
+    <MESSAGE value="Improve variable naming" />
     <MESSAGE value="Improve naming" />
     <MESSAGE value="Add description comment" />
     <MESSAGE value="Extract function of earliestFinishTime" />
@@ -557,6 +561,7 @@
     <MESSAGE value="Add a solution to problem 1921" />
     <MESSAGE value="Add a solution to problem 1759" />
     <MESSAGE value="Add a solution to problem 2785" />
+    <MESSAGE value="Improve readability" />
     <MESSAGE value="Add a solution to problem 2391" />
     <MESSAGE value="Add a solution to problem 1814" />
     <MESSAGE value="Add a solution to problem 1424" />
@@ -564,11 +569,7 @@
     <MESSAGE value="Add a solution to problem 1685" />
     <MESSAGE value="Add a solution to problem 191" />
     <MESSAGE value="Add another solution" />
-    <MESSAGE value="Correct the time complexity" />
-    <MESSAGE value="Improve readability" />
-    <MESSAGE value="Refactor CharIterator to use built-in iterator" />
-    <MESSAGE value="Change CharIterator to an adhoc object" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change CharIterator to an adhoc object" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add another solution" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -5,8 +5,7 @@ package com.hj.leetcode.kotlin.problem1662
  */
 class Solution {
     /* Complexity:
-     * Time O(N+M) and Space O(1) where N and M are the flattened length of
-     * word1 and word2, respectively;
+     * Time O(N) and Space O(1) where N is the min flat length of word1 and word2;
      */
     fun arrayStringsAreEqual(word1: Array<String>, word2: Array<String>): Boolean {
         val iterator1 = word1.asSequence().flatMap { it.asSequence() }.iterator()
