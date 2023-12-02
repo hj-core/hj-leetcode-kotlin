@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add another solution">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1662/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1662/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +128,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "update-gradle",
+    "git-widget-placeholder": "problem1662",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41494253",
@@ -500,7 +499,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="986" />
+    <option name="localTasksCounter" value="987" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -544,8 +543,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add descriptive comment to solution 1" />
-    <MESSAGE value="Add a solution to problem 2050" />
     <MESSAGE value="Improve variable naming" />
     <MESSAGE value="Improve naming" />
     <MESSAGE value="Add description comment" />
@@ -569,7 +566,12 @@
     <MESSAGE value="Add a solution to problem 1685" />
     <MESSAGE value="Add a solution to problem 191" />
     <MESSAGE value="Add another solution" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add another solution" />
+    <MESSAGE value="Revert &quot;Correct the time complexity&quot;&#10;&#10;This reverts commit d1335a25" />
+    <MESSAGE value="Revert &quot;Correct the time complexity&quot;&#10;&#10;This reverts commit d1335a25 because it is indeed correct and more accurate" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;Correct the time complexity&quot;&#10;&#10;This reverts commit d1335a25 because it is indeed correct and more accurate" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
