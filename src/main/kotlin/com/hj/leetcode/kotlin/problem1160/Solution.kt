@@ -9,10 +9,10 @@ class Solution {
      * and N is the length of chars;
      */
     fun countCharacters(words: Array<String>, chars: String): Int {
-        val charFrequencies = chars.charFrequencies()
+        val availableChars = chars.eachCount()
 
         return words.sumOf { word ->
-            if (word.canBeFormedBy(charFrequencies)) {
+            if (word.canBeFormedBy(availableChars)) {
                 word.length
             } else {
                 0
@@ -20,18 +20,18 @@ class Solution {
         }
     }
 
-    private fun String.charFrequencies(): List<Int> {
+    private fun String.eachCount(): List<Int> {
         return this.fold(MutableList(26) { 0 }) { acc, c ->
             acc[c - 'a']++
             acc
         }
     }
 
-    private fun String.canBeFormedBy(charFrequencies: List<Int>): Boolean {
-        val availableChars = charFrequencies.toMutableList()
+    private fun String.canBeFormedBy(availableChars: List<Int>): Boolean {
+        val remainingChars = availableChars.toMutableList()
         for (c in this) {
-            availableChars[c - 'a']--
-            if (availableChars[c - 'a'] < 0) {
+            remainingChars[c - 'a']--
+            if (remainingChars[c - 'a'] < 0) {
                 return false
             }
         }
