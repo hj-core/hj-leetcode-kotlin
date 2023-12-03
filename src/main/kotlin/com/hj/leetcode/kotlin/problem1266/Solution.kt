@@ -11,11 +11,12 @@ class Solution {
      * Time O(N) and Space O(1) where N is the size of points;
      */
     fun minTimeToVisitAllPoints(points: Array<IntArray>): Int {
-        var result = 0
-        for (index in 1..<points.size) {
-            result += minVisitingTime(points[index - 1], points[index])
-        }
-        return result
+        return points
+            .asSequence()
+            .zipWithNext()
+            .fold(0) { acc, pair ->
+                acc + minVisitingTime(pair.first, pair.second)
+            }
     }
 
     private fun minVisitingTime(fromPoint: IntArray, toPoint: IntArray): Int {
