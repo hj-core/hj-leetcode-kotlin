@@ -14,9 +14,7 @@ class Solution {
         return points
             .asSequence()
             .zipWithNext()
-            .fold(0) { acc, pair ->
-                acc + minVisitingTime(pair.first, pair.second)
-            }
+            .sumOf { (from, to) -> minVisitingTime(from, to) }
     }
 
     private fun minVisitingTime(fromPoint: IntArray, toPoint: IntArray): Int {
