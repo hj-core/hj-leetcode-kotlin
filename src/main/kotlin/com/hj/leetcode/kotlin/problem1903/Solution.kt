@@ -8,6 +8,6 @@ class Solution {
      * Time O(N) and Space O(1) where N is the length of num;
      */
     fun largestOddNumber(num: String): String {
-        return num.dropLastWhile { it !in "13579" }
+        return num.dropLastWhile { it in "02468" }
     }
 }
