@@ -7,7 +7,7 @@ import com.hj.leetcode.kotlin.common.model.TreeNode
  */
 class Solution {
     /* Complexity:
-     * Time O(N) and Space O(H) where N and H are the number of nodes and height of root;
+     * Time O(N) and Space O(N) where N is the number of nodes in root;
      */
     fun inorderTraversal(root: TreeNode?): List<Int> {
         return buildList {

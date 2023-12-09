@@ -126,7 +126,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem1903",
+    "git-widget-placeholder": "problem94",
     "kotlin-language-version-configured": "true",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
@@ -505,7 +505,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="997" />
+    <option name="localTasksCounter" value="999" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -549,7 +549,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Remove extra blank line" />
     <MESSAGE value="Replace the solution by DP approach" />
     <MESSAGE value="Add a solution to problem 1425" />
     <MESSAGE value="Add a solution to problem 779" />
@@ -573,6 +572,7 @@
     <MESSAGE value="Add a solution to problem 1266" />
     <MESSAGE value="Add a solution to problem 1688" />
     <MESSAGE value="Add a solution to problem 1903" />
+    <MESSAGE value="Improve readability and update space complexity" />
     <MESSAGE value="Improve readability" />
     <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
