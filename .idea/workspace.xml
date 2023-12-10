@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 1903" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Revised space complexity" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,7 +126,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem1903",
+    "git-widget-placeholder": "problem94",
     "kotlin-language-version-configured": "true",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
@@ -505,7 +505,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="996" />
+    <option name="localTasksCounter" value="1000" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -549,8 +549,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Remove extra blank line" />
-    <MESSAGE value="Replace the solution by DP approach" />
     <MESSAGE value="Add a solution to problem 1425" />
     <MESSAGE value="Add a solution to problem 779" />
     <MESSAGE value="Add a DP solution" />
@@ -571,10 +569,12 @@
     <MESSAGE value="Improve wording of time complexity" />
     <MESSAGE value="Add a solution to problem 1160" />
     <MESSAGE value="Add a solution to problem 1266" />
-    <MESSAGE value="Improve readability" />
     <MESSAGE value="Add a solution to problem 1688" />
     <MESSAGE value="Add a solution to problem 1903" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 1903" />
+    <MESSAGE value="Improve readability and update space complexity" />
+    <MESSAGE value="Improve readability" />
+    <MESSAGE value="Revised space complexity" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revised space complexity" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
