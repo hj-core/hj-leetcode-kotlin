@@ -9,22 +9,9 @@ class Solution {
      * and columns of mat;
      */
     fun numSpecial(mat: Array<IntArray>): Int {
-        val candidateColumns = mutableListOf<Int>()
-        for (row in mat) {
-            val leftMostIndex = row.indexOfFirst { it == 1 }
-            if (leftMostIndex == -1) {
-                continue
-            }
-
-            val rightMostIndex = row.indexOfLast { it == 1 }
-            if (leftMostIndex == rightMostIndex) {
-                candidateColumns.add(leftMostIndex)
-            }
-        }
-
         var result = 0
         val cache = hashMapOf<Int, Boolean>()
-        for (column in candidateColumns) {
+        for (column in candidateColumns(mat)) {
             if (cache[column] == true) {
                 result += 1
                 continue
@@ -34,6 +21,22 @@ class Solution {
                 mat.indexOfFirst { it[column] == 1 } == mat.indexOfLast { it[column] == 1 }
             if (cache[column] == true) {
                 result += 1
+            }
+        }
+        return result
+    }
+
+    private fun candidateColumns(mat: Array<IntArray>): MutableList<Int> {
+        val result = mutableListOf<Int>()
+        for (row in mat) {
+            val firstOneIndex = row.indexOfFirst { it == 1 }
+            if (firstOneIndex == -1) {
+                continue
+            }
+
+            val lastOneIndex = row.indexOfLast { it == 1 }
+            if (firstOneIndex == lastOneIndex) {
+                result.add(firstOneIndex)
             }
         }
         return result
