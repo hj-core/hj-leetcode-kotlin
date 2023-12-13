@@ -13,7 +13,7 @@ class Solution {
         return candidateColumns(mat).count { containsSingleOne(mat, it, memoization) }
     }
 
-    private fun candidateColumns(mat: Array<IntArray>): MutableList<Int> {
+    private fun candidateColumns(mat: Array<IntArray>): List<Int> {
         val result = mutableListOf<Int>()
         for (row in mat) {
             val firstOneColumn = row.indexOfFirst { it == 1 }
