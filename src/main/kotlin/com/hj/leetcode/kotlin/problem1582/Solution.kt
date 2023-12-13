@@ -9,21 +9,8 @@ class Solution {
      * and columns of mat;
      */
     fun numSpecial(mat: Array<IntArray>): Int {
-        var result = 0
-        val cache = hashMapOf<Int, Boolean>()
-        for (column in candidateColumns(mat)) {
-            if (cache[column] == true) {
-                result += 1
-                continue
-            }
-
-            cache[column] =
-                mat.indexOfFirst { it[column] == 1 } == mat.indexOfLast { it[column] == 1 }
-            if (cache[column] == true) {
-                result += 1
-            }
-        }
-        return result
+        val memoization = hashMapOf<Int, Boolean>()
+        return candidateColumns(mat).count { hasSingleOne(mat, it, memoization) }
     }
 
     private fun candidateColumns(mat: Array<IntArray>): MutableList<Int> {
@@ -39,6 +26,28 @@ class Solution {
                 result.add(firstOneIndex)
             }
         }
+        return result
+    }
+
+    private fun hasSingleOne(
+        mat: Array<IntArray>,
+        column: Int,
+        memoization: MutableMap<Int, Boolean>,
+    ): Boolean {
+
+        if (column in memoization) {
+            return checkNotNull(memoization[column])
+        }
+
+        val firstOneRow = mat.indexOfFirst { it[column] == 1 }
+        if (firstOneRow == -1) {
+            memoization[column] = false
+            return false
+        }
+
+        val lastOneRow = mat.indexOfLast { it[column] == 1 }
+        val result = firstOneRow == lastOneRow
+        memoization[column] = result
         return result
     }
 }
