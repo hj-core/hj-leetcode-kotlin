@@ -9,7 +9,7 @@ class Solution {
      * and columns of mat;
      */
     fun numSpecial(mat: Array<IntArray>): Int {
-        val memoization = hashMapOf<Int, Boolean>()
+        val memoization = hashMapOf<Int, Boolean>() // entry=(column, containsSingleOne)
         return candidateColumns(mat).count { containsSingleOne(mat, it, memoization) }
     }
 
