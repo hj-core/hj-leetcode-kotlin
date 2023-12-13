@@ -16,14 +16,14 @@ class Solution {
     private fun candidateColumns(mat: Array<IntArray>): MutableList<Int> {
         val result = mutableListOf<Int>()
         for (row in mat) {
-            val firstOneIndex = row.indexOfFirst { it == 1 }
-            if (firstOneIndex == -1) {
+            val firstOneColumn = row.indexOfFirst { it == 1 }
+            if (firstOneColumn == -1) {
                 continue
             }
 
-            val lastOneIndex = row.indexOfLast { it == 1 }
-            if (firstOneIndex == lastOneIndex) {
-                result.add(firstOneIndex)
+            val lastOneColumn = row.indexOfLast { it == 1 }
+            if (firstOneColumn == lastOneColumn) {
+                result.add(firstOneColumn)
             }
         }
         return result
