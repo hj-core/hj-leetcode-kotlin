@@ -10,7 +10,7 @@ class Solution {
      */
     fun numSpecial(mat: Array<IntArray>): Int {
         val memoization = hashMapOf<Int, Boolean>()
-        return candidateColumns(mat).count { hasSingleOne(mat, it, memoization) }
+        return candidateColumns(mat).count { containsSingleOne(mat, it, memoization) }
     }
 
     private fun candidateColumns(mat: Array<IntArray>): MutableList<Int> {
@@ -29,7 +29,7 @@ class Solution {
         return result
     }
 
-    private fun hasSingleOne(
+    private fun containsSingleOne(
         mat: Array<IntArray>,
         column: Int,
         memoization: MutableMap<Int, Boolean>,
