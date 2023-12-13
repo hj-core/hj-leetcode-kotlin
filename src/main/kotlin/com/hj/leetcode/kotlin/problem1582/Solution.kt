@@ -46,8 +46,7 @@ class Solution {
         }
 
         val lastOneRow = mat.indexOfLast { it[column] == 1 }
-        val result = firstOneRow == lastOneRow
-        memoization[column] = result
-        return result
+        memoization[column] = firstOneRow == lastOneRow
+        return checkNotNull(memoization[column])
     }
 }
