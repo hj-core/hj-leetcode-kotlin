@@ -12,14 +12,13 @@ class Solution {
             return false
         }
 
-        val count = IntArray(26)
+        val counter = IntArray(26)
         for (char in s) {
-            count[char - 'a']++
+            counter[char - 'a']++
         }
-
         for (char in t) {
-            count[char - 'a']--
+            counter[char - 'a']--
         }
-        return count.all { it == 0 }
+        return counter.all { it == 0 }
     }
 }
