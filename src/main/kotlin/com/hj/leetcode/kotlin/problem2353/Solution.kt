@@ -13,7 +13,7 @@ class FoodRatings(foods: Array<String>, cuisines: Array<String>, ratings: IntArr
     // entry=(cuisine, sortedFoods)
     private val menuRatings = hashMapOf<String, SortedSet<String>>()
     private val ratingCriterion = compareBy<String>(
-        { -checkNotNull(menu[it]?.second) }, { it }
+        { checkNotNull(menu[it]?.second) * -1 }, { it }
     )
 
     /* Complexity:
