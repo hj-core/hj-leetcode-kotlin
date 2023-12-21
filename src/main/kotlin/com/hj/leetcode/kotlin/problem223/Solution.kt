@@ -8,50 +8,29 @@ class Solution {
      * Time O(1) and Space O(1);
      */
     fun computeArea(ax1: Int, ay1: Int, ax2: Int, ay2: Int, bx1: Int, by1: Int, bx2: Int, by2: Int): Int {
-        val rectangle1 = Rectangle(ax1, ay1, ax2, ay2)
-        val rectangle2 = Rectangle(bx1, by1, bx2, by2)
+        val rec1Area = calculateRectangleArea(ax1, ax2, ay1, ay2)
+        val rec2Area = calculateRectangleArea(bx1, bx2, by1, by2)
 
-        val area1 = rectangle1.area()
-        val area2 = rectangle2.area()
-        val overlapArea = getOverlapArea(rectangle1, rectangle2)
+        val xOverlapLen = findOverlapLength(ax1..ax2, bx1..bx2)
+        val yOverlapLen = findOverlapLength(ay1..ay2, by1..by2)
+        val overlapArea = xOverlapLen * yOverlapLen
 
-        return area1 + area2 - overlapArea
+        return rec1Area + rec2Area - overlapArea
     }
 
-    private data class Rectangle(
-        val xBottomLeft: Int,
-        val yBottomLeft: Int,
-        val xTopRight: Int,
-        val yTopRight: Int
-    )
-
-    private fun Rectangle.area(): Int {
-        val side1 = xTopRight - xBottomLeft
-        val side2 = yTopRight - yBottomLeft
-        return side1 * side2
+    private fun calculateRectangleArea(
+        xBottomLeft: Int, xTopRight: Int,
+        yBottomLeft: Int, yTopRight: Int
+    ): Int {
+        return (xTopRight - xBottomLeft) * (yTopRight - yBottomLeft)
     }
 
-    private fun getOverlapArea(rectangle1: Rectangle, rectangle2: Rectangle): Int {
-        val side1 = getOverlapLength(
-            line1Start = rectangle1.xBottomLeft,
-            line1End = rectangle1.xTopRight,
-            line2Start = rectangle2.xBottomLeft,
-            line2End = rectangle2.xTopRight
-        )
+    private fun findOverlapLength(intRange1: IntRange, intRange2: IntRange): Int {
+        val range1 = if (intRange1.first < intRange1.last) intRange1 else intRange1.reversed()
+        val range2 = if (intRange2.first < intRange2.last) intRange2 else intRange2.reversed()
 
-        val side2 = getOverlapLength(
-            line1Start = rectangle1.yBottomLeft,
-            line1End = rectangle1.yTopRight,
-            line2Start = rectangle2.yBottomLeft,
-            line2End = rectangle2.yTopRight
-        )
-
-        return side1 * side2
-    }
-
-    private fun getOverlapLength(line1Start: Int, line1End: Int, line2Start: Int, line2End: Int): Int {
-        val overlapStart = maxOf(line1Start, line2Start)
-        val overlapEnd = minOf(line1End, line2End)
-        return (overlapEnd - overlapStart).coerceAtLeast(0)
+        val startOfOverlap = maxOf(range1.first, range2.first)
+        val endOfOverlap = minOf(range1.last, range2.last)
+        return (endOfOverlap - startOfOverlap).coerceAtLeast(0)
     }
 }

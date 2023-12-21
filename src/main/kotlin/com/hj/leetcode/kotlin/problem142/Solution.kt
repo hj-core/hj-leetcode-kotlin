@@ -10,23 +10,24 @@ class Solution {
      * Time O(N) and Space O(1) where N is the number of nodes in head;
      */
     fun detectCycle(head: ListNode?): ListNode? {
-        // Floyd’s Cycle Finding Algorithm
+        var meetNode = findNodeWhereSlowFastPointersMeet(head)
+        val noCycleExists = meetNode == null
+        if (noCycleExists) return null
+
+        var cycleStart = head
+        while (cycleStart != meetNode) {
+            meetNode = meetNode?.next
+            cycleStart = cycleStart?.next
+        }
+        return cycleStart
+    }
+
+    private fun findNodeWhereSlowFastPointersMeet(head: ListNode?): ListNode? {
         var slow = head?.next
         var fast = head?.next?.next
-
-        while (fast != null && slow != fast) {
+        while (fast != null && fast != slow) {
+            slow = slow?.next
             fast = fast.next?.next
-            slow = slow?.next
-        }
-
-        val noCycleExist = fast == null
-        if (noCycleExist) return null
-
-        slow = head
-
-        while (slow != fast) {
-            slow = slow?.next
-            fast = fast?.next
         }
         return slow
     }
