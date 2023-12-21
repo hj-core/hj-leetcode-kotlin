@@ -8,18 +8,14 @@ class Solution {
      * Time O(N) and Space O(N) where N is the size of stones;
      */
     fun removeStones(stones: Array<IntArray>): Int {
-        val indicesByRow = stones.indices.groupBy { stones[it][0] }
-        val indicesByColumn = stones.indices.groupBy { stones[it][1] }
-        return stones.size - numConnectedComponents(stones, indicesByRow, indicesByColumn)
+        return stones.size - numConnectedComponents(stones)
     }
 
-    private fun numConnectedComponents(
-        stones: Array<IntArray>,
-        indicesByRow: Map<Int, List<Int>>,
-        indicesByColumn: Map<Int, List<Int>>,
-    ): Int {
+    private fun numConnectedComponents(stones: Array<IntArray>): Int {
         var numConnectedComponents = 0
         val visited = BooleanArray(stones.size)
+        val indicesByRow = stones.indices.groupBy { stones[it][0] }
+        val indicesByColumn = stones.indices.groupBy { stones[it][1] }
 
         for (index in stones.indices) {
             if (visited[index]) continue
