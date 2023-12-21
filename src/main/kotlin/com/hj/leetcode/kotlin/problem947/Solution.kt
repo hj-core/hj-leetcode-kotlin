@@ -30,14 +30,12 @@ class Solution {
             while (dfsStack.isNotEmpty()) {
                 val poppedIndex = dfsStack.removeLast()
                 val (row, column) = stones[poppedIndex]
+                val nextIndices = listOf(
+                    checkNotNull(indicesByRow[row]),
+                    checkNotNull(indicesByColumn[column])
+                ).asSequence().flatten()
 
-                for (nextIndex in checkNotNull(indicesByRow[row])) {
-                    if (!visited[nextIndex]) {
-                        dfsStack.addLast(nextIndex)
-                        visited[nextIndex] = true
-                    }
-                }
-                for (nextIndex in checkNotNull(indicesByColumn[column])) {
+                for (nextIndex in nextIndices) {
                     if (!visited[nextIndex]) {
                         dfsStack.addLast(nextIndex)
                         visited[nextIndex] = true
