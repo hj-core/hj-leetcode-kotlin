@@ -10,11 +10,10 @@ class Solution {
     fun removeStones(stones: Array<IntArray>): Int {
         val indicesByRow = stones.indices.groupBy { stones[it][0] }
         val indicesByColumn = stones.indices.groupBy { stones[it][1] }
-        val numConnectedComponents = findNumConnectedComponents(stones, indicesByRow, indicesByColumn)
-        return stones.size - numConnectedComponents
+        return stones.size - numConnectedComponents(stones, indicesByRow, indicesByColumn)
     }
 
-    private fun findNumConnectedComponents(
+    private fun numConnectedComponents(
         stones: Array<IntArray>,
         indicesByRow: Map<Int, List<Int>>,
         indicesByColumn: Map<Int, List<Int>>,
