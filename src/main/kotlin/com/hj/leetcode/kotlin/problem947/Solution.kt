@@ -8,16 +8,16 @@ class Solution {
      * Time O(N) and Space O(N) where N is the size of stones;
      */
     fun removeStones(stones: Array<IntArray>): Int {
-        val rowGroups = stones.indices.groupBy { stones[it][0] }
-        val columnGroups = stones.indices.groupBy { stones[it][1] }
-        val numConnectedComponents = findNumConnectedComponents(stones, rowGroups, columnGroups)
+        val indicesByRow = stones.indices.groupBy { stones[it][0] }
+        val indicesByColumn = stones.indices.groupBy { stones[it][1] }
+        val numConnectedComponents = findNumConnectedComponents(stones, indicesByRow, indicesByColumn)
         return stones.size - numConnectedComponents
     }
 
     private fun findNumConnectedComponents(
         stones: Array<IntArray>,
-        rowGroups: Map<Int, List<Int>>,
-        columnGroups: Map<Int, List<Int>>
+        indicesByRow: Map<Int, List<Int>>,
+        indicesByColumn: Map<Int, List<Int>>,
     ): Int {
         var numConnectedComponents = 0
         val visited = BooleanArray(stones.size)
@@ -34,7 +34,7 @@ class Solution {
                 val stone = stones[first]
                 val (row, column) = stone
 
-                val sameRowIndices = rowGroups[row] ?: emptyList()
+                val sameRowIndices = indicesByRow[row] ?: emptyList()
                 for (sameRowIndex in sameRowIndices) {
                     if (!visited[sameRowIndex]) {
                         queue.addLast(sameRowIndex)
@@ -42,7 +42,7 @@ class Solution {
                     }
                 }
 
-                val sameColumnIndices = columnGroups[column] ?: emptyList()
+                val sameColumnIndices = indicesByColumn[column] ?: emptyList()
                 for (sameColumnIndex in sameColumnIndices) {
                     if (!visited[sameColumnIndex]) {
                         queue.addLast(sameColumnIndex)
