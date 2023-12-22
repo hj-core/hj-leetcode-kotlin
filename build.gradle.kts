@@ -1,7 +1,5 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
-    alias(libs.plugins.kotlinJvm)
+    alias(libs.plugins.kotlin.jvm)
 }
 
 group = "com.hj"
@@ -20,10 +18,10 @@ tasks.test {
 }
 
 tasks.wrapper {
-    gradleVersion = "8.1.1"
+    gradleVersion = "8.5"
     distributionType = Wrapper.DistributionType.ALL
 }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+kotlin {
+    jvmToolchain(11)
 }

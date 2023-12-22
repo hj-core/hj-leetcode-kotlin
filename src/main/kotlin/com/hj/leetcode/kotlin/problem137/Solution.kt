@@ -8,14 +8,16 @@ class Solution {
      * Time O(N) and Space O(1) where N is the size of nums;
      */
     fun singleNumber(nums: IntArray): Int {
-        var single = 0
+        var result = 0
         var bitMask = 1
-        for (shift in 0..31) {
-            val bitFrequency = nums.count { num -> num and bitMask == bitMask }
-            val isSingle = bitFrequency % 3 != 0
-            if (isSingle) single += bitMask
+        for (bitPosition in 0..31) {
+            val totalOnes = nums.count { (it and bitMask) == bitMask }
+            val isSingle = totalOnes % 3 == 1
+            if (isSingle) {
+                result += bitMask
+            }
             bitMask = bitMask shl 1
         }
-        return single
+        return result
     }
 }
