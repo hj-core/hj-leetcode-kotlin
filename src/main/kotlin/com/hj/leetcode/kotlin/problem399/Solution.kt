@@ -8,59 +8,59 @@ class Solution {
      * Time O(NE) and Space O(E) where E is the size of equations and N is the size of queries;
      */
     fun calcEquation(equations: List<List<String>>, values: DoubleArray, queries: List<List<String>>): DoubleArray {
-        val adjacency = buildAdjacencyList(equations, values)
+        val knownQuotients = adjacencyList(equations, values)
 
         return DoubleArray(queries.size) { index ->
             val (u, v) = queries[index]
-
-            if (u !in adjacency || v !in adjacency) {
+            val isUnknownVariable = u !in knownQuotients || v !in knownQuotients
+            if (isUnknownVariable) {
                 -1.0
             } else {
-                dfs(u, v, 1.0, adjacency) ?: -1.0
+                computeQuotient(u, v, 1.0, knownQuotients) ?: -1.0
             }
         }
     }
 
-    private fun buildAdjacencyList(
+    private fun adjacencyList(
         equations: List<List<String>>,
         values: DoubleArray,
-    ): Map<String, List<AdjacentNode>> {
-        val result = hashMapOf<String, MutableList<AdjacentNode>>()
+    ): Map<String, List<Quotient>> {
+        val result = hashMapOf<String, MutableList<Quotient>>()
         for ((index, equation) in equations.withIndex()) {
             val (u, v) = equation
             val value = values[index]
-            result.computeIfAbsent(u) { mutableListOf() }.add(AdjacentNode(v, value))
-            result.computeIfAbsent(v) { mutableListOf() }.add(AdjacentNode(u, 1.0 / value))
+            result.computeIfAbsent(u) { mutableListOf() }.add(Quotient(v, value))
+            result.computeIfAbsent(v) { mutableListOf() }.add(Quotient(u, 1.0 / value))
         }
         return result
     }
 
-    private data class AdjacentNode(val id: String, val multiple: Double)
+    private data class Quotient(val divisor: String, val value: Double)
 
-    private fun dfs(
-        source: String,
-        destination: String,
+    private fun computeQuotient(
+        dividend: String,
+        divisor: String,
         weightProduct: Double,
-        adjacency: Map<String, List<AdjacentNode>>,
+        knownQuotients: Map<String, List<Quotient>>,
         visited: MutableSet<String> = hashSetOf(),
     ): Double? {
-        if (source == destination) {
+        if (dividend == divisor) {
             return weightProduct
         }
 
-        visited.add(source)
-        val adjacentNodes = adjacency[source] ?: emptyList()
+        visited.add(dividend)
+        val adjacentNodes = knownQuotients[dividend] ?: emptyList()
         for (adjacentNode in adjacentNodes) {
-            if (adjacentNode.id in visited) {
+            if (adjacentNode.divisor in visited) {
                 continue
             }
 
-            visited.add(adjacentNode.id)
-            dfs(
-                adjacentNode.id,
-                destination,
-                weightProduct * adjacentNode.multiple,
-                adjacency,
+            visited.add(adjacentNode.divisor)
+            computeQuotient(
+                adjacentNode.divisor,
+                divisor,
+                weightProduct * adjacentNode.value,
+                knownQuotients,
                 visited
             )?.let { return it }
         }
