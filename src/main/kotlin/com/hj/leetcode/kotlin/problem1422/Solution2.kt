@@ -13,7 +13,7 @@ class Solution2 {
         var leftZeros = 0
         var leftOnes = 0
         var totalOnes = 0
-        var equivalentResult = -1
+        var partialResult = -1
         for (index in 0..<s.lastIndex) {
             if (s[index] == '0') {
                 leftZeros++
@@ -21,9 +21,9 @@ class Solution2 {
                 leftOnes++
                 totalOnes++
             }
-            equivalentResult = max(equivalentResult, leftZeros - leftOnes)
+            partialResult = max(partialResult, leftZeros - leftOnes)
         }
         totalOnes += if (s.last() == '1') 1 else 0
-        return equivalentResult + totalOnes
+        return partialResult + totalOnes
     }
 }
