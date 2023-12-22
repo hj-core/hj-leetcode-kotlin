@@ -8,13 +8,7 @@ class Solution {
      * Time O(NE) and Space O(E) where E is the size of equations and N is the size of queries;
      */
     fun calcEquation(equations: List<List<String>>, values: DoubleArray, queries: List<List<String>>): DoubleArray {
-        val adjacency = hashMapOf<String, MutableList<AdjacentNode>>()
-        for ((index, equation) in equations.withIndex()) {
-            val (u, v) = equation
-            val value = values[index]
-            adjacency.computeIfAbsent(u) { mutableListOf() }.add(AdjacentNode(v, value))
-            adjacency.computeIfAbsent(v) { mutableListOf() }.add(AdjacentNode(u, 1.0 / value))
-        }
+        val adjacency = buildAdjacencyList(equations, values)
 
         return DoubleArray(queries.size) { index ->
             val (u, v) = queries[index]
@@ -22,9 +16,22 @@ class Solution {
             if (unknownNodes) {
                 return@DoubleArray -1.0
             }
-
             dfs(u, v, 1.0, adjacency) ?: -1.0
         }
+    }
+
+    private fun buildAdjacencyList(
+        equations: List<List<String>>,
+        values: DoubleArray,
+    ): Map<String, List<AdjacentNode>> {
+        val result = hashMapOf<String, MutableList<AdjacentNode>>()
+        for ((index, equation) in equations.withIndex()) {
+            val (u, v) = equation
+            val value = values[index]
+            result.computeIfAbsent(u) { mutableListOf() }.add(AdjacentNode(v, value))
+            result.computeIfAbsent(v) { mutableListOf() }.add(AdjacentNode(u, 1.0 / value))
+        }
+        return result
     }
 
     private data class AdjacentNode(val id: String, val value: Double)
@@ -56,7 +63,6 @@ class Solution {
                 visited
             )?.let { return it }
         }
-
         return null
     }
 }
