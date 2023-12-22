@@ -9,15 +9,9 @@ class Solution {
      */
     fun calcEquation(equations: List<List<String>>, values: DoubleArray, queries: List<List<String>>): DoubleArray {
         val knownQuotients = adjacencyList(equations, values)
-
         return DoubleArray(queries.size) { index ->
             val (u, v) = queries[index]
-            val isUnknownVariable = u !in knownQuotients || v !in knownQuotients
-            if (isUnknownVariable) {
-                -1.0
-            } else {
-                computeQuotient(u, v, 1.0, knownQuotients) ?: -1.0
-            }
+            computeQuotient(u, v, knownQuotients) ?: -1.0
         }
     }
 
@@ -40,29 +34,27 @@ class Solution {
     private fun computeQuotient(
         dividend: String,
         divisor: String,
-        weightProduct: Double,
         knownQuotients: Map<String, List<Quotient>>,
         visited: MutableSet<String> = hashSetOf(),
     ): Double? {
+        if (dividend !in knownQuotients || divisor !in knownQuotients) {
+            return null
+        }
         if (dividend == divisor) {
-            return weightProduct
+            return 1.0
         }
 
         visited.add(dividend)
-        val adjacentNodes = knownQuotients[dividend] ?: emptyList()
-        for (adjacentNode in adjacentNodes) {
-            if (adjacentNode.divisor in visited) {
+        for (quotient in knownQuotients[dividend] ?: emptyList()) {
+            if (quotient.divisor in visited) {
                 continue
             }
 
-            visited.add(adjacentNode.divisor)
-            computeQuotient(
-                adjacentNode.divisor,
-                divisor,
-                weightProduct * adjacentNode.value,
-                knownQuotients,
-                visited
-            )?.let { return it }
+            val subQuotient =
+                computeQuotient(quotient.divisor, divisor, knownQuotients, visited)
+            if (subQuotient != null) {
+                return quotient.value * subQuotient
+            }
         }
         return null
     }
