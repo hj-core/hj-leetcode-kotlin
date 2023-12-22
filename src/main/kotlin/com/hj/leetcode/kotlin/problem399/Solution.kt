@@ -12,11 +12,12 @@ class Solution {
 
         return DoubleArray(queries.size) { index ->
             val (u, v) = queries[index]
-            val unknownNodes = u !in adjacency || v !in adjacency
-            if (unknownNodes) {
-                return@DoubleArray -1.0
+
+            if (u !in adjacency || v !in adjacency) {
+                -1.0
+            } else {
+                dfs(u, v, 1.0, adjacency) ?: -1.0
             }
-            dfs(u, v, 1.0, adjacency) ?: -1.0
         }
     }
 
@@ -34,7 +35,7 @@ class Solution {
         return result
     }
 
-    private data class AdjacentNode(val id: String, val value: Double)
+    private data class AdjacentNode(val id: String, val multiple: Double)
 
     private fun dfs(
         source: String,
@@ -58,7 +59,7 @@ class Solution {
             dfs(
                 adjacentNode.id,
                 destination,
-                weightProduct * adjacentNode.value,
+                weightProduct * adjacentNode.multiple,
                 adjacency,
                 visited
             )?.let { return it }
