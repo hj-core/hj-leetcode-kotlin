@@ -15,7 +15,10 @@ class Solution {
 
         while (newcomerIndex < asteroids.size) {
             val newcomer = asteroids[newcomerIndex]
-            if (oldAsteroids.isEmpty() || newcomer > 0 || oldAsteroids.last() < 0) {
+            val noCollision =
+                oldAsteroids.isEmpty() || newcomer > 0 || oldAsteroids.last() < 0
+
+            if (noCollision) {
                 oldAsteroids.addLast(newcomer)
                 newcomerIndex++
                 continue
