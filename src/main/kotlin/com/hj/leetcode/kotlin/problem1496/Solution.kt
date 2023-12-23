@@ -26,8 +26,8 @@ class Solution {
         fun moved(direction: Char): Point = when (direction) {
             'N' -> Point(x, y + 1)
             'S' -> Point(x, y - 1)
-            'E' -> Point(x - 1, y)
-            'W' -> Point(x + 1, y)
+            'E' -> Point(x + 1, y)
+            'W' -> Point(x - 1, y)
             else -> throw IllegalArgumentException()
         }
     }
