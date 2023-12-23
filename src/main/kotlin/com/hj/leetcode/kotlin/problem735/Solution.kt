@@ -10,8 +10,8 @@ class Solution {
      * Time O(N) and Space O(N) where N is the size of asteroids;
      */
     fun asteroidCollision(asteroids: IntArray): IntArray {
-        var newcomerIndex = 0
         val oldAsteroids = ArrayDeque<Int>()
+        var newcomerIndex = 0
 
         while (newcomerIndex < asteroids.size) {
             val newcomer = asteroids[newcomerIndex]
