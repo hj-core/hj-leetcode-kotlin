@@ -1,5 +1,7 @@
 package com.hj.leetcode.kotlin.problem735
 
+import kotlin.math.abs
+
 /**
  * LeetCode page: [735. Asteroid Collision](https://leetcode.com/problems/asteroid-collision/);
  */
@@ -8,39 +10,28 @@ class Solution {
      * Time O(N) and Space O(N) where N is the size of asteroids;
      */
     fun asteroidCollision(asteroids: IntArray): IntArray {
-        val coexistAsteroids = ArrayDeque<Int>()
-        for (asteroid in asteroids) {
-            if (coexistAsteroids.isEmpty() || canCoexist(coexistAsteroids.last(), asteroid)) {
-                coexistAsteroids.addLast(asteroid)
+        var newcomerIndex = 0
+        val oldAsteroids = ArrayDeque<Int>()
+
+        while (newcomerIndex < asteroids.size) {
+            val newcomer = asteroids[newcomerIndex]
+            if (oldAsteroids.isEmpty() || newcomer > 0 || oldAsteroids.last() < 0) {
+                oldAsteroids.addLast(newcomer)
+                newcomerIndex++
                 continue
             }
 
-            var remainingAsteroid: Int? = asteroid
-            while (coexistAsteroids.isNotEmpty()
-                && remainingAsteroid != null
-                && cannotCoexist(coexistAsteroids.last(), remainingAsteroid)
-            ) {
-                val previousAsteroid = coexistAsteroids.removeLast()
-                remainingAsteroid = collisionResult(previousAsteroid, remainingAsteroid)
+            val lastOld = oldAsteroids.last()
+            val newcomerSize = abs(newcomer)
+            when {
+                newcomerSize < lastOld -> newcomerIndex++
+                newcomerSize > lastOld -> oldAsteroids.removeLast()
+                else -> {
+                    oldAsteroids.removeLast()
+                    newcomerIndex++
+                }
             }
-            remainingAsteroid?.let { coexistAsteroids.addLast(it) }
         }
-        return coexistAsteroids.toIntArray()
+        return oldAsteroids.toIntArray()
     }
-
-    private fun collisionResult(asteroid: Int, newAsteroid: Int): Int? = when {
-        size(newAsteroid) < size(asteroid) -> asteroid
-        size(newAsteroid) > size(asteroid) -> newAsteroid
-        else -> null
-    }
-
-    private fun canCoexist(asteroid: Int, newAsteroid: Int): Boolean {
-        return !cannotCoexist(asteroid, newAsteroid)
-    }
-
-    private fun cannotCoexist(asteroid: Int, newAsteroid: Int): Boolean {
-        return asteroid > 0 && newAsteroid < 0
-    }
-
-    private fun size(asteroid: Int): Int = Math.abs(asteroid)
 }
