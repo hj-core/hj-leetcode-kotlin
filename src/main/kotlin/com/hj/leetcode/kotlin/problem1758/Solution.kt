@@ -11,13 +11,13 @@ class Solution {
      */
     fun minOperations(s: String): Int {
         var pattern10 = 0
-        var pattern01 = 0
         for ((index, c) in s.withIndex()) {
             val digit = c.digitToInt()
             val indicator = digit xor (index and 1)
             pattern10 += indicator
-            pattern01 += 1 - indicator
+            // pattern01 += 1 - indicator
         }
+        val pattern01 = s.length - pattern10
         return min(pattern10, pattern01)
     }
 }
