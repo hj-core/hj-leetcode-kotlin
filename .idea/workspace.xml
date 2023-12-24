@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 445">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Simplify the implementation">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem435/Solution2.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem435/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem435/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,9 +46,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
         <option value="package-info" />
         <option value="LeetCode Solution" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -500,7 +500,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="862" />
+    <option name="localTasksCounter" value="863" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -544,7 +544,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Improve naming" />
     <MESSAGE value="Add a solution to problem 2101" />
     <MESSAGE value="Revise the whole solution" />
     <MESSAGE value="Add a solution to problem 1232" />
@@ -569,7 +568,8 @@
     <MESSAGE value="Update kotlinc.xml" />
     <MESSAGE value="Add a solution to problem 207" />
     <MESSAGE value="Add a solution to problem 445" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 445" />
+    <MESSAGE value="Simplify the implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Simplify the implementation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
