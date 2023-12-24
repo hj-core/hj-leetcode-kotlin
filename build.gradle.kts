@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.kotlinJvm)
+    alias(libs.plugins.kotlin.jvm)
 }
 
 group = "com.hj"
@@ -18,7 +18,7 @@ tasks.test {
 }
 
 tasks.wrapper {
-    gradleVersion = "8.2"
+    gradleVersion = "8.5"
     distributionType = Wrapper.DistributionType.ALL
 }
 
