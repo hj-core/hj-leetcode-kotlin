@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="compute pattern01 from pattern10" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Simplify the implementation">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem435/Solution2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +26,17 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="hj-leetcode-kotlin" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="hj-leetcode-kotlin" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -34,8 +47,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Kotlin Class" />
         <option value="LeetCode Solution" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -77,19 +90,12 @@
   <component name="GitRewordedCommitMessages">
     <option name="commitMessagesMapping">
       <RewordedCommitMessageMapping>
-        <option name="originalMessage" value="Improve readability" />
-        <option name="rewordedMessage" value="Improve readability" />
+        <option name="originalMessage" value="Change the type of index from Int to Long and improve readability&#10;&#10;- Although the answer is guaranteed to be within 32-bit signed Int, the index could be Long" />
+        <option name="rewordedMessage" value="Change the type of index from Int to Long and improve readability&#10;&#10;- Although the answer is guaranteed to be within 32-bit signed Int, the index could be Long&#10;&#10;&#10;Improve readability" />
       </RewordedCommitMessageMapping>
     </option>
     <option name="currentCommit" value="1" />
-    <option name="onto" value="ac31757957c8d7dabfd9844950b8dfdc54e16bfa" />
-  </component>
-  <component name="GithubProjectSettings">
-    <option name="branchProtectionPatterns">
-      <list>
-        <option value="main" />
-      </list>
-    </option>
+    <option name="onto" value="22ccf06f5a5c4c98b0c9567ce4ed2ee0549853e3" />
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="recentNewPullRequestHead">
@@ -111,9 +117,6 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1
-}</component>
   <component name="ProjectId" id="2ETABv6HUAfXkVo9azJjuSbYvwh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -121,19 +124,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem1758",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.41494253",
-    "settings.editor.selected.configurable": "Settings.Markdown"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;problem435&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.41494253&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\gaps-\Documents\GitHub\hj-leetcode-kotlin\src\main\kotlin\com\hj\leetcode\kotlin\medium" />
@@ -145,13 +147,6 @@
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="com.hj.leetcode.kotlin.problem934" />
     </key>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-11.0.21-corretto-11.0.21-8336523bb0d9-d3b62f98" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -505,7 +500,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="1038" />
+    <option name="localTasksCounter" value="863" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -549,35 +544,32 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Extract candidateColumns(...)" />
-    <MESSAGE value="Extract hasSingleOne(...)" />
-    <MESSAGE value="Inline variable" />
-    <MESSAGE value="Add a solution to problem 1436" />
-    <MESSAGE value="Add a solution to problem 242" />
-    <MESSAGE value="Add a solution to problem 2353" />
-    <MESSAGE value="Add a solution to problem 1913" />
-    <MESSAGE value="Add a solution to problem 661" />
-    <MESSAGE value="Add a solution to problem 2706" />
-    <MESSAGE value="Inline functions" />
-    <MESSAGE value="Improve variable naming" />
-    <MESSAGE value="Improve function naming" />
-    <MESSAGE value="Inline arguments" />
-    <MESSAGE value="Switch to a DFS implementation" />
-    <MESSAGE value="Add a solution to problem 1422" />
-    <MESSAGE value="Add a one-pass solution" />
-    <MESSAGE value="Improve variable naming" />
-    <MESSAGE value="Extract buildAdjacencyList(...)" />
-    <MESSAGE value="Simplify the DFS implementation" />
-    <MESSAGE value="Update LastModified field" />
-    <MESSAGE value="Add a solution to problem 1496" />
-    <MESSAGE value="revise the implementation" />
+    <MESSAGE value="Add a solution to problem 2101" />
+    <MESSAGE value="Revise the whole solution" />
+    <MESSAGE value="Add a solution to problem 1232" />
+    <MESSAGE value="Add a solution to problem 1502" />
+    <MESSAGE value="Add a solution to problem 1802" />
+    <MESSAGE value="Improve comment" />
+    <MESSAGE value="Add a solution to problem 1146" />
+    <MESSAGE value="Correct inconsistent name in comment" />
+    <MESSAGE value="Use require to validate argument" />
+    <MESSAGE value="Add a solution to problem 2352" />
+    <MESSAGE value="Add a solution to problem 530" />
+    <MESSAGE value="Add a solution to problem 1161" />
+    <MESSAGE value="Add a solution to problem 1732" />
+    <MESSAGE value="Add a solution to problem 2090" />
+    <MESSAGE value="Add a solution to problem 1027" />
+    <MESSAGE value="Add a draft solution to problem 2462&#10;&#10;- There are different levels of abstractions in the main function and require refactor" />
+    <MESSAGE value="Add a solution to problem 373" />
+    <MESSAGE value="Add a solution to problem 2305" />
+    <MESSAGE value="Add a solution to problem 859" />
     <MESSAGE value="Improve readability" />
-    <MESSAGE value="Add a solution to problem 1758" />
-    <MESSAGE value="compute pattern01 from pattern10" />
-    <option name="LAST_COMMIT_MESSAGE" value="compute pattern01 from pattern10" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="Add a solution to problem 1493" />
+    <MESSAGE value="Update kotlinc.xml" />
+    <MESSAGE value="Add a solution to problem 207" />
+    <MESSAGE value="Add a solution to problem 445" />
+    <MESSAGE value="Simplify the implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Simplify the implementation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
