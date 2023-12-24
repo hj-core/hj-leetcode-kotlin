@@ -8,30 +8,21 @@ class Solution {
      * Time O(NLogN) and Space O(N) where N is the size of intervals;
      */
     fun eraseOverlapIntervals(intervals: Array<IntArray>): Int {
-        val sortedIntervals = intervals.sortedBy { it[0] }
+        val sortedInterval = intervals.sortedBy { it[0] }
         var result = 0
-        var currentIndex = 0
-        var competitorIndex = 1
+        var holdingInterval = sortedInterval[0]
 
-        while (competitorIndex < sortedIntervals.size) {
-            val currentEnd = sortedIntervals[currentIndex][1]
-            val (competitorStart, competitorEnd) = sortedIntervals[competitorIndex]
-            when {
-                currentEnd <= competitorStart -> {
-                    currentIndex = competitorIndex
-                    competitorIndex = currentIndex + 1
-                }
+        for (index in 1..<sortedInterval.size) {
+            val newInterval = sortedInterval[index]
+            val noOverlap = holdingInterval[1] <= newInterval[0]
+            if (noOverlap) {
+                holdingInterval = newInterval
+                continue
+            }
 
-                currentEnd < competitorEnd -> {
-                    result++
-                    competitorIndex++
-                }
-
-                else -> {
-                    result++
-                    currentIndex = competitorIndex
-                    competitorIndex = currentIndex + 1
-                }
+            result++
+            if (newInterval[1] < holdingInterval[1]) {
+                holdingInterval = newInterval
             }
         }
         return result
