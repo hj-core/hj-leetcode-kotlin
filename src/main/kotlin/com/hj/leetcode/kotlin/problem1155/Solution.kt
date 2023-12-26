@@ -20,29 +20,29 @@ class Solution {
     }
 
     private fun numRollsDp(
-        dice: Int,
+        numDice: Int,
         k: Int,
         targetSum: Int,
         memoization: MutableMap<DpState, Int>,
     ): Int {
-        if (targetSum !in dice..dice * k) {
+        if (targetSum !in numDice..numDice * k) {
             return 0
         }
-        if (dice == 1) {
+        if (numDice == 1) {
             return if (targetSum in 1..k) 1 else 0
         }
-        if (dice == targetSum) {
+        if (numDice == targetSum) {
             return 1
         }
 
-        val state = DpState(dice, targetSum)
+        val state = DpState(numDice, targetSum)
         if (state in memoization) {
             return checkNotNull(memoization[state])
         }
 
-        var result = (numRollsDp(dice, k, targetSum - 1, memoization)
-                - numRollsDp(dice - 1, k, targetSum - 1 - k, memoization)
-                + numRollsDp(dice - 1, k, targetSum - 1, memoization)
+        var result = (numRollsDp(numDice, k, targetSum - 1, memoization)
+                - numRollsDp(numDice - 1, k, targetSum - 1 - k, memoization)
+                + numRollsDp(numDice - 1, k, targetSum - 1, memoization)
                 ) % modulo
         if (result < 0) {
             result += modulo
@@ -51,5 +51,5 @@ class Solution {
         return result
     }
 
-    private data class DpState(val dices: Int, val targetSum: Int)
+    private data class DpState(val numDice: Int, val targetSum: Int)
 }
