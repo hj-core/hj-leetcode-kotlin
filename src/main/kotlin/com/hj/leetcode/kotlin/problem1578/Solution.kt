@@ -8,24 +8,23 @@ class Solution {
      * Time O(N) and Space O(1) where N is the size of colors;
      */
     fun minCost(colors: String, neededTime: IntArray): Int {
-        var minCost = 0
+        return neededTime.sum() - timeNotRemoved(neededTime, colors)
+    }
 
-        var costSumOfSameColorInterval = neededTime[0]
-        var maxCostInSameColorInterval = neededTime[0]
+    private fun timeNotRemoved(neededTime: IntArray, colors: String): Int {
+        var result = 0
+        var subRopeMaxCost = neededTime[0]
 
         for (index in 1..colors.lastIndex) {
-            val isSameColorAsPrev = colors[index] == colors[index - 1]
-            if (isSameColorAsPrev) {
-                costSumOfSameColorInterval += neededTime[index]
-                maxCostInSameColorInterval = maxOf(maxCostInSameColorInterval, neededTime[index])
+            val inSameSubRope = colors[index] == colors[index - 1]
+            if (inSameSubRope) {
+                subRopeMaxCost = maxOf(subRopeMaxCost, neededTime[index])
             } else {
-                minCost += costSumOfSameColorInterval - maxCostInSameColorInterval
-                costSumOfSameColorInterval = neededTime[index]
-                maxCostInSameColorInterval = neededTime[index]
+                result += subRopeMaxCost
+                subRopeMaxCost = neededTime[index]
             }
         }
-
-        minCost += costSumOfSameColorInterval - maxCostInSameColorInterval
-        return minCost
+        result += subRopeMaxCost
+        return result
     }
 }

@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Simplify the implementation">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability">
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1578/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1578/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +138,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem1155",
+    "git-widget-placeholder": "problem1578",
     "kotlin-language-version-configured": "true",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
@@ -517,7 +517,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="866" />
+    <option name="localTasksCounter" value="868" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -578,7 +578,6 @@
     <MESSAGE value="Add a solution to problem 373" />
     <MESSAGE value="Add a solution to problem 2305" />
     <MESSAGE value="Add a solution to problem 859" />
-    <MESSAGE value="Improve readability" />
     <MESSAGE value="Add a solution to problem 1493" />
     <MESSAGE value="Update kotlinc.xml" />
     <MESSAGE value="Add a solution to problem 207" />
@@ -586,7 +585,8 @@
     <MESSAGE value="Add another solution" />
     <MESSAGE value="Update kotlin to 1.9.22" />
     <MESSAGE value="Simplify the implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Simplify the implementation" />
+    <MESSAGE value="Improve readability" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
