@@ -13,18 +13,18 @@ class Solution {
 
     private fun timeNotRemoved(neededTime: IntArray, colors: String): Int {
         var result = 0
-        var subRopeMaxCost = neededTime[0]
+        var segmentMaxCost = neededTime[0]
 
         for (index in 1..colors.lastIndex) {
-            val inSameSubRope = colors[index] == colors[index - 1]
-            if (inSameSubRope) {
-                subRopeMaxCost = maxOf(subRopeMaxCost, neededTime[index])
+            val sameColorSegment = colors[index] == colors[index - 1]
+            if (sameColorSegment) {
+                segmentMaxCost = maxOf(segmentMaxCost, neededTime[index])
             } else {
-                result += subRopeMaxCost
-                subRopeMaxCost = neededTime[index]
+                result += segmentMaxCost
+                segmentMaxCost = neededTime[index]
             }
         }
-        result += subRopeMaxCost
+        result += segmentMaxCost
         return result
     }
 }
