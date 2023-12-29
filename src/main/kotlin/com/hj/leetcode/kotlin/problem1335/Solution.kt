@@ -18,26 +18,25 @@ class Solution {
             return -1
         }
 
-        // dp[i]@d ::= minDifficulty(jobDifficulty[i:], d)
+        // dp[i]@day ::= minDifficulty(jobDifficulty[i:], day)
         val dp = IntArray(n)
 
-        // Base cases at d = 1
+        // Base cases in which day = 1
         dp[n - 1] = jobDifficulty[n - 1]
         for (index in n - 2 downTo 0) {
             dp[index] = max(dp[index + 1], jobDifficulty[index])
         }
 
-        // Update dp@d from dp@d-1
-        repeat(d - 1) {
-            val currentDay = it + 1
-            for (firstDayStart in 0..<n - currentDay) {
+        // Update dp@day from dp@day-1
+        for (day in 2..d) {
+            for (i in 0..n - day) {
                 var subresult = Int.MAX_VALUE
-                var firstDayCost = jobDifficulty[firstDayStart]
-                for (firstDayEnd in firstDayStart..<n - currentDay) {
+                var firstDayCost = jobDifficulty[i]
+                for (firstDayEnd in i..n - day) {
                     firstDayCost = max(firstDayCost, jobDifficulty[firstDayEnd])
                     subresult = min(subresult, firstDayCost + dp[firstDayEnd + 1])
                 }
-                dp[firstDayStart] = subresult
+                dp[i] = subresult
             }
         }
         return dp[0]
