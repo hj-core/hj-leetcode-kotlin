@@ -10,50 +10,36 @@ import kotlin.math.min
  */
 class Solution {
     /* Complexity:
-     * Time O(N^2 * d) and Space O(N * d) where N is the size of jobDifficulty;
+     * Time O(N^2 * d) and Space O(N) where N is the size of jobDifficulty;
      */
     fun minDifficulty(jobDifficulty: IntArray, d: Int): Int {
-        if (jobDifficulty.size < d) {
+        val n = jobDifficulty.size
+        if (n < d) {
             return -1
         }
-        return minDifficultyDp(jobDifficulty, 0, d, hashMapOf())
+
+        // dp[i]@d ::= minDifficulty(jobDifficulty[i:], d)
+        val dp = IntArray(n)
+
+        // Base cases at d = 1
+        dp[n - 1] = jobDifficulty[n - 1]
+        for (index in n - 2 downTo 0) {
+            dp[index] = max(dp[index + 1], jobDifficulty[index])
+        }
+
+        // Update dp@d from dp@d-1
+        repeat(d - 1) {
+            val currentDay = it + 1
+            for (firstDayStart in 0..<n - currentDay) {
+                var subresult = Int.MAX_VALUE
+                var firstDayCost = jobDifficulty[firstDayStart]
+                for (firstDayEnd in firstDayStart..<n - currentDay) {
+                    firstDayCost = max(firstDayCost, jobDifficulty[firstDayEnd])
+                    subresult = min(subresult, firstDayCost + dp[firstDayEnd + 1])
+                }
+                dp[firstDayStart] = subresult
+            }
+        }
+        return dp[0]
     }
-
-    private fun minDifficultyDp(
-        jobDifficulty: IntArray,
-        start: Int,
-        d: Int,
-        memoization: MutableMap<DpState, Int>,
-    ): Int {
-        if (start + d > jobDifficulty.size) {
-            throw IllegalArgumentException()
-        }
-
-        val state = DpState(start, d)
-        if (state in memoization) {
-            return checkNotNull(memoization[state])
-        }
-        if (d == 1) {
-            val result = (start..<jobDifficulty.size).maxOf { jobDifficulty[it] }
-            memoization[state] = result
-            return result
-        }
-
-        var result = Int.MAX_VALUE
-        var firstDayDifficulty = jobDifficulty[start]
-        for (firstDayEnd in start..<jobDifficulty.size - (d - 1)) {
-            firstDayDifficulty = max(firstDayDifficulty, jobDifficulty[firstDayEnd])
-            val currentMinDifficulty = firstDayDifficulty + minDifficultyDp(
-                jobDifficulty,
-                firstDayEnd + 1,
-                d - 1,
-                memoization
-            )
-            result = min(result, currentMinDifficulty)
-        }
-        memoization[state] = result
-        return result
-    }
-
-    private data class DpState(val start: Int, val d: Int)
 }
