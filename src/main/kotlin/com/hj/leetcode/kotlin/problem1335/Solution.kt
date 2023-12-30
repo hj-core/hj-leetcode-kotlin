@@ -1,5 +1,8 @@
 package com.hj.leetcode.kotlin.problem1335
 
+import kotlin.math.max
+import kotlin.math.min
+
 /**
  * LeetCode page: [1335. Minimum Difficulty of a Job Schedule](https://leetcode.com/problems/minimum-difficulty-of-a-job-schedule/);
  *
@@ -10,50 +13,32 @@ class Solution {
      * Time O(N^2 * d) and Space O(N) where N is the size of jobDifficulty;
      */
     fun minDifficulty(jobDifficulty: IntArray, d: Int): Int {
-        val noEnoughJobs = jobDifficulty.size < d
-        if (noEnoughJobs) return -1
-
-        val dp = containerOfSubArrayMinDifficultyPerEndIndex(jobDifficulty.size)
-        updateSubArrayMinDifficultyPerEndIndex(dp, d, jobDifficulty)
-
-        return dp[jobDifficulty.lastIndex]
-    }
-
-    private fun containerOfSubArrayMinDifficultyPerEndIndex(totalJobs: Int): IntArray {
-        return IntArray(totalJobs)
-    }
-
-    private fun updateSubArrayMinDifficultyPerEndIndex(container: IntArray, totalDays: Int, jobDifficulty: IntArray) {
-        updateForSingleDayCase(container, jobDifficulty)
-        furtherUpdateToTotalDays(container, jobDifficulty, totalDays)
-    }
-
-    private fun updateForSingleDayCase(container: IntArray, jobDifficulty: IntArray) {
-        container[0] = jobDifficulty[0]
-
-        for (index in 1..container.lastIndex) {
-            container[index] = maxOf(container[index - 1], jobDifficulty[index])
+        val n = jobDifficulty.size
+        if (n < d) {
+            return -1
         }
-    }
 
-    private fun furtherUpdateToTotalDays(container: IntArray, jobDifficulty: IntArray, totalDays: Int) {
-        for (currDays in 1 until totalDays) {
+        // dp[i]@day ::= minDifficulty(jobDifficulty[i:], day)
+        val dp = IntArray(n)
 
-            for (endIndex in container.lastIndex downTo currDays) {
-                var newDayMaxDifficulty = jobDifficulty[endIndex]
-                var currDayPrevIndexMinDifficulty = container[endIndex - 1]
-                var minDifficulty = newDayMaxDifficulty + currDayPrevIndexMinDifficulty
+        // Base cases in which day = 1
+        dp[n - 1] = jobDifficulty[n - 1]
+        for (index in n - 2 downTo 0) {
+            dp[index] = max(dp[index + 1], jobDifficulty[index])
+        }
 
-                for (index in endIndex - 1 downTo currDays) {
-                    newDayMaxDifficulty = maxOf(newDayMaxDifficulty, jobDifficulty[index])
-                    currDayPrevIndexMinDifficulty = container[index - 1]
-                    minDifficulty = minOf(minDifficulty, newDayMaxDifficulty + currDayPrevIndexMinDifficulty)
+        // Update dp@day from dp@day-1
+        for (day in 2..d) {
+            for (i in 0..n - day) {
+                var subresult = Int.MAX_VALUE
+                var firstDayCost = jobDifficulty[i]
+                for (firstDayEnd in i..n - day) {
+                    firstDayCost = max(firstDayCost, jobDifficulty[firstDayEnd])
+                    subresult = min(subresult, firstDayCost + dp[firstDayEnd + 1])
                 }
-
-                container[endIndex] = minDifficulty
+                dp[i] = subresult
             }
-
-            container[currDays - 1] = -1
         }
+        return dp[0]
     }
 }
