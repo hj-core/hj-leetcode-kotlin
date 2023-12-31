@@ -8,40 +8,32 @@ class Solution {
      * Time O(N^2) and Space O(N) where N is the size of nums;
      */
     fun findNumberOfLIS(nums: IntArray): Int {
-        /* lengths[i] and numSequences[i] is the longest subsequence length and
-         * the number of subsequences with this length;
+        /* dp[i]::= the (length, count) pair of the longest increasing
+         * subsequences which start at index i;
          */
-        val lengths = IntArray(nums.size) { 1 }
-        val numSequences = IntArray(nums.size) { 1 }
+        val dp = Array(nums.size) { Pair(1, 1) }
 
-        for (end in 1 until nums.size) {
-            for (oldEnd in 0 until end) {
-                val cannotExtend = nums[end] <= nums[oldEnd]
-                if (cannotExtend) {
+        for (start in nums.indices.reversed()) {
+            var maxLength = 1
+            var countMaxLength = 1
+
+            for (next in start + 1..<nums.size) {
+                if (nums[next] <= nums[start]) {
                     continue
                 }
-
-                val extendedLength = lengths[oldEnd] + 1
+                val length = 1 + dp[next].first
                 when {
-                    lengths[end] == extendedLength -> {
-                        numSequences[end] += numSequences[oldEnd]
-                    }
-
-                    lengths[end] < extendedLength -> {
-                        lengths[end] = extendedLength
-                        numSequences[end] = numSequences[oldEnd]
+                    length == maxLength -> countMaxLength += dp[next].second
+                    length > maxLength -> {
+                        maxLength = length
+                        countMaxLength = dp[next].second
                     }
                 }
             }
+            dp[start] = Pair(maxLength, countMaxLength)
         }
 
-        val maxLength = lengths.max()!!
-        var result = 0
-        for ((end, length) in lengths.withIndex()) {
-            if (length == maxLength) {
-                result += numSequences[end]
-            }
-        }
-        return result
+        val maxLength = dp.maxOf { (length, _) -> length }
+        return dp.sumOf { (length, count) -> if (length == maxLength) count else 0 }
     }
 }
