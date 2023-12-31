@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 735" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 1624" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,8 +43,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
         <option value="package-info" />
+        <option value="Kotlin Class" />
         <option value="LeetCode Solution" />
       </list>
     </option>
@@ -73,7 +73,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem735" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -93,6 +93,13 @@
     </option>
     <option name="currentCommit" value="1" />
     <option name="onto" value="22ccf06f5a5c4c98b0c9567ce4ed2ee0549853e3" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="recentNewPullRequestHead">
@@ -114,6 +121,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2ETABv6HUAfXkVo9azJjuSbYvwh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -126,7 +136,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "problem1624",
+    "kotlin-language-version-configured": "true",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41494253",
@@ -144,6 +155,13 @@
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="com.hj.leetcode.kotlin.problem934" />
     </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-11.0.21-corretto-11.0.21-8336523bb0d9-d3b62f98" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -497,7 +515,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="862" />
+    <option name="localTasksCounter" value="877" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -541,13 +559,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Improve naming" />
-    <MESSAGE value="Add a solution to problem 2101" />
-    <MESSAGE value="Revise the whole solution" />
-    <MESSAGE value="Add a solution to problem 1232" />
-    <MESSAGE value="Add a solution to problem 1502" />
-    <MESSAGE value="Add a solution to problem 1802" />
-    <MESSAGE value="Improve comment" />
     <MESSAGE value="Add a solution to problem 1146" />
     <MESSAGE value="Correct inconsistent name in comment" />
     <MESSAGE value="Use require to validate argument" />
@@ -561,12 +572,19 @@
     <MESSAGE value="Add a solution to problem 373" />
     <MESSAGE value="Add a solution to problem 2305" />
     <MESSAGE value="Add a solution to problem 859" />
-    <MESSAGE value="Improve readability" />
     <MESSAGE value="Add a solution to problem 1493" />
     <MESSAGE value="Update kotlinc.xml" />
     <MESSAGE value="Add a solution to problem 207" />
     <MESSAGE value="Add a solution to problem 445" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 445" />
+    <MESSAGE value="Add another solution" />
+    <MESSAGE value="Update kotlin to 1.9.22" />
+    <MESSAGE value="Improve variable naming" />
+    <MESSAGE value="Simplify the implementation" />
+    <MESSAGE value="Refactor to space-optimized bottom-up approach" />
+    <MESSAGE value="Improve readability" />
+    <MESSAGE value="Add a solution to problem 1897" />
+    <MESSAGE value="Add a solution to problem 1624" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 1624" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

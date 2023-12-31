@@ -7,19 +7,24 @@ import com.hj.leetcode.kotlin.common.model.TreeNode
  */
 class Solution {
     /* Complexity:
-     * Time O(N) and Space O(H) where N and H are the number of nodes and height of root;
+     * Time O(N) and Space O(N) where N is the number of nodes in root;
      */
     fun inorderTraversal(root: TreeNode?): List<Int> {
-        val ans = mutableListOf<Int>()
-        root.inorderTraversal { nodeValue -> ans.add(nodeValue) }
-        return ans
+        return buildList {
+            inorderTraversal(root) { node -> add(node.`val`) }
+        }
     }
 
-    private fun TreeNode?.inorderTraversal(sideEffect: (nodeValue: Int) -> Unit) {
-        if (this != null) {
-            left.inorderTraversal(sideEffect)
-            sideEffect(`val`)
-            right.inorderTraversal(sideEffect)
+    private fun inorderTraversal(
+        root: TreeNode?,
+        onEachNode: (node: TreeNode) -> Unit,
+    ) {
+        if (root == null) {
+            return
         }
+
+        inorderTraversal(root.left, onEachNode)
+        onEachNode(root)
+        inorderTraversal(root.right, onEachNode)
     }
 }
