@@ -13,12 +13,10 @@ class Solution {
          */
         val minTails = mutableListOf<Int>()
         for (num in nums) {
-            val bsResult = minTails.binarySearch(num)
-            if (0 <= bsResult) {
-                continue
-            }
+            val insertionIndex = minTails
+                .binarySearch(num)
+                .let { if (it < 0) -(it + 1) else it }
 
-            val insertionIndex = -(bsResult + 1)
             if (insertionIndex == minTails.size) {
                 minTails.add(num)
             } else {

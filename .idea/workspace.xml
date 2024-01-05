@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 2870" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 300">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,7 +138,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem2870",
+    "git-widget-placeholder": "problem300",
     "kotlin-language-version-configured": "true",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
@@ -515,7 +517,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="882" />
+    <option name="localTasksCounter" value="883" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -559,7 +561,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add a solution to problem 530" />
     <MESSAGE value="Add a solution to problem 1161" />
     <MESSAGE value="Add a solution to problem 1732" />
     <MESSAGE value="Add a solution to problem 2090" />
@@ -584,7 +585,8 @@
     <MESSAGE value="Add a solution to problem 2610" />
     <MESSAGE value="Add a solution to problem 2125" />
     <MESSAGE value="Add a solution to problem 2870" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 2870" />
+    <MESSAGE value="Add a solution to problem 300" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 300" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
