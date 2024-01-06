@@ -46,8 +46,8 @@ class Solution {
         var right = untilIndex - 1
         while (left < right) {
             val mid = (left + right) ushr 1
-            val midValue = selector(this[mid])
-            if (midValue < target) {
+            val value = selector(this[mid])
+            if (value < target) {
                 left = mid + 1
             } else {
                 right = mid
