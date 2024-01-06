@@ -7,7 +7,7 @@ import kotlin.math.max
  */
 class Solution {
     /* Complexity:
-     * Time O(NLogN) and Space O(N) where N is the size of startTime, endTime and profit;
+     * Time O(NLogN) and Space O(N) where N is the size of startTime/endTime/profit;
      */
     fun jobScheduling(startTime: IntArray, endTime: IntArray, profit: IntArray): Int {
         val sortedJobs = MutableList(startTime.size) {
