@@ -14,7 +14,7 @@ class Solution {
             Job(startTime[it], endTime[it], profit[it])
         }.apply { sortBy { it.start } }
 
-        // dp[i]::= the maximum profit using the jobs in sortedJobs[i: ]
+        // dp[i]::= the maximum profit by scheduling the jobs in sortedJobs[i: ]
         val dp = IntArray(sortedJobs.size + 1)
 
         for (i in profit.indices.reversed()) {
