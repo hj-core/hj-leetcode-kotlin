@@ -10,7 +10,10 @@ class Solution {
      * Time O(NLogN) and Space O(N) where N is the size of startTime, endTime and profit;
      */
     fun jobScheduling(startTime: IntArray, endTime: IntArray, profit: IntArray): Int {
-        val sortedJobs = jobsSortedByStart(startTime, endTime, profit)
+        val sortedJobs = MutableList(startTime.size) {
+            Job(startTime[it], endTime[it], profit[it])
+        }.apply { sortBy { it.start } }
+
         // dp[i]::= the maximum profit using the jobs in sortedJobs[i: ]
         val dp = IntArray(sortedJobs.size + 1)
 
@@ -22,17 +25,6 @@ class Solution {
             dp[i] = max(profitIfSkip, profitIfPick)
         }
         return dp.max()
-    }
-
-    private fun jobsSortedByStart(
-        startTime: IntArray,
-        endTime: IntArray,
-        profit: IntArray,
-    ): List<Job> {
-        require(startTime.size == endTime.size && endTime.size == profit.size)
-        return MutableList(startTime.size) {
-            Job(startTime[it], endTime[it], profit[it])
-        }.apply { sortBy { it.start } }
     }
 
     private data class Job(val start: Int, val end: Int, val profit: Int)
