@@ -1,31 +1,66 @@
 package com.hj.leetcode.kotlin.problem1235
 
-import java.util.*
+import kotlin.math.max
 
 /**
  * LeetCode page: [1235. Maximum Profit in Job Scheduling](https://leetcode.com/problems/maximum-profit-in-job-scheduling/);
  */
 class Solution {
     /* Complexity:
-     * Time O(NLogN) and Space O(N) where N is the size of startTime/endTime/profit, i.e. #jobs;
+     * Time O(NLogN) and Space O(N) where N is the size of startTime, endTime and profit;
      */
     fun jobScheduling(startTime: IntArray, endTime: IntArray, profit: IntArray): Int {
-        val sortedIndices = endTime.indices.sortedBy { endTime[it] }
-        val maxProfitAtTime = TreeMap<Int, Int>().apply { put(0, 0) } // entry = Pair(time, maxProfit)
+        val sortedJobs = jobsSortedByStart(startTime, endTime, profit)
+        // dp[i]::= the maximum profit using the jobs in sortedJobs[i: ]
+        val dp = IntArray(sortedJobs.size + 1)
 
-        for (index in sortedIndices) {
-            val jobStart = startTime[index]
-            val jobEnd = endTime[index]
-            val jobProfit = profit[index]
+        for (i in profit.indices.reversed()) {
+            val profitIfSkip = dp[i + 1]
+            val profitIfPick = sortedJobs[i].profit +
+                    dp[sortedJobs.binarySearchLeftBy(sortedJobs[i].end) { it.start }]
 
-            val maxProfitBeforeJobStart = maxProfitAtTime.floorEntry(jobStart).value
-            val maxProfitWithJob = jobProfit + maxProfitBeforeJobStart
-            val hasMoreProfitThanPrev = maxProfitWithJob > maxProfitAtTime.lastEntry().value
+            dp[i] = max(profitIfSkip, profitIfPick)
+        }
+        return dp.max()
+    }
 
-            if (hasMoreProfitThanPrev) {
-                maxProfitAtTime[jobEnd] = maxProfitWithJob
+    private fun jobsSortedByStart(
+        startTime: IntArray,
+        endTime: IntArray,
+        profit: IntArray,
+    ): List<Job> {
+        require(startTime.size == endTime.size && endTime.size == profit.size)
+        return MutableList(startTime.size) {
+            Job(startTime[it], endTime[it], profit[it])
+        }.apply { sortBy { it.start } }
+    }
+
+    private data class Job(val start: Int, val end: Int, val profit: Int)
+
+    private fun <T, K : Comparable<K>> List<T>.binarySearchLeftBy(
+        target: K,
+        fromIndex: Int = 0,
+        untilIndex: Int = size,
+        selector: (T) -> K,
+    ): Int {
+        if (target <= selector(this[fromIndex])) {
+            return fromIndex
+        }
+        if (target > selector(this[untilIndex - 1])) {
+            return untilIndex
+        }
+
+        var left = fromIndex
+        var right = untilIndex - 1
+        while (left < right) {
+            val mid = (left + right) ushr 1
+            val midValue = selector(this[mid])
+            if (midValue < target) {
+                left = mid + 1
+            } else {
+                right = mid
             }
         }
-        return maxProfitAtTime.lastEntry().value
+        return left
     }
 }
