@@ -8,19 +8,22 @@ class Solution {
      * Time O(N^2) and Space O(N^2) where N is the size of nums;
      */
     fun numberOfArithmeticSlices(nums: IntArray): Int {
-        /* dp[i][d]::= the number of arithmetic subsequences that start
+        /* dp[i][d]::= the number of (arithmetic) subsequences that start
          * with nums[i], have a step of d, and a length of at least 2;
          */
         val dp = hashMapOf<Int, MutableMap<Long, Int>>()
         var result = 0
         for (i in nums.indices.reversed()) {
-            for (j in i + 1..< nums.size) {
+            for (j in i + 1..<nums.size) {
                 val d = nums[i].toLong() - nums[j]
-                val count1 = dp[i]?.get(d) ?: 0
-                val count2 = dp[j]?.get(d) ?: 0
-                result += count2
-                dp.computeIfAbsent(i) { hashMapOf() }[d] =
-                    1 + count1 + count2
+                val existingCount = dp
+                    .computeIfAbsent(i) { hashMapOf() }
+                    .computeIfAbsent(d) { 0 }
+
+                val addedPair = 1
+                val addedAS = dp[j]?.get(d) ?: 0
+                result += addedAS
+                checkNotNull(dp[i])[d] = existingCount + addedPair + addedAS
             }
         }
         return result

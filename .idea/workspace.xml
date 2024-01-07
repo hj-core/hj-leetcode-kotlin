@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 446">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Rename solution 2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,8 +44,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Kotlin Class" />
         <option value="LeetCode Solution" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -517,7 +515,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="889" />
+    <option name="localTasksCounter" value="892" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -561,14 +559,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add a solution to problem 373" />
-    <MESSAGE value="Add a solution to problem 2305" />
     <MESSAGE value="Add a solution to problem 859" />
     <MESSAGE value="Add a solution to problem 1493" />
     <MESSAGE value="Update kotlinc.xml" />
     <MESSAGE value="Add a solution to problem 207" />
     <MESSAGE value="Add a solution to problem 445" />
-    <MESSAGE value="Add another solution" />
     <MESSAGE value="Update kotlin to 1.9.22" />
     <MESSAGE value="Improve variable naming" />
     <MESSAGE value="Simplify the implementation" />
@@ -586,7 +581,10 @@
     <MESSAGE value="Rename variable" />
     <MESSAGE value="Improve comment" />
     <MESSAGE value="Add a solution to problem 446" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 446" />
+    <MESSAGE value="Add another solution" />
+    <MESSAGE value="Drop the first solution&#10;&#10;- It's similar to solution 2 while solution 2 is more efficient and concise" />
+    <MESSAGE value="Rename solution 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename solution 2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
