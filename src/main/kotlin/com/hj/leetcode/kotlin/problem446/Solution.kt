@@ -3,7 +3,7 @@ package com.hj.leetcode.kotlin.problem446
 /**
  * LeetCode page: [446. Arithmetic Slices II - Subsequence](https://leetcode.com/problems/arithmetic-slices-ii-subsequence/);
  */
-class Solution2 {
+class Solution {
     /* Complexity:
      * Time O(N^2) and Space O(N^2) where N is the size of nums;
      */
