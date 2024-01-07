@@ -16,14 +16,14 @@ class Solution {
         for (i in nums.indices.reversed()) {
             for (j in i + 1..<nums.size) {
                 val d = nums[i].toLong() - nums[j]
-                val existingCount = dp
+                val currentCount = dp
                     .computeIfAbsent(i) { hashMapOf() }
                     .computeIfAbsent(d) { 0 }
 
                 val addedPair = 1
                 val addedAS = dp[j]?.get(d) ?: 0
                 result += addedAS
-                checkNotNull(dp[i])[d] = existingCount + addedPair + addedAS
+                checkNotNull(dp[i])[d] = currentCount + addedPair + addedAS
             }
         }
         return result
