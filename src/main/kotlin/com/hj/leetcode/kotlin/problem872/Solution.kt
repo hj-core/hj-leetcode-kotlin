@@ -4,33 +4,32 @@ import com.hj.leetcode.kotlin.common.model.TreeNode
 
 /**
  * LeetCode page: [872. Leaf-Similar Trees](https://leetcode.com/problems/leaf-similar-trees/description/);
- *
- * TODO : There is solution that compares the leaves one by one, thus reduce the space complexity;
  */
 class Solution {
     /* Complexity:
-     * Time O(M+N) and Space O(M+N) where M and N are the number of nodes of root1 and root2;
+     * Time O(N+M) and Space O(N+M) where N and M are the number of nodes
+     * in root1 and root2, respectively;
      */
     fun leafSimilar(root1: TreeNode?, root2: TreeNode?): Boolean {
-        return root1.findAllLeafValues() == root2.findAllLeafValues()
-    }
+        val sequence1 = root1.leafValueSequence().iterator()
+        val sequence2 = root2.leafValueSequence().iterator()
 
-    private fun TreeNode?.findAllLeafValues(): List<Int> {
-        val leafValues = mutableListOf<Int>()
-        traversalLeaves { leaf -> leafValues.add(leaf.`val`) }
-        return leafValues
-    }
-
-    private fun TreeNode?.traversalLeaves(sideEffect: (leaf: TreeNode) -> Unit) {
-        when {
-            this == null -> return
-            this.isLeaf() -> sideEffect(this)
-            else -> {
-                left.traversalLeaves(sideEffect)
-                right.traversalLeaves(sideEffect)
+        while (sequence1.hasNext() && sequence2.hasNext()) {
+            if (sequence1.next() != sequence2.next()) {
+                return false
             }
+        }
+        return sequence1.hasNext() == sequence2.hasNext()
+    }
+
+    private fun TreeNode?.leafValueSequence(): Sequence<Int> = when {
+        this == null -> emptySequence()
+        this.isLeaf() -> sequenceOf(`val`)
+        else -> sequence {
+            yieldAll(left.leafValueSequence())
+            yieldAll(right.leafValueSequence())
         }
     }
 
-    private fun TreeNode.isLeaf() = left == null && right == null
+    private fun TreeNode.isLeaf() = this.left == null && this.right == null
 }
