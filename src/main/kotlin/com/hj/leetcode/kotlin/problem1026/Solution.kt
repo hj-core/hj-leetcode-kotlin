@@ -1,6 +1,8 @@
 package com.hj.leetcode.kotlin.problem1026
 
 import com.hj.leetcode.kotlin.common.model.TreeNode
+import kotlin.math.max
+import kotlin.math.min
 
 /**
  * LeetCode page: [1026. Maximum Difference Between Node and Ancestor](https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/description/);
@@ -10,18 +12,20 @@ class Solution {
      * Time O(N) and Space O(H) where N and H are the number of nodes and height of root;
      */
     fun maxAncestorDiff(root: TreeNode?): Int {
-        return root
-            ?.let { findMaxAncestorDiff(it, it.`val`, it.`val`) }
-            ?: throw IllegalArgumentException()
+        requireNotNull(root)
+        return dfsMaxDiff(root, root.`val`, root.`val`)
     }
 
-    private fun findMaxAncestorDiff(root: TreeNode?, pathMin: Int, pathMax: Int): Int {
-        if (root == null) return pathMax - pathMin
-        val newPathMin = minOf(pathMin, root.`val`)
-        val newPathMax = maxOf(pathMax, root.`val`)
-        return maxOf(
-            findMaxAncestorDiff(root.left, newPathMin, newPathMax),
-            findMaxAncestorDiff(root.right, newPathMin, newPathMax)
+    private fun dfsMaxDiff(root: TreeNode?, pathMin: Int, pathMax: Int): Int {
+        if (root == null) {
+            return pathMax - pathMin
+        }
+
+        val newMin = min(pathMin, root.`val`)
+        val newMax = max(pathMax, root.`val`)
+        return max(
+            dfsMaxDiff(root.left, newMin, newMax),
+            dfsMaxDiff(root.right, newMin, newMax)
         )
     }
 }
