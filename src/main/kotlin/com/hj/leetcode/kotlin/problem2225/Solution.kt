@@ -14,14 +14,14 @@ class Solution {
             playerLosses[loser] = 1 + (playerLosses[loser] ?: 0)
         }
 
-        val sortedPlayers = playerLosses.keys.sorted()
         val result = listOf(mutableListOf(), mutableListOf<Int>())
-        for (player in sortedPlayers) {
-            when (playerLosses[player]) {
+        for ((player, losses) in playerLosses) {
+            when (losses) {
                 0 -> result[0].add(player)
                 1 -> result[1].add(player)
             }
         }
+        result.forEach { it.sort() }
         return result
     }
 }
