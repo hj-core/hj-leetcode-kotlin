@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem1207
  */
 class Solution {
     /* Complexity:
-     * Time O(|arr|) and Space O(|arr|);
+     * Time O(N) and Space O(N) where N is the size of arr;
      */
     fun uniqueOccurrences(arr: IntArray): Boolean {
         val countPerNum = countEachNum(arr)
