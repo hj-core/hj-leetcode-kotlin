@@ -8,25 +8,20 @@ class Solution {
      * Time O(N) and Space O(N) where N is the size of arr;
      */
     fun uniqueOccurrences(arr: IntArray): Boolean {
-        val countPerNum = countEachNum(arr)
-        val counts = countPerNum.values
-        return counts.isEachElementUnique()
-    }
-
-    private fun countEachNum(numbers: IntArray): Map<Int, Int> {
-        val countPerNum = hashMapOf<Int, Int>()
-        for (num in numbers) {
-            countPerNum.let {
-                it[num] = it.getOrDefault(num, 0) + 1
-            }
-        }
-        return countPerNum
+        val occurrences = arr
+            .asIterable()
+            .groupingBy { it }
+            .eachCount()
+            .values
+        return occurrences.isEachElementUnique()
     }
 
     private fun <T> Collection<T>.isEachElementUnique(): Boolean {
         val visited = hashSetOf<T>()
         for (elem in this) {
-            if (!visited.add(elem)) return false
+            if (!visited.add(elem)) {
+                return false
+            }
         }
         return true
     }
