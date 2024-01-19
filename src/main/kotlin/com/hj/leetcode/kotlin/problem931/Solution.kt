@@ -20,11 +20,11 @@ class Solution {
                 dp
                     .getOrNull(c + 1)
                     ?.let { minSumsReachTarget.addLast(it) }
-                dp[c] = matrix[r][c] + minSumsReachTarget.min()!!
+                dp[c] = matrix[r][c] + minSumsReachTarget.min()
                 minSumsReachTarget.removeFirst()
             }
             minSumsReachTarget.removeLast()
         }
-        return dp.min()!!
+        return dp.min()
     }
 }
