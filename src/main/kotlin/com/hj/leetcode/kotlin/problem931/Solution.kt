@@ -10,8 +10,7 @@ class Solution {
     fun minFallingPathSum(matrix: Array<IntArray>): Int {
         val minSumsCurrLevel = matrix[0].clone()
         val minSumsReachTarget = ArrayDeque<Int>()
-        repeat(matrix.size - 1) { currRow ->
-            val nextRow = currRow + 1
+        for (nextRow in 1..<matrix.size) {
             minSumsReachTarget.apply {
                 addLast(minSumsCurrLevel[0])
                 addLast(minSumsCurrLevel[0])
