@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Rename variable">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Switch loop construct">
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem931/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem931/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -521,7 +521,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="902" />
+    <option name="localTasksCounter" value="903" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -577,7 +577,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add a solution to problem 207" />
     <MESSAGE value="Add a solution to problem 445" />
     <MESSAGE value="Update kotlin to 1.9.22" />
     <MESSAGE value="Improve variable naming" />
@@ -602,7 +601,8 @@
     <MESSAGE value="Improve readability" />
     <MESSAGE value="Inline variable" />
     <MESSAGE value="Rename variable" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename variable" />
+    <MESSAGE value="Switch loop construct" />
+    <option name="LAST_COMMIT_MESSAGE" value="Switch loop construct" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
