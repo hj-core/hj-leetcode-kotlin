@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Change to JDK21">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +75,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="jdk21" />
+        <entry key="$PROJECT_DIR$" value="problem1207" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -164,6 +164,8 @@
     <attachedChunks>
       <set>
         <option value="jdk-11.0.21-corretto-11.0.21-8336523bb0d9-d3b62f98" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
       </set>
     </attachedChunks>
   </component>
@@ -519,7 +521,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="897" />
+    <option name="localTasksCounter" value="900" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -579,16 +581,16 @@
     <MESSAGE value="Revise implementation for readability" />
     <MESSAGE value="Inline function" />
     <MESSAGE value="Rename variable" />
-    <MESSAGE value="Improve comment" />
     <MESSAGE value="Add a solution to problem 446" />
     <MESSAGE value="Add another solution" />
     <MESSAGE value="Drop the first solution&#10;&#10;- It's similar to solution 2 while solution 2 is more efficient and concise" />
     <MESSAGE value="Rename solution 2" />
-    <MESSAGE value="Improve readability" />
     <MESSAGE value="Add a solution to problem 1347" />
     <MESSAGE value="Simplify the implementation" />
     <MESSAGE value="Improve implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve implementation" />
+    <MESSAGE value="Improve comment" />
+    <MESSAGE value="Improve readability" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
