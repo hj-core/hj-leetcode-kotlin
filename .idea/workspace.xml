@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Switch loop construct">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem931/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem931/Solution.kt" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Simplify implementation" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -521,7 +519,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="903" />
+    <option name="localTasksCounter" value="907" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -558,29 +556,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="main" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add a solution to problem 445" />
-    <MESSAGE value="Update kotlin to 1.9.22" />
-    <MESSAGE value="Improve variable naming" />
-    <MESSAGE value="Refactor to space-optimized bottom-up approach" />
     <MESSAGE value="Add a solution to problem 1897" />
     <MESSAGE value="Add a solution to problem 1624" />
     <MESSAGE value="Add a solution to problem 455" />
@@ -602,7 +584,11 @@
     <MESSAGE value="Inline variable" />
     <MESSAGE value="Rename variable" />
     <MESSAGE value="Switch loop construct" />
-    <option name="LAST_COMMIT_MESSAGE" value="Switch loop construct" />
+    <MESSAGE value="Refactor variable name" />
+    <MESSAGE value="Remove non-null assertion" />
+    <MESSAGE value="Slide object creation to inner scope" />
+    <MESSAGE value="Simplify implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Simplify implementation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

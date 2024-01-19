@@ -10,20 +10,18 @@ class Solution {
     fun minFallingPathSum(matrix: Array<IntArray>): Int {
         // dp[c]@r::= the minimum falling path sum to matrix[r][c];
         val dp = matrix[0].clone()
+
         for (r in 1..<matrix.size) {
-            val minSumsReachTarget = ArrayDeque<Int>()
-            minSumsReachTarget.apply {
-                addLast(dp[0])
-                addLast(dp[0])
-            }
+            var upperLeftDp = dp[0]
             for (c in matrix[r].indices) {
-                dp
-                    .getOrNull(c + 1)
-                    ?.let { minSumsReachTarget.addLast(it) }
-                dp[c] = matrix[r][c] + minSumsReachTarget.min()
-                minSumsReachTarget.removeFirst()
+                val result = matrix[r][c] + minOf(
+                    upperLeftDp,
+                    dp[c],
+                    dp.getOrElse(c + 1) { dp[c] }
+                )
+                upperLeftDp = dp[c]
+                dp[c] = result
             }
-            minSumsReachTarget.removeLast()
         }
         return dp.min()
     }
