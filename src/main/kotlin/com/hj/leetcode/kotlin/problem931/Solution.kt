@@ -5,27 +5,25 @@ package com.hj.leetcode.kotlin.problem931
  */
 class Solution {
     /* Complexity:
-     * Time O(MN) and Space O(N) where M and N are the number of rows and columns of matrix;
+     * Time O(MN) and Space O(N) where M and N are the number of rows and
+     * columns of matrix;
      */
     fun minFallingPathSum(matrix: Array<IntArray>): Int {
-        val minSumsCurrLevel = matrix[0].clone()
-        val minSumsReachTarget = ArrayDeque<Int>()
-        val totalFalls = matrix.size - 1
-        repeat(totalFalls) { currLevel ->
-            val nextLevel = currLevel + 1
-            minSumsReachTarget.apply {
-                addLast(minSumsCurrLevel[0])
-                addLast(minSumsCurrLevel[0])
+        // dp[c]@r::= the minimum falling path sum to matrix[r][c];
+        val dp = matrix[0].clone()
+
+        for (r in 1..<matrix.size) {
+            var leftLastDp = Int.MAX_VALUE
+            for (c in matrix[r].indices) {
+                val result = matrix[r][c] + minOf(
+                    leftLastDp,
+                    dp[c],
+                    dp.getOrElse(c + 1) { Int.MAX_VALUE }
+                )
+                leftLastDp = dp[c]
+                dp[c] = result
             }
-            for (column in minSumsCurrLevel.indices) {
-                minSumsCurrLevel
-                    .getOrNull(column + 1)
-                    ?.let { minSumsReachTarget.addLast(it) }
-                minSumsCurrLevel[column] = matrix[nextLevel][column] + minSumsReachTarget.min()!!
-                minSumsReachTarget.removeFirst()
-            }
-            minSumsReachTarget.removeLast()
         }
-        return minSumsCurrLevel.min()!!
+        return dp.min()
     }
 }
