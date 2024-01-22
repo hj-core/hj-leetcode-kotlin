@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem645/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem645/Solution.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem645/Solution2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +47,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Kotlin Class" />
         <option value="LeetCode Solution" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -521,7 +522,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="912" />
+    <option name="localTasksCounter" value="913" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -565,7 +566,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add a solution to problem 1897" />
     <MESSAGE value="Add a solution to problem 1624" />
     <MESSAGE value="Add a solution to problem 455" />
     <MESSAGE value="Add a solution to problem 2610" />
@@ -588,6 +588,7 @@
     <MESSAGE value="Refactor variable name" />
     <MESSAGE value="Remove non-null assertion" />
     <MESSAGE value="Slide object creation to inner scope" />
+    <MESSAGE value="Simplify implementation" />
     <MESSAGE value="Improve readability" />
     <MESSAGE value="Improve readability" />
     <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
