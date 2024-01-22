@@ -48,12 +48,7 @@ class Solution {
     }
 
     private fun determineRepetitionAndLoss(nums: IntArray, candidates: Pair<Int, Int>): IntArray {
-        val (candidate1, candidate2) = candidates
-
-        for (num in nums) {
-            if (num == candidate1) return intArrayOf(candidate1, candidate2)
-        }
-
-        return intArrayOf(candidate2, candidate1)
+        val (a, b) = candidates
+        return if (a in nums) intArrayOf(a, b) else intArrayOf(b, a)
     }
 }
