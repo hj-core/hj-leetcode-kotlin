@@ -17,17 +17,9 @@ class Solution {
     }
 
     private fun getRepetitionXorLoss(nums: IntArray): Int {
-        var ans = 0
-
-        for (num in nums) {
-            ans = ans xor num
-        }
-
-        for (num in 1..nums.size) {
-            ans = ans xor num
-        }
-
-        return ans
+        val xorOperation = { a: Int, b: Int -> a xor b }
+        return (nums.reduce(xorOperation)
+                xor (1..nums.size).reduce(xorOperation))
     }
 
     private fun Int.rightmostBit() = this - (this and (this - 1))
