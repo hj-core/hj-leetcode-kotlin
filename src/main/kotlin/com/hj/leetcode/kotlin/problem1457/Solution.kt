@@ -10,34 +10,33 @@ class Solution {
      * Time O(N) and Space O(H) where N and H are the number of nodes and height of root;
      */
     fun pseudoPalindromicPaths(root: TreeNode?): Int {
-        var pseudoPalindromicPaths = 0
-        traversePreOrder(root) { pathDigitFrequency ->
-            if (isPseudoPalindromic(pathDigitFrequency)) pseudoPalindromicPaths++
+        var result = 0
+        dfs(root) { pathValueCount ->
+            val isPseudoPalindromic = pathValueCount.count { it % 2 == 1 } <= 1
+            if (isPseudoPalindromic) {
+                result++
+            }
         }
-        return pseudoPalindromicPaths
+        return result
     }
 
-    private fun traversePreOrder(
+    private fun dfs(
         root: TreeNode?,
-        pathDigitFrequency: IntArray = IntArray(10),
-        sideEffectAtLeaf: (pathDigitFrequency: IntArray) -> Unit
+        pathValueCount: IntArray = IntArray(10),
+        onEachLeaf: (pathValueCount: IntArray) -> Unit,
     ) {
-        if (root == null) return
-        pathDigitFrequency[root.`val`]++
-
-        if (root.isLeaf()) {
-            sideEffectAtLeaf(pathDigitFrequency)
-        } else {
-            traversePreOrder(root.left, pathDigitFrequency, sideEffectAtLeaf)
-            traversePreOrder(root.right, pathDigitFrequency, sideEffectAtLeaf)
+        if (root == null) {
+            return
         }
-        pathDigitFrequency[root.`val`]--
+        pathValueCount[root.`val`]++
+        if (root.isLeaf()) {
+            onEachLeaf(pathValueCount)
+        } else {
+            dfs(root.left, pathValueCount, onEachLeaf)
+            dfs(root.right, pathValueCount, onEachLeaf)
+        }
+        pathValueCount[root.`val`]--
     }
 
     private fun TreeNode.isLeaf() = this.left == null && this.right == null
-
-    private fun isPseudoPalindromic(pathDigitFrequency: IntArray): Boolean {
-        val oddFrequencies = pathDigitFrequency.count { freq -> freq and 1 == 1 }
-        return oddFrequencies <= 1
-    }
 }
