@@ -11,7 +11,7 @@ class Solution {
      * text2, respectively;
      */
     fun longestCommonSubsequence(text1: String, text2: String): Int {
-        // dp[i][j]::= LCS(text1[i:], text2[j:])
+        // dp[i][j]::= the length of LCS(text1[i:], text2[j:])
         val dp = Array(text1.length + 1) { IntArray(text2.length + 1) }
         for (i in text1.indices.reversed()) {
             for (j in text2.indices.reversed()) {
