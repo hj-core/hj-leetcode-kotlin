@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem1074
  */
 class Solution {
     /* Complexity:
-     * Time O(MN^2) and Space O(MN) where M and N are the number of rows and
+     * Time O(M^2 * N) and Space O(MN) where M and N are the number of rows and
      * columns of matrix;
      */
     fun numSubmatrixSumTarget(matrix: Array<IntArray>, target: Int): Int {
