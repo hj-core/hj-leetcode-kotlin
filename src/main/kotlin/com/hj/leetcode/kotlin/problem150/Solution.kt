@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem150
  */
 class Solution {
     /* Complexity:
-     * Time O(|token|) and Space O(|token|);
+     * Time O(N) and Space O(N) where N is the size of tokens;
      */
     fun evalRPN(tokens: Array<String>): Int {
         val operator = listOf("+", "-", "*", "/")
