@@ -8,30 +8,23 @@ class Solution {
      * Time O(N) and Space O(N) where N is the size of tokens;
      */
     fun evalRPN(tokens: Array<String>): Int {
-        val operator = listOf("+", "-", "*", "/")
-        val operandStack = ArrayDeque<Int>()
+        val operations = hashMapOf(
+            "+" to { a: Int, b: Int -> a + b },
+            "-" to { a: Int, b: Int -> a - b },
+            "*" to { a: Int, b: Int -> a * b },
+            "/" to { a: Int, b: Int -> a / b },
+        )
+
+        val operandStack = mutableListOf<Int>()
         for (token in tokens) {
-            when (token) {
-                in operator -> {
-                    val operand2 = operandStack.removeLast()
-                    val operand1 = operandStack.removeLast()
-                    val subResult = operate(operand1, operand2, token[0])
-                    operandStack.addLast(subResult)
-                }
-
-                else -> operandStack.addLast(token.toInt())
-            }
+            val parsed = operations[token]?.let { operation ->
+                val operand2 = operandStack.removeLast()
+                val operand1 = operandStack.removeLast()
+                operation(operand1, operand2)
+            } ?: token.toInt()
+            operandStack.add(parsed)
         }
+        check(operandStack.size == 1)
         return operandStack.last()
-    }
-
-    private fun operate(operand1: Int, operand2: Int, operator: Char): Int {
-        return when (operator) {
-            '+' -> operand1 + operand2
-            '-' -> operand1 - operand2
-            '*' -> operand1 * operand2
-            '/' -> operand1 / operand2
-            else -> throw IllegalArgumentException()
-        }
     }
 }
