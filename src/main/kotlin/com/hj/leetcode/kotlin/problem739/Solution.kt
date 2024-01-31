@@ -13,9 +13,7 @@ class Solution {
 
         for (i in temperatures.lastIndex - 1 downTo 0) {
             var warmer = i + 1
-            while (result[warmer] != noWarmer
-                && temperatures[i] >= temperatures[warmer]
-            ) {
+            while (result[warmer] != noWarmer && temperatures[i] >= temperatures[warmer]) {
                 warmer += result[warmer]
             }
 
