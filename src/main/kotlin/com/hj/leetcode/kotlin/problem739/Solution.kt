@@ -17,11 +17,8 @@ class Solution {
                 warmer += result[warmer]
             }
 
-            result[i] = if (temperatures[i] < temperatures[warmer]) {
-                warmer - i
-            } else {
-                noWarmer
-            }
+            val hasNoWarmer = temperatures[i] >= temperatures[warmer]
+            result[i] = if (hasNoWarmer) noWarmer else warmer - i
         }
         return result
     }
