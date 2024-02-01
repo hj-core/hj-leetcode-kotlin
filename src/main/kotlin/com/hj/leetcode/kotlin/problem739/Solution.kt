@@ -8,22 +8,18 @@ class Solution {
      * Time O(N) and Space O(N) where N equals the size of temperature;
      */
     fun dailyTemperatures(temperatures: IntArray): IntArray {
-        val daysWhenNoWarmer = 0
-        val daysToNextWarmer = IntArray(temperatures.size).apply {
-            this[lastIndex] = daysWhenNoWarmer
-        }
-        for (index in temperatures.lastIndex - 1 downTo 0) {
-            var warmerIndex = index + 1
-            while (temperatures[index] >= temperatures[warmerIndex]) {
-                val noWarmerDay = daysToNextWarmer[warmerIndex] == daysWhenNoWarmer
-                if (noWarmerDay) {
-                    warmerIndex = index + daysWhenNoWarmer
-                    break
-                }
-                warmerIndex += daysToNextWarmer[warmerIndex]
+        val noWarmer = 0 // the value that represents no warmer day
+        val result = IntArray(temperatures.size) { noWarmer }
+
+        for (i in temperatures.lastIndex - 1 downTo 0) {
+            var warmer = i + 1
+            while (result[warmer] != noWarmer && temperatures[i] >= temperatures[warmer]) {
+                warmer += result[warmer]
             }
-            daysToNextWarmer[index] = warmerIndex - index
+
+            val hasNoWarmer = temperatures[i] >= temperatures[warmer]
+            result[i] = if (hasNoWarmer) noWarmer else warmer - i
         }
-        return daysToNextWarmer
+        return result
     }
 }
