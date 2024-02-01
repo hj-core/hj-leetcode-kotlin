@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem2966
  */
 class Solution {
     /* Complexity:
-     * Time O(NLogN) and Space O(NLogN) where N is the size of nums;
+     * Time O(NLogN) and Space O(N) where N is the size of nums;
      */
     fun divideArray(nums: IntArray, k: Int): Array<IntArray> {
         val sorted = nums.sorted()
