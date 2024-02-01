@@ -307,6 +307,7 @@ at [LeetCode](https://leetcode.com/hj-core/).
 | [2785. Sort Vowels in a String](https://leetcode.com/problems/sort-vowels-in-a-string/)                                                                               | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem2785/Solution.kt)                                                                               | 2023-11-13    |
 | [2849. Determine if a Cell Is Reachable at a Given Time](https://leetcode.com/problems/determine-if-a-cell-is-reachable-at-a-given-time/)                             | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem2849/Solution.kt)                                                                               | 2023-11-08    |
 | [2870. Minimum Number of Operations to Make Array Empty](https://leetcode.com/problems/minimum-number-of-operations-to-make-array-empty/)                             | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem2870/Solution.kt)                                                                               | 2024-01-04    |
+| [2966. Divide Array Into Arrays With Max Difference](https://leetcode.com/problems/divide-array-into-arrays-with-max-difference/)                                     | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem2966/Solution.kt)                                                                               | 2024-02-01    |
 
 ### Easy
 
