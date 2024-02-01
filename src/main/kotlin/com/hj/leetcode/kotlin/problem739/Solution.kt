@@ -8,7 +8,7 @@ class Solution {
      * Time O(N) and Space O(N) where N equals the size of temperature;
      */
     fun dailyTemperatures(temperatures: IntArray): IntArray {
-        val noWarmer = 0 // the value represents no warmer day
+        val noWarmer = 0 // the value that represents no warmer day
         val result = IntArray(temperatures.size) { noWarmer }
 
         for (i in temperatures.lastIndex - 1 downTo 0) {
