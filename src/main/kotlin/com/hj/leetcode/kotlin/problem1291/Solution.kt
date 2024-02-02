@@ -8,6 +8,10 @@ class Solution {
      * Time O(1) and Space O(1);
      */
     fun sequentialDigits(low: Int, high: Int): List<Int> {
+        if (low > 123_456_789) {
+            return emptyList()
+        }
+
         val fullList = buildList {
             addAll(12..89 step 11)
             addAll(123..789 step 111)
@@ -17,10 +21,6 @@ class Solution {
             addAll(1_234_567..3_456_789 step 1_111_111)
             addAll(12_345_678..23_456_789 step 11_111_111)
             add(123_456_789)
-        }
-
-        if (low > fullList.last()) {
-            return emptyList()
         }
         val start = fullList.indexOfFirst { low <= it }
         val endInclusive = fullList.indexOfLast { it <= high }
