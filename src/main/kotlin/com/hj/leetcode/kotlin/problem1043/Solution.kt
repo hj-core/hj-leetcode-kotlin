@@ -12,16 +12,15 @@ class Solution {
      */
     fun maxSumAfterPartitioning(arr: IntArray, k: Int): Int {
         // dp[i] ::= max sum for arr[i:]
-        val dp = IntArray(arr.size + 1)
+        val dp = IntArray(arr.size + 1) { Int.MIN_VALUE }
 
+        dp[arr.size] = 0
         for (i in arr.indices.reversed()) {
-            var subResult = Int.MIN_VALUE
             var firstMax = arr[i] // max value of the first subarray;
             for (firstEnd in i..<min(i + k, arr.size)) {
                 firstMax = max(firstMax, arr[firstEnd])
-                subResult = max(subResult, firstMax * (firstEnd - i + 1) + dp[firstEnd + 1])
+                dp[i] = max(dp[i], firstMax * (firstEnd - i + 1) + dp[firstEnd + 1])
             }
-            dp[i] = subResult
         }
         return dp[0]
     }
