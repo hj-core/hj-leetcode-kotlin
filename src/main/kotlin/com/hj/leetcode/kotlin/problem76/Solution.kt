@@ -9,7 +9,7 @@ class Solution {
      */
     fun minWindow(s: String, t: String): String {
         val missingCount = t.groupingBy { it }.eachCountTo(hashMapOf())
-        val missingChars = missingCount.keys.toHashSet()
+        var missingLength = t.length
         var minWindow = 0..s.length
         var latestStart = 0
 
@@ -19,8 +19,8 @@ class Solution {
             }
 
             missingCount[s[end]] = checkNotNull(missingCount[s[end]]) - 1
-            if (missingCount[s[end]] == 0) {
-                missingChars.remove(s[end])
+            if (checkNotNull(missingCount[s[end]]) >= 0) {
+                missingLength -= 1
             }
 
             while (latestStart <= end && (missingCount[s[latestStart]]?.let { it < 0 } != false)) {
@@ -29,12 +29,11 @@ class Solution {
                 }
                 latestStart += 1
             }
-            if (missingChars.isEmpty() && end - latestStart < minWindow.last - minWindow.first) {
+            if (missingLength == 0 && end - latestStart < minWindow.last - minWindow.first) {
                 minWindow = latestStart..end
             }
         }
 
-        val windowNotFound = minWindow.last == s.length
-        return if (windowNotFound) "" else s.slice(minWindow)
+        return if (missingLength > 0) "" else s.slice(minWindow)
     }
 }
