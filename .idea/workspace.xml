@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 1043">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="New implementation&#10;&#10;- The old solution is unnecessarily long." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,7 +127,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "gradle-8.6",
+    "git-widget-placeholder": "problem76",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/gaps-/Documents/GitHub/hj-leetcode-kotlin",
@@ -505,7 +501,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="924" />
+    <option name="localTasksCounter" value="925" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -549,7 +545,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add a solution to problem 300" />
     <MESSAGE value="Revise implementation for readability" />
     <MESSAGE value="Inline function" />
     <MESSAGE value="Add a solution to problem 446" />
@@ -574,7 +569,8 @@
     <MESSAGE value="Add a solution to problem 2966" />
     <MESSAGE value="Add a solution to problem 1291" />
     <MESSAGE value="Add a solution to problem 1043" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 1043" />
+    <MESSAGE value="New implementation&#10;&#10;- The old solution is unnecessarily long." />
+    <option name="LAST_COMMIT_MESSAGE" value="New implementation&#10;&#10;- The old solution is unnecessarily long." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
