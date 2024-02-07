@@ -5,7 +5,8 @@ package com.hj.leetcode.kotlin.problem451
  */
 class Solution {
     /* Complexity:
-     * Time O(|s|) and Space O(1);
+     * Time O(N+MLogM) and Space O(N+M) where N is the length of s and
+     * M is the size of char set;
      */
     fun frequencySort(s: String): String {
         val countPerChar = s.groupingBy { it }.eachCount()
