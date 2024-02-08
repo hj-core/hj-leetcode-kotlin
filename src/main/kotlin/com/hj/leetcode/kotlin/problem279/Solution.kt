@@ -13,9 +13,9 @@ class Solution {
         // dp[i] ::= numSquares(i)
         val dp = IntArray(n + 1) { num -> num }
 
-        for (num in 1..n) {
-            for (i in 1..num.floorSqrt()) {
-                dp[num] = minOf(dp[num], 1 + dp[num - i * i])
+        for (i in 1..n) {
+            for (j in 1..i.floorSqrt()) {
+                dp[i] = minOf(dp[i], 1 + dp[i - j * j])
             }
         }
         return dp[n]
