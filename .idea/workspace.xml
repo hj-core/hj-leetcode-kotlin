@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 368" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Restrict return type of buildResult(...)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -501,7 +501,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="929" />
+    <option name="localTasksCounter" value="930" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -545,7 +545,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Inline function" />
     <MESSAGE value="Add a solution to problem 446" />
     <MESSAGE value="Drop the first solution&#10;&#10;- It's similar to solution 2 while solution 2 is more efficient and concise" />
     <MESSAGE value="Rename solution 2" />
@@ -570,7 +569,8 @@
     <MESSAGE value="Improve readability" />
     <MESSAGE value="Improve readability" />
     <MESSAGE value="Add a solution to problem 368" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 368" />
+    <MESSAGE value="Restrict return type of buildResult(...)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Restrict return type of buildResult(...)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

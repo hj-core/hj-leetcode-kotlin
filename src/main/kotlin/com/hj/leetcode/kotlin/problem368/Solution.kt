@@ -10,8 +10,7 @@ class Solution {
     fun largestDivisibleSubset(nums: IntArray): List<Int> {
         val sorted = nums.sorted()
         /* dp[i]::= the (size, index in sorted of the second-largest element) of the
-         * largest divisible subset that uses the elements in sorted.slice(0..i) and
-         * includes the number sorted[i].
+         * largest divisible subset of sorted.slice(0..i) that includes sorted[i].
          */
         val dp = buildDp(sorted)
 
