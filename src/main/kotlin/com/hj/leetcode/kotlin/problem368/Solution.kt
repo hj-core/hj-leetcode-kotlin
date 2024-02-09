@@ -35,7 +35,7 @@ class Solution {
 
     private data class Properties(val size: Int, val prevIndex: Int)
 
-    private fun buildResult(dp: Array<Properties>, sorted: List<Int>): MutableList<Int> {
+    private fun buildResult(dp: Array<Properties>, sorted: List<Int>): List<Int> {
         val result = mutableListOf<Int>()
         var prevIndex = dp.indices.maxBy { dp[it].size }
         while (prevIndex != -1) {

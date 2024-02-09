@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 368" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,7 +127,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "problem368",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/gaps-/Documents/GitHub/hj-leetcode-kotlin",
@@ -501,7 +501,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="928" />
+    <option name="localTasksCounter" value="929" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -545,7 +545,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Revise implementation for readability" />
     <MESSAGE value="Inline function" />
     <MESSAGE value="Add a solution to problem 446" />
     <MESSAGE value="Drop the first solution&#10;&#10;- It's similar to solution 2 while solution 2 is more efficient and concise" />
@@ -570,7 +569,8 @@
     <MESSAGE value="New implementation&#10;&#10;- The old solution is unnecessarily long." />
     <MESSAGE value="Improve readability" />
     <MESSAGE value="Improve readability" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
+    <MESSAGE value="Add a solution to problem 368" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 368" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
