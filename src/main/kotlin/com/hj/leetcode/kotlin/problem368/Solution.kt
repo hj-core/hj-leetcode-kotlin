@@ -17,13 +17,13 @@ class Solution {
         return buildResult(dp, sorted)
     }
 
-    private fun buildDp(sorted: List<Int>): Array<Properties> {
-        val result = Array(sorted.size) { Properties(1, -1) }
+    private fun buildDp(numsSorted: List<Int>): Array<Properties> {
+        val result = Array(numsSorted.size) { Properties(1, -1) }
 
         for (i in result.indices) {
             var j = i - 1
             while (j + 2 > result[i].size) {
-                if (sorted[i] % sorted[j] == 0 && 1 + result[j].size > result[i].size) {
+                if (numsSorted[i] % numsSorted[j] == 0 && 1 + result[j].size > result[i].size) {
                     result[i] = Properties(1 + result[j].size, j)
                 }
                 j -= 1
@@ -34,11 +34,11 @@ class Solution {
 
     private data class Properties(val size: Int, val prevIndex: Int)
 
-    private fun buildResult(dp: Array<Properties>, sorted: List<Int>): List<Int> {
+    private fun buildResult(dp: Array<Properties>, numsSorted: List<Int>): List<Int> {
         val result = mutableListOf<Int>()
         var prevIndex = dp.indices.maxBy { dp[it].size }
         while (prevIndex != -1) {
-            result.add(sorted[prevIndex])
+            result.add(numsSorted[prevIndex])
             prevIndex = dp[prevIndex].prevIndex
         }
         return result
