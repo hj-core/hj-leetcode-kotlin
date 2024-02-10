@@ -10,7 +10,7 @@ class Solution2 {
     fun countSubstrings(s: String): Int {
         var result = 0
         for (center in s.indices) {
-            // count odd length palindromic substring by expansion
+            // check odd length palindromic substring by expansion
             var left = center
             var right = center
             while (0 <= left && right < s.length && s[left] == s[right]) {
@@ -18,7 +18,7 @@ class Solution2 {
                 left--
                 right++
             }
-            // count even length palindromic substring by expansion
+            // check even length palindromic substring by expansion
             left = center
             right = center + 1
             while (0 <= left && right < s.length && s[left] == s[right]) {
