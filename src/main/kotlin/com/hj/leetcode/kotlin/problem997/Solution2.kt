@@ -5,17 +5,17 @@ package com.hj.leetcode.kotlin.problem997
  */
 class Solution2 {
     /* Complexity:
-     * Time O(n + |trust|) and Space O(n);
+     * Time O(n+M) and Space O(n) where M is the size of trust;
      */
     fun findJudge(n: Int, trust: Array<IntArray>): Int {
-        val netNumberOfTrust = IntArray(n + 1)
-        for ((i, j) in trust) {
-            netNumberOfTrust[i]--
-            netNumberOfTrust[j]++
+        val netTrust = IntArray(n + 1)
+        for ((p1, p2) in trust) {
+            netTrust[p1]--
+            netTrust[p2]++
         }
 
         for (person in 1..n) {
-            if (netNumberOfTrust[person] == n - 1) {
+            if (netTrust[person] == n - 1) {
                 return person
             }
         }
