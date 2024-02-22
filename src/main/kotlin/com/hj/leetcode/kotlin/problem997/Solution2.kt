@@ -13,12 +13,7 @@ class Solution2 {
             netTrust[p1]--
             netTrust[p2]++
         }
-
-        for (person in 1..n) {
-            if (netTrust[person] == n - 1) {
-                return person
-            }
-        }
-        return -1
+        val judgeNetTrust = n - 1
+        return (1..n).find { netTrust[it] == judgeNetTrust } ?: -1
     }
 }
