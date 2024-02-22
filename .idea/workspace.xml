@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 268">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve naming">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem997/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem997/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +66,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem268" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -79,12 +80,11 @@
   <component name="GitRewordedCommitMessages">
     <option name="commitMessagesMapping">
       <RewordedCommitMessageMapping>
-        <option name="originalMessage" value="Change the type of index from Int to Long and improve readability&#10;&#10;- Although the answer is guaranteed to be within 32-bit signed Int, the index could be Long" />
-        <option name="rewordedMessage" value="Change the type of index from Int to Long and improve readability&#10;&#10;- Although the answer is guaranteed to be within 32-bit signed Int, the index could be Long&#10;&#10;&#10;Improve readability" />
+        <option name="originalMessage" value="Add a solution to problem 201" />
+        <option name="rewordedMessage" value="Add a solution to problem 201" />
       </RewordedCommitMessageMapping>
     </option>
-    <option name="currentCommit" value="1" />
-    <option name="onto" value="22ccf06f5a5c4c98b0c9567ce4ed2ee0549853e3" />
+    <option name="onto" value="0ffe2e1a3fa07beff5911d84fb32ec42709fd9c7" />
   </component>
   <component name="GithubProjectSettings">
     <option name="branchProtectionPatterns">
@@ -129,7 +129,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "problem997",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/gaps-/Documents/GitHub/hj-leetcode-kotlin",
@@ -503,7 +503,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="936" />
+    <option name="localTasksCounter" value="938" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -547,8 +547,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Simplify the implementation" />
-    <MESSAGE value="Improve implementation" />
     <MESSAGE value="Inline variable" />
     <MESSAGE value="Rename variable" />
     <MESSAGE value="Switch loop construct" />
@@ -572,7 +570,9 @@
     <MESSAGE value="Add a solution to problem 2149" />
     <MESSAGE value="Add a solution to problem 231" />
     <MESSAGE value="Add a solution to problem 268" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 268" />
+    <MESSAGE value="Add a solution to problem 201" />
+    <MESSAGE value="Improve naming" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve naming" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
