@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Update README.md">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 787">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem997/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem997/Solution.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem997/Solution2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem997/Solution2.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +128,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;problem997&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;problem787&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/gaps-/Documents/GitHub/hj-leetcode-kotlin&quot;,
@@ -504,7 +502,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="941" />
+    <option name="localTasksCounter" value="943" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -548,7 +546,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Rename variable" />
     <MESSAGE value="Switch loop construct" />
     <MESSAGE value="Refactor variable name" />
     <MESSAGE value="Remove non-null assertion" />
@@ -564,16 +561,17 @@
     <MESSAGE value="Restrict return type of buildResult(...)" />
     <MESSAGE value="Improve comment" />
     <MESSAGE value="Add a solution to problem 647" />
-    <MESSAGE value="Improve readability" />
     <MESSAGE value="Add a solution to problem 2149" />
     <MESSAGE value="Add a solution to problem 231" />
     <MESSAGE value="Add a solution to problem 268" />
     <MESSAGE value="Add a solution to problem 201" />
     <MESSAGE value="Improve naming" />
     <MESSAGE value="Simplify implementation" />
-    <MESSAGE value="Improve readability" />
+    <MESSAGE value="Improve implementation" />
     <MESSAGE value="Update README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
+    <MESSAGE value="Improve readability" />
+    <MESSAGE value="Add a solution to problem 787" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 787" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
