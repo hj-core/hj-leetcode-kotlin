@@ -7,7 +7,7 @@ import kotlin.math.min
  */
 class Solution {
     /* Complexity:
-     * Time O(kM) and Space O(n) where M is the size of flights;
+     * Time O(kn+kM) and Space O(n) where M is the size of flights;
      */
     fun findCheapestPrice(n: Int, flights: Array<IntArray>, src: Int, dst: Int, k: Int): Int {
         // dp[dst]@i::= the minimum price from src to dst in at most i flights;
