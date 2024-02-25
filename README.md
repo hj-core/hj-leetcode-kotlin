@@ -48,6 +48,7 @@ at [LeetCode](https://leetcode.com/hj-core/).
 | [2306. Naming a Company](https://leetcode.com/problems/naming-a-company/)                                                                                                 | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem2306/Solution.kt), [Solution2](src/main/kotlin/com/hj/leetcode/kotlin/problem2306/Solution2.kt) | 2023-02-09    |
 | [2360. Longest Cycle in a Graph](https://leetcode.com/problems/longest-cycle-in-a-graph/)                                                                                 | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem2360/Solution.kt)                                                                               | 2023-03-26    |
 | [2444. Count Subarrays With Fixed Bounds](https://leetcode.com/problems/count-subarrays-with-fixed-bounds/)                                                               | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem2444/Solution.kt)                                                                               | 2023-03-05    |
+| [2709. Greatest Common Divisor Traversal](https://leetcode.com/problems/greatest-common-divisor-traversal/)                                                               | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem2709/Solution.kt)                                                                               | 2023-02-25    |
 
 ### Medium
 
