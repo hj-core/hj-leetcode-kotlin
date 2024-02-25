@@ -20,32 +20,32 @@ class Solution {
             uf.make(num)
         }
 
-        val sieve = IntArray(nums.max() + 1)
-        for (i in 2..<sieve.size) {
-            if (sieve[i] == 0) {
-                for (j in i..<sieve.size step i) {
-                    sieve[j] = i
+        val primeSieve = IntArray(nums.max() + 1)
+        for (i in 2..<primeSieve.size) {
+            if (primeSieve[i] == 0) {
+                for (j in i..<primeSieve.size step i) {
+                    primeSieve[j] = i
                 }
             }
         }
 
-        val primes = hashSetOf<Int>()
+        val primeFactors = hashSetOf<Int>()
         for (num in nums) {
             var remaining = num
             while (remaining > 1) {
-                val prime = sieve[remaining]
-                primes.add(prime)
-                uf.make(prime)
-                uf.union(num, prime)
+                val primeFactor = primeSieve[remaining]
+                primeFactors.add(primeFactor)
+                uf.make(primeFactor)
+                uf.union(num, primeFactor)
 
-                while (remaining % prime == 0) {
-                    remaining /= prime
+                while (remaining % primeFactor == 0) {
+                    remaining /= primeFactor
                 }
             }
         }
 
-        val refRoot = uf.find(primes.first())
-        return primes.all { uf.find(it) == refRoot }
+        val refRoot = uf.find(primeFactors.first())
+        return primeFactors.all { uf.find(it) == refRoot }
     }
 
     private class UnionFind {
