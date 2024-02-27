@@ -18,7 +18,7 @@ class Solution {
 
     private fun dfsHeight(
         root: TreeNode?,
-        // hugLength is the length of the longest path in the subtree that pass through its root
+        // the hugLength of a tree is the length of the longest path that pass through its root
         onEachNode: (hugLength: Int) -> Unit
     ): Int {
         if (root == null) {
