@@ -10,44 +10,26 @@ class Solution {
      * Time O(N) and Space O(N) where N is the number of nodes in root;
      */
     fun isEvenOddTree(root: TreeNode?): Boolean {
-        // the most recent values for each level or null if it violates the rule
-        val indicators = mutableListOf<Int?>()
+        val recentValues = mutableListOf<Int>() // the last visited values in each level
+        var hasViolations = false
+
         preorderTraversal(root, 0) { value, depth ->
             when {
-                depth == indicators.size -> {
-                    if (depth and 1 == value and 1) {
-                        indicators.add(null)
-                    } else {
-                        indicators.add(value)
-                    }
-                }
-
-                indicators[depth] == null -> {}
-
-                depth and 1 == 0 -> {
-                    if (value and 1 == 1 && checkNotNull(indicators[depth]) < value) {
-                        indicators[depth] = value
-                    } else {
-                        indicators[depth] = null
-                    }
-                }
-
-                depth and 1 == 1 -> {
-                    if (value and 1 == 0 && value < checkNotNull(indicators[depth])) {
-                        indicators[depth] = value
-                    } else {
-                        indicators[depth] = null
-                    }
-                }
+                hasViolations -> return@preorderTraversal
+                depth and 1 == value and 1 -> hasViolations = true
+                depth == recentValues.size -> recentValues.add(value)
+                depth and 1 == 0 && value <= recentValues[depth] -> hasViolations = true
+                depth and 1 == 1 && recentValues[depth] <= value -> hasViolations = true
+                else -> recentValues[depth] = value
             }
         }
-        return indicators.none { it == null }
+        return !hasViolations
     }
 
     private fun preorderTraversal(
-     node: TreeNode?,
-     depth: Int,
-     onEachNode: (nodeValue: Int, depth: Int) -> Unit,
+        node: TreeNode?,
+        depth: Int,
+        onEachNode: (nodeValue: Int, depth: Int) -> Unit,
     ) {
         if (node == null) {
             return
