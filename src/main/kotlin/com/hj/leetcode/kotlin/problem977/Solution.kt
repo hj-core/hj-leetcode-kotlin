@@ -8,40 +8,20 @@ class Solution {
      * Time O(N) and Space O(N) where N is the size of nums;
      */
     fun sortedSquares(nums: IntArray): IntArray {
-        if (0 <= nums[0]) {
-            return IntArray(nums.size) { square(nums[it]) }
-        }
-        if (nums.last() <= 0) {
-            return IntArray(nums.size) { square(nums[nums.lastIndex - it]) }
-        }
-
         val result = IntArray(nums.size)
-        var right = nums
-            .binarySearch(0)
-            .let { if (it < 0) -(it + 1) else it }
-        var left = right - 1
-        var i = 0
+        var left = 0
+        var right = nums.lastIndex
+        var i = nums.lastIndex
 
-        while (0 <= left && right < nums.size) {
+        while (left <= right) {
             if (nums[left] + nums[right] < 0) {
-                result[i] = square(nums[right])
-                right++
-            } else {
                 result[i] = square(nums[left])
-                left--
+                left++
+            } else {
+                result[i] = square(nums[right])
+                right--
             }
-            i++
-        }
-
-        while (0 <= left) {
-            result[i] = square(nums[left])
-            left--
-            i++
-        }
-        while (right < nums.size) {
-            result[i] = square(nums[right])
-            right++
-            i++
+            i--
         }
         return result
     }
