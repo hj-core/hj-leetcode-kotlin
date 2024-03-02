@@ -23,9 +23,9 @@ class Solution {
     }
 
     private fun preorderTraversal(
-     node: TreeNode?,
-     depth: Int,
-     onEachNode: (value: Int, depth: Int) -> Unit,
+        node: TreeNode?,
+        depth: Int,
+        onEachNode: (value: Int, depth: Int) -> Unit,
     ) {
         if (node == null) {
             return
