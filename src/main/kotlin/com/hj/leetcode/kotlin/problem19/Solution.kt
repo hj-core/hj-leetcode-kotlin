@@ -10,36 +10,40 @@ class Solution {
      * Time O(N) and Space O(1) where N is the number of nodes in head;
      */
     fun removeNthFromEnd(head: ListNode?, n: Int): ListNode? {
-        val totalNodes = head.size()
-        val removePositionFromStart = totalNodes - n + 1
+        val indexToRemove = head.size() - n
+        if (indexToRemove == 0) {
+            val newHead = head?.next
+            head?.next = null
 
-        val isRemovingHead = removePositionFromStart == 1
-        if (isRemovingHead) return head?.next
+            return newHead
+        }
 
-        val nodeBefore = head.getNthNode(removePositionFromStart - 1)
-        nodeBefore?.next = nodeBefore?.next?.next
+        val nodeBefore = head.getOrNull(indexToRemove - 1)
+        val nodeToRemove = nodeBefore?.next
+        nodeBefore?.next = nodeToRemove?.next
+        nodeToRemove?.next = null
         return head
     }
 
     private fun ListNode?.size(): Int {
-        var count = 0
-        var currNode = this
+        var result = 0
+        var ptr = this
 
-        while (currNode != null) {
-            count++
-            currNode = currNode.next
+        while (ptr != null) {
+            result++
+            ptr = ptr.next
         }
-        return count
+        return result
     }
 
-    private fun ListNode?.getNthNode(n: Int): ListNode? {
-        var position = 1
-        var node = this
+    private fun ListNode?.getOrNull(index: Int): ListNode? {
+        var result = this
+        var i = 0
 
-        while (position < n && node != null) {
-            position++
-            node = node.next
+        while (i < index && result != null) {
+            result = result.next
+            i++
         }
-        return node
+        return result
     }
 }
