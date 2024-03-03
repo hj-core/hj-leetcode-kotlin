@@ -11,7 +11,7 @@ class Solution2 {
      */
     fun removeNthFromEnd(head: ListNode?, n: Int): ListNode? {
         var slow = head
-        var fast = head.getNthNode(n + 1)
+        var fast = head.getOrNull(n)
 
         val isRemovingHead = fast == null
         if (isRemovingHead) return head?.next
@@ -25,14 +25,14 @@ class Solution2 {
         return head
     }
 
-    private fun ListNode?.getNthNode(n: Int): ListNode? {
-        var position = 1
-        var node = this
+    private fun ListNode?.getOrNull(index: Int): ListNode? {
+        var result = this
+        var i = 0
 
-        while (position < n && node != null) {
-            position++
-            node = node.next
+        while (i < index && result != null) {
+            result = result.next
+            i++
         }
-        return node
+        return result
     }
 }

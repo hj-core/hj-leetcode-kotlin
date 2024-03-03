@@ -16,7 +16,7 @@ class Solution {
         val isRemovingHead = removePositionFromStart == 1
         if (isRemovingHead) return head?.next
 
-        val nodeBefore = head.getNthNode(removePositionFromStart - 1)
+        val nodeBefore = head.getOrNull(removePositionFromStart - 2)
         nodeBefore?.next = nodeBefore?.next?.next
         return head
     }
@@ -32,14 +32,14 @@ class Solution {
         return count
     }
 
-    private fun ListNode?.getNthNode(n: Int): ListNode? {
-        var position = 1
-        var node = this
+    private fun ListNode?.getOrNull(index: Int): ListNode? {
+        var result = this
+        var i = 0
 
-        while (position < n && node != null) {
-            position++
-            node = node.next
+        while (i < index && result != null) {
+            result = result.next
+            i++
         }
-        return node
+        return result
     }
 }
