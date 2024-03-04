@@ -17,7 +17,7 @@ class Solution {
             return 0
         }
 
-        var score = 0
+        var result = 0
         var remainingPower = power
         var left = 0
         var right = sortedTokens.lastIndex
@@ -25,17 +25,17 @@ class Solution {
         while (left < right) {
             if (sortedTokens[left] <= remainingPower) {
                 remainingPower -= sortedTokens[left]
-                score++
+                result++
                 left++
             } else {
                 remainingPower += sortedTokens[right]
-                score--
+                result--
                 right--
             }
         }
         if (sortedTokens[left] <= remainingPower) {
-            score++
+            result++
         }
-        return score
+        return result
     }
 }
