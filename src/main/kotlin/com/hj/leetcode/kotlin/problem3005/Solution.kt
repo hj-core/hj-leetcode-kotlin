@@ -8,8 +8,8 @@ class Solution {
      * Time O(N) and Space O(N) where N is the size of nums;
      */
     fun maxFrequencyElements(nums: IntArray): Int {
-        val numFreq = nums.asList().groupingBy { it }.eachCount()
-        val maxFreq = numFreq.values.max()
-        return maxFreq * numFreq.values.count { it == maxFreq }
+        val counter = nums.asList().groupingBy { it }.eachCount()
+        val maxCount = counter.values.max()
+        return maxCount * counter.values.count { it == maxCount }
     }
 }
