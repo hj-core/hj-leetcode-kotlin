@@ -12,6 +12,7 @@ class Solution {
         val charFreq = s.groupingBy { it }.eachCountTo(hashMapOf())
         val result = StringBuilder(s.length)
 
+        // Counting sort
         for (char in order) {
             charFreq[char]?.let {
                 repeat(it) { result.append(char) }
