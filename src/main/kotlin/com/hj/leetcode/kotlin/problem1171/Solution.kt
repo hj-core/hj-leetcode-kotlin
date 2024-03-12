@@ -12,33 +12,32 @@ class Solution {
     fun removeZeroSumSublists(head: ListNode?): ListNode? {
         requireNotNull(head)
         val resultNodes = mutableListOf<ListNode>()
-        val prefixSums = mutableListOf<Int>()
-        val prefixSumsSet = mutableSetOf<Int>()
+        val prefixSums = mutableSetOf<Int>()
         var currentNode = head
+        var previousPrefixSum = 0
 
         while (currentNode != null) {
-            val currentSum = currentNode.`val` + (prefixSums.lastOrNull() ?: 0)
-            when (currentSum) {
+            val currentPrefixSum = currentNode.`val` + previousPrefixSum
+            when (currentPrefixSum) {
                 0 -> {
                     resultNodes.clear()
                     prefixSums.clear()
-                    prefixSumsSet.clear()
                 }
 
-                in prefixSumsSet -> {
-                    while (prefixSums.last() != currentSum) {
+                in prefixSums -> {
+                    while (previousPrefixSum != currentPrefixSum) {
+                        prefixSums.remove(previousPrefixSum)
+                        previousPrefixSum -= resultNodes.last().`val`
                         resultNodes.removeLast()
-                        prefixSumsSet.remove(prefixSums.last())
-                        prefixSums.removeLast()
                     }
                 }
 
                 else -> {
                     resultNodes.add(currentNode)
-                    prefixSums.add(currentSum)
-                    prefixSumsSet.add(currentSum)
+                    prefixSums.add(currentPrefixSum)
                 }
             }
+            previousPrefixSum = currentPrefixSum
             currentNode = currentNode.next
         }
 
