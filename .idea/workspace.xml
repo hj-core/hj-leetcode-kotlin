@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 930">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem930/Solution2.kt" afterDir="false" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a two-pointer solution">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -510,7 +508,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="963" />
+    <option name="localTasksCounter" value="964" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -554,7 +552,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Restrict return type of buildResult(...)" />
     <MESSAGE value="Add a solution to problem 647" />
     <MESSAGE value="Add a solution to problem 2149" />
     <MESSAGE value="Add a solution to problem 231" />
@@ -579,7 +576,8 @@
     <MESSAGE value="Add a solution to problem 3005" />
     <MESSAGE value="Add a solution to problem 1171" />
     <MESSAGE value="Add a solution to problem 930" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 930" />
+    <MESSAGE value="Add a two-pointer solution" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a two-pointer solution" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

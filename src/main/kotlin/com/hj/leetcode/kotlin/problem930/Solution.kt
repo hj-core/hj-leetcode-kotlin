@@ -5,19 +5,31 @@ package com.hj.leetcode.kotlin.problem930
  */
 class Solution {
     /* Complexity:
-     * Time O(N) and Space O(N) where N is the size of nums;
+     * Time O(N) and Space O(1) where N is the size of nums;
      */
     fun numSubarraysWithSum(nums: IntArray, goal: Int): Int {
         var result = 0
-        var prefixSum = 0
-        val countPrefixSum = hashMapOf(0 to 1)
+        var left = 0
+        var currentSum = 0
+        var prefixZeros = 0
 
-        for (num in nums) {
-            prefixSum += num
-            countPrefixSum[prefixSum - goal]?.let {
-                result += it
+        for ((right, value) in nums.withIndex()) {
+            require(value >= 0)
+
+            currentSum += value
+            while (left < right && (nums[left] == 0 || currentSum > goal)) {
+                if (nums[left] == 0) {
+                    prefixZeros++
+                } else {
+                    prefixZeros = 0
+                }
+                currentSum -= nums[left]
+                left++
             }
-            countPrefixSum.compute(prefixSum) { _, count -> 1 + (count ?: 0) }
+
+            if (currentSum == goal) {
+                result += 1 + prefixZeros
+            }
         }
         return result
     }
