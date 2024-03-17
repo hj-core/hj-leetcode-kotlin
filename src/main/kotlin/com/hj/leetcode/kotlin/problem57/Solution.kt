@@ -22,11 +22,11 @@ class Solution {
         }
 
         val reversed = intArrayOf(newInterval[1], newInterval[0])
-        // The insertion index of newInterval[1] among intervals.map { it[0] }
+        // The insertion index of newInterval[0] among intervals.map { it[1] }
         val iStart = intervals
             .binarySearch(reversed, compareBy { it[1] })
             .let { if (it < 0) -(it + 1) else it }
-        // The insertion index of newInterval[0] among intervals.map { it[1] }
+        // The insertion index of newInterval[1] among intervals.map { it[0] }
         val iEnd = intervals
             .binarySearch(reversed, compareBy { it[0] })
             .let { if (it < 0) -(it + 1) else it }
