@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 1171" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 238">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem525/Solution.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -132,7 +136,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "problem525",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/gaps-/Documents/GitHub/hj-leetcode-kotlin",
@@ -506,7 +510,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="962" />
+    <option name="localTasksCounter" value="963" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -550,7 +554,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add a solution to problem 368" />
     <MESSAGE value="Restrict return type of buildResult(...)" />
     <MESSAGE value="Add a solution to problem 647" />
     <MESSAGE value="Add a solution to problem 2149" />
@@ -575,7 +578,8 @@
     <MESSAGE value="Update kotlin to 1.9.23" />
     <MESSAGE value="Add a solution to problem 3005" />
     <MESSAGE value="Add a solution to problem 1171" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 1171" />
+    <MESSAGE value="Add a solution to problem 238" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 238" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
