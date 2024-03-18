@@ -8,20 +8,19 @@ class Solution {
      * Time O(NLogN) and Space O(N) where N is the size of points;
      */
     fun findMinArrowShots(points: Array<IntArray>): Int {
-        if (points.isEmpty()) return 0
-        val sortedPoints = sortedPointsByEnd(points)
-        var minShots = 1
-        var currShotPosition = sortedPoints[0][1]
-        for ((start, end) in sortedPoints) {
-            if (start > currShotPosition) {
-                minShots++
-                currShotPosition = end
+        if (points.isEmpty()) {
+            return 0
+        }
+
+        val sortedRanges = points.sortedBy { it[1] } // by point.right
+        var result = 1
+        var arrowPosition = sortedRanges[0][1]
+        for ((start, end) in sortedRanges) {
+            if (start > arrowPosition) {
+                result++
+                arrowPosition = end
             }
         }
-        return minShots
-    }
-
-    private fun sortedPointsByEnd(points: Array<IntArray>): List<IntArray> {
-        return points.sortedBy { it[1] }
+        return result
     }
 }
