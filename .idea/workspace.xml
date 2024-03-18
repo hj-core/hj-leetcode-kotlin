@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Correction to the comment of iStart and iEnd">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add minor comment">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem452/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem452/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +41,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Kotlin Class" />
         <option value="LeetCode Solution" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -510,7 +508,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="963" />
+    <option name="localTasksCounter" value="966" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -554,8 +552,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Restrict return type of buildResult(...)" />
-    <MESSAGE value="Add a solution to problem 647" />
     <MESSAGE value="Add a solution to problem 2149" />
     <MESSAGE value="Add a solution to problem 231" />
     <MESSAGE value="Add a solution to problem 268" />
@@ -573,13 +569,15 @@
     <MESSAGE value="Minor format update" />
     <MESSAGE value="Refactor getNthNode(...) to getOrNull(...)" />
     <MESSAGE value="Improve variable naming" />
-    <MESSAGE value="Improve readability" />
     <MESSAGE value="Add a solution to problem 1750" />
     <MESSAGE value="Update kotlin to 1.9.23" />
     <MESSAGE value="Add a solution to problem 3005" />
     <MESSAGE value="Add a solution to problem 1171" />
     <MESSAGE value="Add a solution to problem 238" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 238" />
+    <MESSAGE value="Improve readability" />
+    <MESSAGE value="Add another greedy solution" />
+    <MESSAGE value="Add minor comment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add minor comment" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -17,7 +17,7 @@ class Solution {
         var arrowPosition = sortedRanges[0][1]
         for ((start, end) in sortedRanges) {
             if (start > arrowPosition) {
-                result++
+                result += 1
                 arrowPosition = end
             }
         }
