@@ -11,7 +11,7 @@ class Solution2 {
      * Time O(NLogN) and Space O(N) where N is the size of points;
      */
     fun findMinArrowShots(points: Array<IntArray>): Int {
-        val sortedRanges = points.sortedBy { it[0] } // by point.left
+        val sortedRanges = points.sortedBy { it[0] } // by point.start
         var result = 0
         var arrowRange = intArrayOf(0, -1)
 

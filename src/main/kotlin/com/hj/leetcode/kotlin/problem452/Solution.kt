@@ -12,7 +12,7 @@ class Solution {
             return 0
         }
 
-        val sortedRanges = points.sortedBy { it[1] } // by point.right
+        val sortedRanges = points.sortedBy { it[1] } // by point.end
         var result = 1
         var arrowPosition = sortedRanges[0][1]
         for ((start, end) in sortedRanges) {
