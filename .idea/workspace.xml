@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="change ++ to +=1" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a DRAFT solution to problem 621" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,8 +39,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="LeetCode Solution" />
         <option value="Kotlin Class" />
+        <option value="LeetCode Solution" />
       </list>
     </option>
   </component>
@@ -132,7 +132,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "problem621",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/gaps-/Documents/GitHub/hj-leetcode-kotlin",
@@ -506,7 +506,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="967" />
+    <option name="localTasksCounter" value="968" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -550,7 +550,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add a solution to problem 231" />
     <MESSAGE value="Add a solution to problem 268" />
     <MESSAGE value="Add a solution to problem 201" />
     <MESSAGE value="Improve naming" />
@@ -575,7 +574,8 @@
     <MESSAGE value="Add another greedy solution" />
     <MESSAGE value="Add minor comment" />
     <MESSAGE value="change ++ to +=1" />
-    <option name="LAST_COMMIT_MESSAGE" value="change ++ to +=1" />
+    <MESSAGE value="Add a DRAFT solution to problem 621" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a DRAFT solution to problem 621" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

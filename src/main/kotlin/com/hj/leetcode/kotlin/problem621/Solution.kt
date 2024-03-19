@@ -2,6 +2,8 @@ package com.hj.leetcode.kotlin.problem621
 
 /**
  * LeetCode page: [621. Task Scheduler](https://leetcode.com/problems/task-scheduler/);
+ *
+ * TODO("How to prove the correctness?")
  */
 class Solution {
     fun leastInterval(tasks: CharArray, n: Int): Int {
