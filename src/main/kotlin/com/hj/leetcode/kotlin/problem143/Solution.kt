@@ -12,6 +12,9 @@ class Solution {
     fun reorderList(head: ListNode?): Unit {
         var ptr1 = head
         var ptr2 = firstOfSecondHalf(head).reversed()
+        /* Be cautious that reversing the second half doesn't break the original
+         * link from the first half to the second half.
+         */
 
         while (ptr2 != null) {
             checkNotNull(ptr1)
@@ -24,10 +27,10 @@ class Solution {
             ptr2 = next2
         }
 
-        // Break the original linking of middle node if head has an odd size
-        if (ptr1 != null) {
-            ptr1.next = null
-        }
+        /* Break the self-loop (case of even-size head) or the original link
+         * of middle node (case of odd-size head).
+         */
+        checkNotNull(ptr1).next = null
     }
 
     /**
