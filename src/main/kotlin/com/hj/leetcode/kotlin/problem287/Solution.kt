@@ -11,12 +11,12 @@ class Solution {
         var left = 1
         var right = nums.size - 1
 
+        // Binary search on the count of numbers within range
         while (left < right) {
             val mid = left + (right - left) / 2
-            val isResultInLeftToMid =
-                mid - left + 1 < nums.count { it in left..mid }
+            val inLeftToMid = mid - left + 1 < nums.count { it in left..mid }
 
-            if (isResultInLeftToMid) {
+            if (inLeftToMid) {
                 right = mid
             } else {
                 left = mid + 1
