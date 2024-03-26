@@ -19,12 +19,10 @@ class Solution {
             }
         }
 
-        for ((i, value) in nums.withIndex()) {
-            if (value != i + 1) {
-                return i + 1
-            }
-        }
-        return nums.size + 1
+        return 1 + (nums
+            .indices
+            .firstOrNull { nums[it] != it + 1 }
+            ?: nums.size)
     }
 
     private fun IntArray.swap(i: Int, j: Int) {
