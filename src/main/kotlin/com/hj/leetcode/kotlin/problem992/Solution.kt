@@ -19,7 +19,7 @@ class Solution {
         // For each end, find the latest start that fulfills k distinct
         for (end in nums.indices) {
             counter.compute(nums[end]) { _, v ->
-                if (v == null) 1 else 1 + v
+                if (v == null) 1 else v + 1
             }
 
             while (counter.size > k || checkNotNull(counter[nums[start]]) > 1) {
