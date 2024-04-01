@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 58">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem58/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem58/Solution.kt" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -509,7 +506,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="981" />
+    <option name="localTasksCounter" value="982" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -568,7 +565,6 @@
     <MESSAGE value="Add a solution to problem 3005" />
     <MESSAGE value="Add a solution to problem 1171" />
     <MESSAGE value="Add a solution to problem 238" />
-    <MESSAGE value="Improve readability" />
     <MESSAGE value="Add another greedy solution" />
     <MESSAGE value="Add minor comment" />
     <MESSAGE value="change ++ to +=1" />
@@ -578,7 +574,8 @@
     <MESSAGE value="Add a solution to problem 713" />
     <MESSAGE value="Add a solution to problem 992" />
     <MESSAGE value="Add a solution to problem 58" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 58" />
+    <MESSAGE value="Improve readability" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
