@@ -9,10 +9,10 @@ class Solution {
      */
     fun lengthOfLastWord(s: String): Int {
         val end = s.indexOfLast { it != ' ' }
-        var start = end
-        while (0 <= start && s[start] != ' ') {
-            start -= 1
-        }
-        return end - start
+        val start = (0..<end)
+            .findLast { s[it] == ' ' }
+            ?.let { it + 1 }
+            ?: 0
+        return end - start + 1
     }
 }
