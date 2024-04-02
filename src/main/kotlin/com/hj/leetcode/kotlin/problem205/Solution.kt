@@ -15,10 +15,10 @@ class Solution {
         val mappingS = hashMapOf<Char, Char>() // s[i] to t[i]
         val mappingT = hashMapOf<Char, Char>() // t[i] to s[i]
         for (i in s.indices) {
-            if (mappingS[s[i]]?.let { it != t[i]} == true) {
+            if (s[i] in mappingS && mappingS[s[i]] != t[i]) {
                 return false
             }
-            if (mappingT[t[i]]?.let { it != s[i] } == true) {
+            if (t[i] in mappingT && mappingT[t[i]] != s[i]) {
                 return false
             }
             mappingS.computeIfAbsent(s[i]) { t[i] }
