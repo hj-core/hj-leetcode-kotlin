@@ -22,8 +22,8 @@ class Solution {
             if (t[i] in mappingT && mappingT[t[i]] != s[i]) {
                 return false
             }
-            mappingS.computeIfAbsent(s[i]) { t[i] }
-            mappingT.computeIfAbsent(t[i]) { s[i] }
+            mappingS[s[i]] = t[i]
+            mappingT[t[i]] = s[i]
         }
         return true
     }
