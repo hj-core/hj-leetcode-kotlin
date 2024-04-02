@@ -5,7 +5,8 @@ package com.hj.leetcode.kotlin.problem205
  */
 class Solution {
     /* Complexity:
-     * Time O(N) and Space O(N) where N is the length of s;
+     * Time O(N) and Space O(min(N,C)) where N is the length of s
+     * and C is the cardinality of the possible charset;
      */
     fun isIsomorphic(s: String, t: String): Boolean {
         if (s.length != t.length) {
