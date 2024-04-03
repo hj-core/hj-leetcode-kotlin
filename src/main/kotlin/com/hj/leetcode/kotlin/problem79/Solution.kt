@@ -5,7 +5,8 @@ package com.hj.leetcode.kotlin.problem79
  */
 class Solution {
     /* Complexity:
-     * Time O(|board| * |word|) and Space O(|board|);
+     * Time O(MN * (3^L)) and Space O(MN) where M and N are the number of
+     * rows and columns of board, and L is the length of word;
      */
     fun exist(board: Array<CharArray>, word: String): Boolean {
         val visited = List(board.size) { BooleanArray(board[it].size) }
