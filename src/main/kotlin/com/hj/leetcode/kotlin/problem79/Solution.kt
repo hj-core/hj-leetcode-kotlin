@@ -39,12 +39,10 @@ class Solution {
         }
 
         visited[row][column] = true
-        val result = listOf(
-            dfs(board, word, progress + 1, row + 1, column, visited),
-            dfs(board, word, progress + 1, row - 1, column, visited),
-            dfs(board, word, progress + 1, row, column + 1, visited),
-            dfs(board, word, progress + 1, row, column - 1, visited),
-        ).any { it }
+        val result = (dfs(board, word, progress + 1, row + 1, column, visited)
+                || dfs(board, word, progress + 1, row - 1, column, visited)
+                || dfs(board, word, progress + 1, row, column + 1, visited)
+                || dfs(board, word, progress + 1, row, column - 1, visited))
         visited[row][column] = false
         return result
     }
