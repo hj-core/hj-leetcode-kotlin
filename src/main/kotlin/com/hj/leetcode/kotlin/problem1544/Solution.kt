@@ -5,32 +5,21 @@ package com.hj.leetcode.kotlin.problem1544
  */
 class Solution {
     /* Complexity:
-     * Time O(L) and Space O(L) where L is the length of s;
+     * Time O(N) and Space O(N) where N is the length of s;
      */
     fun makeGood(s: String): String {
-        val builder = StringBuilder()
-
+        val stack = StringBuilder(s.length)
         for (char in s) {
-            update(builder, char)
+            val isBad = (stack.isNotEmpty()
+                    && char != stack.last()
+                    && char.lowercaseChar() == stack.last().lowercaseChar())
+
+            if (isBad) {
+                stack.apply { deleteAt(lastIndex) }
+            } else {
+                stack.append(char)
+            }
         }
-        return builder.toString()
-    }
-
-    private fun update(builder: StringBuilder, newChar: Char) {
-        val lastChar = builder.lastOrNull()
-
-        val isSameLetterButDifferentCase = lastChar
-            ?.let { isSameLetterButDifferentCase(it, newChar) }
-            ?: false
-
-        if (isSameLetterButDifferentCase) {
-            builder.deleteCharAt(builder.lastIndex)
-        } else {
-            builder.append(newChar)
-        }
-    }
-
-    private fun isSameLetterButDifferentCase(char1: Char, char2: Char): Boolean {
-        return Math.abs(char1 - char2) == 32
+        return stack.toString()
     }
 }
