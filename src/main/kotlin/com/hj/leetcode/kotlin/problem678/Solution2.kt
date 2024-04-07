@@ -4,7 +4,17 @@ class Solution2 {
     /* Complexity:
      * Time O(N) and Space O(1) where N is the length of s;
      *
-     * TODO("How to prove the correctness?)
+     * TODO("How to prove the correctness?
+     *  One plausible way is that:
+     *  1. First, if the left "(" in "(...*....*...*.."
+     *  require a "*" to close, then all three stars can do the job
+     *  because all of they can increase needOpen by one.
+     *  2. Greedily use the available left most "*" whenever a "(" is needed
+     *  and use the available right most "*" whenever a ")" is needed.
+     *  3. If the "*" that change to "(" and "*" that change to ")" don't overlap,
+     *  then passing the checking in both directions implies valid string.
+     *  4. Prove by contradiction that the above mentioned change cannot overlay.
+     *  )
      */
     fun checkValidString(s: String): Boolean {
         return forwardChecking(s) && backwardChecking(s)
