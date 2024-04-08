@@ -14,11 +14,11 @@ class Solution {
             demand[preference]++
         }
 
-        var stackPtr = 0
-        while (stackPtr < sandwiches.size && demand[sandwiches[stackPtr]] > 0) {
-            demand[sandwiches[stackPtr]]--
-            stackPtr++
+        var top = 0 // Top index of remaining sandwiches
+        while (top < sandwiches.size && demand[sandwiches[top]] > 0) {
+            demand[sandwiches[top]]--
+            top++
         }
-        return students.size - stackPtr
+        return students.size - top
     }
 }
