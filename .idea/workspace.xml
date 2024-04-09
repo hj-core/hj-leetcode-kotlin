@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 1700">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve variable naming">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +70,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="problem1700" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -126,7 +126,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "#317 on problem1700",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/gaps-/Documents/GitHub/hj-leetcode-kotlin",
@@ -505,7 +505,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="991" />
+    <option name="localTasksCounter" value="992" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -553,7 +553,6 @@
     <MESSAGE value="Add a solution to problem 977" />
     <MESSAGE value="Minor format update" />
     <MESSAGE value="Refactor getNthNode(...) to getOrNull(...)" />
-    <MESSAGE value="Improve variable naming" />
     <MESSAGE value="Add a solution to problem 1750" />
     <MESSAGE value="Update kotlin to 1.9.23" />
     <MESSAGE value="Add a solution to problem 3005" />
@@ -574,7 +573,8 @@
     <MESSAGE value="Improve readability" />
     <MESSAGE value="Fix the time complexity" />
     <MESSAGE value="Add a solution to problem 1700" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 1700" />
+    <MESSAGE value="Improve variable naming" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve variable naming" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
