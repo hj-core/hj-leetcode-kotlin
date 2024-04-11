@@ -9,30 +9,25 @@ class Solution {
      */
     fun removeKdigits(num: String, k: Int): String {
         var remainingK = k
-        var i = 0
+        var index = 0
         val stack = mutableListOf<Char>()
 
         while (remainingK > 0) {
             when {
                 stack.isEmpty() -> {
-                    check(i < num.length)
-                    stack.add(num[i])
-                    i++
+                    check(index < num.length)
+                    stack.add(num[index])
+                    index++
                 }
 
-                i == num.length -> {
-                    stack.removeLast()
-                    remainingK--
-                }
-
-                num[i] < stack.last() -> {
+                index == num.length || num[index] < stack.last() -> {
                     stack.removeLast()
                     remainingK--
                 }
 
                 else -> {
-                    stack.add(num[i])
-                    i++
+                    stack.add(num[index])
+                    index++
                 }
             }
         }
@@ -40,18 +35,18 @@ class Solution {
         val result = StringBuilder()
         val firstNonZero = stack.indexOfFirst { it != '0' }
         if (firstNonZero != -1) {
-            for (j in firstNonZero..<stack.size) {
-                result.append(stack[j])
+            for (i in firstNonZero..<stack.size) {
+                result.append(stack[i])
             }
         }
 
         if (result.isEmpty()) {
-            while (i < num.length && num[i] == '0') {
-                i++
+            while (index < num.length && num[index] == '0') {
+                index++
             }
         }
-        for (j in i..<num.length) {
-            result.append(num[j])
+        for (i in index..<num.length) {
+            result.append(num[i])
         }
 
         if (result.isEmpty()) {
