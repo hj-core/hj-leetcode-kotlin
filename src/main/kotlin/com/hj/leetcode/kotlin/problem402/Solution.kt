@@ -12,6 +12,7 @@ class Solution {
         var index = 0
         val stack = mutableListOf<Char>()
 
+        // Do the removals
         while (remainingK > 0) {
             when {
                 stack.isEmpty() -> {
@@ -32,6 +33,7 @@ class Solution {
             }
         }
 
+        // Build the result
         val result = StringBuilder()
         val firstNonZero = stack.indexOfFirst { it != '0' }
         if (firstNonZero != -1) {
