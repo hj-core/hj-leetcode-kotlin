@@ -11,9 +11,10 @@ class Solution2 {
      * Time O(N) and Space O(N) where N is the size of height;
      */
     fun trap(height: IntArray): Int {
+        // rightBound[i]::= the max of height[i+1..<size]
         val rightBound = IntArray(height.size)
         for (i in height.lastIndex - 1  downTo 0) {
-            rightBound[i] = max(rightBound[i + 1], height[i + 1])
+            rightBound[i] = max(height[i + 1], rightBound[i + 1])
         }
 
         var result = 0
