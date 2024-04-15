@@ -7,32 +7,27 @@ import com.hj.leetcode.kotlin.common.model.TreeNode
  */
 class Solution2 {
     /* Complexity:
-     * Time O(N) and Space O(H) where N and H are the number of nodes and height of root;
+     * Time O(N) and Space O(H) where N is the number of nodes in root
+     * and H is the height of root;
      */
     fun sumNumbers(root: TreeNode?): Int {
-        if (root == null) return 0
-        var result = 0
-        root.dfs { leafPath -> result += computeNumber(leafPath) }
-        return result
+        return dfs(root, 0)
     }
 
-    private fun TreeNode.dfs(
-        currPath: MutableList<TreeNode> = mutableListOf(),
-        sideEffectOnLeafPath: (leafPath: List<TreeNode>) -> Unit
-    ) {
-        currPath.add(this)
-        if (this.isLeaf()) {
-            sideEffectOnLeafPath(currPath)
-        } else {
-            left?.dfs(currPath, sideEffectOnLeafPath)
-            right?.dfs(currPath, sideEffectOnLeafPath)
+    private fun dfs(node: TreeNode?, parentNumber: Int): Int {
+        if (node == null) {
+            return 0
         }
-        currPath.apply { removeAt(lastIndex) }
+
+        val number = parentNumber * 10 + node.`val`
+        return if (node.isLeaf()) {
+            number
+        } else {
+            dfs(node.left, number)+ dfs(node.right, number)
+        }
     }
 
-    private fun TreeNode.isLeaf() = left == null && right == null
-
-    private fun computeNumber(leafPath: List<TreeNode>): Int {
-        return leafPath.fold(0) { acc, treeNode -> acc * 10 + treeNode.`val` }
+    private fun TreeNode?.isLeaf(): Boolean {
+        return this != null && left == null && right == null
     }
 }
