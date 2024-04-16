@@ -10,30 +10,31 @@ class Solution {
      * Time O(N) and Space O(depth) where N is the number of nodes on levels up to depth;
      */
     fun addOneRow(root: TreeNode?, `val`: Int, depth: Int): TreeNode? {
-        if (depth == 1) return TreeNode(`val`).also { it.left = root }
+        if (depth == 1) {
+            return TreeNode(`val`).apply { left = root }
+        }
 
-        insertRow(root, `val`, depth)
+        dfs(root,1, `val`, depth)
         return root
     }
 
-    private fun insertRow(root: TreeNode?, valueOfNewNodes: Int, targetDepth: Int, currDepth: Int = 1) {
-        require(currDepth < targetDepth)
-
+    private fun dfs(node: TreeNode?, depth: Int, rowValue: Int, rowDepth: Int) {
+        check(depth < rowDepth)
         when {
-            root == null -> return
-            currDepth == targetDepth - 1 -> root.insertNewNodesLeftAndRight(valueOfNewNodes)
+            node == null -> return
+            depth == rowDepth - 1 -> insertRow(node, rowValue)
             else -> {
-                insertRow(root.left, valueOfNewNodes, targetDepth, currDepth + 1)
-                insertRow(root.right, valueOfNewNodes, targetDepth, currDepth + 1)
+                dfs(node.left, depth + 1, rowValue, rowDepth)
+                dfs(node.right, depth + 1, rowValue, rowDepth)
             }
         }
     }
 
-    private fun TreeNode.insertNewNodesLeftAndRight(valueOfNewNode: Int) {
-        val newLeft = TreeNode(valueOfNewNode).also { newNode -> newNode.left = left }
-        left = newLeft
+    private fun insertRow(node: TreeNode, rowValue: Int) {
+        val newLeft = TreeNode(rowValue).apply { left = node.left }
+        node.left = newLeft
 
-        val newRight = TreeNode(valueOfNewNode).also { newNode -> newNode.right = right }
-        right = newRight
+        val newRight = TreeNode(rowValue).apply { right = node.right }
+        node.right = newRight
     }
 }
