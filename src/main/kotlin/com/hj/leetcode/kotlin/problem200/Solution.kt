@@ -14,7 +14,7 @@ class Solution {
         for (row in grid.indices) {
             for (column in grid[row].indices) {
                 if (grid[row][column] == '0'
-                    || visited[flattenedIndex(row, column, grid[0].size)]
+                    || visited[flattenedIndex(grid, row, column)]
                 ) {
                     continue
                 }
@@ -25,19 +25,19 @@ class Solution {
         return result
     }
 
-    private fun flattenedIndex(row: Int, column: Int, width: Int): Int {
-        return width * row + column
+    private fun flattenedIndex(grid: Array<CharArray>, row: Int, column: Int): Int {
+        return row * grid[0].size + column
     }
 
     private fun dfs(grid: Array<CharArray>, row: Int, column: Int, visited: BooleanArray) {
         if (notInGrid(grid, row, column)
             || grid[row][column] == '0'
-            || visited[flattenedIndex(row, column, grid[0].size)]
+            || visited[flattenedIndex(grid, row, column)]
         ) {
             return
         }
 
-        visited[flattenedIndex(row, column, grid[0].size)] = true
+        visited[flattenedIndex(grid, row, column)] = true
         for (shift in intArrayOf(-1, 1)) {
             dfs(grid, row + shift, column, visited)
             dfs(grid, row, column + shift, visited)
