@@ -5,37 +5,40 @@ package com.hj.leetcode.kotlin.problem1971
  */
 class Solution2 {
     /* Complexity:
-     * Time O(|edges|) and Space O(|edges|);
+     * Time O(E) and Space O(E) where E is the size of edges;
      */
     fun validPath(n: Int, edges: Array<IntArray>, source: Int, destination: Int): Boolean {
-        if (source == destination) return true
-        val e = constructEdges(edges)
-        val verticesAtCurrDepth = ArrayDeque<Int>()
-        val verticesVisited = hashSetOf<Int>()
+        if (source == destination) {
+            return true
+        }
+        val adjacencyList = adjacencyList(edges)
+        val bfsQueue = ArrayDeque<Int>()
+        val visited = hashSetOf<Int>()
 
-        verticesAtCurrDepth.addLast(source)
-        verticesVisited.add(source)
-        while (verticesAtCurrDepth.isNotEmpty()) {
-            repeat(verticesAtCurrDepth.size) {
-                val vertex = verticesAtCurrDepth.removeFirst()
-                val adjacencies = e[vertex] ?: emptyList()
-                for (v in adjacencies) {
-                    if (verticesVisited.contains(v)) continue
-                    if (v == destination) return true
-                    verticesAtCurrDepth.addLast(v)
-                    verticesVisited.add(v)
+        bfsQueue.addLast(source)
+        visited.add(source)
+        while (bfsQueue.isNotEmpty()) {
+            val vertex = bfsQueue.removeFirst()
+            if (vertex == destination) {
+                return true
+            }
+
+            for (next in adjacencyList[vertex] ?: emptyList()) {
+                if (next !in visited) {
+                    bfsQueue.addLast(next)
+                    visited.add(next)
                 }
             }
         }
         return false
     }
 
-    private fun constructEdges(edges: Array<IntArray>): Map<Int, List<Int>> {
-        val e = hashMapOf<Int, MutableList<Int>>()
+    private fun adjacencyList(edges: Array<IntArray>): Map<Int, List<Int>> {
+        val result = hashMapOf<Int, MutableList<Int>>()
         for ((u, v) in edges) {
-            e.computeIfAbsent(u) { mutableListOf() }.add(v)
-            e.computeIfAbsent(v) { mutableListOf() }.add(u)
+            result.computeIfAbsent(u) { mutableListOf() }.add(v)
+            result.computeIfAbsent(v) { mutableListOf() }.add(u)
         }
-        return e
+        return result
     }
 }
