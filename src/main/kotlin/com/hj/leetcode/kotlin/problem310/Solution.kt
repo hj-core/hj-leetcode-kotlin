@@ -14,7 +14,9 @@ class Solution {
      *    if the longest path has an even length.
      * 2. There may be several longest paths, but they share the middle node or middle nodes
      *    if the longest path has an even length.
-     * 3. Then the problem reduced to find the longest path in the tree.
+     * 3. Then the problem reduced to find the longest path in the tree, and
+     *    there is a clever solution to this [Share some thoughts](https://leetcode.com/problems/minimum-height-trees/discuss/76055/Share-some-thoughts),
+     *    but not yet look into a detail proof.
      */
     fun findMinHeightTrees(n: Int, edges: Array<IntArray>): List<Int> {
         var longestPath = emptyList<Int>()
