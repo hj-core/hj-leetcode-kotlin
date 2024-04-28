@@ -10,14 +10,15 @@ class Solution {
     fun sumOfDistancesInTree(n: Int, edges: Array<IntArray>): IntArray {
         val root = 0
         val adjacencyList = adjacencyList(edges)
-        val subTreeSizes = subTreeSizes(n, adjacencyList)
+        val subTreeSizes = subTreeSizes(root, n, adjacencyList)
         val result = IntArray(n)
-        result[root] = findRootSumOfDistances(root, 0, 0, adjacencyList)
+        result[root] = findRootSumOfDistances(root, 0, root, adjacencyList)
 
         for (childNode in adjacencyList[root] ?: emptySet()) {
             findOtherNodesSumOfDistances(
                 childNode,
-                root, adjacencyList, subTreeSizes,
+                root,
+                n, adjacencyList, subTreeSizes,
                 result
             )
         }
@@ -33,12 +34,16 @@ class Solution {
         return result
     }
 
-    private fun subTreeSizes(n: Int, adjacencyList: Map<Int, Set<Int>>): IntArray {
-        val subTreeSizes = IntArray(n)
-        findSubTreeSizes(0, 0, adjacencyList) { node, size ->
-            subTreeSizes[node] = size
+    private fun subTreeSizes(
+        root: Int,
+        totalNodes: Int,
+        adjacencyList: Map<Int, Set<Int>>,
+    ): IntArray {
+        val result = IntArray(totalNodes)
+        findSubTreeSizes(root, root, adjacencyList) { node, size ->
+            result[node] = size
         }
-        return subTreeSizes
+        return result
     }
 
     private fun findSubTreeSizes(
@@ -77,12 +82,13 @@ class Solution {
     private fun findOtherNodesSumOfDistances(
         node: Int,
         parentNode: Int,
+        totalNode: Int,
         adjacencyList: Map<Int, Set<Int>>,
         subTreeSizes: IntArray,
         memoization: IntArray,
     ) {
         memoization[node] = (memoization[parentNode]
-                + (subTreeSizes[0] - subTreeSizes[node])
+                + (totalNode - subTreeSizes[node])
                 - subTreeSizes[node])
 
         for (childNode in adjacencyList[node] ?: emptySet()) {
@@ -92,7 +98,7 @@ class Solution {
             findOtherNodesSumOfDistances(
                 childNode,
                 node,
-                adjacencyList, subTreeSizes,
+                totalNode, adjacencyList, subTreeSizes,
                 memoization
             )
         }
