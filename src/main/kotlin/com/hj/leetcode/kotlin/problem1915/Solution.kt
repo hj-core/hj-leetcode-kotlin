@@ -9,18 +9,22 @@ class Solution {
      * and N is the size of words;
      */
     fun wonderfulSubstrings(word: String): Long {
-        val charMasks = IntArray(10) { 1 shl it } // 1, 2, 4, ... for a, b, c, ...
-        var prefixMask = 0 // 10-bit number,
-        val countPrefixMask = hashMapOf(0 to 1)
+        /* Use a 10-bit number to represent if the occurrence of a to j
+         * is odd or not.
+         */
+        val charMasks = IntArray(10) { 1 shl it }
+        var prefixMask = 0
+        val countPrefixMasks = hashMapOf(0 to 1)
         var result = 0L
 
         for (char in word) {
             prefixMask = prefixMask xor charMasks[char - 'a']
-            result += countPrefixMask[prefixMask] ?: 0
+
+            result += countPrefixMasks[prefixMask] ?: 0
             for (mask in charMasks) {
-                result += countPrefixMask[prefixMask xor mask] ?: 0
+                result += countPrefixMasks[prefixMask xor mask] ?: 0
             }
-            countPrefixMask[prefixMask] = 1 + (countPrefixMask[prefixMask] ?: 0)
+            countPrefixMasks[prefixMask] = 1 + (countPrefixMasks[prefixMask] ?: 0)
         }
         return result
     }
