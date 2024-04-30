@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem1915
  */
 class Solution {
     /* Complexity:
-     * Time O(MN) and Space O(M) where M is the size of charset
+     * Time O(MN) and Space O(N) where M is the size of charset
      * and N is the size of words;
      */
     fun wonderfulSubstrings(word: String): Long {
