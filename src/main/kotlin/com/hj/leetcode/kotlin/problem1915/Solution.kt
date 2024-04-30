@@ -6,7 +6,7 @@ package com.hj.leetcode.kotlin.problem1915
 class Solution {
     /* Complexity:
      * Time O(MN) and Space O(N) where M is the size of charset
-     * and N is the size of words;
+     * and N is the length of word;
      */
     fun wonderfulSubstrings(word: String): Long {
         /* Use a 10-bit number to represent if the occurrence of a to j
