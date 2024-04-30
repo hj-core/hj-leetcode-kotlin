@@ -9,9 +9,10 @@ class Solution {
      * and N is the length of word;
      */
     fun wonderfulSubstrings(word: String): Long {
-        /* Use a 10-bit number to represent if the occurrence of a to j
-         * is odd or not.
+        /* Use a 10-bit number to represent the character occurrence parity
+         * from 'a' to 'j'.
          */
+
         val charMasks = IntArray(10) { 1 shl it }
         var prefixMask = 0
         val countPrefixMasks = hashMapOf(0 to 1)
