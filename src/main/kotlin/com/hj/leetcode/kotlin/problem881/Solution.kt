@@ -14,6 +14,7 @@ class Solution {
         var result = 0
 
         while (left <= right) {
+            check(sortedWeights[right] <= limit)
             if (sortedWeights[left] + sortedWeights[right] <= limit) {
                 left++
             }
