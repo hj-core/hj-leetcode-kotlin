@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 165">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Switch to monolithic stack approach">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2487/Solution2.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +41,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Kotlin Class" />
         <option value="LeetCode Solution" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -119,28 +119,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build hj-leetcode-kotlin.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Upgrade Gradle wrapper.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/gaps-/Documents/GitHub/hj-leetcode-kotlin&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.41494253&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.grazie&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build hj-leetcode-kotlin.executor": "Run",
+    "Gradle.Upgrade Gradle wrapper.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "#338 on problem2487",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/gaps-/Documents/GitHub/hj-leetcode-kotlin",
+    "project.structure.last.edited": "Facets",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.41494253",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;kotlin-gradle-user-dirs&quot;: [
-      &quot;C:\\Users\\gaps-\\.gradle&quot;
+  "keyToStringList": {
+    "kotlin-gradle-user-dirs": [
+      "C:\\Users\\gaps-\\.gradle"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\gaps-\Documents\GitHub\hj-leetcode-kotlin\src\main\kotlin\com\hj\leetcode\kotlin\medium" />
@@ -518,7 +518,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="1010" />
+    <option name="localTasksCounter" value="1014" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -562,9 +562,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change ++ to +=1" />
-    <MESSAGE value="Update Gradle to 8.7" />
-    <MESSAGE value="Rewrite for readability" />
     <MESSAGE value="Add a solution to problem 41" />
     <MESSAGE value="Add a solution to problem 713" />
     <MESSAGE value="Add a solution to problem 992" />
@@ -582,12 +579,15 @@
     <MESSAGE value="Add a DRAFT solution to problem 514" />
     <MESSAGE value="Add a solution to problem 834" />
     <MESSAGE value="Add a solution to problem 1915" />
-    <MESSAGE value="Improve readability" />
     <MESSAGE value="Fix space complexity: there are at most N entries" />
     <MESSAGE value="Fix space complexity" />
     <MESSAGE value="Improve comment" />
     <MESSAGE value="Add a solution to problem 165" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 165" />
+    <MESSAGE value="Improve readability" />
+    <MESSAGE value="Add check to ensure limit &gt; max weight" />
+    <MESSAGE value="Add a solution to problem 2487" />
+    <MESSAGE value="Switch to monolithic stack approach" />
+    <option name="LAST_COMMIT_MESSAGE" value="Switch to monolithic stack approach" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
