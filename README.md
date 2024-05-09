@@ -341,6 +341,7 @@ at [LeetCode](https://leetcode.com/hj-core/).
 | [2966. Divide Array Into Arrays With Max Difference](https://leetcode.com/problems/divide-array-into-arrays-with-max-difference/)                                     | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem2966/Solution.kt)                                                                                | 2024-02-01    |
 | [2971. Find Polygon With the Largest Perimeter](https://leetcode.com/problems/find-polygon-with-the-largest-perimeter/)                                               | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem2971/Solution.kt)                                                                                | 2024-02-15    |
 | [2997. Minimum Number of Operations to Make Array XOR Equal to K](https://leetcode.com/problems/minimum-number-of-operations-to-make-array-xor-equal-to-k/)           | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem2997/Solution.kt)                                                                                | 2024-04-29    |
+| [3075. Maximize Happiness of Selected Children](https://leetcode.com/problems/maximize-happiness-of-selected-children/)                                               | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3075/Solution.kt)                                                                                | 2024-05-09    |
 
 ### Easy
 
