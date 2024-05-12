@@ -5,16 +5,20 @@ package com.hj.leetcode.kotlin.problem451
  */
 class Solution {
     /* Complexity:
-     * Time O(|s|) and Space O(1);
+     * Time O(N+MLogM) and Space O(N+M) where N is the length of s and
+     * M is the size of char set;
      */
     fun frequencySort(s: String): String {
-        val countPerChar = s.groupingBy { it }.eachCount()
-        val sortedEntries = countPerChar.entries.sortedBy { (_, count) -> -count }
-        val builder = StringBuilder()
+        val counter = s
+            .groupingBy { it }
+            .eachCount()
+            .entries
+            .sortedBy { (_, freq) -> (-1) * freq }
 
-        for ((char, count) in sortedEntries) {
-            repeat(count) { builder.append(char) }
+        return buildString {
+            for ((char, freq) in counter) {
+                repeat(freq) { append(char) }
+            }
         }
-        return builder.toString()
     }
 }

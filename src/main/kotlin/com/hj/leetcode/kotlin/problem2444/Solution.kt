@@ -1,5 +1,7 @@
 package com.hj.leetcode.kotlin.problem2444
 
+import kotlin.math.min
+
 /**
  * LeetCode page: [2444. Count Subarrays With Fixed Bounds](https://leetcode.com/problems/count-subarrays-with-fixed-bounds/);
  */
@@ -9,20 +11,26 @@ class Solution {
      */
     fun countSubarrays(nums: IntArray, minK: Int, maxK: Int): Long {
         var result = 0L
-        var lastMinKIndex = -1
-        var lastMaxKIndex = -1
-        var lastOutOfRangeIndex = -1
+        var boundary = -1
+        var latestMin = -1
+        var latestMax = -1
 
-        for ((index, num) in nums.withIndex()) {
-            val isOutOfRange = num < minK || num > maxK
-            if (isOutOfRange) lastOutOfRangeIndex = index
+        for ((end, num) in nums.withIndex()) {
+            if (num !in minK..maxK) {
+                boundary = end
+                continue
+            }
 
-            if (num == minK) lastMinKIndex = index
-            if (num == maxK) lastMaxKIndex = index
+            if (num == minK) {
+                latestMin = end
+            }
+            if (num == maxK) {
+                latestMax = end
+            }
 
-            val numValidSubArraysEndAtIndex =
-                maxOf(0, minOf(lastMinKIndex, lastMaxKIndex) - lastOutOfRangeIndex)
-            result += numValidSubArraysEndAtIndex
+            if (boundary < latestMin && boundary < latestMax) {
+                result += min(latestMin, latestMax) - boundary
+            }
         }
         return result
     }

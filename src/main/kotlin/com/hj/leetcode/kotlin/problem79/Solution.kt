@@ -5,44 +5,49 @@ package com.hj.leetcode.kotlin.problem79
  */
 class Solution {
     /* Complexity:
-     * Time O(|board| * |word|) and Space O(|board|);
+     * Time O(MN * (3^L)) and Space O(MN) where M and N are the number of
+     * rows and columns of board, and L is the length of word;
      */
     fun exist(board: Array<CharArray>, word: String): Boolean {
-        val visited = List(board.size) { row -> BooleanArray(board[row].size) }
+        val visited = List(board.size) { BooleanArray(board[it].size) }
         for (row in board.indices) {
             for (column in board[row].indices) {
-                val hasValidPath = dfs(row, column, 0, word, board, visited)
-                if (hasValidPath) return true
+                val exist = dfs(board, word, 0, row, column, visited)
+                if (exist) {
+                    return true
+                }
             }
         }
         return false
     }
 
     private fun dfs(
+        board: Array<CharArray>,
+        word: String, progress: Int,
         row: Int, column: Int,
-        currWordIndex: Int, word: String,
-        board: Array<CharArray>, visited: List<BooleanArray>
+        visited: List<BooleanArray>,
     ): Boolean {
-        val isInvalidPath =
-            isOutOfBoard(row, column, board) || visited[row][column] || board[row][column] != word[currWordIndex]
-        if (isInvalidPath) return false
+        if (progress == word.length) {
+            return true
+        }
 
-        val hasFoundLastChar = currWordIndex == word.lastIndex
-        if (hasFoundLastChar) return true
+        if (!inBoard(board, row, column)
+            || visited[row][column]
+            || board[row][column] != word[progress]
+        ) {
+            return false
+        }
 
         visited[row][column] = true
-        val neighbours = listOf(
-            Pair(row - 1, column), Pair(row, column - 1),
-            Pair(row + 1, column), Pair(row, column + 1)
-        )
-        val hasValidPath = neighbours.any { (nextRow, nextColumn) ->
-            dfs(nextRow, nextColumn, currWordIndex + 1, word, board, visited)
-        }
+        val result = (dfs(board, word, progress + 1, row + 1, column, visited)
+                || dfs(board, word, progress + 1, row - 1, column, visited)
+                || dfs(board, word, progress + 1, row, column + 1, visited)
+                || dfs(board, word, progress + 1, row, column - 1, visited))
         visited[row][column] = false
-        return hasValidPath
+        return result
     }
 
-    private fun isOutOfBoard(row: Int, column: Int, board: Array<CharArray>): Boolean {
-        return row !in board.indices || column !in board[row].indices
+    private fun inBoard(board: Array<CharArray>, row: Int, column: Int): Boolean {
+        return row in board.indices && column in board[row].indices
     }
 }

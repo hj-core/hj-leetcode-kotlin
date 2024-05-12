@@ -9,22 +9,22 @@ class Solution {
      */
     fun majorityElement(nums: IntArray): Int {
         /* https://en.wikipedia.org/wiki/Boyer-Moore_majority_vote_algorithm;
-         * Note that if the existence of majority element is not guaranteed, second pass is required to
-         * verify the found element is really a majority;
+         * Note that if the existence of majority element is not guaranteed, second pass
+         * is required to verify the found element is really a majority;
          */
+        var result = nums[0]
         var votes = 1
-        var candidate = nums[0]
 
-        for (index in 1..nums.lastIndex) {
+        for (i in 1..<nums.size) {
             when {
-                votes == 0 -> {
-                    candidate = nums[index]
+                nums[i] == result -> votes++
+                votes > 0 -> votes--
+                else -> {
                     votes = 1
+                    result = nums[i]
                 }
-                candidate == nums[index] -> votes++
-                else -> votes--
             }
         }
-        return candidate
+        return result
     }
 }

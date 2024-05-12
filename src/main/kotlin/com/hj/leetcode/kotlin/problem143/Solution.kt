@@ -7,54 +7,57 @@ import com.hj.leetcode.kotlin.common.model.ListNode
  */
 class Solution {
     /* Complexity:
-     * Time O(N) and Space O(1) where N is the number of nodes in head;
+     * Time O(N) and Space O(1) where N is the size of head;
      */
     fun reorderList(head: ListNode?): Unit {
-        val midNode = getMidNodeOfLinkedList(head = head)
-        /* Reminder: The LinkedList is not linear after revert the second half, the node before original midNode
-         * still link to the original midNode;
+        var ptr1 = head
+        var ptr2 = firstOfSecondHalf(head).reversed()
+        /* Be cautious that reversing the second half doesn't break the original
+         * link from the first half to the second half.
          */
-        val newMidNode = revertLinkedListAndReturnNewHead(head = midNode)
-        reorderLinkedListAsRequired(head, newMidNode)
+
+        while (ptr2 != null) {
+            checkNotNull(ptr1)
+            val next1 = ptr1.next
+            val next2 = ptr2.next
+            ptr1.next = ptr2
+            ptr2.next = next1
+
+            ptr1 = next1
+            ptr2 = next2
+        }
+
+        /* Break the self-loop (case of even-size head) or the original link
+         * of middle node (case of odd-size head).
+         */
+        checkNotNull(ptr1).next = null
     }
 
-    private fun getMidNodeOfLinkedList(head: ListNode?): ListNode? {
-        var fastPointer = head
-        var slowPointer = head
+    /**
+     * Return the node at index ceil(head.size/2).
+     */
+    private fun firstOfSecondHalf(head: ListNode?): ListNode? {
+        var result = head
+        var fast = head
 
-        while (fastPointer?.next != null) {
-            fastPointer = fastPointer.next?.next
-            slowPointer = slowPointer?.next
+        while (fast != null) {
+            result = result?.next
+            fast = fast.next?.next
         }
-        return slowPointer
+        return result
     }
 
-    private fun revertLinkedListAndReturnNewHead(head: ListNode?): ListNode? {
-        if (head == null) return null
-        var newHead = head
-        var nodeFollowOriginalHead = head.next
+    private fun ListNode?.reversed(): ListNode? {
+        var result = this
+        var tail: ListNode? = null
 
-        while (nodeFollowOriginalHead != null) {
-            head.next = nodeFollowOriginalHead.next
-            nodeFollowOriginalHead.next = newHead
-            newHead = nodeFollowOriginalHead
-            nodeFollowOriginalHead = head.next
+        while (result?.next != null) {
+            val next = result.next
+            result.next = tail
+            tail = result
+            result = next
         }
-        return newHead
-    }
-
-    private fun reorderLinkedListAsRequired(head: ListNode?, midNodeAfterRevertSecondHalf: ListNode?) {
-        if (head == null) return
-        var firstHalfPointer = head
-        var secondHalfPointer = midNodeAfterRevertSecondHalf
-
-        while (secondHalfPointer?.next != null) {
-            val nextFirstHalfPointer = firstHalfPointer?.next
-            val nextSecondHalfPointer = secondHalfPointer.next
-            firstHalfPointer?.next = secondHalfPointer
-            secondHalfPointer.next = nextFirstHalfPointer
-            firstHalfPointer = nextFirstHalfPointer
-            secondHalfPointer = nextSecondHalfPointer
-        }
+        result?.next = tail
+        return result
     }
 }

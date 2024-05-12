@@ -8,27 +8,20 @@ class Solution {
      * Time O(NLogN) and Space O(N) where N is the size of matches;
      */
     fun findWinners(matches: Array<IntArray>): List<List<Int>> {
-        val numLostMatchesPerPlayer = hashMapOf<Int, Int>()
-
+        val playerLosses = hashMapOf<Int, Int>()
         for ((winner, loser) in matches) {
-            numLostMatchesPerPlayer.let {
-                it.putIfAbsent(winner, 0)
-                it[loser] = it.getOrDefault(loser, 0) + 1
-            }
+            playerLosses.putIfAbsent(winner, 0)
+            playerLosses[loser] = 1 + (playerLosses[loser] ?: 0)
         }
 
-        val playerNoLostMatch = mutableListOf<Int>()
-        val playerLostOneMatch = mutableListOf<Int>()
-
-        for ((player, numLosses) in numLostMatchesPerPlayer) {
-            when (numLosses) {
-                0 -> playerNoLostMatch.add(player)
-                1 -> playerLostOneMatch.add(player)
+        val result = listOf(mutableListOf(), mutableListOf<Int>())
+        for ((player, losses) in playerLosses) {
+            when (losses) {
+                0 -> result[0].add(player)
+                1 -> result[1].add(player)
             }
         }
-
-        playerNoLostMatch.sort()
-        playerLostOneMatch.sort()
-        return listOf(playerNoLostMatch, playerLostOneMatch)
+        result.forEach { it.sort() }
+        return result
     }
 }

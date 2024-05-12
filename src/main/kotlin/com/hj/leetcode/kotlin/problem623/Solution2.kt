@@ -7,42 +7,45 @@ import com.hj.leetcode.kotlin.common.model.TreeNode
  */
 class Solution2 {
     /* Complexity:
-     * Time O(N) and Space O(B) where N and B are the number of nodes and max breadth on levels up to depth;
+     * Time O(N) and Space O(B) where N is the number of nodes and B is the max breadth
+     * on levels up to depth;
      */
     fun addOneRow(root: TreeNode?, `val`: Int, depth: Int): TreeNode? {
-        if (depth == 1) return TreeNode(`val`).also { it.left = root }
+        if (depth == 1) {
+            return TreeNode(`val`).apply { left = root }
+        }
 
-        val nodesOnOneLevelBefore = findNodesAtDepth(root, depth - 1)
-
-        for (node in nodesOnOneLevelBefore) {
-            node.insertNewNodesLeftAndRight(`val`)
+        for (node in nodesAtDepth(root, depth - 1)) {
+            insertRow(node, `val`)
         }
         return root
     }
 
-    private fun findNodesAtDepth(root: TreeNode?, depth: Int): List<TreeNode> {
-        if (root == null) return emptyList()
+    private fun nodesAtDepth(root: TreeNode?, depth: Int): List<TreeNode> {
+        if (root == null) {
+            return emptyList()
+        }
 
+        val nodes = ArrayDeque<TreeNode>()
         var currDepth = 1
-        val currNodes = ArrayDeque<TreeNode>()
-        currNodes.addLast(root)
+        nodes.addLast(root)
 
         while (currDepth < depth) {
-            repeat(currNodes.size) {
-                val node = currNodes.removeFirst()
-                node.left?.let { currNodes.addLast(it) }
-                node.right?.let { currNodes.addLast(it) }
+            repeat(nodes.size) {
+                val node = nodes.removeFirst()
+                node.left?.let { nodes.addLast(it) }
+                node.right?.let { nodes.addLast(it) }
             }
             currDepth++
         }
-        return currNodes.toList()
+        return nodes.toList()
     }
 
-    private fun TreeNode.insertNewNodesLeftAndRight(valueOfNewNode: Int) {
-        val newLeft = TreeNode(valueOfNewNode).also { newNode -> newNode.left = left }
-        left = newLeft
+    private fun insertRow(node: TreeNode, rowValue: Int) {
+        val newLeft = TreeNode(rowValue).apply { left = node.left }
+        node.left = newLeft
 
-        val newRight = TreeNode(valueOfNewNode).also { newNode -> newNode.right = right }
-        right = newRight
+        val newRight = TreeNode(rowValue).apply { right = node.right }
+        node.right = newRight
     }
 }

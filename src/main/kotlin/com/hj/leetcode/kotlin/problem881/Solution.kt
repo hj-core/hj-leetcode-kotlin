@@ -8,18 +8,19 @@ class Solution {
      * Time O(NLogN) and Space O(N) where N is the size of people;
      */
     fun numRescueBoats(people: IntArray, limit: Int): Int {
-        val sortedPeople = people.sorted()
-        var minBoats = 0
-        var front = 0
-        var back = sortedPeople.lastIndex
-        while (front <= back) {
-            val canCarryBoth = sortedPeople[front] + sortedPeople[back] <= limit
-            if (canCarryBoth) {
-                front++
+        val sortedWeights = people.sorted()
+        var left = 0
+        var right = sortedWeights.lastIndex
+        var result = 0
+
+        while (left <= right) {
+            check(sortedWeights[right] <= limit)
+            if (sortedWeights[left] + sortedWeights[right] <= limit) {
+                left++
             }
-            back--
-            minBoats++
+            right--
+            result++
         }
-        return minBoats
+        return result
     }
 }

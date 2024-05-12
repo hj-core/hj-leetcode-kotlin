@@ -11,11 +11,12 @@ class Solution {
      */
     fun middleNode(head: ListNode?): ListNode? {
         var slow = head
-        var fast = head
+        var fast = head?.next
 
-        while (fast?.next != null) {
+        while (fast != null) {
             slow = slow?.next
             fast = fast.next?.next
+            check(slow != fast) { "There is a cycle!" }
         }
         return slow
     }
