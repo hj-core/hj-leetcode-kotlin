@@ -14,14 +14,14 @@ class Solution {
         val m = grid.size
         val n = grid[0].size
         var result = 0
-        var bit = 1
+        var bitUnit = 1
         for (col in n - 1 downTo 0) {
             val countEffectiveZeros = grid
                 .indices
                 .count { grid[it][0] xor grid[it][col] == 0 }
 
-            result += max(countEffectiveZeros, m - countEffectiveZeros) * bit
-            bit *= 2
+            result += max(countEffectiveZeros, m - countEffectiveZeros) * bitUnit
+            bitUnit *= 2
         }
         return result
     }
