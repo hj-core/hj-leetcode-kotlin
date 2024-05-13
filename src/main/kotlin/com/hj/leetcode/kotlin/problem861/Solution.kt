@@ -16,11 +16,11 @@ class Solution {
         var result = 0
         var bit = 1
         for (col in n - 1 downTo 0) {
-            val countEffectiveZero = grid
+            val countEffectiveZeros = grid
                 .indices
                 .count { grid[it][0] xor grid[it][col] == 0 }
 
-            result += max(countEffectiveZero, m - countEffectiveZero) * bit
+            result += max(countEffectiveZeros, m - countEffectiveZeros) * bit
             bit *= 2
         }
         return result
