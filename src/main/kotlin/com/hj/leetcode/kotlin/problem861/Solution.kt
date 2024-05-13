@@ -16,7 +16,7 @@ class Solution {
         var result = 0
         var bitUnit = 1
         for (col in n - 1 downTo 0) {
-            val countEffectiveZeros = grid.sumOf { it[0] xor it[col] }
+            val countEffectiveZeros = grid.count { it[0] != it[col] }
             result += max(countEffectiveZeros, m - countEffectiveZeros) * bitUnit
             bitUnit *= 2
         }
