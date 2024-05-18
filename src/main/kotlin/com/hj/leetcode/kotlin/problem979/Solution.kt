@@ -15,7 +15,6 @@ class Solution {
         var result = 0
         dfs(root) { augment ->
             result += abs(augment.size - augment.totalCoins)
-
         }
         return result
     }
