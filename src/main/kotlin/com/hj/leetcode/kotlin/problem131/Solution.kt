@@ -8,38 +8,38 @@ class Solution {
      * Time O(N * 2^N) and Space O(N * 2^N) where N is the length of s;
      */
     fun partition(s: String): List<List<String>> = buildList {
-        dfsAllPalindromePartition(s, 0, mutableListOf()) {
+        dfsAllPalindromePartitions(s, 0, mutableListOf()) {
             add(it)
         }
     }
 
-    private fun dfsAllPalindromePartition(
+    private fun dfsAllPalindromePartitions(
         s: String,
         index: Int,
-        currentBreakPoints: MutableList<Int>,
-        onEachPartition: (partitioning: List<String>) -> Unit,
+        breakPoints: MutableList<Int>,
+        onEachPartition: (partition: List<String>) -> Unit,
     ) {
         if (index == s.length) {
-            if (isPalindrome(s, currentBreakPoints.last(), s.length)) {
-                onEachPartition(partition(s, currentBreakPoints))
+            if (isPalindrome(s, breakPoints.last(), s.length)) {
+                onEachPartition(partition(s, breakPoints))
             }
             return
         }
 
-        if (currentBreakPoints.isNotEmpty() && isPalindrome(s, currentBreakPoints.last(), index)) {
-            currentBreakPoints.add(index)
-            dfsAllPalindromePartition(s, index + 1, currentBreakPoints, onEachPartition)
-            currentBreakPoints.removeLast()
+        if (breakPoints.isNotEmpty() && isPalindrome(s, breakPoints.last(), index)) {
+            breakPoints.add(index)
+            dfsAllPalindromePartitions(s, index + 1, breakPoints, onEachPartition)
+            breakPoints.removeLast()
         }
-        if (currentBreakPoints.isEmpty()) {
-            currentBreakPoints.add(index)
+        if (breakPoints.isEmpty()) {
+            breakPoints.add(index)
         }
-        dfsAllPalindromePartition(s, index + 1, currentBreakPoints, onEachPartition)
+        dfsAllPalindromePartitions(s, index + 1, breakPoints, onEachPartition)
     }
 
-    private fun isPalindrome(s: String, start: Int, end: Int): Boolean {
+    private fun isPalindrome(s: String, start: Int, endExclusive: Int): Boolean {
         var left = start
-        var right = end - 1
+        var right = endExclusive - 1
         while (left < right) {
             if (s[left] != s[right]) {
                 return false
@@ -53,8 +53,8 @@ class Solution {
     private fun partition(s: String, breakPoints: List<Int>): List<String> = buildList {
         for (i in breakPoints.indices) {
             val start = breakPoints[i]
-            val end = breakPoints.getOrElse(i + 1) { s.length }
-            add(s.substring(start, end))
+            val endExclusive = breakPoints.getOrElse(i + 1) { s.length }
+            add(s.substring(start, endExclusive))
         }
     }
 }
