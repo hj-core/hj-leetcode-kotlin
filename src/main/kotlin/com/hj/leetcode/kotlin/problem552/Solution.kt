@@ -10,7 +10,7 @@ class Solution {
     fun checkRecord(n: Int): Int {
         val module = 1_000_000_007
         /* dp[j][k]@i::= the number of possible length i records that
-         * have j absent and k leading late.
+         * have j absence and k leading late.
          */
         val dp = Array(2) { IntArray(3) }.apply {
             this[0][0] = 1 // base case that i = 0
