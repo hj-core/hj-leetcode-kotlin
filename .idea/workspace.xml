@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 1255">
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-    </list>
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 552" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,7 +127,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "update-gradle-kotlin",
+    "git-widget-placeholder": "problem552",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/gaps-/Documents/GitHub/hj-leetcode-kotlin",
@@ -525,7 +519,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="1039" />
+    <option name="localTasksCounter" value="1040" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -570,7 +564,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fix space complexity: there are at most N entries" />
     <MESSAGE value="Fix space complexity" />
     <MESSAGE value="Improve comment" />
     <MESSAGE value="Add a solution to problem 165" />
@@ -595,7 +588,8 @@
     <MESSAGE value="Improve variable names" />
     <MESSAGE value="Add a DRAFT solution to problem 1255" />
     <MESSAGE value="Add a DRAFT solution to problem 1255" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a DRAFT solution to problem 1255" />
+    <MESSAGE value="Add a solution to problem 552" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 552" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
