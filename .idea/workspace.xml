@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 1608">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 1208">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +70,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem1608" />
+        <entry key="$PROJECT_DIR$" value="problem1208" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -521,7 +521,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="1041" />
+    <option name="localTasksCounter" value="1042" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -566,7 +566,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Improve comment" />
     <MESSAGE value="Add a solution to problem 165" />
     <MESSAGE value="Add check to ensure limit &gt; max weight" />
     <MESSAGE value="Add a solution to problem 2487" />
@@ -591,7 +590,8 @@
     <MESSAGE value="Add a DRAFT solution to problem 1255" />
     <MESSAGE value="Add a solution to problem 552" />
     <MESSAGE value="Add a solution to problem 1608" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 1608" />
+    <MESSAGE value="Add a solution to problem 1208" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 1208" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
