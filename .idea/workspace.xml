@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 1442">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="RightMostSetBit takes Int.MIN_VALUE into account&#10;&#10;- Previous implementation return correct result even it has overflowed">
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem260/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem260/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +70,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem1442" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -129,7 +129,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "problem260",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/gaps-/Documents/GitHub/hj-leetcode-kotlin",
@@ -521,7 +521,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="1046" />
+    <option name="localTasksCounter" value="1047" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -566,7 +566,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add check to ensure limit &gt; max weight" />
     <MESSAGE value="Add a solution to problem 2487" />
     <MESSAGE value="Switch to monolithic stack approach" />
     <MESSAGE value="Add a recursive solution" />
@@ -591,7 +590,8 @@
     <MESSAGE value="Add a solution to problem 1608" />
     <MESSAGE value="Add a solution to problem 1208" />
     <MESSAGE value="Add a solution to problem 1442" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 1442" />
+    <MESSAGE value="RightMostSetBit takes Int.MIN_VALUE into account&#10;&#10;- Previous implementation return correct result even it has overflowed" />
+    <option name="LAST_COMMIT_MESSAGE" value="RightMostSetBit takes Int.MIN_VALUE into account&#10;&#10;- Previous implementation return correct result even it has overflowed" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
