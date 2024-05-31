@@ -24,7 +24,9 @@ class Solution {
         return intArrayOf(single1, single2)
     }
 
-    private fun Int.getRightmostSetBit(): Int = this - (this and (this - 1))
+    private fun Int.getRightmostSetBit(): Int {
+        return if (this == Int.MIN_VALUE) Int.MIN_VALUE else this - (this and (this - 1))
+    }
 
     private fun Int.hasBitMaskSet(mask: Int): Boolean = this and mask == mask
 }
