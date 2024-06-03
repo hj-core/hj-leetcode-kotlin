@@ -5,8 +5,7 @@ package com.hj.leetcode.kotlin.problem2486
  */
 class Solution {
     /* Complexity:
-     * Time O(N+M) and Space O(1) where N is the length of t
-     * and M is the length of s;
+     * Time O(N) and Space O(1) where N is the length of s;
      */
     fun appendCharacters(s: String, t: String): Int {
         var sIndex = 0
