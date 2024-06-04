@@ -5,7 +5,8 @@ package com.hj.leetcode.kotlin.problem409
  */
 class Solution {
     /* Complexity:
-     * Time O(N) and Space O(N) where N is the length of s;
+     * Time O(N) and Space O(K) where N is the length of s
+     * and K is the size of charset;
      */
     fun longestPalindrome(s: String): Int {
         val countChars = s
