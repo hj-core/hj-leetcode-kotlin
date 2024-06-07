@@ -5,8 +5,8 @@ package com.hj.leetcode.kotlin.problem648
  */
 class Solution {
     /* Complexity:
-     * Time O(N+M) and Space O(N+M) where N is the flattened length of dictionary
-     * and M is the length of sentence;
+     * Time O(N + L^2) and Space O(N + L) where N is the flattened length of dictionary
+     * and L is the length of sentence;
      */
     fun replaceWords(dictionary: List<String>, sentence: String): String {
         val roots = dictionary.toSet()
