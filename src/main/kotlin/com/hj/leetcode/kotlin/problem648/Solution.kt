@@ -12,16 +12,16 @@ class Solution {
         val roots = dictionary.toSet()
         return sentence
             .splitToSequence(" ")
-            .map { word -> word.getRootOrSelf(roots) }
+            .map { word -> searchRootOrSelf(word, roots) }
             .joinToString(" ")
     }
 
-    private fun String.getRootOrSelf(roots: Set<String>): String {
-        for (i in this.indices) {
-            if (substring(0..i) in roots) {
-                return substring(0..i)
+    private fun searchRootOrSelf(word: String, roots: Set<String>): String {
+        for (i in word.indices) {
+            if (word.substring(0..i) in roots) {
+                return word.substring(0..i)
             }
         }
-        return this
+        return word
     }
 }
