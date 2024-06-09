@@ -15,16 +15,11 @@ class Solution {
         countPrefixSumRemainder[0] = 1
         for (num in nums) {
             prefixSum += num
-            val remainder = prefixSum.positiveRem(k)
+            val remainder = prefixSum.mod(k)
             val countRemainder = countPrefixSumRemainder[remainder] ?: 0
             countDivisible += countRemainder
             countPrefixSumRemainder[remainder] = countRemainder + 1
         }
         return countDivisible
-    }
-
-    private fun Int.positiveRem(other: Int): Int {
-        val rem = this % other
-        return if (rem < 0) rem + other else rem
     }
 }
