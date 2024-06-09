@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem974
  */
 class Solution {
     /* Complexity:
-     * Time O(|nums|) and Space O(k);
+     * Time O(N) and Space O(k) where N is the length of nums;
      */
     fun subarraysDivByK(nums: IntArray, k: Int): Int {
         var prefixSum = 0
