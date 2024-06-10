@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Rename function for consistency">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem523/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem523/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +70,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="problem523" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -124,7 +123,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem523",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/gaps-/Documents/GitHub/hj-leetcode-kotlin",
@@ -516,7 +515,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="1053" />
+    <option name="localTasksCounter" value="1054" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -566,7 +565,6 @@
     <MESSAGE value="Add a solution using Prim's algorithm" />
     <MESSAGE value="Add a solution to problem 861" />
     <MESSAGE value="Improve naming" />
-    <MESSAGE value="Improve readability" />
     <MESSAGE value="Add a solution to problem 1325" />
     <MESSAGE value="Add a solution to problem 979" />
     <MESSAGE value="Remove blank line" />
@@ -586,7 +584,8 @@
     <MESSAGE value="Add a solution to problem 409" />
     <MESSAGE value="Add a solution to problem 648" />
     <MESSAGE value="Fix time complexity analysis" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix time complexity analysis" />
+    <MESSAGE value="Improve readability" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

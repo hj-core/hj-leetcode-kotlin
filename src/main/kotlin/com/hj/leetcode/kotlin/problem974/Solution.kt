@@ -5,26 +5,19 @@ package com.hj.leetcode.kotlin.problem974
  */
 class Solution {
     /* Complexity:
-     * Time O(|nums|) and Space O(k);
+     * Time O(N) and Space O(k) where N is the length of nums;
      */
     fun subarraysDivByK(nums: IntArray, k: Int): Int {
-        var prefixSum = 0
-        val countPrefixSumRemainder = hashMapOf<Int, Int>()
-        var countDivisible = 0
+        var result = 0
+        var prefixSumModK = 0
+        val countPrefixSumModKs = hashMapOf(0 to 1)
 
-        countPrefixSumRemainder[0] = 1
         for (num in nums) {
-            prefixSum += num
-            val remainder = prefixSum.positiveRem(k)
-            val countRemainder = countPrefixSumRemainder[remainder] ?: 0
-            countDivisible += countRemainder
-            countPrefixSumRemainder[remainder] = countRemainder + 1
+            prefixSumModK = (prefixSumModK + num).mod(k)
+            val previousCount = countPrefixSumModKs[prefixSumModK] ?: 0
+            result += previousCount
+            countPrefixSumModKs[prefixSumModK] = previousCount + 1
         }
-        return countDivisible
-    }
-
-    private fun Int.positiveRem(other: Int): Int {
-        val rem = this % other
-        return if (rem < 0) rem + other else rem
+        return result
     }
 }
