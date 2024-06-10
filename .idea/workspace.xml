@@ -70,7 +70,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem523" />
+        <entry key="$PROJECT_DIR$" value="problem974" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -515,7 +515,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="1054" />
+    <option name="localTasksCounter" value="1057" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -560,8 +560,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add a binary search solution" />
-    <MESSAGE value="Add a solution to problem 857" />
     <MESSAGE value="Add a solution using Prim's algorithm" />
     <MESSAGE value="Add a solution to problem 861" />
     <MESSAGE value="Improve naming" />
@@ -584,6 +582,8 @@
     <MESSAGE value="Add a solution to problem 409" />
     <MESSAGE value="Add a solution to problem 648" />
     <MESSAGE value="Fix time complexity analysis" />
+    <MESSAGE value="Use built-in Int.mod(..)" />
+    <MESSAGE value="Improve complexity comment" />
     <MESSAGE value="Improve readability" />
     <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
   </component>
