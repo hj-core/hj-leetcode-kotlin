@@ -16,7 +16,7 @@ class Solution {
 
         while (covered < n) {
             if (index < nums.size && nums[index] <= covered + 1) {
-                covered += nums[index]
+                covered += min(nums[index], Int.MAX_VALUE - covered)
                 index++
             } else {
                 covered += min(covered + 1, Int.MAX_VALUE - covered)
