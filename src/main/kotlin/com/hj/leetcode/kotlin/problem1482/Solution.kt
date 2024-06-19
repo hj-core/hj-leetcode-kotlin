@@ -30,14 +30,14 @@ class Solution {
 
     private fun maximumBouquets(bloomDay: IntArray, duration: Int, k: Int): Int {
         var result = 0
-        var bloomStart = 0
-        while (bloomStart < bloomDay.size) {
-            var bloomEnd = bloomStart
-            while (bloomEnd < bloomDay.size && bloomDay[bloomEnd] <= duration) {
-                bloomEnd++
+        var segmentStart = 0
+        while (segmentStart < bloomDay.size) {
+            var segmentEnd = segmentStart
+            while (segmentEnd < bloomDay.size && bloomDay[segmentEnd] <= duration) {
+                segmentEnd++
             }
-            result += (bloomEnd - bloomStart) / k
-            bloomStart = bloomEnd + 1
+            result += (segmentEnd - segmentStart) / k
+            segmentStart = segmentEnd + 1
         }
         return result
     }
