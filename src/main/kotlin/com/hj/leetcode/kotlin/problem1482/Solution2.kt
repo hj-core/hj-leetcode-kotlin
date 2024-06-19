@@ -2,6 +2,9 @@ package com.hj.leetcode.kotlin.problem1482
 
 import java.util.*
 
+/**
+ * LeetCode page: [1482. Minimum Number of Days to Make m Bouquets](https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/);
+ */
 class Solution2 {
     /* Complexity:
      * Time O(NLogN) and Space O(N) where N is the size of bloomDay;
