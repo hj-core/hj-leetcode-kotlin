@@ -9,8 +9,10 @@ class Solution {
      * and M is the maximum value of bloomDay;
      */
     fun minDays(bloomDay: IntArray, m: Int, k: Int): Int {
-        if (bloomDay.size < m.toLong() * k) {
-            return  -1
+        val requiredFlowers = m.toLong() * k
+        when {
+            bloomDay.size.toLong() < requiredFlowers -> return -1
+            bloomDay.size.toLong() == requiredFlowers -> return bloomDay.max()
         }
 
         var low = 0
