@@ -31,7 +31,7 @@ class Solution {
                 else -> {
                     result++ // Apply k-bit flips at j
                     // numbers in indices [j+1, i+k-1] are unchanged due to double flipped
-                    for (p in (i + k)..<j + k) {
+                    for (p in (i + k)..<(j + k)) {
                         copyNums[p] = copyNums[p] xor 1
                     }
                     i = j + 1
