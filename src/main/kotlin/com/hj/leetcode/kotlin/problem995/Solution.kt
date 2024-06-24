@@ -30,7 +30,7 @@ class Solution {
                 j + k > copyNums.size -> return -1
                 else -> {
                     result++ // Apply k-bit flips at j
-                    // numbers in indices [j, i+k-1] are unchanged due to double flipped
+                    // numbers in indices [j+1, i+k-1] are unchanged due to double flipped
                     for (p in (i + k)..<j + k) {
                         copyNums[p] = copyNums[p] xor 1
                     }
