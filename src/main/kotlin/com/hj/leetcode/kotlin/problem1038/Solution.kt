@@ -15,14 +15,14 @@ class Solution {
         return root
     }
 
-    private fun bstToGst(root: TreeNode?, carry: IntArray) {
+    private fun bstToGst(root: TreeNode?, lastSuffixSum: IntArray) {
         if (root == null) {
             return
         }
         // Reversed inorder traversal
-        bstToGst(root.right, carry)
-        root.`val` += carry[0]
-        carry[0] = root.`val`
-        bstToGst(root.left, carry)
+        bstToGst(root.right, lastSuffixSum)
+        root.`val` += lastSuffixSum[0]
+        lastSuffixSum[0] = root.`val`
+        bstToGst(root.left, lastSuffixSum)
     }
 }
