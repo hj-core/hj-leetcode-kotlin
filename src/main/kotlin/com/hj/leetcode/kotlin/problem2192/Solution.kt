@@ -15,17 +15,16 @@ class Solution {
 
         (0..<n).filterTo(zeroDegreeNodes) { inDegree[it] == 0 }
         while (zeroDegreeNodes.isNotEmpty()) {
-            repeat(zeroDegreeNodes.size) {
-                val node = zeroDegreeNodes.removeFirst()
-                for (descendant in adjacencyList[node]) {
-                    ancestors[descendant].add(node)
-                    ancestors[descendant].addAll(ancestors[node])
+            val node = zeroDegreeNodes.removeFirst()
+            for (descendant in adjacencyList[node]) {
+                ancestors[descendant].add(node)
+                ancestors[descendant].addAll(ancestors[node])
 
-                    inDegree[descendant]--
-                    if (inDegree[descendant] == 0) {
-                        zeroDegreeNodes.addLast(descendant)
-                    }
+                inDegree[descendant]--
+                if (inDegree[descendant] == 0) {
+                    zeroDegreeNodes.addLast(descendant)
                 }
+
             }
         }
         return ancestors.map { it.sorted() }

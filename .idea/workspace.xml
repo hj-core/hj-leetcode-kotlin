@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 2192">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a DFS solution">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,8 +41,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Kotlin Class" />
         <option value="LeetCode Solution" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -123,7 +123,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem2192",
+    "git-widget-placeholder": "#389 on problem2192",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/gaps-/Documents/GitHub/hj-leetcode-kotlin",
@@ -515,7 +515,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="1073" />
+    <option name="localTasksCounter" value="1074" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -560,7 +560,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add a solution to problem 1208" />
     <MESSAGE value="Add a solution to problem 1442" />
     <MESSAGE value="RightMostSetBit takes Int.MIN_VALUE into account&#10;&#10;- Previous implementation return correct result even it has overflowed" />
     <MESSAGE value="Update gradle to 8.8" />
@@ -585,7 +584,8 @@
     <MESSAGE value="Add a solution to problem 1382" />
     <MESSAGE value="Add a solution to problem 1791" />
     <MESSAGE value="Add a solution to problem 2192" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 2192" />
+    <MESSAGE value="Add a DFS solution" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a DFS solution" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
