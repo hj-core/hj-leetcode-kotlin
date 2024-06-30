@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem1579
  */
 class Solution {
     /* Complexity:
-     * Time O(E) and Space O(n) where E is the size of edges;
+     * Time O(n+E) and Space O(n) where E is the size of edges;
      */
     fun maxNumEdgesToRemove(n: Int, edges: Array<IntArray>): Int {
         /* Return -1 if the number of edges is less than n-1, which is the minimum number of edges
