@@ -7,27 +7,36 @@ import com.hj.leetcode.kotlin.common.model.TreeNode
  */
 class Solution {
     /* Complexity:
-     * Time O(N) and Space O(H) where N and H are the number of nodes and height of root;
+     * Time O(N) and Space O(H) where N is the number of nodes in root
+     * and H is the height of root;
      */
     fun sumNumbers(root: TreeNode?): Int {
-        if (root == null) return 0
         var result = 0
-        root.dfs { leafPathSum -> result += leafPathSum }
+        dfs(root, 0) {
+            result += it
+        }
         return result
     }
 
-    private fun TreeNode.dfs(
-        currPathSum: Int = 0,
-        sideEffectOnLeafPathSum: (leafPathSum: Int) -> Unit
+    private fun dfs(
+        node: TreeNode?,
+        parentNumber: Int,
+        onEachLeaf: (number: Int) -> Unit,
     ) {
-        val newPathSum = currPathSum * 10 + `val`
-        if (this.isLeaf()) {
-            sideEffectOnLeafPathSum(newPathSum)
+        if (node == null) {
+            return
+        }
+
+        val number = parentNumber * 10 + node.`val`
+        if (node.isLeaf()) {
+            onEachLeaf(number)
         } else {
-            left?.dfs(newPathSum, sideEffectOnLeafPathSum)
-            right?.dfs(newPathSum, sideEffectOnLeafPathSum)
+            dfs(node.left, number, onEachLeaf)
+            dfs(node.right, number, onEachLeaf)
         }
     }
 
-    private fun TreeNode.isLeaf() = left == null && right == null
+    private fun TreeNode?.isLeaf(): Boolean {
+        return this != null && left == null && right == null
+    }
 }

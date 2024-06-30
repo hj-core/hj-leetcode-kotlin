@@ -8,58 +8,23 @@ class Solution {
      * Time O(N) and Space O(1) where N is the length of s;
      */
     fun numDecodings(s: String): Int {
-        val isLastDigitInvalid = isInvalidDigit(s, s.lastIndex)
-        if (isLastDigitInvalid) return 0
+        // dp@i=lastIndex ::= [numDecoding(s[i:]), numDecoding(s[i+1:])]
+        val dp = mutableListOf((if (s.last() == '0') 0 else 1), 1)
 
-        val lastDigit = getDigit(s, s.lastIndex)
-        val numWaysOfLastDigit = if (lastDigit == 0) 0 else 1
+        for (index in s.lastIndex - 1 downTo 0) {
+            if (s[index] == '0') {
+                dp[1] = dp[0]
+                dp[0] = 0
+                continue
+            }
 
-        return findNumDecodeWaysBackward(
-            currIndex = s.lastIndex - 1,
-            digits = s,
-            prevNumWays = numWaysOfLastDigit,
-            prevPrevNumWays = 1 // Determined by the logic of algorithm;
-        )
-    }
-
-    private fun isInvalidDigit(digits: String, index: Int): Boolean {
-        val isNonZero = digits[index] != '0'
-        if (isNonZero) return false
-
-        val isLeadingZero = index == 0
-        if (isLeadingZero) return true
-
-        val precedingDigit = getDigit(digits, index - 1)
-        return precedingDigit != 1 && precedingDigit != 2
-    }
-
-    private fun getDigit(digits: String, index: Int): Int {
-        require(digits[index].isDigit())
-        return digits[index] - '0'
-    }
-
-    private tailrec fun findNumDecodeWaysBackward(
-        currIndex: Int,
-        digits: String,
-        prevNumWays: Int,
-        prevPrevNumWays: Int
-    ): Int {
-        if (currIndex == -1) return prevNumWays
-
-        val isCurrDigitInvalid = isInvalidDigit(digits, currIndex)
-        if (isCurrDigitInvalid) return 0
-
-        val keyDigits = getSubDigits(digits, currIndex..currIndex + 1)
-        val currNumWays = when {
-            keyDigits < 10 -> 0
-            keyDigits > 26 -> prevNumWays
-            else -> prevNumWays + prevPrevNumWays
+            var result = dp[0]
+            if (s.slice(index..index + 1).toInt() <= 26) {
+                result += dp[1]
+            }
+            dp[1] = dp[0]
+            dp[0] = result
         }
-
-        return findNumDecodeWaysBackward(currIndex - 1, digits, currNumWays, prevNumWays)
-    }
-
-    private fun getSubDigits(digits: String, intRange: IntRange): Int {
-        return digits.slice(intRange).toInt()
+        return dp[0]
     }
 }

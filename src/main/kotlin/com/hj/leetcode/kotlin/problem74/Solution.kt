@@ -5,41 +5,34 @@ package com.hj.leetcode.kotlin.problem74
  */
 class Solution {
     /* Complexity:
-     * Time O(LogN + LogM) and Space O(1) where N and M are the number of rows and columns of matrix;
+     * Time O(LogM+LogN) and Space O(1) where M and N are the number of rows and columns in matrix;
      */
     fun searchMatrix(matrix: Array<IntArray>, target: Int): Boolean {
-        val targetTooSmall = target < matrix[0][0]
-        val targetTooLarge = target > matrix.last().last()
-        if (targetTooSmall || targetTooLarge) return false
+        val row = binarySearch(target, 0, matrix.size) { index ->
+            matrix[index].last()
+        }.let { if (it < 0) -(it + 1) else it }
 
-        var row = binarySearch(target, 0, matrix.lastIndex) { index -> matrix[index][0] }
-        val targetFound = matrix.getOrNull(row)?.get(0) == target
-        if (targetFound) return true else row--
-
-        val column = binarySearch(target, 0, matrix[row].lastIndex) { index -> matrix[row][index] }
-        if (column == matrix[row].size) return false
-
-        return matrix[row][column] == target
+        return (row in matrix.indices) && (matrix[row].binarySearch(target) >= 0)
     }
 
-    private fun binarySearch(
-        target: Int,
+    private fun <T : Comparable<T>> binarySearch(
+        target: T,
         fromIndex: Int,
-        toIndex: Int,
-        readIndex: (index: Int) -> Int
+        untilIndex: Int,
+        readValue: (index: Int) -> T
     ): Int {
-        var leftBound = fromIndex
-        var rightBound = toIndex
+        var low = fromIndex
+        var high = untilIndex - 1
+        while (low <= high) {
+            val mid = (low + high).ushr(1)
+            val midValue = readValue(mid)
 
-        while (leftBound <= rightBound) {
-            val midIndex = (leftBound + rightBound) ushr 1
-            val midValue = readIndex(midIndex)
             when {
-                midValue < target -> leftBound = midIndex + 1
-                midValue > target -> rightBound = midIndex - 1
-                else -> return midIndex
+                midValue < target -> low = mid + 1
+                midValue > target -> high = mid - 1
+                else -> return mid // target found and return its index
             }
         }
-        return leftBound
+        return -(low + 1) // target is not found and return the -(insertion point + 1)
     }
 }

@@ -5,48 +5,18 @@ package com.hj.leetcode.kotlin.problem1662
  */
 class Solution {
     /* Complexity:
-     * Time O(N) and Space O(1) where N is the min flat length of word1 and word2;
+     * Time O(N) and Space O(1) where N represents the shorter flattened length
+     * between word1 and word2;
      */
     fun arrayStringsAreEqual(word1: Array<String>, word2: Array<String>): Boolean {
-        val iterator1 = CharIterator(word1)
-        val iterator2 = CharIterator(word2)
+        val iterator1 = word1.asSequence().flatMap { it.asSequence() }.iterator()
+        val iterator2 = word2.asSequence().flatMap { it.asSequence() }.iterator()
 
         while (iterator1.hasNext() && iterator2.hasNext()) {
-            val char1 = iterator1.next()
-            val char2 = iterator2.next()
-            if (char1 != char2) return false
-        }
-
-        val hasDiffLength = iterator1.hasNext() || iterator2.hasNext()
-        if (hasDiffLength) return false
-
-        return true
-    }
-
-    private class CharIterator(private val strings: Array<String>) : Iterator<Char> {
-
-        private var nextStrIndex = 0
-        private var nextCharIndex = 0
-
-        override fun hasNext(): Boolean {
-            return when {
-                nextStrIndex > strings.lastIndex -> false
-                nextStrIndex < strings.lastIndex -> true
-                else -> nextCharIndex <= strings[nextStrIndex].lastIndex
+            if (iterator1.next() != iterator2.next()) {
+                return false
             }
         }
-
-        override fun next(): Char {
-            val next = strings[nextStrIndex][nextCharIndex]
-
-            if (nextCharIndex < strings[nextStrIndex].lastIndex) {
-                nextCharIndex++
-            } else {
-                nextStrIndex++
-                nextCharIndex = 0
-            }
-
-            return next
-        }
+        return iterator1.hasNext() == iterator2.hasNext()
     }
 }

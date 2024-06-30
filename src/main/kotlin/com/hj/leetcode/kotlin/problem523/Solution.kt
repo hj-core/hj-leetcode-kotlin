@@ -5,23 +5,21 @@ package com.hj.leetcode.kotlin.problem523
  */
 class Solution {
     /* Complexity:
-     * Time O(N) and Space O(K) where N is the size of nums and k equals k;
+     * Time O(N) and Space O(k) where N is the size of nums;
      */
     fun checkSubarraySum(nums: IntArray, k: Int): Boolean {
-        /* deductions contain prefixSumModK until(exclusive) index before the current Index, they are used to
-         * query the SubArraySumModK ended in the current index;
-         */
-        val deductions = hashSetOf<Int>().also { it.add(0) }
-        var prevPrefixSumModK = nums[0] % k
+        // Tracking the prefixSumModKs with one index delay to ensure the subarray size
+        val prefixSumModKs = mutableSetOf<Int>()
+        var prevPrefixSumModK = 0
 
-        for (index in 1..nums.lastIndex) {
-            val currPrefixSumModK = (prevPrefixSumModK + nums[index]) % k
+        for (num in nums) {
+            val prefixSumModK = (prevPrefixSumModK + num) % k
+            if (prefixSumModK in prefixSumModKs) {
+                return true
+            }
 
-            val hasSubArraySumModKIsZero = currPrefixSumModK in deductions
-            if (hasSubArraySumModKIsZero) return true
-
-            deductions.add(prevPrefixSumModK)
-            prevPrefixSumModK = currPrefixSumModK
+            prefixSumModKs.add(prevPrefixSumModK)
+            prevPrefixSumModK = prefixSumModK
         }
         return false
     }

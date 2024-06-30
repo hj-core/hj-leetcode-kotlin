@@ -8,26 +8,34 @@ class Solution {
      * Time O(NLogN) and Space O(N) where N is the size of tokens;
      */
     fun bagOfTokensScore(tokens: IntArray, power: Int): Int {
-        val sortedTokens = tokens.clone().apply { sort() }
-        var maxScore = 0
-        var currScore = 0
-        var currPower = power
-        var indexMaxAvailableToken = sortedTokens.lastIndex
-        var nextTokenIndex = 0
-        val isNextTokenPlayable = { nextTokenIndex <= indexMaxAvailableToken }
-
-        while (isNextTokenPlayable()) {
-            currPower -= sortedTokens[nextTokenIndex]
-            if (currPower >= 0) {
-                currScore++
-                maxScore = maxOf(maxScore, currScore)
-            } else {
-                if (currScore == 0) break
-                currPower += sortedTokens[indexMaxAvailableToken]
-                indexMaxAvailableToken--
-            }
-            nextTokenIndex++
+        if (power == 0 || tokens.isEmpty()) {
+            return 0
         }
-        return maxScore
+
+        val sortedTokens = tokens.sorted()
+        if (power < sortedTokens[0]) {
+            return 0
+        }
+
+        var result = 0
+        var remainingPower = power
+        var left = 0
+        var right = sortedTokens.lastIndex
+
+        while (left < right) {
+            if (sortedTokens[left] <= remainingPower) {
+                remainingPower -= sortedTokens[left]
+                result++
+                left++
+            } else {
+                remainingPower += sortedTokens[right]
+                result--
+                right--
+            }
+        }
+        if (sortedTokens[left] <= remainingPower) {
+            result++
+        }
+        return result
     }
 }

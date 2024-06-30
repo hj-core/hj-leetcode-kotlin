@@ -5,41 +5,40 @@ package com.hj.leetcode.kotlin.problem1971
  */
 class Solution {
     /* Complexity:
-     * Time O(|edges|) and Space O(|edges|);
+     * Time O(E) and Space O(E) where E is the size of edges;
      */
     fun validPath(n: Int, edges: Array<IntArray>, source: Int, destination: Int): Boolean {
-        if (source == destination) return true
-        val e = constructEdges(edges)
-        val visited = hashSetOf<Int>()
-        return isReachable(source, destination, e, visited)
-    }
-
-    private fun constructEdges(edges: Array<IntArray>): Map<Int, Set<Int>> {
-        val e = hashMapOf<Int, MutableSet<Int>>()
-        for ((u, v) in edges) {
-            e.computeIfAbsent(u) { hashSetOf() }.add(v)
-            e.computeIfAbsent(v) { hashSetOf() }.add(u)
+        if (source == destination) {
+            return true
         }
-        return e
+        return hasValidPath(source, destination, adjacencyList(edges), hashSetOf())
     }
 
-    /* WARNING!!
-     * 1) Throws a StackOverflowError if the search path is too long;
-     * 2) Return false for the case that source is the same as destination;
-     */
-    private fun isReachable(
-        source: Int, destination: Int, edges: Map<Int, Set<Int>>, visited: MutableSet<Int>
+    private fun hasValidPath(
+        source: Int,
+        destination: Int,
+        adjacencyList: Map<Int, Set<Int>>,
+        visited: MutableSet<Int>
     ): Boolean {
-        if (visited.contains(source)) return false
+        if (source == destination) {
+            return true
+        }
+        if (source in visited) {
+            return false
+        }
 
         visited.add(source)
-        val nextVertices = edges[source] ?: emptySet()
-        if (destination in nextVertices) return true
+        return adjacencyList[source]?.any {
+            hasValidPath(it, destination, adjacencyList, visited)
+        } ?: false
+    }
 
-        for (vertex in nextVertices) {
-            val isReachable = isReachable(vertex, destination, edges, visited)
-            if (isReachable) return true
+    private fun adjacencyList(edges: Array<IntArray>): Map<Int, Set<Int>> {
+        val result = hashMapOf<Int, MutableSet<Int>>()
+        for ((u, v) in edges) {
+            result.computeIfAbsent(u) { hashSetOf() }.add(v)
+            result.computeIfAbsent(v) { hashSetOf() }.add(u)
         }
-        return false
+        return result
     }
 }

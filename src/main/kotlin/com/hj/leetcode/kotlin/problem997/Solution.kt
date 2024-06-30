@@ -5,26 +5,17 @@ package com.hj.leetcode.kotlin.problem997
  */
 class Solution {
     /* Complexity:
-     * Time O(n + |trust|) and Space O(n);
+     * Time O(n+M) and Space O(n) where M is the size of trust;
      */
     fun findJudge(n: Int, trust: Array<IntArray>): Int {
-        val degreeTable = buildDegreeTable(n, trust)
-        return degreeTable.indexOf(mutableListOf(0, n - 1))
-    }
+        // nodeDegrees[i] ::= the (in degrees, out degrees) of node i
+        val nodeDegrees = Array(n + 1) { mutableListOf(0, 0) }
 
-    private fun buildDegreeTable(n: Int, trust: Array<IntArray>): List<List<Int>> {
-        /* degreeTable[i] is a size two list that stores the number of people person i trust
-         * and the number of people who trust person i;
-         */
-        val degreeTable = List(n + 1) { mutableListOf(0, 0) }
-
-        degreeTable[0][0] = -1 // no person is labelled 0
-        degreeTable[0][1] = -1 // no person is labelled 0
-
-        for ((i, j) in trust) {
-            degreeTable[i][0]++
-            degreeTable[j][1]++
+        for ((p1, p2) in trust) {
+            nodeDegrees[p2][0]++
+            nodeDegrees[p1][1]++
         }
-        return degreeTable
+        val judgeDegrees = listOf(n - 1, 0)
+        return (1..n).find { nodeDegrees[it] == judgeDegrees } ?: -1
     }
 }

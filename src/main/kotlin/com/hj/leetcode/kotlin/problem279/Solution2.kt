@@ -1,5 +1,7 @@
 package com.hj.leetcode.kotlin.problem279
 
+import kotlin.math.sqrt
+
 /**
  * LeetCode page: [279. Perfect Squares](https://leetcode.com/problems/perfect-squares/);
  */
@@ -21,21 +23,20 @@ class Solution2 {
         return this == floorRoot * floorRoot
     }
 
-    private fun Int.floorSqrt() = Math.sqrt(this.toDouble()).toInt()
+    private fun Int.floorSqrt() = sqrt(this.toDouble()).toInt()
 
     private fun Int.isSumOfTwoPerfectSquares(): Boolean {
-        var left = 0
-        var right = floorSqrt()
+        var first = 0
+        var second = floorSqrt()
 
-        while (left <= right) {
-            val squareSum = left * left + right * right
+        while (first <= second) {
+            val squareSum = first * first + second * second
             when {
-                squareSum < this -> left++
-                squareSum > this -> right--
+                squareSum < this -> first++
+                squareSum > this -> second--
                 else -> return true
             }
         }
-
         return false
     }
 

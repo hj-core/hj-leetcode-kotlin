@@ -8,12 +8,12 @@ class Solution {
      * Time O(N * 2^N) and Space O(N * 2^N) where N is the size of nums;
      */
     fun subsets(nums: IntArray): List<List<Int>> {
-        val subsets = mutableListOf(listOf<Int>())
+        val result = mutableListOf(listOf<Int>())
         for (num in nums) {
-            repeat(subsets.size) { index ->
-                subsets.add(subsets[index] + num)
+            repeat(result.size) { index ->
+                result.add(result[index] + num)
             }
         }
-        return subsets
+        return result
     }
 }

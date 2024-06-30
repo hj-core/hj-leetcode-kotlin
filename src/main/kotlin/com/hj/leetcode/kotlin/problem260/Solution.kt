@@ -5,26 +5,24 @@ package com.hj.leetcode.kotlin.problem260
  */
 class Solution {
     /* Complexity:
-     * Time O(N) and Space O(1) where N is the size of nums;
+     * Time O(N) and Space O(1) where N is the length of nums;
      */
     fun singleNumber(nums: IntArray): IntArray {
-        val xorOfSingles = nums.reduce { acc, i -> acc xor i }
-        val maskForSeparation = xorOfSingles.getRightmostSetBit()
+        // Denote the two single numbers as x and y
+        val xXorY = nums.reduce { acc, i -> acc xor i }
+        // Any bit that is different between x and y
+        val bitMask = xXorY.leastSignificantBit()
 
-        var single1 = 0
-        var single2 = 0
-        for (num in nums) {
-            val isGroup1 = num.hasBitMaskSet(maskForSeparation)
-            if (isGroup1) {
-                single1 = single1 xor num
-            } else {
-                single2 = single2 xor num
-            }
+        val x = nums.fold(0) { acc, num ->
+            if (num and bitMask != 0) acc xor num else acc
         }
-        return intArrayOf(single1, single2)
+        val y = xXorY xor x
+        return intArrayOf(x, y)
     }
 
-    private fun Int.getRightmostSetBit(): Int = this - (this and (this - 1))
-
-    private fun Int.hasBitMaskSet(mask: Int): Boolean = this and mask == mask
+    private fun Int.leastSignificantBit() = if (this == Int.MIN_VALUE) {
+        this
+    } else {
+        this - (this and (this - 1))
+    }
 }

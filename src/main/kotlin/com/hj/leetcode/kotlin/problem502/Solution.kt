@@ -10,28 +10,30 @@ class Solution {
      * Time O(NLogN) and Space O(N) where N is the size of capital/profits;
      */
     fun findMaximizedCapital(k: Int, w: Int, profits: IntArray, capital: IntArray): Int {
-        // Use the index of capital/profits as project's id
-        val idSortedByCapital = capital.indices.sortedBy { capital[it] }
-        var maxCapital = w
-        var nextIdIndex = 0
-        val availableProfitMaxPq = PriorityQueue<Int>(reverseOrder())
+        val sortedProjects = capital
+            .indices
+            .mapTo(mutableListOf()) { Project(profits[it], capital[it]) }
+            .apply { sortBy { it.requiredCapital } }
+
+        var result = w
+        val availableProfits = PriorityQueue<Int>(reverseOrder())
+        var nextIndex = 0
 
         repeat(k) {
-            while (
-                nextIdIndex < idSortedByCapital.size &&
-                capital[idSortedByCapital[nextIdIndex]] <= maxCapital
+            while (nextIndex < sortedProjects.size
+                && sortedProjects[nextIndex].requiredCapital <= result
             ) {
-                val id = idSortedByCapital[nextIdIndex]
-                val profit = profits[id]
-                availableProfitMaxPq.offer(profit)
-                nextIdIndex++
+                availableProfits.offer(sortedProjects[nextIndex].profit)
+                nextIndex++
             }
 
-            val maxAvailableProfit = availableProfitMaxPq.poll() ?: 0
-            val noAvailableProfitOrIsZeroProfit = maxAvailableProfit == 0
-            if (noAvailableProfitOrIsZeroProfit) return maxCapital
-            maxCapital += maxAvailableProfit
+            if (availableProfits.isEmpty()) {
+                return result
+            }
+            result += availableProfits.poll()
         }
-        return maxCapital
+        return result
     }
+
+    private data class Project(val profit: Int, val requiredCapital: Int)
 }
