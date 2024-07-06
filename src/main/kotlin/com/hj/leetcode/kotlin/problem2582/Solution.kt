@@ -8,8 +8,10 @@ class Solution {
      * Time O(1) and Space O(1);
      */
     fun passThePillow(n: Int, time: Int): Int {
-        val patternLength = 2 * (n - 1)
-        val netMoves = time % patternLength
-        return 1 + if (netMoves < n) netMoves else (patternLength - netMoves)
+        // 1 -> (n-1 seconds) -> n -> (n-1 seconds) -> 1 -> ...
+        val roundTime = n - 1
+        val fullRounds = time / roundTime
+        val extraMoves = time - fullRounds * roundTime
+        return if (fullRounds % 2 == 0) 1 + extraMoves else n - extraMoves
     }
 }
