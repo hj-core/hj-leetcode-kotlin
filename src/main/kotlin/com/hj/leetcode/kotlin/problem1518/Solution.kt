@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem1518
  */
 class Solution {
     /* Complexity:
-     * Time O(LogN) and Space O(1) where N equals numBottles;
+     * Time O(LogN) and Space O(1) where N represents numBottles;
      */
     fun numWaterBottles(numBottles: Int, numExchange: Int): Int {
         var result = 0
