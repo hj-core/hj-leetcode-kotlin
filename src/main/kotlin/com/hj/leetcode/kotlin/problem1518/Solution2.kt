@@ -12,8 +12,8 @@ class Solution2 {
          * By absorption, I mean that we drink that bottle together with the (numExchange-1)
          * bottles and then exchange one bottle back.
          */
-        val absorptionRounds = (numBottles - 1) / (numExchange - 1)
-        val remainingBottles = (numBottles - 1) % (numExchange - 1) + 1
-        return (absorptionRounds * numExchange) + remainingBottles
+        val rounds = (numBottles - 1) / (numExchange - 1)
+        val remaining = (numBottles - 1) % (numExchange - 1) + 1
+        return (rounds * numExchange) + remaining
     }
 }
