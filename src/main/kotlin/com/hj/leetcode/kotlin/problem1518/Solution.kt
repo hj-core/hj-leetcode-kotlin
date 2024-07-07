@@ -9,14 +9,14 @@ class Solution {
      */
     fun numWaterBottles(numBottles: Int, numExchange: Int): Int {
         var result = 0
-        var fullBottles = numBottles
-        while (fullBottles >= numExchange) {
-            val numDrank = fullBottles - fullBottles % numExchange
+        var remaining = numBottles
+        while (remaining >= numExchange) {
+            val numDrank = remaining - remaining % numExchange
             result += numDrank
-            fullBottles -= numDrank
-            fullBottles += numDrank / numExchange
+            remaining -= numDrank
+            remaining += numDrank / numExchange
         }
-        result += fullBottles
+        result += remaining
         return result
     }
 }
