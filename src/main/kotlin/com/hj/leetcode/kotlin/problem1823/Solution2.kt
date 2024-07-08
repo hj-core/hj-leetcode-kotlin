@@ -8,11 +8,12 @@ class Solution2 {
      * Time O(n) and Space O(n);
      */
     fun findTheWinner(n: Int, k: Int): Int {
-        /* The idea is to start the game with zero-based indices and after proceed the
-         * first removal, the rest players form a game with size n-1 and shifted indices.
+        /* The idea is to start the game with zero-based indices and, after the
+         * first removal, the remaining players form a game with size n-1 and
+         * shifted indices.
          *
-         * This recursive solution can be converted to an iterative solution which
-         * has O(1) space complexity.
+         * This recursive solution can be converted to an iterative solution with
+         * O(1) space complexity.
          */
         return 1 + findTheWinnerZeroBased(n, k)
     }
