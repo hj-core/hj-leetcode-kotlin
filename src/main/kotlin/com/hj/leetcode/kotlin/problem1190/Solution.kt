@@ -9,12 +9,16 @@ class Solution {
      */
     fun reverseParentheses(s: String): String {
         val result = mutableListOf<Char>()
-        val leftParentheses = mutableListOf<Int>()
+        val leftParentheses = mutableListOf<Int>() // Indices in result
         for (char in s) {
             when (char) {
-                '(' -> leftParentheses.add(result.size)
+                '(' -> {
+                    leftParentheses.add(result.size)
+                    result.add(char)
+                }
+
                 ')' -> {
-                    // Reverse the chars up to the most recent left parentheses
+                    // Reverse the chars up to the most recent left parentheses and pop it
                     var left = leftParentheses.removeLast()
                     var right = result.lastIndex
                     while (left < right) {
@@ -22,6 +26,7 @@ class Solution {
                         left++
                         right--
                     }
+                    result.removeLast()
                 }
 
                 else -> result.add(char)
