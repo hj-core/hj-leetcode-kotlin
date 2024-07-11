@@ -8,22 +8,25 @@ class Solution {
      * Time O(N^2) and Space O(N) where N is the length of s;
      */
     fun reverseParentheses(s: String): String {
-        val stack = mutableListOf<Char>()
+        val result = mutableListOf<Char>()
+        val leftParentheses = mutableListOf<Int>()
         for (char in s) {
-            if (char != ')') {
-                stack.add(char)
-            } else {
-                // Reverse the chars up to the most recent '(' and pop the '('
-                var left = stack.lastIndexOf('(')
-                var right = stack.lastIndex
-                while (left < right) {
-                    stack[left] = stack[right].also { stack[right] = stack[left] }
-                    left++
-                    right--
+            when (char) {
+                '(' -> leftParentheses.add(result.size)
+                ')' -> {
+                    // Reverse the chars up to the most recent left parentheses
+                    var left = leftParentheses.removeLast()
+                    var right = result.lastIndex
+                    while (left < right) {
+                        result[left] = result[right].also { result[right] = result[left] }
+                        left++
+                        right--
+                    }
                 }
-                stack.removeLast()
+
+                else -> result.add(char)
             }
         }
-        return stack.joinToString(separator = "")
+        return result.joinToString(separator = "")
     }
 }
