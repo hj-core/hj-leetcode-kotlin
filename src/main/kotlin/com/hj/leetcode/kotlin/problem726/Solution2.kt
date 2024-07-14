@@ -6,31 +6,32 @@ class Solution2 {
      */
     fun countOfAtoms(formula: String): String {
         val pIndicesStack = mutableListOf<Int>()
-        // Index of left parentheses to index of its closing right parentheses
+        // Index of left parentheses to the index of right parentheses that closes it
         val pIndices = mutableMapOf<Int, Int>()
-        // Index of right parentheses to the multiplier following it
-        val pMultipliers = mutableMapOf<Int, Int>()
+        // Index of right parentheses to the count followed it
+        val pCounts = mutableMapOf<Int, Int>()
 
         for ((index, c) in formula.withIndex()) {
             when (c) {
                 '(' -> pIndicesStack.add(index)
                 ')' -> {
-                    val multiplier = getMultiplierStr(formula, index + 1)
-                        .let { if (it.isEmpty()) 1 else it.toInt() }
+                    val multiplier = getCountStr(formula, index + 1).let {
+                        if (it.isEmpty()) 1 else it.toInt()
+                    }
                     pIndices[pIndicesStack.removeLast()] = index
-                    pMultipliers[index] = multiplier
+                    pCounts[index] = multiplier
                 }
             }
         }
 
-        var extraMultiplier = 1
-        val extraMultipliers = IntArray(formula.length)
+        var multiplier = 1
+        val multipliers = IntArray(formula.length)
         for ((index, c) in formula.withIndex()) {
             when (c) {
-                '(' -> extraMultiplier *= checkNotNull(pMultipliers[pIndices[index]])
-                ')' -> extraMultiplier /= checkNotNull(pMultipliers[index])
+                '(' -> multiplier *= checkNotNull(pCounts[pIndices[index]])
+                ')' -> multiplier /= checkNotNull(pCounts[index])
             }
-            extraMultipliers[index] = extraMultiplier
+            multipliers[index] = multiplier
         }
 
         val atomCounts = mutableMapOf<String, Int>()
@@ -38,11 +39,11 @@ class Solution2 {
         while (index < formula.length) {
             if (formula[index].isUpperCase()) {
                 val name = getName(formula, index)
-                val multiplierStr = getMultiplierStr(formula, index + name.length)
-                val multiplier = if (multiplierStr.isEmpty()) 1 else multiplierStr.toInt()
-                val overallMultiplier = multiplier * extraMultipliers[index]
-                atomCounts.compute(name) { _, oldCount -> (oldCount ?: 0) + overallMultiplier }
-                index += name.length + multiplierStr.length
+                val countStr = getCountStr(formula, index + name.length)
+                val count = if (countStr.isEmpty()) 1 else countStr.toInt()
+                val effectiveCount = count * multipliers[index]
+                atomCounts.compute(name) { _, existingCount -> (existingCount ?: 0) + effectiveCount }
+                index += name.length + countStr.length
             } else {
                 index++
             }
@@ -60,7 +61,7 @@ class Solution2 {
         return formula.substring(start, endExclusive)
     }
 
-    private fun getMultiplierStr(formula: String, start: Int): String {
+    private fun getCountStr(formula: String, start: Int): String {
         if (formula.length <= start || formula[start] !in '0'..'9') {
             return ""
         }

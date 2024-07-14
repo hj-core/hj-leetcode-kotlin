@@ -20,10 +20,10 @@ class Solution {
                 }
 
                 ')' -> {
-                    val multiplierStr = getMultiplierStr(formula, i + 1)
-                    val multiplier = if (multiplierStr.isEmpty()) 1 else multiplierStr.toInt()
+                    val countStr = getCountStr(formula, i + 1)
+                    val count = if (countStr.isEmpty()) 1 else countStr.toInt()
                     val union = unionAll(
-                        atomStack, leftPIndices.last() + 1, atomStack.size, multiplier
+                        atomStack, leftPIndices.last() + 1, atomStack.size, count
                     )
 
                     // Pop the stacks up to and include last left parentheses
@@ -33,15 +33,15 @@ class Solution {
                     leftPIndices.removeLast()
 
                     atomStack.add(union)
-                    i += 1 + multiplierStr.length
+                    i += 1 + countStr.length
                 }
 
                 else -> {
                     val name = getName(formula, i)
-                    val multiplierStr = getMultiplierStr(formula, i + name.length)
-                    val multiplier = if (multiplierStr.isEmpty()) 1 else multiplierStr.toInt()
-                    atomStack.add(mutableMapOf(name to multiplier))
-                    i += name.length + multiplierStr.length
+                    val countStr = getCountStr(formula, i + name.length)
+                    val count = if (countStr.isEmpty()) 1 else countStr.toInt()
+                    atomStack.add(mutableMapOf(name to count))
+                    i += name.length + countStr.length
                 }
             }
         }
@@ -75,7 +75,7 @@ class Solution {
         return formula.substring(start, endExclusive)
     }
 
-    private fun getMultiplierStr(formula: String, start: Int): String {
+    private fun getCountStr(formula: String, start: Int): String {
         if (start !in formula.indices || formula[start] !in '0'..'9') {
             return ""
         }
