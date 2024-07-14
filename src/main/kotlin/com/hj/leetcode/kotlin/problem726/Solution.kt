@@ -20,10 +20,11 @@ class Solution {
                 }
 
                 ')' -> {
-                    val unionFrom = leftPIndices.last() + 1
                     val multiplierStr = getMultiplierStr(formula, i + 1)
                     val multiplier = if (multiplierStr.isEmpty()) 1 else multiplierStr.toInt()
-                    val union = unionAll(atomStack, unionFrom, atomStack.size, multiplier)
+                    val union = unionAll(
+                        atomStack, leftPIndices.last() + 1, atomStack.size, multiplier
+                    )
 
                     // Pop the stacks up to and include last left parentheses
                     repeat(atomStack.size - leftPIndices.last()) {
