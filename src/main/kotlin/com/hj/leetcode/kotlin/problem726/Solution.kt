@@ -68,23 +68,19 @@ class Solution {
         if (start !in formula.indices || !formula[start].isUpperCase()) {
             return ""
         }
-        val endExclusive = formula.indexOfFirst(start + 1) {
-            !it.isLowerCase()
-        }
+        val endExclusive = (start + 1..<formula.length).find {
+            !formula[it].isLowerCase()
+        } ?: formula.length
         return formula.substring(start, endExclusive)
-    }
-
-    private fun String.indexOfFirst(from: Int, predicate: (c: Char) -> Boolean): Int {
-        return (from..<length).find { predicate(this[it]) } ?: length
     }
 
     private fun getMultiplierStr(formula: String, start: Int): String {
         if (start !in formula.indices || formula[start] !in '0'..'9') {
             return ""
         }
-        val endExclusive = formula.indexOfFirst(start + 1) {
-            it !in '0'..'9'
-        }
+        val endExclusive = (start + 1..<formula.length).find {
+            formula[it] !in '0'..'9'
+        } ?: formula.length
         return formula.substring(start, endExclusive)
     }
 
