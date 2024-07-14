@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem726
  */
 class Solution {
     /* Complexity:
-     * Time O(NLogN) and Space O(N) where N is the length of formula;
+     * Time O(N^2) and Space O(N) where N is the length of formula;
      */
     fun countOfAtoms(formula: String): String {
         val atomStack = mutableListOf<Map<String, Int>>()
