@@ -50,8 +50,8 @@ class Solution {
             append('U')
         }
         // Directions from LCA to destination
-        for (index in lcaIndex + 1..<pathToDestination.size) {
-            if (pathToDestination[index] == pathToDestination[index - 1].left) {
+        for (index in lcaIndex..<pathToDestination.lastIndex) {
+            if (pathToDestination[index + 1] == pathToDestination[index].left) {
                 append('L')
             } else {
                 append('R')
