@@ -45,11 +45,11 @@ class Solution {
         pathToDestination: List<TreeNode>,
     ): String = buildString {
         val lcaIndex = indexOfLowestCommonAncestor(pathToStart, pathToDestination)
-        // Direction from start to LCA
-        repeat(pathToStart.size - 1 - lcaIndex) {
+        // Directions from start to LCA
+        for (index in pathToStart.lastIndex downTo (lcaIndex + 1)) {
             append('U')
         }
-        // Direction from LCA to destination
+        // Directions from LCA to destination
         for (index in lcaIndex + 1..<pathToDestination.size) {
             if (pathToDestination[index] == pathToDestination[index - 1].left) {
                 append('L')
