@@ -13,6 +13,7 @@ class Solution {
             val minColumn = columnOfMin(matrix, row)
             val maxRow = rowOfMax(matrix, minColumn)
             if (row == maxRow) {
+                // At most one lucky number
                 return listOf(matrix[row][minColumn])
             }
         }
