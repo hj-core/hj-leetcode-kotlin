@@ -5,38 +5,25 @@ package com.hj.leetcode.kotlin.problem1380
  */
 class Solution {
     /* Complexity:
-     * Time O(MN) and Space O(1) where M and N are mat.length and mat[0].length;
+     * Time O(MN) and Space O(1) where M is the number of rows
+     * and N is the number of columns in matrix;
      */
-    fun luckyNumbers(matrix: Array<IntArray>): List<Int> {
-        val maxRowMin = getMaxOfRowMinimums(matrix)
-        val minColumnMax = getMinOfColumnMaximums(matrix)
-        return if (maxRowMin == minColumnMax) listOf(maxRowMin) else listOf()
+    fun luckyNumbers (matrix: Array<IntArray>): List<Int> {
+        for (row in matrix.indices) {
+            val minColumn = columnOfMin(matrix, row)
+            val maxRow = rowOfMax(matrix, minColumn)
+            if (row == maxRow) {
+                return listOf(matrix[row][minColumn])
+            }
+        }
+        return emptyList()
     }
 
-    private fun getMaxOfRowMinimums(matrix: Array<IntArray>): Int {
-        var maxRowMin = checkNotNull(matrix[0].min())
-        for (row in 1..matrix.lastIndex) {
-            val rowMin = checkNotNull(matrix[row].min())
-            if (maxRowMin < rowMin) maxRowMin = rowMin
-        }
-        return maxRowMin
+    private fun columnOfMin(matrix: Array<IntArray>, row: Int): Int {
+        return matrix[row].indices.minBy { matrix[row][it] }
     }
 
-    private fun getMinOfColumnMaximums(matrix: Array<IntArray>): Int {
-        var minColumnMax = getMaximumOfColumn(0, matrix)
-        for (column in 1..matrix[0].lastIndex) {
-            val columnMax = getMaximumOfColumn(column, matrix)
-            if (minColumnMax > columnMax) minColumnMax = columnMax
-        }
-        return minColumnMax
-    }
-
-    private fun getMaximumOfColumn(column: Int, matrix: Array<IntArray>): Int {
-        var columnMax = matrix[0][column]
-        for (row in 1..matrix.lastIndex) {
-            val num = matrix[row][column]
-            if (columnMax < num) columnMax = num
-        }
-        return columnMax
+    private fun rowOfMax(matrix: Array<IntArray>, column: Int): Int {
+        return matrix.indices.maxBy { matrix[it][column] }
     }
 }
