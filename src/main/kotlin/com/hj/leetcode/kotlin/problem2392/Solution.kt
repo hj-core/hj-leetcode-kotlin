@@ -9,12 +9,12 @@ class Solution {
      * and N is the size of colConditions;
      */
     fun buildMatrix(k: Int, rowConditions: Array<IntArray>, colConditions: Array<IntArray>): Array<IntArray> {
-        val rowIndices = topologicalSortIndices(k, rowConditions)
+        val rowIndices = topologicallySorted(k, rowConditions)
         if (rowIndices[0] != k) {
             return emptyArray()
         }
 
-        val colIndices = topologicalSortIndices(k, colConditions)
+        val colIndices = topologicallySorted(k, colConditions)
         if (colIndices[0] != k) {
             return emptyArray()
         }
@@ -35,7 +35,7 @@ class Solution {
      * The value at each index from 1 to k represents the position (zero-based) of
      * the corresponding node from 1 to k in the sorted order.
      */
-    private fun topologicalSortIndices(k: Int, edges: Array<IntArray>): IntArray {
+    private fun topologicallySorted(k: Int, edges: Array<IntArray>): IntArray {
         val inDegrees = getInDegrees(k, edges)
         val adjacencyList = getAdjacencyList(k, edges)
 
