@@ -30,7 +30,7 @@ class Solution {
      * return a topologically sorted order of the nodes.
      *
      * The value at index 0 is a flag that if it does not equal to k,
-     * there is a cycle in the graph, and thus a topological sorted order does not exist.
+     * there is a cycle in the graph, and thus a topologically sorted order does not exist.
      *
      * The value at each index from 1 to k represents the position (zero-based) of
      * the corresponding node from 1 to k in the sorted order.
