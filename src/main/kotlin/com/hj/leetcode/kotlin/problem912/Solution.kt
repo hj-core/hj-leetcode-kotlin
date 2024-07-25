@@ -10,62 +10,62 @@ class Solution {
      * Time O(NLogN) and Space O(N) where N is the size of nums;
      */
     fun sortArray(nums: IntArray): IntArray {
-        MergeSort(nums).run()
+        mergeSort(nums, 0, nums.size, IntArray(nums.size))
         return nums
     }
 
-    private class MergeSort(private val original: IntArray) {
-
-        private val elementHolder = IntArray(original.size)
-
-        fun run() {
-            splitAndMerge(original.indices, ::mergeToOriginal)
+    private fun mergeSort(
+        nums: IntArray,
+        start: Int,
+        endExclusive: Int,
+        tempResult: IntArray,
+    ) {
+        if (start + 1 == endExclusive) {
+            return
         }
+        val mid = (start + endExclusive) ushr 1
+        mergeSort(nums, start, mid, tempResult)
+        mergeSort(nums, mid, endExclusive, tempResult)
+        merge(nums, start, endExclusive, tempResult)
+    }
 
-        private fun splitAndMerge(indexRange: IntRange, merge: (indexRange: IntRange) -> Unit) {
-            val shouldSplit = indexRange.let { it.first != it.last }
-            if (shouldSplit) {
-                val midIndex = computeMidIndex(indexRange)
-                splitAndMerge(indexRange.first..midIndex, merge)
-                splitAndMerge(midIndex + 1..indexRange.last, merge)
+    private fun merge(
+        nums: IntArray,
+        start: Int,
+        endExclusive: Int,
+        tempResult: IntArray,
+    ) {
+        val mid = (start + endExclusive) ushr 1
+        var left = start
+        var right = mid
+        var i = start
+
+        // Merge the two sorted arrays in range [start, mid) and [mid, endExclusive)
+        while (left < mid && right < endExclusive) {
+            if (nums[left] <= nums[right]) {
+                tempResult[i] = nums[left]
+                left++
+            } else {
+                tempResult[i] = nums[right]
+                right++
             }
-            merge(indexRange)
+            i++
         }
 
-        private fun computeMidIndex(indexRange: IntRange): Int {
-            return indexRange.let { (it.first + it.last) ushr 1 }
+        while (left < mid) {
+            tempResult[i] = nums[left]
+            left++
+            i++
+        }
+        while (right < endExclusive) {
+            tempResult[i] = nums[right]
+            right++
+            i++
         }
 
-        private fun mergeToOriginal(indexRange: IntRange) {
-            copyCurrentElementsToHolder(indexRange)
-
-            val midIndex = computeMidIndex(indexRange)
-            var sorted1Index = indexRange.first
-            var sorted2Index = midIndex + 1
-            var assignToIndex = indexRange.first
-
-            while (assignToIndex <= indexRange.last) {
-                val shouldAdoptSorted1Index = when {
-                    sorted1Index > midIndex -> false
-                    sorted2Index > indexRange.last -> true
-                    else -> elementHolder[sorted1Index] <= elementHolder[sorted2Index]
-                }
-
-                if (shouldAdoptSorted1Index) {
-                    original[assignToIndex] = elementHolder[sorted1Index]
-                    sorted1Index++
-                } else {
-                    original[assignToIndex] = elementHolder[sorted2Index]
-                    sorted2Index++
-                }
-                assignToIndex++
-            }
-        }
-
-        private fun copyCurrentElementsToHolder(indexRange: IntRange) {
-            for (index in indexRange) {
-                elementHolder[index] = original[index]
-            }
+        // Copy the tempResult to nums
+        for (j in start..<endExclusive) {
+            nums[j] = tempResult[j]
         }
     }
 }
