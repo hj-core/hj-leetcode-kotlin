@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve function naming" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 1334">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,7 +70,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="problem1334" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -513,7 +515,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="1101" />
+    <option name="localTasksCounter" value="1102" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -558,7 +560,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add a solution to problem 1791" />
     <MESSAGE value="Add a solution to problem 2192" />
     <MESSAGE value="Add a DFS solution" />
     <MESSAGE value="Re-apply modification to README.md" />
@@ -583,7 +584,8 @@
     <MESSAGE value="Improve comment wording" />
     <MESSAGE value="Improve comment wording" />
     <MESSAGE value="Improve function naming" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve function naming" />
+    <MESSAGE value="Add a solution to problem 1334" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 1334" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
