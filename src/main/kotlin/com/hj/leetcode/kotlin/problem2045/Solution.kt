@@ -8,41 +8,41 @@ class Solution {
      * Time O(n+E) and Space O(n+E) where E is the size of edges;
      */
     fun secondMinimum(n: Int, edges: Array<IntArray>, time: Int, change: Int): Int {
+        return traverseTime(secondShortestPathLength(edges, n), time, change)
+    }
+
+    private fun secondShortestPathLength(edges: Array<IntArray>, n: Int): Int {
         val adjacencyList = adjacencyList(edges)
         val bfsQueue = ArrayDeque<Int>()
-        val firstVisit = IntArray(n + 1) { -1 } // firstVisit[i]::= first depth when visit i
-        val secondVisit = IntArray(n + 1) { -1 } // secondVisit[i]::= second depth when visit i
+        val minDepth = IntArray(n + 1) { -1 } // min depth from 1 to each node
+        val secondMinDepth = IntArray(n + 1) { -1 } // strict second min depth from 1 to each node
 
-        var depth = 0 // depth of nodes before each while-loop
+        var depth = 0 // depth of nodes at the start of each while-loop
         bfsQueue.addLast(1)
-        firstVisit[1] = 0
-        while (bfsQueue.isNotEmpty() && secondVisit[n] == -1) {
+        minDepth[1] = 0
+        while (bfsQueue.isNotEmpty() && secondMinDepth[n] == -1) {
             depth++
             repeat(bfsQueue.size) {
                 val node = bfsQueue.removeFirst()
                 for (neighbour in (adjacencyList[node] ?: emptySet())) {
                     when {
-                        firstVisit[neighbour] == -1 -> {
-                            firstVisit[neighbour] = depth
+                        minDepth[neighbour] == -1 -> {
+                            minDepth[neighbour] = depth
                             bfsQueue.addLast(neighbour)
-
                         }
 
-                        secondVisit[neighbour] == -1 && firstVisit[neighbour] != depth -> {
-                            secondVisit[neighbour] = depth
+                        secondMinDepth[neighbour] == -1 && minDepth[neighbour] != depth -> {
+                            secondMinDepth[neighbour] = depth
                             bfsQueue.addLast(neighbour)
                         }
                     }
                 }
             }
         }
-
-        val secondMinLength = if (firstVisit[n] + 1 == secondVisit[n]) {
-            secondVisit[n]
-        } else {
-            firstVisit[n] + 2
-        }
-        return traverseTime(secondMinLength, time, change)
+        /* Must exist and at most minDepth[n]+2 because the graph is connected
+         * and allow multiple traverses of same edge
+         */
+        return secondMinDepth[n]
     }
 
     private fun adjacencyList(edges: Array<IntArray>): Map<Int, Set<Int>> {
