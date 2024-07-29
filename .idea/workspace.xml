@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1395/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1395/Solution.kt" afterDir="false" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 1395">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +41,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="LeetCode Solution" />
         <option value="Kotlin Class" />
+        <option value="LeetCode Solution" />
       </list>
     </option>
   </component>
@@ -515,7 +515,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="1112" />
+    <option name="localTasksCounter" value="1110" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -560,6 +560,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Fix time complexity" />
     <MESSAGE value="Add a TODO for proof" />
     <MESSAGE value="Add a solution to problem 1550" />
     <MESSAGE value="Add a solution to problem 350" />
@@ -582,10 +583,9 @@
     <MESSAGE value="Add a solution to problem 1334" />
     <MESSAGE value="Add a solution to problem 2976" />
     <MESSAGE value="Add a solution to problem 2045" />
-    <MESSAGE value="Add a solution to problem 1395" />
-    <MESSAGE value="Add a O(1) space solution" />
     <MESSAGE value="Improve readability" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
+    <MESSAGE value="Add a solution to problem 1395" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 1395" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
