@@ -12,8 +12,8 @@ class Solution {
     fun minimumDeletions(s: String): Int {
         var aAfter = s.count { it == 'a' }
         var bBefore = 0
-
         var result = s.length - aAfter // Case that we delete all 'b's
+
         for (firstB in s.indices) {
             if (s[firstB] == 'a') {
                 aAfter--
