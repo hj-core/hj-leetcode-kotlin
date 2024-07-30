@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 1653" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Minor formatting" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,7 +121,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem1653",
+    "git-widget-placeholder": "#415 on problem1653",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/gaps-/Documents/GitHub/hj-leetcode-kotlin",
@@ -513,7 +513,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="1111" />
+    <option name="localTasksCounter" value="1112" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -558,7 +558,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add a TODO for proof" />
     <MESSAGE value="Add a solution to problem 1550" />
     <MESSAGE value="Add a solution to problem 350" />
     <MESSAGE value="Add a solution to problem 2582" />
@@ -583,7 +582,8 @@
     <MESSAGE value="Improve readability" />
     <MESSAGE value="Add a solution to problem 1395" />
     <MESSAGE value="Add a solution to problem 1653" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 1653" />
+    <MESSAGE value="Minor formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor formatting" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
