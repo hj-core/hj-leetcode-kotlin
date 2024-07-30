@@ -13,7 +13,7 @@ class Solution2 {
         /* Sub problem:
          *  dp[i]::= minimumDeletions(s[0..i])
          * Relation:
-         *  dp[i+1] = dp[i] if s[i] == 'b' else min(dp[i]+1, # of 'b's before i)
+         *  dp[i+1] = dp[i] if s[i+1] == 'b' else min(dp[i]+1, # of 'b's before i+1)
          */
 
         var result = 0 // dp[-1]
