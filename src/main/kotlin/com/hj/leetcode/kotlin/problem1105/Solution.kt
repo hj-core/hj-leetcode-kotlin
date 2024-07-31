@@ -16,7 +16,7 @@ class Solution {
 
         dp[books.size] = 0
         for (i in books.lastIndex downTo 0) {
-            /* Try all possible breakpoints for the first shelf to find
+            /* Try all the possible breakpoints for the first shelf to find
              * the minimum overall height.
              */
             var thickness = 0
