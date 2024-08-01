@@ -8,6 +8,6 @@ class Solution {
      * Time O(N) and Space O(1) where N is the size of details;
      */
     fun countSeniors(details: Array<String>): Int {
-        return details.count { it.substring(11..12) > "60" }
+        return details.count { it.substring(11..12).toInt() > 60 }
     }
 }
