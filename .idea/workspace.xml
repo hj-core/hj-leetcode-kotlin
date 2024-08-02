@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve comment" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="refactor to fail-fast in case of ill-form detail" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,7 +121,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem1105",
+    "git-widget-placeholder": "problem2678",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/gaps-/Documents/GitHub/hj-leetcode-kotlin",
@@ -513,7 +513,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="1116" />
+    <option name="localTasksCounter" value="1119" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -558,9 +558,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add a solution to problem 2582" />
-    <MESSAGE value="Use another pattern interpretation" />
-    <MESSAGE value="Add a solution to problem 1518" />
     <MESSAGE value="Add a constant time solution" />
     <MESSAGE value="Fix time complexity of solution1" />
     <MESSAGE value="Add a solution to problem 1823" />
@@ -583,7 +580,10 @@
     <MESSAGE value="Minor formatting" />
     <MESSAGE value="Add a solution to problem 1105" />
     <MESSAGE value="Improve comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve comment" />
+    <MESSAGE value="Add a solution to problem 2678" />
+    <MESSAGE value="refactor to fail-fast in case of ill-form age string" />
+    <MESSAGE value="refactor to fail-fast in case of ill-form age string" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor to fail-fast in case of ill-form age string" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
