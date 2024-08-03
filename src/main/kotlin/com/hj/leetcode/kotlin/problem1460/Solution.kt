@@ -12,6 +12,7 @@ class Solution {
          * as long as and iff they consist of the same elements.
          */
 
+        require(target.size == arr.size)
         val counts = target
             .asIterable()
             .groupingBy { it }
