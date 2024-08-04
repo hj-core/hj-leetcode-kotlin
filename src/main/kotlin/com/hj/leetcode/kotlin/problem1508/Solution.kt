@@ -21,15 +21,10 @@ class Solution {
         val result = IntArray(nums.size * (nums.size + 1) / 2)
         var resultIndex = 0
 
-        for (subArrayLength in 1..nums.size) {
-            // For sub array starts at 0
-            var subArraySum = (0..<subArrayLength).sumOf { nums[it] }
-            result[resultIndex] = subArraySum
-            resultIndex++
-
-            for (subArrayStart in 1..nums.size - subArrayLength) {
-                subArraySum -= nums[subArrayStart - 1]
-                subArraySum += nums[subArrayStart + subArrayLength - 1]
+        for (subArrayStart in nums.indices) {
+            var subArraySum = 0
+            for (subArrayEnd in subArrayStart..nums.lastIndex) {
+                subArraySum += nums[subArrayEnd]
                 result[resultIndex] = subArraySum
                 resultIndex++
             }
