@@ -23,7 +23,8 @@ class Solution {
 
         for (subArrayStart in nums.indices) {
             var subArraySum = 0
-            for (subArrayEnd in subArrayStart..nums.lastIndex) {
+            for (subArrayEnd in subArrayStart..<nums.size) {
+                // End inclusive
                 subArraySum += nums[subArrayEnd]
                 result[resultIndex] = subArraySum
                 resultIndex++
