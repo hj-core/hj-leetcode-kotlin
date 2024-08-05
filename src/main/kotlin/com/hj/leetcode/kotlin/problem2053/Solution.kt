@@ -9,16 +9,9 @@ class Solution {
      */
     fun kthDistinct(arr: Array<String>, k: Int): String {
         val strFrequency = arr.groupingBy { it }.eachCount()
-        var position = 0
-
-        for (str in arr) {
-            if (strFrequency[str] == 1) {
-                position++
-                if (position == k) {
-                    return str
-                }
-            }
-        }
-        return ""
+        return arr.asSequence()
+            .filter { strFrequency[it] == 1 }
+            .drop(k - 1)
+            .firstOrNull() ?: ""
     }
 }
