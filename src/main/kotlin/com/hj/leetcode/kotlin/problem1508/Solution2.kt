@@ -13,22 +13,22 @@ class Solution2 {
     }
 
     private fun sumKSmallestSubarraySums(nums: IntArray, k: Int, modulo: Int): Int {
-        val kthSum = kthSmallestSubarraySum(nums, k)
-        val countSums = countSubarraysWithSumNotGreaterThan(nums, kthSum)
-        val sumSums = sumSubarraysWithSumNotGreaterThan(nums, kthSum, modulo)
+        val kthSum = nums.kthSmallestSubarraySum(k)
+        val countSums = nums.countSubarraysWithSumNotGreaterThan(kthSum)
+        val sumSums = nums.sumSubarraysWithSumNotGreaterThan(kthSum, modulo)
         return (sumSums - kthSum * (countSums - k)).mod(modulo)
     }
 
-    private fun kthSmallestSubarraySum(nums: IntArray, k: Int): Int {
-        require(0 <= k && k <= (nums.size + 1) * nums.size / 2)
+    private fun IntArray.kthSmallestSubarraySum(k: Int): Int {
+        require(0 <= k && k <= (size + 1) * size / 2)
         if (k == 0) {
             return 0
         }
         var lowerSum = 0
-        var upperSum = nums.sum()
+        var upperSum = sum()
         while (lowerSum <= upperSum) {
             val guess = (lowerSum + upperSum) ushr 1
-            val count = countSubarraysWithSumNotGreaterThan(nums, guess)
+            val count = this.countSubarraysWithSumNotGreaterThan(guess)
             when {
                 count < k -> lowerSum = guess + 1
                 count > k -> upperSum = guess - 1
@@ -38,37 +38,38 @@ class Solution2 {
         return lowerSum
     }
 
-    private fun countSubarraysWithSumNotGreaterThan(nums: IntArray, limit: Int): Int {
+    private fun IntArray.countSubarraysWithSumNotGreaterThan(limit: Int): Int {
         var result = 0
         var rightMostEnd = 0 // Exclusive
         var subarraySum = 0
-        for (start in nums.indices) {
-            require(nums[start] >= 0) { "All numbers should be non-negative." }
+        for (start in indices) {
+            require(this[start] >= 0) { "All numbers should be non-negative." }
             rightMostEnd = max(start, rightMostEnd)
-            while (rightMostEnd < nums.size && subarraySum + nums[rightMostEnd] <= limit) {
-                subarraySum += nums[rightMostEnd]
+            while (rightMostEnd < size && subarraySum + this[rightMostEnd] <= limit) {
+                subarraySum += this[rightMostEnd]
                 rightMostEnd += 1
             }
             result += rightMostEnd - start
 
+            // Prepare subarraySum for next start
             if (start < rightMostEnd) {
-                subarraySum -= nums[start]
+                subarraySum -= this[start]
             }
         }
         return result
     }
 
-    private fun sumSubarraysWithSumNotGreaterThan(nums: IntArray, limit: Int, modulo: Int): Int {
+    private fun IntArray.sumSubarraysWithSumNotGreaterThan(limit: Int, modulo: Int): Int {
         var result = 0
         var rightMostEnd = 0
         var subarraySum = 0
         val rightmostEnds = ArrayDeque<Int>()
         var sumRightmostEnds = 0
-        for (start in nums.indices) {
-            require(nums[start] >= 0) { "All numbers should be non-negative." }
+        for (start in indices) {
+            require(this[start] >= 0) { "All numbers should be non-negative." }
             rightMostEnd = max(start, rightMostEnd)
-            while (rightMostEnd < nums.size && subarraySum + nums[rightMostEnd] <= limit) {
-                subarraySum += nums[rightMostEnd]
+            while (rightMostEnd < size && subarraySum + this[rightMostEnd] <= limit) {
+                subarraySum += this[rightMostEnd]
                 rightMostEnd += 1
             }
 
@@ -78,11 +79,12 @@ class Solution2 {
                 sumRightmostEnds -= rightmostEnds.first()
                 rightmostEnds.removeFirst()
             }
-            result += nums[start] * (sumRightmostEnds - start * rightmostEnds.size)
+            result += this[start] * (sumRightmostEnds - start * rightmostEnds.size)
             result %= modulo
 
+            // Prepare subarraySum for next start
             if (start < rightMostEnd) {
-                subarraySum -= nums[start]
+                subarraySum -= this[start]
             }
         }
         return result
