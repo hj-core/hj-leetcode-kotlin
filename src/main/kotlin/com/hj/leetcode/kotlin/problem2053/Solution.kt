@@ -11,7 +11,6 @@ class Solution {
         val strFrequency = arr.groupingBy { it }.eachCount()
         return arr.asSequence()
             .filter { strFrequency[it] == 1 }
-            .drop(k - 1)
-            .firstOrNull() ?: ""
+            .elementAtOrNull(k - 1) ?: ""
     }
 }
