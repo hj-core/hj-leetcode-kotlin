@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem885
  */
 class Solution {
     /* Complexity:
-     * Time O(N^2) and Space O(rows * cols) where N is the larger value between rows and cols;
+     * Time O(max(rows, cols)^2) and Space O(rows * cols);
      */
     fun spiralMatrixIII(rows: Int, cols: Int, rStart: Int, cStart: Int): Array<IntArray> {
         val directions = arrayOf(
