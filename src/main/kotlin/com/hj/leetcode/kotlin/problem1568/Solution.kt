@@ -14,7 +14,7 @@ class Solution {
         return when {
             isDisconnected(lands) -> 0
             isDisconnectedInOneDay(lands) -> 1
-            else -> 2 // At most two days are needed to disconnect island. Consider the rightmost bottom land.
+            else -> 2 // The grid can be disconnected in at most two days. Consider the rightmost-bottom land.
         }
     }
 
