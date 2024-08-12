@@ -7,7 +7,7 @@ import java.util.*
  */
 class KthLargest(private val k: Int, nums: IntArray) {
 
-    private val kLargest = PriorityQueue<Int>()
+    private val kSmallest = PriorityQueue<Int>()
 
     init {
         addAll(nums)
@@ -18,14 +18,14 @@ class KthLargest(private val k: Int, nums: IntArray) {
      */
     private fun addAll(numbers: IntArray) {
         for (number in numbers) {
-            kLargest.offer(number)
+            kSmallest.offer(number)
             removeExtra()
         }
     }
 
     private fun removeExtra() {
-        while (kLargest.size > k) {
-            kLargest.poll()
+        while (kSmallest.size > k) {
+            kSmallest.poll()
         }
     }
 
@@ -33,8 +33,8 @@ class KthLargest(private val k: Int, nums: IntArray) {
      * Time O(NLogk) and Space O(k);
      */
     fun add(`val`: Int): Int {
-        kLargest.offer(`val`)
+        kSmallest.offer(`val`)
         removeExtra()
-        return kLargest.peek()
+        return kSmallest.peek()
     }
 }
