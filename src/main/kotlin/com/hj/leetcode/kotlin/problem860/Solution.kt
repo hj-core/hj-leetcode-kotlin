@@ -20,6 +20,8 @@ class Solution {
                 }
 
                 20 -> {
+                    availableCash[2] += 1
+
                     var change = 15
                     if (availableCash[1] > 0) {
                         change -= 10
