@@ -8,30 +8,29 @@ class Solution {
      * Time O(N) and Space O(1) where N is the size of bills;
      */
     fun lemonadeChange(bills: IntArray): Boolean {
-        val availableCash = intArrayOf(0, 0, 0) // count of ($5, $10, $20)
+        var availableFive = 0
+        var availableTen = 0
 
         for (bill in bills) {
             when (bill) {
-                5 -> availableCash[0] += 1
+                5 -> availableFive += 1
 
                 10 -> {
-                    availableCash[1] += 1
-                    availableCash[0] -= 1
+                    availableTen += 1
+                    availableFive -= 1
                 }
 
                 20 -> {
-                    availableCash[2] += 1
-
                     var change = 15
-                    if (availableCash[1] > 0) {
+                    if (availableTen > 0) {
                         change -= 10
-                        availableCash[1] -= 1
+                        availableTen -= 1
                     }
-                    availableCash[0] -= change / 5
+                    availableFive -= change / 5
                 }
             }
 
-            if (availableCash[0] < 0) {
+            if (availableFive < 0) {
                 return false
             }
         }
