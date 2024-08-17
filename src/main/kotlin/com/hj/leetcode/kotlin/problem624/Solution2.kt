@@ -11,8 +11,9 @@ class Solution2 {
      * Time O(N) and Space O(1) where N is the size of arrays;
      */
     fun maxDistance(arrays: List<List<Int>>): Int {
-        /* Pile up the arrays and connect the pairs that lead to the result.
-         * The line must be either tilted to the left or tilted to the right.
+        /* Pile up the arrays (with the last one in the top), and connect the
+         * pairs that lead to the result.
+         * This line must be either tilted to the left or tilted to the right.
          */
         var result = 0
         var minValue = arrays[0].first()
