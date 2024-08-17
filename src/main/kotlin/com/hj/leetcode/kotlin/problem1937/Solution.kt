@@ -1,6 +1,5 @@
 package com.hj.leetcode.kotlin.problem1937
 
-import kotlin.math.abs
 import kotlin.math.max
 
 /**
@@ -8,17 +7,24 @@ import kotlin.math.max
  */
 class Solution {
     /* Complexity:
-     * Time O(M*N^2) and Space O(N) where M is the number of rows in points
+     * Time O(M*N) and Space O(N) where M is the number of rows in points
      * and N is the number of columns in points;
      */
     fun maxPoints(points: Array<IntArray>): Long {
         val dp = LongArray(points[0].size) { points[0][it].toLong() }
         for (r in 1..<points.size) {
             val prevDp = dp.clone()
+            // Case that the best previous cell is right above or to the left
+            var leftBest = prevDp[0]
             for (c in dp.indices) {
-                for (c2 in prevDp.indices) {
-                    dp[c] = max(dp[c], points[r][c] + prevDp[c2] - abs(c - c2))
-                }
+                leftBest = max(leftBest - 1, prevDp[c])
+                dp[c] = max(dp[c], points[r][c] + leftBest)
+            }
+            // Case that the best previous cell is right above or to the right
+            var rightBest = prevDp.last()
+            for (c in dp.indices.reversed()) {
+                rightBest = max(rightBest - 1, prevDp[c])
+                dp[c] = max(dp[c], points[r][c] + rightBest)
             }
         }
         return dp.max()
