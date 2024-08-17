@@ -21,8 +21,8 @@ class Solution2 {
         for (i in 1..<arrays.size) {
             result = maxOf(
                 result,
-                arrays[i].last() - minValue, // Tilt to the right
-                maxValue - arrays[i].first() // Tilt to the left
+                arrays[i].last() - minValue, // Tilt to the left
+                maxValue - arrays[i].first() // Tilt to the right
             )
             minValue = min(minValue, arrays[i].first())
             maxValue = max(maxValue, arrays[i].last())
