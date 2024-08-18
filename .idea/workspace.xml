@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 624">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve algorithm to solve the next level subproblem">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem624/Solution2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem624/Solution2.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +41,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="LeetCode Solution" />
         <option value="Kotlin Class" />
+        <option value="LeetCode Solution" />
       </list>
     </option>
   </component>
@@ -71,7 +70,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem860" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -124,7 +123,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem624",
+    "git-widget-placeholder": "#431 on problem1937",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/gaps-/Documents/GitHub/hj-leetcode-kotlin",
@@ -511,7 +510,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="1127" />
+    <option name="localTasksCounter" value="1129" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -556,10 +555,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add a solution to problem 2096" />
-    <MESSAGE value="Update gradle to 8.9" />
-    <MESSAGE value="Add a solution to problem 1110" />
-    <MESSAGE value="Add a solution to problem 2392" />
     <MESSAGE value="Improve comment wording" />
     <MESSAGE value="Improve comment wording" />
     <MESSAGE value="Improve function naming" />
@@ -581,7 +576,11 @@
     <MESSAGE value="Add a solution to problem 860" />
     <MESSAGE value="Fix missing increment for $20" />
     <MESSAGE value="Add a solution to problem 624" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 624" />
+    <MESSAGE value="Add a solution to problem 1937" />
+    <MESSAGE value="Improve algorithm solving the subproblem" />
+    <MESSAGE value="Improve algorithm solving the next level subproblem" />
+    <MESSAGE value="Improve algorithm solving the subproblem" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve algorithm solving the subproblem" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
