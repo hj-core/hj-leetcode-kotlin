@@ -11,7 +11,10 @@ class Solution {
      * and N is the number of columns in points;
      */
     fun maxPoints(points: Array<IntArray>): Long {
-        val dp = LongArray(points[0].size) { points[0][it].toLong() }
+        /* dp[c]@r ::= the maximum points when reaches cell(r,c), including
+         * the points for the cell;
+         */
+        val dp = LongArray(points[0].size) { points[0][it].toLong() } // dp[c]@r=0
         for (r in 1..<points.size) {
             val prevDp = dp.clone()
             // Case that the best previous cell is right above or to the left
