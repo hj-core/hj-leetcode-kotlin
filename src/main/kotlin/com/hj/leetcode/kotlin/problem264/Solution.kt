@@ -8,12 +8,12 @@ class Solution {
      * Time O(n) and Space O(n);
      */
     fun nthUglyNumber(n: Int): Int {
-        var result = 1
-        var count = 1
-        val candidates = listOf(ArrayDeque<Int>(), ArrayDeque(), ArrayDeque())
-        candidates[0].addLast(2)
-        candidates[1].addLast(3)
-        candidates[2].addLast(5)
+        var result = 1L
+        var count = 1L
+        val candidates = listOf(ArrayDeque<Long>(), ArrayDeque(), ArrayDeque())
+        candidates[0].addLast(2L)
+        candidates[1].addLast(3L)
+        candidates[2].addLast(5L)
 
         while (count < n) {
             val i = candidates.indices.minBy { candidates[it][0] }
@@ -26,6 +26,6 @@ class Solution {
                 candidates[2].addLast(candidate * 5)
             }
         }
-        return result
+        return result.toInt()
     }
 }

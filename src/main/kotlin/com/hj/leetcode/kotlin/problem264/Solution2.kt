@@ -8,7 +8,7 @@ class Solution2 {
      * Time O(n) and Space O(n);
      */
     fun nthUglyNumber(n: Int): Int {
-        val uglyNumbers = mutableListOf(1)
+        val uglyNumbers = mutableListOf(1L)
         var index2 = 0
         var index3 = 0
         var index5 = 0
@@ -30,6 +30,6 @@ class Solution2 {
                 index5++
             }
         }
-        return uglyNumbers.last()
+        return uglyNumbers.last().toInt()
     }
 }
