@@ -5,16 +5,27 @@ package com.hj.leetcode.kotlin.problem264
  */
 class Solution2 {
     /* Complexity:
-     * Time O(nLog(n)) and Space O(n);
+     * Time O(n) and Space O(n);
      */
     fun nthUglyNumber(n: Int): Int {
-        val candidates = sortedSetOf(1L)
-        repeat(n - 1) {
-            val pop = checkNotNull(candidates.pollFirst())
-            candidates.add(pop * 2)
-            candidates.add(pop * 3)
-            candidates.add(pop * 5)
+        var result = 1
+        var count = 1
+        val candidates = listOf(ArrayDeque<Int>(), ArrayDeque(), ArrayDeque())
+        candidates[0].addLast(2)
+        candidates[1].addLast(3)
+        candidates[2].addLast(5)
+
+        while (count < n) {
+            val i = candidates.indices.minBy { candidates[it][0] }
+            val candidate = candidates[i].removeFirst()
+            if (candidate != result) {
+                result = candidate
+                count++
+                candidates[0].addLast(candidate * 2)
+                candidates[1].addLast(candidate * 3)
+                candidates[2].addLast(candidate * 5)
+            }
         }
-        return checkNotNull(candidates.pollFirst()).toInt()
+        return result
     }
 }
