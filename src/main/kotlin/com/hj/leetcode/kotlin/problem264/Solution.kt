@@ -5,40 +5,27 @@ package com.hj.leetcode.kotlin.problem264
  */
 class Solution {
     /* Complexity:
-     * Time O(N) and Space O(N) where N equals n;
+     * Time O(n) and Space O(n);
      */
     fun nthUglyNumber(n: Int): Int {
-        val uglyNumbers = mutableListOf(1)
+        var result = 1L
+        var count = 1L
+        val candidates = listOf(ArrayDeque<Long>(), ArrayDeque(), ArrayDeque())
+        candidates[0].addLast(2L)
+        candidates[1].addLast(3L)
+        candidates[2].addLast(5L)
 
-        var index2 = 0
-        var candidate2 = 2 * uglyNumbers[index2]
-
-        var index3 = 0
-        var candidate3 = 3 * uglyNumbers[index3]
-
-        var index5 = 0
-        var candidate5 = 5 * uglyNumbers[index5]
-
-        while (uglyNumbers.size < n) {
-            val nextUgly = minOf(candidate2, candidate3, candidate5)
-            uglyNumbers.add(nextUgly)
-
-            if (candidate2 == nextUgly) {
-                index2++
-                candidate2 = 2 * uglyNumbers[index2]
-            }
-
-            if (candidate3 == nextUgly) {
-                index3++
-                candidate3 = 3 * uglyNumbers[index3]
-            }
-
-            if (candidate5 == nextUgly) {
-                index5++
-                candidate5 = 5 * uglyNumbers[index5]
+        while (count < n) {
+            val i = candidates.indices.minBy { candidates[it][0] }
+            val candidate = candidates[i].removeFirst()
+            if (candidate != result) {
+                result = candidate
+                count++
+                candidates[0].addLast(candidate * 2)
+                candidates[1].addLast(candidate * 3)
+                candidates[2].addLast(candidate * 5)
             }
         }
-
-        return uglyNumbers.last()
+        return result.toInt()
     }
 }
