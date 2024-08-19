@@ -13,7 +13,7 @@ class Solution {
         /* The idea is that when we reach n, the clipboard may have 1 to (n/2) 'A's
          * copied.
          * Although we don't know which clipboard state will give us the min steps,
-         * we can try all and find the min one.
+         * we can try them all and find the min one.
          * For a specific clipboard state that have j 'A's copied and j divides n,
          * the min step will be minSteps(j)+(n/j).
          */
