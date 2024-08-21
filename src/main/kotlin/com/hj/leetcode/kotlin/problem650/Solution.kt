@@ -14,7 +14,7 @@ class Solution {
          * copied.
          * Although we don't know which clipboard state will give us the min steps,
          * we can try them all and find the min one.
-         * For a specific clipboard state that have j 'A's copied and j divides n,
+         * For a specific clipboard state that has j 'A's copied and j divides n,
          * the min step will be minSteps(j)+(n/j).
          */
 
