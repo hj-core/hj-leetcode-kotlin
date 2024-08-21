@@ -14,7 +14,7 @@ class Solution2 {
         var result = 0
         var num = n
         var d = 2
-        val capD = sqrt(n.toFloat()) + 1 // Skip the test of primes after sqrt(n)
+        val capD = sqrt(n.toFloat()) + 1 // Skip the factors after sqrt(n)+1
         while (d <= num && d <= capD) {
             while (num % d == 0) {
                 num /= d
