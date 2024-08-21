@@ -23,10 +23,9 @@ class Solution2 {
             d += 1
         }
 
-        return when (num) {
-            1 -> result
-            n -> n
-            else -> result + num
+        if (num > 1) {
+            result += num
         }
+        return result
     }
 }
