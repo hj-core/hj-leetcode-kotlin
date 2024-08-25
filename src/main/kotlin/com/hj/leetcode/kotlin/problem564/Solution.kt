@@ -21,38 +21,33 @@ class Solution {
             return "1${"0".repeat(n.length - 1)}1"
         }
 
-        val candidates = mutableListOf<Long>()
-        val mid = (n.length - 1) / 2
-        val leftHalf = n.slice(0..mid).toInt()
-        val pivot = mid - if (n.length % 2 == 0) 0 else 1
-        candidates.add(
-            buildString {
-                append(leftHalf + 1)
-                for (i in pivot downTo 0) {
-                    append(this[i])
+        val firstHalf = n.slice(0..(n.length - 1) / 2).toLong()
+        val evenLength = n.length % 2 == 0
+        val candidates =
+            mutableListOf<Long>().apply {
+                add(toPalindrome(firstHalf + 1, evenLength))
+                add(toPalindrome(firstHalf - 1, evenLength))
+                if (n != n.reversed()) {
+                    add(toPalindrome(firstHalf, evenLength))
                 }
-            }.toLong(),
-        )
-        candidates.add(
-            buildString {
-                append(leftHalf - 1)
-                for (i in pivot downTo 0) {
-                    append(this[i])
-                }
-            }.toLong(),
-        )
-        if (n != n.reversed()) {
-            candidates.add(
-                buildString {
-                    append(leftHalf)
-                    for (i in pivot downTo 0) {
-                        append(this[i])
-                    }
-                }.toLong(),
-            )
-        }
+            }
         val nValue = n.toLong()
         candidates.sortWith(compareBy({ abs(it - nValue) }, { it }))
         return candidates[0].toString()
     }
+
+    private fun toPalindrome(
+        base: Long,
+        evenLength: Boolean,
+    ): Long =
+        buildString {
+            append(base)
+            val baseLength = this.length
+            if (evenLength) {
+                append(this[baseLength - 1])
+            }
+            for (i in baseLength - 2 downTo 0) {
+                append(this[i])
+            }
+        }.toLong()
 }
