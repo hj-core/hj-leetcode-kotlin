@@ -15,6 +15,7 @@ class Solution2 {
         }
         val stack1 = mutableListOf<Int>()
         val stack2 = mutableListOf<TreeNode>()
+
         stack2.add(root)
         while (stack2.isNotEmpty()) {
             val node = stack2.removeLast()
