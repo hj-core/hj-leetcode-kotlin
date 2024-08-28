@@ -13,23 +13,24 @@ class Solution {
         grid2: Array<IntArray>,
     ): Int {
         var result = 0
-        val visited =
+        val isWater =
             Array(grid2.size) { row ->
                 BooleanArray(grid2[row].size) { column ->
                     grid2[row][column] == 0
                 }
             }
 
-        for (row in visited.indices) {
-            for (column in visited[row].indices) {
-                if (visited[row][column]) {
+        for (row in isWater.indices) {
+            for (column in isWater[row].indices) {
+                if (isWater[row][column]) {
                     continue
                 }
 
-                val component = findConnectedComponent(Cell(row, column), visited, mutableListOf())
-                if (component.isNotEmpty() && component.all { grid1[it.row][it.column] == 1 }) {
-                    result += 1
+                var isSubIsland = true
+                findConnectedComponent(Cell(row, column), isWater) { land ->
+                    isSubIsland = isSubIsland && (grid1[land.row][land.column] == 1)
                 }
+                if (isSubIsland) result++
             }
         }
         return result
@@ -37,23 +38,22 @@ class Solution {
 
     private fun findConnectedComponent(
         source: Cell,
-        visited: Array<BooleanArray>,
-        result: MutableList<Cell>,
-    ): List<Cell> {
-        if (source.row !in visited.indices || source.column !in visited[source.row].indices) {
-            return emptyList()
+        isWater: Array<BooleanArray>,
+        onEachLand: (land: Cell) -> Unit,
+    ) {
+        if (source.row !in isWater.indices || source.column !in isWater[source.row].indices) {
+            return
         }
-        if (visited[source.row][source.column]) {
-            return emptyList()
+        if (isWater[source.row][source.column]) {
+            return
         }
-        result.add(source)
-        visited[source.row][source.column] = true
+        onEachLand(source)
+        isWater[source.row][source.column] = true
 
-        findConnectedComponent(source.copy(row = source.row + 1), visited, result)
-        findConnectedComponent(source.copy(row = source.row - 1), visited, result)
-        findConnectedComponent(source.copy(column = source.column + 1), visited, result)
-        findConnectedComponent(source.copy(column = source.column - 1), visited, result)
-        return result
+        findConnectedComponent(source.copy(row = source.row + 1), isWater, onEachLand)
+        findConnectedComponent(source.copy(row = source.row - 1), isWater, onEachLand)
+        findConnectedComponent(source.copy(column = source.column + 1), isWater, onEachLand)
+        findConnectedComponent(source.copy(column = source.column - 1), isWater, onEachLand)
     }
 
     private data class Cell(
