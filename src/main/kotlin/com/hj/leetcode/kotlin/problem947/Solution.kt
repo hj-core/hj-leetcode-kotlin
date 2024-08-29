@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem947
  */
 class Solution {
     /* Complexity:
-     * Time O(N) and Space O(N) where N is the size of stones;
+     * Time O(N^2) and Space O(N) where N is the size of stones;
      */
     fun removeStones(stones: Array<IntArray>): Int = stones.size - numConnectedComponents(stones)
 
