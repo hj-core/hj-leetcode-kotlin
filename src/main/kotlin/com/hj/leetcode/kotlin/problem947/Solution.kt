@@ -5,41 +5,35 @@ package com.hj.leetcode.kotlin.problem947
  */
 class Solution {
     /* Complexity:
-     * Time O(N^2) and Space O(N) where N is the size of stones;
+     * Time O(N) and Space O(N) where N is the size of stones;
      */
     fun removeStones(stones: Array<IntArray>): Int = stones.size - numConnectedComponents(stones)
 
     private fun numConnectedComponents(stones: Array<IntArray>): Int {
         var result = 0
-        val visited = BooleanArray(stones.size)
-        val groupsByX = stones.indices.groupBy { stones[it][0] }
-        val groupsByY = stones.indices.groupBy { stones[it][1] }
+        val groupsByX = stones.indices.groupByTo(mutableMapOf()) { stones[it][0] }
+        val groupsByY = stones.indices.groupByTo(mutableMapOf()) { stones[it][1] }
 
         for (index in stones.indices) {
-            if (visited[index]) {
+            val (rootX, rootY) = stones[index]
+            if (rootX !in groupsByX) {
                 continue
             }
 
             result++
             val dfsStack = ArrayDeque<Int>()
-            dfsStack.addLast(index)
-            visited[index] = true
+            dfsStack.addAll(groupsByX[rootX] ?: emptyList())
+            dfsStack.addAll(groupsByY[rootY] ?: emptyList())
+            groupsByX.remove(rootX)
+            groupsByY.remove(rootY)
 
             while (dfsStack.isNotEmpty()) {
                 val popped = dfsStack.removeLast()
                 val (x, y) = stones[popped]
-                val nextIndices =
-                    listOf(
-                        checkNotNull(groupsByX[x]),
-                        checkNotNull(groupsByY[y]),
-                    ).asSequence().flatten()
-
-                for (next in nextIndices) {
-                    if (!visited[next]) {
-                        dfsStack.addLast(next)
-                        visited[next] = true
-                    }
-                }
+                dfsStack.addAll(groupsByX[x] ?: emptyList())
+                dfsStack.addAll(groupsByY[y] ?: emptyList())
+                groupsByX.remove(x)
+                groupsByY.remove(y)
             }
         }
         return result
