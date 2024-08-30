@@ -7,40 +7,33 @@ class Solution {
     /* Complexity:
      * Time O(N) and Space O(N) where N is the size of stones;
      */
-    fun removeStones(stones: Array<IntArray>): Int {
-        return stones.size - numConnectedComponents(stones)
-    }
+    fun removeStones(stones: Array<IntArray>): Int = stones.size - numConnectedComponents(stones)
 
     private fun numConnectedComponents(stones: Array<IntArray>): Int {
         var result = 0
-        val visited = BooleanArray(stones.size)
-        val indicesByRow = stones.indices.groupBy { stones[it][0] }
-        val indicesByColumn = stones.indices.groupBy { stones[it][1] }
+        val groupsByX = stones.indices.groupByTo(mutableMapOf()) { stones[it][0] }
+        val groupsByY = stones.indices.groupByTo(mutableMapOf()) { stones[it][1] }
 
         for (index in stones.indices) {
-            if (visited[index]) {
+            val (rootX, rootY) = stones[index]
+            if (rootX !in groupsByX) {
                 continue
             }
 
             result++
             val dfsStack = ArrayDeque<Int>()
-            dfsStack.addLast(index)
-            visited[index] = true
+            dfsStack.addAll(groupsByX[rootX] ?: emptyList())
+            dfsStack.addAll(groupsByY[rootY] ?: emptyList())
+            groupsByX.remove(rootX)
+            groupsByY.remove(rootY)
 
             while (dfsStack.isNotEmpty()) {
-                val poppedIndex = dfsStack.removeLast()
-                val (row, column) = stones[poppedIndex]
-                val nextIndices = listOf(
-                    checkNotNull(indicesByRow[row]),
-                    checkNotNull(indicesByColumn[column])
-                ).asSequence().flatten()
-
-                for (nextIndex in nextIndices) {
-                    if (!visited[nextIndex]) {
-                        dfsStack.addLast(nextIndex)
-                        visited[nextIndex] = true
-                    }
-                }
+                val popped = dfsStack.removeLast()
+                val (x, y) = stones[popped]
+                dfsStack.addAll(groupsByX[x] ?: emptyList())
+                dfsStack.addAll(groupsByY[y] ?: emptyList())
+                groupsByX.remove(x)
+                groupsByY.remove(y)
             }
         }
         return result
