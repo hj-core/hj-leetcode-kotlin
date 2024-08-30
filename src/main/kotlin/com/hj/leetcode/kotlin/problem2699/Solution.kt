@@ -32,7 +32,7 @@ class Solution {
         while (left <= right) {
             val mid = left + (right - left) / 2
             val guess = minPathWeight(n, source, destination, adjacencyList, mid)
-            // We want mid be the critical index that just makes minPathWeight below target
+            // We want mid be the critical index that just makes minPathWeight within target
             when {
                 guess > target -> left = mid + 1
                 guess < target -> right = mid - 1
