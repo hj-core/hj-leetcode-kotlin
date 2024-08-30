@@ -97,6 +97,7 @@ class Solution {
                 if (weight == -1 && modifyIndexWithin < index) {
                     continue
                 }
+                // Modify the negative weight to 1 if the edge is within the specific index
                 val modifiedWeight = if (weight == -1) 1 else weight
                 if (minPathWeight[closest] + modifiedWeight < minPathWeight[v]) {
                     nodes.remove(v)
