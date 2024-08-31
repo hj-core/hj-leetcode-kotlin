@@ -9,7 +9,7 @@ import java.util.*
  */
 class Solution {
     /* Complexity:
-     * Time O((E+nLog(n))LogE) and Space O(n+E) where E is the size of edges;
+     * Time O((E+n)Log(n)LogE) and Space O(n+E) where E is the size of edges;
      */
     fun modifiedGraphEdges(
         n: Int,
