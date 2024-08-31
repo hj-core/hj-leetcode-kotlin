@@ -9,7 +9,7 @@ import kotlin.math.ln
  */
 class Solution {
     /* Complexity:
-     * Time O(nLog(n)+E) and Space O(n+E) where E is the size of edges;
+     * Time O((n+E)Log(n)) and Space O(n+E) where E is the size of edges;
      */
     fun maxProbability(
         n: Int,
