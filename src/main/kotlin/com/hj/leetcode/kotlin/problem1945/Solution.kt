@@ -12,7 +12,7 @@ class Solution {
         k: Int,
     ): Int {
         var result = firstTransform(s)
-        for (i in 2..k) {
+        for (round in 2..k) {
             result = sumOfDigits(result)
             if (result < 10) break
         }
