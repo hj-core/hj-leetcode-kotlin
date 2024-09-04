@@ -25,11 +25,11 @@ class Solution {
                 -1 -> direction = direction.turnedRight()
                 in 1..9 -> {
                     for (move in 1..command) {
-                        val moved = position.moved(direction)
-                        if (moved in obstacleSet) {
+                        val tryMoved = position.moved(direction)
+                        if (tryMoved in obstacleSet) {
                             break
                         }
-                        position = moved
+                        position = tryMoved
                     }
                 }
 
