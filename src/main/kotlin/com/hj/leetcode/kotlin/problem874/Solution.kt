@@ -23,16 +23,7 @@ class Solution {
             when (command) {
                 -2 -> direction = direction.turnedLeft()
                 -1 -> direction = direction.turnedRight()
-                in 1..9 -> {
-                    for (move in 1..command) {
-                        val tryMoved = position.moved(direction)
-                        if (tryMoved in obstacleSet) {
-                            break
-                        }
-                        position = tryMoved
-                    }
-                }
-
+                in 1..9 -> position = position.moved(direction, command, obstacleSet)
                 else -> throw IllegalArgumentException("Invalid command")
             }
             result = max(result, position.squaredDistance())
@@ -44,7 +35,23 @@ class Solution {
         val x: Int,
         val y: Int,
     ) {
-        fun moved(direction: Direction): Position = Position(x + direction.dx, y + direction.dy)
+        fun moved(
+            direction: Direction,
+            steps: Int,
+            obstacles: Set<Position>,
+        ): Position {
+            var result = this
+            for (step in 1..steps) {
+                val tryMove = result.moved(direction)
+                if (tryMove in obstacles) {
+                    break
+                }
+                result = tryMove
+            }
+            return result
+        }
+
+        private fun moved(direction: Direction): Position = Position(x + direction.dx, y + direction.dy)
 
         fun squaredDistance(): Int = x * x + y * y
     }
