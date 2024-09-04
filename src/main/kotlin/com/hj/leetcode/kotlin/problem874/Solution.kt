@@ -21,8 +21,8 @@ class Solution {
 
         for (command in commands) {
             when (command) {
-                -2 -> direction = direction.turnLeft()
-                -1 -> direction = direction.turnRight()
+                -2 -> direction = direction.turnedLeft()
+                -1 -> direction = direction.turnedRight()
                 in 1..9 -> {
                     for (move in 1..command) {
                         val moved = position.moved(direction)
@@ -59,7 +59,7 @@ class Solution {
         West(-1, 0),
         ;
 
-        fun turnLeft(): Direction =
+        fun turnedLeft(): Direction =
             when (this) {
                 North -> West
                 West -> South
@@ -67,7 +67,7 @@ class Solution {
                 East -> North
             }
 
-        fun turnRight(): Direction =
+        fun turnedRight(): Direction =
             when (this) {
                 North -> East
                 East -> South
