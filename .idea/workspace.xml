@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Exchange class name of Solution and Solution2">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve readability">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -183,7 +183,7 @@
       <workItem from="1725365178537" duration="247000" />
       <workItem from="1725437574914" duration="147000" />
       <workItem from="1725441731032" duration="414000" />
-      <workItem from="1725448975761" duration="565000" />
+      <workItem from="1725448975761" duration="1015000" />
     </task>
     <task id="LOCAL-00792" summary="Fix solution&#10;&#10;- Previous solution swaps the two nodes. However, the problem explicitly asks to swap their values">
       <created>1684160388035</created>
@@ -528,7 +528,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="1130" />
+    <option name="localTasksCounter" value="1131" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,7 +590,6 @@
     <MESSAGE value="refactor to fail-fast in case of ill-form age string" />
     <MESSAGE value="refactor to fail-fast in case of ill-form age string" />
     <MESSAGE value="Fix bad variable name" />
-    <MESSAGE value="Improve readability" />
     <MESSAGE value="Add a solution to problem 719" />
     <MESSAGE value="Update gradle to 8.10" />
     <MESSAGE value="Add a solution to problem 860" />
@@ -601,7 +600,8 @@
     <MESSAGE value="Improve algorithm solving the next level subproblem" />
     <MESSAGE value="Improve algorithm solving the subproblem" />
     <MESSAGE value="Exchange class name of Solution and Solution2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Exchange class name of Solution and Solution2" />
+    <MESSAGE value="Improve readability" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve readability" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

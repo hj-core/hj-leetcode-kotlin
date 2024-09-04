@@ -33,7 +33,7 @@ class Solution {
                     }
                 }
 
-                else -> throw IllegalArgumentException()
+                else -> throw IllegalArgumentException("Invalid command")
             }
             result = max(result, position.squaredDistance())
         }
@@ -44,14 +44,14 @@ class Solution {
         val x: Int,
         val y: Int,
     ) {
-        fun moved(direction: Direction): Position = Position(x + direction.x, y + direction.y)
+        fun moved(direction: Direction): Position = Position(x + direction.dx, y + direction.dy)
 
         fun squaredDistance(): Int = x * x + y * y
     }
 
     private enum class Direction(
-        val x: Int,
-        val y: Int,
+        val dx: Int,
+        val dy: Int,
     ) {
         North(0, 1),
         South(0, -1),
