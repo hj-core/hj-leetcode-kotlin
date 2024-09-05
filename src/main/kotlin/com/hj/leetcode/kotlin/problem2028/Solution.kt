@@ -13,15 +13,14 @@ class Solution {
         n: Int,
     ): IntArray {
         val m = rolls.size
-        val sumMRolls = rolls.sum()
-        val sumNRolls = mean * (m + n) - sumMRolls
+        val mRollsSum = rolls.sum()
+        val nRollsSum = mean * (m + n) - mRollsSum
 
-        if (sumNRolls !in n..(6 * n)) {
+        if (nRollsSum !in n..(6 * n)) {
             return IntArray(0)
         }
 
-        val average = sumNRolls / n
-        val shortage = sumNRolls % n
+        val (average, shortage) = Pair(nRollsSum / n, nRollsSum % n)
         return IntArray(n) { i ->
             if (i < shortage) average + 1 else average
         }
