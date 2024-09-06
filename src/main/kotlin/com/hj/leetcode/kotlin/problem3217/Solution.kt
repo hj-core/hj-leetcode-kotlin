@@ -19,11 +19,11 @@ class Solution {
         }
         val dummyHead = ListNode(-1).apply { next = head }
         var currentPtr = dummyHead
-        val unwanted = nums.toSet()
+        val unwantedValues = nums.toSet()
 
         while (currentPtr.next != null) {
             val next = checkNotNull(currentPtr.next)
-            if (next.`val` in unwanted) {
+            if (next.`val` in unwantedValues) {
                 currentPtr.next = next.next
             } else {
                 currentPtr = next
