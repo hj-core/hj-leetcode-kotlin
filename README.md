@@ -401,6 +401,7 @@ at [LeetCode](https://leetcode.com/hj-core/).
 | [2997. Minimum Number of Operations to Make Array XOR Equal to K](https://leetcode.com/problems/minimum-number-of-operations-to-make-array-xor-equal-to-k/)                                     | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem2997/Solution.kt)                                                                               | 2024-04-29    |
 | [3016. Minimum Number of Pushes to Type Word II](https://leetcode.com/problems/minimum-number-of-pushes-to-type-word-ii/)                                                                       | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3016/Solution.kt)                                                                               | 2024-08-06    |
 | [3075. Maximize Happiness of Selected Children](https://leetcode.com/problems/maximize-happiness-of-selected-children/)                                                                         | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3075/Solution.kt)                                                                               | 2024-05-09    |
+| [3217. Delete Nodes From Linked List Present in Array](https://leetcode.com/problems/delete-nodes-from-linked-list-present-in-array/)                                                           | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3217/Solution.kt)                                                                               | 2024-09-06    |
 
 ### Easy
 
