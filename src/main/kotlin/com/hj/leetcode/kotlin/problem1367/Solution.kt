@@ -21,23 +21,17 @@ class Solution {
         if (root == null) {
             return false
         }
-        var result = isSubPath(head, root.left) || isSubPath(head, root.right)
-        if (head.`val` == root.`val`) {
-            result = result ||
-                match(head.next, root.left) ||
-                match(head.next, root.right)
-        }
-        return result
+        return isSubPath(head, root.left) || isSubPath(head, root.right) || matchPath(head, root)
     }
 
-    private fun match(
+    private fun matchPath(
         head: ListNode?,
-        root: TreeNode?,
+        startingNode: TreeNode?,
     ): Boolean =
         when {
             head == null -> true
-            root == null -> false
-            root.`val` != head.`val` -> false
-            else -> match(head.next, root.left) || match(head.next, root.right)
+            startingNode == null -> false
+            startingNode.`val` != head.`val` -> false
+            else -> matchPath(head.next, startingNode.left) || matchPath(head.next, startingNode.right)
         }
 }
