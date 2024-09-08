@@ -7,7 +7,7 @@ import com.hj.leetcode.kotlin.common.model.ListNode
  */
 class Solution {
     /* Complexity:
-     * Time O(N+k) and Space O(k) where N is the number of nodes in head;
+     * Time O(N+k) and Auxiliary Space O(1) where N is the number of nodes in head;
      */
     fun splitListToParts(
         head: ListNode?,
