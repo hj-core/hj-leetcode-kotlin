@@ -7,39 +7,43 @@ import com.hj.leetcode.kotlin.common.model.ListNode
  */
 class Solution {
     /* Complexity:
-     * Time O(N+k) and Space O(k) where N is the number of nodes in head;
+     * Time O(N+k) and Auxiliary Space O(1) where N is the number of nodes in head;
      */
-    fun splitListToParts(head: ListNode?, k: Int): Array<ListNode?> {
-        val listLength = head.length()
-        val minPartLength = listLength / k
-        val numLongerParts = listLength % k
+    fun splitListToParts(
+        head: ListNode?,
+        k: Int,
+    ): Array<ListNode?> {
+        val size = head.size()
+        val averageLength = size / k
+        val shortage = size % k
 
         val result = Array<ListNode?>(k) { null }
         var partHead = head
 
-        repeat(k) { index ->
+        for (index in 0..<k) {
+            if (partHead == null) {
+                break
+            }
             result[index] = partHead
-            val partLength =
-                if (index < numLongerParts) minPartLength + 1 else minPartLength
-            val partEndNode = partHead?.at(partLength - 1)
-
-            partHead = partEndNode?.next
-            partEndNode?.next = null
+            val partLength = if (index < shortage) averageLength + 1 else averageLength
+            val partTail = partHead.get(partLength - 1)
+            partHead = partTail.next
+            partTail.next = null
         }
         return result
     }
 
-    private fun ListNode?.length(): Int {
+    private fun ListNode?.size(): Int {
         var result = 0
-        var next = this
-        while (next != null) {
+        var nodePtr = this
+        while (nodePtr != null) {
             result += 1
-            next = next.next
+            nodePtr = nodePtr.next
         }
         return result
     }
 
-    private fun ListNode.at(index: Int): ListNode {
+    private fun ListNode.get(index: Int): ListNode {
         var result = this
         repeat(index) {
             result = result.next ?: throw IndexOutOfBoundsException()
