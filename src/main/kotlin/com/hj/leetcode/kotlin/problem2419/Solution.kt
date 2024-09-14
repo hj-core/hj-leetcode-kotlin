@@ -6,9 +6,9 @@ import kotlin.math.max
  * LeetCode page: [2419. Longest Subarray With Maximum Bitwise AND](https://leetcode.com/problems/longest-subarray-with-maximum-bitwise-and/);
  */
 class Solution {
- /* Complexity:
-  * Time O(N) and Space O(1) where N is the size of nums.
-  */
+    /* Complexity:
+     * Time O(N) and Space O(1) where N is the size of nums.
+     */
     fun longestSubarray(nums: IntArray): Int {
         var result = 0
         var maxElement = nums[0]
