@@ -21,7 +21,7 @@ class Solution {
         }
 
         // Find the minimum adjacent time difference,
-        // including the wrap around difference between the first and last.
+        // including the wrap around difference between the first and last one.
         var result = Int.MAX_VALUE
         val stack = mutableListOf<Int>()
         for ((minuteOfDay, count) in countMinuteOfDay.withIndex()) {
