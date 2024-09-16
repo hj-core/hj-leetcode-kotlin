@@ -10,22 +10,21 @@ class Solution {
      * Time O(N) and Space O(1) where N is the length of timePoints.
      */
     fun findMinDifference(timePoints: List<String>): Int {
-        val countMinuteOfDay = IntArray(24 * 60) // Indexed by minute of day
+        val seen = BooleanArray(24 * 60) // Indexed by minute of day
         for (time in timePoints) {
             val minuteOfDay = minuteOfDay(time)
-            countMinuteOfDay[minuteOfDay] += 1
-
-            if (countMinuteOfDay[minuteOfDay] > 1) {
+            if (seen[minuteOfDay]) {
                 return 0
             }
+            seen[minuteOfDay] = true
         }
 
         // Find the minimum adjacent time difference,
         // including the wrap around difference between the first and last one.
         var result = Int.MAX_VALUE
         val stack = mutableListOf<Int>()
-        for ((minuteOfDay, count) in countMinuteOfDay.withIndex()) {
-            if (count == 0) {
+        for (minuteOfDay in seen.indices) {
+            if (!seen[minuteOfDay]) {
                 continue
             }
             if (stack.isNotEmpty()) {
