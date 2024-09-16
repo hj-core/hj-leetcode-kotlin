@@ -14,6 +14,7 @@ class Solution {
         for (time in timePoints) {
             val minuteOfDay = minuteOfDay(time)
             countMinuteOfDay[minuteOfDay] += 1
+
             if (countMinuteOfDay[minuteOfDay] > 1) {
                 return 0
             }
