@@ -5,8 +5,8 @@ package com.hj.leetcode.kotlin.problem884
  */
 class Solution {
     /* Complexity:
-     * Time O(N+M) and Space O(N+M) where N is the flattened length of s1
-     * and M is the flattened length of s2.
+     * Time O(N+M) and Space O(N+M) where N is the length of s1
+     * and M is the length of s2.
      */
     fun uncommonFromSentences(
         s1: String,
