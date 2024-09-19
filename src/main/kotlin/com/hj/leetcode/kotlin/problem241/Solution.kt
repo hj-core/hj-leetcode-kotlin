@@ -3,7 +3,10 @@ package com.hj.leetcode.kotlin.problem241
 /**
  * LeetCode page: [241. Different Ways to Add Parentheses](https://leetcode.com/problems/different-ways-to-add-parentheses/);
  *
- * TODO : Analyze the complexity of solution and may relate to the Catalan Numbers ([See Ref](https://people.math.sc.edu/howard/Classes/554b/catalan.pdf));
+ * TODO : Some people suggested that the complexity of solution may relate to the
+ *  Catalan Numbers ([See Ref](https://people.math.sc.edu/howard/Classes/554b/catalan.pdf)).
+ *  On the other hand, the official solution suggested that we should not model the complexity
+ *  using the Catalan Numbers.
  */
 class Solution {
     /* Complexity:
