@@ -4,14 +4,14 @@ package com.hj.leetcode.kotlin.problem214
  * LeetCode page: [214. Shortest Palindrome](https://leetcode.com/problems/shortest-palindrome/);
  */
 class Solution {
- /* Complexity:
-  * Time O(N) and Space O(N) where N is the length of s.
-  */
+    /* Complexity:
+     * Time O(N) and Space O(N) where N is the length of s.
+     */
     fun shortestPalindrome(s: String): String {
         if (s.isEmpty()) {
             return s
         }
-        // Search s against s.reversed() using KMP algorithm
+        // Search s against s.reversed() using the KMP algorithm
         val prefixFunction = computePrefixFunction(s)
         var j = -1
         for (i in s.indices.reversed()) {
@@ -22,7 +22,7 @@ class Solution {
                 j += 1
             }
         }
-        // Reverse the inadequate portion and append to the front of s
+        // Append the missing part to the front of s
         return buildString {
             for (i in ((j + 1)..<s.length).reversed()) {
                 append(s[i])
@@ -32,6 +32,7 @@ class Solution {
     }
 
     private fun computePrefixFunction(pattern: String): IntArray {
+        // result[i]::= max{k: k<i and pattern[0..k] is a suffix of pattern[0..i]}
         val result = IntArray(pattern.length)
         result[0] = -1
         var k = -1
