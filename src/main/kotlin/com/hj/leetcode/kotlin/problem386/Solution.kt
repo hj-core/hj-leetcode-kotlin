@@ -10,6 +10,7 @@ class Solution {
     fun lexicalOrder(n: Int): List<Int> {
         val result = mutableListOf<Int>()
         var value = 1
+        // Emulate a preorder traversal
         for (i in 0..<n) {
             result.add(value)
             if (value * 10 <= n) {
