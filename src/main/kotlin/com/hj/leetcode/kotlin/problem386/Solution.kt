@@ -16,7 +16,7 @@ class Solution {
             if (value * 10 <= n) {
                 value *= 10 // Move to the first child
             } else {
-                // The Next sibling doesn't exist or exceeds n
+                // There is no next sibling or it exceeds n
                 while (value % 10 == 9 || value == n) {
                     value /= 10 // Move back to parent
                 }
