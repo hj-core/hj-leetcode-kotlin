@@ -10,16 +10,17 @@ class Solution {
     fun lexicalOrder(n: Int): List<Int> {
         val result = mutableListOf<Int>()
         var value = 1
-        // Emulate a preorder traversal
+        // Preorder traversal
         for (i in 0..<n) {
             result.add(value)
             if (value * 10 <= n) {
-                value *= 10
+                value *= 10 // Move to the first child
             } else {
-                while (value % 10 == 9 || n <= value) {
-                    value /= 10
+                // The Next sibling doesn't exist or exceeds n
+                while (value % 10 == 9 || value == n) {
+                    value /= 10 // Move back to parent
                 }
-                value += 1
+                value += 1 // Move to the next sibling
             }
         }
         return result
