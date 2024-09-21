@@ -59,9 +59,9 @@ class Solution {
 
     private fun operator(c: Char): (Int, Int) -> Int =
         when (c) {
-            '+' -> { left, right -> left + right }
-            '-' -> { left, right -> left - right }
-            '*' -> { left, right -> left * right }
+            '+' -> Int::plus
+            '-' -> Int::minus
+            '*' -> Int::times
             else -> throw IllegalArgumentException()
         }
 }
