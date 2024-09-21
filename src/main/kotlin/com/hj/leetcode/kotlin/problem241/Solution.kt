@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem241
  *
  * TODO : Some people suggested that the complexity of solution may relate to the
  *  Catalan Numbers ([See Ref](https://people.math.sc.edu/howard/Classes/554b/catalan.pdf)).
- *  On the other hand, the official solution suggested that we should not model the complexity
+ *  However, the official solution suggested that we should not model the complexity
  *  using the Catalan Numbers.
  */
 class Solution {
