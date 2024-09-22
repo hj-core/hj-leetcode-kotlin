@@ -31,9 +31,9 @@ class Solution {
 
         val size = size(root, n)
         return if (rank + size < k) {
-            dfs(root + 1, rank + size, n, k)
+            dfs(root + 1, rank + size, n, k) // Move to the next sibling
         } else {
-            dfs(root * 10, rank + 1, n, k)
+            dfs(root * 10, rank + 1, n, k) // Move to the first child
         }
     }
 
