@@ -16,21 +16,21 @@ class Solution {
         /* Search the 'digit tree' where the root has child nodes 1 to 9,
          * and all child nodes recursively have child nodes 0 to 9.
          */
-        return search(1, 0, n, k)
+        return search(1, 1, n, k)
     }
 
     private tailrec fun search(
         root: Int,
-        rank: Int, // Position of the number just before root
+        rank: Int,
         n: Int,
         k: Int,
     ): Int {
-        if (rank + 1 == k) {
+        if (rank == k) {
             return root
         }
 
         val size = size(root, n)
-        return if (rank + size < k) {
+        return if (rank + size - 1 < k) {
             search(root + 1, rank + size, n, k) // Move to the next sibling
         } else {
             search(root * 10, rank + 1, n, k) // Move to the first child
