@@ -21,7 +21,7 @@ class Solution {
 
     private tailrec fun search(
         root: Int,
-        rank: Int,
+        rank: Int, // Position of the number just before root
         n: Int,
         k: Int,
     ): Int {
