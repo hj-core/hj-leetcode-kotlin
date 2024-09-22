@@ -13,13 +13,13 @@ class Solution {
         n: Int,
         k: Int,
     ): Int {
-        /* DFS the 'digit tree' where the root has child nodes 1 to 9,
-         * and all child nodes recursively have child nodes 0 to 9)
+        /* Search the 'digit tree' where the root has child nodes 1 to 9,
+         * and all child nodes recursively have child nodes 0 to 9.
          */
-        return dfs(1, 0, n, k)
+        return search(1, 0, n, k)
     }
 
-    private tailrec fun dfs(
+    private tailrec fun search(
         root: Int,
         rank: Int,
         n: Int,
@@ -31,9 +31,9 @@ class Solution {
 
         val size = size(root, n)
         return if (rank + size < k) {
-            dfs(root + 1, rank + size, n, k) // Move to the next sibling
+            search(root + 1, rank + size, n, k) // Move to the next sibling
         } else {
-            dfs(root * 10, rank + 1, n, k) // Move to the first child
+            search(root * 10, rank + 1, n, k) // Move to the first child
         }
     }
 
