@@ -42,16 +42,17 @@ class Solution {
         n: Int,
     ): Int {
         var result = 0
-        var levelStart = root
+        var startValue = root // The first value in current level
         var breadth = 1
-        while (levelStart <= n) {
-            val levelEnd = min(n, levelStart + breadth - 1)
-            result += levelEnd - levelStart + 1
+        while (startValue <= n) {
+            val endValue = min(n, startValue + breadth - 1)
+            val trueBreadth = endValue - startValue + 1
+            result += trueBreadth
 
-            if (n / 10 < levelStart) {
+            if (n / 10 < startValue) {
                 break
             }
-            levelStart *= 10
+            startValue *= 10
             breadth *= 10
         }
         return result
