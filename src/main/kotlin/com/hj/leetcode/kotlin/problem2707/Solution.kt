@@ -19,14 +19,13 @@ class Solution {
         s: String,
         from: Int,
         inDictionary: Array<BooleanArray>,
-        memoization: MutableMap<IntRange, Int>,
+        memoization: MutableMap<Int, Int>, // memoization[from]::= minExtraChar(s[from:], dictionary)
     ): Int {
         if (from == s.length) {
             return 0
         }
-        val range = from..<s.length
-        if (range in memoization) {
-            return checkNotNull(memoization[range])
+        if (from in memoization) {
+            return checkNotNull(memoization[from])
         }
 
         var result = s.length - from
@@ -36,7 +35,7 @@ class Solution {
             val rightExtra = minExtraChar(s, from + firstLength, inDictionary, memoization)
             result = min(result, leftExtra + rightExtra)
         }
-        memoization[range] = result
+        memoization[from] = result
         return result
     }
 
