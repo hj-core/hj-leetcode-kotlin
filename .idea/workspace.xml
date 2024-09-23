@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Add a solution to problem 214">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2707/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2707/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -228,7 +229,7 @@
       <workItem from="1726991987716" duration="3570000" />
       <workItem from="1727003983572" duration="333000" />
       <workItem from="1727088675216" duration="148000" />
-      <workItem from="1727091096652" duration="432000" />
+      <workItem from="1727091096652" duration="2653000" />
     </task>
     <task id="LOCAL-00792" summary="Fix solution&#10;&#10;- Previous solution swaps the two nodes. However, the problem explicitly asks to swap their values">
       <created>1684160388035</created>
@@ -621,8 +622,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Improve function naming" />
-    <MESSAGE value="Add a solution to problem 1334" />
     <MESSAGE value="Add a solution to problem 2976" />
     <MESSAGE value="Add a solution to problem 2045" />
     <MESSAGE value="Add a solution to problem 1395" />
@@ -646,7 +645,9 @@
     <MESSAGE value="Exchange class name of Solution and Solution2" />
     <MESSAGE value="Improve readability" />
     <MESSAGE value="Add a solution to problem 214" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a solution to problem 214" />
+    <MESSAGE value="Change the key of memoization to from" />
+    <MESSAGE value="Change the key of memoization to from" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change the key of memoization to from" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

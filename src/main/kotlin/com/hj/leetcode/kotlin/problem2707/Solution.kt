@@ -7,18 +7,18 @@ import kotlin.math.min
  */
 class Solution {
     /* Complexity:
-     * Time O(N^3+M) and Space O(N^2+M) where N is the length of s
+     * Time O(N^2+M) and Space O(N+M) where N is the length of s
      * and M is the flattened length of dictionary.
      */
     fun minExtraChar(
         s: String,
         dictionary: Array<String>,
-    ): Int = minExtraChar(s, 0, inDictionary(dictionary, s), mutableMapOf())
+    ): Int = minExtraChar(s, 0, Trie.of(dictionary), mutableMapOf())
 
     private fun minExtraChar(
         s: String,
         from: Int,
-        inDictionary: Array<BooleanArray>,
+        dictionary: Trie,
         memoization: MutableMap<Int, Int>, // memoization[from]::= minExtraChar(s[from:], dictionary)
     ): Int {
         if (from == s.length) {
@@ -29,33 +29,47 @@ class Solution {
         }
 
         var result = s.length - from
-        // Try all possible lengths of the first split
-        for (firstLength in 1..(s.length - from)) {
-            val leftExtra = if (inDictionary[from][firstLength]) 0 else firstLength
-            val rightExtra = minExtraChar(s, from + firstLength, inDictionary, memoization)
+        var trieNode: Trie? = dictionary
+        // Try all possible lengths for the first split
+        for (length in 1..(s.length - from)) {
+            val firstEnd = from + length - 1
+            trieNode = trieNode?.children?.get(s[firstEnd])
+            val leftExtra = if (trieNode?.isTermination == true) 0 else length
+            val rightExtra = minExtraChar(s, firstEnd + 1, dictionary, memoization)
             result = min(result, leftExtra + rightExtra)
         }
         memoization[from] = result
         return result
     }
 
-    private fun inDictionary(
-        dictionary: Array<String>,
-        s: String,
-    ): Array<BooleanArray> {
-        val dictionarySet = dictionary.toSet()
-        val result =
-            Array(s.length) { from ->
-                BooleanArray(s.length - from + 1)
-            }
+    private class Trie private constructor() {
+        var isTermination: Boolean = false
+            private set
 
-        for (from in s.indices) {
-            for (length in 1..(s.length - from)) {
-                if (s.substring(from..<from + length) in dictionarySet) {
-                    result[from][length] = true
+        val children
+            get() = _children as Map<Char, Trie>
+        private val _children = mutableMapOf<Char, Trie>()
+
+        private fun add(
+            word: String,
+            from: Int,
+        ) {
+            if (from == word.length) {
+                isTermination = true
+                return
+            }
+            val child = _children.computeIfAbsent(word[from]) { Trie() }
+            child.add(word, from + 1)
+        }
+
+        companion object {
+            fun of(words: Array<String>): Trie {
+                val result = Trie()
+                for (word in words) {
+                    result.add(word, 0)
                 }
+                return result
             }
         }
-        return result
     }
 }
