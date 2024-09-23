@@ -13,28 +13,27 @@ class Solution {
     fun minExtraChar(
         s: String,
         dictionary: Array<String>,
-    ): Int = minExtraChar(s, 0, s.length, inDictionary(dictionary, s), mutableMapOf())
+    ): Int = minExtraChar(s, 0, inDictionary(dictionary, s), mutableMapOf())
 
     private fun minExtraChar(
         s: String,
         from: Int,
-        until: Int,
         inDictionary: Array<BooleanArray>,
         memoization: MutableMap<IntRange, Int>,
     ): Int {
-        if (from == until) {
+        if (from == s.length) {
             return 0
         }
-        val range = from..<until
+        val range = from..<s.length
         if (range in memoization) {
             return checkNotNull(memoization[range])
         }
 
-        var result = until - from
+        var result = s.length - from
         // Try all possible lengths of the first split
-        for (firstLength in 1..(until - from)) {
+        for (firstLength in 1..(s.length - from)) {
             val leftExtra = if (inDictionary[from][firstLength]) 0 else firstLength
-            val rightExtra = minExtraChar(s, from + firstLength, until, inDictionary, memoization)
+            val rightExtra = minExtraChar(s, from + firstLength, inDictionary, memoization)
             result = min(result, leftExtra + rightExtra)
         }
         memoization[range] = result
