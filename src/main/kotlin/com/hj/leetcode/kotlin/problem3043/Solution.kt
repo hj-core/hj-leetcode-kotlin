@@ -24,14 +24,21 @@ class Solution {
     private fun allPrefixes(arr: IntArray): Set<Int> {
         val result = mutableSetOf<Int>()
         for (num in arr) {
-            var iNum = num
-            while (iNum > 0) {
-                if (!result.add(iNum)) {
+            for (prefix in allPrefixes(num)) {
+                if (!result.add(prefix)) {
                     break
                 }
-                iNum /= 10
             }
         }
         return result
     }
+
+    private fun allPrefixes(num: Int): Sequence<Int> =
+        sequence {
+            var iNum = num
+            while (iNum > 0) {
+                yield(iNum)
+                iNum /= 10
+            }
+        }
 }
