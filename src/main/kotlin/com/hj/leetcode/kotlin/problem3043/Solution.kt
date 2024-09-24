@@ -14,10 +14,10 @@ class Solution {
         arr1: IntArray,
         arr2: IntArray,
     ): Int {
-        val prefixes1 = allPrefixes(arr1)
+        val allPrefixes1 = allPrefixes(arr1)
         var maxCommonPrefix = -1
         for (num in arr2) {
-            allPrefixes(num).filter { it in prefixes1 }.maxOrNull()?.let {
+            prefixes(num).filter { it in allPrefixes1 }.maxOrNull()?.let {
                 maxCommonPrefix = max(maxCommonPrefix, it)
             }
         }
@@ -27,16 +27,16 @@ class Solution {
     private fun allPrefixes(arr: IntArray): Set<Int> =
         buildSet {
             for (num in arr) {
-                addAll(allPrefixes(num))
+                addAll(prefixes(num))
             }
         }
 
-    private fun allPrefixes(num: Int): Sequence<Int> =
+    private fun prefixes(num: Int): Sequence<Int> =
         sequence {
-            var iNum = num
-            while (iNum > 0) {
-                yield(iNum)
-                iNum /= 10
+            var prefix = num
+            while (prefix > 0) {
+                yield(prefix)
+                prefix /= 10
             }
         }
 }
