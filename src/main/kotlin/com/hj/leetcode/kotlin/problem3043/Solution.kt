@@ -17,10 +17,8 @@ class Solution {
         val prefixes1 = allPrefixes(arr1)
         var maxCommonPrefix = -1
         for (num in arr2) {
-            for (prefix in allPrefixes(num)) {
-                if (prefix in prefixes1) {
-                    maxCommonPrefix = max(maxCommonPrefix, prefix)
-                }
+            allPrefixes(num).filter { it in prefixes1 }.maxOrNull()?.let {
+                maxCommonPrefix = max(maxCommonPrefix, it)
             }
         }
         return if (maxCommonPrefix == -1) 0 else maxCommonPrefix.toString().length
