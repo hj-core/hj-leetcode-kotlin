@@ -1,7 +1,7 @@
 package com.hj.leetcode.kotlin.problem3043
 
 /**
- * LeetCode page: [3043. Find the Length of the Longest Common Prefix](https://leetcode.com/problems/find-the-length-of-the-longest-common-prefix/);
+ * LeetCode page: *[3043. Find the Length of the Longest Common Prefix](https://leetcode.com/problems/find-the-length-of-the-longest-common-prefix/);
  */
 class Solution {
     /* Complexity:
@@ -15,7 +15,10 @@ class Solution {
         val prefixes1 = allPrefixes(arr1)
         val prefixes2 = allPrefixes(arr2)
         val maxCommon = prefixes1.asSequence().filter { it in prefixes2 }.maxOrNull()
-        return maxCommon?.toString()?.length ?: 0
+        if (maxCommon == null) {
+            return 0
+        }
+        return maxCommon.toString().length
     }
 
     private fun allPrefixes(arr: IntArray): Set<Int> {
