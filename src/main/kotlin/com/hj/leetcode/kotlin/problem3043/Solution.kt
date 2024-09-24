@@ -14,23 +14,24 @@ class Solution {
         arr1: IntArray,
         arr2: IntArray,
     ): Int {
-        val allPrefixes1 = allPrefixes(arr1)
+        val prefixes1 = flattenedPrefixes(arr1)
         var maxCommonPrefix = -1
         for (num in arr2) {
-            prefixes(num).filter { it in allPrefixes1 }.maxOrNull()?.let {
+            prefixes(num).firstOrNull { it in prefixes1 }?.let {
                 maxCommonPrefix = max(maxCommonPrefix, it)
             }
         }
         return if (maxCommonPrefix == -1) 0 else maxCommonPrefix.toString().length
     }
 
-    private fun allPrefixes(arr: IntArray): Set<Int> =
+    private fun flattenedPrefixes(arr: IntArray): Set<Int> =
         buildSet {
             for (num in arr) {
                 addAll(prefixes(num))
             }
         }
 
+    // Return all prefixes of num in descending order
     private fun prefixes(num: Int): Sequence<Int> =
         sequence {
             var prefix = num
