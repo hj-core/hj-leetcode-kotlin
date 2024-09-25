@@ -39,17 +39,25 @@ class Solution {
         ) {
             prefixScores += 1
             if (from == word.length) {
-                if (_wordIndices == null) {
-                    _wordIndices = mutableListOf()
-                }
-                _wordIndices?.add(wordIndex)
+                addIndex(wordIndex)
                 return
             }
-            val charIndex = word[from] - 'a'
-            if (_children[charIndex] == null) {
-                _children[charIndex] = Trie()
+            getOrPutChild(word[from]).add(word, from + 1, wordIndex)
+        }
+
+        private fun addIndex(wordIndex: Int) {
+            if (_wordIndices == null) {
+                _wordIndices = mutableListOf()
             }
-            children[charIndex]?.add(word, from + 1, wordIndex)
+            _wordIndices?.add(wordIndex)
+        }
+
+        private fun getOrPutChild(char: Char): Trie {
+            val index = char - 'a'
+            if (_children[index] == null) {
+                _children[index] = Trie()
+            }
+            return checkNotNull(children[index])
         }
 
         companion object {
