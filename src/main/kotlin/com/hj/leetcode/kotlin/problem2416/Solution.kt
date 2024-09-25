@@ -10,8 +10,8 @@ class Solution {
     fun sumPrefixScores(words: Array<String>): IntArray {
         val root = Trie.of(words)
         val result = IntArray(words.size)
-        // Start with -root.prefixScores to neutralize the prefixScores of root
-        dfs(root, -root.prefixScores) { pathScores, wordIndices ->
+        // Start with -root.score to neutralize the score of root
+        dfs(root, -root.score) { pathScores, wordIndices ->
             for (index in wordIndices) {
                 result[index] = pathScores
             }
@@ -24,8 +24,8 @@ class Solution {
             get() = _wordIndices ?: emptyList()
         private var _wordIndices: MutableList<Int>? = null
 
-        // Scores of the chars from root to this as a prefix
-        var prefixScores = 0
+        // Scores of the prefix formed by chars from root to this
+        var score = 0
             private set
 
         val children: List<Trie?>
@@ -37,7 +37,7 @@ class Solution {
             from: Int,
             wordIndex: Int,
         ) {
-            prefixScores += 1
+            score += 1
             if (from == word.length) {
                 addIndex(wordIndex)
                 return
@@ -76,7 +76,7 @@ class Solution {
         pathScores: Int,
         onEachNode: (pathScores: Int, wordIndices: List<Int>) -> Unit,
     ) {
-        val newScores = pathScores + root.prefixScores
+        val newScores = pathScores + root.score
         onEachNode(newScores, root.wordIndices)
 
         for (child in root.children) {
