@@ -77,9 +77,7 @@ class Solution {
         onEachNode: (pathScores: Int, wordIndices: List<Int>) -> Unit,
     ) {
         val newScores = pathScores + root.prefixScores
-        if (root.wordIndices.isNotEmpty()) {
-            onEachNode(newScores, root.wordIndices)
-        }
+        onEachNode(newScores, root.wordIndices)
 
         for (child in root.children) {
             child?.let { dfs(it, newScores, onEachNode) }
