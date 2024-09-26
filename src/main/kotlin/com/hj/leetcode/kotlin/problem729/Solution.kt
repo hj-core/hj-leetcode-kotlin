@@ -22,8 +22,7 @@ class MyCalendar {
         start: Int,
         end: Int,
     ): Boolean {
-        val next = sortedSlots.ceiling(Slot(end, end)) ?: Slot(end, end)
-        val previous = sortedSlots.lower(next) ?: Slot(0, 0)
+        val previous = sortedSlots.lower(Slot(end, end)) ?: Slot(0, 0)
         if (start < previous.end) {
             return false
         }
