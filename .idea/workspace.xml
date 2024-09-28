@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Improve by remembering the position of left parentheses">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1190/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1190/Solution.kt" afterDir="false" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="A1DD A SOLUTION TO PROBLEM 214">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +70,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="problem731" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -82,7 +82,7 @@
   }
 }</component>
   <component name="GitRewordedCommitMessages">
-    <option name="onto" value="2fb03e23ba4d3f38e5dd13507e3b1b1c65fb32cd" />
+    <option name="onto" value="5c9c671cf8566f95679fd276e8a17cb02e657839" />
   </component>
   <component name="GithubProjectSettings">
     <option name="branchProtectionPatterns">
@@ -123,19 +123,20 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem1190",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/gaps-/Documents/GitHub/hj-leetcode-kotlin",
-    "project.structure.last.edited": "Facets",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41494253",
-    "settings.editor.selected.configurable": "reference.settings.grazie.pro"
-  },
-  "keyToStringList": {
-    "kotlin-gradle-user-dirs": [
-      "C:\\Users\\gaps-\\.gradle"
-    ]
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -163,6 +164,14 @@
       </method>
     </configuration>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -171,6 +180,65 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662609069590</updated>
+      <workItem from="1725365178537" duration="247000" />
+      <workItem from="1725437574914" duration="147000" />
+      <workItem from="1725441731032" duration="414000" />
+      <workItem from="1725448975761" duration="1015000" />
+      <workItem from="1725451510119" duration="489000" />
+      <workItem from="1725539470177" duration="1104000" />
+      <workItem from="1725541112220" duration="10000" />
+      <workItem from="1725704140695" duration="311000" />
+      <workItem from="1725707633566" duration="612000" />
+      <workItem from="1725787510715" duration="430000" />
+      <workItem from="1725963857101" duration="72000" />
+      <workItem from="1725964840036" duration="333000" />
+      <workItem from="1725980982326" duration="473000" />
+      <workItem from="1726049526383" duration="456000" />
+      <workItem from="1726053308607" duration="2000" />
+      <workItem from="1726063281951" duration="43000" />
+      <workItem from="1726133149016" duration="2000" />
+      <workItem from="1726221346180" duration="893000" />
+      <workItem from="1726230506436" duration="30000" />
+      <workItem from="1726309891549" duration="203000" />
+      <workItem from="1726319927567" duration="133000" />
+      <workItem from="1726382486024" duration="614000" />
+      <workItem from="1726386361865" duration="254000" />
+      <workItem from="1726397962072" duration="42000" />
+      <workItem from="1726400726881" duration="22000" />
+      <workItem from="1726494030639" duration="324000" />
+      <workItem from="1726495703889" duration="44000" />
+      <workItem from="1726497911884" duration="576000" />
+      <workItem from="1726498636117" duration="18000" />
+      <workItem from="1726498661690" duration="123000" />
+      <workItem from="1726568284680" duration="56000" />
+      <workItem from="1726568621536" duration="305000" />
+      <workItem from="1726570316515" duration="411000" />
+      <workItem from="1726570760409" duration="342000" />
+      <workItem from="1726741402944" duration="211000" />
+      <workItem from="1726754880621" duration="6000" />
+      <workItem from="1726756553642" duration="406000" />
+      <workItem from="1726756970932" duration="1301000" />
+      <workItem from="1726760491731" duration="526000" />
+      <workItem from="1726829059530" duration="24000" />
+      <workItem from="1726829090127" duration="11000" />
+      <workItem from="1726834497828" duration="392000" />
+      <workItem from="1726906897002" duration="307000" />
+      <workItem from="1726907785126" duration="6000" />
+      <workItem from="1726908478005" duration="905000" />
+      <workItem from="1726991987716" duration="3570000" />
+      <workItem from="1727003983572" duration="333000" />
+      <workItem from="1727088675216" duration="148000" />
+      <workItem from="1727091096652" duration="5387000" />
+      <workItem from="1727103562760" duration="2000" />
+      <workItem from="1727171570037" duration="122000" />
+      <workItem from="1727174710793" duration="7000" />
+      <workItem from="1727175373306" duration="2830000" />
+      <workItem from="1727187586033" duration="1231000" />
+      <workItem from="1727260567562" duration="661000" />
+      <workItem from="1727266531293" duration="2093000" />
+      <workItem from="1727345199096" duration="286000" />
+      <workItem from="1727447349874" duration="1538000" />
+      <workItem from="1727488055183" duration="600000" />
     </task>
     <task id="LOCAL-00792" summary="Fix solution&#10;&#10;- Previous solution swaps the two nodes. However, the problem explicitly asks to swap their values">
       <created>1684160388035</created>
@@ -515,8 +583,11 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="1092" />
+    <option name="localTasksCounter" value="1132" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.md" />
@@ -560,32 +631,32 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Improve readability and checking for just enough flowers" />
-    <MESSAGE value="Add heading comment to Solution2" />
-    <MESSAGE value="Add a solution to problem 1052" />
-    <MESSAGE value="Add a solution to problem 1248" />
-    <MESSAGE value="Improve variable naming" />
-    <MESSAGE value="Add a solution to problem 1382" />
-    <MESSAGE value="Add a solution to problem 1791" />
-    <MESSAGE value="Add a solution to problem 2192" />
-    <MESSAGE value="Add a DFS solution" />
-    <MESSAGE value="Re-apply modification to README.md" />
-    <MESSAGE value="Fix time complexity" />
-    <MESSAGE value="Add a TODO for proof" />
-    <MESSAGE value="Add a solution to problem 1550" />
-    <MESSAGE value="Add a solution to problem 350" />
-    <MESSAGE value="Add a solution to problem 2582" />
-    <MESSAGE value="Use another pattern interpretation" />
-    <MESSAGE value="Add a solution to problem 1518" />
-    <MESSAGE value="Add a constant time solution" />
-    <MESSAGE value="Fix time complexity of solution1" />
+    <MESSAGE value="Add a solution to problem 2976" />
+    <MESSAGE value="Add a solution to problem 2045" />
+    <MESSAGE value="Add a solution to problem 1395" />
+    <MESSAGE value="Add a solution to problem 1653" />
+    <MESSAGE value="Minor formatting" />
+    <MESSAGE value="Add a solution to problem 1105" />
+    <MESSAGE value="Improve comment" />
+    <MESSAGE value="Add a solution to problem 2678" />
+    <MESSAGE value="refactor to fail-fast in case of ill-form age string" />
+    <MESSAGE value="refactor to fail-fast in case of ill-form age string" />
+    <MESSAGE value="Fix bad variable name" />
+    <MESSAGE value="Add a solution to problem 719" />
+    <MESSAGE value="Update gradle to 8.10" />
+    <MESSAGE value="Add a solution to problem 860" />
+    <MESSAGE value="Fix missing increment for $20" />
+    <MESSAGE value="Add a solution to problem 624" />
+    <MESSAGE value="Add a solution to problem 1937" />
+    <MESSAGE value="Improve algorithm solving the subproblem" />
+    <MESSAGE value="Improve algorithm solving the next level subproblem" />
+    <MESSAGE value="Improve algorithm solving the subproblem" />
+    <MESSAGE value="Exchange class name of Solution and Solution2" />
     <MESSAGE value="Improve readability" />
-    <MESSAGE value="Add a solution to problem 1823" />
-    <MESSAGE value="Add a recursive solution" />
-    <MESSAGE value="Improve explanatory comment" />
-    <MESSAGE value="Add a solution to problem 1190" />
-    <MESSAGE value="Improve by remembering the position of left parentheses" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve by remembering the position of left parentheses" />
+    <MESSAGE value="Add a solution to problem 214" />
+    <MESSAGE value="Change the key of memoization to from" />
+    <MESSAGE value="Change the key of memoization to from" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change the key of memoization to from" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

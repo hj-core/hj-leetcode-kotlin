@@ -3,73 +3,65 @@ package com.hj.leetcode.kotlin.problem241
 /**
  * LeetCode page: [241. Different Ways to Add Parentheses](https://leetcode.com/problems/different-ways-to-add-parentheses/);
  *
- * TODO : Analyze the complexity of solution and may relate to the Catalan Numbers ([See Ref](https://people.math.sc.edu/howard/Classes/554b/catalan.pdf));
+ * TODO : Some people suggested that the complexity of solution may relate to the
+ *  Catalan Numbers ([See Ref](https://people.math.sc.edu/howard/Classes/554b/catalan.pdf)).
+ *  However, the official solution suggested that we should not model the complexity
+ *  using the Catalan Numbers.
  */
 class Solution {
-
-    private val operator = charArrayOf('+', '-', '*')
-
     /* Complexity:
      * Time O(???) and Space O(???);
      */
-    fun diffWaysToCompute(expression: String): List<Int> {
-        val memorizedIndexRangeResult = hashMapOf<IntRange, List<Int>>()
-
-        return diffWaysToComputeSubExpression(
-            indexRange = expression.indices,
-            fullExpression = expression,
-            memorizedResults = memorizedIndexRangeResult
+    fun diffWaysToCompute(expression: String): List<Int> =
+        diffWaysToCompute(
+            expression = expression,
+            subRange = expression.indices,
+            memoization = mutableMapOf(),
         )
-    }
 
-    private fun diffWaysToComputeSubExpression(
-        indexRange: IntRange,
-        fullExpression: String,
-        memorizedResults: MutableMap<IntRange, List<Int>>
+    private fun diffWaysToCompute(
+        expression: String,
+        subRange: IntRange,
+        memoization: MutableMap<IntRange, List<Int>>,
     ): List<Int> {
-        return memorizedResults.getOrPut(indexRange) {
-            val result = mutableListOf<Int>()
-            var noOperator = true
-
-            for (index in indexRange) {
-                val char = fullExpression[index]
-                if (char !in operator) continue
-
-                noOperator = false
-
-                val leftRange = indexRange.first until index
-                val leftResult = diffWaysToComputeSubExpression(leftRange, fullExpression, memorizedResults)
-
-                val rightRange = index + 1..indexRange.last
-                val rightResult = diffWaysToComputeSubExpression(rightRange, fullExpression, memorizedResults)
-
-                val operation = getOperation(char)
-                val currResult = operate(leftResult, rightResult, operation)
-                result.addAll(currResult)
-            }
-
-            if (noOperator) result.add(fullExpression.slice(indexRange).toInt())
-            result
+        if (subRange in memoization) {
+            return checkNotNull(memoization[subRange])
         }
-    }
 
-    private fun getOperation(operatorChar: Char): (int1: Int, int2: Int) -> Int {
-        return when (operatorChar) {
-            '+' -> { int1: Int, int2: Int -> int1 + int2 }
-            '-' -> { int1: Int, int2: Int -> int1 - int2 }
-            '*' -> { int1: Int, int2: Int -> int1 * int2 }
-            else -> throw IllegalArgumentException()
-        }
-    }
-
-    private fun operate(left: List<Int>, right: List<Int>, operation: (int1: Int, int2: Int) -> Int): List<Int> {
         val result = mutableListOf<Int>()
-
-        for (int1 in left) {
-            for (int2 in right) {
-                result.add(operation(int1, int2))
+        for (split in subRange) {
+            if (!expression[split].isDigit()) {
+                val leftList = diffWaysToCompute(expression, subRange.first..<split, memoization)
+                val rightList = diffWaysToCompute(expression, (split + 1)..subRange.last, memoization)
+                val operator = operator(expression[split])
+                result.addAll(crossEvaluate(leftList, rightList, operator))
             }
         }
+        if (result.isEmpty()) {
+            result.add(expression.substring(subRange).toInt())
+        }
+        memoization[subRange] = result
         return result
     }
+
+    private fun crossEvaluate(
+        leftList: List<Int>,
+        rightList: List<Int>,
+        operator: (Int, Int) -> Int,
+    ): Sequence<Int> =
+        sequence {
+            for (left in leftList) {
+                for (right in rightList) {
+                    yield(operator(left, right))
+                }
+            }
+        }
+
+    private fun operator(c: Char): (Int, Int) -> Int =
+        when (c) {
+            '+' -> Int::plus
+            '-' -> Int::minus
+            '*' -> Int::times
+            else -> throw IllegalArgumentException()
+        }
 }

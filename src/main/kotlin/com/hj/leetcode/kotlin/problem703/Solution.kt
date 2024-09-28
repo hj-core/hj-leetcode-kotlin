@@ -10,22 +10,8 @@ class KthLargest(private val k: Int, nums: IntArray) {
     private val kLargest = PriorityQueue<Int>()
 
     init {
-        addAll(nums)
-    }
-
-    /* Complexity:
-     * Time O(NLogk) and Space O(k) where N is the size of numbers;
-     */
-    private fun addAll(numbers: IntArray) {
-        for (number in numbers) {
-            kLargest.offer(number)
-            removeExtra()
-        }
-    }
-
-    private fun removeExtra() {
-        while (kLargest.size > k) {
-            kLargest.poll()
+        for (num in nums) {
+            add(num)
         }
     }
 
@@ -34,7 +20,9 @@ class KthLargest(private val k: Int, nums: IntArray) {
      */
     fun add(`val`: Int): Int {
         kLargest.offer(`val`)
-        removeExtra()
+        if (kLargest.size > k) {
+            kLargest.poll()
+        }
         return kLargest.peek()
     }
 }
