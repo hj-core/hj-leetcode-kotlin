@@ -11,23 +11,15 @@ class MyCircularDeque(
     private val capacity = k
     private val buffer = Array(k) { -1 }
     private var size = 0
-    private var start = 0 // Index of front
-    private var endInclusive = k - 1 // Index of rear
-
-    // For test only
-    internal constructor(k: Int, buffer: Array<Int>, size: Int, start: Int, endInclusive: Int) : this(k) {
-        Arrays.setAll(this.buffer) { index -> buffer[index] }
-        this.size = size
-        this.start = start
-        this.endInclusive = endInclusive
-    }
+    private var frontIndex = 0
+    private var rearIndex = k - 1
 
     fun insertFront(value: Int): Boolean {
         if (isFull()) {
             return false
         }
-        start = (start - 1).mod(capacity)
-        buffer[start] = value
+        frontIndex = (frontIndex - 1).mod(capacity)
+        buffer[frontIndex] = value
         size += 1
         return true
     }
@@ -36,8 +28,8 @@ class MyCircularDeque(
         if (isFull()) {
             return false
         }
-        endInclusive = (endInclusive + 1).mod(capacity)
-        buffer[endInclusive] = value
+        rearIndex = (rearIndex + 1).mod(capacity)
+        buffer[rearIndex] = value
         size += 1
         return true
     }
@@ -46,7 +38,7 @@ class MyCircularDeque(
         if (isEmpty()) {
             return false
         }
-        start = (start + 1).mod(capacity)
+        frontIndex = (frontIndex + 1).mod(capacity)
         size -= 1
         return true
     }
@@ -55,7 +47,7 @@ class MyCircularDeque(
         if (isEmpty()) {
             return false
         }
-        endInclusive = (endInclusive - 1).mod(capacity)
+        rearIndex = (rearIndex - 1).mod(capacity)
         size -= 1
         return true
     }
@@ -64,14 +56,14 @@ class MyCircularDeque(
         if (size == 0) {
             return -1
         }
-        return buffer[start]
+        return buffer[frontIndex]
     }
 
     fun getRear(): Int {
         if (size == 0) {
             return -1
         }
-        return buffer[endInclusive]
+        return buffer[rearIndex]
     }
 
     fun isEmpty(): Boolean = size == 0
