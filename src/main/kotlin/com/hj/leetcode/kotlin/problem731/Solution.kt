@@ -38,7 +38,7 @@ class MyCalendarTwo {
         // Check is there any triple booking if we do the insertion
         new.next = insertionPoint.next
         var currentSlot: Slot? = new
-        while (currentSlot != null && currentSlot.start <= new.end) {
+        while (currentSlot != null && currentSlot.start < new.end) {
             pendingEnds.removeIf { it <= checkNotNull(currentSlot).start }
             pendingEnds.add(currentSlot.end)
 
