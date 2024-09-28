@@ -11,10 +11,11 @@ class Solution {
         val parenthesesIndices = parenthesesIndices(s)
         val leftToRight = parenthesesIndices.associate { it.first to it.second }
         val rightToLeft = parenthesesIndices.associate { it.second to it.first }
+
         val builder = StringBuilder()
         var i = 0
         var direction = 1
-
+        // Each pair of parentheses is like a wormhole that teleports to another end
         while (builder.length < s.length - 2 * parenthesesIndices.size) {
             when (s[i]) {
                 '(' -> {
