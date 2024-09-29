@@ -19,8 +19,8 @@ class AllOne {
         val oldNode = keyToNode[key] ?: head
         val newNode = computeCountPlusOne(oldNode)
         keyToNode[key] = newNode
-        oldNode.keys.remove(key)
         newNode.keys.add(key)
+        oldNode.keys.remove(key)
         detachIfSuitable(oldNode)
     }
 
@@ -41,10 +41,6 @@ class AllOne {
         if (node == head || node.keys.isNotEmpty()) {
             return
         }
-        detach(node)
-    }
-
-    private fun detach(node: Node): Node {
         val prev = checkNotNull(node.prev)
         val next = node.next
         prev.next = next
@@ -52,20 +48,20 @@ class AllOne {
         if (node == tail) {
             tail = prev
         }
-        return node
     }
 
     fun dec(key: String) {
         val oldNode = keyToNode[key] ?: head
         val newNode = computeCountMinusOne(oldNode)
         keyToNode[key] = newNode
-        oldNode.keys.remove(key)
         newNode.keys.add(key)
+        oldNode.keys.remove(key)
+        detachIfSuitable(oldNode)
+
         if (newNode == head) {
             head.keys.remove(key)
             keyToNode.remove(key)
         }
-        detachIfSuitable(oldNode)
     }
 
     private fun computeCountMinusOne(node: Node): Node {
