@@ -16,14 +16,15 @@ class Solution2 {
         for (num in arr) {
             val remainder = num.mod(k)
             val complement = if (remainder == 0) 0 else k - remainder
-            val existComplement = (countRemainder[complement] ?: 0) > 0
-            if (existComplement) {
+
+            val hasComplement = (countRemainder[complement] ?: 0) > 0
+            if (hasComplement) {
                 countRemainder.compute(complement) { _, v -> checkNotNull(v) - 1 }
-                paired += 1
+                paired += 2
             } else {
                 countRemainder.compute(remainder) { _, v -> 1 + (v ?: 0) }
             }
         }
-        return paired * 2 == arr.size
+        return paired == arr.size
     }
 }
