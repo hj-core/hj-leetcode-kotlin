@@ -25,7 +25,7 @@ class Solution {
             }
             countMod.remove(k / 2)
         }
-        // Handle the reset cases that a mod will pair with other mod
+        // Handle the reset cases that a mod will pair with another mod
         for ((mod, count) in countMod) {
             val complement = k - mod
             if (complement !in countMod || countMod[complement] != count) {
