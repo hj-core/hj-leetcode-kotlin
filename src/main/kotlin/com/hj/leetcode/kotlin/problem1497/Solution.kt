@@ -12,20 +12,19 @@ class Solution {
         k: Int,
     ): Boolean {
         val countMod = arr.asIterable().groupingBy { it.mod(k) }.eachCountTo(mutableMapOf())
-        // Handle cases that a mod need to pair with itself
+        /* There are two special cases where a mod pairs with itself: 0,
+         * and k/2 when k is even.
+         * We explicitly check the case where mod equals 0. The case of k/2 when k is even
+         * is implicitly checked: if all other mod can be paired, then the count of k/2 must
+         * be even because the length of arr is even.
+         */
         if (0 in countMod) {
             if (checkNotNull(countMod[0]) % 2 != 0) {
                 return false
             }
             countMod.remove(0)
         }
-        if (k % 2 == 0 && (k / 2) in countMod) {
-            if (checkNotNull(countMod[k / 2]) % 2 != 0) {
-                return false
-            }
-            countMod.remove(k / 2)
-        }
-        // Handle the reset cases that a mod will pair with another mod
+
         for ((mod, count) in countMod) {
             val complement = k - mod
             if (complement !in countMod || countMod[complement] != count) {
