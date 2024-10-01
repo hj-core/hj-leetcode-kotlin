@@ -26,8 +26,7 @@ class Solution {
         }
 
         for ((mod, count) in countMod) {
-            val complement = k - mod
-            if (complement !in countMod || countMod[complement] != count) {
+            if (countMod[k - mod] != count) {
                 return false
             }
         }
