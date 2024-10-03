@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="">
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="A1DD A SOLUTION TO PROBLEM 214">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1190/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1190/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +42,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="LeetCode Solution" />
         <option value="Kotlin Class" />
+        <option value="LeetCode Solution" />
       </list>
     </option>
   </component>
@@ -70,7 +71,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem1497" />
+        <entry key="$PROJECT_DIR$" value="problem731" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -123,7 +124,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "problem1190",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/gaps-/Documents/GitHub/hj-leetcode-kotlin",
@@ -239,23 +240,7 @@
       <workItem from="1727345199096" duration="286000" />
       <workItem from="1727447349874" duration="1538000" />
       <workItem from="1727488055183" duration="600000" />
-      <workItem from="1727596862352" duration="3000" />
-      <workItem from="1727606171180" duration="2926000" />
-      <workItem from="1727691337110" duration="211000" />
-      <workItem from="1727695033574" duration="2832000" />
-      <workItem from="1727704200910" duration="14000" />
-      <workItem from="1727704220931" duration="25000" />
-      <workItem from="1727711290512" duration="33000" />
-      <workItem from="1727747451653" duration="382000" />
-      <workItem from="1727763969419" duration="11000" />
-      <workItem from="1727764743864" duration="14000" />
-      <workItem from="1727764765895" duration="194000" />
-      <workItem from="1727769453172" duration="11000" />
-      <workItem from="1727769471117" duration="543000" />
-      <workItem from="1727771019720" duration="3447000" />
-      <workItem from="1727780351496" duration="16000" />
-      <workItem from="1727781036508" duration="1333000" />
-      <workItem from="1727792790226" duration="27000" />
+      <workItem from="1727534473658" duration="1876000" />
     </task>
     <task id="LOCAL-00792" summary="Fix solution&#10;&#10;- Previous solution swaps the two nodes. However, the problem explicitly asks to swap their values">
       <created>1684160388035</created>
@@ -648,6 +633,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Add a solution to problem 2976" />
+    <MESSAGE value="Add a solution to problem 2045" />
     <MESSAGE value="Add a solution to problem 1395" />
     <MESSAGE value="Add a solution to problem 1653" />
     <MESSAGE value="Minor formatting" />
@@ -671,9 +658,7 @@
     <MESSAGE value="Add a solution to problem 214" />
     <MESSAGE value="Change the key of memoization to from" />
     <MESSAGE value="Change the key of memoization to from" />
-    <MESSAGE value="Add another solution that count pairs on the fly" />
-    <MESSAGE value="Add another solution that count pairs on the fly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add another solution that count pairs on the fly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change the key of memoization to from" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
