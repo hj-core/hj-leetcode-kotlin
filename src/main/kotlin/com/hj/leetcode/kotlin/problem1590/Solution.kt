@@ -13,25 +13,22 @@ class Solution {
         nums: IntArray,
         p: Int,
     ): Int {
-        val prefixModSums = IntArray(nums.size)
-        prefixModSums[0] = nums[0] % p
-        for (i in 1..<nums.size) {
-            prefixModSums[i] = (nums[i] + prefixModSums[i - 1]) % p
-        }
-
-        val target = prefixModSums.last()
+        val sum = nums.fold(0L) { acc, i -> acc + i }
+        val target = (sum % p).toInt()
         if (target == 0) {
             return 0
         }
 
         var result = nums.size
+        var prefixModSum = 0
         val latestPrefix = mutableMapOf(0 to -1) // The latest index of prefix sum mod p
-        for ((i, modSum) in prefixModSums.withIndex()) {
-            val complement = (modSum - target + p) % p
+        for (i in nums.indices) {
+            prefixModSum = (prefixModSum + nums[i]) % p
+            val complement = (prefixModSum - target + p) % p
             if (complement in latestPrefix) {
                 result = min(result, i - checkNotNull(latestPrefix[complement]))
             }
-            latestPrefix[modSum] = i
+            latestPrefix[prefixModSum] = i
         }
         return if (result < nums.size) result else -1
     }
