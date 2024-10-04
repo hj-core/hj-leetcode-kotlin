@@ -8,12 +8,12 @@ class Solution {
      * Time O(N) and Space O(N) where N is the size of skill.
      */
     fun dividePlayers(skill: IntArray): Long {
-        val n = skill.size
         val totalSkills = skill.sum()
-        if (totalSkills % (n / 2) != 0) {
+        if (totalSkills % (skill.size / 2) != 0) {
             return -1
         }
-        val teamSkills = totalSkills / (n / 2)
+
+        val teamSkills = totalSkills / (skill.size / 2)
         val pendingPlayers = mutableMapOf<Int, Int>() // skill to count
         var pairedPlayers = 0
         var result = 0L
@@ -31,6 +31,6 @@ class Solution {
                 pendingPlayers.compute(skl) { _, v -> (v ?: 0) + 1 }
             }
         }
-        return if (pairedPlayers == n) result else -1
+        return if (pairedPlayers == skill.size) result else -1
     }
 }
