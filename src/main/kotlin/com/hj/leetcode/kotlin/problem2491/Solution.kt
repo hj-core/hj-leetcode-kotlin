@@ -9,9 +9,6 @@ class Solution {
      */
     fun dividePlayers(skill: IntArray): Long {
         val n = skill.size
-        if (n == 2) {
-            return (skill[0] * skill[1]).toLong()
-        }
         val totalSkills = skill.sum()
         if (totalSkills % (n / 2) != 0) {
             return -1
