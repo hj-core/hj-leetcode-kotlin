@@ -15,8 +15,8 @@ class Solution {
         if (s2.length < s1.length) {
             return false
         }
-        // Check the first window
         val charCount = IntArray(26)
+        // Check the first window
         for (i in s1.indices) {
             charCount[s1[i] - 'a'] -= 1
             charCount[s2[i] - 'a'] += 1
