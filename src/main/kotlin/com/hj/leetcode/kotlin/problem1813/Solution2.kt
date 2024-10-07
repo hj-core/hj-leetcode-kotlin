@@ -6,7 +6,7 @@ package com.hj.leetcode.kotlin.problem1813
 class Solution2 {
     /* Complexity:
      * Time O(N+M) and Space O(1) where N is the length of sentence1
-     * and M is the length of sentences2.
+     * and M is the length of sentence2.
      */
     fun areSentencesSimilar(
         sentence1: String,
