@@ -5,8 +5,8 @@ package com.hj.leetcode.kotlin.problem1813
  */
 class Solution {
     /* Complexity:
-     * Time O(N+M) and Space O(N+M) where N is the flattened length of s1 and
-     * s2 is the flattened length of s2.
+     * Time O(N+M) and Space O(N+M) where N is the length of sentence1 and
+     * M is the length of sentence2.
      */
     fun areSentencesSimilar(
         sentence1: String,
