@@ -13,6 +13,7 @@ class Solution {
         for (c in s) {
             when {
                 c == '(' -> lonelyLefts += 1
+                c != ')' -> throw IllegalArgumentException("Unexpected character.")
                 lonelyLefts > 0 -> lonelyLefts -= 1
                 else -> lonelyRights += 1
             }
