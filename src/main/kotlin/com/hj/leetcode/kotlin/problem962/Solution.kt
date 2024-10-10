@@ -13,7 +13,7 @@ class Solution {
         // Indices of strictly increasing values start at last and backward
         val rights = mutableListOf(nums.lastIndex)
         for (right in nums.indices.reversed()) {
-            if (nums[right] > nums[rights.last()]) {
+            if (nums[rights.last()] < nums[right]) {
                 rights.add(right)
             }
         }
@@ -23,11 +23,11 @@ class Solution {
         var lastLeftValue = nums[0] + 1
         var iRights = rights.lastIndex
         for ((left, value) in nums.withIndex()) {
-            if (lastLeftValue > value) {
-                lastLeftValue = value
+            if (value < lastLeftValue) {
                 while (iRights > 0 && nums[rights[iRights - 1]] >= value) {
                     iRights -= 1
                 }
+                lastLeftValue = value
                 result = max(result, rights[iRights] - left)
             }
         }
