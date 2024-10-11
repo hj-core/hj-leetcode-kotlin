@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="Delete uncommitted shelf file">
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +70,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem962" />
+        <entry key="$PROJECT_DIR$" value="problem921" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -123,7 +123,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "update-kotlin",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/gaps-/Documents/GitHub/hj-leetcode-kotlin",
@@ -255,7 +255,7 @@
       <workItem from="1728568059247" duration="81000" />
       <workItem from="1728568155306" duration="44000" />
       <workItem from="1728570653285" duration="241000" />
-      <workItem from="1728576513007" duration="318000" />
+      <workItem from="1728576513007" duration="168000" />
     </task>
     <task id="LOCAL-00792" summary="Fix solution&#10;&#10;- Previous solution swaps the two nodes. However, the problem explicitly asks to swap their values">
       <created>1684160388035</created>
@@ -600,7 +600,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687238935015</updated>
     </task>
-    <option name="localTasksCounter" value="1133" />
+    <option name="localTasksCounter" value="1132" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -648,6 +648,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Add a solution to problem 1395" />
+    <MESSAGE value="Add a solution to problem 1653" />
     <MESSAGE value="Minor formatting" />
     <MESSAGE value="Add a solution to problem 1105" />
     <MESSAGE value="Improve comment" />
@@ -671,9 +673,7 @@
     <MESSAGE value="Change the key of memoization to from" />
     <MESSAGE value="Fix typos in comment" />
     <MESSAGE value="Fix typos in comment" />
-    <MESSAGE value="Delete uncommitted shelf file" />
-    <MESSAGE value="Delete uncommitted shelf file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete uncommitted shelf file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix typos in comment" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
