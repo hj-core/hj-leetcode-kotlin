@@ -20,13 +20,13 @@ class Solution {
         var newSeat = -1 // Number of new seat if all existing seats are being occupied
         val occupiedSeats =
             PriorityQueue<Pair<Int, Int>>(
-                compareBy { (seat, leaveTime) -> leaveTime },
+                compareBy { (seat, leavingTime) -> leavingTime },
             )
 
         for (friend in sortedFriends) {
-            val (arrival, leave) = times[friend]
+            val (arrivalTime, leavingTime) = times[friend]
             // Some friends may have left, reclaim their seat
-            while (occupiedSeats.isNotEmpty() && occupiedSeats.peek().second <= arrival) {
+            while (occupiedSeats.isNotEmpty() && occupiedSeats.peek().second <= arrivalTime) {
                 val freedSeat = occupiedSeats.poll().first
                 freeSeats.offer(freedSeat)
             }
@@ -36,7 +36,7 @@ class Solution {
                 freeSeats.offer(newSeat)
             }
             val seat = freeSeats.poll()
-            occupiedSeats.offer(Pair(seat, leave))
+            occupiedSeats.offer(Pair(seat, leavingTime))
 
             if (friend == targetFriend) {
                 return seat
