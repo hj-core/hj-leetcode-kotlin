@@ -25,7 +25,7 @@ class Solution {
 
         for (friend in sortedFriends) {
             val (arrivalTime, leavingTime) = times[friend]
-            // Some friends may have left, reclaim their seat
+            // Some friends may have left, reclaim their seats
             while (occupiedSeats.isNotEmpty() && occupiedSeats.peek().second <= arrivalTime) {
                 val freedSeat = occupiedSeats.poll().first
                 freeSeats.offer(freedSeat)
