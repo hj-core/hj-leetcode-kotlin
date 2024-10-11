@@ -13,7 +13,7 @@ class Solution {
         times: Array<IntArray>,
         targetFriend: Int,
     ): Int {
-        val freeSeats = PriorityQueue<Int>() // Existing seats that are free
+        val freeSeats = PriorityQueue<Int>() // Existing free seats
         var newSeat = 0 // New seat number if all existing seats are being occupied
         val occupiedSeats =
             PriorityQueue<Pair<Int, Int>>(
