@@ -13,15 +13,15 @@ class Solution {
         times: Array<IntArray>,
         targetFriend: Int,
     ): Int {
-        val friends = times.indices
-        val sortedFriends = friends.sortedBy { times[it][0] }
-
         val freeSeats = PriorityQueue<Int>() // Existing seats that are free
-        var newSeat = 0 // Number of new seat if all existing seats are being occupied
+        var newSeat = 0 // New seat number if all existing seats are being occupied
         val occupiedSeats =
             PriorityQueue<Pair<Int, Int>>(
                 compareBy { (seat, leavingTime) -> leavingTime },
             )
+
+        val friends = times.indices
+        val sortedFriends = friends.sortedBy { times[it][0] }
 
         for (friend in sortedFriends) {
             val (arrivalTime, leavingTime) = times[friend]
@@ -35,6 +35,7 @@ class Solution {
                 freeSeats.offer(newSeat)
                 newSeat += 1
             }
+            // Assign a seat to the arriving friend
             val seat = freeSeats.poll()
             occupiedSeats.offer(Pair(seat, leavingTime))
 
