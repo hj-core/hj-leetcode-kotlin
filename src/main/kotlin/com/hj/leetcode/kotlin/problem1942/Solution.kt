@@ -43,6 +43,6 @@ class Solution {
                 return seat
             }
         }
-        throw IllegalStateException()
+        throw IllegalStateException("Execution should not reach here.")
     }
 }
