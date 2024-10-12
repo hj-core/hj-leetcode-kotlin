@@ -8,14 +8,16 @@ import kotlin.math.max
 class Solution2 {
     /* Complexity:
      * Time O(N+K) and Space O(K) where N is the size of intervals and
-     * K is the maximum right among intervals.
+     * K is the difference between maximum right and minimum left.
      */
     fun minGroups(intervals: Array<IntArray>): Int {
+        val minLeft = intervals.minOf { it[0] }
         val maxRight = intervals.maxOf { it[1] }
-        val lineSweep = IntArray(maxRight + 2) // Change of concurrency at each time instance
+        // Change of concurrency at each time instance (displaced by minLeft)
+        val lineSweep = IntArray(maxRight - minLeft + 2)
         for ((left, right) in intervals) {
-            lineSweep[left] += 1
-            lineSweep[right + 1] -= 1
+            lineSweep[left - minLeft] += 1
+            lineSweep[right - minLeft + 1] -= 1
         }
 
         var result = 0 // The maximum concurrency
