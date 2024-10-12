@@ -14,8 +14,11 @@ class Solution {
         val sortedIntervals = intervals.sortedBy { it[0] }
 
         for ((left, right) in sortedIntervals) {
-            // Check if we can append it to the group with the smallest latest right
-            if (groupRights.isNotEmpty() && groupRights.peek() < left) {
+            val canAppend = groupRights.isNotEmpty() && groupRights.peek() < left
+            if (canAppend) {
+                // Append to group with the smallest latest right.
+                // Which group to append doesn't matter as long as it is valid because
+                // the next interval will have a left not less than the current one.
                 groupRights.poll()
                 groupRights.offer(right)
             } else {
