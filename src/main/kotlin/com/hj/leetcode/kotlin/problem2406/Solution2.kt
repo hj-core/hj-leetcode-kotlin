@@ -13,7 +13,7 @@ class Solution2 {
     fun minGroups(intervals: Array<IntArray>): Int {
         val minLeft = intervals.minOf { it[0] }
         val maxRight = intervals.maxOf { it[1] }
-        // Change of concurrency at each time instance (displaced by minLeft)
+        // Change of concurrency at each time instance (shifted by minLeft)
         val lineSweep = IntArray(maxRight - minLeft + 2)
         for ((left, right) in intervals) {
             lineSweep[left - minLeft] += 1
