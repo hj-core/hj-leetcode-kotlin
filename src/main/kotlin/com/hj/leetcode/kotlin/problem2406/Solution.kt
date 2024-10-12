@@ -14,11 +14,13 @@ class Solution {
         val sortedIntervals = intervals.sortedBy { it[0] }
 
         for ((left, right) in sortedIntervals) {
-            // Check if we can append it to existing group
+            // Check if we can append it to the group with the smallest latest right
             if (groupRights.isNotEmpty() && groupRights.peek() < left) {
                 groupRights.poll()
+                groupRights.offer(right)
+            } else {
+                groupRights.offer(right)
             }
-            groupRights.offer(right)
         }
         return groupRights.size
     }
