@@ -12,7 +12,7 @@ class Solution2 {
      */
     fun minGroups(intervals: Array<IntArray>): Int {
         val maxRight = intervals.maxOf { it[1] }
-        val lineSweep = IntArray(maxRight + 2)
+        val lineSweep = IntArray(maxRight + 2) // Change of concurrency at each time instance
         for ((left, right) in intervals) {
             lineSweep[left] += 1
             lineSweep[right + 1] -= 1
@@ -20,8 +20,8 @@ class Solution2 {
 
         var result = 0 // The maximum concurrency
         var concurrency = 0
-        for (count in lineSweep) {
-            concurrency += count
+        for (change in lineSweep) {
+            concurrency += change
             result = max(result, concurrency)
         }
         return result
