@@ -23,9 +23,9 @@ class Solution2 {
             sortedCells.add(Cell(row, 0))
         }
 
-        var result = valueRange(sortedCells, nums)
+        var result = rangeOfValues(sortedCells, nums)
         while (sortedCells.size == nums.size) {
-            val range = valueRange(sortedCells, nums)
+            val range = rangeOfValues(sortedCells, nums)
             if (isSmaller(range, result)) {
                 result = range
             }
@@ -43,7 +43,7 @@ class Solution2 {
         val col: Int,
     )
 
-    private fun valueRange(
+    private fun rangeOfValues(
         sortedCells: TreeSet<Cell>,
         nums: List<List<Int>>,
     ): IntArray = intArrayOf(nums.valueAt(sortedCells.first()), nums.valueAt(sortedCells.last()))
