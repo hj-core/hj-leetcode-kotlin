@@ -11,22 +11,23 @@ class Solution2 {
      * N is the flattened size of nums.
      */
     fun smallestRange(nums: List<List<Int>>): IntArray {
-        // Exactly one Cell from each row, sorted by value
+        // Maintain exactly one Cell from each row, sorted by value
         val sortedCells =
             TreeSet<Cell>(
                 compareBy(
-                    { (row, col) -> nums[row][col] },
-                    { cell -> cell.row }, // Necessary because of how TreeSet distinguish identity
+                    { nums.valueAt(it) },
+                    { it.row }, // Necessary because of how TreeSet distinguish identity
                 ),
             )
+        // Start with first cells from each row
         for (row in nums.indices) {
             sortedCells.add(Cell(row, 0))
         }
-
-        var result = rangeOfValues(sortedCells, nums)
+        // Determine the result by examining all possible left boundaries
+        var result = rangeOfCells(sortedCells, nums)
         while (sortedCells.size == nums.size) {
             // This is the best range corresponding to the left boundary
-            val range = rangeOfValues(sortedCells, nums)
+            val range = rangeOfCells(sortedCells, nums)
             if (isSmaller(range, result)) {
                 result = range
             }
@@ -44,12 +45,16 @@ class Solution2 {
         val col: Int,
     )
 
-    private fun rangeOfValues(
+    private fun List<List<Int>>.valueAt(cell: Cell): Int = this[cell.row][cell.col]
+
+    private fun rangeOfCells(
         sortedCells: TreeSet<Cell>,
         nums: List<List<Int>>,
-    ): IntArray = intArrayOf(nums.valueAt(sortedCells.first()), nums.valueAt(sortedCells.last()))
-
-    private fun List<List<Int>>.valueAt(cell: Cell): Int = this[cell.row][cell.col]
+    ): IntArray =
+        intArrayOf(
+            nums.valueAt(sortedCells.first()),
+            nums.valueAt(sortedCells.last()),
+        )
 
     private fun isSmaller(
         range: IntArray,
