@@ -25,7 +25,7 @@ class Solution2 {
 
         var result = rangeOfValues(sortedCells, nums)
         while (sortedCells.size == nums.size) {
-            // This is the best range given the left boundary
+            // This is the best range corresponding to the left boundary
             val range = rangeOfValues(sortedCells, nums)
             if (isSmaller(range, result)) {
                 result = range
