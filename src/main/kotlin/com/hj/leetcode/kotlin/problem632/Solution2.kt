@@ -30,7 +30,7 @@ class Solution2 {
             if (isSmaller(range, result)) {
                 result = range
             }
-            // Advance the left boundary of range
+            // Advance the left boundary
             val (row, col) = checkNotNull(sortedCells.pollFirst())
             if (col < nums[row].lastIndex) {
                 sortedCells.add(Cell(row, col + 1))
