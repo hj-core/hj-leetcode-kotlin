@@ -9,26 +9,26 @@ class Solution {
      */
     fun smallestRange(nums: List<List<Int>>): IntArray {
         // Attach row information to each value and sort them by value
-        val sorted =
+        val sortedValues =
             nums.flatMapIndexedTo(mutableListOf()) { row, list ->
                 list.asSequence().map { value -> RowValue(row, value) }
             }
-        sorted.sortBy { rowValue -> rowValue.value }
+        sortedValues.sortBy { rowValue -> rowValue.value }
 
         // Use two-pointer to determine the smallest range
-        var result = intArrayOf(sorted[0].value, sorted.last().value)
+        var result = intArrayOf(sortedValues[0].value, sortedValues.last().value)
         var left = 0
-        val count = mutableMapOf<Int, Int>() // row to number of values in range
+        val counter = mutableMapOf<Int, Int>() // row to number of values in range
 
-        for (right in sorted.indices) {
-            count.compute(sorted[right].row) { _, v -> 1 + (v ?: 0) }
+        for (right in sortedValues.indices) {
+            counter.compute(sortedValues[right].row) { _, count -> (count ?: 0) + 1 }
 
-            if (count.size == nums.size) {
-                while (checkNotNull(count[sorted[left].row]) > 1) {
-                    count.compute(sorted[left].row) { _, v -> checkNotNull(v) - 1 }
+            if (counter.size == nums.size) {
+                while (checkNotNull(counter[sortedValues[left].row]) > 1) {
+                    counter.compute(sortedValues[left].row) { _, count -> checkNotNull(count) - 1 }
                     left += 1
                 }
-                val range = intArrayOf(sorted[left].value, sorted[right].value)
+                val range = intArrayOf(sortedValues[left].value, sortedValues[right].value)
                 if (isSmaller(range, result)) {
                     result = range
                 }
