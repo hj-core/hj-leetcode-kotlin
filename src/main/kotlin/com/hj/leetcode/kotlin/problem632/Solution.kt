@@ -20,14 +20,16 @@ class Solution {
         val counter = mutableMapOf<Int, Int>() // row to number of values in range
 
         for (right in sortedValues.indices) {
-            counter.compute(sortedValues[right].row) { _, count -> (count ?: 0) + 1 }
+            val (rowRight, valueRight) = sortedValues[right]
+            counter[rowRight] = (counter[rowRight] ?: 0) + 1
 
             if (counter.size == nums.size) {
                 while (checkNotNull(counter[sortedValues[left].row]) > 1) {
-                    counter.compute(sortedValues[left].row) { _, count -> checkNotNull(count) - 1 }
+                    val rowLeft = sortedValues[left].row
+                    counter[rowLeft] = checkNotNull(counter[rowLeft]) - 1
                     left += 1
                 }
-                val range = intArrayOf(sortedValues[left].value, sortedValues[right].value)
+                val range = intArrayOf(sortedValues[left].value, valueRight)
                 if (isSmaller(range, result)) {
                     result = range
                 }
