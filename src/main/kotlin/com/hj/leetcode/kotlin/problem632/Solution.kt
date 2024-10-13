@@ -14,7 +14,6 @@ class Solution {
                 list.asSequence().map { value -> RowValue(row, value) }
             }
         sortedValues.sortBy { rowValue -> rowValue.value }
-
         // Use two-pointer to determine the smallest range
         var result = intArrayOf(sortedValues[0].value, sortedValues.last().value)
         var left = 0
