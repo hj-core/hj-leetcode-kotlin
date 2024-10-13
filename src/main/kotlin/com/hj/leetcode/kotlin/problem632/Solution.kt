@@ -18,7 +18,7 @@ class Solution {
         // Use two-pointer to determine the smallest range
         var result = intArrayOf(sorted[0].value, sorted.last().value)
         var left = 0
-        val count = mutableMapOf<Int, Int>()
+        val count = mutableMapOf<Int, Int>() // row to number of values in range
 
         for (right in sorted.indices) {
             count.compute(sorted[right].row) { _, v -> 1 + (v ?: 0) }
@@ -28,7 +28,6 @@ class Solution {
                     count.compute(sorted[left].row) { _, v -> checkNotNull(v) - 1 }
                     left += 1
                 }
-
                 val range = intArrayOf(sorted[left].value, sorted[right].value)
                 if (isSmaller(range, result)) {
                     result = range
