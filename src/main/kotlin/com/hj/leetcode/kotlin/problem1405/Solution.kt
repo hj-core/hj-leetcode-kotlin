@@ -47,7 +47,7 @@ class Solution {
         val longestLength = min(x.count + y.count + z.count, 3 * (x.count + y.count) + 2)
         val result = StringBuilder(longestLength)
         var extraZ = min(z.count - (x.count + y.count), x.count + y.count + 2)
-
+        // Target string resembles 'cca,ccb,cc'
         for (i in listOf(x, y)) {
             repeat(i.count) {
                 if (extraZ > 0) {
@@ -68,7 +68,7 @@ class Solution {
         val longestLength = x.count + y.count + z.count
         val result = StringBuilder(longestLength)
         var extraZ = z.count - y.count
-
+        // Target string resembles 'ccba,cba,cb'
         repeat(x.count) {
             if (extraZ > 0) {
                 result.append(z.char)
