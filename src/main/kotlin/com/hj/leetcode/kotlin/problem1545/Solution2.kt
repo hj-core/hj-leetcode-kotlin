@@ -14,19 +14,19 @@ class Solution2 {
         var length = (1 shl n) - 1
         require(k in 1..length)
         var index = k - 1
-        var flipped = 0
+        var shouldFlip = 0
 
         while (length > 1) {
             val mid = length / 2
             if (index == mid) {
-                return '1' - flipped
+                return '1' - shouldFlip
             }
             if (index > mid) {
                 index = mid - (index - mid)
-                flipped = flipped xor 1
+                shouldFlip = shouldFlip xor 1
             }
             length /= 2
         }
-        return '0' + flipped
+        return '0' + shouldFlip
     }
 }
