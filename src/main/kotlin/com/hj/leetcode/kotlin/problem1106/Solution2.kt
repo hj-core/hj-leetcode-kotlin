@@ -50,8 +50,8 @@ class Solution2 {
 
         var result = true
         while (unbalancedLefts[0] > startingLefts) {
-            val value = parseBoolExpr(expression, index, unbalancedLefts)
-            if (value == false) {
+            val operand = parseBoolExpr(expression, index, unbalancedLefts)
+            if (operand == false) {
                 result = false
                 break
             }
@@ -88,8 +88,8 @@ class Solution2 {
 
         var result = false
         while (unbalancedLefts[0] > startingLefts) {
-            val value = parseBoolExpr(expression, index, unbalancedLefts)
-            if (value == true) {
+            val operand = parseBoolExpr(expression, index, unbalancedLefts)
+            if (operand == true) {
                 result = true
                 break
             }
