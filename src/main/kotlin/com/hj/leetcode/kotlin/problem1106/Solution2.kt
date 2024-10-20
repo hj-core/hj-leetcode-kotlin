@@ -9,7 +9,7 @@ class Solution2 {
      */
     fun parseBoolExpr(expression: String): Boolean = checkNotNull(parseBoolExpr(expression, intArrayOf(0), intArrayOf(0)))
 
-    // Evaluate the boolean expression for current operator
+    // Evaluate the boolean expression for current operator and modify states
     private fun parseBoolExpr(
         expression: String,
         index: IntArray,
