@@ -17,9 +17,9 @@ class Solution {
 
     private fun dfs(
         s: String,
-        start: Int,
-        subStrings: MutableList<String>,
-        result: IntArray,
+        start: Int, // start of current split
+        subStrings: MutableList<String>, // sub strings from previous splits
+        result: IntArray, // maximum unique sub strings
     ) {
         if (subStrings.size + (s.length - start) <= result[0]) {
             return
