@@ -17,7 +17,7 @@ class Solution {
 
     private fun dfs(
         s: String,
-        start: Int, // start of current split
+        start: Int, // start of current sub string
         subStrings: MutableList<String>, // sub strings from previous splits
         result: IntArray, // maximum unique sub strings
     ) {
@@ -28,13 +28,13 @@ class Solution {
             result[0] = max(result[0], subStrings.size)
             return
         }
-        for (firstEnd in start..<s.length) {
-            val subString = s.substring(start..firstEnd)
+        for (end in start..<s.length) {
+            val subString = s.substring(start..end)
             if (subString in subStrings) {
                 continue
             }
             subStrings.add(subString)
-            dfs(s, firstEnd + 1, subStrings, result)
+            dfs(s, end + 1, subStrings, result)
             subStrings.removeLast()
         }
     }
