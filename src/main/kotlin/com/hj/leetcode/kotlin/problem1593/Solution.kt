@@ -28,13 +28,13 @@ class Solution {
             result[0] = max(result[0], subStrings.size)
             return
         }
-        for (end in start..<s.length) {
-            val subString = s.substring(start..end)
+        for (split in start..<s.length) {
+            val subString = s.substring(start..split)
             if (subString in subStrings) {
                 continue
             }
             subStrings.add(subString)
-            dfs(s, end + 1, subStrings, result)
+            dfs(s, split + 1, subStrings, result)
             subStrings.removeLast()
         }
     }
