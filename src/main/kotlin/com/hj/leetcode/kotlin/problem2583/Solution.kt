@@ -53,8 +53,8 @@ class Solution {
         k: Int,
         indexRange: IntRange,
     ): Long {
-        // Quick select
         require(k in 1..(indexRange.last - indexRange.first + 1))
+        // Quick select
         val pivot = nums[indexRange.random()]
         var left = indexRange.first
         var right = indexRange.last
