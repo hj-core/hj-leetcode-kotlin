@@ -66,7 +66,8 @@ class Solution {
                 right -= 1
             }
         }
-
+        // left = right + 1
+        // nums[indexRange.first..right] < pivot <= nums[left..indexRange.last]
         val rightSize = indexRange.last - right
         return when {
             rightSize < k -> findKthLargest(nums, k - rightSize, indexRange.first..right)
