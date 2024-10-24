@@ -16,12 +16,10 @@ class Solution {
     ): Long {
         require(k > 0)
         val levelSums = computeLevelSums(root)
-        return when {
-            levelSums.size < k -> -1
-            k == 1 -> levelSums.max()
-            k == levelSums.size -> levelSums.min()
-            else -> findKthLargest(levelSums, k, levelSums.indices)
+        if (levelSums.size < k) {
+            return -1
         }
+        return findKthLargest(levelSums, k, levelSums.indices)
     }
 
     private fun computeLevelSums(root: TreeNode?): MutableList<Long> {
@@ -53,11 +51,19 @@ class Solution {
         k: Int,
         indexRange: IntRange,
     ): Long {
-        require(k in 1..(indexRange.last - indexRange.first + 1))
+        val rangeSize = indexRange.last - indexRange.first + 1
+        require(k in 1..rangeSize)
+        when (k) {
+            1 -> indexRange.maxOf { nums[it] }
+            rangeSize -> indexRange.minOf { nums[it] }
+        }
         // Quick select
-        val pivot = nums[indexRange.random()]
+        val pivotIndex = indexRange.random()
+        val pivot = nums[pivotIndex]
+        nums[pivotIndex] = nums[indexRange.last].also { nums[indexRange.last] = nums[pivotIndex] }
+
         var left = indexRange.first
-        var right = indexRange.last
+        var right = indexRange.last - 1
         while (left <= right) {
             if (nums[left] < pivot) {
                 left += 1
@@ -66,12 +72,13 @@ class Solution {
                 right -= 1
             }
         }
-        // left = right + 1
+        nums[left] = pivot.also { nums[indexRange.last] = nums[left] }
+        // nums[left] = pivot
         // nums[indexRange.first..right] < pivot <= nums[left..indexRange.last]
         val rightSize = indexRange.last - left + 1
         return when {
             rightSize < k -> findKthLargest(nums, k - rightSize, indexRange.first..right)
-            rightSize > k -> findKthLargest(nums, k, left..indexRange.last)
+            rightSize > k -> findKthLargest(nums, k, (left + 1)..indexRange.last)
             else -> pivot
         }
     }
