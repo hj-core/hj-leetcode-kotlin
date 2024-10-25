@@ -9,7 +9,7 @@ class Solution {
      */
     fun removeSubfolders(folder: Array<String>): List<String> {
         val root = Trie()
-        root.addTopFolders(folder) // exclude all subfolders
+        root.retainNonSubfolders(folder)
 
         return buildList {
             dfs(root) { node ->
@@ -22,7 +22,7 @@ class Solution {
         val children = mutableMapOf<Char, Trie>()
         var terminationId = -1
 
-        fun addTopFolders(allFolders: Array<String>) {
+        fun retainNonSubfolders(allFolders: Array<String>) {
             for ((index, path) in allFolders.withIndex()) {
                 merge(index, path)
             }
