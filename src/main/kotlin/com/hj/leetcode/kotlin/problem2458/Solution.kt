@@ -73,14 +73,14 @@ class Solution {
         val leftHeight = root.left?.let { checkNotNull(subtreeHeights[it]) } ?: -1
         val rightHeight = root.right?.let { checkNotNull(subtreeHeights[it]) } ?: -1
         if (leftHeight == rightHeight) {
-            return // delete either subtree doesn't affect the overall height
+            return // delete either child or one of their descendants doesn't affect the overall height
         }
         val winner = if (leftHeight > rightHeight) root.left else root.right
         checkNotNull(winner)
         val heightByLoser = pathLength + 1 + min(leftHeight, rightHeight)
         val answerWinner = max(maxHeightByLosers, heightByLoser)
         answers[winner.`val`] = answerWinner
-        // answerLoser = height of the original tree
+        // answerLoserAndItsDescendants = height of the original tree
         dfsAnswers(winner, pathLength + 1, answerWinner, subtreeHeights, answers)
     }
 }
