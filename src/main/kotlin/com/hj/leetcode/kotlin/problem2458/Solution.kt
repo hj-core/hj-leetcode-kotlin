@@ -38,7 +38,7 @@ class Solution {
         onEachNode: (node: TreeNode, height: Int) -> Unit,
     ): Int {
         if (root == null) {
-            return -1
+            return -1 // to cancel the plus 1 in height
         }
         val height =
             max(
