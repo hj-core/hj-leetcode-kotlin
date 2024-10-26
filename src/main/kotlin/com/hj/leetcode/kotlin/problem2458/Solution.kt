@@ -18,11 +18,11 @@ class Solution {
     ): IntArray {
         requireNotNull(root)
         val subtreeHeights = computeSubtreeHeights(root)
-        // query(node.val) = answerAllNodes[node.val] ?: root.height
-        val heightIfDelete = answerAllNodes(root, subtreeHeights)
+        // query(node.val) = answers[node.val] ?: root.height
+        val answers = answerAllNodes(root, subtreeHeights)
         val rootHeight = checkNotNull(subtreeHeights[root.`val`])
         return IntArray(queries.size) {
-            heightIfDelete[queries[it]] ?: rootHeight
+            answers[queries[it]] ?: rootHeight
         }
     }
 
@@ -55,15 +55,15 @@ class Solution {
     ): MutableMap<Int, Int> =
         mutableMapOf<Int, Int>().apply {
             put(root.`val`, 0)
-            updateHeightIfDelete(root, 0, 0, subtreeHeights, this)
+            updateAnswers(root, 0, 0, subtreeHeights, this)
         }
 
-    private fun updateHeightIfDelete(
+    private fun updateAnswers(
         root: TreeNode?,
         pathLength: Int,
         candidateHeight: Int,
         subtreeHeights: Map<Int, Int>,
-        heightIfDelete: MutableMap<Int, Int>,
+        answers: MutableMap<Int, Int>,
     ) {
         if (root == null) {
             return
@@ -76,8 +76,9 @@ class Solution {
         }
         val winner = if (leftHeight > rightHeight) root.left else root.right
         checkNotNull(winner)
-        val queryWinner = max(candidateHeight, 1 + pathLength + min(leftHeight, rightHeight))
-        heightIfDelete[winner.`val`] = queryWinner
-        updateHeightIfDelete(winner, pathLength + 1, queryWinner, subtreeHeights, heightIfDelete)
+        val answerWinner = max(candidateHeight, 1 + pathLength + min(leftHeight, rightHeight))
+        answers[winner.`val`] = answerWinner
+        // answerLoser = height of the original tree
+        updateAnswers(winner, pathLength + 1, answerWinner, subtreeHeights, answers)
     }
 }
