@@ -28,12 +28,12 @@ class Solution {
 
     private fun computeSubtreeHeights(root: TreeNode?): Map<TreeNode, Int> =
         buildMap {
-            computeHeight(root) { node, height ->
+            dfsHeight(root) { node, height ->
                 put(node, height)
             }
         }
 
-    private fun computeHeight(
+    private fun dfsHeight(
         root: TreeNode?,
         onEachNode: (node: TreeNode, height: Int) -> Unit,
     ): Int {
@@ -42,8 +42,8 @@ class Solution {
         }
         val height =
             max(
-                computeHeight(root.left, onEachNode),
-                computeHeight(root.right, onEachNode),
+                dfsHeight(root.left, onEachNode),
+                dfsHeight(root.right, onEachNode),
             ) + 1
         onEachNode(root, height)
         return height
@@ -55,13 +55,13 @@ class Solution {
     ): MutableMap<Int, Int> =
         mutableMapOf<Int, Int>().apply {
             put(root.`val`, -1)
-            updateAnswers(root, 0, 0, subtreeHeights, this)
+            dfsAnswers(root, 0, 0, subtreeHeights, this)
         }
 
-    private fun updateAnswers(
+    private fun dfsAnswers(
         root: TreeNode?,
         pathLength: Int,
-        maxHeightByLosers: Int, // maximum height that does not contain the current node
+        maxHeightByLosers: Int, // maximum height that does not pass through the current node
         subtreeHeights: Map<TreeNode, Int>,
         answers: MutableMap<Int, Int>,
     ) {
@@ -80,6 +80,6 @@ class Solution {
         val answerWinner = max(maxHeightByLosers, heightByLoser)
         answers[winner.`val`] = answerWinner
         // answerLoser = height of the original tree
-        updateAnswers(winner, pathLength + 1, answerWinner, subtreeHeights, answers)
+        dfsAnswers(winner, pathLength + 1, answerWinner, subtreeHeights, answers)
     }
 }
