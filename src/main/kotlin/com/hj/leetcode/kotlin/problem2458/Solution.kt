@@ -54,7 +54,7 @@ class Solution {
         subtreeHeights: Map<Int, Int>,
     ): MutableMap<Int, Int> =
         mutableMapOf<Int, Int>().apply {
-            put(root.`val`, 0)
+            put(root.`val`, -1)
             updateAnswers(root, 0, 0, subtreeHeights, this)
         }
 
