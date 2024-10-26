@@ -18,9 +18,9 @@ class Solution {
     ): IntArray {
         requireNotNull(root)
         val subtreeHeights = computeSubtreeHeights(root)
+        val rootHeight = checkNotNull(subtreeHeights[root])
         // query(node.val) = answers[node.val] ?: root.height
         val answers = answerAllNodes(root, subtreeHeights)
-        val rootHeight = checkNotNull(subtreeHeights[root])
         // check(answers.size <= rootHeight + 1)
         return IntArray(queries.size) {
             answers[queries[it]] ?: rootHeight
@@ -29,9 +29,7 @@ class Solution {
 
     private fun computeSubtreeHeights(root: TreeNode?): Map<TreeNode, Int> =
         buildMap {
-            dfsHeight(root) { node, height ->
-                put(node, height)
-            }
+            dfsHeight(root, this::put)
         }
 
     private fun dfsHeight(
