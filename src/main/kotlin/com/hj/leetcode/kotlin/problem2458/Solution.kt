@@ -20,16 +20,16 @@ class Solution {
         val subtreeHeights = computeSubtreeHeights(root)
         // query(node.val) = answers[node.val] ?: root.height
         val answers = answerAllNodes(root, subtreeHeights)
-        val rootHeight = checkNotNull(subtreeHeights[root.`val`])
+        val rootHeight = checkNotNull(subtreeHeights[root])
         return IntArray(queries.size) {
             answers[queries[it]] ?: rootHeight
         }
     }
 
-    private fun computeSubtreeHeights(root: TreeNode?): Map<Int, Int> =
+    private fun computeSubtreeHeights(root: TreeNode?): Map<TreeNode, Int> =
         buildMap {
             computeHeight(root) { node, height ->
-                put(node.`val`, height)
+                put(node, height)
             }
         }
 
@@ -51,7 +51,7 @@ class Solution {
 
     private fun answerAllNodes(
         root: TreeNode,
-        subtreeHeights: Map<Int, Int>,
+        subtreeHeights: Map<TreeNode, Int>,
     ): MutableMap<Int, Int> =
         mutableMapOf<Int, Int>().apply {
             put(root.`val`, -1)
@@ -62,15 +62,15 @@ class Solution {
         root: TreeNode?,
         pathLength: Int,
         candidateHeight: Int, // maximum height that does not contain the current root
-        subtreeHeights: Map<Int, Int>,
+        subtreeHeights: Map<TreeNode, Int>,
         answers: MutableMap<Int, Int>,
     ) {
         if (root == null) {
             return
         }
 
-        val leftHeight = root.left?.let { checkNotNull(subtreeHeights[it.`val`]) } ?: -1
-        val rightHeight = root.right?.let { checkNotNull(subtreeHeights[it.`val`]) } ?: -1
+        val leftHeight = root.left?.let { checkNotNull(subtreeHeights[it]) } ?: -1
+        val rightHeight = root.right?.let { checkNotNull(subtreeHeights[it]) } ?: -1
         if (leftHeight == rightHeight) {
             return // delete either subtree doesn't affect the overall height
         }
