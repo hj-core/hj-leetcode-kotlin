@@ -21,6 +21,7 @@ class Solution {
         // query(node.val) = answers[node.val] ?: root.height
         val answers = answerAllNodes(root, subtreeHeights)
         val rootHeight = checkNotNull(subtreeHeights[root])
+        // check(answers.size <= rootHeight + 1)
         return IntArray(queries.size) {
             answers[queries[it]] ?: rootHeight
         }
