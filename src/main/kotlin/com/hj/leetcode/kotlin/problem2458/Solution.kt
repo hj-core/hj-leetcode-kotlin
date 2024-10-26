@@ -56,7 +56,7 @@ class Solution {
     ): MutableMap<Int, Int> =
         mutableMapOf<Int, Int>().apply {
             put(root.`val`, -1)
-            dfsAnswers(root, 0, 0, subtreeHeights, this)
+            dfsAnswers(root, 0, -1, subtreeHeights, this)
         }
 
     private fun dfsAnswers(
