@@ -62,7 +62,7 @@ class Solution {
     private fun dfsAnswers(
         root: TreeNode?,
         pathLength: Int,
-        maxHeightByLosers: Int, // maximum height that does not pass through the current node
+        maxHeightByLosers: Int, // longest path not passing through the current node
         subtreeHeights: Map<TreeNode, Int>,
         answers: MutableMap<Int, Int>,
     ) {
