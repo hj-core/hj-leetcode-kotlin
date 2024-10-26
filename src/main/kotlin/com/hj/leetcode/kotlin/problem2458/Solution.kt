@@ -61,7 +61,7 @@ class Solution {
     private fun updateAnswers(
         root: TreeNode?,
         pathLength: Int,
-        candidateHeight: Int,
+        candidateHeight: Int, // maximum height that does not contain the current root
         subtreeHeights: Map<Int, Int>,
         answers: MutableMap<Int, Int>,
     ) {
