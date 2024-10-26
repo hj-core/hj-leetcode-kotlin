@@ -71,7 +71,7 @@ class Solution {
         val leftHeight = root.left?.let { checkNotNull(subtreeHeights[it]) } ?: -1
         val rightHeight = root.right?.let { checkNotNull(subtreeHeights[it]) } ?: -1
         if (leftHeight == rightHeight) {
-            return // delete either child or one of their descendants doesn't affect the overall height
+            return // delete either child or their descendants doesn't affect the overall height
         }
         val winner = if (leftHeight > rightHeight) root.left else root.right
         checkNotNull(winner)
