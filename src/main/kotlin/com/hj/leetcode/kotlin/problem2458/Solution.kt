@@ -61,7 +61,7 @@ class Solution {
     private fun updateAnswers(
         root: TreeNode?,
         pathLength: Int,
-        candidateHeight: Int, // maximum height that does not contain the current root
+        maxLoserHeight: Int, // maximum height that does not contain the current node
         subtreeHeights: Map<TreeNode, Int>,
         answers: MutableMap<Int, Int>,
     ) {
@@ -76,7 +76,8 @@ class Solution {
         }
         val winner = if (leftHeight > rightHeight) root.left else root.right
         checkNotNull(winner)
-        val answerWinner = max(candidateHeight, pathLength + 1 + min(leftHeight, rightHeight))
+        val loserHeight = pathLength + 1 + min(leftHeight, rightHeight)
+        val answerWinner = max(maxLoserHeight, loserHeight)
         answers[winner.`val`] = answerWinner
         // answerLoser = height of the original tree
         updateAnswers(winner, pathLength + 1, answerWinner, subtreeHeights, answers)
