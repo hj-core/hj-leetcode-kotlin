@@ -72,11 +72,11 @@ class Solution {
         val leftHeight = root.left?.let { checkNotNull(subtreeHeights[it.`val`]) } ?: -1
         val rightHeight = root.right?.let { checkNotNull(subtreeHeights[it.`val`]) } ?: -1
         if (leftHeight == rightHeight) {
-            return
+            return // delete either subtree doesn't affect the overall height
         }
         val winner = if (leftHeight > rightHeight) root.left else root.right
         checkNotNull(winner)
-        val answerWinner = max(candidateHeight, 1 + pathLength + min(leftHeight, rightHeight))
+        val answerWinner = max(candidateHeight, pathLength + 1 + min(leftHeight, rightHeight))
         answers[winner.`val`] = answerWinner
         // answerLoser = height of the original tree
         updateAnswers(winner, pathLength + 1, answerWinner, subtreeHeights, answers)
