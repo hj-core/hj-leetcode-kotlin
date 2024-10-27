@@ -21,7 +21,7 @@ class Solution {
                 val subResult =
                     if (matrix[row][col] == 0) {
                         0
-                    } else { // 1 + minOf(dp[row-1][col], dp[row][col+1], dp[row+1][col+1])
+                    } else { // 1 + minOf(dp[row+1][col], dp[row][col+1], dp[row+1][col+1])
                         1 + minOf(dp[col], dp[col + 1], temp)
                     }
                 result += subResult
