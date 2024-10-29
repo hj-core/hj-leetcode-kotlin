@@ -12,7 +12,7 @@ class Solution {
         // BFS
         var reachableRows = grid.indices.toSet() // Reachable rows in the first column
         for (col in 0..<grid[0].lastIndex) {
-            val nextReachable = mutableSetOf<Int>()
+            val nextReachable = mutableSetOf<Int>() // Reachable rows in the next column
             for (row in reachableRows) {
                 for (rowShift in -1..1) {
                     val nextRow = row + rowShift
