@@ -9,8 +9,8 @@ class Solution {
      * and N is the number of columns in grid.
      */
     fun maxMoves(grid: Array<IntArray>): Int {
-        // BFS
-        var reachableRows = grid.indices.toSet() // Reachable rows in the first column
+        // BFS; Reachable rows in current column (base case col 0)
+        var reachableRows = grid.indices.toSet()
         for (col in 0..<grid[0].lastIndex) {
             val nextReachable = mutableSetOf<Int>() // Reachable rows in the next column
             for (row in reachableRows) {
