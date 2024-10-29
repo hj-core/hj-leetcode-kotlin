@@ -10,7 +10,7 @@ class Solution {
      */
     fun maxMoves(grid: Array<IntArray>): Int {
         // BFS
-        var reachableRows = grid.indices.toSet() // Reachable rows at first column
+        var reachableRows = grid.indices.toSet() // Reachable rows in the first column
         for (col in 0..<grid[0].lastIndex) {
             val nextReachable = mutableSetOf<Int>()
             for (row in reachableRows) {
