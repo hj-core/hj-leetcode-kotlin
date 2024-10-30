@@ -11,7 +11,7 @@ class Solution {
 
     private fun longestMountain(nums: IntArray): Int {
         val numsList = nums.asList()
-        // longestLeft[i]::= the length of longest left slope if nums[i] is the peak
+        // longestLeft[i]::= the length of longest left slope if index i is the peak
         val longestLeft = longestLeftSlope(numsList)
         val longestRight = longestLeftSlope(numsList.asReversed()).asReversed()
         return (nums.indices)
