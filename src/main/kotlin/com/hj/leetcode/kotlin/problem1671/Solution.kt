@@ -27,22 +27,12 @@ class Solution {
         val result = MutableList(nums.size) { 0 }
         for ((i, num) in nums.withIndex()) {
             val insertIndex = dp.binarySearch(num).let { if (it < 0) -(it + 1) else it }
-            when {
-                insertIndex == dp.size -> {
-                    result[i] = dp.size - 1
-                    dp.add(num)
-                }
-
-                dp[insertIndex] == num -> {
-                    result[i] = insertIndex - 1
-                }
-
-                insertIndex > 0 -> {
-                    result[i] = insertIndex - 1
-                    dp[insertIndex] = num
-                }
-
-                else -> throw IllegalArgumentException("num= $num: Violate constraints that num >= 1.")
+            require(insertIndex > 0) { "num= $num: Violate constraints that num >= 1." }
+            result[i] = insertIndex - 1
+            if (insertIndex == dp.size) {
+                dp.add(num)
+            } else {
+                dp[insertIndex] = num
             }
         }
         return result
