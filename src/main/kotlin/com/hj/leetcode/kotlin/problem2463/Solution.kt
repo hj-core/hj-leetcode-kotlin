@@ -40,7 +40,7 @@ class Solution {
                 // There are two possible options:
                 // Assign sortedRobot[i] to sortedFactory[j] or not
                 val assign = abs(sortedRobots[i] - sortedFactories[j]) + temp
-                val skip = dp[i]
+                val skip = dp[i] // dp[i]_j+1
                 val subResult = if (skip == impossible) assign else min(assign, skip)
                 dp[i] = subResult.also { temp = dp[i] }
             }
