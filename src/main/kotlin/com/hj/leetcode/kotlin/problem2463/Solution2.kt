@@ -8,7 +8,7 @@ import kotlin.math.min
  */
 class Solution2 {
     /* Complexity:
-     * Time O(MN^2) and Space O(MN) where N is the length of robot and M is the length of factory.
+     * Time O(MN^2) and Space O(M+N) where N is the length of robot and M is the length of factory.
      */
     fun minimumTotalDistance(
         robot: List<Int>,
