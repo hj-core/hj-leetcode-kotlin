@@ -14,13 +14,10 @@ class Solution {
 
             for (c in s) {
                 streak = if (c == prev) streak + 1 else 1
-                prev = c
-
-                if (streak == 3) {
-                    streak -= 1
-                } else {
+                if (streak < 3) {
                     append(c)
                 }
+                prev = c
             }
         }
 }
