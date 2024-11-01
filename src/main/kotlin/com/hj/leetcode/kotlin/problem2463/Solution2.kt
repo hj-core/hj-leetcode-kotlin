@@ -23,26 +23,26 @@ class Solution2 {
                 } // flatten to handle limits
 
         val impossible = -1L
-        // dp[i]_j::= minimum total distance to repair sortedRobots[i:] with sortedFactories[j:]
+        // dp[startBot]_startFac::=
+        // minimumTotalDistance(sortedRobot[startBot:], sortedFactories[startFac:])
         val dp = LongArray(robot.size + 1) { impossible }
-        dp[robot.size] = 0 // Base case j= sortedFactories.size
+        dp[robot.size] = 0 // Base case startFac= sortedFactories.size
 
-        for (j in sortedFactories.indices.reversed()) {
-            val capacity = sortedFactories.size - j
-            var temp = dp[robot.size] // dp[i+1]_j+1
+        for (startFac in sortedFactories.indices.reversed()) {
+            val totalCapacity = sortedFactories.size - startFac
+            val minStartBot = (sortedRobots.size - totalCapacity).coerceAtLeast(0)
 
-            for (i in sortedRobots.indices.reversed()) {
-                val remainingRobots = robot.size - i
-                if (remainingRobots > capacity) {
-                    temp = dp[i].also { dp[i] = impossible }
-                    continue
-                }
-                // There are two possible options:
-                // Assign sortedRobot[i] to sortedFactory[j] or not
-                val assign = abs(sortedRobots[i] - sortedFactories[j]) + temp
-                val skip = dp[i] // dp[i]_j+1
-                val subResult = if (skip == impossible) assign else min(assign, skip)
-                dp[i] = subResult.also { temp = dp[i] }
+            for (startBot in 0..<minStartBot) {
+                dp[startBot] = impossible
+            }
+
+            var temp = dp[robot.size] // dp[startBot+1]_(startFac+1)
+            for (startBot in sortedRobots.lastIndex downTo minStartBot) {
+                // There are two possible options: Assign startBot to startFac or not
+                val assign = abs(sortedRobots[startBot] - sortedFactories[startFac]) + temp
+                val notAssign = dp[startBot] // dp[startBot]_(startFac+1)
+                val minDistance = if (notAssign == impossible) assign else min(assign, notAssign)
+                dp[startBot] = minDistance.also { temp = dp[startBot] }
             }
         }
         return dp[0]
