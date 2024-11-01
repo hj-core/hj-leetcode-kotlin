@@ -37,15 +37,15 @@ class Solution2 {
                 // Consider all possible numbers of robots assigned to startFac
                 val maxAssigned = min(totalRobots, facLimits)
                 dp[startBot] = prevDp[startBot] // No robot is assigned to startFac
-                var accDistance = 0L // Distance of the robots assigned to startFac
+                var accDistance = 0L // Total distance of the robots assigned to startFac
 
                 for (assigned in 1..maxAssigned) {
-                    val currentBot = startBot + assigned - 1
-                    accDistance += abs(facPosition - sortedRobots[currentBot])
-                    if (prevDp[currentBot + 1] == impossible) {
+                    val assignBot = startBot + assigned - 1
+                    accDistance += abs(facPosition - sortedRobots[assignBot])
+                    if (prevDp[assignBot + 1] == impossible) {
                         continue
                     }
-                    val distance = accDistance + prevDp[currentBot + 1]
+                    val distance = accDistance + prevDp[assignBot + 1]
                     dp[startBot] =
                         dp[startBot].let {
                             if (it == impossible) distance else min(it, distance)
