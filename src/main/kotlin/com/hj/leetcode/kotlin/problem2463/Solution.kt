@@ -8,41 +8,49 @@ import kotlin.math.min
  */
 class Solution {
     /* Complexity:
-     * Time O(MN^2) and Space O(MN) where N is the size of robot and M is the size of factory.
+     * Time O(MN^2) and Space O(M+N) where N is the length of robot and M is the length of factory.
      */
     fun minimumTotalDistance(
         robot: List<Int>,
         factory: Array<IntArray>,
     ): Long {
         val sortedRobots = robot.sorted()
-        val sortedFactories =
-            factory
-                .sortedBy { (position, _) -> position }
-                .flatMap { (position, limit) ->
-                    sequence { repeat(limit) { yield(position) } }
-                } // flatten to handle limits
-
+        val sortedFactories = factory.sortedBy { (position, limits) -> position }
         val impossible = -1L
-        // dp[i]_j::= minimum total distance to repair sortedRobots[i:] with sortedFactories[j:]
-        val dp = LongArray(robot.size + 1) { impossible }
-        dp[robot.size] = 0 // Base case j= sortedFactories.size
+        // dp[startBot]_startFac::=
+        // minimumTotalDistance(sortedRobot[startBot:], sortedFactories[startFac:])
+        val dp = LongArray(sortedRobots.size + 1) { impossible }
+        dp[sortedRobots.size] = 0L // base case startFac= sortedFactories.size
+        var totalCapacity = 0
 
-        for (j in sortedFactories.indices.reversed()) {
-            val capacity = sortedFactories.size - j
-            var temp = dp[robot.size] // dp[i+1]_j+1
+        for (startFac in sortedFactories.indices.reversed()) {
+            val (facPosition, facLimits) = sortedFactories[startFac]
+            totalCapacity += facLimits
+            val prevDp = dp.clone() // dp_(starFac+1)
 
-            for (i in sortedRobots.indices.reversed()) {
-                val remainingRobots = robot.size - i
-                if (remainingRobots > capacity) {
-                    temp = dp[i].also { dp[i] = impossible }
+            for (startBot in sortedRobots.indices.reversed()) {
+                val totalRobots = sortedRobots.size - startBot
+                if (totalCapacity < totalRobots) {
+                    dp[startBot] = impossible
                     continue
                 }
-                // There are two possible options:
-                // Assign sortedRobot[i] to sortedFactory[j] or not
-                val assign = abs(sortedRobots[i] - sortedFactories[j]) + temp
-                val skip = dp[i] // dp[i]_j+1
-                val subResult = if (skip == impossible) assign else min(assign, skip)
-                dp[i] = subResult.also { temp = dp[i] }
+                // Consider all possible numbers of robots assigned to startFac
+                val maxAssigned = min(totalRobots, facLimits)
+                dp[startBot] = prevDp[startBot] // No robot is assigned to startFac
+                var accDistance = 0L // Total distance of the robots assigned to startFac
+
+                for (assigned in 1..maxAssigned) {
+                    val assignBot = startBot + assigned - 1
+                    accDistance += abs(facPosition - sortedRobots[assignBot])
+                    if (prevDp[assignBot + 1] == impossible) {
+                        continue
+                    }
+                    val distance = accDistance + prevDp[assignBot + 1]
+                    dp[startBot] =
+                        dp[startBot].let {
+                            if (it == impossible) distance else min(it, distance)
+                        }
+                }
             }
         }
         return dp[0]
