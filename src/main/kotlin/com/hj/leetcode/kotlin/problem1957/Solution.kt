@@ -7,17 +7,14 @@ class Solution {
     /* Complexity:
      * Time O(N) and Auxiliary Space O(1) where N is the length of s.
      */
-    fun makeFancyString(s: String): String =
-        buildString {
-            var streak = 0
-            var prev: Char? = null
+    fun makeFancyString(s: String): String {
+        var streak = 0
+        var prev: Char? = null
 
-            for (c in s) {
-                streak = if (c == prev) streak + 1 else 1
-                if (streak < 3) {
-                    append(c)
-                }
-                prev = c
-            }
+        return s.filter {
+            streak = if (it == prev) streak + 1 else 1
+            prev = it
+            streak < 3
         }
+    }
 }
