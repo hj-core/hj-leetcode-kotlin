@@ -18,40 +18,46 @@ private class KMP(
 ) {
     // kmpTable[i]::=
     // length of target's longest prefix that is a suffix of target[1..i]
-    private val kmpTable = buildKmpTable(target)
+    private val kmpTable = IntArray(target.length)
 
-    private fun buildKmpTable(target: String): IntArray {
-        val result = IntArray(target.length)
-        var compareIndex = 0
-        for (i in 1..<target.length) {
-            while (compareIndex > 0 && target[i] != target[compareIndex]) {
-                compareIndex = result[compareIndex - 1]
-            }
-            if (target[i] == target[compareIndex]) {
-                compareIndex += 1
-            }
-            result[i] = compareIndex
-        }
-        return result
+    init {
+        buildTable()
     }
 
-    fun searchIn(s: String): Boolean {
-        var compareIndex = 0
-        for (i in s.indices) {
-            while (compareIndex > 0 && s[i] != target[compareIndex]) {
-                compareIndex = kmpTable[compareIndex - 1]
-            }
-            if (s[i] == target[compareIndex]) {
-                compareIndex += 1
+    private tailrec fun buildTable(
+        index: Int = 1,
+        compareIndex: Int = 0,
+    ) {
+        when {
+            index == target.length -> { // Finish the whole table
             }
 
-            if (compareIndex == target.length) {
-                return true
+            target[index] == target[compareIndex] -> {
+                kmpTable[index] = compareIndex + 1
+                buildTable(index + 1, compareIndex + 1)
             }
-            if (s.length - i < target.length - compareIndex) {
-                return false
+
+            compareIndex == 0 -> {
+                kmpTable[index] = 0
+                buildTable(index + 1, 0)
             }
+
+            else -> buildTable(index, kmpTable[compareIndex - 1])
         }
-        return false
     }
+
+    fun searchIn(s: String): Boolean = searchIn(s, 0, 0)
+
+    private tailrec fun searchIn(
+        s: String,
+        start: Int,
+        compareIndex: Int,
+    ): Boolean =
+        when {
+            compareIndex == target.length -> true
+            s.length - start < target.length - compareIndex -> false
+            s[start] == target[compareIndex] -> searchIn(s, start + 1, compareIndex + 1)
+            compareIndex == 0 -> searchIn(s, start + 1, 0)
+            else -> searchIn(s, start, kmpTable[compareIndex - 1])
+        }
 }
