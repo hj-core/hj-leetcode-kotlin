@@ -50,14 +50,14 @@ private class KMP(
 
     private tailrec fun searchIn(
         s: String,
-        start: Int,
+        index: Int,
         compareIndex: Int,
     ): Boolean =
         when {
             compareIndex == target.length -> true
-            s.length - start < target.length - compareIndex -> false
-            s[start] == target[compareIndex] -> searchIn(s, start + 1, compareIndex + 1)
-            compareIndex == 0 -> searchIn(s, start + 1, 0)
-            else -> searchIn(s, start, kmpTable[compareIndex - 1])
+            s.length - index < target.length - compareIndex -> false
+            s[index] == target[compareIndex] -> searchIn(s, index + 1, compareIndex + 1)
+            compareIndex == 0 -> searchIn(s, index + 1, 0)
+            else -> searchIn(s, index, kmpTable[compareIndex - 1])
         }
 }
