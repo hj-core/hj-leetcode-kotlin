@@ -11,16 +11,11 @@ class Solution {
         buildString {
             var countPrev = 1
             for (i in 1..<word.length) {
-                val prev = word[i - 1]
-                if (word[i] != prev) {
-                    append(countPrev, prev)
-                    countPrev = 1
-                } else {
+                if (word[i] == word[i - 1] && countPrev < 9) {
                     countPrev += 1
-                    if (countPrev > 9) {
-                        append(9, prev)
-                        countPrev -= 9
-                    }
+                } else {
+                    append(countPrev, word[i - 1])
+                    countPrev = 1
                 }
             }
             append(countPrev, word.last())
