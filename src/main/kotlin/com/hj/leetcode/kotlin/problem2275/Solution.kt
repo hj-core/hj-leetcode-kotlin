@@ -8,9 +8,9 @@ class Solution {
      * Time O(N) and Space O(1) where N is the length of candidates.
      */
     fun largestCombination(candidates: IntArray): Int =
-        (0..<24) // candidates[i] <= 10^7 < 2^24
-            .map { 1 shl it }
-            .maxOf { bit ->
-                candidates.count { it and bit != 0 }
-            }
+        // candidates[i] <= 10^7 < 2^24
+        (0..<24).maxOf { shift ->
+            val bit = 1 shl shift
+            candidates.count { it and bit != 0 }
+        }
 }
