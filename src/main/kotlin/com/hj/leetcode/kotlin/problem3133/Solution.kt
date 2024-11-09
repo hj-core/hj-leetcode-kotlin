@@ -21,8 +21,8 @@ class Solution {
             nextZeroBit = nextZeroBit shl 1
         }
         val last = n - 1
-        for (shift in 0..<27) {
-            val shouldSet = last and (1 shl shift) != 0
+        for (i in 0..<27) {
+            val shouldSet = last and (1 shl i) != 0
             if (shouldSet) {
                 result = result or nextZeroBit
             }
