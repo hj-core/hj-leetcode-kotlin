@@ -21,6 +21,9 @@ class Solution {
         var right = 0
         for (left in nums.indices) {
             while (right < nums.size && toInt(bitCount) < k) {
+                if (k <= nums[right]) {
+                    return 1
+                }
                 addBitCount(nums[right], bitCount)
                 right += 1
             }
