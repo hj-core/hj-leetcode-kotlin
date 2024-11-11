@@ -35,11 +35,11 @@ class Solution {
         if (until < 2) {
             return BooleanArray(until)
         }
+        // Sieve of Eratosthenes
         val result = BooleanArray(until) { true }
         result[0] = false
         result[1] = false
 
-        // Sieve of Eratosthenes
         val sieveRight = sqrt(until.toDouble()).toInt()
         for (num in 2..sieveRight) {
             if (result[num]) {
