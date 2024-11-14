@@ -5,8 +5,8 @@ package com.hj.leetcode.kotlin.problem2064
  */
 class Solution {
     /* Complexity:
-     * Time O(NLogM) and Space O(1) where N is the length of quantities
-     * and M is the maximum possible quantities for a product type.
+     * Time O(MLogK) and Space O(1) where M is the length of quantities
+     * and K is the maximum possible quantities for a product type.
      */
     fun minimizedMaximum(
         n: Int,
