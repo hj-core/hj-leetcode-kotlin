@@ -16,19 +16,19 @@ class Solution {
         }
 
         val result = IntArray(nums.size - k + 1)
-        var accLength = 1 // The longest consecutive, ascending length ended at i=0
-        for (i in 1..<k - 1) {
-            accLength = if (canExtend(nums, i)) accLength + 1 else 1
+        var maxLength = 1 // The longest consecutive, ascending length ended at i=k-2
+        for (i in k - 2 downTo 1) {
+            if (canExtendPrev(nums, i)) maxLength += 1 else break
         }
 
         for (i in k - 1..<nums.size) {
-            accLength = if (canExtend(nums, i)) accLength + 1 else 1
-            result[i - k + 1] = if (k <= accLength) nums[i] else -1
+            maxLength = if (canExtendPrev(nums, i)) maxLength + 1 else 1
+            result[i - k + 1] = if (k <= maxLength) nums[i] else -1
         }
         return result
     }
 
-    private fun canExtend(
+    private fun canExtendPrev(
         nums: IntArray,
         i: Int,
     ): Boolean = nums[i - 1] + 1 == nums[i]
