@@ -14,22 +14,21 @@ class Solution {
         if (k == 1) {
             return nums.clone()
         }
-
-        val result = IntArray(nums.size - k + 1)
-        var maxLength = 1 // The longest consecutive, ascending length ended at i=k-2
+        // The longest consecutive, ascending length ended at i=k-2
+        var maxLength = 1
         for (i in k - 2 downTo 1) {
             if (canExtendPrev(nums, i)) maxLength += 1 else break
         }
 
-        for (i in k - 1..<nums.size) {
+        return IntArray(nums.size - k + 1) {
+            val i = it + k - 1
             maxLength = if (canExtendPrev(nums, i)) maxLength + 1 else 1
-            result[i - k + 1] = if (k <= maxLength) nums[i] else -1
+            if (maxLength < k) -1 else nums[i]
         }
-        return result
     }
 
     private fun canExtendPrev(
         nums: IntArray,
         i: Int,
-    ): Boolean = nums[i - 1] + 1 == nums[i]
+    ): Boolean = nums[i] == nums[i - 1] + 1
 }
