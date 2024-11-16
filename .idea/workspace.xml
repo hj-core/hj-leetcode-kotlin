@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="fixup! Improve readability">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem2064/Solution2.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1574/Solution.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +42,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="LeetCode Solution" />
         <option value="Kotlin Class" />
+        <option value="LeetCode Solution" />
       </list>
     </option>
   </component>
@@ -72,7 +71,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem2601" />
+        <entry key="$PROJECT_DIR$" value="problem2064" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -132,7 +131,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem2064",
+    "git-widget-placeholder": "problem1574",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/gaps-/Documents/GitHub/hj-leetcode-kotlin",
@@ -144,7 +143,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.41494253",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.ktlint-plugin",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -367,6 +366,7 @@
       <workItem from="1731490046877" duration="160000" />
       <workItem from="1731578526405" duration="2552000" />
       <workItem from="1731591799873" duration="1004000" />
+      <workItem from="1731675022683" duration="835000" />
     </task>
     <task id="LOCAL-00792" summary="Fix solution&#10;&#10;- Previous solution swaps the two nodes. However, the problem explicitly asks to swap their values">
       <created>1684160388035</created>
