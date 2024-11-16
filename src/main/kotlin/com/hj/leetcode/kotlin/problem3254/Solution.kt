@@ -16,12 +16,13 @@ class Solution {
         }
         // The longest consecutive ascending length ended at iNums=k-1
         var maxLength = 1
-        for (i in k - 1 downTo 1) {
-            if (canExtendPrev(nums, i)) maxLength += 1 else break
+        for (iNums in k - 1 downTo 1) {
+            if (canExtendPrev(nums, iNums)) maxLength += 1 else break
         }
 
         val result = IntArray(nums.size - k + 1)
         result[0] = if (maxLength < k) -1 else nums[k - 1]
+
         for (iResult in 1..<result.size) {
             val iNums = iResult + k - 1
             maxLength = if (canExtendPrev(nums, iNums)) maxLength + 1 else 1
