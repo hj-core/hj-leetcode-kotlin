@@ -15,32 +15,32 @@ class Solution {
     ): Int {
         var result = nums.size + 1
         var prefixSum = 0L
-        val leftCandidates =
-            ArrayDeque<PrefixSum>().apply {
-                addLast(PrefixSum(-1, prefixSum))
+        val leftPrefixes =
+            ArrayDeque<Prefix>().apply {
+                addLast(Prefix(-1, prefixSum))
             }
 
         for ((right, num) in nums.withIndex()) {
             prefixSum += num
-            val maxSubtraction = prefixSum - k
+            val maxLeftSum = prefixSum - k
 
-            with(leftCandidates) {
-                while (isNotEmpty() && first().value <= maxSubtraction) {
+            with(leftPrefixes) {
+                while (isNotEmpty() && first().sum <= maxLeftSum) {
                     val left = removeFirst().endInclusive
                     result = min(result, right - left)
                 }
 
-                while (isNotEmpty() && prefixSum <= last().value) {
+                while (isNotEmpty() && prefixSum <= last().sum) {
                     removeLast()
                 }
-                addLast(PrefixSum(right, prefixSum))
+                addLast(Prefix(right, prefixSum))
             }
         }
         return if (nums.size < result) -1 else result
     }
 
-    private class PrefixSum(
+    private class Prefix(
         val endInclusive: Int,
-        val value: Long,
+        val sum: Long,
     )
 }
