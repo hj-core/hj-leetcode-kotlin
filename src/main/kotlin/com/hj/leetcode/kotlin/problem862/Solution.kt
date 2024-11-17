@@ -19,20 +19,22 @@ class Solution {
 
         for ((right, num) in nums.withIndex()) {
             prefixSum += num
-            if (k <= prefixSum) { // Handle the case that we cannot remove any left
-                result = min(result, right + 1)
-            }
-            val target = prefixSum - k
+            val maxSubtraction = prefixSum - k
 
-            while (leftCandidates.isNotEmpty() && leftCandidates.first().value <= target) {
-                val left = leftCandidates.removeFirst().endInclusive
-                result = min(result, right - left)
-            }
+            leftCandidates.let {
+                if (k <= prefixSum) { // Handle the case that we cannot remove any left
+                    result = min(result, right + 1)
+                }
+                while (it.isNotEmpty() && it.first().value <= maxSubtraction) {
+                    val left = it.removeFirst().endInclusive
+                    result = min(result, right - left)
+                }
 
-            while (leftCandidates.isNotEmpty() && prefixSum <= leftCandidates.last().value) {
-                leftCandidates.removeLast()
+                while (it.isNotEmpty() && prefixSum <= it.last().value) {
+                    it.removeLast()
+                }
+                it.addLast(PrefixSum(right, prefixSum))
             }
-            leftCandidates.addLast(PrefixSum(right, prefixSum))
         }
         return if (nums.size < result) -1 else result
     }
