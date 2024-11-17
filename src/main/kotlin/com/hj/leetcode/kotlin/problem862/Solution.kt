@@ -22,15 +22,17 @@ class Solution {
             prefixSum += num
             val maxSubtraction = prefixSum - k
 
-            while (leftCandidates.run { isNotEmpty() && first().value <= maxSubtraction }) {
-                val left = leftCandidates.removeFirst().endInclusive
-                result = min(result, right - left)
-            }
+            with(leftCandidates) {
+                while (isNotEmpty() && first().value <= maxSubtraction) {
+                    val left = removeFirst().endInclusive
+                    result = min(result, right - left)
+                }
 
-            while (leftCandidates.run { isNotEmpty() && prefixSum <= last().value }) {
-                leftCandidates.removeLast()
+                while (isNotEmpty() && prefixSum <= last().value) {
+                    removeLast()
+                }
+                addLast(PrefixSum(right, prefixSum))
             }
-            leftCandidates.addLast(PrefixSum(right, prefixSum))
         }
         return if (nums.size < result) -1 else result
     }
