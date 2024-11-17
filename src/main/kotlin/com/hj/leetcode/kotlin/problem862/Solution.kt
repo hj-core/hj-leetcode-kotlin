@@ -13,26 +13,26 @@ class Solution {
         nums: IntArray,
         k: Int,
     ): Int {
-        val deque = ArrayDeque<PrefixSum>()
+        val leftCandidates = ArrayDeque<PrefixSum>() // Consider subarray nums[left+1..right]
         var prefixSum = 0L
         var result = nums.size + 1
 
         for ((right, num) in nums.withIndex()) {
             prefixSum += num
-            if (k <= prefixSum) { // Handle empty deque
+            if (k <= prefixSum) { // Handle the case that we cannot remove any left
                 result = min(result, right + 1)
             }
-
             val target = prefixSum - k
-            while (deque.isNotEmpty() && deque.first().value <= target) {
-                val left = deque.removeFirst().endInclusive
+
+            while (leftCandidates.isNotEmpty() && leftCandidates.first().value <= target) {
+                val left = leftCandidates.removeFirst().endInclusive
                 result = min(result, right - left)
             }
 
-            while (deque.isNotEmpty() && prefixSum <= deque.last().value) {
-                deque.removeLast()
+            while (leftCandidates.isNotEmpty() && prefixSum <= leftCandidates.last().value) {
+                leftCandidates.removeLast()
             }
-            deque.addLast(PrefixSum(right, prefixSum))
+            leftCandidates.addLast(PrefixSum(right, prefixSum))
         }
         return if (nums.size < result) -1 else result
     }
