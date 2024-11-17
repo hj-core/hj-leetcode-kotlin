@@ -21,19 +21,19 @@ class Solution {
             prefixSum += num
             val maxSubtraction = prefixSum - k
 
-            leftCandidates.let {
+            with(leftCandidates) {
                 if (k <= prefixSum) { // Handle the case that we cannot remove any left
                     result = min(result, right + 1)
                 }
-                while (it.isNotEmpty() && it.first().value <= maxSubtraction) {
-                    val left = it.removeFirst().endInclusive
+                while (isNotEmpty() && first().value <= maxSubtraction) {
+                    val left = removeFirst().endInclusive
                     result = min(result, right - left)
                 }
 
-                while (it.isNotEmpty() && prefixSum <= it.last().value) {
-                    it.removeLast()
+                while (isNotEmpty() && prefixSum <= last().value) {
+                    removeLast()
                 }
-                it.addLast(PrefixSum(right, prefixSum))
+                addLast(PrefixSum(right, prefixSum))
             }
         }
         return if (nums.size < result) -1 else result
