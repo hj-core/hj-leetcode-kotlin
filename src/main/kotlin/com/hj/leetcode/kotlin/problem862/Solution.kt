@@ -13,7 +13,7 @@ class Solution {
         nums: IntArray,
         k: Int,
     ): Int {
-        val leftCandidates = ArrayDeque<PrefixSum>() // Consider subarray nums[left+1..right]
+        val leftCandidates = ArrayDeque<PrefixSum>() // Consider subarray nums[left+1..=right]
         var result = nums.size + 1
         var prefixSum = 0L
         leftCandidates.addLast(PrefixSum(-1, prefixSum))
