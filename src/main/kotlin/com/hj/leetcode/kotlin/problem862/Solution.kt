@@ -14,16 +14,14 @@ class Solution {
         k: Int,
     ): Int {
         val leftCandidates = ArrayDeque<PrefixSum>() // Consider subarray nums[left+1..right]
-        var prefixSum = 0L
         var result = nums.size + 1
+        var prefixSum = 0L
+        leftCandidates.addLast(PrefixSum(-1, prefixSum))
 
         for ((right, num) in nums.withIndex()) {
             prefixSum += num
             val maxSubtraction = prefixSum - k
 
-            if (k <= prefixSum) { // Handle the case that we cannot remove any left
-                result = min(result, right + 1)
-            }
             while (leftCandidates.run { isNotEmpty() && first().value <= maxSubtraction }) {
                 val left = leftCandidates.removeFirst().endInclusive
                 result = min(result, right - left)
