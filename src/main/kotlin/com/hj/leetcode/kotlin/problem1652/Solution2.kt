@@ -18,7 +18,7 @@ class Solution2 {
         val result = IntArray(n)
         var (start, end) = if (k < 0) k + n to n else 1 to k + 1
 
-        result[0] = (start..<end).sumOf { code[it % n] }
+        result[0] = (start..<end).sumOf { code[it] }
         for (i in 1..<n) {
             result[i] = result[i - 1] + code[end % n] - code[start % n]
             start += 1
