@@ -20,7 +20,7 @@ class Solution {
             numFreq[num] = (numFreq[num] ?: 0) + 1
         }
         var result = if (numFreq.size == k) windowSum else 0L
-        // Sliding window
+        // Slide window
         for (end in k..<nums.size) {
             val enter = nums[end]
             val leave = nums[end - k]
