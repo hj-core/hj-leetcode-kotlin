@@ -5,18 +5,25 @@ package com.hj.leetcode.kotlin.problem1072
  */
 class Solution {
     /* Complexity:
-     * Time O(MN) and Space O(MN) where M and N are the number of rows and columns of matrix;
+     * Time O(MN) and Space O(MN) where M is the number of rows in matrix
+     * and N is the number of columns in matrix.
      */
-    fun maxEqualRowsAfterFlips(matrix: Array<IntArray>): Int {
-        val countPerPattern = HashMap<List<Int>, Int>()
+    fun maxEqualRowsAfterFlips(matrix: Array<IntArray>): Int =
+        matrix
+            .groupingBy { describeStructure(it) }
+            .eachCount()
+            .values
+            .max()
 
-        for (binaryArray in matrix) {
-            val pattern = binaryArray.toList()
-            countPerPattern[pattern] = countPerPattern.getOrDefault(pattern, 0) + 1
-
-            val complementaryPattern = List(pattern.size) { index -> 1 - pattern[index] }
-            countPerPattern[complementaryPattern] = countPerPattern.getOrDefault(complementaryPattern, 0) + 1
+    private fun describeStructure(row: IntArray): List<Int> =
+        buildList {
+            val bitWidth = 32
+            for (i in row.indices step bitWidth) {
+                var component = 0
+                for (j in i..<kotlin.math.min(i + bitWidth, row.size)) {
+                    component = (component shl 1) + (row[j] xor row[0])
+                }
+                add(component)
+            }
         }
-        return countPerPattern.values.max()!!
-    }
 }
