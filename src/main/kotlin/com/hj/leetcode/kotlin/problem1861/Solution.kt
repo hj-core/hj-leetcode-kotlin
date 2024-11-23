@@ -18,18 +18,18 @@ class Solution {
             var baseRow = n
             for (rowAfter in n - 1 downTo 0) {
                 when (beforeRotate(box, rowAfter, colAfter)) {
-                    obstacle -> {
-                        baseRow = rowAfter
-                        result[rowAfter][colAfter] = obstacle
-                    }
-
+                    empty -> continue
                     stone -> {
                         baseRow -= 1
                         result[baseRow][colAfter] = stone
                     }
 
-                    empty -> continue
-                    else -> throw IllegalArgumentException("Unexpected item")
+                    obstacle -> {
+                        baseRow = rowAfter
+                        result[rowAfter][colAfter] = obstacle
+                    }
+
+                    else -> throw IllegalArgumentException("Unexpected item.")
                 }
             }
         }
