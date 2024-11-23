@@ -14,9 +14,9 @@ class Solution {
         val n = box[0].size
         val result = Array(n) { CharArray(m) { empty } }
 
-        for (colAfter in 0..<m) {
-            var baseRow = n
-            for (rowAfter in n - 1 downTo 0) {
+        for (colAfter in result[0].indices) {
+            var baseRow = result.size
+            for (rowAfter in result.indices.reversed()) {
                 when (beforeRotate(box, rowAfter, colAfter)) {
                     empty -> continue
                     stone -> {
@@ -26,7 +26,7 @@ class Solution {
 
                     obstacle -> {
                         baseRow = rowAfter
-                        result[rowAfter][colAfter] = obstacle
+                        result[baseRow][colAfter] = obstacle
                     }
 
                     else -> throw IllegalArgumentException("Unexpected item.")
