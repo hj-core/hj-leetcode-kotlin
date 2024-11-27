@@ -57,12 +57,17 @@ private class RoadNet(
             if (from !in improved) {
                 continue
             }
+            improved.remove(from)
 
             for (to in adjacencyList[from]) {
                 if (dp[from] + 1 < dp[to]) {
                     dp[to] = dp[from] + 1
                     improved.add(to)
                 }
+            }
+
+            if (improved.isEmpty()) {
+                return
             }
         }
     }
