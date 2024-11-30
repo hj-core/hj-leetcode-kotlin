@@ -17,7 +17,7 @@ class Solution {
         val start = startingNode(adjacencyList, inDegree)
 
         val dummy = intArrayOf()
-        val result = Array(pairs.size) { dummy } // initialize with single placeholder
+        val result = Array(pairs.size) { dummy }
         var index = result.lastIndex // assign edges in reversed order
 
         postDFS(start, adjacencyList) {
