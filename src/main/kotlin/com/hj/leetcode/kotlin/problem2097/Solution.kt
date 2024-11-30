@@ -15,7 +15,9 @@ class Solution {
     fun validArrangement(pairs: Array<IntArray>): Array<IntArray> {
         val (adjacencyList, inDegree) = adjacencyListAndInDegree(pairs)
         val start = startingNode(adjacencyList, inDegree)
-        val result = Array(pairs.size) { pairs[0] } // initialize with single placeholder
+
+        val dummy = intArrayOf()
+        val result = Array(pairs.size) { dummy } // initialize with single placeholder
         var index = result.lastIndex // assign edges in reversed order
 
         postDFS(start, adjacencyList) {
