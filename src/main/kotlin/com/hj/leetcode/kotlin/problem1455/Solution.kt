@@ -16,14 +16,18 @@ class Solution {
         var wordStart = 0
         for (wordEnd in sentence.indicesOf(' ')) {
             wordCount++
-            if (sentence.regionMatches(wordStart, searchWord, 0, searchWord.length)) {
+            if (searchWord.length <= wordEnd - wordStart &&
+                sentence.regionMatches(wordStart, searchWord, 0, searchWord.length)
+            ) {
                 return wordCount
             }
             wordStart = wordEnd + 1
         }
         // Handle wordEnd= sentence.length
         wordCount++
-        if (sentence.regionMatches(wordStart, searchWord, 0, searchWord.length)) {
+        if (searchWord.length <= sentence.length - wordStart &&
+            sentence.regionMatches(wordStart, searchWord, 0, searchWord.length)
+        ) {
             return wordCount
         }
         return -1
