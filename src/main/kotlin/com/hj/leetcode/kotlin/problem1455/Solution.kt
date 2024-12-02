@@ -21,7 +21,7 @@ class Solution {
             }
             wordStart = wordEnd + 1
         }
-        // Handle end= sentence.length
+        // Handle wordEnd= sentence.length
         wordCount++
         if (sentence.regionMatches(wordStart, searchWord, 0, searchWord.length)) {
             return wordCount
