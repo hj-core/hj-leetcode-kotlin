@@ -5,8 +5,7 @@ package com.hj.leetcode.kotlin.problem1455
  */
 class Solution {
     /* Complexity:
-     * Time O(N+M) and Space O(1)
-     * where N and M are the length of sentence and searchWord, respectively.
+     * Time O(N) and Space O(1) where N is the length of sentence.
      */
     fun isPrefixOfWord(
         sentence: String,
