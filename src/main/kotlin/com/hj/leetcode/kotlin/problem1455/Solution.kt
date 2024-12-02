@@ -12,44 +12,32 @@ class Solution {
         sentence: String,
         searchWord: String,
     ): Int {
-        var wordCount = 0
         var wordStart = 0
-        for (wordEnd in sentence.indicesOf(' ')) {
-            wordCount++
+        for ((i, wordEnd) in wordEnds(sentence).withIndex()) {
             if (searchWord.length <= wordEnd - wordStart &&
                 sentence.regionMatches(wordStart, searchWord, 0, searchWord.length)
             ) {
-                return wordCount
+                return i + 1
             }
             wordStart = wordEnd + 1
-        }
-        // Handle wordEnd= sentence.length
-        wordCount++
-        if (searchWord.length <= sentence.length - wordStart &&
-            sentence.regionMatches(wordStart, searchWord, 0, searchWord.length)
-        ) {
-            return wordCount
         }
         return -1
     }
 
-    private fun String.indicesOf(c: Char): Iterator<Int> =
+    private fun wordEnds(sentence: String): Iterator<Int> =
         object : Iterator<Int> {
-            private val s = this@indicesOf
             private var index = 0
 
             override fun next(): Int {
                 if (!hasNext()) {
                     throw NoSuchElementException()
                 }
+                while (index < sentence.length && sentence[index] != ' ') {
+                    index++
+                }
                 return index.also { index++ }
             }
 
-            override fun hasNext(): Boolean {
-                while (index < s.length && s[index] != c) {
-                    index++
-                }
-                return index < s.length
-            }
+            override fun hasNext(): Boolean = index <= sentence.length
         }
 }
