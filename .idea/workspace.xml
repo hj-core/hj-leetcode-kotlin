@@ -455,7 +455,7 @@
       <workItem from="1733021876163" duration="60000" />
       <workItem from="1733022059673" duration="17000" />
       <workItem from="1733022699499" duration="158000" />
-      <workItem from="1733131355782" duration="1923000" />
+      <workItem from="1733131355782" duration="2293000" />
     </task>
     <task id="LOCAL-00792" summary="Fix solution&#10;&#10;- Previous solution swaps the two nodes. However, the problem explicitly asks to swap their values">
       <created>1684160388035</created>

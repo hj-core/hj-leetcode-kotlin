@@ -12,12 +12,14 @@ class Solution {
         sentence: String,
         searchWord: String,
     ): Int {
+        var wordCount = 0
         var wordStart = 0
-        for ((i, wordEnd) in wordEnds(sentence).withIndex()) {
+        for (wordEnd in wordEnds(sentence)) {
+            wordCount++
             if (searchWord.length <= wordEnd - wordStart &&
                 sentence.regionMatches(wordStart, searchWord, 0, searchWord.length)
             ) {
-                return i + 1
+                return wordCount
             }
             wordStart = wordEnd + 1
         }
