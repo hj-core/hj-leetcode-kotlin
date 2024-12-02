@@ -13,7 +13,11 @@ class Solution {
     ): Int {
         var wordCount = 0
         var wordStart = 0
-        for (wordEnd in wordEnds(sentence)) {
+        for (wordEnd in 0..sentence.length) {
+            if (wordEnd < sentence.length && sentence[wordEnd] != ' ') {
+                continue
+            }
+
             wordCount++
             if (searchWord.length <= wordEnd - wordStart &&
                 sentence.regionMatches(wordStart, searchWord, 0, searchWord.length)
@@ -24,21 +28,4 @@ class Solution {
         }
         return -1
     }
-
-    private fun wordEnds(sentence: String): Iterator<Int> =
-        object : Iterator<Int> {
-            private var index = 0
-
-            override fun next(): Int {
-                if (!hasNext()) {
-                    throw NoSuchElementException()
-                }
-                while (index < sentence.length && sentence[index] != ' ') {
-                    index++
-                }
-                return index.also { index++ }
-            }
-
-            override fun hasNext(): Boolean = index <= sentence.length
-        }
 }
