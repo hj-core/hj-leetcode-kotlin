@@ -13,6 +13,7 @@ class Solution {
     ): Int {
         var wordCount = 0
         var wordStart = 0
+
         for (wordEnd in 0..sentence.length) {
             if (wordEnd < sentence.length && sentence[wordEnd] != ' ') {
                 continue
