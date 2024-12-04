@@ -26,10 +26,8 @@ class Solution {
     private fun canMake(
         from: Char,
         to: Char,
-    ): Boolean =
-        when (from) {
-            to -> true
-            'z' -> to == 'a'
-            else -> from + 1 == to
-        }
+    ): Boolean {
+        val diff = to - from
+        return diff shr 1 == 0 || diff == -25
+    }
 }
