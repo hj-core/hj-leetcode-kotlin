@@ -14,13 +14,13 @@ class Solution {
         val sortedNums = nums.sorted()
         var left = 0
         var windowSum = 0L
-        // This version of sliding window algorithm focuses on the width.
-        // The largest width is inherited during the sliding process.
-        for (right in sortedNums.indices) {
-            val num = sortedNums[right].toLong()
-            windowSum += num
 
-            if (windowSum + k < num * (right - left + 1)) {
+        for (right in sortedNums.indices) {
+            val target = sortedNums[right].toLong()
+            windowSum += target
+
+            // The width of the largest window is inherited during sliding
+            if (windowSum + k < target * (right - left + 1)) {
                 windowSum -= sortedNums[left]
                 left++
             }
