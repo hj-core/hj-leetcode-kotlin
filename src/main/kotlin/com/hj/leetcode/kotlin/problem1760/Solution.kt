@@ -18,7 +18,7 @@ class Solution {
 
         while (low <= high) {
             val middle = low + (high - low) / 2
-            if (requiredOps(nums, middle) <= maxOperations) {
+            if (canReduce(nums, middle, maxOperations)) {
                 high = middle - 1
             } else {
                 low = middle + 1
@@ -27,10 +27,20 @@ class Solution {
         return low
     }
 
-    private fun requiredOps(
+    private fun canReduce(
         bagSizes: IntArray,
         reducedSize: Int,
-    ): Int = bagSizes.sumOf { requiredOps(it, reducedSize) }
+        maxOperations: Int,
+    ): Boolean {
+        var totalOps = 0
+        for (size in bagSizes) {
+            totalOps += requiredOps(size, reducedSize)
+            if (totalOps > maxOperations) {
+                return false
+            }
+        }
+        return true
+    }
 
     private fun requiredOps(
         bagSize: Int,
