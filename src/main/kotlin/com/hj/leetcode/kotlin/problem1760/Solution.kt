@@ -12,9 +12,9 @@ class Solution {
         nums: IntArray,
         maxOperations: Int,
     ): Int {
-        val maxBallsPerBag = 1_000_000_000
+        val maxPossibleSize = 1_000_000_000
         var low = 1
-        var high = maxBallsPerBag
+        var high = maxPossibleSize
 
         while (low <= high) {
             val middle = low + (high - low) / 2
