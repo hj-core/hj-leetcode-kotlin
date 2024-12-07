@@ -6,15 +6,14 @@ package com.hj.leetcode.kotlin.problem1760
 class Solution {
     /* Complexity:
      * Time O(NLogM) and Space O(1)
-     * where N is the size of nums and M is the maximum possible balls in a bag.
+     * where N is the size of nums and M is the maximum value in nums.
      */
     fun minimumSize(
         nums: IntArray,
         maxOperations: Int,
     ): Int {
-        val maxPossibleSize = 1_000_000_000
         var low = 1
-        var high = maxPossibleSize
+        var high = nums.max()
 
         while (low <= high) {
             val middle = low + (high - low) / 2
