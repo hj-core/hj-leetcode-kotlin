@@ -6,7 +6,7 @@ package com.hj.leetcode.kotlin.problem1760
 class Solution {
     /* Complexity:
      * Time O(NLogM) and Space O(1)
-     * where N is the size of nums and M is the maximum value in nums.
+     * where N is the size of nums and M is the maximum possible balls in a bag.
      */
     fun minimumSize(
         nums: IntArray,
