@@ -18,7 +18,7 @@ class Solution {
             if (start <= sortedEvents[0][1]) {
                 continue
             }
-            val leftSize = sortedEvents.partitionPoint { (_, end, _) -> end - start }
+            val leftSize = sortedEvents.partitionPoint { (_, end, _) -> end < start }
             result = max(result, value + prefixMaxValues[leftSize - 1])
         }
         return result
@@ -34,13 +34,18 @@ class Solution {
         return result
     }
 
-    private fun <T> List<T>.partitionPoint(comparison: (T) -> Int): Int {
+    /**
+     * Require the original list can be partitioned into left and right according to [isLeft].
+     *
+     * Return the size of the left partition.
+     */
+    private fun <T> List<T>.partitionPoint(isLeft: (T) -> Boolean): Int {
         var low = 0
         var high = lastIndex
 
         while (low <= high) {
             val mid = low + (high - low) / 2
-            if (comparison(this[mid]) < 0) {
+            if (isLeft(this[mid])) {
                 low = mid + 1
             } else {
                 high = mid - 1
