@@ -14,23 +14,12 @@ class Solution {
         val prefixMaxValues = prefixMaxValues(sortedEvents)
         var result = prefixMaxValues.last()
 
-        for ((start, end, value) in sortedEvents) {
+        for ((start, _, value) in sortedEvents) {
             if (start <= sortedEvents[0][1]) {
                 continue
             }
-            // Binary search the last index of sortedEvents
-            // where sortedEvents[index].end < currEvent.start
-            var low = 0
-            var high = sortedEvents.size - 1
-            while (low <= high) {
-                val mid = low + (high - low) / 2
-                if (sortedEvents[mid][1] < start) {
-                    low = mid + 1
-                } else {
-                    high = mid - 1
-                }
-            }
-            result = max(result, value + prefixMaxValues[high])
+            val leftSize = sortedEvents.partitionPoint { (_, end, _) -> end - start }
+            result = max(result, value + prefixMaxValues[leftSize - 1])
         }
         return result
     }
@@ -43,5 +32,20 @@ class Solution {
             result[i] = max(sortedEvents[i][2], result[i - 1])
         }
         return result
+    }
+
+    private fun <T> List<T>.partitionPoint(comparison: (T) -> Int): Int {
+        var low = 0
+        var high = lastIndex
+
+        while (low <= high) {
+            val mid = low + (high - low) / 2
+            if (comparison(this[mid]) < 0) {
+                low = mid + 1
+            } else {
+                high = mid - 1
+            }
+        }
+        return low
     }
 }
