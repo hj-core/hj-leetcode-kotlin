@@ -6,7 +6,7 @@ package com.hj.leetcode.kotlin.problem3152
 class Solution {
     /* Complexity:
      * Time O(N+M) and Space O(N)
-     * where N is the length of nums and M is the length of queries.
+     * where N and M are the length of nums and queries, respectively.
      */
     fun isArraySpecial(
         nums: IntArray,
