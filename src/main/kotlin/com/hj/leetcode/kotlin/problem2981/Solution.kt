@@ -30,9 +30,9 @@ class Solution {
         return threeLongest
             .maxOf { (a, b, c) ->
                 maxOf(
-                    a - 2, // Use the longest length only
-                    min(a - 1, b), // Use the longest and the second-longest length
-                    c, // Use all three lengths
+                    a - 2, // Using the longest length only
+                    min(a - 1, b), // Using the longest and the second-longest lengths
+                    c, // Using all three lengths
                 )
             }.let { if (it < 1) -1 else it }
     }
