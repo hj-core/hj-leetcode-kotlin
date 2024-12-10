@@ -15,7 +15,7 @@ class Solution {
         val threeLongest = Array(26) { intArrayOf(0, 0, 0) }
         var start = 0
         for (end in 1..s.length) {
-            if (end == s.length || s[end] != s[end - 1]) {
+            if (end == s.length || s[end] != s[start]) {
                 val length = end - start
                 threeLongest[s[start] - 'a'].apply {
                     if (last() < length) {
