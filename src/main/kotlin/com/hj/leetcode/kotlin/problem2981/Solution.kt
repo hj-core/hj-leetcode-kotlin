@@ -11,7 +11,7 @@ class Solution {
      * where N is the length of s and M is the size of possible characters.
      */
     fun maximumLength(s: String): Int {
-        // threeLongest[i]::= the three longest lengths of consecutive 'a'+i
+        // threeLongest[C-'a']::= the three longest lengths of consecutive C
         val threeLongest = Array(26) { intArrayOf(0, 0, 0) }
         var start = 0
         for (end in 1..s.length) {
