@@ -29,13 +29,11 @@ class Solution {
             }
             decDeque.addLast(end)
 
-            while (2 < nums[decDeque.first()] - nums[incDeque.first()]) {
-                preStart =
-                    if (incDeque.first() < decDeque.first()) {
-                        incDeque.removeFirst()
-                    } else {
-                        decDeque.removeFirst()
-                    }
+            if (2 < nums[decDeque.first()] - nums[incDeque.first()]) {
+                val toPop = if (incDeque.size == 1) decDeque else incDeque
+                while (nums[toPop.first()] - num !in -2..2) {
+                    preStart = toPop.removeFirst()
+                }
             }
             result += end - preStart
         }
