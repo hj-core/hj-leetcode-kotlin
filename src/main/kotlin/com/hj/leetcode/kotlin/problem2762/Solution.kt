@@ -10,7 +10,7 @@ class Solution {
      */
     fun continuousSubarrays(nums: IntArray): Long {
         // Using two monotonic deques to control the lower bound and upper bound of values.
-        // They store the indices of nums with strictly increasing/decreasing values.
+        // They answer the question: if a new element violates the lower or upper bound, what is the next index to test?
         // nums[preStart+1..=end] >= nums[incDeque.first()]
         // nums[preStart+1..=end] <= nums[decDeque.first()]
         val incDeque = ArrayDeque<Int>()
