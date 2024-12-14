@@ -16,6 +16,7 @@ class Solution {
         val incDeque = ArrayDeque<Int>()
         val decDeque = ArrayDeque<Int>()
         var preStart = -1
+        val allowedDiff = -2..2
         var result = 0L
 
         for ((end, num) in nums.withIndex()) {
@@ -29,9 +30,10 @@ class Solution {
             }
             decDeque.addLast(end)
 
-            if (2 < nums[decDeque.first()] - nums[incDeque.first()]) {
+            val range = nums[decDeque.first()] - nums[incDeque.first()]
+            if (range !in allowedDiff) {
                 val toPop = if (incDeque.size == 1) decDeque else incDeque
-                while (nums[toPop.first()] - num !in -2..2) {
+                while (nums[toPop.first()] - num !in allowedDiff) {
                     preStart = toPop.removeFirst()
                 }
             }
