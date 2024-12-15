@@ -44,6 +44,6 @@ class Solution {
         }
     }
 
-    private fun averagePassRatio(results: Collection<IntArray>): Double =
-        results.sumOf { (pass, total) -> pass.toDouble() / total } / results.size
+    private fun averagePassRatio(classes: Collection<IntArray>): Double =
+        classes.sumOf { (pass, total) -> pass.toDouble() / total } / classes.size
 }

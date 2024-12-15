@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="fixup! Improve readability">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1792/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1792/Solution.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -496,7 +495,8 @@
       <workItem from="1734231105457" duration="1057000" />
       <workItem from="1734243305105" duration="73000" />
       <workItem from="1734245380289" duration="770000" />
-      <workItem from="1734246388361" duration="453000" />
+      <workItem from="1734246388361" duration="580000" />
+      <workItem from="1734250906661" duration="29000" />
     </task>
     <task id="LOCAL-00792" summary="Fix solution&#10;&#10;- Previous solution swaps the two nodes. However, the problem explicitly asks to swap their values">
       <created>1684160388035</created>
