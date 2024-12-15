@@ -14,28 +14,28 @@ class Solution {
         classes: Array<IntArray>,
         extraStudents: Int,
     ): Double {
-        val resultPq = PriorityQueue(this::comparingExamResult)
-        for (examResult in classes) {
-            resultPq.offer(examResult)
+        val classPq = PriorityQueue<IntArray> { a, b -> -comparingMarginalGain(a, b) }
+        for (theClass in classes) {
+            classPq.offer(theClass)
         }
 
         repeat(extraStudents) {
-            val (pass, total) = resultPq.poll()
-            resultPq.offer(intArrayOf(pass + 1, total + 1))
+            val (pass, total) = classPq.poll()
+            val withExtra = intArrayOf(pass + 1, total + 1)
+            classPq.offer(withExtra)
         }
-        return averagePassRatio(resultPq)
+        return averagePassRatio(classPq)
     }
 
-    private fun comparingExamResult(
+    private fun comparingMarginalGain(
         classA: IntArray,
         classB: IntArray,
     ): Int {
         val (passA, totalA) = classA
         val (passB, totalB) = classB
-        // Comparing the marginal improvement in pass ratio of classB to classA
         val diff =
-            (totalB - passB).toLong() * totalA * (totalA + 1) -
-                (totalA - passA).toLong() * totalB * (totalB + 1)
+            (totalA - passA).toLong() * totalB * (totalB + 1) -
+                (totalB - passB).toLong() * totalA * (totalA + 1)
 
         return when {
             diff > 0 -> 1
