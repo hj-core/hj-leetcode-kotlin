@@ -14,8 +14,7 @@ class Solution {
     ): IntArray {
         val result = nums.clone()
         repeat(k) {
-            val i = result.firstIndexOfMin()
-            result[i] *= multiplier
+            result.apply { this[firstIndexOfMin()] *= multiplier }
         }
         return result
     }
