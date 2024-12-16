@@ -11,13 +11,10 @@ class Solution {
         nums: IntArray,
         k: Int,
         multiplier: Int,
-    ): IntArray {
-        val result = nums.clone()
-        repeat(k) {
-            result.apply { this[firstIndexOfMin()] *= multiplier }
+    ): IntArray =
+        nums.clone().apply {
+            repeat(k) { this[firstIndexOfMin()] *= multiplier }
         }
-        return result
-    }
 
     private fun IntArray.firstIndexOfMin(): Int =
         this.foldIndexed(0) { i, acc, elem ->
