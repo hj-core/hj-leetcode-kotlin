@@ -15,30 +15,13 @@ class Solution {
         repeatLimit: Int,
     ): String =
         buildString(s.length) {
-            val counts = charCounts(s)
+            val counts = countsSortedByChar(s)
             while (counts.isNotEmpty()) {
-                val largest = counts.last()
-                if (largest.count <= repeatLimit || counts.size == 1) {
-                    val times = min(largest.count, repeatLimit)
-                    repeat(times) { append(largest.char) }
-                    counts.removeLast()
-                } else {
-                    repeat(repeatLimit) { append(largest.char) }
-                    largest.count -= repeatLimit
-
-                    val secondLargest = counts[counts.size - 2]
-                    append(secondLargest.char)
-                    if (secondLargest.count == 1) {
-                        counts.removeAt(counts.size - 2)
-                    } else {
-                        secondLargest.count -= 1
-                    }
-                }
+                greedilyAppendNext(counts, repeatLimit)
             }
         }
 
-    // Return count of each lowercase in s in lexicographical order.
-    private fun charCounts(s: String): MutableList<CharCount> {
+    private fun countsSortedByChar(s: String): MutableList<CharCount> {
         val counts = IntArray(26)
         for (c in s) {
             counts[c - 'a']++
@@ -55,4 +38,30 @@ class Solution {
         var char: Char,
         var count: Int,
     )
+
+    private fun StringBuilder.greedilyAppendNext(
+        sortedCounts: MutableList<CharCount>, // sorted by char
+        repeatLimit: Int,
+    ) {
+        val largest = sortedCounts.last()
+        if (largest.count <= repeatLimit || sortedCounts.size == 1) {
+            repeat(min(largest.count, repeatLimit)) {
+                append(largest.char)
+            }
+            sortedCounts.removeLast()
+        } else {
+            repeat(repeatLimit) {
+                append(largest.char)
+            }
+            largest.count -= repeatLimit
+
+            val secondLargest = sortedCounts[sortedCounts.size - 2]
+            append(secondLargest.char)
+            if (secondLargest.count == 1) {
+                sortedCounts.removeAt(sortedCounts.size - 2)
+            } else {
+                secondLargest.count -= 1
+            }
+        }
+    }
 }
