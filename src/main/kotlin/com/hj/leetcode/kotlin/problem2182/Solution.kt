@@ -44,15 +44,13 @@ class Solution {
         repeatLimit: Int,
     ) {
         val largest = sortedCounts.last()
+        repeat(min(largest.count, repeatLimit)) {
+            append(largest.char)
+        }
+
         if (largest.count <= repeatLimit || sortedCounts.size == 1) {
-            repeat(min(largest.count, repeatLimit)) {
-                append(largest.char)
-            }
             sortedCounts.removeLast()
         } else {
-            repeat(repeatLimit) {
-                append(largest.char)
-            }
             largest.count -= repeatLimit
 
             val secondLargest = sortedCounts[sortedCounts.size - 2]
