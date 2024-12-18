@@ -15,7 +15,6 @@ class Solution {
             while (monoStack.isNotEmpty() && prices[i] < monoStack.last()) {
                 monoStack.removeLast()
             }
-
             val discount = if (monoStack.isEmpty()) 0 else monoStack.last()
             result[i] = prices[i] - discount
             monoStack.add(prices[i])
