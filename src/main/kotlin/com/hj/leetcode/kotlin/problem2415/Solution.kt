@@ -7,45 +7,36 @@ import com.hj.leetcode.kotlin.common.model.TreeNode
  */
 class Solution {
     /* Complexity:
-     * Time O(N) and Space O(N) where N is the number of nodes in root.
+     * Time O(N) and Space O(Log(N)) where N is the number of nodes in root.
      */
     fun reverseOddLevels(root: TreeNode?): TreeNode? {
+        // Caution:
+        // The problem asks to reverse the node values, not the nodes themselves.
+        // This solution demonstrates the capability but doesn't fit the requirement.
         if (root == null) {
             return null
         }
-        // Caution: The problem asks to reverse the node values, not the nodes themselves
-        var level = 0
-        var levelNodes = listOf(root)
-
-        while (levelNodes.isNotEmpty()) {
-            if (level % 2 == 1) {
-                reverseNodeValues(levelNodes)
-            }
-            levelNodes = nextLevelNodes(levelNodes)
-            level++
-        }
+        root.left = root.right.also { root.right = root.left }
+        dfs(root.left, root.right, 1)
         return root
     }
 
-    private fun reverseNodeValues(levelNodes: List<TreeNode>) {
-        var left = 0
-        var right = levelNodes.lastIndex
-        while (left < right) {
-            val temp = levelNodes[left].`val`
-            levelNodes[left].`val` = levelNodes[right].`val`
-            levelNodes[right].`val` = temp
-            left++
-            right--
+    private fun dfs(
+        node: TreeNode?,
+        symmetricNode: TreeNode?,
+        level: Int,
+    ) {
+        if (node == null || symmetricNode == null) {
+            return
         }
+        if (level % 2 == 0) {
+            node.left = symmetricNode.right.also { symmetricNode.right = node.left }
+            node.right = symmetricNode.left.also { symmetricNode.left = node.right }
+        } else {
+            node.left = symmetricNode.left.also { symmetricNode.left = node.left }
+            node.right = symmetricNode.right.also { symmetricNode.right = node.right }
+        }
+        dfs(node.left, symmetricNode.right, level + 1)
+        dfs(node.right, symmetricNode.left, level + 1)
     }
-
-    private fun nextLevelNodes(levelNodes: List<TreeNode>): List<TreeNode> =
-        buildList {
-            if (levelNodes[0].left != null) {
-                for (node in levelNodes) {
-                    add(checkNotNull(node.left))
-                    add(checkNotNull(node.right))
-                }
-            }
-        }
 }
