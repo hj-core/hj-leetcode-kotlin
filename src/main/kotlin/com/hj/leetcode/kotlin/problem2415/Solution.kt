@@ -13,7 +13,7 @@ class Solution {
         if (root == null) {
             return null
         }
-        // Caution: The problem asks to reverse the node values but not node
+        // Caution: The problem asks to reverse the node values, not the nodes themselves
         var level = 0
         var levelNodes = listOf(root)
 

@@ -13,6 +13,7 @@ class Solution2 {
         if (root == null) {
             return null
         }
+        // Caution: The problem asks to reverse the node values, not the nodes themselves
         dfs(root.left, root.right, 1)
         return root
     }
