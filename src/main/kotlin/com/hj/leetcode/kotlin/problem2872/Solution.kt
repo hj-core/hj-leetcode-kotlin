@@ -12,19 +12,7 @@ class Solution {
         edges: Array<IntArray>,
         values: IntArray,
         k: Int,
-    ): Int {
-        val adjacencyList = adjacencyList(edges)
-        return dfs(root(adjacencyList), -1, adjacencyList, values, k)[1]
-    }
-
-    private fun adjacencyList(edges: Array<IntArray>): Map<Int, List<Int>> {
-        val result = mutableMapOf<Int, MutableList<Int>>()
-        for ((u, v) in edges) {
-            result.computeIfAbsent(u) { mutableListOf() }.add(v)
-            result.computeIfAbsent(v) { mutableListOf() }.add(u)
-        }
-        return result
-    }
+    ): Int = dfs(0, -1, adjacencyList(edges), values, k)[1]
 
     // Return the (sumPendingNodes, validSplits).
     private fun dfs(
@@ -49,10 +37,12 @@ class Solution {
         return result
     }
 
-    private fun root(adjacencyList: Map<Int, List<Int>>): Int {
-        if (adjacencyList.isEmpty()) {
-            return 0
+    private fun adjacencyList(edges: Array<IntArray>): Map<Int, List<Int>> {
+        val result = mutableMapOf<Int, MutableList<Int>>()
+        for ((u, v) in edges) {
+            result.computeIfAbsent(u) { mutableListOf() }.add(v)
+            result.computeIfAbsent(v) { mutableListOf() }.add(u)
         }
-        return adjacencyList.entries.first { (_, list) -> list.size <= 2 }.key
+        return result
     }
 }
