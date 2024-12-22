@@ -50,15 +50,15 @@ class Solution {
                 monoStack.add(j)
             }
 
-            if (monoStack.isEmpty() || heights[monoStack.first()] <= heights[left]) {
-                result[i] = -1
-            } else {
-                result[i] =
+            result[i] =
+                if (monoStack.isEmpty() || heights[monoStack.first()] <= heights[left]) {
+                    -1
+                } else {
                     reversedView
                         .binarySearch { j -> heights[j] - heights[left] }
                         .let { if (it < 0) -(it + 1) else it + 1 }
                         .let { reversedView[it] }
-            }
+                }
         }
         return result
     }
