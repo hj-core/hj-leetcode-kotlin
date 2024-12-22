@@ -15,8 +15,8 @@ class Solution2 {
         queries: Array<IntArray>,
     ): IntArray {
         val result = IntArray(queries.size)
-        // Queries whose answer is not immediately clear.
-        // Grouped by right, i.e., the larger value of a and b.
+        // Answer the easy queries.
+        // Meanwhile, group the remaining queries by right, i.e., the larger value of a and b.
         val pendingQueries = List(heights.size) { mutableListOf<PendingQuery>() }
         for ((i, query) in queries.withIndex()) {
             val (a, b) = query
@@ -29,7 +29,7 @@ class Solution2 {
             }
         }
 
-        // For each index of heights, find the pending queries can be served by it
+        // For each index of heights, find the pending queries can be answered by it
         val queryPq = PriorityQueue<PendingQuery>(compareBy { it.height })
         for ((j, height) in heights.withIndex()) {
             while (queryPq.isNotEmpty() && queryPq.peek().height < height) {
