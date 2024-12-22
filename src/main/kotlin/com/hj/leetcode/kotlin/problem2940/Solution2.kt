@@ -24,8 +24,7 @@ class Solution2 {
             if (left == right || heights[left] < heights[right]) {
                 result[i] = right
             } else {
-                val height = maxOf(heights[left], heights[right])
-                pendingQueries[right].add(PendingQuery(i, height))
+                pendingQueries[right].add(PendingQuery(i, heights[left]))
             }
         }
 
