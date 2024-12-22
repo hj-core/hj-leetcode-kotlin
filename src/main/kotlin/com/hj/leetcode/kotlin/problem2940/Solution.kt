@@ -40,7 +40,6 @@ class Solution {
             }
 
             for (j in lastVisited - 1 downTo right) {
-                lastVisited = j
                 if (0 < j && heights[j] <= heights[j - 1]) {
                     continue
                 }
@@ -49,6 +48,7 @@ class Solution {
                 }
                 monoStack.add(j)
             }
+            lastVisited = right
 
             result[i] =
                 if (monoStack.isEmpty() || heights[monoStack.first()] <= heights[left]) {
