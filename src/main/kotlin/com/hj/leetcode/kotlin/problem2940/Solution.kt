@@ -7,7 +7,7 @@ import kotlin.math.max
  */
 class Solution {
     /* Complexity:
-     * Time O(MLogN+MLogM) and Space O(M+N)
+     * Time O(MLogM+MLogN) and Space O(M+N)
      * where N and M are the lengths of heights and queries, respectively.
      */
     fun leftmostBuildingQueries(
