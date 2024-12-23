@@ -24,20 +24,21 @@ class Solution {
 
     private fun minOperations(levelNodes: List<TreeNode>): Int {
         // REQUIRE!(all values are unique)
-        // val oldOrders = levelNodes.indices
-        val newOrders =
+        // val oldOrder = levelNodes.indices
+        val newOrder =
             MutableList(levelNodes.size) { it }.apply {
                 sortBy { levelNodes[it].`val` }
             }
         var result = 0
-        var old = 0
+        var i = 0
 
-        while (old < newOrders.size) {
-            val new = newOrders[old]
+        while (i < newOrder.size) {
+            val old = i
+            val new = newOrder[i]
             if (new == old) {
-                old++
+                i++
             } else {
-                newOrders[old] = newOrders[new].also { newOrders[new] = newOrders[old] }
+                newOrder[new] = new.also { newOrder[i] = newOrder[new] }
                 result++
             }
         }
