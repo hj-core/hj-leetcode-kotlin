@@ -30,29 +30,29 @@ class Solution {
         adjacencyList: Map<Int, List<Int>>,
     ): IntArray {
         var diameter = 0
-        val twoLongestChildPath = PriorityQueue<Int>()
+        val twoMaxChildPath = PriorityQueue<Int>()
 
         for (child in adjacencyList[root] ?: emptyList()) {
             if (child == parentNode) {
                 continue
             }
-            val (childDiameter, longestPathFromChild) = dfs(child, root, adjacencyList)
+            val (childDiameter, maxPathFromChild) = dfs(child, root, adjacencyList)
             diameter = maxOf(diameter, childDiameter)
 
-            twoLongestChildPath.offer(longestPathFromChild)
-            if (twoLongestChildPath.size > 2) {
-                twoLongestChildPath.poll()
+            twoMaxChildPath.offer(maxPathFromChild)
+            if (twoMaxChildPath.size > 2) {
+                twoMaxChildPath.poll()
             }
         }
-        var longestPathFromRoot = 0
-        var longestPathPassRoot = 0
-        while (twoLongestChildPath.isNotEmpty()) {
-            val childLength = twoLongestChildPath.poll()
-            longestPathPassRoot += 1 + childLength
-            longestPathFromRoot = maxOf(longestPathFromRoot, 1 + childLength)
+        var maxPathFromRoot = 0
+        var maxPathPassRoot = 0
+        while (twoMaxChildPath.isNotEmpty()) {
+            val childLength = twoMaxChildPath.poll()
+            maxPathPassRoot += 1 + childLength
+            maxPathFromRoot = maxOf(maxPathFromRoot, 1 + childLength)
         }
-        diameter = maxOf(diameter, longestPathPassRoot)
-        return intArrayOf(diameter, longestPathFromRoot)
+        diameter = maxOf(diameter, maxPathPassRoot)
+        return intArrayOf(diameter, maxPathFromRoot)
     }
 
     private fun adjacencyList(edges: Array<IntArray>): Map<Int, List<Int>> {
