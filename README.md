@@ -80,6 +80,7 @@ at [LeetCode](https://leetcode.com/hj-core/).
 | [2872. Maximum Number of K-Divisible Components](https://leetcode.com/problems/maximum-number-of-k-divisible-components/)                                                 | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem2872/Solution.kt)                                                                               | 2024-12-21    |
 | [2940. Find Building Where Alice and Bob Can Meet](https://leetcode.com/problems/find-building-where-alice-and-bob-can-meet/)                                             | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem2940/Solution.kt), [Solution2](src/main/kotlin/com/hj/leetcode/kotlin/problem2940/Solution2.kt) | 2024-12-22    |
 | [3068. Find the Maximum Sum of Node Values](https://leetcode.com/problems/find-the-maximum-sum-of-node-values/)                                                           | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3068/Solution.kt)                                                                               | 2024-05-19    |
+| [3203. Find Minimum Diameter After Merging Two Trees](https://leetcode.com/problems/find-minimum-diameter-after-merging-two-trees/)                                       | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3203/Solution.kt)                                                                               | 2024-12-24    |
 
 ### Medium
 
