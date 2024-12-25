@@ -7,21 +7,19 @@ import com.hj.leetcode.kotlin.common.model.TreeNode
  */
 class Solution {
     /* Complexity:
-     * Time O(N) and Space O(H) where N is the number of nodes in root
-     * and H is the height of root;
+     * Time O(N) and Auxiliary Space O(H)
+     * where N and H are the number of nodes and height of root, respectively.
      */
-    fun largestValues(root: TreeNode?): List<Int> {
-        val result = mutableListOf<Int>()
-
-        dfs(root, 0) { node, depth ->
-            if (result.size == depth) {
-                result.add(node.`val`)
-            } else {
-                result[depth] = maxOf(result[depth], node.`val`)
+    fun largestValues(root: TreeNode?): List<Int> =
+        buildList {
+            dfs(root, 0) { node, depth ->
+                if (size == depth) {
+                    add(node.`val`)
+                } else {
+                    this[depth] = maxOf(this[depth], node.`val`)
+                }
             }
         }
-        return result
-    }
 
     private fun dfs(
         node: TreeNode?,
