@@ -10,18 +10,16 @@ class Solution {
      * Time O(N) and Auxiliary Space O(H)
      * where N and H are the number of nodes and height of root, respectively.
      */
-    fun largestValues(root: TreeNode?): List<Int> {
-        val result = mutableListOf<Int>()
-
-        dfs(root, 0) { node, depth ->
-            if (result.size == depth) {
-                result.add(node.`val`)
-            } else {
-                result[depth] = maxOf(result[depth], node.`val`)
+    fun largestValues(root: TreeNode?): List<Int> =
+        buildList {
+            dfs(root, 0) { node, depth ->
+                if (size == depth) {
+                    add(node.`val`)
+                } else {
+                    this[depth] = maxOf(this[depth], node.`val`)
+                }
             }
         }
-        return result
-    }
 
     private fun dfs(
         node: TreeNode?,
