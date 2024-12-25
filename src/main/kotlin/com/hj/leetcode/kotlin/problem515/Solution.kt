@@ -7,8 +7,8 @@ import com.hj.leetcode.kotlin.common.model.TreeNode
  */
 class Solution {
     /* Complexity:
-     * Time O(N) and Space O(H) where N is the number of nodes in root
-     * and H is the height of root;
+     * Time O(N) and Auxiliary Space O(H)
+     * where N and H are the number of nodes and height of root, respectively.
      */
     fun largestValues(root: TreeNode?): List<Int> {
         val result = mutableListOf<Int>()
