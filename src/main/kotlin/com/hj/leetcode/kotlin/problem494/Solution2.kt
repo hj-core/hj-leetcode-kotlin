@@ -24,17 +24,22 @@ class Solution2 {
             return 0
         }
         val targetDiff = sum - abs(target)
-        // dp_i[diff]::=
-        // Number of ways to reduce diff by altering some of the signs in range 0..=i.
-        val dp = IntArray(targetDiff + 1)
+        if (targetDiff % 2 != 0) {
+            // Changing signs causes an even amount of total difference
+            return 0
+        }
+        val halfDiff = targetDiff / 2
+        // dp_i[j]::=
+        // Number of ways to reduce 2 * j by altering some of the signs in range 0..=i.
+        val dp = IntArray(1 + halfDiff)
         dp[0] = 1 // dp_(i=-1)
         for (num in nums) {
             for (j in dp.indices.reversed()) {
-                if (j + 2 * num < dp.size) {
-                    dp[j + 2 * num] += dp[j]
+                if (j + num < dp.size) {
+                    dp[j + num] += dp[j]
                 }
             }
         }
-        return dp[targetDiff]
+        return dp[halfDiff]
     }
 }
