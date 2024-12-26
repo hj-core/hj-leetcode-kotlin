@@ -29,15 +29,14 @@ class Solution2 {
             return 0
         }
         val halfDiff = targetDiff / 2
+
         // dp_i[j]::=
         // Number of ways to reduce 2 * j by altering some of the signs in range 0..=i.
         val dp = IntArray(1 + halfDiff)
         dp[0] = 1 // dp_(i=-1)
         for (num in nums) {
-            for (j in dp.indices.reversed()) {
-                if (j + num < dp.size) {
-                    dp[j + num] += dp[j]
-                }
+            for (j in dp.lastIndex - num downTo 0) {
+                dp[j + num] += dp[j]
             }
         }
         return dp[halfDiff]
