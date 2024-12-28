@@ -13,7 +13,7 @@ class Solution2 {
     ): IntArray {
         val result = intArrayOf(0, k, 2 * k)
         val maxTwoSol = MaxSumOfTwoSubarrays(nums, k, k * 2)
-        var thirdSum = (k * 2..<k * 3).sumOf { nums[it] }
+        var thirdSum = (k * 2..<k * 3).sumOf { nums[it] } // Sum of the third window
         var resultSum = thirdSum + maxTwoSol.resultSum
 
         for (third in 2 * k + 1..nums.size - k) {
@@ -64,11 +64,11 @@ class Solution2 {
                 bestFirstSum = newFirstSum
             }
 
-            val sum = secondSum + bestFirstSum
-            if (secondSum + bestFirstSum > resultSum) {
+            val twoSum = secondSum + bestFirstSum
+            if (twoSum > resultSum) {
                 result[0] = bestFirst
                 result[1] = second
-                resultSum = sum
+                resultSum = twoSum
             }
         }
     }
