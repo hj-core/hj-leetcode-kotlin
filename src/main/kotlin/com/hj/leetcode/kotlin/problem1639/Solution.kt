@@ -5,9 +5,9 @@ package com.hj.leetcode.kotlin.problem1639
  */
 class Solution {
     /* Complexity:
-     * Time O(MN+KN) and Space O(N)
-     * where M is the number of words, N is the length of each word,
-     * and K is the length of target.
+     * Time O(MK+KN) and Space O(K)
+     * where M is the number of words, K is the length of each word,
+     * and N is the length of target.
      */
     fun numWays(
         words: Array<String>,
@@ -23,7 +23,7 @@ class Solution {
 
         // dp[i][k]::=
         // the number of ways to form target [i..<target.len]
-        // using characters from index k
+        // using characters starting from index k
         val dp = IntArray(target.length + 1) // dp@k=words[0].len
         dp[dp.lastIndex] = 1
 
