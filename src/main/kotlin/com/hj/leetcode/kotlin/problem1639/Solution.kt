@@ -5,8 +5,9 @@ package com.hj.leetcode.kotlin.problem1639
  */
 class Solution {
     /* Complexity:
-     * Time O(MN) and Space O(N)
-     * where M is the number of words and N is the length of each word.
+     * Time O(MN+KN) and Space O(N)
+     * where M is the number of words, N is the length of each word,
+     * and K is the length of target.
      */
     fun numWays(
         words: Array<String>,
