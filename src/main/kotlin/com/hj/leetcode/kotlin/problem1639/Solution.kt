@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem1639
  */
 class Solution {
     /* Complexity:
-     * Time O(MK+KN) and Space O(K)
+     * Time O(MK+KN) and Space O(N)
      * where M is the number of words, K is the length of each word,
      * and N is the length of target.
      */
@@ -18,9 +18,6 @@ class Solution {
         }
         val modulus = 1_000_000_007
 
-        // charFreq[k][c-'a']::= the number of words with character c at index k
-        val charFreq = charFreq(words)
-
         // dp[i][k]::=
         // the number of ways to form target [i..<target.len]
         // using characters starting from index k
@@ -28,8 +25,9 @@ class Solution {
         dp[dp.lastIndex] = 1
 
         for (k in words[0].indices.reversed()) {
+            val charFreq = charFreq(words, k)
             for ((i, c) in target.withIndex()) {
-                val pickK = ((charFreq[k][c - 'a'] * dp[i + 1].toLong()) % modulus).toInt()
+                val pickK = ((charFreq[c - 'a'] * dp[i + 1].toLong()) % modulus).toInt()
                 val skipK = dp[i]
                 dp[i] = (pickK + skipK) % modulus
             }
@@ -37,12 +35,13 @@ class Solution {
         return dp[0]
     }
 
-    private fun charFreq(words: Array<String>): Array<IntArray> {
-        val result = Array(words[0].length) { IntArray(26) }
+    private fun charFreq(
+        words: Array<String>,
+        k: Int,
+    ): IntArray {
+        val result = IntArray(26)
         for (word in words) {
-            for ((k, c) in word.withIndex()) {
-                result[k][c - 'a']++
-            }
+            result[word[k] - 'a']++
         }
         return result
     }
