@@ -14,24 +14,28 @@ class Solution {
         one: Int,
     ): Int {
         val modulus = 1_000_000_007
-        // dp[L]::= the number of ways to construct length L string
-        val dp = IntArray(high + 1)
+        val (short, long) = if (zero <= one) zero to one else one to zero
+
+        // Shift everything by short.
+        // dp[L]::= the number of ways to construct length (L+short) string
+        val dp = IntArray(high - short + 1)
         dp[0] = 1
+        dp[long - short] += 1
 
-        for (len in dp.indices) {
-            val appendZero = len + zero
-            if (appendZero <= high) {
-                dp[appendZero] = (dp[appendZero] + dp[len]) % modulus
-            }
+        for (len in 0..<dp.size - short) {
+            val appendShort = len + short
+            dp[appendShort] = (dp[appendShort] + dp[len]) % modulus
 
-            val appendOne = len + one
-            if (appendOne <= high) {
-                dp[appendOne] = (dp[appendOne] + dp[len]) % modulus
+            val appendLong = len + long
+            if (appendLong < dp.size) {
+                dp[appendLong] = (dp[appendLong] + dp[len]) % modulus
             }
         }
 
-        return (low..high).fold(0) { acc, it ->
-            (acc + dp[it]) % modulus
+        var result = 0
+        for (len in low - short..high - short) {
+            result = (result + dp[len]) % modulus
         }
+        return result
     }
 }
