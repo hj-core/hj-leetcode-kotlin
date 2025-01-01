@@ -13,8 +13,9 @@ class Solution {
         var leftZeros = 0
         var rightOnes = s.count { it == '1' }
         var result = -1
-        for (index in 0..<s.lastIndex) {
-            if (s[index] == '0') {
+
+        for (leftLength in 1..<s.length) {
+            if (s[leftLength - 1] == '0') {
                 leftZeros++
             } else {
                 rightOnes--

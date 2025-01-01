@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="fixup! Improve readability" />
+    <list default="true" id="0ee37dc2-2f8a-4209-9ce5-75f80a72f2c6" name="Changes" comment="fixup! Improve readability">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1422/Solution.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1422/Solution.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1422/Solution2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/hj/leetcode/kotlin/problem1422/Solution2.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +75,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem2466" />
+        <entry key="$PROJECT_DIR$" value="problem983" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -150,7 +154,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem983",
+    "git-widget-placeholder": "problem1422",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/gaps-/Documents/GitHub/hj-leetcode-kotlin",
@@ -572,6 +576,8 @@
       <workItem from="1735555298007" duration="31000" />
       <workItem from="1735568521047" duration="156000" />
       <workItem from="1735612236298" duration="1986000" />
+      <workItem from="1735655691813" duration="109000" />
+      <workItem from="1735697459732" duration="371000" />
     </task>
     <task id="LOCAL-00792" summary="Fix solution&#10;&#10;- Previous solution swaps the two nodes. However, the problem explicitly asks to swap their values">
       <created>1684160388035</created>
@@ -964,8 +970,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="refactor to fail-fast in case of ill-form age string" />
-    <MESSAGE value="refactor to fail-fast in case of ill-form age string" />
     <MESSAGE value="Fix bad variable name" />
     <MESSAGE value="Add a solution to problem 719" />
     <MESSAGE value="Update gradle to 8.10" />
@@ -989,7 +993,9 @@
     <MESSAGE value="Split the computation of charFreq for each k" />
     <MESSAGE value="Compute of charFreq for each k in site" />
     <MESSAGE value="Split the computation of charFreq for each k" />
-    <option name="LAST_COMMIT_MESSAGE" value="Split the computation of charFreq for each k" />
+    <MESSAGE value="Update last modified date" />
+    <MESSAGE value="Update last modified date" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update last modified date" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
