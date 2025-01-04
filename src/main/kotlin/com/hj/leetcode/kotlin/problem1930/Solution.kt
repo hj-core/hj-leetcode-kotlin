@@ -9,7 +9,7 @@ class Solution {
      * where N is the length of s and K is the number of possible chars.
      */
     fun countPalindromicSubsequence(s: String): Int {
-        val ranges = firstAndLastIndicesOfChars(s)
+        val ranges = firstAndLastIndicesOfEachChar(s)
         var result = 0
         for ((first, last) in ranges) {
             if (last == s.length) {
@@ -24,7 +24,7 @@ class Solution {
         return result
     }
 
-    private fun firstAndLastIndicesOfChars(s: String): Array<IntArray> {
+    private fun firstAndLastIndicesOfEachChar(s: String): Array<IntArray> {
         val result = Array(26) { intArrayOf(s.length, s.length) }
         for ((i, c) in s.withIndex()) {
             val isFirst = result[c - 'a'][0] == s.length
