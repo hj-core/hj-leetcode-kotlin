@@ -5,7 +5,8 @@ package com.hj.leetcode.kotlin.problem1930
  */
 class Solution {
     /*
-     * Time O(N) and Space O(1) where N is the length of s;
+     * Time O(KN) and Space O(K)
+     * where N is the length of s and K is the number of possible chars.
      */
     fun countPalindromicSubsequence(s: String): Int {
         val ranges = firstAndLastIndicesOfChars(s)
