@@ -8,20 +8,30 @@ class Solution {
      * Time O(N) and Space O(1) where N is the length of s;
      */
     fun countPalindromicSubsequence(s: String): Int {
+        // ranges[c-'a']::= the first and last indices of c
+        val ranges = ranges(s)
         var result = 0
-
-        for (char in 'a'..'z') {
-            val firstIndex = s.indexOf(char)
-            if (firstIndex == -1) {
+        for ((start, end) in ranges) {
+            if (end == s.length) {
                 continue
             }
-
-            val lastIndex = s.lastIndexOf(char)
-            val hasChars = BooleanArray(26)
-            for (index in (firstIndex + 1)..<lastIndex) {
-                hasChars[s[index] - 'a'] = true
+            val uniqueChars = hashSetOf<Char>()
+            for (i in start + 1..<end) {
+                uniqueChars.add(s[i])
             }
-            result += hasChars.count { it }
+            result += uniqueChars.size
+        }
+        return result
+    }
+
+    private fun ranges(s: String): Array<IntArray> {
+        val result = Array(26) { intArrayOf(s.length, s.length) }
+        for ((i, c) in s.withIndex()) {
+            if (result[c - 'a'][0] == s.length) {
+                result[c - 'a'][0] = i
+            } else {
+                result[c - 'a'][1] = i
+            }
         }
         return result
     }
