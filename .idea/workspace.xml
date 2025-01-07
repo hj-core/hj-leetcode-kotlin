@@ -71,7 +71,7 @@
     <branch-grouping />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="problem2381" />
+        <entry key="$PROJECT_DIR$" value="problem1769" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -150,7 +150,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem1769",
+    "git-widget-placeholder": "problem1408",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/gaps-/Documents/GitHub/hj-leetcode-kotlin",
@@ -586,6 +586,9 @@
       <workItem from="1736081849704" duration="18000" />
       <workItem from="1736088044042" duration="748000" />
       <workItem from="1736152784782" duration="203000" />
+      <workItem from="1736153052560" duration="544000" />
+      <workItem from="1736174523764" duration="51000" />
+      <workItem from="1736253701631" duration="225000" />
     </task>
     <task id="LOCAL-00792" summary="Fix solution&#10;&#10;- Previous solution swaps the two nodes. However, the problem explicitly asks to swap their values">
       <created>1684160388035</created>
