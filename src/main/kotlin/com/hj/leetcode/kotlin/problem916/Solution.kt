@@ -15,8 +15,8 @@ class Solution {
         val envelope = charFrequencyEnvelope(words2)
         val result = mutableListOf<String>()
         for (word in words1) {
-            val freq = charFrequencies(word)
-            val canEnclose = freq.indices.all { freq[it] >= envelope[it] }
+            val charFreq = charFrequencies(word)
+            val canEnclose = charFreq.indices.all { charFreq[it] >= envelope[it] }
             if (canEnclose) {
                 result.add(word)
             }
