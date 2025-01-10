@@ -12,18 +12,19 @@ class Solution {
         words1: Array<String>,
         words2: Array<String>,
     ): List<String> {
-        val minFreq = minUniversalCharFrequencies(words2)
+        val envelope = charFrequencyEnvelope(words2)
         val result = mutableListOf<String>()
         for (word in words1) {
             val freq = charFrequencies(word)
-            if (freq.indices.all { freq[it] >= minFreq[it] }) {
+            val canEnclose = freq.indices.all { freq[it] >= envelope[it] }
+            if (canEnclose) {
                 result.add(word)
             }
         }
         return result
     }
 
-    private fun minUniversalCharFrequencies(words: Array<String>): IntArray {
+    private fun charFrequencyEnvelope(words: Array<String>): IntArray {
         val result = IntArray(26)
         for (word in words) {
             val charFreq = charFrequencies(word)
