@@ -12,10 +12,10 @@ class Solution {
         words1: Array<String>,
         words2: Array<String>,
     ): List<String> {
-        val minFreq = minUniversalCharFrequency(words2)
+        val minFreq = minUniversalCharFrequencies(words2)
         val result = mutableListOf<String>()
         for (word in words1) {
-            val freq = charFrequency(word)
+            val freq = charFrequencies(word)
             if (freq.indices.all { freq[it] >= minFreq[it] }) {
                 result.add(word)
             }
@@ -23,10 +23,10 @@ class Solution {
         return result
     }
 
-    private fun minUniversalCharFrequency(words: Array<String>): IntArray {
+    private fun minUniversalCharFrequencies(words: Array<String>): IntArray {
         val result = IntArray(26)
         for (word in words) {
-            val charFreq = charFrequency(word)
+            val charFreq = charFrequencies(word)
             for (i in result.indices) {
                 result[i] = maxOf(result[i], charFreq[i])
             }
@@ -34,7 +34,7 @@ class Solution {
         return result
     }
 
-    private fun charFrequency(word: String): IntArray {
+    private fun charFrequencies(word: String): IntArray {
         val result = IntArray(26)
         for (c in word) {
             result[c - 'a']++
