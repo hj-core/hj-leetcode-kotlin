@@ -11,18 +11,16 @@ class Solution {
     fun canConstruct(
         s: String,
         k: Int,
-    ): Boolean =
-        when {
-            s.length < k -> false
-            s.length == k -> true
-            else -> charFrequencies(s).count { it % 2 == 1 } <= k
+    ): Boolean {
+        if (s.length <= k) {
+            return s.length == k
         }
 
-    private fun charFrequencies(s: String): IntArray {
-        val result = IntArray(26)
+        // isFreqOdd[c-'a']::= is the frequency of c an odd number
+        val isFreqOdd = BooleanArray(26)
         for (c in s) {
-            result[c - 'a']++
+            isFreqOdd[c - 'a'] = !isFreqOdd[c - 'a']
         }
-        return result
+        return isFreqOdd.count { it } <= k
     }
 }
