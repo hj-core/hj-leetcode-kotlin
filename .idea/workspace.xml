@@ -150,7 +150,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "problem1400",
+    "git-widget-placeholder": "#588 on problem1400",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/gaps-/Documents/GitHub/hj-leetcode-kotlin",
@@ -601,6 +601,7 @@
       <workItem from="1736498293070" duration="756000" />
       <workItem from="1736520674456" duration="339000" />
       <workItem from="1736561220546" duration="294000" />
+      <workItem from="1736570600109" duration="270000" />
     </task>
     <task id="LOCAL-00792" summary="Fix solution&#10;&#10;- Previous solution swaps the two nodes. However, the problem explicitly asks to swap their values">
       <created>1684160388035</created>

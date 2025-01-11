@@ -12,8 +12,11 @@ class Solution {
         s: String,
         k: Int,
     ): Boolean {
-        if (s.length <= k) {
-            return s.length == k
+        if (s.length < k) {
+            return false
+        }
+        if (s.length == k || k >= 26) {
+            return true
         }
 
         // isFreqOdd[c-'a']::= is the frequency of c an odd number
