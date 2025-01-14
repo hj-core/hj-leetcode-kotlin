@@ -11,21 +11,23 @@ class Solution {
         A: IntArray,
         B: IntArray,
     ): IntArray {
+        // The first visit to value i (from either A or B) set the bit at position i to 1,
+        // and the second visit reset it to 0.
         var parity = 0L
         var common = 0
         val result = IntArray(A.size) { 0 }
         for (i in A.indices) {
             val bitA = 1L shl A[i]
-            if (bitA and parity > 0) {
+            parity = parity xor bitA
+            if (parity and bitA == 0L) {
                 common++
             }
-            parity = parity xor bitA
 
             val bitB = 1L shl B[i]
-            if (bitB and parity > 0) {
+            parity = parity xor bitB
+            if (parity and bitB == 0L) {
                 common++
             }
-            parity = parity xor bitB
 
             result[i] = common
         }
