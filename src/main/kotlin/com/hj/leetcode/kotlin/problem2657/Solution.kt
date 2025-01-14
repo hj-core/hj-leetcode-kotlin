@@ -11,22 +11,21 @@ class Solution {
         A: IntArray,
         B: IntArray,
     ): IntArray {
-        var visitedA = 0L
-        var visitedB = 0L
+        var parity = 0L
         var common = 0
-        val result = IntArray(A.size)
+        val result = IntArray(A.size) { 0 }
         for (i in A.indices) {
             val bitA = 1L shl A[i]
-            if (bitA and visitedB != 0L) {
+            if (bitA and parity > 0) {
                 common++
             }
-            visitedA = visitedA or bitA
+            parity = parity xor bitA
 
             val bitB = 1L shl B[i]
-            if (bitB and visitedA != 0L) {
+            if (bitB and parity > 0) {
                 common++
             }
-            visitedB = visitedB or bitB
+            parity = parity xor bitB
 
             result[i] = common
         }
