@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem2429
  */
 class Solution {
     /* Complexity:
-     * Time O(1) and Space O(1);
+     * Time O(log(num1*num2)) and Space O(1);
      */
     fun minimizeXor(
         num1: Int,
