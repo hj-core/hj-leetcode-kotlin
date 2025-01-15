@@ -28,14 +28,8 @@ class Solution {
         // Compensate for the diff by clearing the first diff set bits,
         // starting from the LSB.
         var result = num1
-        var pending = diff
-        var bit = num1.takeLowestOneBit()
-        while (0 < pending) {
-            if (bit and num1 != 0) {
-                result = result xor bit
-                pending--
-            }
-            bit = bit shl 1
+        repeat(diff) {
+            result = result and (result - 1)
         }
         return result
     }
@@ -47,14 +41,8 @@ class Solution {
         // Compensate for the diff by setting the first diff unset bits,
         // starting from the smallest position.
         var result = num1
-        var pending = diff
-        var bit = 1
-        while (0 < pending) {
-            if (bit and num1 == 0) {
-                result = result xor bit
-                pending--
-            }
-            bit = bit shl 1
+        repeat(diff) {
+            result = result or (result + 1)
         }
         return result
     }
