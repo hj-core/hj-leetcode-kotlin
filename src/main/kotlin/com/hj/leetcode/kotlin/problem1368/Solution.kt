@@ -12,11 +12,12 @@ class Solution {
         val start = Cell(0, 0)
         val goal = Cell(grid.size - 1, grid.last().size - 1)
 
-        var result = 0
         // Cells reachable with a cost within the current min cost
         val visited = Array(grid.size) { BooleanArray(grid[it].size) }
         // Cells reachable with exactly the current min cost
         val reachableAtCost = ArrayDeque<Cell>()
+
+        var result = 0
         explore(start, grid, visited, reachableAtCost)
 
         while (!goal.isReachable(visited)) {
@@ -33,7 +34,7 @@ class Solution {
                     }
                 }
             }
-            // Cells reachable from the above cells also become reachable
+            // Unreachable cells reachable from the above cells also become reachable
             repeat(reachableAtCost.size) {
                 val source = reachableAtCost[it].moved(grid)
                 explore(source, grid, visited, reachableAtCost)
