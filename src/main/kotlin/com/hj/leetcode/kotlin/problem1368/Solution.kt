@@ -26,7 +26,9 @@ class Solution {
                 val cell = reachableAtCost.removeFirst()
                 for (direction in 1..4) {
                     val moved = cell.moved(direction)
-                    explore(moved, grid, visited, reachableAtCost)
+                    if (moved.inGrid(grid) && !moved.isReachable(visited)) {
+                        explore(moved, grid, visited, reachableAtCost)
+                    }
                 }
             }
         }
