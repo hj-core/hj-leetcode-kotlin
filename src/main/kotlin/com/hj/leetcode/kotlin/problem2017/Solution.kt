@@ -12,14 +12,14 @@ class Solution {
         // Base case: robot1 moves down at index 0.
         var downAtLast = grid[0].fold(0L, Long::plus) - grid[0][0]
         var downAtZero = 0L
-        var result = downAtLast
 
-        // Try other positions at which robot1 moves down
-        for (i in 1..<grid[0].size) {
+        // Find the index that the scores of the two strategies crossover.
+        var i = 0
+        while (downAtZero < downAtLast) {
+            i++
             downAtLast -= grid[0][i]
             downAtZero += grid[1][i - 1]
-            result = minOf(result, maxOf(downAtLast, downAtZero))
         }
-        return result
+        return minOf(downAtZero, downAtLast + grid[0][i])
     }
 }
