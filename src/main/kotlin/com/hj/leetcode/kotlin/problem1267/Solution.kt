@@ -13,6 +13,7 @@ class Solution {
         val trackCol = IntArray(grid[0].size)
         var serverCnt = 0
         var singleCnt = 0
+        val signBit = 1 shl 31
 
         for (row in grid.indices) {
             for (col in grid[row].indices) {
@@ -23,20 +24,20 @@ class Solution {
 
                 if (trackRow[row] == 0 && trackCol[col] == 0) {
                     singleCnt++
-                    trackRow[row] = -(col + 1)
-                    trackCol[col] = -(row + 1)
+                    trackRow[row] = col xor signBit
+                    trackCol[col] = row xor signBit
                     continue
                 }
 
                 if (trackRow[row] < 0) {
-                    val colSingle = -(trackRow[row] + 1)
+                    val colSingle = trackRow[row] xor signBit
                     trackCol[colSingle] = 1
                     singleCnt--
                 }
                 trackRow[row] = 1
 
                 if (trackCol[col] < 0) {
-                    val rowSingle = -(trackCol[col] + 1)
+                    val rowSingle = trackCol[col] xor signBit
                     trackRow[rowSingle] = 1
                     singleCnt--
                 }
