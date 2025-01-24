@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem802
  */
 class Solution {
     /* Complexity:
-     * Time O(E) and Space O(N)
+     * Time O(E+N) and Space O(N)
      * where E is the flattened length of graph and N is the size of graph.
      */
     fun eventualSafeNodes(graph: Array<IntArray>): List<Int> {
