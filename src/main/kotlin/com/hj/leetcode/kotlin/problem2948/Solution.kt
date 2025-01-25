@@ -11,7 +11,10 @@ class Solution {
         nums: IntArray,
         limit: Int,
     ): IntArray {
-        val sortedNums = nums.withIndex().sortedBy { it.value }
+        val sortedNums = nums.withIndex().toMutableList()
+        val dummy = IndexedValue(index = -1, value = Int.MAX_VALUE)
+        sortedNums.add(dummy)
+        sortedNums.sortBy { it.value }
 
         // Partition the sorted numbers into the minimum number of groups where the
         // difference between adjacent numbers in each group doesn't exceed the limit.
@@ -31,12 +34,6 @@ class Solution {
             prevValue = sortedNums[i].value
             groupIndices.add(sortedNums[i].index)
         }
-
-        groupIndices.sortDescending()
-        repeat(groupIndices.size) {
-            result[groupIndices[it]] = sortedNums[sortedNums.lastIndex - it].value
-        }
-        groupIndices.clear()
         return result
     }
 }
