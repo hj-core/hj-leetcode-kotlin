@@ -77,32 +77,32 @@ class Solution {
             if (colors[node] != 2) {
                 continue
             }
-            val queue = ArrayDeque<Int>()
-            val visited = BooleanArray(n + 1)
-
-            queue.add(node)
-            visited[node] = true
-            colors[node] = 1
-            var nextColor = 0
-
-            while (queue.isNotEmpty()) {
-                repeat(queue.size) {
-                    val curr = queue.removeFirst()
-                    for (next in neighbours[curr]) {
-                        if (!visited[next]) {
-                            visited[next] = true
-                            colors[next] = nextColor
-                            queue.add(next)
-                        } else {
-                            if (colors[next] != nextColor) {
-                                return true
-                            }
-                        }
-                    }
-                }
-                nextColor = nextColor xor 1
+            colors[node] = 0
+            if (!colorComponent(node, neighbours, colors)) {
+                return true
             }
         }
         return false
+    }
+
+    // Attempts to two-color the component and returns whether the attempt was successful.
+    private fun colorComponent(
+        src: Int,
+        neighbours: List<List<Int>>,
+        colors: IntArray, // colors[node] ::= {0: red, 1: black, 2: undefined}
+    ): Boolean {
+        for (next in neighbours[src]) {
+            if (colors[src] == colors[next]) {
+                return false
+            }
+            if (colors[next] != 2) {
+                continue
+            }
+            colors[next] = colors[src] xor 1
+            if (!colorComponent(next, neighbours, colors)) {
+                return false
+            }
+        }
+        return true
     }
 }
