@@ -37,6 +37,7 @@ class Solution {
             bfsQueue.add(node)
             visited[node] = true
             while (bfsQueue.isNotEmpty()) {
+                nextDepth++
                 repeat(bfsQueue.size) {
                     val curr = bfsQueue.removeFirst()
                     for (next in neighbours[curr]) {
@@ -47,7 +48,6 @@ class Solution {
                         }
                     }
                 }
-                nextDepth++
             }
             subResults[id] = maxOf(subResults[id], nextDepth)
         }
