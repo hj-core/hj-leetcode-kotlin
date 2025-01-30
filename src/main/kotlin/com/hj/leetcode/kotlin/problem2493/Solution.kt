@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem2493
  */
 class Solution {
     /* Complexity:
-     * Time O(n*(n+E)) and Space O(n+E) where E is the length of edges.
+     * Time O(nE) and Space O(n+E) where E is the length of edges.
      */
     fun magnificentSets(
         n: Int,
@@ -23,28 +23,28 @@ class Solution {
         // subResults[componentId]::= the sub result for this component id
         val subResults = IntArray(n + 1)
 
+        val bfsQueue = ArrayDeque<Int>()
+        val visited = IntArray(n + 1)
+
         for (node in 1..n) {
             if (componentIds[node] == 0) {
                 componentIds[node] = newId
                 newId++
             }
-
             val id = componentIds[node]
-            val bfsQueue = ArrayDeque<Int>()
-            val visited = BooleanArray(n + 1)
-
             var nextDepth = 0
             bfsQueue.add(node)
-            visited[node] = true
+            visited[node]++
+
             while (bfsQueue.isNotEmpty()) {
                 nextDepth++
                 repeat(bfsQueue.size) {
                     val curr = bfsQueue.removeFirst()
                     for (next in neighbours[curr]) {
-                        if (!visited[next]) {
+                        if (visited[next] < visited[node]) {
                             componentIds[next] = id
                             bfsQueue.add(next)
-                            visited[next] = true
+                            visited[next]++
                         }
                     }
                 }
