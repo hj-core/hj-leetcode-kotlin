@@ -18,18 +18,17 @@ class Solution {
 
         // componentIds[node] ::=
         // the ID of the component to which this node belongs; an ID of 0 means undefined.
-        val componentIds = IntArray(n + 1)
-        var newId = 1
+        val componentIds = IntArray(n + 1) { -1 }
         // subResults[componentId]::= the sub result for this component id
-        val subResults = IntArray(n + 1)
+        val subResults = mutableListOf<Int>()
 
         val bfsQueue = ArrayDeque<Int>()
         val visited = IntArray(n + 1)
 
         for (node in 1..n) {
-            if (componentIds[node] == 0) {
-                componentIds[node] = newId
-                newId++
+            if (componentIds[node] < 0) {
+                componentIds[node] = subResults.size
+                subResults.add(0)
             }
             val id = componentIds[node]
             var nextDepth = 0
@@ -51,7 +50,7 @@ class Solution {
             }
             subResults[id] = maxOf(subResults[id], nextDepth)
         }
-        return (1..<newId).sumOf { subResults[it] }
+        return subResults.sum()
     }
 
     private fun neighbours(
