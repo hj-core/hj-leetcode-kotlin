@@ -17,7 +17,7 @@ class Solution {
         }
 
         // componentIds[node] ::=
-        // the ID of the component to which this node belongs; an ID of 0 means undefined.
+        // the ID of the component to which this node belongs; a negative ID means undefined.
         val componentIds = IntArray(n + 1) { -1 }
         // subResults[componentId]::= the sub result for this component id
         val subResults = mutableListOf<Int>()
