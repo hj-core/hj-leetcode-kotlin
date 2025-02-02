@@ -8,17 +8,11 @@ class Solution {
      * Time O(N) and Space O(1) where N is the length of nums.
      */
     fun check(nums: IntArray): Boolean {
-        var left = 0
-        while (left < nums.lastIndex && nums[left] <= nums[left + 1]) {
-            left++
+        // Check if `nums` consists of a single sorted segment or two compatible sorted segments.
+        val firstEnd = (0..<nums.lastIndex).firstOrNull { nums[it] > nums[it + 1] }
+        if (firstEnd == null) {
+            return true
         }
-
-        if (left != nums.lastIndex && nums.last() <= nums[0]) {
-            left++
-            while (left < nums.lastIndex && nums[left] <= nums[left + 1]) {
-                left++
-            }
-        }
-        return left == nums.lastIndex
+        return nums.last() <= nums[0] && (firstEnd + 1..<nums.lastIndex).all { nums[it] <= nums[it + 1] }
     }
 }
