@@ -18,6 +18,10 @@ class Solution {
             .take(3)
             .toList()
             .let {
-                it.isEmpty() || (it.size == 2 && it[0].first == it[1].second && it[0].second == it[1].first)
+                when (it.size) {
+                    0 -> true
+                    2 -> it[0].first == it[1].second && it[0].second == it[1].first
+                    else -> false
+                }
             }
 }
