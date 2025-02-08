@@ -27,11 +27,7 @@ class NumberContainers {
         }
 
         container[index] = number
-        if (number in indicesByVal) {
-            indicesByVal[number]!!.add(index)
-        } else {
-            indicesByVal[number] = sortedSetOf(index)
-        }
+        indicesByVal.computeIfAbsent(number) { sortedSetOf() }.add(index)
     }
 
     // Complexity:
