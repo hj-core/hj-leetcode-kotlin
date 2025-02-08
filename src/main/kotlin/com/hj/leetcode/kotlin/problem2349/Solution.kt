@@ -35,6 +35,6 @@ class NumberContainers {
     }
 
     // Complexity:
-    // Time O(N) and Space O(1).
+    // Time O(LogN) and Space O(1).
     fun find(number: Int): Int = indicesByVal[number]?.first() ?: -1
 }
