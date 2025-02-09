@@ -14,8 +14,8 @@ class Solution {
         val diffFreq = HashMap<Int, Int>() // entry=(nums[i]-i, freq)
         var result = 0L
 
-        for ((index, num) in nums.withIndex()) {
-            val diff = num - index
+        for (j in nums.indices) {
+            val diff = nums[j] - j
             val oldCount = diffFreq[diff] ?: 0
             result += oldCount
             diffFreq[diff] = oldCount + 1
