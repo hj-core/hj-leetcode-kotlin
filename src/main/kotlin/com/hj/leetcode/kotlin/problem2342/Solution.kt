@@ -10,7 +10,7 @@ class Solution {
      */
     fun maximumSum(nums: IntArray): Int {
         var result = -1
-        val bestPeers = mutableMapOf<Int, Int>()
+        val bestPeers = mutableMapOf<Int, Int>() // entry=(digitSum, bestPeerValue)
 
         // Pair each nums[j] with the best peer before it and track the maximum sum
         for (j in nums.indices) {
