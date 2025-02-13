@@ -16,7 +16,7 @@ class Solution2 {
         var q2Tail = 0 // Invariant: q1Head-q2Tail = q2Tail-q2Head >= 0
         var result = 0
 
-        fun nextMinElement(): Int =
+        fun pollMinElement(): Int =
             when {
                 q1Head == sortedNums.size && q2Head == q2Tail -> throw IllegalStateException()
                 q1Head == sortedNums.size -> sortedNums[q2Head].also { q2Head++ }
@@ -25,12 +25,12 @@ class Solution2 {
             }
 
         while (true) {
-            val x = nextMinElement()
+            val x = pollMinElement()
             if (k <= x) {
                 return result
             }
 
-            val y = nextMinElement()
+            val y = pollMinElement()
             sortedNums[q2Tail] = minOf(x * 2, k - y) + y // Avoid potential overflow of x*2+y
             q2Tail++
             result++
