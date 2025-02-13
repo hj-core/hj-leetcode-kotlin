@@ -16,7 +16,7 @@ class Solution2 {
         var q2Tail = 0 // Invariant: q1Head-q2Tail = q2Tail-q2Head >= 0
         var result = 0
 
-        fun nextMinElement() =
+        fun nextMinElement(): Int =
             when {
                 q1Head == sortedNums.size && q2Head == q2Tail -> throw IllegalStateException()
                 q1Head == sortedNums.size -> sortedNums[q2Head].also { q2Head++ }
