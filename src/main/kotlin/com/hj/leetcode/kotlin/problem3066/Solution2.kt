@@ -13,7 +13,7 @@ class Solution2 {
         val sortedNums = nums.clone().apply { sort() } // [q2 | q1]
         var q1Head = 0
         var q2Head = 0
-        var q2Tail = 0 // q2Tail will never reach q1Head
+        var q2Tail = 0 // q2Tail will never reach q1Head after the first operation
         var result = 0
 
         fun nextMinElement() =
