@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem2698
  */
 class Solution {
     // Complexity:
-    // Time O(n^(1+log10(2)) and Space O(log10(n)).
+    // Time O(n^(1+log10(2))) and Space O(log10(n)).
     fun punishmentNumber(n: Int): Int {
         var result = 0
         for (i in 1..n) {
