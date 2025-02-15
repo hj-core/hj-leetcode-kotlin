@@ -8,10 +8,22 @@ class Solution {
     // Time O(n^(1+log10(2))) and Space O(log10(n)).
     fun punishmentNumber(n: Int): Int {
         var result = 0
-        for (i in 1..n) {
-            val square = i * i
-            if (canPartition(square, i)) {
-                result += square
+        // Modulo 9 optimization (10^i mod 9 = 1):
+        // We only consider those x where (x mod 9) equals (x^2 mod 9),
+        // which means x mod 9 equals 0 or 1.
+        for (x1 in 0..n step 9) {
+            val square1 = x1 * x1
+            if (canPartition(square1, x1)) {
+                result += square1
+            }
+
+            if (x1 == n) {
+                break
+            }
+            val x2 = x1 + 1
+            val square2 = x2 * x2
+            if (canPartition(square2, x2)) {
+                result += square2
             }
         }
         return result
