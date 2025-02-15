@@ -19,7 +19,7 @@ class ProductOfNumbers {
         }
 
         if (0 < activeLen && Int.MAX_VALUE / buffer[lastIndex] < num) {
-            throw IllegalStateException("Number overflowed")
+            throw ArithmeticException("Number overflowed")
         }
 
         val prefixProduct = if (0 < activeLen) num * buffer[lastIndex] else num
