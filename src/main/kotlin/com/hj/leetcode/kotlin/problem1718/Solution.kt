@@ -33,7 +33,7 @@ class Solution {
             if (usedBitMap and (1 shl num) != 0) {
                 continue
             }
-            if (num > 1 && (result.size <= index + num || result[index + num] > 0)) {
+            if (num > 1 && (index + num >= result.size || result[index + num] > 0)) {
                 continue
             }
 
