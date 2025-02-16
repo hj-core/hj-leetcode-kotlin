@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem1718
  */
 class Solution {
     // Complexity:
-    // Time O(n!) and Space O(n).
+    // Time O(n!*n) and Space O(n).
     fun constructDistancedSequence(n: Int): IntArray {
         require(n <= 20) { "n doesn't meet the constraints" }
         val result = IntArray(n * 2 - 1)
