@@ -10,16 +10,16 @@ class Solution4 {
         val facTable = factorialTable(tiles.length)
         val frequencies = frequencies(tiles)
 
-        // dp[len]@prefixLength ::= the number of unique length `len` permutations
-        // using first prefixLength value of expanded frequencies
+        // dp[len]@prefixLength ::= the number of unique permutations of length `len`
+        // using the first `prefixLength` values of the expanded frequencies.
         val dp = IntArray(tiles.length + 1)
 
-        // Store the new permutations to be added to dp for a `freq` of same chars.
-        // Will be reset to zero before processing a new `freq`
+        // Store the new permutations to be added to dp for an extra `freq` of the same characters.
+        // This will be reset to zero before processing a new `freq`.
         val addition = IntArray(tiles.length + 1)
 
-        dp[0] = 1
         var prefixLength = 0
+        dp[0] = 1
         for (freq in frequencies) {
             for (cnt in 1..freq) {
                 prefixLength++
