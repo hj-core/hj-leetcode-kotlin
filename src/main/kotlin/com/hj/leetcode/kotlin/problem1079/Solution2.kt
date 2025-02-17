@@ -36,7 +36,8 @@ class Solution2 {
         return result
     }
 
-    // `dfs` accumulates the number of unique permutations to `result[0]`.
+    // `dfs` accumulates the number of unique non-empty permutations (both partial and full)
+    // using `sortedIds` and stores the result in `result[0]`.
     private fun dfs(
         sortedIds: IntArray,
         index: Int,

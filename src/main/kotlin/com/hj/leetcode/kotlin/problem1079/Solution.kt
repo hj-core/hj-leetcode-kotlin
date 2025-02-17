@@ -9,9 +9,9 @@ class Solution {
     fun numTilePossibilities(tiles: String): Int {
         require(tiles.length <= 7)
         val sortedIds = convertToSortedIds(tiles)
-        val visitedPathValues = mutableSetOf<Int>()
-        dfs(sortedIds, 0, 0, 0, visitedPathValues)
-        return visitedPathValues.size
+        val visitedPath = mutableSetOf<Int>()
+        dfs(sortedIds, 0, 0, 0, visitedPath)
+        return visitedPath.size
     }
 
     private fun convertToSortedIds(tiles: String): IntArray {
@@ -29,13 +29,14 @@ class Solution {
         return result
     }
 
-    // `dfs` adds the path values of all non-empty (partial or full) permutations of ids to the `visitedPathValues`.
+    // `dfs` adds the path values of all non-empty permutations (both partial and full)
+    // using `sortedIds` to `visitedPath`.
     private fun dfs(
         sortedIds: IntArray,
         index: Int,
         usedBitMap: Int,
-        pathValue: Int, // each index occupies 3-bit for the id at that index
-        visitedPathValues: MutableSet<Int>,
+        path: Int, // Each id in the path occupies 3 bits
+        visitedPath: MutableSet<Int>,
     ) {
         if (index == sortedIds.size) {
             return
@@ -44,12 +45,12 @@ class Solution {
             if (usedBitMap and (1 shl i) != 0) {
                 continue
             }
-            val newPathValue = pathValue or (sortedIds[i] shl (index * 3))
-            if (newPathValue in visitedPathValues) {
+            val newPathValue = path or (sortedIds[i] shl (index * 3))
+            if (newPathValue in visitedPath) {
                 continue
             }
-            visitedPathValues.add(newPathValue)
-            dfs(sortedIds, index + 1, usedBitMap or (1 shl i), newPathValue, visitedPathValues)
+            visitedPath.add(newPathValue)
+            dfs(sortedIds, index + 1, usedBitMap or (1 shl i), newPathValue, visitedPath)
         }
     }
 }
