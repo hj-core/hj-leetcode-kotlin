@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem1079
  */
 class Solution3 {
     // Complexity:
-    // Time O(N!) and Space O(N) where N is the length of `tiles`
+    // Time O(N! *N) and Space O(N) where N is the length of `tiles`
     fun numTilePossibilities(tiles: String): Int = dfs(frequencies(tiles))
 
     private fun frequencies(tiles: String): IntArray =
