@@ -14,15 +14,6 @@ class Solution2 {
         return result[0]
     }
 
-    private fun factorialTable(n: Int): IntArray {
-        val result = IntArray(n + 1)
-        result[0] = 1
-        for (i in 1..n) {
-            result[i] = result[i - 1] * i
-        }
-        return result
-    }
-
     private fun convertToIds(tiles: String): IntArray {
         val sorted = tiles.toCharArray().sorted()
         val result = IntArray(sorted.size)
@@ -32,6 +23,15 @@ class Solution2 {
                 id++
             }
             result[i] = id
+        }
+        return result
+    }
+
+    private fun factorialTable(n: Int): IntArray {
+        val result = IntArray(n + 1)
+        result[0] = 1
+        for (i in 1..n) {
+            result[i] = result[i - 1] * i
         }
         return result
     }
