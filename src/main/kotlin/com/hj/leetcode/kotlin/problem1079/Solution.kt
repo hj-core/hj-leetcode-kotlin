@@ -8,13 +8,13 @@ class Solution {
     // Time O(N!*N) and Space O(N!) where N is the length of `tiles`.
     fun numTilePossibilities(tiles: String): Int {
         require(tiles.length <= 7)
-        val ids = convertToIds(tiles)
-        val permutations = mutableSetOf<Int>()
-        dfs(0, ids, 0, 0, permutations)
-        return permutations.size
+        val sortedIds = convertToSortedIds(tiles)
+        val visitedPathValues = mutableSetOf<Int>()
+        dfs(sortedIds, 0, 0, 0, visitedPathValues)
+        return visitedPathValues.size
     }
 
-    private fun convertToIds(tiles: String): IntArray {
+    private fun convertToSortedIds(tiles: String): IntArray {
         val sorted = tiles.toCharArray().sorted()
         val result = IntArray(sorted.size)
         var id = 1
@@ -29,27 +29,27 @@ class Solution {
         return result
     }
 
-    // `dfs` add the path values of all non-empty (partial or full) permutations of ids to `permutations`
+    // `dfs` adds the path values of all non-empty (partial or full) permutations of ids to the `visitedPathValues`.
     private fun dfs(
+        sortedIds: IntArray,
         index: Int,
-        ids: IntArray,
         usedBitMap: Int,
         pathValue: Int, // each index occupies 3-bit for the id at that index
-        permutations: MutableSet<Int>,
+        visitedPathValues: MutableSet<Int>,
     ) {
-        if (index == ids.size) {
+        if (index == sortedIds.size) {
             return
         }
-        for (i in ids.indices) {
+        for (i in sortedIds.indices) {
             if (usedBitMap and (1 shl i) != 0) {
                 continue
             }
-            val newPathValue = pathValue or (ids[i] shl (index * 3))
-            if (newPathValue in permutations) {
+            val newPathValue = pathValue or (sortedIds[i] shl (index * 3))
+            if (newPathValue in visitedPathValues) {
                 continue
             }
-            permutations.add(newPathValue)
-            dfs(index + 1, ids, usedBitMap or (1 shl i), newPathValue, permutations)
+            visitedPathValues.add(newPathValue)
+            dfs(sortedIds, index + 1, usedBitMap or (1 shl i), newPathValue, visitedPathValues)
         }
     }
 }

@@ -7,14 +7,14 @@ class Solution2 {
     // Complexity:
     // Time O(2^N *N) and Space O(N) where N is the length of `tiles`.
     fun numTilePossibilities(tiles: String): Int {
-        val ids = convertToIds(tiles)
+        val sortedIds = convertToSortedIds(tiles)
         val facTable = factorialTable(tiles.length)
         val result = intArrayOf(0)
-        dfs(ids, 0, facTable, IntArray(ids.last() + 1), result)
+        dfs(sortedIds, 0, facTable, IntArray(sortedIds.last() + 1), result)
         return result[0]
     }
 
-    private fun convertToIds(tiles: String): IntArray {
+    private fun convertToSortedIds(tiles: String): IntArray {
         val sorted = tiles.toCharArray().sorted()
         val result = IntArray(sorted.size)
         var id = 0
@@ -36,18 +36,19 @@ class Solution2 {
         return result
     }
 
+    // `dfs` accumulates the number of unique permutations to `result[0]`.
     private fun dfs(
-        ids: IntArray,
+        sortedIds: IntArray,
         index: Int,
         factorialTable: IntArray,
         idFrequencies: IntArray,
         result: IntArray,
     ) {
-        if (index == ids.size) {
+        if (index == sortedIds.size) {
             return
         }
         // Pick the id at index
-        idFrequencies[ids[index]]++
+        idFrequencies[sortedIds[index]]++
         val length = idFrequencies.sum()
 
         var subResult = factorialTable[length]
@@ -57,16 +58,16 @@ class Solution2 {
             }
         }
         result[0] += subResult
-        dfs(ids, index + 1, factorialTable, idFrequencies, result)
+        dfs(sortedIds, index + 1, factorialTable, idFrequencies, result)
 
         // Backtracking
-        idFrequencies[ids[index]]--
+        idFrequencies[sortedIds[index]]--
 
         // Not Pick the id at index
         var nextIndex = index + 1
-        while (nextIndex < ids.size && ids[nextIndex] == ids[index]) {
+        while (nextIndex < sortedIds.size && sortedIds[nextIndex] == sortedIds[index]) {
             nextIndex++
         }
-        dfs(ids, nextIndex, factorialTable, idFrequencies, result)
+        dfs(sortedIds, nextIndex, factorialTable, idFrequencies, result)
     }
 }
