@@ -24,6 +24,8 @@ class Solution4 {
             for (cnt in 1..freq) {
                 prefixLength++
                 for (i in 0..prefixLength - cnt) {
+                    // For each length i permutation, there are (i+1)(i+2)...(i+cnt)/cnt!
+                    // ways to insert cnt extra new same chars
                     addition[i + cnt] += dp[i] * facTable[i + cnt] / facTable[i] / facTable[cnt]
                 }
             }
