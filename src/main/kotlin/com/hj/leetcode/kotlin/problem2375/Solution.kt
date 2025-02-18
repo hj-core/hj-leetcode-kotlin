@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem2375
  */
 class Solution {
     // Complexity:
-    // Time O(N) and Auxiliary Space O(1) where N is the length of pattern.
+    // Time O(N) and Space O(N) where N is the length of pattern.
     fun smallestNumber(pattern: String): String =
         buildString {
             var nextDigit = 1
