@@ -38,9 +38,9 @@ class FindElements(
         // We decide the direction (left or right) based on the number of nodes in the level
         // containing the target, with respect to the subtree, and the position of the target
         // in that level.
-        var subtree = root // Virtual complete subtree
-        var width = (target + 1).takeHighestOneBit() // Width of the level containing the target
-        var position = target - (width - 1) // 0-based position of target in the level
+        var subtree = root
+        var width = (target + 1).takeHighestOneBit()
+        var position = target - (width - 1)
         while (subtree != null && width > 1) {
             width = width shr 1
             if (position < width) {
