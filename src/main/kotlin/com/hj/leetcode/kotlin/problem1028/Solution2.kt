@@ -9,11 +9,11 @@ class Solution2 {
     // Complexity:
     // Time O(N) and Space O(LogN) where N is the length of `traversal`.
     fun recoverFromPreorder(traversal: String): TreeNode? {
+        val stack = mutableListOf<TreeNode>()
         val progress = Progress(traversal, -1, -1, 0)
-        progress.advance()
-        val result = TreeNode(progress.value)
-        val stack = mutableListOf(result)
 
+        progress.advance()
+        stack.add(TreeNode(progress.value))
         while (progress.nextIndex < traversal.length) {
             progress.advance()
             val node = TreeNode(progress.value)
@@ -28,7 +28,7 @@ class Solution2 {
             }
             stack.add(node)
         }
-        return result
+        return stack[0]
     }
 
     private class Progress(
