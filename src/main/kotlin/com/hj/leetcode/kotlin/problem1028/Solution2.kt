@@ -16,11 +16,11 @@ class Solution2 {
         stack.add(TreeNode(progress.value))
         while (progress.nextIndex < traversal.length) {
             progress.advance()
-            val node = TreeNode(progress.value)
             while (stack.size > progress.depth) {
                 stack.removeLast()
             }
 
+            val node = TreeNode(progress.value)
             if (stack.last().left == null) {
                 stack.last().left = node
             } else {
