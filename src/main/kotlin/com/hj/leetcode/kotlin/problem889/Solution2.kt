@@ -15,15 +15,13 @@ class Solution2 {
         if (preorder.isEmpty()) {
             return null
         }
-        var preIndex = 0
         var postIndex = 0
         val stack = mutableListOf<TreeNode>()
 
-        val result = TreeNode(preorder[preIndex])
+        val result = TreeNode(preorder[0])
         stack.add(result)
-        preIndex++
 
-        while (preIndex < preorder.size) {
+        for (preIndex in 1..<preorder.size) {
             var isLeft = true
             while (stack.last().`val` == postorder[postIndex]) {
                 isLeft = false
@@ -38,7 +36,6 @@ class Solution2 {
                 stack.last().right = node
             }
             stack.add(node)
-            preIndex++
         }
         return result
     }
