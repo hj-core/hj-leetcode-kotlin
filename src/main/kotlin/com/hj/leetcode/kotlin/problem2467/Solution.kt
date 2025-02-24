@@ -10,15 +10,7 @@ class Solution {
         edges: Array<IntArray>,
         bob: Int,
         amount: IntArray,
-    ): Int =
-        dfs(
-            0,
-            -1,
-            adjacencyList(edges.size + 1, edges),
-            0,
-            bob,
-            amount,
-        ).first
+    ): Int = dfs(0, -1, adjacencyList(edges.size + 1, edges), 0, bob, amount).first
 
     private fun adjacencyList(
         n: Int,
@@ -54,20 +46,14 @@ class Solution {
             if (child == parentNode) {
                 continue
             }
-            val (childScore, childStepsToBob) =
-                dfs(
-                    child,
-                    root,
-                    adjacencyList,
-                    stepsToAlice + 1,
-                    bob,
-                    amount,
-                )
+            val (childScore, childStepsToBob) = dfs(child, root, adjacencyList, stepsToAlice + 1, bob, amount)
 
             if (childStepsToBob != -1) {
                 stepsToBob = childStepsToBob + 1
             }
-            maxChildScore = maxOf(maxChildScore, childScore)
+            if (childScore > maxChildScore) {
+                maxChildScore = childScore
+            }
         }
         val maxScore =
             when {
