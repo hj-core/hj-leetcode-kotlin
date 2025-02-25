@@ -8,23 +8,20 @@ class Solution {
     // Time O(N) and Space O(1) where N is the length of `arr`.
     fun numOfSubarrays(arr: IntArray): Int {
         val mod = 1_000_000_007
-        var oddPrefixCnt = 0
-        var evenPrefixCnt = 1
-        var isPrefixOdd = false
-        var result = 0
+        var oddSumPrefixCnt = 0
+        var evenSumPrefixCnt = 1
+        var isPrefixSumOdd = false
 
         for (num in arr) {
             if (num and 1 == 1) {
-                isPrefixOdd = !isPrefixOdd
+                isPrefixSumOdd = !isPrefixSumOdd
             }
-            if (isPrefixOdd) {
-                result = (result + evenPrefixCnt) % mod
-                oddPrefixCnt++
+            if (isPrefixSumOdd) {
+                oddSumPrefixCnt++
             } else {
-                result = (result + oddPrefixCnt) % mod
-                evenPrefixCnt++
+                evenSumPrefixCnt++
             }
         }
-        return result
+        return ((oddSumPrefixCnt.toLong() * evenSumPrefixCnt) % mod).toInt()
     }
 }
