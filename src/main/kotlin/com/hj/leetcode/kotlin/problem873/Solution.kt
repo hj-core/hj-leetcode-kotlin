@@ -8,7 +8,7 @@ class Solution {
     // Time O(N^2) and Space O(N^2) where N is the length of `arr`.
     fun lenLongestFibSubseq(arr: IntArray): Int {
         // dp[k][j]::= the length of longest fib-like sequence ending with (arr[j], arr[k])
-        val dp = Array(arr.size) { j -> IntArray(j) { 2 } }
+        val dp = Array(arr.size) { k -> IntArray(k) { 2 } }
         var result = 0
 
         for (k in 2..<arr.size) {
