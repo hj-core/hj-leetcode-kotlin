@@ -7,7 +7,7 @@ class Solution {
     // Complexity:
     // Time O(N) and Space O(1) where N is the length of `nums`.
     fun applyOperations(nums: IntArray): IntArray {
-        var tail = 0 // The index in `nums` to put the nonzero value
+        var tail = 0 // The index in `nums` to place the next nonzero value
         var currValue = 0
 
         for ((i, nextValue) in nums.withIndex()) {
