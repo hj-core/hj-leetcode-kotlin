@@ -6,5 +6,5 @@ package com.hj.leetcode.kotlin.problem1780
 class Solution {
     // Complexity:
     // Time O(Log(n)) and Space O(Log(n)).
-    fun checkPowersOfThree(n: Int): Boolean = n.toString(radix = 3).all { it == '0' || it == '1' }
+    fun checkPowersOfThree(n: Int): Boolean = n.toString(radix = 3).all { it != '2' }
 }
