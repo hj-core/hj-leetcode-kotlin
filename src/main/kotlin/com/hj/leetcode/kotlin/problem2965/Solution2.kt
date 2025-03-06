@@ -22,7 +22,7 @@ class Solution2 {
         check(aXorB != 0) { "a cannot equal b" }
         val bitMask = aXorB.takeLowestOneBit()
 
-        // Xor all the numbers in grid and all the number from 1 to n^2 that have the bitMask set.
+        // Xor all the numbers in the grid and all the numbers from 1 to n^2 that have the bitMask set.
         // This gives the value of either a or b; let's call it c.
         var c = 0
         for (row in grid) {
