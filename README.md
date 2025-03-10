@@ -548,6 +548,7 @@ at [LeetCode](https://leetcode.com/hj-core/).
 | [3223. Minimum Length of String After Operations](https://leetcode.com/problems/minimum-length-of-string-after-operations/)                                                                     | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3223/Solution.kt)                                                                               | 2025-01-13    |
 | [3243. Shortest Distance After Road Addition Queries I](https://leetcode.com/problems/shortest-distance-after-road-addition-queries-i/)                                                         | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3243/Solution.kt)                                                                               | 2024-11-27    |
 | [3254. Find the Power of K-Size Subarrays I](https://leetcode.com/problems/find-the-power-of-k-size-subarrays-i/)                                                                               | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3254/Solution.kt)                                                                               | 2024-11-16    |
+| [3306. Count of Substrings Containing Every Vowel and K Consonants II](https://leetcode.com/problems/count-of-substrings-containing-every-vowel-and-k-consonants-ii/)                           | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3306/Solution.kt)                                                                               | 2025-03-10    |
 
 ### Easy
 
