@@ -25,17 +25,17 @@ class Solution {
                 counter.add(word[minRight])
                 minRight++
             }
-            while (minRight < word.length && counter.consonantCnt < k) {
+            while (minRight < word.length && counter.consonantCnt() < k) {
                 counter.add(word[minRight])
                 minRight++
             }
-            if (minRight == word.length && (!counter.containAllVowels() || counter.consonantCnt < k)) {
+            if (minRight == word.length && (!counter.containAllVowels() || counter.consonantCnt() < k)) {
                 break
             }
             // If our code reaches here,
             // the substring word[left..<minRight] contains all the vowels and at least k consonants.
 
-            if (k < counter.consonantCnt) {
+            if (k < counter.consonantCnt()) {
                 continue
             }
             if (maxRight < minRight) {
@@ -51,29 +51,18 @@ class Solution {
 
     private class Counter {
         val vowels = "aeiou"
-        val vowelFreq = IntArray(5)
-        var consonantCnt = 0
+        private val frequencies = IntArray(6) // The frequencies of [consonants, 'a', 'e', 'i', 'o', 'u']
 
         fun add(c: Char) {
-            vowels.indexOf(c).let {
-                if (it < 0) {
-                    consonantCnt++
-                } else {
-                    vowelFreq[it]++
-                }
-            }
+            frequencies[vowels.indexOf(c) + 1]++
         }
 
         fun remove(c: Char) {
-            vowels.indexOf(c).let {
-                if (it < 0) {
-                    consonantCnt--
-                } else {
-                    vowelFreq[it]--
-                }
-            }
+            frequencies[vowels.indexOf(c) + 1]--
         }
 
-        fun containAllVowels(): Boolean = vowelFreq.all { it > 0 }
+        fun containAllVowels(): Boolean = (1..<frequencies.size).all { frequencies[it] > 0 }
+
+        fun consonantCnt(): Int = frequencies[0]
     }
 }
