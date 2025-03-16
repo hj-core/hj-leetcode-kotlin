@@ -14,7 +14,7 @@ class Solution {
         cars: Int,
     ): Long {
         val maxRank = ranks.max()
-        val carsCal = CarsCalculator(ranks, maxRank)
+        val mechanics = mechanics(ranks, maxRank)
 
         // Binary search on the repairing time.
         // The final result is in the range [low, high+1].
@@ -23,7 +23,7 @@ class Solution {
 
         while (low <= high) {
             val mid = (low + high) ushr 1
-            if (carsCal.teamRepairedCars(mid) >= cars) {
+            if (mechanics.totalRepaired(mid) >= cars) {
                 high = mid - 1
             } else {
                 low = mid + 1
@@ -32,41 +32,41 @@ class Solution {
         return low
     }
 
-    private fun CarsCalculator(
+    private fun mechanics(
         ranks: IntArray,
         maxRank: Int,
-    ): CarsCalculator =
+    ): CarMechanics =
         if (ranks.size <= maxRank * 2) {
-            NormalCal(ranks)
+            Mechanics(ranks)
         } else {
-            val rankFreq = IntArray(maxRank + 1)
+            val rankCounts = IntArray(maxRank + 1)
             for (rank in ranks) {
-                rankFreq[rank]++
+                rankCounts[rank]++
             }
-            FreqBasedCal(rankFreq)
+            MechanicGroups(rankCounts)
         }
 
-    interface CarsCalculator {
-        fun teamRepairedCars(time: Long): Long
+    interface CarMechanics {
+        fun totalRepaired(time: Long): Long
 
-        fun singleRepairedCars(
+        fun individualRepaired(
             rank: Int,
             time: Long,
         ): Long = sqrt((time / rank).toDouble()).toLong()
     }
 
-    private class NormalCal(
+    private class Mechanics(
         val ranks: IntArray,
-    ) : CarsCalculator {
-        override fun teamRepairedCars(time: Long): Long = ranks.sumOf { singleRepairedCars(it, time) }
+    ) : CarMechanics {
+        override fun totalRepaired(time: Long): Long = ranks.sumOf { individualRepaired(it, time) }
     }
 
-    private class FreqBasedCal(
-        val rankFreq: IntArray, // rankFreq[i]::= the number of mechanics with rank i
-    ) : CarsCalculator {
-        override fun teamRepairedCars(time: Long): Long =
-            rankFreq.foldIndexed(0L) { rank, acc, freq ->
-                if (freq == 0) acc else acc + singleRepairedCars(rank, time) * freq
+    private class MechanicGroups(
+        val rankCounts: IntArray, // rankCounts[i]::= the number of mechanics with rank i
+    ) : CarMechanics {
+        override fun totalRepaired(time: Long): Long =
+            rankCounts.foldIndexed(0L) { rank, acc, count ->
+                if (count == 0) acc else acc + individualRepaired(rank, time) * count
             }
     }
 
