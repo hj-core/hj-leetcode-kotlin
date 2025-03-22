@@ -131,11 +131,11 @@ private class DfsSolver : Solver {
     ) {
         if (visited[root]) return
 
-        sizeAndTwiceEdges[0]++
         visited[root] = true
+        sizeAndTwiceEdges[0]++
+        sizeAndTwiceEdges[1] += adjacencyList[root].size
 
         for (next in adjacencyList[root]) {
-            sizeAndTwiceEdges[1]++
             dfsComponent(next, adjacencyList, visited, sizeAndTwiceEdges)
         }
     }
