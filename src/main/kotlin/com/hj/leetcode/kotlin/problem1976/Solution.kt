@@ -19,7 +19,7 @@ class Solution {
 
         // Pq for the Dijkstra algorithm.
         // Must also compare the node ID because the TreeSet uses the comparator to determine uniqueness.
-        // Additionally, one should be cautious about the order of updating the pq and the minTime.
+        // Additionally, one should be cautious about the order of updating the pq and the minTimes.
         val pq = TreeSet<Int>(compareBy({ minTimes[it] }, { it }))
 
         minTimes[0] = 0
