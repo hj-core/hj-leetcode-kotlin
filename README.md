@@ -561,6 +561,7 @@ at [LeetCode](https://leetcode.com/hj-core/).
 | [3254. Find the Power of K-Size Subarrays I](https://leetcode.com/problems/find-the-power-of-k-size-subarrays-i/)                                                                               | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3254/Solution.kt)                                                                               | 2024-11-16    |
 | [3306. Count of Substrings Containing Every Vowel and K Consonants II](https://leetcode.com/problems/count-of-substrings-containing-every-vowel-and-k-consonants-ii/)                           | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3306/Solution.kt)                                                                               | 2025-03-10    |
 | [3356. Zero Array Transformation II](https://leetcode.com/problems/zero-array-transformation-ii/)                                                                                               | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3356/Solution.kt)                                                                               | 2025-03-13    |
+| [3394. Check if Grid can be Cut into Sections](https://leetcode.com/problems/check-if-grid-can-be-cut-into-sections/)                                                                           | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3394/Solution.kt)                                                                               | 2025-03-25    |
 
 ### Easy
 
