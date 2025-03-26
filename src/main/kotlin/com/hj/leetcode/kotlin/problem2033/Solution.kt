@@ -23,16 +23,12 @@ class Solution {
                 if (value % x != requiredRem) {
                     return -1
                 }
-                heights[i++] = value / x
+                heights[i++] = value
             }
         }
         heights.sort()
 
         val median = heights[heights.size / 2]
-        var result = 0
-        for (height in heights) {
-            result += abs(height - median)
-        }
-        return result
+        return heights.sumOf { abs(it - median) / x }
     }
 }
