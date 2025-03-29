@@ -16,7 +16,7 @@ class Solution {
         val scores = computePrimeScores(nums) // scores[i]::= the prime score of nums[i]
 
         // minLefts[i] and maxRights[i] are the minimum left and the maximum right that nums[i] remains
-        // the first highest prime score element in range (left, i] and [i, right), respectively.
+        // the first highest prime score element in range (left, right).
         val minLefts = computeMinLefts(scores)
         val maxRights = computeMaxRights(scores)
 
