@@ -17,8 +17,8 @@ class Solution {
 
         // minLefts[i] and maxRights[i] are the minimum left and the maximum right that nums[i] remains
         // the first highest prime score element in range (left, i] and [i, right), respectively.
-        val minLefts = computeMinLefts(nums, scores)
-        val maxRights = computeMaxRights(nums, scores)
+        val minLefts = computeMinLefts(scores)
+        val maxRights = computeMaxRights(scores)
 
         val sortedIndices = nums.indices.sortedByDescending { nums[it] }
         var result = 1L
@@ -90,16 +90,13 @@ class Solution {
         return result
     }
 
-    // computeMinLefts returns the minimum left index for each index i such that nums[i] remains
-    // the first highest prime score element in the range (left, i].
-    private fun computeMinLefts(
-        nums: List<Int>,
-        scores: IntArray,
-    ): IntArray {
-        val result = IntArray(nums.size)
+    // computeMinLefts returns the minimum left index for each index i such that scores[i] remains
+    // the first maximum score in the range (left, i].
+    private fun computeMinLefts(scores: IntArray): IntArray {
+        val result = IntArray(scores.size)
         val monoStack = mutableListOf<Int>()
 
-        for (i in nums.indices) {
+        for (i in scores.indices) {
             while (monoStack.isNotEmpty() && scores[monoStack.last()] < scores[i]) {
                 monoStack.removeLast()
             }
@@ -109,20 +106,17 @@ class Solution {
         return result
     }
 
-    // computeMaxRights returns the maximum right index for each index i such that nums[i] remains
-    // the first highest prime score element in the range [i, right).
-    private fun computeMaxRights(
-        nums: List<Int>,
-        scores: IntArray,
-    ): IntArray {
-        val result = IntArray(nums.size)
+    // computeMaxRights returns the maximum right index for each index i such that scores[i] remains
+    // the first highest score in the range [i, right).
+    private fun computeMaxRights(scores: IntArray): IntArray {
+        val result = IntArray(scores.size)
         val monoStack = mutableListOf<Int>()
 
-        for (i in nums.indices.reversed()) {
+        for (i in scores.indices.reversed()) {
             while (monoStack.isNotEmpty() && scores[monoStack.last()] <= scores[i]) {
                 monoStack.removeLast()
             }
-            result[i] = if (monoStack.isNotEmpty()) monoStack.last() else nums.size
+            result[i] = if (monoStack.isNotEmpty()) monoStack.last() else scores.size
             monoStack.add(i)
         }
         return result
