@@ -18,8 +18,7 @@ class Solution2 {
         val result = mutableListOf<Int>()
 
         for ((index, c) in s.withIndex()) {
-            val lastIndex = lastIndices[c - 'a']
-            partitionEnd = maxOf(partitionEnd, lastIndex)
+            partitionEnd = maxOf(partitionEnd, lastIndices[c - 'a'])
 
             if (index == partitionEnd) {
                 result.add(index - partitionStart + 1)
