@@ -8,7 +8,7 @@ class Solution {
     // Time O(N) and Space O(N) where N is the length of question.
     fun mostPoints(questions: Array<IntArray>): Long {
         val n = questions.size
-        val dp = LongArray(n + 1) // dp[i]::= mostPoints(question[i..<n])
+        val dp = LongArray(n + 1) // dp[i]::= mostPoints(questions[i..<n])
 
         for (i in questions.indices.reversed()) {
             val (points, brainpower) = questions[i]
