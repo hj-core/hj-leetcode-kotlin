@@ -4,43 +4,51 @@ package com.hj.leetcode.kotlin.problem368
  * LeetCode page: [368. Largest Divisible Subset](https://leetcode.com/problems/largest-divisible-subset/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(N^2) and Space O(N) where N is the size of nums;
-     */
-    fun largestDivisibleSubset(nums: IntArray): List<Int> {
-        val sorted = nums.sorted()
-        /* dp[i]::= the (size, rightmost index in sorted of the second-largest element) of
-         * the largest divisible subset of sorted.slice(0..i) that includes sorted[i].
-         */
-        val dp = buildDp(sorted)
+    // We consider the largest divisible subset with its elements sorted.
+    // dp[end]::= the (prev, length) of the largest subset ending with sortedNums[end].
 
-        return buildResult(dp, sorted)
+    // Complexity:
+    // Time O(N^2) and Space O(N) where N is the length of nums.
+    fun largestDivisibleSubset(nums: IntArray): List<Int> {
+        val sorted = nums.clone().apply { sort() }
+        val (dp, tail) = computeDpAndTail(sorted)
+
+        return buildResult(sorted, dp, tail)
     }
 
-    private fun buildDp(numsSorted: List<Int>): Array<Properties> {
-        val result = Array(numsSorted.size) { Properties(1, -1) }
+    // computeDpAndTail returns the dp array and an ending index of the largest divisible subsets.
+    private fun computeDpAndTail(sortedNums: IntArray): Pair<Array<IntArray>, Int> {
+        val dp = Array(sortedNums.size) { intArrayOf(-1, 1) }
 
-        for (i in result.indices) {
-            var j = i - 1
-            while (j + 2 > result[i].size) {
-                if (numsSorted[i] % numsSorted[j] == 0 && 1 + result[j].size > result[i].size) {
-                    result[i] = Properties(1 + result[j].size, j)
+        var tail = 0
+        for (end in dp.indices) {
+            var prev = end - 1
+            while (dp[end][1] < prev + 2) {
+                if (sortedNums[end] % sortedNums[prev] == 0 && dp[prev][1] + 1 > dp[end][1]) {
+                    dp[end][0] = prev
+                    dp[end][1] = dp[prev][1] + 1
                 }
-                j -= 1
+                prev--
+            }
+
+            if (dp[tail][1] < dp[end][1]) {
+                tail = end
             }
         }
-        return result
+        return Pair(dp, tail)
     }
 
-    private data class Properties(val size: Int, val prevIndex: Int)
-
-    private fun buildResult(dp: Array<Properties>, numsSorted: List<Int>): List<Int> {
-        val result = mutableListOf<Int>()
-        var prevIndex = dp.indices.maxBy { dp[it].size }
-        while (prevIndex != -1) {
-            result.add(numsSorted[prevIndex])
-            prevIndex = dp[prevIndex].prevIndex
+    // buildResult constructs the largest divisible subset with the given ending index.
+    private fun buildResult(
+        sortedNums: IntArray,
+        dp: Array<IntArray>,
+        tail: Int,
+    ): List<Int> =
+        buildList {
+            var index = tail
+            while (index != -1) {
+                add(sortedNums[index])
+                index = dp[index][0]
+            }
         }
-        return result
-    }
 }
