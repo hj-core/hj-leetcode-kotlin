@@ -4,20 +4,21 @@ package com.hj.leetcode.kotlin.problem368
  * LeetCode page: [368. Largest Divisible Subset](https://leetcode.com/problems/largest-divisible-subset/);
  */
 class Solution2 {
-    // We consider the largest divisible subset with its elements sorted.
-    // dp[start]::= the (next, length) of the largest subset starting with sortedNums[start].
+    // We consider the largest divisible subset with its elements in sorted order.
+    // dp[start]::= the (next, length) of the largest subset starting with sortedNums[start],
+    // i.e., the subset takes the form of (sortedNums[start], sortedNums[next], ...).
 
     // Complexity:
     // Time O(N^2) and Space O(N) where N is the length of nums.
     fun largestDivisibleSubset(nums: IntArray): List<Int> {
         val sortedNums = nums.clone().apply { sort() }
-        val (dp, root) = computeDpAndRoot(sortedNums)
+        val (dp, head) = computeDpAndHead(sortedNums)
 
-        return buildResult(sortedNums, dp, root)
+        return buildResult(sortedNums, dp, head)
     }
 
-    // computeDpAndRoot returns the dp array and a starting index of the largest divisible subsets.
-    private fun computeDpAndRoot(sortedNums: IntArray): Pair<Array<IntArray>, Int> {
+    // computeDpAndHead returns the dp array and a starting index of the largest divisible subsets.
+    private fun computeDpAndHead(sortedNums: IntArray): Pair<Array<IntArray>, Int> {
         val dp = Array(sortedNums.size) { intArrayOf(sortedNums.size, 1) }
 
         var root = sortedNums.lastIndex
@@ -40,10 +41,10 @@ class Solution2 {
     private fun buildResult(
         sortedNums: IntArray,
         dp: Array<IntArray>,
-        root: Int,
+        head: Int,
     ): List<Int> =
         buildList {
-            var index = root
+            var index = head
             while (index != sortedNums.size) {
                 add(sortedNums[index])
                 index = dp[index][0]

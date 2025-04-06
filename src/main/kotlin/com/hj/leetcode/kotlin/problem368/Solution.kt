@@ -4,8 +4,9 @@ package com.hj.leetcode.kotlin.problem368
  * LeetCode page: [368. Largest Divisible Subset](https://leetcode.com/problems/largest-divisible-subset/);
  */
 class Solution {
-    // We consider the largest divisible subset with its elements sorted.
-    // dp[end]::= the (prev, length) of the largest subset ending with sortedNums[end].
+    // We consider the largest divisible subset with its elements in sorted order.
+    // dp[end]::= the (prev, length) of the largest subset ending with sortedNums[end],
+    // i.e., the subset takes the form of (..., sortedNums[prev], sortedNums[end]).
 
     // Complexity:
     // Time O(N^2) and Space O(N) where N is the length of nums.
