@@ -12,16 +12,16 @@ class Solution {
     // Time O(N^2) and Space O(N) where N is the length of nums.
     fun largestDivisibleSubset(nums: IntArray): List<Int> {
         val sorted = nums.clone().apply { sort() }
-        val (dp, tail) = computeDpAndTail(sorted)
+        val (dp, tail) = computeDpAndLast(sorted)
 
         return buildResult(sorted, dp, tail)
     }
 
     // computeDpAndTail returns the dp array and an ending index of the largest divisible subsets.
-    private fun computeDpAndTail(sortedNums: IntArray): Pair<Array<IntArray>, Int> {
+    private fun computeDpAndLast(sortedNums: IntArray): Pair<Array<IntArray>, Int> {
         val dp = Array(sortedNums.size) { intArrayOf(-1, 1) }
 
-        var tail = 0
+        var last = 0
         for (end in dp.indices) {
             var prev = end - 1
             while (dp[end][1] < prev + 2) {
@@ -32,21 +32,21 @@ class Solution {
                 prev--
             }
 
-            if (dp[tail][1] < dp[end][1]) {
-                tail = end
+            if (dp[last][1] < dp[end][1]) {
+                last = end
             }
         }
-        return Pair(dp, tail)
+        return Pair(dp, last)
     }
 
     // buildResult constructs the largest divisible subset with the given ending index.
     private fun buildResult(
         sortedNums: IntArray,
         dp: Array<IntArray>,
-        tail: Int,
+        last: Int,
     ): List<Int> =
         buildList {
-            var index = tail
+            var index = last
             while (index != -1) {
                 add(sortedNums[index])
                 index = dp[index][0]
