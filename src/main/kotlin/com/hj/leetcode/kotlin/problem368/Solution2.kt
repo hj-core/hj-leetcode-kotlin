@@ -21,7 +21,7 @@ class Solution2 {
     private fun computeDpAndHead(sortedNums: IntArray): Pair<Array<IntArray>, Int> {
         val dp = Array(sortedNums.size) { intArrayOf(sortedNums.size, 1) }
 
-        var root = sortedNums.lastIndex
+        var head = sortedNums.lastIndex
         for (start in sortedNums.lastIndex - 1 downTo 0) {
             for (next in start + 1..<sortedNums.size) {
                 if (sortedNums[next] % sortedNums[start] == 0 && dp[start][1] < dp[next][1] + 1) {
@@ -30,11 +30,11 @@ class Solution2 {
                 }
             }
 
-            if (dp[root][1] < dp[start][1]) {
-                root = start
+            if (dp[head][1] < dp[start][1]) {
+                head = start
             }
         }
-        return Pair(dp, root)
+        return Pair(dp, head)
     }
 
     // buildResult constructs the largest divisible subset with the given starting index.
