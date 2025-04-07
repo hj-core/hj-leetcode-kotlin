@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem416
  */
 class Solution {
     // Complexity:
-    // Time O(NM) and Space O(M) where N and M are the length and the sum of nums, respectively.
+    // Time O(NLogN+NM) and Space O(N+M) where N and M are the length and the sum of nums, respectively.
     fun canPartition(nums: IntArray): Boolean {
         val total = nums.sum()
         if (total and 1 != 0) {
@@ -13,17 +13,21 @@ class Solution {
         }
 
         val targetSum = total / 2
-        // dp[sum]@i::= whether there is a subset of nums[0..=i] that sums to sum
-        val dp = BooleanArray(targetSum + 1)
-        dp[0] = true
+        val sortedNums = nums.clone().apply { sort() }
 
-        for (num in nums) {
-            for (sum in (targetSum - num) downTo 0) {
+        // dp[sum]@i::= whether there is a subset of sortedNums[0..=i] that sums to sum
+        val dp = BooleanArray(targetSum + 1)
+
+        dp[0] = true
+        var prefixSum = 0
+        for (num in sortedNums) {
+            for (sum in minOf(prefixSum, (targetSum - num)) downTo 0) {
                 if (dp[sum]) {
                     dp[sum + num] = true
                 }
             }
 
+            prefixSum += num
             if (dp[targetSum]) {
                 return true
             }
