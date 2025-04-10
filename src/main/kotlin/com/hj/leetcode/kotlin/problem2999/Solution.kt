@@ -79,22 +79,12 @@ class Solution {
                     numberOfPowerfulIntHelper(start % msdUnit, finish % msdUnit, limit, msdUnit / 10, memoization)
                 }
 
-                limit == startMsd && startMsd < finishMsd -> {
-                    numberOfPowerfulIntHelper(start % msdUnit, msdUnit - 1, limit, msdUnit, memoization)
-                }
-
-                startMsd < limit && limit < finishMsd -> {
+                startMsd <= limit && limit < finishMsd -> {
                     numberOfPowerfulIntHelper(start % msdUnit, msdUnit - 1, limit, msdUnit, memoization) +
                         (limit - startMsd) * transposeHelper(limit + 1, msdUnit)
                 }
 
-                startMsd < limit && limit == finishMsd -> {
-                    numberOfPowerfulIntHelper(start % msdUnit, msdUnit - 1, limit, msdUnit, memoization) +
-                        (limit - startMsd - 1) * transposeHelper(limit + 1, msdUnit) +
-                        numberOfPowerfulIntHelper(0, finish % msdUnit, limit, msdUnit / 10, memoization)
-                }
-
-                startMsd < finishMsd && finishMsd < limit -> {
+                startMsd < finishMsd && finishMsd <= limit -> {
                     numberOfPowerfulIntHelper(start % msdUnit, msdUnit - 1, limit, msdUnit, memoization) +
                         (finishMsd - startMsd - 1) * transposeHelper(limit + 1, msdUnit) +
                         numberOfPowerfulIntHelper(0, finish % msdUnit, limit, msdUnit / 10, memoization)
