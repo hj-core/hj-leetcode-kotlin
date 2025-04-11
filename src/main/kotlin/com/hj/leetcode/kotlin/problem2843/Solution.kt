@@ -5,15 +5,15 @@ package com.hj.leetcode.kotlin.problem2843
  */
 class Solution {
     // Complexity:
-    // The implementation is too specific to the problem and cannot scale.
+    // The implementation is too specific to the problem's constraints.
     fun countSymmetricIntegers(
         low: Int,
         high: Int,
     ): Int {
-        require(high <= 10000) { "problem constraints have changed" }
+        require(high <= 100_000) { "the implementation is only valid for high <= 100_000" }
 
-        // Free us from considering the special case where high equals 10000.
-        if (high == 10000) {
+        // Limit our high to 9999
+        if (10_000 <= high) {
             return countSymmetricIntegers(low, 9999)
         }
 
