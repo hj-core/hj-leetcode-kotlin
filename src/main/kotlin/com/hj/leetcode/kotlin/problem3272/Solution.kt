@@ -21,7 +21,7 @@ class Solution {
         return result
     }
 
-    // collectGoodFrequencies returns the distinct digit frequencies of n-digit
+    // collectGoodFrequencies collects the distinct digit frequencies of n-digit
     // palindromic numbers that are divisible by k.
     private fun collectGoodFrequencies(
         i: Int, // the index of current digit
