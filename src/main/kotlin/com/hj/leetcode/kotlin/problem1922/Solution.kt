@@ -8,8 +8,8 @@ class Solution {
     // Time O(Log(n)) and Space O(1).
     fun countGoodNumbers(n: Long): Int {
         val mod = 1_000_000_007L
-        var result = modPow(5L * 4, n / 2, mod)
 
+        var result = modPow(5L * 4, n / 2, mod)
         if (n and 1L == 1L) {
             result = (result * 5) % mod
         }
