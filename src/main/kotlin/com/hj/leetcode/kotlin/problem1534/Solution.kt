@@ -26,8 +26,7 @@ class Solution {
 
     private fun computeSortedArrAtLastIndex(arr: IntArray): IntArray {
         val result = arr.clone()
-        val maxElem = arr.max()
-        result[result.lastIndex] = maxElem
+        result[result.lastIndex] = Int.MAX_VALUE
 
         result.sort()
         result[result.lastIndex] = arr[arr.lastIndex]
