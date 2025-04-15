@@ -52,7 +52,7 @@ class Solution {
         return result
     }
 
-    // sumFwt is a Fenwick Tree (one-indexed) that supports summing operations.
+    // SumFwt is a Fenwick Tree (one-indexed) that supports summing operations.
     private class SumFwt(
         size: Int,
     ) {
