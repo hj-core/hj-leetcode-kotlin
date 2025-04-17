@@ -32,7 +32,7 @@ class Solution {
         }
     }
 
-    // countDivisiblePairs returns the number of divisible pairs in nums such that k divide (i*j).
+    // countDivisiblePairs returns the number of divisible pairs (i, j) in nums such that k divide (i*j).
     private fun countDivisiblePairs(
         nums: List<Int>,
         k: Int,
