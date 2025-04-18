@@ -4,36 +4,35 @@ package com.hj.leetcode.kotlin.problem38
  * LeetCode page: [38. Count and Say](https://leetcode.com/problems/count-and-say/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(2^N) and Space O(2^N) where N equals n;
-     */
+    // Complexity:
+    // Time O(2^n) and Space O(2^n).
     fun countAndSay(n: Int): String {
-        var digits = "1"
+        val digits = ArrayDeque<Int>(1 shl (n * 4 / 10))
+        digits.add(1)
 
-        repeat(n - 1) { digits = countAndSay(digits) }
-        return digits
+        repeat(n - 1) {
+            countAndSayNext(digits)
+        }
+        return digits.joinToString("")
     }
 
-    private fun countAndSay(digits: String): String {
-        val builder = StringBuilder()
-        var currDigit = digits[0]
-        var digitCount = 0
+    private fun countAndSayNext(digits: ArrayDeque<Int>) {
+        var count = 0
+        var prev = digits[0]
 
-        fun updateBuilder() = builder
-            .append(digitCount)
-            .append(currDigit)
-
-        for (digit in digits) {
-            if (digit == currDigit) {
-                digitCount++
+        repeat(digits.size) {
+            if (digits[0] == prev) {
+                count++
             } else {
-                updateBuilder()
-                currDigit = digit
-                digitCount = 1
+                digits.addLast(count)
+                digits.addLast(prev)
+                count = 1
+                prev = digits[0]
             }
-        }
 
-        updateBuilder()
-        return builder.toString()
+            digits.removeFirst()
+        }
+        digits.addLast(count)
+        digits.addLast(prev)
     }
 }
