@@ -7,7 +7,7 @@ class Solution {
     // Complexity:
     // Time O(N) and Space O(N) where N is the length of answers.
     fun numRabbits(answers: IntArray): Int {
-        val groups = mutableMapOf<Int, Int>() // entry=(size, known members)
+        val groups = mutableMapOf<Int, Int>() // entry=(answer, known members)
         var result = 0
 
         for (answer in answers) {
