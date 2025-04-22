@@ -72,6 +72,7 @@ class Solution {
                     extraL *= factor
                     extraR /= factor
                 }
+                pendingFactors[factor] = remainingPower
             }
 
             multiplierL = (multiplierL * extraL / k) % mod
