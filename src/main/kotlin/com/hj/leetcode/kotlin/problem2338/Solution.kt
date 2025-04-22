@@ -11,7 +11,7 @@ class Solution {
         val mod = 1_000_000_007
         val (isPrime, primeList) = computePrimeList(maxValue)
         val maxTotalFactors = computeMaxTotalFactors(maxValue)
-        val multiplierTable = computeMultiplierTable(n, maxTotalFactors + 1, mod, primeList)
+        val multiplierTable = computeMultiplierTable(n, maxTotalFactors + 1, mod, isPrime, primeList)
         var result = 1 // Initialize with lastValue=1
 
         for (lastValue in 2..maxValue) {
@@ -19,7 +19,7 @@ class Solution {
             if (isPrime[lastValue]) {
                 subResult = n.toLong()
             } else {
-                for ((_, power) in factorize(lastValue, primeList)) {
+                for ((_, power) in factorize(lastValue, isPrime, primeList)) {
                     subResult = (subResult * multiplierTable[power]) % mod
                 }
             }
@@ -45,6 +45,7 @@ class Solution {
         n: Int,
         length: Int,
         mod: Int,
+        isPrime: BooleanArray,
         primeList: List<Int>,
     ): IntArray {
         val result = IntArray(length)
@@ -52,7 +53,7 @@ class Solution {
 
         val pendingFactors = mutableMapOf<Int, Int>()
         for (num in 2..<length) {
-            for ((factor, power) in factorize(num, primeList)) {
+            for ((factor, power) in factorize(num, isPrime, primeList)) {
                 pendingFactors[factor] = (pendingFactors[factor] ?: 0) + power
             }
         }
@@ -83,8 +84,12 @@ class Solution {
     // factorize factorizes the num and returns a list of (factor, power) pairs.
     private fun factorize(
         num: Int,
+        isPrime: BooleanArray,
         primeList: List<Int>,
     ): List<Pair<Int, Int>> {
+        if (isPrime[num]) {
+            return listOf(num to 1)
+        }
         val result = mutableListOf<Pair<Int, Int>>()
         var remaining = num
         for (prime in primeList) {
