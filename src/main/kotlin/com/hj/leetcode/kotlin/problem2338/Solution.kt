@@ -75,7 +75,7 @@ class Solution {
                 pendingFactors[factor] = remainingPower
             }
 
-            multiplierL = (multiplierL * extraL / k) % mod
+            multiplierL = multiplierL * extraL / k
             multiplierR = (multiplierR * extraR) % mod
             result[k] = ((multiplierL * multiplierR) % mod).toInt()
         }
