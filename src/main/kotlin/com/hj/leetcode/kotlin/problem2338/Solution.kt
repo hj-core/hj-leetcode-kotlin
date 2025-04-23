@@ -8,20 +8,27 @@ class Solution {
         n: Int,
         maxValue: Int,
     ): Int {
+        // The ideas are
+        // 1. There are (n+m-1)C(n-1) ways to distribute m apples into n bags.
+        // 2. The elements in a good array is determined by its last value.
+        // 3. Let k_i be the arr[i]/arr[i-1] and k_0 equals arr[0], the sequence product of k_i
+        //    equals to the last value.
+        // 4. Distribute the prime factors of last value separately.
         val mod = 1_000_000_007
-        val (isPrime, primeList) = computePrimeList(maxValue)
+        val (isPrime, primeList) = computePrimes(maxValue)
         val maxTotalFactors = computeMaxTotalFactors(maxValue)
         val multiplierTable = computeMultiplierTable(n, maxTotalFactors + 1, mod, isPrime, primeList)
-        var result = 1 // Initialize with lastValue=1
+        var result = 1 // The initial value include the case where last value equals 1
 
         for (lastValue in 2..maxValue) {
-            var subResult = 1L
             if (isPrime[lastValue]) {
-                subResult = n.toLong()
-            } else {
-                for ((_, power) in factorize(lastValue, isPrime, primeList)) {
-                    subResult = (subResult * multiplierTable[power]) % mod
-                }
+                result = (result + n) % mod
+                continue
+            }
+
+            var subResult = 1L
+            for ((_, power) in computeFactorization(lastValue, isPrime, primeList)) {
+                subResult = (subResult * multiplierTable[power]) % mod
             }
             result = (result + subResult.toInt()) % mod
         }
@@ -51,10 +58,13 @@ class Solution {
         val result = IntArray(length)
         result[0] = 1
 
-        val pendingFactors = mutableMapOf<Int, Int>()
+        // To handle the denominator in the combination expression, we split the expression
+        // into the product of multiplierL and multiplierR, where multiplierL takes care of the
+        // denominator, i.e., the factorial of k, and multiplierR takes care of the remainder.
+        val reservedFactors = mutableMapOf<Int, Int>()
         for (num in 2..<length) {
-            for ((factor, power) in factorize(num, isPrime, primeList)) {
-                pendingFactors[factor] = (pendingFactors[factor] ?: 0) + power
+            for ((factor, power) in computeFactorization(num, isPrime, primeList)) {
+                reservedFactors[factor] = (reservedFactors[factor] ?: 0) + power
             }
         }
 
@@ -65,14 +75,14 @@ class Solution {
             var extraL = 1L
             var extraR = n + k - 1
 
-            for ((factor, power) in pendingFactors) {
+            for ((factor, power) in reservedFactors) {
                 var remainingPower = power
                 while (remainingPower > 0 && extraR > 1 && extraR % factor == 0) {
                     remainingPower -= 1
                     extraL *= factor
                     extraR /= factor
                 }
-                pendingFactors[factor] = remainingPower
+                reservedFactors[factor] = remainingPower
             }
 
             multiplierL = multiplierL * extraL / k
@@ -82,8 +92,9 @@ class Solution {
         return result
     }
 
-    // factorize factorizes the num and returns a list of (factor, power) pairs.
-    private fun factorize(
+    // computeFactorization returns a list of (factor, power) pairs that represent
+    // the factorization of num.
+    private fun computeFactorization(
         num: Int,
         isPrime: BooleanArray,
         primeList: List<Int>,
@@ -91,6 +102,7 @@ class Solution {
         if (isPrime[num]) {
             return listOf(num to 1)
         }
+
         val result = mutableListOf<Pair<Int, Int>>()
         var remaining = num
         for (prime in primeList) {
@@ -99,7 +111,7 @@ class Solution {
                 remaining /= prime
                 power += 1
             }
-            if (power != 0) {
+            if (0 < power) {
                 result.add(prime to power)
             }
             if (remaining < prime) {
@@ -110,8 +122,9 @@ class Solution {
         return result
     }
 
-    // computePrimeList returns an indicator array and a list of primes up to n.
-    private fun computePrimeList(n: Int): Pair<BooleanArray, List<Int>> {
+    // computePrimes returns a list of primes up to n and an indicator array that
+    // can be used to query if a number is prime.
+    private fun computePrimes(n: Int): Pair<BooleanArray, List<Int>> {
         val isPrimes = BooleanArray(n + 1) { true }
         val primeList = mutableListOf<Int>()
 
