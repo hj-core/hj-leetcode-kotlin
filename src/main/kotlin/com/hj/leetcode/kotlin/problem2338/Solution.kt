@@ -39,8 +39,9 @@ class Solution {
     private fun computeMaxTotalFactors(maxValue: Int): Int {
         var result = 0
         var remaining = maxValue
+        val minFactor = 2
         while (remaining > 1) {
-            remaining = remaining shr 1
+            remaining = remaining / minFactor
             result++
         }
         return result
@@ -60,7 +61,7 @@ class Solution {
 
         // To handle the denominator in the combination expression, we split the expression
         // into the product of multiplierL and multiplierR, where multiplierL takes care of the
-        // denominator, i.e., the factorial of k, and multiplierR takes care of the remainder.
+        // denominator, i.e., the factorial of k, and multiplierR takes care of the rest.
         val reservedFactors = mutableMapOf<Int, Int>()
         for (num in 2..<length) {
             for ((factor, power) in computeFactorization(num, isPrime, primeList)) {
