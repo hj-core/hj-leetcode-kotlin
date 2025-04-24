@@ -29,8 +29,8 @@ class Solution {
             if (0 < shortage) {
                 break
             }
-
             result += nums.size - minEnd + 1
+
             numFreq[nums[start]] = (numFreq[nums[start]] ?: 0) - 1
             if (numFreq[nums[start]] == 0) {
                 shortage++
