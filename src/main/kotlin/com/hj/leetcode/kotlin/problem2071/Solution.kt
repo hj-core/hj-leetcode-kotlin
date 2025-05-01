@@ -43,7 +43,7 @@ class Solution {
         // and a pointer to the next task to be queued.
         val taskDeque = ArrayDeque<Int>()
         var taskPtr = 0
-        var pillCnt = 0
+        var pillCnt = pills
 
         for (workerPtr in (sortedWorkers.size - k)..<sortedWorkers.size) {
             val workPower = sortedWorkers[workerPtr]
@@ -59,10 +59,10 @@ class Solution {
                     taskDeque.removeFirst()
                 }
 
-                pills == pillCnt -> return false
+                pillCnt == 0 -> return false
                 else -> {
                     taskDeque.removeLast()
-                    pillCnt++
+                    pillCnt--
                 }
             }
         }
