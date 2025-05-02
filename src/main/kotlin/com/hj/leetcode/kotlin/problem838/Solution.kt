@@ -12,17 +12,16 @@ class Solution {
         var nextForceIndex = 0
 
         for ((i, domino) in dominoes.withIndex()) {
-            if (domino == '.') {
+            if (domino != '.') {
+                prevForceIndex = i
+                builder.append(domino)
+            } else {
                 nextForceIndex = maxOf(nextForceIndex, i)
                 while (nextForceIndex < dominoes.length && dominoes[nextForceIndex] == '.') {
                     nextForceIndex++
                 }
-
                 val direction = computeDirection(dominoes, i, prevForceIndex, nextForceIndex)
                 builder.append(direction)
-            } else {
-                prevForceIndex = i
-                builder.append(domino)
             }
         }
         return builder.toString()
