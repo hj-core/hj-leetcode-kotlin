@@ -4,72 +4,50 @@ package com.hj.leetcode.kotlin.problem838
  * LeetCode page: [838. Push Dominoes](https://leetcode.com/problems/push-dominoes/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(N) and Space O(N) where N is the length of dominoes;
-     */
+    // Complexity:
+    // Time O(N) and Space O(N) where N is the length of dominoes.
     fun pushDominoes(dominoes: String): String {
-        val pushed = StringBuilder(dominoes)
-        var leftBound = 0
+        val builder = StringBuilder(dominoes.length)
+        var prevForceIndex = 0
+        var nextForceIndex = 0
 
-        loop@ for (rightBound in 1..dominoes.lastIndex) {
-            val fallDirection = getFallDirection(dominoes, leftBound, rightBound)
-            val range = leftBound..rightBound
+        for ((i, domino) in dominoes.withIndex()) {
+            if (domino == '.') {
+                nextForceIndex = maxOf(nextForceIndex, i)
+                while (nextForceIndex < dominoes.length && dominoes[nextForceIndex] == '.') {
+                    nextForceIndex++
+                }
 
-            when (fallDirection) {
-                FallDirection.Left -> fallToLeft(pushed, range)
-                FallDirection.Right -> fallToRight(pushed, range)
-                FallDirection.Inward -> fallInward(pushed, range)
-                FallDirection.Unchanged -> {}
-                FallDirection.Unknown -> continue@loop
+                val direction = computeDirection(dominoes, i, prevForceIndex, nextForceIndex)
+                builder.append(direction)
+            } else {
+                prevForceIndex = i
+                builder.append(domino)
             }
-            leftBound = rightBound
         }
-        return pushed.toString()
+        return builder.toString()
     }
 
-    private fun getFallDirection(dominoes: String, leftBound: Int, rightBound: Int): FallDirection {
-        return when (dominoes[leftBound]) {
-            '.' -> when (dominoes[rightBound]) {
-                '.' -> FallDirection.Unknown
-                'L' -> FallDirection.Left
-                'R' -> FallDirection.Unchanged
-                else -> throw IllegalStateException()
-            }
-            'L' -> FallDirection.Unchanged
-            'R' -> when (dominoes[rightBound]) {
-                '.' -> if (rightBound == dominoes.lastIndex) FallDirection.Right else FallDirection.Unknown
-                'L' -> FallDirection.Inward
-                'R' -> FallDirection.Right
-                else -> throw IllegalStateException()
-            }
-            else -> throw IllegalStateException()
+    private fun computeDirection(
+        dominoes: String,
+        index: Int,
+        prevForceIndex: Int,
+        nextForceIndex: Int,
+    ): Char {
+        var distantPushR = dominoes.length
+        if (dominoes[prevForceIndex] == 'R') {
+            distantPushR = index - prevForceIndex
         }
-    }
 
-    private enum class FallDirection { Left, Right, Inward, Unchanged, Unknown }
-
-    private fun fallToLeft(dominoes: StringBuilder, range: IntRange) {
-        fall(dominoes, range, 'L')
-    }
-
-    private fun fall(dominoes: StringBuilder, range: IntRange, directionSymbol: Char) {
-        for (index in range) {
-            dominoes[index] = directionSymbol
+        var distantPushL = dominoes.length
+        if (nextForceIndex < dominoes.length && dominoes[nextForceIndex] == 'L') {
+            distantPushL = nextForceIndex - index
         }
-    }
 
-    private fun fallToRight(dominoes: StringBuilder, range: IntRange) {
-        fall(dominoes, range, 'R')
-    }
-
-    private fun fallInward(dominoes: StringBuilder, range: IntRange) {
-        val width = range.last - range.first + 1
-        val halfWidth = width shr 1
-
-        val rangeToRight = range.first until range.first + halfWidth
-        fallToRight(dominoes, rangeToRight)
-
-        val rangeToLeft = range.last - halfWidth + 1..range.last
-        fallToLeft(dominoes, rangeToLeft)
+        return when {
+            distantPushR < distantPushL -> 'R'
+            distantPushR > distantPushL -> 'L'
+            else -> '.'
+        }
     }
 }
