@@ -10,34 +10,28 @@ class Solution {
     fun numTilings(n: Int): Int {
         val module = 1_000_000_007 // from the problem requirements;
 
-        /* A valid tiling's start tile must be one of the following:
-         *   1. a vertical domino;
-         *   2. a stack of two horizontal dominoes;
-         *   3. a tromino like 'L';
-         *   4. a tromino like upside down 'L';
-         * We can apply Dynamic Programming to solve the problem, the sub problems are the number of
-         * tilings in each case for a segment start from index i. The original problem is the sum of
-         * 4 cases with i equals 0.
-         */
-        var case1 = 1L // initial value with i equals n - 1;
-        var prevCase1 = 0L // initial value with i equals n;
-        var case2 = 0L // initial value with i equals n - 1;
-        var case3 = 0L // initial value with i equals n - 1;
-        var case4 = 0L // initial value with i equals n - 1;
+        // We define three types of 2xn boards as follows:
+        //   Type1 - No missing cells.
+        //   Type2 - The top cell of the first column is missing.
+        //   Type3 - The bottom cell of the first column is missing.
+        // Then, we track the number of ways to cover each type of board with the
+        // corresponding dp variables, which have initial values corresponding to
+        // a 2x0 board.
+        var dpType1 = 1L
+        var prevDpType1 = 0L
+        var dpType2 = 0L
+        var dpType3 = 0L
 
-        for (i in n - 2 downTo 0) {
-            val newCase1 = (case1 + case2 + case3 + case4) % module
-            val newCase2 = case1
-            val newCase3 = (case4 + prevCase1) % module
-            val newCase4 = (case3 + prevCase1) % module
+        repeat(n) {
+            val newDpType1 = (dpType1 + prevDpType1 + dpType2 + dpType3) % module
+            val newDpType2 = (prevDpType1 + dpType3) % module
+            val newDpType3 = (prevDpType1 + dpType2) % module
 
-            prevCase1 = case1
-            case1 = newCase1
-            case2 = newCase2
-            case3 = newCase3
-            case4 = newCase4
+            prevDpType1 = dpType1
+            dpType1 = newDpType1
+            dpType2 = newDpType2
+            dpType3 = newDpType3
         }
-
-        return ((case1 + case2 + case3 + case4) % module).toInt()
+        return dpType1.toInt()
     }
 }
