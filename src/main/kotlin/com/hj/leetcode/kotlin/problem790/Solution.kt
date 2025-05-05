@@ -16,7 +16,7 @@ class Solution {
         //   Type3 - The bottom cell of the first column is missing.
         // Then, we track the number of ways to cover each type of board with the
         // corresponding dp variables, which have initial values corresponding to
-        // a 0x1 board.
+        // a 2x0 board.
         var dpType1 = 1L
         var prevDpType1 = 0L
         var dpType2 = 0L
