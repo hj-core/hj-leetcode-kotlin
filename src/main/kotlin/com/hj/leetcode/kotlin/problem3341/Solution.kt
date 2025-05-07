@@ -29,9 +29,13 @@ class Solution {
             for ((dr, dc) in moves) {
                 val neighRow = curr.row + dr
                 val neighCol = curr.col + dc
-                if (neighRow !in moveTime.indices || neighCol !in moveTime[neighRow].indices || visited[neighRow][neighCol]) {
+                if (neighRow !in moveTime.indices ||
+                    neighCol !in moveTime[neighRow].indices ||
+                    visited[neighRow][neighCol]
+                ) {
                     continue
                 }
+
                 val neighTime = 1 + maxOf(curr.minTime, moveTime[neighRow][neighCol])
                 pq.offer(Cell(neighRow, neighCol, neighTime))
             }
@@ -39,14 +43,9 @@ class Solution {
         throw IllegalStateException("Code should not reach here")
     }
 
-    @JvmInline
-    value class Cell private constructor(
-        val data: IntArray,
-    ) {
-        val row: Int get() = data[0]
-        val col: Int get() = data[1]
-        val minTime: Int get() = data[2]
-
-        constructor(row: Int, col: Int, minTime: Int) : this(data = intArrayOf(row, col, minTime))
-    }
+    private class Cell(
+        val row: Int,
+        val col: Int,
+        val minTime: Int,
+    )
 }
