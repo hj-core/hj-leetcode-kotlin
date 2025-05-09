@@ -4,6 +4,28 @@ package com.hj.leetcode.kotlin.problem3343
  * LeetCode page: [3343. Count Number of Balanced Permutations](https://leetcode.com/problems/count-number-of-balanced-permutations/);
  */
 class Solution {
+    private val module = 1_000_000_007
+    private val maxLen = 80
+
+    // combTable[n][i]::= Combination(n+i, n) % module
+    private val combTable = Array(1 + maxLen) { IntArray(1 + maxLen) }
+
+    init {
+        initCombinationTable()
+    }
+
+    private fun initCombinationTable() {
+        for (i in combTable[0].indices) {
+            combTable[0][i] = 1
+        }
+        for (n in 1..<combTable.size) {
+            combTable[n][0] = 1
+            for (i in 1..<combTable[n].size) {
+                combTable[n][i] = (combTable[n - 1][i] + combTable[n][i - 1]) % module
+            }
+        }
+    }
+
     fun countBalancedPermutations(num: String): Int {
         val freq = computeDigitFreq(num)
         val sum = computeDigitSum(freq)
@@ -55,8 +77,8 @@ class Solution {
                         }
 
                         newDp[nextEvenLen][nextEvenSum] +=
-                            ((((dp[evenLen][evenSum].toLong() * combTable[evenLen][f]) % MODULE) * combTable[oldLen][freq[d] - f]) % MODULE).toInt()
-                        newDp[nextEvenLen][nextEvenSum] %= MODULE
+                            ((((dp[evenLen][evenSum].toLong() * combTable[evenLen][f]) % module) * combTable[oldLen][freq[d] - f]) % module).toInt()
+                        newDp[nextEvenLen][nextEvenSum] %= module
                     }
                 }
             }
@@ -79,21 +101,4 @@ class Solution {
         digitFreq.foldIndexed(0) { digit, acc, freq ->
             acc + digit * freq
         }
-
-    companion object {
-        private const val MODULE = 1_000_000_007
-        private const val MAX_LEN = 80
-        private val combTable =
-            Array(1 + MAX_LEN) { IntArray(1 + MAX_LEN) }.apply {
-                for (i in this[0].indices) {
-                    this[0][i] = 1
-                }
-                for (n in 1..<this.size) {
-                    this[n][0] = 1
-                    for (i in 1..<this[n].size) {
-                        this[n][i] = (this[n - 1][i] + this[n][i - 1]) % MODULE
-                    }
-                }
-            }
-    }
 }
