@@ -8,19 +8,18 @@ class Solution {
      * Time O(N) and Space O(1) where N is the size of arr;
      */
     fun threeConsecutiveOdds(arr: IntArray): Boolean {
-        var consecutiveOdds = 0
+        var pendingLen = 3
         for (num in arr) {
-            consecutiveOdds = if (num.isOdd()) {
-                consecutiveOdds + 1
-            } else {
-                0
+            if (num and 1 == 0) {
+                pendingLen = 3
+                continue
             }
-            if (consecutiveOdds == 3) {
+
+            pendingLen--
+            if (pendingLen == 0) {
                 return true
             }
         }
         return false
     }
-
-    private fun Int.isOdd(): Boolean = this and 1 == 1
 }
