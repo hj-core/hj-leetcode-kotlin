@@ -100,6 +100,7 @@ at [LeetCode](https://leetcode.com/hj-core/).
 | [3108. Minimum Cost Walk in Weighted Graph](https://leetcode.com/problems/minimum-cost-walk-in-weighted-graph/)                                                           | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3108/Solution.kt)                                                                               | 2025-03-20    |
 | [3203. Find Minimum Diameter After Merging Two Trees](https://leetcode.com/problems/find-minimum-diameter-after-merging-two-trees/)                                       | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3203/Solution.kt)                                                                               | 2024-12-24    |
 | [3272. Find the Count of Good Integers](https://leetcode.com/problems/find-the-count-of-good-integers/)                                                                   | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3272/Solution.kt)                                                                               | 2025-04-12    |
+| [3337. Total Characters in String After Transformations II](https://leetcode.com/problems/total-characters-in-string-after-transformations-ii/)                           | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3337/Solution.kt)                                                                               | 2025-05-14    |
 
 ### Medium
 
