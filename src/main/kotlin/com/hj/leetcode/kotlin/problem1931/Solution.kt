@@ -57,21 +57,30 @@ class Solution {
     // `generateAllColorRows` returns a list of all possible color arrangements of a
     // row of length m. The colors are encoded using the lowest 2m bits, with each
     // color takes 2 bits.
-    private fun generateAllColorRows(m: Int): List<Int> {
-        var result = listOf(0, 1, 2) // base case where m equals 1
+    private fun generateAllColorRows(m: Int): IntArray {
+        val finalSize = 3 * (1 shl (m - 1))
+        val result = IntArray(finalSize)
         val mask = 0b11
-        repeat(m - 1) {
-            val newResult = ArrayList<Int>(2 * result.size)
-            for (row in result) {
-                val newBase = row shl 2
-                val lastColor = row and mask
+
+        // Base case where m equals 1
+        var currSize = 3
+        result[0] = 0
+        result[1] = 1
+        result[2] = 2
+
+        while (currSize < finalSize) {
+            var j = currSize * 2 - 1
+            for (i in currSize - 1 downTo 0) {
+                val base = result[i] shl 2
+                val lastColor = result[i] and mask
                 for (color in 0..<3) {
                     if (color != lastColor) {
-                        newResult.add(newBase or color)
+                        result[j] = base or color
+                        j--
                     }
                 }
             }
-            result = newResult
+            currSize *= 2
         }
         return result
     }
