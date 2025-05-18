@@ -7,6 +7,7 @@ private typealias Matrix = Array<LongArray>
 
 class Solution {
     private val module: Long = 1_000_000_007
+    private val bitColors = intArrayOf(0b001, 0b010, 0b100)
 
     // Complexity:
     // Time O(8^m * Log(n)) and Space O(4^m).
@@ -45,7 +46,7 @@ class Solution {
         val result = Array(allRows.size) { LongArray(allRows.size) }
         for (i in 0..<allRows.size) {
             for (j in 0..i) {
-                if (areRowCompatible(allRows[i], allRows[j], m)) {
+                if (areRowCompatible(allRows[i], allRows[j])) {
                     result[i][j] = 1
                     result[j][i] = 1
                 }
@@ -55,25 +56,27 @@ class Solution {
     }
 
     // `generateAllColorRows` returns a list of all possible color arrangements of a
-    // row of length m. The colors are encoded using the lowest 2m bits, with each
-    // color takes 2 bits.
+    // row of length m. The colors are encoded using the lowest 3*m bits, with each
+    // color takes 3 bits.
     private fun generateAllColorRows(m: Int): IntArray {
         val finalSize = 3 * (1 shl (m - 1))
         val result = IntArray(finalSize)
-        val mask = 0b11
+        val mask = 0b111
 
         // Base case where m equals 1
         var currSize = 3
-        result[0] = 0
-        result[1] = 1
-        result[2] = 2
+        result[0] = bitColors[0]
+        result[1] = bitColors[1]
+        result[2] = bitColors[2]
 
         while (currSize < finalSize) {
             var j = currSize * 2 - 1
+
             for (i in currSize - 1 downTo 0) {
-                val base = result[i] shl 2
+                val base = result[i] shl 3
                 val lastColor = result[i] and mask
-                for (color in 0..<3) {
+
+                for (color in bitColors) {
                     if (color != lastColor) {
                         result[j] = base or color
                         j--
@@ -90,17 +93,7 @@ class Solution {
     private fun areRowCompatible(
         row1: Int,
         row2: Int,
-        m: Int,
-    ): Boolean {
-        var mask = 0b11
-        repeat(m) {
-            if ((row1 and mask) == (row2 and mask)) {
-                return false
-            }
-            mask = mask shl 2
-        }
-        return true
-    }
+    ): Boolean = (row1 and row2) == 0
 
     private fun matrixPow(
         base: Matrix,
