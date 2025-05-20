@@ -12,9 +12,9 @@ class Solution {
         queries: Array<IntArray>,
     ): Boolean {
         val delta = IntArray(nums.size + 1)
-        for ((l, r) in queries) {
-            delta[l]++
-            delta[r + 1]--
+        for (query in queries) {
+            delta[query[0]]++
+            delta[query[1] + 1]--
         }
 
         var reduction = 0
