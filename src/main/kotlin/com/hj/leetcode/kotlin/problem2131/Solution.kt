@@ -4,60 +4,31 @@ package com.hj.leetcode.kotlin.problem2131
  * LeetCode page: [2131. Longest Palindrome by Concatenating Two Letter Words](https://leetcode.com/problems/longest-palindrome-by-concatenating-two-letter-words/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(N) and Space O(1) where N is the size of words. Space complexity is O(1) because there are
-     * at most 26^2 different words;
-     */
+    // Complexity:
+    // Time O(N+S^2) and Space O(S^2) where N is the length of words and
+    // S is the size of character set, which is 26 for this problem.
     fun longestPalindrome(words: Array<String>): Int {
-        val countPerWord = countEachWord(words)
-        return findMaxLength(countPerWord)
-    }
-
-    private fun countEachWord(words: Array<String>): MutableMap<String, Int> {
-        val counts = hashMapOf<String, Int>()
-
+        val freq = Array(26) { IntArray(26) }
         for (word in words) {
-            counts[word] = counts.getOrDefault(word, 0) + 1
+            freq[word[0] - 'a'][word[1] - 'a']++
         }
-        return counts
-    }
 
-    private fun findMaxLength(countPerWord: MutableMap<String, Int>): Int {
-        var halfMaxLength = 0
-        var hasOddCountTwin = false
-        val countsIterator = countPerWord.iterator()
-
-        fun updateWhenWordIsTwin(count: Int) {
-            if (count.isEven()) {
-                halfMaxLength += count
-            } else {
-                halfMaxLength += count - 1
-                hasOddCountTwin = true
+        var result = 0
+        var extraMid = false
+        for (i in 0..<26) {
+            for (j in 0..<i) {
+                result += minOf(freq[i][j], freq[j][i]) * 4
             }
-            countsIterator.remove()
-        }
 
-        fun updateWhenWordIsNotTwin(word: String, count: Int) {
-            val reversed = word.reversed()
-            val countOfReversed = countPerWord[reversed]
-            if (countOfReversed != null) {
-                halfMaxLength += minOf(count, countOfReversed) * 2
+            result += (freq[i][i] / 2) * 4
+            if (freq[i][i] and 1 == 1) {
+                extraMid = true
             }
-            countsIterator.remove()
         }
 
-        while (countsIterator.hasNext()) {
-            val (word, count) = countsIterator.next()
-            val isTwin = isTwin(word)
-            if (isTwin) updateWhenWordIsTwin(count) else updateWhenWordIsNotTwin(word, count)
+        if (extraMid) {
+            result += 2
         }
-
-        if (hasOddCountTwin) halfMaxLength += 1
-
-        return halfMaxLength * 2
+        return result
     }
-
-    private fun Int.isEven() = this and 1 == 0
-
-    private fun isTwin(word: String) = word.length == 2 && word[0] == word[1]
 }
