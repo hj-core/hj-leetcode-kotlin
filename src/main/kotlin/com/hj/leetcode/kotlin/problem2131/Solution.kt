@@ -19,15 +19,12 @@ class Solution {
             for (j in 0..<i) {
                 result += minOf(freq[i][j], freq[j][i]) * 4
             }
-
             result += (freq[i][i] / 2) * 4
-            if (freq[i][i] and 1 == 1) {
+
+            if (!extraMid && freq[i][i] and 1 == 1) {
+                result += 2
                 extraMid = true
             }
-        }
-
-        if (extraMid) {
-            result += 2
         }
         return result
     }
