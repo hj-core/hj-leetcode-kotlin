@@ -82,10 +82,6 @@ class Solution2 {
         adjacencyList: List<List<Int>>,
         countTargetNodes: IntArray,
     ) {
-        if (degrees[node] < 1) {
-            return
-        }
-
         if (node != root) {
             countTargetNodes[root]++
             countTargetNodes[node]++
@@ -95,7 +91,7 @@ class Solution2 {
         }
 
         for (child in adjacencyList[node]) {
-            if (child == parentNode) {
+            if (child == parentNode || degrees[child] < 1) {
                 continue
             }
             dfs(root, child, node, k - 1, degrees, adjacencyList, countTargetNodes)
