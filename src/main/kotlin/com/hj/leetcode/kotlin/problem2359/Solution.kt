@@ -46,9 +46,9 @@ class Solution {
         return -1
     }
 
-    //  `getNextAndUpdateSeen` returns the next node from `curr` and marks it
-    //  as seen. If a cycle is detected, it returns -1 instead, as if there is
-    //  no next node.
+    //  `getNextAndUpdateSeen` returns the next node from curr and marks it as
+    //  seen. If a cycle is detected, it returns -1 instead, as if there is no
+    //  next node.
     private fun getNextAndUpdateSeen(
         curr: Int,
         edges: IntArray,
