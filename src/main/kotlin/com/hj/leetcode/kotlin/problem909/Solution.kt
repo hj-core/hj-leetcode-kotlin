@@ -33,11 +33,11 @@ class Solution {
                     if (boardValue != -1) {
                         next = boardValue
                     }
-                    if (next == totalSquares) {
-                        return rolls
-                    }
 
                     if (!visited[next]) {
+                        if (next == totalSquares) {
+                            return rolls
+                        }
                         visited[next] = true
                         queue.pushRight(next)
                     }
