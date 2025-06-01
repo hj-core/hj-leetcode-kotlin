@@ -24,8 +24,10 @@ class Solution {
         maxSum: Int,
         limit: Int,
     ): Long =
-        if (maxSum <= limit) {
-            maxOf(0L, (1L + maxSum) * (2L + maxSum) / 2)
+        if (maxSum < 0) {
+            0L
+        } else if (maxSum <= limit) {
+            (1L + maxSum) * (2L + maxSum) / 2
         } else {
             (1L + limit) * (1L + limit) - distributeAB(limit * 2 - maxSum - 1, limit)
         }
