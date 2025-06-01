@@ -18,13 +18,15 @@ class Solution {
         return distributeAB(maxSumAB, limit) - distributeAB(minSumAB - 1, limit)
     }
 
+    // `distributeAB` returns the number of different (a, b) pairs so that both
+    // a and b are non-negative, and their sum is not greater than maxSum.
     private fun distributeAB(
-        sumAB: Int,
+        maxSum: Int,
         limit: Int,
     ): Long =
-        if (sumAB <= limit) {
-            maxOf(0L, (1L + sumAB) * (2L + sumAB) / 2)
+        if (maxSum <= limit) {
+            maxOf(0L, (1L + maxSum) * (2L + maxSum) / 2)
         } else {
-            (1L + limit) * (1L + limit) - distributeAB(limit * 2 - sumAB - 1, limit)
+            (1L + limit) * (1L + limit) - distributeAB(limit * 2 - maxSum - 1, limit)
         }
 }
