@@ -602,6 +602,7 @@ at [LeetCode](https://leetcode.com/hj-core/).
 | [3362. Zero Array Transformation III](https://leetcode.com/problems/zero-array-transformation-iii/)                                                                                             | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3362/Solution.kt)                                                                               | 2025-05-22    |
 | [3372. Maximize the Number of Target Nodes After Connecting Trees I](https://leetcode.com/problems/maximize-the-number-of-target-nodes-after-connecting-trees-i/)                               | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3372/Solution.kt), [Solution2](src/main/kotlin/com/hj/leetcode/kotlin/problem3372/Solution2.kt) | 2025-05-28    |
 | [3394. Check if Grid can be Cut into Sections](https://leetcode.com/problems/check-if-grid-can-be-cut-into-sections/)                                                                           | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3394/Solution.kt)                                                                               | 2025-03-25    |
+| [3403. Find the Lexicographically Largest String From the Box I](https://leetcode.com/problems/find-the-lexicographically-largest-string-from-the-box-i/)                                       | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3403/Solution.kt)                                                                               | 2025-06-04    |
 
 ### Easy
 
