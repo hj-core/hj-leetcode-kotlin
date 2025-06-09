@@ -1,60 +1,62 @@
 package com.hj.leetcode.kotlin.problem440
 
-import kotlin.math.min
-
 /**
  * LeetCode page: [440. K-th Smallest in Lexicographical Order](https://leetcode.com/problems/k-th-smallest-in-lexicographical-order/);
  */
 class Solution {
-    /* Complexity:
-     * Time O((Log n)^2) and Space O(1).
-     */
+    // Complexity:
+    // Time O(Log(n)^2) and Space O(Log(n)).
     fun findKthNumber(
         n: Int,
         k: Int,
     ): Int {
-        /* Search the 'digit tree' where the root has child nodes 1 to 9,
-         * and all child nodes recursively have child nodes 0 to 9.
-         */
-        return search(1, 1, n, k)
+        var newK = k
+        for (prefix in 1L..<10L) {
+            val count = countNumbersWithPrefix(n, prefix)
+            if (newK <= count) {
+                return findKthNumberWithPrefix(n, newK, prefix)
+            }
+            newK -= count
+        }
+        throw IllegalArgumentException("the kth number is out of range")
     }
 
-    private tailrec fun search(
-        root: Int,
-        rank: Int,
+    // Returns the number of numbers that have the prefix and are not
+    // greater than n.
+    private fun countNumbersWithPrefix(
         n: Int,
-        k: Int,
-    ): Int {
-        if (rank == k) {
-            return root
-        }
-
-        val size = size(root, n)
-        return if (rank + size - 1 < k) {
-            search(root + 1, rank + size, n, k) // Move to the next sibling
-        } else {
-            search(root * 10, rank + 1, n, k) // Move to the first child
-        }
-    }
-
-    private fun size(
-        root: Int,
-        n: Int,
+        prefix: Long,
     ): Int {
         var result = 0
-        var startValue = root // The first value in current level
-        var breadth = 1
-        while (startValue <= n) {
-            val endValue = min(n, startValue + breadth - 1)
-            val trueBreadth = endValue - startValue + 1
-            result += trueBreadth
-
-            if (n / 10 < startValue) {
-                break
-            }
-            startValue *= 10
-            breadth *= 10
+        var leftMost = prefix
+        var width = 1L
+        while (leftMost <= n) {
+            result += minOf(width, n + 1L - leftMost).toInt()
+            leftMost *= 10
+            width *= 10
         }
         return result
+    }
+
+    // Returns the kth number that have the prefix and are not greater
+    // than n.
+    private fun findKthNumberWithPrefix(
+        n: Int,
+        k: Int,
+        prefix: Long,
+    ): Int {
+        if (k == 1) {
+            return prefix.toInt()
+        }
+
+        var newK = k - 1
+        for (next in 0..<10) {
+            val count = countNumbersWithPrefix(n, prefix * 10 + next)
+            if (newK <= count) {
+                return findKthNumberWithPrefix(n, newK, prefix * 10 + next)
+            }
+            newK -= count
+        }
+        throw IllegalArgumentException("the kth number is out of range")
     }
 }
