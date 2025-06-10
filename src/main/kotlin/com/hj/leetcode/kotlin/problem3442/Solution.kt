@@ -15,11 +15,9 @@ class Solution {
         var maxOdd = -1
         var minEven = s.length + 1
         for (f in freq) {
-            if (f == 0) {
-                continue
-            } else if (f and 1 == 1) {
+            if (f and 1 == 1) {
                 maxOdd = maxOf(maxOdd, f)
-            } else {
+            } else if (f != 0) {
                 minEven = minOf(minEven, f)
             }
         }
