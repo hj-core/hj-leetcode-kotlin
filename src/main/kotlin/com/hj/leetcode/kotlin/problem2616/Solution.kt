@@ -4,43 +4,52 @@ package com.hj.leetcode.kotlin.problem2616
  * LeetCode page: [2616. Minimize the Maximum Difference of Pairs](https://leetcode.com/problems/minimize-the-maximum-difference-of-pairs/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(NLogN+NLogV) and Space O(N) where N is the size of nums, V is the (maxValue - minValue) of nums;
-     */
-    fun minimizeMax(nums: IntArray, p: Int): Int {
+    // Complexity:
+    // Time O(NLogN+NLogM) and Space O(N) where N is the length of nums
+    // and M is the range of nums.
+    fun minimizeMax(
+        nums: IntArray,
+        p: Int,
+    ): Int {
         if (p == 0) {
             return 0
         }
 
-        val sortedNums = nums.sorted()
-        var lowerBound = 0
-        var upperBound = sortedNums.last() - sortedNums[0]
-        while (lowerBound < upperBound) {
-            val mid = lowerBound + (upperBound - lowerBound) / 2
+        // Binary search on the minimum maximum difference. The result
+        // is in the range [left, right].
+        val sortedNums = nums.sortedArray()
+        var left = 0
+        var right = sortedNums.last() - sortedNums.first()
 
-            if (hasEnoughPairs(sortedNums, p, mid)) {
-                upperBound = mid
+        while (left < right) {
+            val mid = (left + right) ushr 1
+            if (canFindPairs(sortedNums, p, mid)) {
+                right = mid
             } else {
-                lowerBound = mid + 1
+                left = mid + 1
             }
         }
-        return upperBound
+        return left
     }
 
-    private fun hasEnoughPairs(sortedNums: List<Int>, numPairs: Int, maxDifference: Int): Boolean {
-        var index = 0
-        var pairCount = 0
-
-        while (index < sortedNums.lastIndex) {
-            if (sortedNums[index + 1] - sortedNums[index] <= maxDifference) {
-                pairCount++
-                index += 2
+    // Returns whether we can find p pairs such that every pair has a
+    // difference not greater than allowedDiff.
+    private fun canFindPairs(
+        sortedNums: IntArray,
+        p: Int,
+        allowedDiff: Int,
+    ): Boolean {
+        var found = 0
+        var i = 1
+        while (i < sortedNums.size) {
+            if (sortedNums[i] - sortedNums[i - 1] <= allowedDiff) {
+                found++
+                i += 2
+                if (found == p) {
+                    return true
+                }
             } else {
-                index++
-            }
-
-            if (pairCount >= numPairs) {
-                return true
+                i += 1
             }
         }
         return false
