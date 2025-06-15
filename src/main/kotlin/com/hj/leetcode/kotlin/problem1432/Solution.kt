@@ -13,7 +13,7 @@ class Solution {
         val mapToNine = digits.lastOrNull { it < 9 } ?: 9
 
         // Mapping to produce the minimum number after changing digits
-        val mapToOne = digits.last().let { if (it > 1) it else 1 }
+        val mapToOne = digits.last().let { if (it != 1) it else 1 }
         val mapToZero = if (mapToOne != 1) 0 else (digits.lastOrNull { it > 1 } ?: 0)
 
         // Compute the result by accumulating differences
