@@ -19,7 +19,7 @@ class Solution {
         val calc = CombModCalculator(n - 1, modulo)
 
         // We consider the n-1 shared edges between adjacent elements. There are
-        // n-1-k edges that connect different adjacent elements. We then partition
+        // n-1-k edges that connect different adjacent elements. We partition
         // the array at these edges, resulting in n-k partitions, each containing
         // the same number, and adjacent partitions contain different numbers.
 
@@ -48,7 +48,7 @@ private class CombModCalculator(
     private val invFacMod = IntArray(maxN + 1)
 
     init {
-        invFacMod[maxN] = powerMod(facMod[maxN], primeModulo - 2, primeModulo)
+        invFacMod[maxN] = powerMod(facMod[maxN], primeModulo - 2, primeModulo) // Fermat's Little Theorem
         for (i in maxN downTo 1) {
             invFacMod[i - 1] = ((i.toLong() * invFacMod[i]) % primeModulo).toInt()
         }
