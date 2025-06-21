@@ -18,9 +18,10 @@ class Solution {
 
         freq.sort()
         var result = word.length
-        var prefix = 0 // The first index where freq[prefix] == freq[i]
+        // freq[0..<prefix] < freq[i] and freq[suffix..] > freq[i]+k
+        var prefix = 0
+        var suffix = 0
         var prefixSum = 0 // The sum of freq[0..<prefix]
-        var suffix = 0 // The first index where freq[suffix] > freq[i]+k
         var suffixSum = word.length // The sum of freq[suffix..]
 
         // Try each freq[i] as the minimum frequency after deletions
