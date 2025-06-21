@@ -31,7 +31,7 @@ class Solution {
                 continue
             }
 
-            while (prefix < i && freq[prefix] < freq[i]) {
+            while (freq[prefix] < freq[i]) {
                 prefixSum += freq[prefix]
                 prefix++
             }
