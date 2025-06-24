@@ -18,7 +18,7 @@ tasks.test {
 }
 
 tasks.wrapper {
-    gradleVersion = "8.14"
+    gradleVersion = "8.14.2"
     distributionType = Wrapper.DistributionType.ALL
 }
 
