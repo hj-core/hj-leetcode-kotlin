@@ -12,7 +12,7 @@ class Solution {
     ): String {
         val freq = countLowercases(s)
         toMaxOccurrences(freq, k)
-        return dfs(pruneChars(s, freq), k, freq).joinToString(separator = "")
+        return dfs(pruneChars(s, freq), k, freq)
     }
 
     // Returns the frequency of each lowercase.
@@ -58,25 +58,25 @@ class Solution {
         // Extra occurrence of each lowercase that can be added to the
         // subsequence.
         extraOccur: IntArray,
-        subsequence: MutableList<Char> = mutableListOf(),
-    ): List<Char> {
+        subsequence: StringBuilder = StringBuilder(),
+    ): String {
         if (!isKRepeated(s, k, subsequence)) {
-            return emptyList()
+            return ""
         }
 
-        var result = subsequence.toList()
+        var result = subsequence.toString()
         for (i in 25 downTo 0) {
             if (extraOccur[i] == 0) {
                 continue
             }
             extraOccur[i]--
-            subsequence.add('a' + i)
+            subsequence.append('a' + i)
             val next = dfs(s, k, extraOccur, subsequence)
 
-            if (next.size > result.size) {
+            if (next.length > result.length) {
                 result = next
             }
-            subsequence.removeLast()
+            subsequence.deleteCharAt(subsequence.length - 1)
             extraOccur[i]++
         }
         return result
@@ -86,7 +86,7 @@ class Solution {
     private fun isKRepeated(
         s: String,
         k: Int,
-        subsequence: List<Char>,
+        subsequence: StringBuilder,
     ): Boolean {
         if (subsequence.isEmpty()) {
             return true
@@ -97,7 +97,7 @@ class Solution {
         for (c in s) {
             if (c == subsequence[i]) {
                 i++
-                if (i == subsequence.size) {
+                if (i == subsequence.length) {
                     i = 0
                     cnt++
                     if (cnt == k) {
