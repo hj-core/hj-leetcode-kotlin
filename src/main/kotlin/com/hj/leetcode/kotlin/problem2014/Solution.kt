@@ -12,7 +12,8 @@ class Solution {
     ): String {
         val freq = countLowercases(s)
         toMaxOccurrences(freq, k)
-        return dfs(pruneChars(s, freq), k, freq)
+        val newS = pruneImpossibleChars(s, freq)
+        return dfs(newS, k, freq)
     }
 
     // Returns the frequency of each lowercase.
@@ -37,7 +38,7 @@ class Solution {
 
     // Returns a new string with the characters removed from s that cannot
     // be part of a k-repeated subsequence.
-    private fun pruneChars(
+    private fun pruneImpossibleChars(
         s: String,
         maxOccur: IntArray,
     ): String {
