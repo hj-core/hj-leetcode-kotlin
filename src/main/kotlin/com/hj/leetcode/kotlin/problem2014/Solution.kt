@@ -36,8 +36,8 @@ class Solution {
         }
     }
 
-    // Returns a new string with the characters removed from s that cannot
-    // be part of a k-repeated subsequence.
+    // Returns a new string with the characters that cannot be part of a
+    // k-repeated subsequence removed from s .
     private fun pruneImpossibleChars(
         s: String,
         maxOccur: IntArray,
