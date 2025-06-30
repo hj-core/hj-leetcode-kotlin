@@ -7,13 +7,9 @@ class Solution {
     // Complexity:
     // Time O(N) and Space O(N) where N is the length of nums.
     fun findLHS(nums: IntArray): Int {
-        val freq = nums.asSequence().groupingBy { it }.eachCount()
-        var result = 0
-        for ((num, count) in freq) {
-            freq[num + 1]?.let {
-                result = maxOf(result, count + it)
-            }
+        val freq = nums.groupBy { it }
+        return freq.maxOf { (k, v) ->
+            freq[k + 1]?.let { v.size + it.size } ?: 0
         }
-        return result
     }
 }
