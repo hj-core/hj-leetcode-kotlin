@@ -72,8 +72,8 @@ class Solution {
         dp[0] = 1 // base case i equals -1
 
         for (i in bags.indices) {
-            var wndSum = 0L // Sum of dp[j-bags[i]+1..=j]@i-1
-            for (j in maxOf(0, maxBalls - bags[i] + 1)..maxBalls) {
+            var wndSum = 0L // Sum of dp[j-bags[i]..<j]@i-1
+            for (j in maxOf(0, (maxBalls + 1) - bags[i])..<(maxBalls + 1)) {
                 wndSum = (wndSum + dp[j]) % modulo
             }
 
