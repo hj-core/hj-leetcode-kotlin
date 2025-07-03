@@ -20,7 +20,7 @@ class Solution {
             msb = newK.takeHighestOneBit()
         }
 
-        for (i in 0..<(msb.countTrailingZeroBits())) {
+        for (i in 0..<msb.countTrailingZeroBits()) {
             shift += operations[i]
         }
         return 'a' + (shift % 26)
