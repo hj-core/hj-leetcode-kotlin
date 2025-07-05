@@ -24,7 +24,8 @@ class Solution {
 }
 
 /**
- * A class representing the slope in its lowest form. There are some special cases:
+ * A class representing the slope in its irreducible form. There are
+ * some special cases:
  * - (0, 0, 1) for a single point.
  * - (0, 1, 1) for horizontal lines.
  * - (1, 0, 1) for vertical lines.
