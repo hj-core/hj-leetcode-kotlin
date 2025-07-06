@@ -7,13 +7,13 @@ import kotlin.math.abs
  */
 class Solution {
     // Complexity:
-    // Time O(N^2) and SPace O(N) where N is the length of points.
+    // Time O(N^2) and Space O(N) where N is the length of points.
     fun maxPoints(points: Array<IntArray>): Int {
         var result = 1
         for ((i, point) in points.withIndex()) {
             val maxSlopeFreq =
                 (i + 1..<points.size)
-                    .groupingBy { j -> Slope.fromPoints(point, points[j]) }
+                    .groupingBy { Slope.fromPoints(point, points[it]) }
                     .eachCount()
                     .values
                     .maxOrNull() ?: 0
