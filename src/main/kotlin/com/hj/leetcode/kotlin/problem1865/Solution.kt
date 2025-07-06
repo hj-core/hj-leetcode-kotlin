@@ -47,13 +47,5 @@ class FindSumPairs(
         freq1: Map<Int, Int>,
         freq2: Map<Int, Int>,
         sum: Int,
-    ): Int {
-        var result = 0
-        for ((num1, count1) in freq1) {
-            val num2 = sum - num1
-            val count2 = freq2[num2] ?: continue
-            result += count1 * count2
-        }
-        return result
-    }
+    ): Int = freq1.entries.sumOf { (num1, cnt1) -> (freq2[sum - num1] ?: 0) * cnt1 }
 }
