@@ -11,6 +11,7 @@ class Solution {
     fun maxEvents(events: Array<IntArray>): Int {
         val sortedEvents = events.sortedBy { it[0] }
 
+        // The end times of ongoing but not-yet-attended events
         val available = PriorityQueue<Int>()
         var day = 0
         var iEvent = 0
