@@ -14,7 +14,7 @@ class Solution {
         val sortedEvents = events.sortedBy { it[0] }
 
         // dp[i][t]:= the maximum value if we can pick at most t
-        // events from the (sorted) events[i:].
+        // events from the sortedEvents[i:].
         val dp = Array(events.size + 1) { IntArray(k + 1) }
 
         for (i in sortedEvents.indices.reversed()) {
