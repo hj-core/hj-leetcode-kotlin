@@ -13,7 +13,7 @@ class Solution {
         endTime: IntArray,
     ): Int {
         // We convert the start and end times into an array that consists of
-        // the time gaps preceding each event, including the gap before the
+        // the time gaps preceding each event, including the gaps before the
         // first event and after the last event. We then find the maximum subarray
         // sum with length at most k+1.
         val n = endTime.size
