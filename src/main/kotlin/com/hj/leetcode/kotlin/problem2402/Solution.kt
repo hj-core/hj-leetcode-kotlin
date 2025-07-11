@@ -26,15 +26,15 @@ class Solution {
         for (meeting in sortedMeetings) {
             newStart = maxOf(newStart, meeting[0].toLong())
             if (freeRooms.isEmpty()) {
-                newStart = maxOf(newStart, checkNotNull(usedRooms.peek()).second)
+                newStart = maxOf(newStart, usedRooms.peek().second)
             }
 
-            while (usedRooms.isNotEmpty() && checkNotNull(usedRooms.peek()).second <= newStart) {
-                val room = checkNotNull(usedRooms.poll()).first
+            while (usedRooms.isNotEmpty() && usedRooms.peek().second <= newStart) {
+                val room = usedRooms.poll().first
                 freeRooms.add(room)
             }
 
-            val room = checkNotNull(freeRooms.poll())
+            val room = freeRooms.poll()
             val end = newStart + meeting[1] - meeting[0]
             usedRooms.add(Pair(room, end))
             bookCount[room]++
