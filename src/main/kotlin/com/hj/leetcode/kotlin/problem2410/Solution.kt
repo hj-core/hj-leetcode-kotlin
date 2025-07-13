@@ -14,6 +14,7 @@ class Solution {
         val sortedP = players.sortedArray()
         val sortedT = trainers.sortedArray()
         val j0 = maxOf(0, trainers.size - players.size)
+
         return (j0..<trainers.size).fold(0) { result, j ->
             if (sortedP[result] <= sortedT[j]) result + 1 else result
         }
