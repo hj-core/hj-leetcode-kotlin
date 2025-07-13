@@ -16,14 +16,13 @@ class Solution {
 
         var result = 0
         var i = 0
-        for (trainer in sortedTrainers) {
-            if (sortedPlayers[i] <= trainer) {
-                result++
+        var j = maxOf(0, trainers.size - players.size)
+        while (i < players.size && j < trainers.size) {
+            if (sortedPlayers[i] <= sortedTrainers[j]) {
                 i++
-                if (i == sortedPlayers.size) {
-                    break
-                }
+                result++
             }
+            j++
         }
         return result
     }
