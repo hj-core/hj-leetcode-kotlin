@@ -16,13 +16,13 @@ class Solution {
 
         var result = 0
         var i = 0
-        var j = maxOf(0, trainers.size - players.size)
-        while (i < players.size && j < trainers.size) {
+        val j0 = maxOf(0, trainers.size - players.size)
+
+        for (j in j0..<trainers.size) {
             if (sortedPlayers[i] <= sortedTrainers[j]) {
                 i++
                 result++
             }
-            j++
         }
         return result
     }
