@@ -11,19 +11,11 @@ class Solution {
         players: IntArray,
         trainers: IntArray,
     ): Int {
-        val sortedPlayers = players.sortedArray()
-        val sortedTrainers = trainers.sortedArray()
-
-        var result = 0
-        var i = 0
+        val sortedP = players.sortedArray()
+        val sortedT = trainers.sortedArray()
         val j0 = maxOf(0, trainers.size - players.size)
-
-        for (j in j0..<trainers.size) {
-            if (sortedPlayers[i] <= sortedTrainers[j]) {
-                i++
-                result++
-            }
+        return (j0..<trainers.size).fold(0) { result, j ->
+            if (sortedP[result] <= sortedT[j]) result + 1 else result
         }
-        return result
     }
 }
