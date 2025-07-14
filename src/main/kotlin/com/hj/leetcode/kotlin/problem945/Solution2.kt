@@ -14,7 +14,7 @@ class Solution2 {
             freq[num]++
         }
 
-        var result = 0
+        var result = 0L
         for (num in 0..<maxElem) {
             if (freq[num] > 1) {
                 val exceed = freq[num] - 1
@@ -22,7 +22,10 @@ class Solution2 {
                 freq[num + 1] += exceed
             }
         }
-        result += (freq[maxElem] - 1) * freq[maxElem] / 2
-        return result
+        result += 1L * (freq[maxElem] - 1) * freq[maxElem] / 2
+        check(result <= Int.MAX_VALUE) {
+            "Current constraints allow 10^5 zeros, which can overflow Int32"
+        }
+        return result.toInt()
     }
 }
