@@ -23,9 +23,6 @@ class Solution2 {
             }
         }
         result += 1L * (freq[maxElem] - 1) * freq[maxElem] / 2
-        check(result <= Int.MAX_VALUE) {
-            "Current constraints allow 10^5 zeros, which can overflow Int32"
-        }
         return result.toInt()
     }
 }
