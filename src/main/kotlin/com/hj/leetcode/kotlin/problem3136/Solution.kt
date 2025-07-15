@@ -7,9 +7,7 @@ class Solution {
     // Complexity:
     // Time O(N) and Space O(1) where N is the length of word.
     fun isValid(word: String): Boolean {
-        if (word.length < 3) {
-            return false
-        }
+        if (word.length < 3) return false
         var hasVowel = false
         var hasConsonant = false
 
