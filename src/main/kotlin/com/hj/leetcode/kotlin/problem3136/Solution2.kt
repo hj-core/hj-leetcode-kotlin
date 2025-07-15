@@ -10,6 +10,6 @@ class Solution2 {
 
     companion object {
         private val PATTERN =
-            Regex("""^(?i)(?=.{3,}$)(?=.*[aeiou])(?=.*[b-df-h-j-np-tv-z])[a-z\d]+$""")
+            Regex("""^(?i)(?=.*[aeiou])(?=.*[b-df-h-j-np-tv-z])[a-z\d]{3,}+$""")
     }
 }
