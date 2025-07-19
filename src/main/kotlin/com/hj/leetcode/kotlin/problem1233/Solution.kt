@@ -40,7 +40,8 @@ private class NonSubFolders(
 }
 
 private class TrieNode {
-    val children get() = _children as Map<Char, TrieNode>
+    val children: Map<Char, TrieNode>
+        get() = _children
     private val _children = mutableMapOf<Char, TrieNode>()
 
     var index = -1
