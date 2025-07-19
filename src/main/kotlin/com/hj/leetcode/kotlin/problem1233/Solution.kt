@@ -46,9 +46,9 @@ private class TrieNode {
     var index = -1
         private set
 
-    // Does nothing if folder is a sub folder of existing folder.
-    // Otherwise, insert the folder and remove all its sub folder
-    // in trie.
+    // Does nothing if the folder is a subfolder of an existing folder.
+    // Otherwise, inserts the folder and removes all its subfolders
+    // from the trie.
     fun mergeNew(
         index: Int,
         folder: String,
