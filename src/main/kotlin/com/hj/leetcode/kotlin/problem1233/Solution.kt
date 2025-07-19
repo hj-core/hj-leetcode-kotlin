@@ -11,19 +11,19 @@ class Solution {
 }
 
 private class NonSubFolders(
-    val folder: Array<String>,
+    val folders: Array<String>,
 ) {
     private val root = TrieNode()
 
     init {
-        for ((i, f) in folder.withIndex()) {
+        for ((i, f) in folders.withIndex()) {
             root.mergeNew(i, f)
         }
     }
 
     fun toList(): List<String> =
         buildList {
-            dfs(root) { add(folder[it]) }
+            dfs(root) { add(folders[it]) }
         }
 
     private fun dfs(
