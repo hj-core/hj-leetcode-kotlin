@@ -40,9 +40,9 @@ private class NonSubFolders(
 }
 
 private class TrieNode {
-    val children: Map<Char, TrieNode>
+    val children: Map<String, TrieNode>
         get() = _children
-    private val _children = mutableMapOf<Char, TrieNode>()
+    private var _children = mutableMapOf<String, TrieNode>()
 
     var index = -1
         private set
@@ -55,13 +55,21 @@ private class TrieNode {
         folder: String,
     ) {
         var node = this
-        for (c in folder) {
-            if (c == '/' && node.index >= 0) {
+        var start = 1
+        while (start < folder.length) {
+            val end =
+                folder
+                    .indexOf('/', start)
+                    .let { if (it == -1) folder.length else it }
+            val segment = folder.substring(start, end)
+
+            node = node._children.computeIfAbsent(segment) { TrieNode() }
+            if (node.index >= 0) {
                 return
             }
-            node = node._children.computeIfAbsent(c) { TrieNode() }
+            start = end + 1
         }
         node.index = index
-        node._children.remove('/')
+        node._children = mutableMapOf()
     }
 }
