@@ -4,9 +4,7 @@ package com.hj.leetcode.kotlin.problem1948
  * LeetCode page: [1948. Delete Duplicate Folders in System](https://leetcode.com/problems/delete-duplicate-folders-in-system/);
  */
 class Solution {
-    // Complexity:
-    // Time O(M*Sqrt(M)) and Space O(M*Sqrt(M)) where M is the flattened
-    // length of paths.
+    // Time O(?) and Space O(?).
     fun deleteDuplicateFolder(paths: List<List<String>>): List<List<String>> {
         val root = buildTrie(paths)
         // Entry = (path index, repr of subtrees)
