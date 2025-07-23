@@ -20,7 +20,7 @@ class Solution {
         }
 
     // Returns the maximum number of (p,q) and (q,p) pairs that
-    // can be removed from s, and we prioritize pq over qp.
+    // can be removed from s, prioritizing (p,q) over (q,p).
     private fun prioritizePQ(
         s: String,
         p: Char,
@@ -30,7 +30,7 @@ class Solution {
         var cntQP = 0
         var liveP = 0
         var deadQ = 0
-        // Our stack has deadQ `q`s followed by liveP `p`s
+        // Our stack has deadQ `q`s followed by liveP `p`s (top)
         for (c in s) {
             when (c) {
                 q -> {
