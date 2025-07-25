@@ -10,14 +10,14 @@ class Solution {
     fun maxSum(nums: IntArray): Int {
         var maxElem = nums[0]
         val seenPositive = BooleanArray(101)
-
         var result = 0
+
         for (num in nums) {
-            maxElem = maxOf(maxElem, num)
             if (num > 0 && !seenPositive[num]) {
                 seenPositive[num] = true
                 result += num
             }
+            maxElem = maxOf(maxElem, num)
         }
         return if (maxElem <= 0) maxElem else result
     }
