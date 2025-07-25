@@ -9,21 +9,16 @@ class Solution {
     // nums and M is the upper bound of element values.
     fun maxSum(nums: IntArray): Int {
         var maxElem = nums[0]
-        val existPositive = BooleanArray(101)
+        val seenPositive = BooleanArray(101)
 
+        var result = 0
         for (num in nums) {
             maxElem = maxOf(maxElem, num)
-            if (num > 0) {
-                existPositive[num] = true
+            if (num > 0 && !seenPositive[num]) {
+                seenPositive[num] = true
+                result += num
             }
         }
-
-        if (maxElem <= 0) {
-            return maxElem
-        }
-
-        return existPositive.foldIndexed(0) { num, result, exist ->
-            if (exist) result + num else result
-        }
+        return if (maxElem <= 0) maxElem else result
     }
 }
