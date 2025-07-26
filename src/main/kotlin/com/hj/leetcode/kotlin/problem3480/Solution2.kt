@@ -10,10 +10,12 @@ class Solution2 {
         n: Int,
         conflictingPairs: Array<IntArray>,
     ): Long {
-        // We collect the two most restricted constraints of
+        // The most and second most restricted constraints of
         // extension, i.e., a subarray starting at index i cannot
         // extend to or beyond constraints[i], for each index.
         val constraints = Array(n + 2) { intArrayOf(n + 1, n + 1) }
+
+        constraints[0][0] = 0
         for (pair in conflictingPairs) {
             val a = pair.min()
             val b = pair.max()
@@ -24,34 +26,29 @@ class Solution2 {
                 constraints[a][1] = b
             }
         }
-        constraints[0][0] = 0
 
+        // The accumulating increase if we remove the current
+        // dominant constraint.
+        var increase = 0L
         var rawCount = 0L
         var maxIncrease = 0L
-        // The most restricted constraint at index i, and the
-        // second most restricted constraint if we delete the
-        // most restrictive one.
-        var minC = n + 1
-        var secondMinC = n + 1
-        // The accumulated increase if we delete the minC
-        var increase = 0L
 
         for (j in n downTo 0) {
-            // If we encounter constraints[i][0] <= minC, the
-            // effect of removing minC has terminated. We update
-            // maxIncrease and start a new counter for this new
-            // dominant constraints.
-            if (constraints[j][0] <= minC) {
+            // If we encounter a new dominant constraint, the effect
+            // of removing the previous dominant one has terminated.
+            // We reset and accumulate the increase for this new dominant
+            // constraint.
+            if (constraints[j][0] <= constraints[j + 1][0]) {
                 maxIncrease = maxOf(maxIncrease, increase)
                 increase = 0
-                secondMinC = minOf(minC, constraints[j][1])
-                minC = constraints[j][0]
+                constraints[j][1] = minOf(constraints[j][1], constraints[j + 1][0])
             } else {
-                secondMinC = minOf(secondMinC, constraints[j][0])
+                constraints[j][1] = minOf(constraints[j][0], constraints[j + 1][1])
+                constraints[j][0] = constraints[j + 1][0]
             }
 
-            rawCount += minC - j
-            increase += secondMinC - minC
+            rawCount += constraints[j][0] - j
+            increase += constraints[j][1] - constraints[j][0]
         }
         return rawCount + maxIncrease
     }
