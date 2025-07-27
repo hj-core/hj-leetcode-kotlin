@@ -10,14 +10,12 @@ class Solution {
         var result = 0
         var left = nums[0]
         for (i in 1..<(nums.size - 1)) {
-            if (nums[i] == nums[i + 1]) {
-                continue
+            if (nums[i] != nums[i + 1]) {
+                if (isHillOrValley(left, nums[i], nums[i + 1])) {
+                    result++
+                }
+                left = nums[i]
             }
-
-            if (isHillOrValley(left, nums[i], nums[i + 1])) {
-                result++
-            }
-            left = nums[i]
         }
         return result
     }
