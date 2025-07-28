@@ -8,22 +8,17 @@ class Solution {
      * Time O(2^N) and Space O(N) where N is the size of nums.
      */
     fun countMaxOrSubsets(nums: IntArray): Int {
-        val maxOr = nums.reduce { acc, i -> acc or i }
-        return dfs(0, nums, maxOr, 0)
-    }
+        val maxOr = nums.reduce(Int::or)
 
-    private fun dfs(
-        index: Int,
-        nums: IntArray,
-        maxOr: Int,
-        pathOr: Int,
-    ): Int {
-        if (pathOr == maxOr) {
-            return 1 shl (nums.size - index)
-        }
-        if (index == nums.size) {
-            return 0
-        }
-        return dfs(index + 1, nums, maxOr, pathOr) + dfs(index + 1, nums, maxOr, pathOr or nums[index])
+        fun dfs(
+            index: Int,
+            pathOr: Int,
+        ): Int =
+            when {
+                pathOr == maxOr -> 1 shl (nums.size - index)
+                index == nums.size -> 0
+                else -> dfs(index + 1, pathOr) + dfs(index + 1, pathOr or nums[index])
+            }
+        return dfs(0, 0)
     }
 }
