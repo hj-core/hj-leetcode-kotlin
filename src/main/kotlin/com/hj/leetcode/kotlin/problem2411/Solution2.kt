@@ -13,6 +13,7 @@ class Solution2 {
         // number has that bit set.
         val minIndices = IntArray(minBitsToRepresentMax(nums))
         val result = IntArray(nums.size)
+
         for (start in nums.indices.reversed()) {
             var minEnd = start // Inclusive
             for (shift in minIndices.indices) {

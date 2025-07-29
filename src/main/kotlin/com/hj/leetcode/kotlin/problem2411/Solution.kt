@@ -13,6 +13,7 @@ class Solution {
         // window that have the bit at position shift set.
         val bitCounts = IntArray(minBitsToRepresentMax(nums))
         val result = IntArray(nums.size)
+
         var minEnd = nums.size - 1 // Inclusive
         for (start in nums.indices.reversed()) {
             orNumber(bitCounts, nums[start])
