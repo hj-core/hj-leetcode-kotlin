@@ -9,7 +9,7 @@ class Solution {
     // of nums and M is the minimum number of bits to represent
     // the maximum value in nums.
     fun smallestSubarrays(nums: IntArray): IntArray {
-        // bitCounts[shift] := the number of numbers in the current
+        // bitCounts[shift]:= the number of numbers in the current
         // window that have the bit at position shift set.
         val bitCounts = IntArray(minBitsToRepresentMax(nums))
         val result = IntArray(nums.size)

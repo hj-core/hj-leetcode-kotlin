@@ -9,7 +9,7 @@ class Solution2 {
     // of nums and M is the minimum number of bits to represent
     // the maximum value in nums.
     fun smallestSubarrays(nums: IntArray): IntArray {
-        // minIndices[shift] := the minimum index so far whose
+        // minIndices[shift]:= the minimum index so far whose
         // number has that bit set.
         val minIndices = IntArray(minBitsToRepresentMax(nums))
         val result = IntArray(nums.size)
@@ -17,7 +17,7 @@ class Solution2 {
         for (start in nums.indices.reversed()) {
             var minEnd = start // Inclusive
             for (shift in minIndices.indices) {
-                if ((nums[start] shr shift) and 1 == 1) {
+                if (hasBitSet(nums[start], shift)) {
                     minIndices[shift] = start
                 } else {
                     minEnd = maxOf(minEnd, minIndices[shift])
@@ -43,4 +43,9 @@ class Solution2 {
         }
         return result
     }
+
+    private fun hasBitSet(
+        num: Int,
+        shift: Int,
+    ): Boolean = (num shr shift) and 1 == 1
 }
