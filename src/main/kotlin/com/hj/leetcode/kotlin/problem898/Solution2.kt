@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem898
  */
 class Solution2 {
     // Complexity:
-    // Time O(NLogM) and Space O(NLogM), where N is the
+    // Time O(NLogM)? and Space O(NLogM), where N is the
     // length of arr and M is the maximum value in arr.
     fun subarrayBitwiseORs(arr: IntArray): Int {
         val allOrs = hashSetOf<Int>()
