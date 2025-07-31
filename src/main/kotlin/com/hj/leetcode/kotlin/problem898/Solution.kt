@@ -16,18 +16,18 @@ class Solution {
         var size = 0
 
         for (num in arr) {
-            var tmp = prevOrs[0] or num
+            var newOr = prevOrs[0] or num
 
             prevOrs[0] = num
             var newSize = 1
             allOrs.add(num)
 
             for (i in 0..<size) {
-                if (tmp == prevOrs[newSize - 1]) {
-                    tmp = prevOrs[i + 1] or num
+                if (newOr == prevOrs[newSize - 1]) {
+                    newOr = prevOrs[i + 1] or num
                 } else {
-                    allOrs.add(tmp)
-                    prevOrs[newSize] = tmp.also { tmp = prevOrs[i + 1] or num }
+                    allOrs.add(newOr)
+                    prevOrs[newSize] = newOr.also { newOr = prevOrs[i + 1] or num }
                     newSize++
                 }
             }

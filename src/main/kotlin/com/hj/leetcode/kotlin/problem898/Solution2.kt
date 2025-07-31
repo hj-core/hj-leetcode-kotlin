@@ -9,6 +9,7 @@ class Solution2 {
     // length of arr and M is the maximum value in arr.
     fun subarrayBitwiseORs(arr: IntArray): Int {
         val allOrs = hashSetOf<Int>()
+
         for (i in arr.indices) {
             var prevOr = 0 // OR value of arr[j..<i]
             var currOr = arr[i]
@@ -19,9 +20,9 @@ class Solution2 {
                 currOr = currOr or arr[j]
                 if (prevOr == currOr) {
                     break
-                } else {
-                    allOrs.add(currOr)
                 }
+
+                allOrs.add(currOr)
             }
         }
         return allOrs.size
