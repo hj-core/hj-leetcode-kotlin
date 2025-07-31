@@ -5,26 +5,33 @@ package com.hj.leetcode.kotlin.problem898
  */
 class Solution {
     // Complexity:
-    // Time O(NLogM) and Space O(NLogM), where N is the
-    // length of arr and M is the maximum value in arr.
+    // Time O(NW) and Space O(NW), where N is the length
+    // of arr and W is the bits of a word.
     fun subarrayBitwiseORs(arr: IntArray): Int {
         val allOrs = hashSetOf<Int>()
+
         // Distinct OR values of the subarrays ending at the
         // previous index, strictly increasing.
-        var prevOrs = mutableListOf<Int>()
+        val prevOrs = IntArray(32)
+        var size = 0
 
         for (num in arr) {
-            val currOrs = mutableListOf(num)
+            var tmp = prevOrs[0] or num
+
+            prevOrs[0] = num
+            var newSize = 1
             allOrs.add(num)
 
-            for (prevOr in prevOrs) {
-                val currOr = prevOr or num
-                if (currOr != currOrs.last()) {
-                    currOrs.add(currOr)
-                    allOrs.add(currOr)
+            for (i in 0..<size) {
+                if (tmp == prevOrs[newSize - 1]) {
+                    tmp = prevOrs[i + 1] or num
+                } else {
+                    allOrs.add(tmp)
+                    prevOrs[newSize] = tmp.also { tmp = prevOrs[i + 1] or num }
+                    newSize++
                 }
             }
-            prevOrs = currOrs
+            size = newSize
         }
         return allOrs.size
     }
