@@ -18,11 +18,12 @@ class Solution2 {
             for (j in (i - 1) downTo 0) {
                 prevOr = prevOr or arr[j]
                 currOr = currOr or arr[j]
+
                 if (prevOr == currOr) {
                     break
+                } else {
+                    allOrs.add(currOr)
                 }
-
-                allOrs.add(currOr)
             }
         }
         return allOrs.size
