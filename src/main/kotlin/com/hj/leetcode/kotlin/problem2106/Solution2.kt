@@ -11,6 +11,15 @@ class Solution2 {
         startPos: Int,
         k: Int,
     ): Int {
+        val minIndexL =
+            fruits
+                .binarySearch(intArrayOf(startPos - k), { o1, o2 -> o1[0] - o2[0] })
+                .let { if (it < 0) -it - 1 else it }
+
+        if (minIndexL == fruits.size) {
+            return 0
+        }
+
         // Returns the minimum steps to collect all the fruits between
         // indexL and indexR.
         fun computeMinSteps(
@@ -27,15 +36,7 @@ class Solution2 {
                     ) + fruits[indexR][0] - fruits[indexL][0]
             }
 
-        var indexL =
-            fruits
-                .binarySearch(intArrayOf(startPos - k), { o1, o2 -> o1[0] - o2[0] })
-                .let { if (it < 0) -it - 1 else it }
-
-        if (indexL == fruits.size) {
-            return 0
-        }
-
+        var indexL = minIndexL
         var indexR = indexL
         var wndCount = 0
 
