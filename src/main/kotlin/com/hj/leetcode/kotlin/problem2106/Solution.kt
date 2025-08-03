@@ -13,7 +13,7 @@ class Solution {
     ): Int {
         val (startIndex, found) =
             fruits
-                .binarySearch(intArrayOf(startPos, -1), { o1, o2 -> o1[0] - o2[0] })
+                .binarySearch(intArrayOf(startPos), { o1, o2 -> o1[0] - o2[0] })
                 .let { if (it < 0) -it - 1 to false else it to true }
         var result = 0
 
