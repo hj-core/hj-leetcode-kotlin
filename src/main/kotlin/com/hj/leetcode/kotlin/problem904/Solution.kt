@@ -4,49 +4,33 @@ package com.hj.leetcode.kotlin.problem904
  * LeetCode page: [904. Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(|fruits|) and Space O(1);
-     */
+    // Complexity:
+    // Time O(N) and Space O(1) where N is the length of fruits.
     fun totalFruit(fruits: IntArray): Int {
-        // an emptyBasket that match algorithm logic
-        val basket1 = SingleTypeBasket(-1, 0, -1)
-        // a basket with one fruits[0]
-        val basket2 = SingleTypeBasket(fruits[0], 1, 0)
-        var maxFruits = 0
+        var result = 0
+        var fruit1 = fruits[0]
+        var fruit2 = fruits[0]
+        var amount = 1
+        var lastAlter = 0 // The most recent index where type changed
 
-        for (index in 1 until fruits.size) {
-            when (val type = fruits[index]) {
-                basket1.fruitType -> basket1.putOne(type, index)
-                basket2.fruitType -> basket2.putOne(type, index)
-                else -> {
-                    maxFruits = maxOf(maxFruits, basket1.numFruits + basket2.numFruits)
-
-                    val isBasket1MoreRecent = basket1.lastPickIndex > basket2.lastPickIndex
-                    val (moreRecent, lessRecent) =
-                        if (isBasket1MoreRecent) basket1 to basket2 else basket2 to basket1
-
-                    // require emptyBasket set lastPickIndex to -1
-                    moreRecent.numFruits = moreRecent.lastPickIndex - lessRecent.lastPickIndex
-                    lessRecent.putOne(type, index)
-                }
-            }
-        }
-        maxFruits = maxOf(maxFruits, basket1.numFruits + basket2.numFruits)
-        return maxFruits
-    }
-
-    private class SingleTypeBasket(var fruitType: Int, var numFruits: Int, var lastPickIndex: Int) {
-
-        fun putOne(type: Int, pickIndex: Int) {
-            val isExistingType = type == fruitType
-
-            if (isExistingType) {
-                numFruits++
+        for (i in 1..<fruits.size) {
+            if (fruits[i] == fruit1 || fruits[i] == fruit2) {
+                amount++
+            } else if (fruit1 == fruit2) {
+                fruit2 = fruits[i]
+                amount++
             } else {
-                fruitType = type
-                numFruits = 1
+                result = maxOf(result, amount)
+                fruit1 = fruits[i - 1]
+                fruit2 = fruits[i]
+                amount = i - lastAlter + 1
             }
-            lastPickIndex = pickIndex
+
+            if (fruits[i] != fruits[i - 1]) {
+                lastAlter = i
+            }
         }
+        result = maxOf(result, amount)
+        return result
     }
 }
