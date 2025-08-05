@@ -18,10 +18,10 @@ tasks.test {
 }
 
 tasks.wrapper {
-    gradleVersion = "8.14.2"
+    gradleVersion = "9.0.0"
     distributionType = Wrapper.DistributionType.ALL
 }
 
 kotlin {
-    jvmToolchain(23)
+    jvmToolchain(24)
 }
