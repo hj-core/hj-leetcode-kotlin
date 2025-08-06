@@ -61,9 +61,9 @@ private class MaxSegmentTree(
         while (1 < k) {
             values[k] = kValue
             val sibIndex = k xor 1
-            kValue = maxOf(kValue, values[sibIndex])
-            k /= 2
 
+            k /= 2
+            kValue = maxOf(kValue, values[sibIndex])
             if (values[k] == kValue) {
                 return
             }
