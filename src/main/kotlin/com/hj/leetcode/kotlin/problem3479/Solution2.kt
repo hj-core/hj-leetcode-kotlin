@@ -79,15 +79,13 @@ private class MaxSegmentTree(
             }
 
             val values = IntArray(halfSize * 2)
-
             for (i in baskets.indices) {
                 values[i + halfSize] = baskets[i]
             }
-            var i = halfSize - 1
+
             var j = values.size - 1
-            while (i < j) {
+            for (i in halfSize - 1 downTo 1) {
                 values[i] = maxOf(values[j - 1], values[j])
-                i -= 1
                 j -= 2
             }
             return MaxSegmentTree(values)
