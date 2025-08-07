@@ -13,14 +13,14 @@ class Solution {
     // diagonal.
     private fun solveChild1(fruits: Array<IntArray>): Int = fruits.indices.sumOf { fruits[it][it] }
 
-    // Child 2 starts from (0, n-1). He can move along or above
+    // Child 2 starts from (0, n-1). He can move above or along
     // the diagonal. Since Child 1 has already collected all the
     // fruits in the diagonal, we only consider Child 2 moving
     // above the diagonal, excluding the goal cell as well.
     private fun solveChild2(fruits: Array<IntArray>): Int {
         val n = fruits.size
         // dp[j]@r:= the maximum fruits child 2 can collect
-        // when he reach cell(r, n-1-j).
+        // when he reaches cell(r, n-1-j).
         val dp = IntArray(n / 2 + 1)
 
         dp[0] = fruits[0][n - 1]
@@ -34,14 +34,14 @@ class Solution {
         return dp[0]
     }
 
-    // Child 3 starts from (n-1, 0). He can move along or below
+    // Child 3 starts from (n-1, 0). He can move below or along
     // the diagonal. Since Child 1 has already collected all the
     // fruits in the diagonal, we only consider Child 3 moving
     // below the diagonal, excluding the goal cell as well.
     private fun solveChild3(fruits: Array<IntArray>): Int {
         val n = fruits.size
         // dp[j]@c:= the maximum fruits child 3 can collect
-        // when he reach cell(n-1-j, c).
+        // when he reaches cell(n-1-j, c).
         val dp = IntArray(n / 2 + 1)
 
         dp[0] = fruits[n - 1][0]
