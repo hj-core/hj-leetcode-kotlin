@@ -25,34 +25,36 @@ class Solution {
         // to (a, b). We use a sliding window of size 4 for a.
         val dp = Array(m) { DoubleArray(4) }
 
-        // Distributes the probability to the cells reachable
-        // from (a, b), and returns the probability of falling
-        // off from the edge of column m-1.
-        fun forwardUpdate(
-            a: Int,
-            b: Int,
-        ): Double {
-            var subResult = 0.0
-            val p = dp[b][a and 3] * 0.25
-            dp[b][a and 3] = 0.0
-
-            for (move in 1..4) {
-                val dstA = a + move
-                val dstB = b + (4 - move)
-                if (dstA < m && dstB < m) {
-                    dp[dstB][dstA and 3] += p
-                } else if (m <= dstA) {
-                    subResult += if (dstB < m) p else p * 0.5
-                }
-            }
-            return subResult
-        }
-
         var result = 0.0
         dp[0][0] = 1.0
         for (a in 0..<m) {
             for (b in 0..<m) {
-                result += forwardUpdate(a, b)
+                result += forwardUpdate(dp, m, a, b)
+            }
+        }
+        return result
+    }
+
+    // Distributes the probability to the cells reachable
+    // from (a, b), and returns the probability of falling
+    // off from the edge of column m-1.
+    fun forwardUpdate(
+        dp: Array<DoubleArray>,
+        m: Int,
+        a: Int,
+        b: Int,
+    ): Double {
+        var result = 0.0
+        val p = dp[b][a and 3] * 0.25
+        dp[b][a and 3] = 0.0
+
+        for (move in 1..4) {
+            val dstA = a + move
+            val dstB = b + (4 - move)
+            if (dstA < m && dstB < m) {
+                dp[dstB][dstA and 3] += p
+            } else if (m <= dstA) {
+                result += if (dstB < m) p else p * 0.5
             }
         }
         return result
