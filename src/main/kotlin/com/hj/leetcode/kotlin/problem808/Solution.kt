@@ -54,7 +54,12 @@ class Solution {
             if (dstA < m && dstB < m) {
                 dp[dstB][dstA and 3] += p
             } else if (m <= dstA) {
-                result += if (dstB < m) p else p * 0.5
+                result +=
+                    if (dstB < m) {
+                        p
+                    } else {
+                        p * 0.5
+                    }
             }
         }
         return result
