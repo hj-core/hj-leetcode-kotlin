@@ -12,7 +12,7 @@ class Solution {
             return 0.5
         }
         if (n > 4800) {
-            return 1.0 // P(n=4801) >= 0.999995
+            return 1.0 // P > 0.999995 for n >= 4801
         }
 
         // Transform the problem: There is an m x m board, and
@@ -21,7 +21,7 @@ class Solution {
         // The moves are scaled down by a factor of 25.
         val m = (n + 24) / 25
 
-        // dp[b][a % 4]:= the probability of moving from (0, 0)
+        // dp[b][a%4]:= the probability of moving from (0, 0)
         // to (a, b). We use a sliding window of size 4 for a.
         val dp = Array(m) { DoubleArray(4) }
 
