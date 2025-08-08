@@ -21,8 +21,8 @@ class Solution {
         // The moves are scaled down by a factor of 25.
         val m = (n + 24) / 25
 
-        // dp[b][a%4]:= the probability of moving from (0, 0)
-        // to (a, b). a is grouped by a size-4 window.
+        // dp[b][a % 4]:= the probability of moving from (0, 0)
+        // to (a, b). We use a sliding window of size 4 for a.
         val dp = Array(m) { DoubleArray(4) }
 
         // Distributes the probability to the cells reachable
