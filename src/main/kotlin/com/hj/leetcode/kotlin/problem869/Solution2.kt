@@ -10,8 +10,8 @@ class Solution2 {
     // of two within 10^9 (i.e., 30) as constants.
     fun reorderedPowerOf2(n: Int): Boolean = countDigits(n) in power2Freqs
 
-    // Returns the count of each digit in n in a way that
-    // each digit get 4 bits for its frequency.
+    // Returns the frequency of each digit in n in a way
+    // that each digit get 4 bits for its frequency.
     private fun countDigits(n: Int): Long {
         require(n > 0) { "n is positive by problem constraints" }
         var result = 0L
