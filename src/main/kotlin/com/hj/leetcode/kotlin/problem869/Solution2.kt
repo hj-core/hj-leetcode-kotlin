@@ -2,16 +2,15 @@ package com.hj.leetcode.kotlin.problem869
 
 class Solution2 {
     // Starting from i=30, 2^i has 10 or more digits.
-    // It is impossible to reorder a number n (where n <= 10^9)
-    // to form a 2^i for i >= 30. This is because 10^9 is not
-    // a power of two, and for other values of n, there are not
-    // enough digits.
+    // It is impossible to reorder a number n <= 10^9
+    // to form a 2^i with 10 or more digits.
     private val power2Freqs = LongArray(30) { countDigits(1 shl it) }
 
     // Complexity:
-    // Time O(Log n) and Space O(1) if we treat the number
-    // of different digits (i.e., 10) and the number of
-    // powers of two candidates (i.e., 30) as constants.
+    // Time O(Log(n)+LogM) and Space O(1) where M is the
+    // maximum allowed value of n. This excludes the
+    // precomputation overhead of Time O((LogM)^2) and
+    // Space O(LogM) required to compute the power2Freqs.
     fun reorderedPowerOf2(n: Int): Boolean = countDigits(n) in power2Freqs
 
     // Returns the frequency of each digit in n in a way
