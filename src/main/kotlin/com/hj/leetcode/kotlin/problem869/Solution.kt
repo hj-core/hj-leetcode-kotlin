@@ -21,7 +21,7 @@ class Solution {
     // Complexity:
     // Time O(Log(n)+LogM) and Space O(1). This excludes
     // the precomputation overhead of Time O((LogM)^2) and
-    // Space O(LogM) required to compute the power2Digits.
+    // Space O(LogM) required to compute the power2Freqs.
     //
     // Here, we treat the number of different digits
     // (i.e., 10) as constant, and M is the maximum allowed
