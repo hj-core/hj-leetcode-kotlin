@@ -21,9 +21,9 @@ class Solution {
     }
 
     // Complexity:
-    // Time O(1) and Space O(1) if we treat the number of
-    // different digits (i.e., 0–9) and the number of powers
-    // of two candidates (i.e., 30) as constants.
+    // Time O(Log n) and Space O(1) if we treat the number
+    // of different digits (i.e., 10) and the number of
+    // powers of two candidates (i.e., 30) as constants.
     fun reorderedPowerOf2(n: Int): Boolean {
         val (length, freqs) = countDigits(n)
         return power2Digits[length].any { it.contentEquals(freqs) }
