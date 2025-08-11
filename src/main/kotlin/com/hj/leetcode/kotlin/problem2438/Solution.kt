@@ -28,10 +28,12 @@ class Solution {
         // Collect the set bit positions in n and compute the prefix
         // sum (exclusive right bound).
         val prefixSum = mutableListOf(0)
-        for (i in 0..<32) {
-            if ((1 shl i) and n > 0) {
-                prefixSum.add(i + prefixSum.last())
+        var pos = 0
+        while (n shr pos > 0) {
+            if ((n shr pos) and 1 > 0) {
+                prefixSum.add(pos + prefixSum.last())
             }
+            pos++
         }
 
         // Map the queries to their precomputed power2Mods
