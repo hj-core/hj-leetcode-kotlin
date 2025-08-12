@@ -31,6 +31,7 @@ class Solution {
         return dp[n]
     }
 
+    // Computes numberOfWays(n, 1).
     private fun numberOfWaysMod(n: Int): Int {
         val modulo = 1_000_000_007
 
