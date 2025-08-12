@@ -14,8 +14,8 @@ class Solution {
             return numberOfWaysMod(n)
         }
 
-        // dp[sum]@num:= the number of ways to achieve the sum,
-        // using only numbers less than or equal to num.
+        // dp[sum]@num:= the number of ways to achieve sum, using
+        // only numbers less than or equal to num.
         val dp = IntArray(n + 1)
         dp[0] = 1
         for (num in 1..n) {
@@ -35,9 +35,8 @@ class Solution {
     private fun numberOfWaysMod(n: Int): Int {
         val modulo = 1_000_000_007
 
-        // dp[sum]@num:= the number of ways to achieve the sum,
-        // taken modulo, using only numbers less than or equal
-        // to num.
+        // dp[sum]@num:= the number of ways to achieve sum, taken
+        // modulo, using only numbers less than or equal to num.
         val dp = IntArray(n + 1)
         dp[0] = 1
         for (num in 1..n) {
