@@ -7,16 +7,16 @@ class Solution {
     // Complexity:
     // Time O(N) and Space O(1) where N is the length of num.
     fun largestGoodInteger(num: String): String {
-        var maxDigit = -1
+        var maxDigit = '0' - 1
         var i = 0
         while (i < num.length - 2) {
-            if (num[i] == num[i + 1] && num[i] == num[i + 2]) {
-                maxDigit = maxOf(maxDigit, num[i].digitToInt())
+            if (num[i] == num[i + 1] && num[i + 1] == num[i + 2]) {
+                maxDigit = maxOf(maxDigit, num[i + 2])
                 i += 3
             } else {
                 i += 1
             }
         }
-        return if (maxDigit == -1) "" else "$maxDigit$maxDigit$maxDigit"
+        return if (maxDigit < '0') "" else "$maxDigit$maxDigit$maxDigit"
     }
 }
