@@ -5,9 +5,9 @@ package com.hj.leetcode.kotlin.problem679
  */
 class Solution {
     // Complexity:
-    // Time O((N-1)!^3*N^2*M^N) and Space O(N) where N is
-    // the length of cards and M is the number of possible
-    // operations.
+    // Time O(N!*(N-1)!*M^(N-1)*((N-1)!+NM) and Space O(N)
+    // where N is the length of cards and M is the number
+    // of possible operations.
     fun judgePoint24(cards: IntArray): Boolean {
         val newCards = Array(cards.size) { intArrayOf(cards[it], 1) }
         for (pos3 in 0..<4) {
