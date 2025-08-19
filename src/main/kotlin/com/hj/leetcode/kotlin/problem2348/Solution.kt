@@ -8,9 +8,9 @@ class Solution {
     // Time O(N) and Space O(1) where N is the length of nums.
     fun zeroFilledSubarray(nums: IntArray): Long {
         var result = 0L
-        var start = 0
         // We accumulate the number of zero-filled subarrays
         // from each zero region.
+        var start = 0
         while (start < nums.size) {
             if (nums[start] != 0) {
                 start++
