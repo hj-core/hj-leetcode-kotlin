@@ -8,14 +8,15 @@ class Solution2 {
     // Time O(N) and Space O(1) where N is the length of nums.
     fun zeroFilledSubarray(nums: IntArray): Long {
         var result = 0L
-        var start = -1
         // We accumulate the number of zero-filled subarrays
         // ending at each index.
-        for ((end, num) in nums.withIndex()) {
+        var count = 0
+        for (num in nums) {
             if (num == 0) {
-                result += end - start
+                count++
+                result += count
             } else {
-                start = end
+                count = 0
             }
         }
         return result

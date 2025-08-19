@@ -10,7 +10,7 @@ class Solution {
         var result = 0L
         var start = 0
         // We accumulate the number of zero-filled subarrays
-        // ending at each index.
+        // from each zero region.
         while (start < nums.size) {
             if (nums[start] != 0) {
                 start++
