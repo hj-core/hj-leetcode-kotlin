@@ -14,7 +14,7 @@ class Solution {
         val dp = IntArray(matrix[0].size + 1) // base case: r=matrix.size
 
         for (r in matrix.indices.reversed()) {
-            var tmp = 0 // dp[c]@r+1
+            var tmp = 0 // dp[c+1]@r+1
             for (c in matrix[r].indices.reversed()) {
                 val subResult =
                     if (matrix[r][c] == 0) {
