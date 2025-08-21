@@ -8,8 +8,8 @@ class Solution {
     // Time O(MN) and Space O(N) where M and N are the number
     // of rows and columns of mat, respectively.
     fun numSubmat(mat: Array<IntArray>): Int {
-        // heights[c]@r:= the height of one-pile grounding at
-        // cell(r, c).
+        // heights[c]@r:= the height of one-pillar grounding
+        // at cell(r, c).
         val heights = IntArray(mat[0].size)
         val monoStack =
             Array(mat[0].size + 1) {
