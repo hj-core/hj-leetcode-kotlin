@@ -34,10 +34,10 @@ class Solution {
                         stackSum -= monoStack[stackTop][0] * monoStack[stackTop][1]
                         stackTop--
                     }
+
                     stackTop++
                     monoStack[stackTop][0] = heights[c]
                     monoStack[stackTop][1] = count
-
                     stackSum += heights[c] * count
                     result += stackSum
                 }
