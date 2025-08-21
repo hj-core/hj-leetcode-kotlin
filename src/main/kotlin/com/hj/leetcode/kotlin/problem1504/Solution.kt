@@ -20,6 +20,7 @@ class Solution {
         for (r in mat.indices) {
             var stackTop = 0
             var stackSum = 0 // sum(height*count)
+
             for (c in mat[r].indices) {
                 if (mat[r][c] == 0) {
                     heights[c] = 0
@@ -36,6 +37,7 @@ class Solution {
                     stackTop++
                     monoStack[stackTop][0] = heights[c]
                     monoStack[stackTop][1] = count
+
                     stackSum += heights[c] * count
                     result += stackSum
                 }
