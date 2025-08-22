@@ -14,18 +14,12 @@ class Solution {
         var left = grid[0].size
         var right = 0
         for (r in bottom downTo top) {
-            val newLeft =
-                grid[r]
-                    .indices
-                    .firstOrNull { grid[r][it] == 1 }
-                    ?: continue
+            val newLeft = grid[r].indexOfFirst { it == 1 }
+            if (newLeft == -1) {
+                continue
+            }
 
-            val newRight =
-                grid[r]
-                    .indices
-                    .reversed()
-                    .first { grid[r][it] == 1 }
-
+            val newRight = grid[r].indexOfLast { it == 1 }
             left = minOf(left, newLeft)
             right = maxOf(right, newRight)
         }
