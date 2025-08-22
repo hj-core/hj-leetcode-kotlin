@@ -27,7 +27,7 @@ class Solution {
                     .first { grid[r][it] == 1 }
 
             top = minOf(top, r)
-            bottom = maxOf(bottom, r)
+            bottom = r
             left = minOf(left, newLeft)
             right = maxOf(right, newRight)
         }
