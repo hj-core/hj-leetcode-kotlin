@@ -8,12 +8,12 @@ class Solution {
     // Time O(MN) and Space O(1) where M and N are the number
     // of rows and columns in grid, respectively.
     fun minimumArea(grid: Array<IntArray>): Int {
-        var top = grid.size
-        var bottom = 0
+        val bottom = grid.indexOfLast { 1 in it }
+        val top = grid.indexOfFirst { 1 in it }
+
         var left = grid[0].size
         var right = 0
-
-        for (r in grid.indices) {
+        for (r in top..bottom) {
             val newLeft =
                 grid[r]
                     .indices
@@ -26,8 +26,6 @@ class Solution {
                     .reversed()
                     .first { grid[r][it] == 1 }
 
-            top = minOf(top, r)
-            bottom = r
             left = minOf(left, newLeft)
             right = maxOf(right, newRight)
         }
