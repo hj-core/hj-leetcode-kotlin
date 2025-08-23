@@ -249,10 +249,10 @@ class Solution {
                 break
             }
             // horiExtents[r]:= the first and the last column index
-            // of 1 in grid[r][vCut+1:].
+            // of 1 in grid[r][..<vCut].
             val horiExtents = calcHoriExtents(grid, 0, vCut)
             // bottomMinAreas[top]:= the area of minimum rectangle
-            // to enclose all 1s in grid[top:][vCut+1:].
+            // to enclose all 1s in grid[top:][..<vCut].
             val bottomMinAreas = calcBottomMinAreas(horiExtents)
 
             var top = 0
