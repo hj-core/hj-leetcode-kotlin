@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem3197
  */
 class Solution {
     // Complexity:
-    // Time O(MN(M+N)) and Space O(MN) where M and N are the number
+    // Time O((M+N)^2) and Space O(MN) where M and N are the number
     // of rows and columns in grid, respectively.
     fun minimumSum(grid: Array<IntArray>): Int {
         // The idea is to brute force. We cut the whole grid
@@ -115,8 +115,10 @@ class Solution {
         suffixMinAreas: IntArray,
     ): Int {
         var result = suffixMinAreas[0]
-        for (vCut1 in 0..<vertExtents.size - 2) {
+        var vCut1 = 0
+        while (vCut1 < vertExtents.size - 2) {
             if (vertExtents[vCut1][1] == -1) {
+                vCut1++
                 continue
             }
             if (suffixMinAreas[vCut1 + 1] == 0) {
@@ -142,6 +144,7 @@ class Solution {
                 val sumArea = prefixMinAreas[vCut1] + midArea + suffixMinAreas[vCut2 + 1]
                 result = minOf(result, sumArea)
             }
+            vCut1 = left
         }
         return result
     }
@@ -152,6 +155,10 @@ class Solution {
         prefixMinAreas: IntArray,
         suffixMinAreas: IntArray,
     ): Int {
+        // suffixHoriExtents[c][r]:= the first and the last column
+        // index of 1 in grid[r][c:].
+        val suffixHoriExtents = calcSuffixHoriExtents(grid)
+
         var result = suffixMinAreas[0]
         for (vCut in 0..<grid[0].size - 1) {
             if (vertExtents[vCut][1] == -1) {
@@ -162,7 +169,7 @@ class Solution {
             }
             // horiExtents[r]:= the first and the last column index
             // of 1 in grid[r][vCut+1:].
-            val horiExtents = calcHoriExtents(grid, vCut + 1, grid[0].size)
+            val horiExtents = suffixHoriExtents[vCut + 1]
             // bottomMinAreas[top]:= the area of minimum rectangle
             // to enclose all 1s in grid[top:][vCut+1:].
             val bottomMinAreas = calcBottomMinAreas(horiExtents)
@@ -190,26 +197,29 @@ class Solution {
         return result
     }
 
-    private fun calcHoriExtents(
-        grid: Array<IntArray>,
-        startColumn: Int,
-        endColumn: Int,
-    ): Array<IntArray> {
-        val result = Array(grid.size) { intArrayOf(grid[0].size, -1) }
+    private fun calcSuffixHoriExtents(grid: Array<IntArray>): Array<Array<IntArray>> {
+        val result =
+            Array(grid[0].size) {
+                Array(grid.size) { intArrayOf(grid.size, -1) }
+            }
         for (r in grid.indices) {
-            var left = startColumn
-            while (left < endColumn && grid[r][left] == 0) {
-                left++
-            }
-            if (left == endColumn) {
-                continue
-            }
-            var right = endColumn - 1
-            while (grid[r][right] == 0) {
+            var right = grid[0].size - 1
+            while (right > 0 && grid[r][right] == 0) {
                 right--
             }
-            result[r][0] = left
-            result[r][1] = right
+            if (right == -1) {
+                continue
+            }
+
+            for (left in right downTo 0) {
+                if (grid[r][left] == 0) {
+                    result[left][r][0] = result[left + 1][r][0]
+                    result[left][r][1] = result[left + 1][r][1]
+                } else {
+                    result[left][r][0] = left
+                    result[left][r][1] = right
+                }
+            }
         }
         return result
     }
@@ -240,6 +250,10 @@ class Solution {
         prefixMinAreas: IntArray,
         suffixMinAreas: IntArray,
     ): Int {
+        // prefixHoriExtents[c][r]:= the first and the last column
+        // index of 1 in grid[r][c:].
+        val prefixHoriExtents = calcPrefixHoriExtents(grid)
+
         var result = suffixMinAreas[0]
         for (vCut in grid[0].size - 1 downTo 1) {
             if (vertExtents[vCut][1] == -1) {
@@ -250,7 +264,7 @@ class Solution {
             }
             // horiExtents[r]:= the first and the last column index
             // of 1 in grid[r][..<vCut].
-            val horiExtents = calcHoriExtents(grid, 0, vCut)
+            val horiExtents = prefixHoriExtents[vCut - 1]
             // bottomMinAreas[top]:= the area of minimum rectangle
             // to enclose all 1s in grid[top:][..<vCut].
             val bottomMinAreas = calcBottomMinAreas(horiExtents)
@@ -273,6 +287,33 @@ class Solution {
                 val topArea = (hCut - top + 1) * (right - left + 1)
                 val sumArea = suffixMinAreas[vCut] + topArea + bottomMinAreas[hCut + 1]
                 result = minOf(result, sumArea)
+            }
+        }
+        return result
+    }
+
+    private fun calcPrefixHoriExtents(grid: Array<IntArray>): Array<Array<IntArray>> {
+        val result =
+            Array(grid[0].size) {
+                Array(grid.size) { intArrayOf(grid.size, -1) }
+            }
+        for (r in grid.indices) {
+            var left = 0
+            while (left < grid[0].size && grid[r][left] == 0) {
+                left++
+            }
+            if (left == grid[0].size) {
+                continue
+            }
+
+            for (right in left..<grid[0].size) {
+                if (grid[r][right] == 0) {
+                    result[right][r][0] = result[right - 1][r][0]
+                    result[right][r][1] = result[right - 1][r][1]
+                } else {
+                    result[right][r][0] = left
+                    result[right][r][1] = right
+                }
             }
         }
         return result
