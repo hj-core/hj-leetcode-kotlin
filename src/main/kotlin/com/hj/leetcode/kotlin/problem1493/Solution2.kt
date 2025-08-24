@@ -2,7 +2,7 @@ package com.hj.leetcode.kotlin.problem1493
 
 class Solution2 {
     // Complexity:
-    // Time O(N) and Space O(1) where N is the size of nums;
+    // Time O(N) and Space O(1) where N is the size of nums.
     fun longestSubarray(nums: IntArray): Int {
         var countZeros = 0
         var left = 0
@@ -14,7 +14,8 @@ class Solution2 {
                 left++
             }
         }
-        left++
-        return nums.size - left
+        // The largest window will contain zero or one zero.
+        // In both cases, we need to subtract one from the width.
+        return nums.size - left - 1
     }
 }

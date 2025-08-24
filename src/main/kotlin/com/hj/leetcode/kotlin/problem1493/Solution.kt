@@ -5,12 +5,13 @@ package com.hj.leetcode.kotlin.problem1493
  */
 class Solution {
     // Complexity:
-    // Time O(N) and Space O(1) where N is the size of nums;
+    // Time O(N) and Space O(1) where N is the size of nums.
     fun longestSubarray(nums: IntArray): Int {
         var result = 0
         var start = -1
         var indexOfZero = -1
 
+        // We use an inclusive end index
         for ((end, value) in nums.withIndex()) {
             if (value == 0) {
                 start = indexOfZero + 1
