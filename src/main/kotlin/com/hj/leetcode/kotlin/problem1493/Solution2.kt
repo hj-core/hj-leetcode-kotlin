@@ -14,8 +14,10 @@ class Solution2 {
                 left++
             }
         }
-        // The largest window will contain zero or one zero.
-        // In both cases, we need to subtract one from the width.
+        // The largest window can contain no zeros if nums
+        // are all ones. Otherwise, it must contain exactly
+        // one zero. In both cases, we need to subtract one
+        // from the width.
         return nums.size - left - 1
     }
 }
