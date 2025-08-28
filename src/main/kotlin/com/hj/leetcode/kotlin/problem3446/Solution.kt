@@ -5,8 +5,8 @@ package com.hj.leetcode.kotlin.problem3446
  */
 class Solution {
     // Complexity:
-    // Time O(N^2 * LogN) and Space O(1) where N is the number of
-    // rows and columns in grid, respectively.
+    // Time O(N^2 * LogN) and Space O(N) where N is the number
+    // of rows and columns in grid, respectively.
     fun sortMatrix(grid: Array<IntArray>): Array<IntArray> {
         val n = grid.size
 
