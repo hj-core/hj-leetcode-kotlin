@@ -16,10 +16,10 @@ class Solution {
             for (step in 0..<(n - i)) {
                 values[step] = grid[i + step][step]
             }
-            values.sort()
+            values.sortDescending()
 
             for (step in 0..<(n - i)) {
-                grid[i + step][step] = values[values.size - 1 - step]
+                grid[i + step][step] = values[step]
             }
             values.removeLast()
         }
