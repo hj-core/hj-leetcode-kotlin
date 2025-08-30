@@ -10,9 +10,10 @@ class Solution {
     fun isValidSudoku(board: Array<CharArray>): Boolean = checkRows(board) && checkColumns(board) && checkSquares(board)
 
     private fun checkRows(board: Array<CharArray>): Boolean {
-        for (row in board) {
+        for (r in board.indices) {
             val visited = BooleanArray(9)
-            for (value in row) {
+            for (c in board[r].indices) {
+                val value = board[r][c]
                 if (value == '.') continue
                 val index = value - '1'
                 if (visited[index]) return false else visited[index] = true
@@ -22,10 +23,10 @@ class Solution {
     }
 
     private fun checkColumns(board: Array<CharArray>): Boolean {
-        for (column in board[0].indices) {
+        for (c in board[0].indices) {
             val visited = BooleanArray(9)
-            for (row in board.indices) {
-                val value = board[row][column]
+            for (r in board.indices) {
+                val value = board[r][c]
                 if (value == '.') continue
                 val index = value - '1'
                 if (visited[index]) return false else visited[index] = true
@@ -49,9 +50,9 @@ class Solution {
         c0: Int,
     ): Boolean {
         val visited = BooleanArray(9)
-        for (row in r0 until r0 + 3) {
-            for (column in c0 until c0 + 3) {
-                val value = board[row][column]
+        for (r in r0 until r0 + 3) {
+            for (c in c0 until c0 + 3) {
+                val value = board[r][c]
                 if (value == '.') continue
                 val index = value - '1'
                 if (visited[index]) return false else visited[index] = true
