@@ -13,23 +13,40 @@ class Solution {
         for (r in board.indices) {
             val visited = BooleanArray(9)
             for (c in board[r].indices) {
-                val value = board[r][c]
-                if (value == '.') continue
-                val index = value - '1'
-                if (visited[index]) return false else visited[index] = true
+                if (markVisited(board[r][c], visited)) {
+                    return false
+                }
             }
         }
         return true
+    }
+
+    // Marks the value visited and returns whether it has been
+    // visited before.
+    private fun markVisited(
+        value: Char,
+        visited: BooleanArray,
+    ): Boolean {
+        if (value == '.') {
+            return false
+        }
+
+        val index = value - '1'
+        if (visited[index]) {
+            return true
+        }
+
+        visited[index] = true
+        return false
     }
 
     private fun checkColumns(board: Array<CharArray>): Boolean {
         for (c in board[0].indices) {
             val visited = BooleanArray(9)
             for (r in board.indices) {
-                val value = board[r][c]
-                if (value == '.') continue
-                val index = value - '1'
-                if (visited[index]) return false else visited[index] = true
+                if (markVisited(board[r][c], visited)) {
+                    return false
+                }
             }
         }
         return true
@@ -38,7 +55,9 @@ class Solution {
     private fun checkSquares(board: Array<CharArray>): Boolean {
         for (r0 in board.indices step 3) {
             for (c0 in board[r0].indices step 3) {
-                if (!checkSquare(board, r0, c0)) return false
+                if (!checkSquare(board, r0, c0)) {
+                    return false
+                }
             }
         }
         return true
@@ -52,10 +71,9 @@ class Solution {
         val visited = BooleanArray(9)
         for (r in r0 until r0 + 3) {
             for (c in c0 until c0 + 3) {
-                val value = board[r][c]
-                if (value == '.') continue
-                val index = value - '1'
-                if (visited[index]) return false else visited[index] = true
+                if (markVisited(board[r][c], visited)) {
+                    return false
+                }
             }
         }
         return true
