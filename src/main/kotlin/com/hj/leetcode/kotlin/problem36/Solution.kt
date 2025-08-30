@@ -4,12 +4,10 @@ package com.hj.leetcode.kotlin.problem36
  * LeetCode page: [36. Valid Sudoku](https://leetcode.com/problems/valid-sudoku/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(|board|) and Space O(1);
-     */
-    fun isValidSudoku(board: Array<CharArray>): Boolean {
-        return checkRows(board) && checkColumns(board) && checkSubBoxes(board)
-    }
+    // Complexity:
+    // Time O(1) and Space O(1) if we treat the 9 by 9 size
+    // as a constant.
+    fun isValidSudoku(board: Array<CharArray>): Boolean = checkRows(board) && checkColumns(board) && checkSubBoxes(board)
 
     private fun checkRows(board: Array<CharArray>): Boolean {
         for (row in board) {
@@ -46,7 +44,11 @@ class Solution {
         return true
     }
 
-    private fun checkSubBox(board: Array<CharArray>, rowTopLeft: Int, columnTopLeft: Int): Boolean {
+    private fun checkSubBox(
+        board: Array<CharArray>,
+        rowTopLeft: Int,
+        columnTopLeft: Int,
+    ): Boolean {
         val visited = BooleanArray(9)
         for (row in rowTopLeft until rowTopLeft + 3) {
             for (column in columnTopLeft until columnTopLeft + 3) {
