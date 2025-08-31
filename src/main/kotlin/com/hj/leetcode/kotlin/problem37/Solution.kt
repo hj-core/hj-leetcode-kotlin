@@ -7,59 +7,10 @@ class Solution {
     // Complexity:
     // Time O(???) and Space O(???).
     fun solveSudoku(board: Array<CharArray>) {
-        val metaBoard = MetaBoard(board)
-        val empties = metaBoard.collectEmpties()
-        val history = mutableListOf<Fill>()
-
-        while (empties.isNotEmpty()) {
-            val cell = swapPopMinNoc(empties)
-
-            val newFill = Fill(cell.row(), cell.col(), 1)
-            while (newFill.digit < 10 && !metaBoard.canApply(newFill)) {
-                newFill.digit++
-            }
-
-            // Case 1: We can find a valid value for the cell
-            if (newFill.digit < 10) {
-                metaBoard.apply(newFill)
-                history.add(newFill)
-                continue
-            }
-
-            // Case 2: We cannot find a valid value for the cell
-            empties.add(cell)
-            while (true) {
-                val lastFill = history.last()
-                metaBoard.revert(lastFill)
-
-                lastFill.digit++
-                while (lastFill.digit < 10 && !metaBoard.canApply(lastFill)) {
-                    lastFill.digit++
-                }
-
-                if (lastFill.digit < 10) {
-                    metaBoard.apply(lastFill)
-                    break
-                } else {
-                    val cell = metaBoard.getCell(lastFill.row, lastFill.col)
-                    empties.add(cell)
-                    history.removeLast()
-                }
-            }
-        }
-
-        for (fill in history) {
+        val steps = MetaBoard(board).solve()
+        for (fill in steps) {
             board[fill.row][fill.col] = fill.digit.digitToChar()
         }
-    }
-
-    private fun swapPopMinNoc(empties: MutableList<MetaCell>): MetaCell {
-        for (i in 1 until empties.size) {
-            if (empties[i - 1].noc() < empties[i].noc()) {
-                empties[i] = empties[i - 1].also { empties[i - 1] = empties[i] }
-            }
-        }
-        return empties.removeLast()
     }
 }
 
@@ -73,10 +24,14 @@ private class MetaBoard(
             }
         }
 
+    private val empties = mutableListOf<MetaCell>()
+
     init {
         for (r in rawBoard.indices) {
             for (c in rawBoard[r].indices) {
-                if (rawBoard[r][c] != '.') {
+                if (rawBoard[r][c] == '.') {
+                    empties.add(board[r][c])
+                } else {
                     val digit = rawBoard[r][c].digitToInt()
                     board[r][c].setDigit(digit)
                     onEachSibling(r, c) { sRow, sCol ->
@@ -115,16 +70,56 @@ private class MetaBoard(
         }
     }
 
-    fun collectEmpties(): MutableList<MetaCell> {
-        val result = mutableListOf<MetaCell>()
-        for (r in board.indices) {
-            for (c in board[r].indices) {
-                if (board[r][c].digit() == 0) {
-                    result.add(board[r][c])
+    // Returns the steps to solve the board.
+    fun solve(): List<Fill> {
+        val result = mutableListOf<Fill>()
+
+        while (empties.isNotEmpty()) {
+            val cell = popMinNoc(empties)
+            val fill = Fill(cell.row(), cell.col(), 1)
+
+            while (fill.digit < 10 && !canApply(fill)) {
+                fill.digit++
+            }
+
+            // Branch 1: We can find a valid value for the cell
+            if (fill.digit < 10) {
+                apply(fill)
+                result.add(fill)
+                continue
+            }
+
+            // Branch 2: We cannot find a valid value for the cell
+            empties.add(cell)
+            while (true) {
+                val lastFill = result.last()
+                revert(lastFill)
+
+                lastFill.digit++
+                while (lastFill.digit < 10 && !canApply(lastFill)) {
+                    lastFill.digit++
+                }
+
+                if (lastFill.digit < 10) {
+                    apply(lastFill)
+                    break
+                } else {
+                    empties.add(board[lastFill.row][lastFill.col])
+                    result.removeLast()
                 }
             }
         }
         return result
+    }
+
+    // Pops the cell with the least number of choices from empties.
+    private fun popMinNoc(empties: MutableList<MetaCell>): MetaCell {
+        for (i in 1 until empties.size) {
+            if (empties[i - 1].noc() < empties[i].noc()) {
+                empties[i] = empties[i - 1].also { empties[i - 1] = empties[i] }
+            }
+        }
+        return empties.removeLast()
     }
 
     fun canApply(fill: Fill): Boolean {
@@ -145,11 +140,6 @@ private class MetaBoard(
             board[sRow][sCol].decFreq(fill.digit)
         }
     }
-
-    fun getCell(
-        row: Int,
-        col: Int,
-    ): MetaCell = board[row][col]
 }
 
 // MetaCell uses the following encoding scheme,
