@@ -152,13 +152,13 @@ private class MetaBoard(
     ): MetaCell = board[row][col]
 }
 
-// metaCell has the following encoding scheme,
+// MetaCell uses the following encoding scheme,
 //
 // zeros |  noc  | freq9 | ..... | freq1 | digit |  col  |  row  |
 // ... 52      48      44      16      12       8       4       0
 //
-// where noc means the number of choices, and freqX means
-// the number of X from the same row, column and square.
+// where noc represents the number of choices, and freqX indicates
+// the count of X within its row, column and 3x3 square.
 private class MetaCell(
     private var data: Long,
 ) {
