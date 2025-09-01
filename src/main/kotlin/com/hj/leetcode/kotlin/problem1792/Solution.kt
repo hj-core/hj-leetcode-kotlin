@@ -28,12 +28,7 @@ class Solution {
             pq.offer(c)
         }
 
-        var result = 0.0
-        for (c in pq) {
-            result += c[0] / c[1]
-        }
-        result /= pq.size
-        return result
+        return pq.sumOf { it[0] / it[1] } / pq.size
     }
 
     private fun newClass(
