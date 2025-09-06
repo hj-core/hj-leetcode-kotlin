@@ -15,14 +15,12 @@ class Solution {
     private fun solveQuery(query: IntArray): Long {
         val right = query[1]
         val xLeft = query[0] - 1
+        val diff = right - xLeft
         var totalDivs = 0L
         var exp4 = 1
 
         while (exp4 <= right) {
-            totalDivs += right - exp4 + 1
-            if (xLeft >= exp4) {
-                totalDivs -= xLeft - exp4 + 1
-            }
+            totalDivs += if (exp4 <= xLeft) diff else right - exp4 + 1
             exp4 = exp4 shl 2
         }
         return (totalDivs + 1) / 2
