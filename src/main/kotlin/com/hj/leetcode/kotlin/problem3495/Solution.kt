@@ -27,7 +27,7 @@ class Solution {
             unitDivs++
 
             if (newLeft < power4) {
-                val count = minOf(right, power4 - 1) - newLeft + 1
+                val count = minOf(right - newLeft + 1, power4 - newLeft)
                 totalDivs += count * unitDivs
                 newLeft = power4
             }
