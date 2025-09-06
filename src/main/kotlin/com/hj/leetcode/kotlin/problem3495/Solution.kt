@@ -19,8 +19,12 @@ class Solution {
         var totalDivs = 0L
         var exp4 = 1
 
+        while (exp4 <= xLeft) {
+            totalDivs += diff
+            exp4 = exp4 shl 2
+        }
         while (exp4 <= right) {
-            totalDivs += if (exp4 <= xLeft) diff else right - exp4 + 1
+            totalDivs += right - exp4 + 1
             exp4 = exp4 shl 2
         }
         return (totalDivs + 1) / 2
