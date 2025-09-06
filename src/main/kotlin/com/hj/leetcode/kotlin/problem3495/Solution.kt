@@ -14,20 +14,16 @@ class Solution {
 
     private fun solveQuery(query: IntArray): Long {
         val right = query[1]
-        var newLeft = query[0]
+        val xLeft = query[0] - 1
         var totalDivs = 0L
         var exp4 = 1
-        var unitDivs = 0L
 
         while (exp4 <= right) {
-            exp4 = exp4 shl 2
-            unitDivs++
-
-            if (newLeft < exp4) {
-                val count = minOf(right - newLeft + 1, exp4 - newLeft)
-                totalDivs += count * unitDivs
-                newLeft = exp4
+            totalDivs += right - exp4 + 1
+            if (xLeft >= exp4) {
+                totalDivs -= xLeft - exp4 + 1
             }
+            exp4 = exp4 shl 2
         }
         return (totalDivs + 1) / 2
     }
