@@ -13,9 +13,9 @@ class Solution2 {
         }
 
     private fun solveQuery(query: IntArray): Long {
-        val divR = calcTotalDivs(query[1])
-        val divL = calcTotalDivs(query[0] - 1)
-        return (divR - divL + 1) / 2
+        val divsR = calcTotalDivs(query[1])
+        val divsL = calcTotalDivs(query[0] - 1)
+        return (divsR - divsL + 1) / 2
     }
 
     // Returns the total number of divisions required to
