@@ -16,17 +16,17 @@ class Solution {
         val right = query[1]
         var newLeft = query[0]
         var totalDivs = 0L
-        var power4 = 1
+        var exp4 = 1
         var unitDivs = 0L
 
-        while (power4 <= right) {
-            power4 = power4 shl 2
+        while (exp4 <= right) {
+            exp4 = exp4 shl 2
             unitDivs++
 
-            if (newLeft < power4) {
-                val count = minOf(right - newLeft + 1, power4 - newLeft)
+            if (newLeft < exp4) {
+                val count = minOf(right - newLeft + 1, exp4 - newLeft)
                 totalDivs += count * unitDivs
-                newLeft = power4
+                newLeft = exp4
             }
         }
         return (totalDivs + 1) / 2
