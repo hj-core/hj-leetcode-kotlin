@@ -7,13 +7,10 @@ class Solution {
     // Complexity:
     // Time O(N+LogM) and Space O(1) where N is the length
     // of queries and M is the product of all query rights.
-    fun minOperations(queries: Array<IntArray>): Long {
-        var result = 0L
-        for (query in queries) {
-            result += solveQuery(query)
+    fun minOperations(queries: Array<IntArray>): Long =
+        queries.fold(0L) { acc, q ->
+            acc + solveQuery(q)
         }
-        return result
-    }
 
     private fun solveQuery(query: IntArray): Long {
         val right = query[1]
