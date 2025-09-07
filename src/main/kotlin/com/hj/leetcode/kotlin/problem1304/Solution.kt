@@ -9,8 +9,8 @@ class Solution {
     fun sumZero(n: Int): IntArray {
         val result = IntArray(n)
         for (i in 1..<n step 2) {
-            result[i - 1] = i
-            result[i] = -i
+            result[i] = i
+            result[i - 1] = -i
         }
         return result
     }
