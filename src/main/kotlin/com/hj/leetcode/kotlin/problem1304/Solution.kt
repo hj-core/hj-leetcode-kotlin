@@ -8,9 +8,9 @@ class Solution {
     // Time O(n) and Auxiliary Space O(1).
     fun sumZero(n: Int): IntArray {
         val result = IntArray(n)
-        for (i in 0..<(n - 1) step 2) {
-            result[i] = i + 1
-            result[i + 1] = -result[i]
+        for (i in 1..<n step 2) {
+            result[i - 1] = i
+            result[i] = -i
         }
         return result
     }
