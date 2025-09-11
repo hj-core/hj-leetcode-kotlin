@@ -6,8 +6,8 @@ package com.hj.leetcode.kotlin.problem2785
 class Solution {
     // Complexity:
     // Time O(N) and Auxiliary Space O(1) where N is the length
-    // of s. We treat the number of different vowels (i.e., 1) as
-    // a constant.
+    // of s. We treat the number of different vowels (i.e., 10)
+    // as a constant.
     fun sortVowels(s: String): String {
         val vowels = charArrayOf('A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u')
 
