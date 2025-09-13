@@ -13,12 +13,13 @@ class Solution {
             freqs[c - 'a']++
         }
 
-        val mostFreqVowel = maxOf(freqs[0], freqs[4], freqs[8], freqs[14], freqs[20])
+        val maxVowelFreq = maxOf(freqs[0], freqs[4], freqs[8], freqs[14], freqs[20])
         freqs[0] = 0
         freqs[4] = 0
         freqs[8] = 0
         freqs[14] = 0
         freqs[20] = 0
-        return mostFreqVowel + freqs.max()
+
+        return maxVowelFreq + freqs.max()
     }
 }
