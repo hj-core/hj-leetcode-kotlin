@@ -16,19 +16,10 @@ class Solution {
         val fuzzyLcWords = hashMapOf<String, Int>()
 
         for ((i, word) in wordlist.withIndex()) {
-            if (word !in words) {
-                words[word] = i
-            }
-
             val lcWord = word.lowercase()
-            if (lcWord !in lcWords) {
-                lcWords[lcWord] = i
-            }
-
-            val fuzzyLcWord = lcWord.toFuzzy()
-            if (fuzzyLcWord !in fuzzyLcWords) {
-                fuzzyLcWords[fuzzyLcWord] = i
-            }
+            words.putIfAbsent(word, i)
+            lcWords.putIfAbsent(lcWord, i)
+            fuzzyLcWords.putIfAbsent(lcWord.toFuzzy(), i)
         }
 
         return Array(queries.size) {
