@@ -43,7 +43,9 @@ class Solution2 {
 
             exactHash = exactHash xor bits
             lcHash = lcHash xor lcBits
-            if ((0x10_4111 shr idx.toInt()) and 1 == 0) {
+
+            val isNotVowel = (0x10_4111 shr idx.toInt()) and 1 == 0
+            if (isNotVowel) {
                 fuzzyLcHash = fuzzyLcHash xor lcBits
             }
         }
