@@ -24,8 +24,12 @@ class Solution {
             }
         }
         result += isValid
+
         return result
     }
 
-    private fun calcMask(letters: String): Int = letters.fold(0) { acc, c -> acc or (1 shl (c - 'a')) }
+    private fun calcMask(letters: String): Int =
+        letters.fold(0) { acc, c ->
+            acc or (1 shl (c - 'a'))
+        }
 }
