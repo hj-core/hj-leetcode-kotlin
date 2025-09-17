@@ -5,45 +5,55 @@ import java.util.*
 /**
  * LeetCode page: [2353. Design a Food Rating System](https://leetcode.com/problems/design-a-food-rating-system/);
  */
-class FoodRatings(foods: Array<String>, cuisines: Array<String>, ratings: IntArray) {
-
-    // entry=(food, (cuisine, rating))
-    private val menu = hashMapOf<String, Pair<String, Int>>()
-
-    // entry=(cuisine, sortedFoods)
-    private val menuRatings = hashMapOf<String, SortedSet<String>>()
-    private val ratingCriterion = compareBy<String>(
-        { checkNotNull(menu[it]?.second) * -1 }, { it }
+class FoodRatings(
+    foods: Array<String>,
+    cuisines: Array<String>,
+    ratings: IntArray,
+) {
+    private class Food(
+        val name: String,
+        val cuisine: String,
+        var rating: Int,
     )
 
-    /* Complexity:
-     * Time O(NLogN) and Space O(N) where N is the size of foods;
-     */
+    private val foods = hashMapOf<String, Food>() // name to food
+    private val cuisineFoods = hashMapOf<String, TreeSet<Food>>() // cuisine to sorted foods
+    private val ratingCriteria = compareBy<Food>({ -it.rating }, { it.name })
+
+    // Complexity:
+    // Time O(NLogN) and Space O(N) where N is the size of foods.
     init {
-        for ((index, food) in foods.withIndex()) {
-            menu[food] = cuisines[index] to ratings[index]
-            menuRatings
-                .computeIfAbsent(cuisines[index]) { TreeSet(ratingCriterion) }
+        for (i in foods.indices) {
+            val food = Food(foods[i], cuisines[i], ratings[i])
+            this.foods[food.name] = food
+            this.cuisineFoods
+                .computeIfAbsent(food.cuisine) { TreeSet(ratingCriteria) }
                 .add(food)
         }
     }
 
-    /* Complexity for each call:
-     * Time O(LogN) and Space O(1) where N is the size of foods;
-     */
-    fun changeRating(food: String, newRating: Int) {
-        val cuisine = checkNotNull(menu[food]?.first)
-        menuRatings[cuisine]?.remove(food)
-        menu[food] = cuisine to newRating
-        menuRatings[cuisine]?.add(food)
+    // Complexity:
+    // Time O(LogN) and Space O(1) where N is the size of foods.
+    fun changeRating(
+        food: String,
+        newRating: Int,
+    ) {
+        val food = foods[food] ?: throw IllegalArgumentException()
+
+        cuisineFoods[food.cuisine]?.let {
+            it.remove(food)
+            food.rating = newRating
+            it.add(food)
+        } ?: throw IllegalStateException()
     }
 
-    /* Complexity for each call:
-     * Time O(1) and Space O(1);
-     */
-    fun highestRated(cuisine: String): String {
-        return checkNotNull(menuRatings[cuisine]?.first())
-    }
+    // Complexity:
+    // Time O(1) and Space O(1).
+    fun highestRated(cuisine: String): String =
+        cuisineFoods[cuisine]
+            ?.first()
+            ?.name
+            ?: throw IllegalArgumentException()
 }
 
 /**
