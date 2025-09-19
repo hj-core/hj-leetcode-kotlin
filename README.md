@@ -665,6 +665,7 @@ at [LeetCode](https://leetcode.com/hj-core/).
 | [3443. Maximum Manhattan Distance After K Changes](https://leetcode.com/problems/maximum-manhattan-distance-after-k-changes/)                                                                   | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3443/Solution.kt)                                                                               | 2025-06-20    |
 | [3446. Sort Matrix by Diagonals](https://leetcode.com/problems/sort-matrix-by-diagonals/))                                                                                                      | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3446/Solution.kt)                                                                               | 2025-08-28    |
 | [3479. Fruits Into Baskets III](https://leetcode.com/problems/fruits-into-baskets-iii/)                                                                                                         | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3479/Solution.kt), [Solution2](src/main/kotlin/com/hj/leetcode/kotlin/problem3479/Solution2.kt) | 2025-08-06    |
+| [3484. Design Spreadsheet](https://leetcode.com/problems/design-spreadsheet/)                                                                                                                   | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3484/Solution.kt)                                                                               | 2025-09-19    |
 
 ### Easy
 
