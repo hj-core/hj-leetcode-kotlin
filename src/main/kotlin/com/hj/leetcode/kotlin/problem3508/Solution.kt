@@ -33,7 +33,7 @@ class Router(
         dsts.addLast(destination)
         queues
             .computeIfAbsent(destination) { ArrayDeque() }
-            .add(calcHash(source, timestamp))
+            .addLast(calcHash(source, timestamp))
         return true
     }
 
