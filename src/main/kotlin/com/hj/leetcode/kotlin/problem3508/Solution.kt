@@ -46,7 +46,12 @@ class Router(
         for (i in queue.indices.reversed()) {
             val (src, t) = invertHash(queue[i])
             if (t < timestamp) return false
-            if (src == source) return true
+            // We don't strictly need the t == timestamp check, as we
+            // only query the most recent packet; however, the method
+            // cannot be named contains.
+            if (src == source && t == timestamp) {
+                return true
+            }
         }
         return false
     }
