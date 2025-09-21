@@ -47,15 +47,14 @@ class MovieRentingSystem(
     // Complexity:
     // Time O(LogM) and Space O(1) where M is the length of
     // entries.
-    fun search(movie: Int): List<Int> {
-        val iter = unrented[movie]?.iterator() ?: return emptyList()
-        val result = mutableListOf<Int>()
-        while (result.size < 5 && iter.hasNext()) {
-            val (shop, _, _) = invertHashSmp(iter.next())
-            result.add(shop)
+    fun search(movie: Int): List<Int> =
+        buildList {
+            val iter = unrented[movie]?.iterator() ?: return emptyList()
+            while (size < 5 && iter.hasNext()) {
+                val (shop, _, _) = invertHashSmp(iter.next())
+                add(shop)
+            }
         }
-        return result
-    }
 
     // Complexity:
     // Time O(LogM) and Space O(1) where M is the length of
@@ -84,15 +83,14 @@ class MovieRentingSystem(
     // Complexity:
     // Time O(LogM) and Space O(1) where M is the length of
     // entries.
-    fun report(): List<List<Int>> {
-        val iter = rented.iterator()
-        val result = mutableListOf<List<Int>>()
-        while (result.size < 5 && iter.hasNext()) {
-            val (shop, movie, _) = invertHashSmp(iter.next())
-            result.add(listOf(shop, movie))
+    fun report(): List<List<Int>> =
+        buildList {
+            val iter = rented.iterator()
+            while (size < 5 && iter.hasNext()) {
+                val (shop, movie, _) = invertHashSmp(iter.next())
+                add(listOf(shop, movie))
+            }
         }
-        return result
-    }
 }
 
 /**
