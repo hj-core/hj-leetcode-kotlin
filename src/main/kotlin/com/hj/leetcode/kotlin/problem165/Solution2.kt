@@ -17,9 +17,11 @@ class Solution2 {
         while (iter1.hasNext() || iter2.hasNext()) {
             val rev1 = if (iter1.hasNext()) iter1.next() else 0
             val rev2 = if (iter2.hasNext()) iter2.next() else 0
-            when {
-                rev1 < rev2 -> return -1
-                rev1 > rev2 -> return 1
+
+            return when {
+                rev1 == rev2 -> continue
+                rev1 < rev2 -> -1
+                else -> 1
             }
         }
         return 0
