@@ -19,9 +19,9 @@ class Solution {
         for (i in 0..<max(ver1.size, ver2.size)) {
             val rev1 = ver1.getOrElse(i) { "0" }.toInt()
             val rev2 = ver2.getOrElse(i) { "0" }.toInt()
-            when {
-                rev1 > rev2 -> return 1
-                rev1 < rev2 -> return -1
+
+            if (rev1 != rev2) {
+                return if (rev1 < rev2) -1 else 1
             }
         }
         return 0
