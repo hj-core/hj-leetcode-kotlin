@@ -6,11 +6,13 @@ import kotlin.math.max
  * LeetCode page: [165. Compare Version Numbers](https://leetcode.com/problems/compare-version-numbers/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(M+N) and Space O(M+N) where M is the length of version1
-     * and N is the length of version2;
-     */
-    fun compareVersion(version1: String, version2: String): Int {
+    // Complexity:
+    // Time O(N+M) and Space O(N+M) where N and M are the length
+    // of version1 and version2, respectively.
+    fun compareVersion(
+        version1: String,
+        version2: String,
+    ): Int {
         val segments1 = version1.split(".")
         val segments2 = version2.split(".")
 
