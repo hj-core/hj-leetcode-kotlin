@@ -11,8 +11,8 @@ class Solution2 {
         version1: String,
         version2: String,
     ): Int {
-        val iter1 = revIterator(version1)
-        val iter2 = revIterator(version2)
+        val iter1 = newRevIterator(version1)
+        val iter2 = newRevIterator(version2)
 
         while (iter1.hasNext() || iter2.hasNext()) {
             val rev1 = if (iter1.hasNext()) iter1.next() else 0
@@ -25,7 +25,7 @@ class Solution2 {
         return 0
     }
 
-    private fun revIterator(version: String): Iterator<Int> =
+    private fun newRevIterator(version: String): Iterator<Int> =
         object : Iterator<Int> {
             private var end = -1
 
