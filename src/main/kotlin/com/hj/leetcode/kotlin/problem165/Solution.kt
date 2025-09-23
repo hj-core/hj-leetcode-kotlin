@@ -13,15 +13,15 @@ class Solution {
         version1: String,
         version2: String,
     ): Int {
-        val segments1 = version1.split(".")
-        val segments2 = version2.split(".")
+        val ver1 = version1.split(".")
+        val ver2 = version2.split(".")
 
-        for (i in 0..<max(segments1.size, segments2.size)) {
-            val segment1 = segments1.getOrElse(i) { "0" }.toInt()
-            val segment2 = segments2.getOrElse(i) { "0" }.toInt()
+        for (i in 0..<max(ver1.size, ver2.size)) {
+            val rev1 = ver1.getOrElse(i) { "0" }.toInt()
+            val rev2 = ver2.getOrElse(i) { "0" }.toInt()
             when {
-                segment1 > segment2 -> return 1
-                segment1 < segment2 -> return -1
+                rev1 > rev2 -> return 1
+                rev1 < rev2 -> return -1
             }
         }
         return 0
