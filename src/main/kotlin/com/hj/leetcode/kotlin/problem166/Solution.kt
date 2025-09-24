@@ -23,15 +23,15 @@ class Solution {
         val m = abs(denominator.toLong())
 
         while (true) {
-            step++
             quotients.add(n / m)
-            val r = n % m
-            if (r in remainders) {
-                n = r
+            n %= m
+            if (n in remainders) {
                 break
             }
-            remainders[r] = step
-            n = r * 10
+            remainders[n] = step
+
+            step++
+            n *= 10
         }
 
         // Build result string
@@ -45,8 +45,8 @@ class Solution {
             sb.append(".")
         }
 
-        remainders[0] = quotients.size
-        val repeatStart = checkNotNull(remainders[n])
+        remainders[0] = quotients.size - 1
+        val repeatStart = checkNotNull(remainders[n]) + 1
         for (i in 1..<repeatStart) {
             sb.append(quotients[i])
         }
