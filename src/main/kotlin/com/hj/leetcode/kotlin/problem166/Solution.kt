@@ -14,8 +14,8 @@ class Solution {
     ): String {
         // Long division
         val quotients = mutableListOf<Long>()
-        val reminders = hashMapOf<Long, Int>() // reminder to long division step
-        reminders[0] = -1
+        val remainders = hashMapOf<Long, Int>() // remainder to long division step
+        remainders[0] = -1
 
         var step = 0
         var n = abs(numerator.toLong())
@@ -25,11 +25,11 @@ class Solution {
             step++
             quotients.add(n / m)
             val r = n % m
-            if (r in reminders) {
+            if (r in remainders) {
                 n = r
                 break
             }
-            reminders[r] = step
+            remainders[r] = step
             n = r * 10
         }
 
@@ -44,8 +44,8 @@ class Solution {
             sb.append(".")
         }
 
-        reminders[0] = quotients.size
-        val repeatStart = checkNotNull(reminders[n])
+        remainders[0] = quotients.size
+        val repeatStart = checkNotNull(remainders[n])
         for (i in 1..<repeatStart) {
             sb.append(quotients[i])
         }
