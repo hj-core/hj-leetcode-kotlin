@@ -7,7 +7,8 @@ import kotlin.math.abs
  */
 class Solution {
     // Complexity:
-    // Time O(?) and Space O(?).
+    // Time O(denominator) and Space O(denominator) according to
+    // https://en.wikipedia.org/wiki/Repeating_decimal#Other_properties_of_repetend_lengths.
     fun fractionToDecimal(
         numerator: Int,
         denominator: Int,
