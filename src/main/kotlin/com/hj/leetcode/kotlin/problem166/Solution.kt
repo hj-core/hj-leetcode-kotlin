@@ -50,7 +50,7 @@ class Solution {
             sb.append(quotients[i])
         }
 
-        if (n != 0L) {
+        if (repeatStart < quotients.size) {
             sb.append("(")
             for (i in repeatStart..<quotients.size) {
                 sb.append(quotients[i])
