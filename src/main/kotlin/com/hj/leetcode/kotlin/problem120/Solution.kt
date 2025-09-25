@@ -8,13 +8,12 @@ class Solution {
     // Time O(N^2) and Space O(N) where N is the length of
     // triangle.
     fun minimumTotal(triangle: List<List<Int>>): Int {
-        val n = triangle.size
         // dp from leaves to root.
-        val dp = IntArray(n) { triangle[n - 1][it] }
+        val dp = triangle.last().toIntArray()
 
-        for (r in n - 1 downTo 1) {
-            for (c in 0..<r) {
-                dp[c] = triangle[r - 1][c] + minOf(dp[c], dp[c + 1])
+        for (r in triangle.size - 2 downTo 0) {
+            for (c in 0..r) {
+                dp[c] = triangle[r][c] + minOf(dp[c], dp[c + 1])
             }
         }
         return dp[0]
