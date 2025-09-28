@@ -4,19 +4,15 @@ package com.hj.leetcode.kotlin.problem976
  * LeetCode page: [976. Largest Perimeter Triangle](https://leetcode.com/problems/largest-perimeter-triangle/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(NLogN) and Space O(N) where N is the size of nums;
-     */
+    // Complexity:
+    // Time O(NLogN) and Space O(N) where N is the length
+    // of nums.
     fun largestPerimeter(nums: IntArray): Int {
-        val sortedLengths = nums.clone().apply { sort() }
-        require(sortedLengths.first() > 0)
-
-        for (index in sortedLengths.lastIndex downTo 2) {
-            val longestSide = sortedLengths[index]
-            val sumOfRemainingSides = sortedLengths[index - 1] + sortedLengths[index - 2]
-
-            val canFormTriangle = sumOfRemainingSides > longestSide
-            if (canFormTriangle) return sumOfRemainingSides + longestSide
+        val sortedNums = nums.sortedArray()
+        for (i in sortedNums.lastIndex downTo 2) {
+            if (sortedNums[i] - sortedNums[i - 1] < sortedNums[i - 2]) {
+                return sortedNums[i] + sortedNums[i - 1] + sortedNums[i - 2]
+            }
         }
         return 0
     }
