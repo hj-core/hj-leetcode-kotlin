@@ -86,7 +86,8 @@ class Solution {
                     exp5--
                 }
 
-                // inv5[b%5] is derived from the Extended Euclidean algorithm
+                // inv5[b%5]=inv5[b] is derived from the Extended Euclidean
+                // algorithm.
                 mod5 = (mod5 * a * inv5[b % 5]) % 5
                 return if (exp5 > 0) 0 else mod5
             }
