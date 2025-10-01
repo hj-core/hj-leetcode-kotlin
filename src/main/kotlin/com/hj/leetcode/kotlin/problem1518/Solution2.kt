@@ -18,8 +18,6 @@ class Solution2 {
          * have one bottle in hand and the insufficient-size group
          * remaining.
          */
-        val a = numBottles - 1
-        val b = numExchange - 1
-        return (a / b) * numExchange + 1 + a % b
+        return numBottles + (numBottles - 1) / (numExchange - 1)
     }
 }
