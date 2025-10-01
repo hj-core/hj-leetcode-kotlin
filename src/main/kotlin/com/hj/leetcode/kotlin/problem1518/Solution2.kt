@@ -4,16 +4,22 @@ package com.hj.leetcode.kotlin.problem1518
  * LeetCode page: [1518. Water Bottles](https://leetcode.com/problems/water-bottles/);
  */
 class Solution2 {
-    /* Complexity:
-     * Time O(1) and Space O(1);
-     */
-    fun numWaterBottles(numBottles: Int, numExchange: Int): Int {
-        /* The idea is to use one bottle to absorb every following (numExchange-1) bottles.
-         * By absorption, I mean that we drink that bottle together with the (numExchange-1)
-         * bottles and then exchange one bottle back.
+    // Complexity:
+    // Time O(1) and Space O(1).
+    fun numWaterBottles(
+        numBottles: Int,
+        numExchange: Int,
+    ): Int {
+        /*
+         * We hold one bottle and divide the remaining bottles
+         * into groups of size (numExchange-1) (the last group
+         * may be of insufficient size). For each full-size group,
+         * we can drink numExchange bottles. At the end, we will
+         * have one bottle in hand and the insufficient-size group
+         * remaining.
          */
-        val rounds = (numBottles - 1) / (numExchange - 1)
-        val remaining = (numBottles - 1) % (numExchange - 1) + 1
-        return (rounds * numExchange) + remaining
+        val a = numBottles - 1
+        val b = numExchange - 1
+        return (a / b) * numExchange + 1 + a % b
     }
 }
