@@ -43,7 +43,12 @@ class Solution {
                 }
 
                 visited[newR][newC] = true
-                val cell = intArrayOf(newR, newC, maxOf(h, heightMap[newR][newC]))
+                val cell =
+                    intArrayOf(
+                        newR,
+                        newC,
+                        maxOf(h, heightMap[newR][newC]),
+                    )
                 pq.offer(cell)
             }
         }
