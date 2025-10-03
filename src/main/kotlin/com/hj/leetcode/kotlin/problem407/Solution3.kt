@@ -51,27 +51,37 @@ class Solution3 {
         val n = heightMap[0].size
 
         var stable = true
-        for (r1 in 1..<m - 1) {
-            for (c1 in 1..<n - 1) {
+        for (r in 1..<m - 1) {
+            for (c in 1..<n - 1) {
                 val newHeight =
-                    minOf(dp[r1][c1], dp[r1 - 1][c1], dp[r1][c1 - 1])
-                        .coerceAtLeast(heightMap[r1][c1])
+                    maxOf(
+                        heightMap[r][c],
+                        minOf(dp[r][c], dp[r - 1][c], dp[r][c - 1]),
+                    )
 
-                if (dp[r1][c1] != newHeight) {
+                if (dp[r][c] != newHeight) {
                     stable = false
-                    dp[r1][c1] = newHeight
+                    dp[r][c] = newHeight
                 }
             }
+        }
 
-            val r2 = m - 1 - r1
-            for (c2 in n - 2 downTo 1) {
+        if (stable) {
+            return true
+        }
+
+        stable = true
+        for (r in m - 2 downTo 1) {
+            for (c in n - 2 downTo 1) {
                 val newHeight =
-                    minOf(dp[r2][c2], dp[r2 + 1][c2], dp[r2][c2 + 1])
-                        .coerceAtLeast(heightMap[r2][c2])
+                    maxOf(
+                        heightMap[r][c],
+                        minOf(dp[r][c], dp[r + 1][c], dp[r][c + 1]),
+                    )
 
-                if (dp[r2][c2] != newHeight) {
+                if (dp[r][c] != newHeight) {
                     stable = false
-                    dp[r2][c2] = newHeight
+                    dp[r][c] = newHeight
                 }
             }
         }
