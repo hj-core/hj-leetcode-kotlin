@@ -21,13 +21,6 @@ class Solution {
 
         val pq = PriorityQueue<Cell>(compareBy { (_, _, h) -> h })
         val visited = Array(m) { BooleanArray(n) }
-        val moves =
-            arrayOf(
-                intArrayOf(0, 1),
-                intArrayOf(1, 0),
-                intArrayOf(0, -1),
-                intArrayOf(-1, 0),
-            )
 
         walkEdges(heightMap) {
             val (r, c, _) = it
@@ -36,13 +29,15 @@ class Solution {
         }
 
         var result = 0
+        val moves = intArrayOf(0, 1, 0, -1, 0)
+
         while (pq.isNotEmpty()) {
             val (r, c, h) = pq.poll()
             result += h - heightMap[r][c]
 
-            for ((dr, dc) in moves) {
-                val newR = r + dr
-                val newC = c + dc
+            for (direction in 0..<4) {
+                val newR = r + moves[direction]
+                val newC = c + moves[direction + 1]
                 if (newR !in 0..<m || newC !in 0..<n || visited[newR][newC]) {
                     continue
                 }
