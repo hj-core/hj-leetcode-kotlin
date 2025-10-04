@@ -4,19 +4,20 @@ package com.hj.leetcode.kotlin.problem407
  * LeetCode page: [407. Trapping Rain Water II](https://leetcode.com/problems/trapping-rain-water-ii/);
  */
 class Solution2 {
-    /* Complexity:
-     * Time O((MN)^2) and Space O(MN)
-     * where M and N are the number of rows and columns in heightMap, respectively.
-     */
+    // Complexity:
+    // Time O((MN)^2) and Space O(MN) where M and N are the number
+    // of rows and columns in heightMap, respectively.
     fun trapRainWater(heightMap: Array<IntArray>): Int {
-        val totalRows = heightMap.size
-        val totalCols = heightMap[0].size
-        if (totalRows <= 2 || totalCols <= 2) {
+        val m = heightMap.size
+        val n = heightMap[0].size
+
+        if (m < 3 || n < 3) {
             return 0
         }
+
         val newHeightMap = Array(heightMap.size) { heightMap[it].clone() }
         val innerCells = mutableListOf<Cell>()
-        val isBoundary = Array(heightMap.size) { BooleanArray(totalCols) }
+        val isBoundary = Array(heightMap.size) { BooleanArray(n) }
 
         // Set edge cells to true in isBoundary, and collect inner cells
         for (row in newHeightMap.indices) {

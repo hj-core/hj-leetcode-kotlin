@@ -2,107 +2,77 @@ package com.hj.leetcode.kotlin.problem407
 
 import java.util.*
 
+private typealias Cell = IntArray // (r, c, h)
+
 /**
  * LeetCode page: [407. Trapping Rain Water II](https://leetcode.com/problems/trapping-rain-water-ii/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(MN Log(MN)) and Space O(MN)
-     * where M and N are the number of rows and columns in heightMap, respectively.
-     */
+    // Complexity:
+    // Time O(MN Log(MN)) and Space O(MN) where M and N are the
+    // number of rows and columns in heightMap, respectively.
     fun trapRainWater(heightMap: Array<IntArray>): Int {
-        val totalRows = heightMap.size
-        val totalCols = heightMap[0].size
+        val m = heightMap.size
+        val n = heightMap[0].size
 
-        if (totalRows <= 2 || totalCols <= 2) {
+        if (m < 3 || n < 3) {
             return 0
         }
-        val newHeightMap = Array(totalRows) { heightMap[it].clone() }
-        val visited = Array(totalRows) { BooleanArray(totalCols) }
-        val boundaryPq = PriorityQueue<Cell>(compareBy { it.height(newHeightMap) })
-        val quickList = mutableListOf<Cell>() // Boundary cells that will be processed before those in pq
+
+        val pq = PriorityQueue<Cell>(compareBy { (_, _, h) -> h })
+        val visited = Array(m) { BooleanArray(n) }
+
+        walkEdges(heightMap) {
+            val (r, c, _) = it
+            pq.offer(it)
+            visited[r][c] = true
+        }
 
         var result = 0
-        addEdgeCells(totalRows, totalCols, visited, boundaryPq)
+        val moves = intArrayOf(0, 1, 0, -1, 0)
 
-        while (boundaryPq.isNotEmpty()) {
-            val curr = if (quickList.isNotEmpty()) quickList.removeLast() else boundaryPq.poll()
-            val currHeight = curr.height(newHeightMap)
+        while (pq.isNotEmpty()) {
+            val (r, c, h) = pq.poll()
+            result += h - heightMap[r][c]
 
-            for (next in curr.neighbours()) {
-                if (!next.inGrid(newHeightMap) || next.isVisited(visited)) {
+            for (direction in 0..<4) {
+                val newR = r + moves[direction]
+                val newC = c + moves[direction + 1]
+                if (newR !in 0..<m || newC !in 0..<n || visited[newR][newC]) {
                     continue
                 }
-                next.markVisited(visited)
 
-                val nextHeight = next.height(newHeightMap)
-                if (nextHeight <= currHeight) {
-                    result += currHeight - nextHeight
-                    next.setHeight(newHeightMap, currHeight)
-                    quickList.add(next)
-                } else {
-                    boundaryPq.add(next)
-                }
+                visited[newR][newC] = true
+                val cell =
+                    intArrayOf(
+                        newR,
+                        newC,
+                        maxOf(h, heightMap[newR][newC]),
+                    )
+                pq.offer(cell)
             }
         }
         return result
     }
 
-    private fun addEdgeCells(
-        totalRows: Int,
-        totalCols: Int,
-        visited: Array<BooleanArray>,
-        cells: PriorityQueue<Cell>,
+    private fun walkEdges(
+        heightMap: Array<IntArray>,
+        onEachCell: (Cell) -> Unit,
     ) {
-        // Add cells in the first and last rows
-        for (col in 0..<totalCols) {
-            val cellFirstRow = Cell(0, col)
-            cells.add(cellFirstRow)
-            cellFirstRow.markVisited(visited)
+        val m = heightMap.size
+        val n = heightMap[0].size
 
-            val cellLastRow = Cell(totalRows - 1, col)
-            cells.add(cellLastRow)
-            cellLastRow.markVisited(visited)
-        }
-        // Add cells in the middle part of the first and last columns
-        for (row in 1..<totalRows - 1) {
-            val cellFirstCol = Cell(row, 0)
-            cells.add(cellFirstCol)
-            cellFirstCol.markVisited(visited)
-
-            val cellLastCol = Cell(row, totalCols - 1)
-            cells.add(cellLastCol)
-            cellLastCol.markVisited(visited)
-        }
-    }
-
-    private data class Cell(
-        val row: Int,
-        val col: Int,
-    ) {
-        fun markVisited(visited: Array<BooleanArray>) {
-            visited[row][col] = true
+        for (c in 0..<n) {
+            onEachCell(intArrayOf(0, c, heightMap[0][c]))
         }
 
-        fun isVisited(visited: Array<BooleanArray>): Boolean = visited[row][col]
+        for (r in 1..<m - 1) {
+            onEachCell(intArrayOf(r, 0, heightMap[r][0]))
+            onEachCell(intArrayOf(r, n - 1, heightMap[r][n - 1]))
+        }
 
-        fun neighbours(): Array<Cell> =
-            arrayOf(
-                Cell(row + 1, col),
-                Cell(row - 1, col),
-                Cell(row, col + 1),
-                Cell(row, col - 1),
-            )
-
-        fun inGrid(grid: Array<IntArray>): Boolean = row in grid.indices && col in grid[row].indices
-
-        fun height(heightMap: Array<IntArray>): Int = heightMap[row][col]
-
-        fun setHeight(
-            heightMap: Array<IntArray>,
-            newValue: Int,
-        ) {
-            heightMap[row][col] = newValue
+        for (c in 0..<n) {
+            onEachCell(intArrayOf(m - 1, c, heightMap[m - 1][c]))
         }
     }
 }
