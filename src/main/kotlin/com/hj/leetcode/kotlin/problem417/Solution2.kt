@@ -31,7 +31,7 @@ class Solution2 {
             queue.add(r shl 12)
 
             isReachable[r][n - 1] = isReachable[r][n - 1] or 2
-            queue.add((r shl 12) or (n - 1))
+            queue.add(r shl 12 or (n - 1))
         }
 
         val moves = intArrayOf(0, -1, 0, 1, -1, 0, 1, 0)

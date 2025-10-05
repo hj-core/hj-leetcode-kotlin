@@ -46,7 +46,7 @@ class Solution {
         if (r !in heights.indices || c !in heights[r].indices) {
             return
         }
-        if (isReachable[r][c] || heights[r][c] < parentHeight) {
+        if (heights[r][c] < parentHeight || isReachable[r][c]) {
             return
         }
 
