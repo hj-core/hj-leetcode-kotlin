@@ -34,15 +34,15 @@ class Solution2 {
             queue.add((r shl 12) or (n - 1))
         }
 
-        val moves = intArrayOf(0, 1, 0, -1, 0)
+        val moves = intArrayOf(0, -1, 0, 1, -1, 0, 1, 0)
         while (queue.isNotEmpty()) {
             val cell = queue.removeLast()
             val r = cell shr 12
             val c = cell and 0xFFF
 
             for (dir in 0..<4) {
-                val nr = r + moves[dir]
-                val nc = c + moves[dir + 1]
+                val nr = r + moves[dir shl 1]
+                val nc = c + moves[dir shl 1 or 1]
 
                 if (nr !in heights.indices || nc !in heights[nr].indices ||
                     heights[nr][nc] < heights[r][c] ||

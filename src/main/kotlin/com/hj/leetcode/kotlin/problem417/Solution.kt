@@ -51,10 +51,10 @@ class Solution {
         }
 
         isReachable[r][c] = true
-        dfs(r + 1, c, heights[r][c], heights, isReachable)
-        dfs(r - 1, c, heights[r][c], heights, isReachable)
-        dfs(r, c + 1, heights[r][c], heights, isReachable)
         dfs(r, c - 1, heights[r][c], heights, isReachable)
+        dfs(r, c + 1, heights[r][c], heights, isReachable)
+        dfs(r - 1, c, heights[r][c], heights, isReachable)
+        dfs(r + 1, c, heights[r][c], heights, isReachable)
     }
 
     private fun findAtlanticCells(heights: Array<IntArray>): Array<BooleanArray> {
