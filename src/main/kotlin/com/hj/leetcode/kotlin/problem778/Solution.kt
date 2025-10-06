@@ -64,8 +64,8 @@ class Solution {
             x: Int,
             y: Int,
         ) {
-            var xp = find(x)
-            var yp = find(y)
+            val xp = find(x)
+            val yp = find(y)
 
             if (xp == yp) {
                 return
