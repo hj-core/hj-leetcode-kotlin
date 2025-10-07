@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem1488
  */
 class Solution2 {
     // Complexity:
-    // Time O(NLogN) and Space O(N) where N is the size of rains.
+    // Time O(N) and Space O(N) where N is the size of rains.
     fun avoidFlood(rains: IntArray): IntArray {
         // UnionFind
         val parent = IntArray(rains.size + 1) { rains.size }
