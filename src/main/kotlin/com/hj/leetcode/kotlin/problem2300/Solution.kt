@@ -24,8 +24,8 @@ class Solution {
         success: Long,
     ): Int {
         val target = (success + spell - 1) / spell
-        // Binary search on the number of potions that are
-        // less than target.
+        // Binary search to find the number of potions that are
+        // less than target, which is in range [left, right].
         var left = 0
         var right = sortedPotions.size
         while (left < right) {
