@@ -18,14 +18,14 @@ class Solution {
         // time of the jth wizard making the ith potion.
         //
         // We can find the minimum S(i+1, 0) - S(i, 0) by
-        // satisfying S(i+1, j) >= S(i, j) for all valid (i, j).
+        // satisfying S(i+1, j) >= S(i, j) for all j.
         var t = 0L
         var skillSum = 0
         for (i in 0..<mana.size - 1) {
             val m = mana[i].toLong()
             val dm = mana[i + 1] - m
             var dt = m * skill[0] // j=0
-            skillSum = 0 // sum(mana[0..<j])
+            skillSum = 0 // sum(skill[0..<j])
             for (j in 1..<skill.size) {
                 skillSum += skill[j - 1]
                 dt = maxOf(dt, m * skill[j] - dm * skillSum)
