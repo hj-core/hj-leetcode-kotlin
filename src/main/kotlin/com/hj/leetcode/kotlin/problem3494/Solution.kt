@@ -17,8 +17,8 @@ class Solution {
         // S(i, j) and E(i, j) are the start time and complete
         // time of the jth wizard making the ith potion.
         //
-        // We can find the minimum S(i+1, 0) - S(i, 0) by
-        // satisfying S(i+1, j) >= S(i, j) for all j.
+        // We can find the minimum S(i+1, 0) - S(i, 0) that
+        // satisfies S(i+1, j) >= S(i, j) for all j.
         var t = 0L
         var skillSum = 0
         for (i in 0..<mana.size - 1) {
