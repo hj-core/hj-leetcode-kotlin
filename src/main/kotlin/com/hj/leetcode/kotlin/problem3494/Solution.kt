@@ -26,6 +26,7 @@ class Solution {
             val dm = mana[i + 1] - m
             var dt = m * skill[0] // j=0
             skillSum = 0 // sum(skill[0..<j])
+
             for (j in 1..<skill.size) {
                 skillSum += skill[j - 1]
                 dt = maxOf(dt, m * skill[j] - dm * skillSum)
