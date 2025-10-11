@@ -12,7 +12,7 @@ class Solution2 {
     // This function may modify the input array.
     fun maximumTotalDamage(power: IntArray): Long {
         val sortedPower =
-            if (power.size < 4096) {
+            if (power.size < 1024) {
                 power.sort()
                 power
             } else {
