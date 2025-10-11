@@ -37,8 +37,8 @@ class Solution {
                     dp[(size - 1) and 3],
                     freq * sortedPower[i] + dp[j and 3],
                 )
-            dpPower[size and 3] = sortedPower[i]
 
+            dpPower[size and 3] = sortedPower[i]
             size++
             freq = 1
         }
