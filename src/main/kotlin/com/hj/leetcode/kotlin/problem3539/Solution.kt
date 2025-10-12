@@ -13,10 +13,10 @@ class Solution {
         k: Int,
         nums: IntArray,
     ): Int {
-        val facModM = facMod(m) // m! % mod
+        val mFacMod = facMod(m) // m! % mod
 
         val invFacMod = LongArray(m + 1) // invFacMod[n] * n! % mod = 1
-        invFacMod[m] = expMod(facModM, mod - 2)
+        invFacMod[m] = expMod(mFacMod, mod - 2)
         for (i in m - 1 downTo 0) {
             invFacMod[i] = invFacMod[i + 1] * (i + 1) % mod
         }
@@ -87,7 +87,7 @@ class Solution {
                 result += dp1[m][carry][cnt]
             }
         }
-        result = result % mod * facModM % mod
+        result = result % mod * mFacMod % mod
         return result.toInt()
     }
 
@@ -102,6 +102,7 @@ class Solution {
         var result = 1L
         var newBase = base % mod
         var newExp = exp
+
         while (newExp > 0) {
             if (newExp and 1 == 1) {
                 result = result * newBase % mod
