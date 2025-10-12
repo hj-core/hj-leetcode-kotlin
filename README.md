@@ -135,6 +135,7 @@ at [LeetCode](https://leetcode.com/hj-core/).
 | [3445. Maximum Difference Between Even and Odd Frequency II](https://leetcode.com/problems/maximum-difference-between-even-and-odd-frequency-ii/)                         | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3445/Solution.kt)                                                                               | 2025-06-11    |
 | [3480. Maximize Subarrays After Removing One Conflicting Pair](https://leetcode.com/problems/maximize-subarrays-after-removing-one-conflicting-pair/)                     | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3480/Solution.kt), [Solution2](src/main/kotlin/com/hj/leetcode/kotlin/problem3480/Solution2.kt) | 2025-07-26    |
 | [3495. Minimum Operations to Make Array Elements Zero](https://leetcode.com/problems/minimum-operations-to-make-array-elements-zero/)                                     | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3495/Solution.kt), [Solution2](src/main/kotlin/com/hj/leetcode/kotlin/problem3495/Solution2.kt) | 2025-09-06    |
+| [3539. Find Sum of Array Product of Magical Sequences](https://leetcode.com/problems/find-sum-of-array-product-of-magical-sequences/)                                     | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3539/Solution.kt)                                                                               | 2025-10-12    |
 
 ### Medium
 
