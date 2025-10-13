@@ -31,4 +31,15 @@ class Solution {
         }
         return result
     }
+
+    // Returns a collision-free hash for checking anagrams
+    // consisting of up to 15 lowercase English letters.
+    fun hashAnagramAlt(word: String): IntArray {
+        val result = IntArray(4)
+        for (c in word) {
+            val idx = c - 'a'
+            result[idx and 3] += 1 shl idx
+        }
+        return result
+    }
 }
