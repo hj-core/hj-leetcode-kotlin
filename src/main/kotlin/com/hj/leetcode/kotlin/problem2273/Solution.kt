@@ -9,22 +9,21 @@ class Solution {
     // of words.
     fun removeAnagrams(words: Array<String>): List<String> {
         val result = mutableListOf(words[0])
-        val hash = hashWord(words[0])
+        val hash = hashAnagram(words[0])
 
         for (i in 1..<words.size) {
-            val newHash = hashWord(words[i])
-            if (newHash.contentEquals(hash)) {
-                continue
+            val newHash = hashAnagram(words[i])
+            if (!newHash.contentEquals(hash)) {
+                result.add(words[i])
+                newHash.copyInto(hash)
             }
-            result.add(words[i])
-            newHash.copyInto(hash)
         }
         return result
     }
 
     // Returns a collision-free hash for checking anagrams
     // consisting of up to 15 lowercase English letters.
-    fun hashWord(word: String): LongArray {
+    fun hashAnagram(word: String): LongArray {
         val result = LongArray(2)
         for (c in word) {
             val idx = c - 'a'
