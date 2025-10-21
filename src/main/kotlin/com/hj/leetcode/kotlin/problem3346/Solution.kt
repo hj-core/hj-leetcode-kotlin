@@ -54,12 +54,12 @@ class Solution {
             }
 
             midEnd = maxOf(midEnd, i)
-            while (newNums[midEnd] <= newNums[oldI] + k) {
+            while (newNums[midEnd] - newNums[oldI] <= k) {
                 midEnd++
             }
 
             rightEnd = maxOf(rightEnd, midEnd)
-            while (newNums[rightEnd] <= newNums[oldI] + 2 * k) {
+            while (newNums[rightEnd] - newNums[oldI] <= 2 * k) {
                 rightEnd++
             }
 
