@@ -39,7 +39,6 @@ class Solution {
                 leftStart++
             }
 
-            midStart = maxOf(midStart, leftStart)
             while (k < newNums[i] - newNums[midStart]) {
                 midStart++
             }
@@ -50,7 +49,6 @@ class Solution {
                 i++
             }
 
-            midEnd = maxOf(midEnd, i)
             while (newNums[midEnd] - newNums[oldI] <= k) {
                 midEnd++
             }
