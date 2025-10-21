@@ -11,7 +11,15 @@ class Solution {
         k: Int,
         numOperations: Int,
     ): Int {
-        val sortedNums = nums.sortedArray()
+        val newNums = IntArray(nums.size + 1)
+        nums.copyInto(newNums)
+        // Extra number for the ease of boundary check
+        newNums[newNums.lastIndex] = Int.MAX_VALUE
+        newNums.sort()
+        // Ensure the extra number does not affect the result
+        check(newNums.last() - 2 * k > newNums[nums.lastIndex]) {
+            "The extra number may lead to incorrect result"
+        }
 
         // We greedily limit the target value to match nums[i]-k,
         // nums[i], and nums[i]+k, and use three sliding windows
@@ -29,29 +37,29 @@ class Solution {
         // Right window contains all numbers in [nums[i], nums[i]+2k]
         var rightEnd = 0
 
-        while (i < sortedNums.size) {
-            while (sortedNums[leftStart] + 2 * k < sortedNums[i]) {
+        while (i < nums.size) {
+            while (newNums[leftStart] + 2 * k < newNums[i]) {
                 leftStart++
             }
 
             midStart = maxOf(midStart, leftStart)
-            while (sortedNums[midStart] + k < sortedNums[i]) {
+            while (newNums[midStart] + k < newNums[i]) {
                 midStart++
             }
 
             val oldI = i
             i++
-            while (i < sortedNums.size && sortedNums[i] == sortedNums[oldI]) {
+            while (newNums[i] == newNums[oldI]) {
                 i++
             }
 
             midEnd = maxOf(midEnd, i)
-            while (midEnd < sortedNums.size && sortedNums[midEnd] <= sortedNums[oldI] + k) {
+            while (newNums[midEnd] <= newNums[oldI] + k) {
                 midEnd++
             }
 
             rightEnd = maxOf(rightEnd, midEnd)
-            while (rightEnd < sortedNums.size && sortedNums[rightEnd] <= sortedNums[oldI] + 2 * k) {
+            while (newNums[rightEnd] <= newNums[oldI] + 2 * k) {
                 rightEnd++
             }
 
