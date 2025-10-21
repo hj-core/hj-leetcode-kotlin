@@ -16,10 +16,6 @@ class Solution {
         // Extra number for the ease of boundary check
         newNums[newNums.lastIndex] = Int.MAX_VALUE
         newNums.sort()
-        // Ensure the extra number does not affect the result
-        check(newNums.last() - newNums[nums.lastIndex] > k) {
-            "The extra number may lead to incorrect result"
-        }
 
         // We greedily limit the target value to match nums[i]-k
         // and nums[i], and use two sliding windows to determine
