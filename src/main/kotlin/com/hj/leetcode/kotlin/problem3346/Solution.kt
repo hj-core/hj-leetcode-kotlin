@@ -38,12 +38,12 @@ class Solution {
         var rightEnd = 0
 
         while (i < nums.size) {
-            while (newNums[leftStart] + 2 * k < newNums[i]) {
+            while (newNums[leftStart] < newNums[i] - 2 * k) {
                 leftStart++
             }
 
             midStart = maxOf(midStart, leftStart)
-            while (newNums[midStart] + k < newNums[i]) {
+            while (newNums[midStart] < newNums[i] - k) {
                 midStart++
             }
 
