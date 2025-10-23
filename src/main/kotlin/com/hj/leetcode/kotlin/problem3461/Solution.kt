@@ -7,11 +7,11 @@ class Solution {
     // Complexity:
     // Time O(N) and Space O(1) where N is the length of s.
     fun hasSameDigits(s: String): Boolean {
-        var result = 0
+        var digitDiff = 0
         for ((i, f) in combMod10Iter(s.length - 2).withIndex()) {
-            result = (result + f * (s[i] - s[i + 1])) % 10
+            digitDiff = (digitDiff + f * (s[i] - s[i + 1])) % 10
         }
-        return result == 0
+        return digitDiff == 0
     }
 
     // Returns an iterator of Comb(n,i)%10 for i in 0..=n.
