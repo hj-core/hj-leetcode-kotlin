@@ -77,5 +77,5 @@ class Solution {
     private fun calcXMod10(
         xMod2: Int,
         xMod5: Int,
-    ): Int = (xMod2 * 5 - xMod5 * 4).mod(10) // Chinese Remainder Theorem
+    ): Int = (xMod2 * 5 + xMod5 * 6) % 10 // Chinese Remainder Theorem
 }
