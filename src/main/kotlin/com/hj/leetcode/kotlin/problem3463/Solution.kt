@@ -9,7 +9,15 @@ class Solution {
     fun hasSameDigits(s: String): Boolean {
         var digitDiff = 0
         for ((i, f) in combMod10Iter(s.length - 2).withIndex()) {
-            digitDiff = (digitDiff + f * (s[i] - s[i + 1])) % 10
+            val mirrorI = s.length - 2 - i
+            if (i < mirrorI) {
+                digitDiff = (digitDiff + f * ((s[i] - s[i + 1]) + (s[mirrorI] - s[mirrorI + 1]))) % 10
+            } else if (i == mirrorI) {
+                digitDiff = (digitDiff + f * (s[i] - s[i + 1])) % 10
+                break
+            } else {
+                break
+            }
         }
         return digitDiff == 0
     }
