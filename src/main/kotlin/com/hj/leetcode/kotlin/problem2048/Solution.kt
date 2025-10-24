@@ -4,8 +4,11 @@ package com.hj.leetcode.kotlin.problem2048
  * LeetCode page: [2048. Next Greater Numerically Balanced Number](https://leetcode.com/problems/next-greater-numerically-balanced-number/);
  */
 class Solution {
-    private val maxBeautiful = intArrayOf(0, 1, 22, 333, 4444, 55555, 666666, 7777777)
+    // Minimum and maximum beautiful numbers by length
     private val minBeautiful = intArrayOf(0, 1, 22, 122, 1333, 14444, 122333, 1224444)
+    private val maxBeautiful = intArrayOf(0, 1, 22, 333, 4444, 55555, 666666, 7777777)
+
+    // Combinations of beautiful numbers
     private val combinations =
         arrayOf(
             arrayOf(intArrayOf()),
@@ -61,6 +64,12 @@ class Solution {
         return digits.toIntArray().apply { reverse() }
     }
 
+    // Rearranges the permutation to form the smallest possible
+    // beautiful number that is greater than digits and returns
+    // whether the attempt was successful.
+    //
+    // # Invariant
+    // permutation[i:] should be in sorted order.
     private fun rearrange(
         digits: IntArray,
         permutation: IntArray,
@@ -76,15 +85,11 @@ class Solution {
         }
 
         if (permutation[j] == digits[i]) {
-            for (k in j downTo i + 1) {
-                permutation.swap(k, k - 1)
-            }
+            permutation.rotateRight(i..j)
             if (rearrange(digits, permutation, i + 1)) {
                 return true
             }
-            for (k in i..<j) {
-                permutation.swap(k, k + 1)
-            }
+            permutation.rotateLeft(i..j)
         }
 
         while (j < permutation.size && permutation[j] <= digits[i]) {
@@ -93,17 +98,30 @@ class Solution {
         if (j == permutation.size) {
             return false
         }
-        for (k in j downTo i + 1) {
-            permutation.swap(k, k - 1)
-        }
+        permutation.rotateRight(i..j)
         return true
     }
 
-    private fun IntArray.swap(
-        i: Int,
-        j: Int,
-    ) {
-        this[i] = this[j].also { this[j] = this[i] }
+    private fun IntArray.rotateRight(range: IntRange) {
+        val first = range.first
+        val last = range.last
+
+        val tmp = this[last]
+        for (i in last downTo first + 1) {
+            this[i] = this[i - 1]
+        }
+        this[first] = tmp
+    }
+
+    private fun IntArray.rotateLeft(range: IntRange) {
+        val first = range.first
+        val last = range.last
+
+        val tmp = this[first]
+        for (i in first..<last) {
+            this[i] = this[i + 1]
+        }
+        this[last] = tmp
     }
 
     private fun value(digits: IntArray): Int {
