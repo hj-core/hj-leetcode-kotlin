@@ -11,7 +11,7 @@ class Solution {
         val extraDays = n - fullWeeks * 7
 
         return arithSeqSum(1, fullWeeks) * 7 +
-            arithSeqSum(1, 6) * fullWeeks +
+            arithSeqSum(0, 6) * fullWeeks +
             arithSeqSum(fullWeeks + 1, fullWeeks + extraDays)
     }
 
