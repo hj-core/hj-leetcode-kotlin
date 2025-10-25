@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem1716
  */
 class Solution {
     // Complexity:
-    // Time O(n) and Space O(1).
+    // Time O(1) and Space O(1).
     fun totalMoney(n: Int): Int {
         val fullWeeks = n / 7
         val extraDays = n - fullWeeks * 7
