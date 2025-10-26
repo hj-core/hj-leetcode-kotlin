@@ -8,6 +8,10 @@ class Solution
 class Bank(
     private val balance: LongArray,
 ) {
+    private fun hasAccount(account: Int): Boolean = 0 < account && account <= balance.size
+
+    private fun getBalanceUnchecked(account: Int): Long = balance[account - 1]
+
     fun transfer(
         account1: Int,
         account2: Int,
@@ -23,10 +27,6 @@ class Bank(
         depositUnchecked(account2, withdrawUnchecked(account1, money))
         return true
     }
-
-    private fun hasAccount(account: Int): Boolean = 0 < account && account <= balance.size
-
-    private fun getBalanceUnchecked(account: Int): Long = balance[account - 1]
 
     fun deposit(
         account: Int,
