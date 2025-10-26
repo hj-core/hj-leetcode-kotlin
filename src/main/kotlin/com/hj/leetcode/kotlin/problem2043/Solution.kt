@@ -8,37 +8,49 @@ class Solution
 class Bank(
     private val balance: LongArray,
 ) {
-    private fun hasAccount(account: Int): Boolean = 0 < account && account <= balance.size
+    private fun hasAccount(account: Int): Boolean =
+        account in 1..balance.size
 
-    private fun getBalanceUnchecked(account: Int): Long = balance[account - 1]
+    private fun getBalanceUnchecked(account: Int): Long =
+        balance[account - 1]
 
     fun transfer(
         account1: Int,
         account2: Int,
         money: Long,
     ): Boolean {
-        if (!hasAccount(account1) || !hasAccount(account2)) {
-            return false
-        }
-        if (getBalanceUnchecked(account1) < money) {
+        if (!canTransfer(account1, account2, money)) {
             return false
         }
 
-        depositUnchecked(account2, withdrawUnchecked(account1, money))
+        withdrawUnchecked(account1, money)
+        depositUnchecked(account2, money)
         return true
     }
+
+    private fun canTransfer(
+        account1: Int,
+        account2: Int,
+        money: Long,
+    ): Boolean =
+        canWithdraw(account1, money) && canDeposit(account2, money)
 
     fun deposit(
         account: Int,
         money: Long,
     ): Boolean {
-        if (!hasAccount(account)) {
+        if (!canDeposit(account, money)) {
             return false
         }
 
         depositUnchecked(account, money)
         return true
     }
+
+    private fun canDeposit(
+        account: Int,
+        money: Long,
+    ): Boolean = hasAccount(account) && 0 <= money
 
     private fun depositUnchecked(
         account: Int,
@@ -52,16 +64,20 @@ class Bank(
         account: Int,
         money: Long,
     ): Boolean {
-        if (!hasAccount(account)) {
-            return false
-        }
-        if (getBalanceUnchecked(account) < money) {
+        if (!canWithdraw(account, money)) {
             return false
         }
 
         withdrawUnchecked(account, money)
         return true
     }
+
+    private fun canWithdraw(
+        account: Int,
+        money: Long,
+    ): Boolean =
+        hasAccount(account) &&
+            money in 0..getBalanceUnchecked(account)
 
     private fun withdrawUnchecked(
         account: Int,
