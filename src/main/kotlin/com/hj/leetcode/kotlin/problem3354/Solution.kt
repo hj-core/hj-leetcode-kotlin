@@ -14,10 +14,14 @@ class Solution {
         var result = 0
 
         for (num in nums) {
-            prefixSum += num
-            suffixSum -= num
+            if (num != 0) {
+                prefixSum += num
+                suffixSum -= num
+                continue
+            }
+
             val diff = abs(prefixSum - suffixSum)
-            if (num == 0 && diff < 2) {
+            if (diff < 2) {
                 result += 2 - diff
             }
         }
