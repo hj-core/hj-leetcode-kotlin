@@ -29,11 +29,16 @@ class Solution {
         }
 
         for ((r0, c0) in guards) {
-            if (grid[r0][c0] == 0) {
-                result--
-            }
-            grid[r0][c0] = 7
+            grid[r0][c0] = grid[r0][c0] xor 4
 
+            for (r in r0..<m) {
+                if (grid[r][c0] and 1 != 0) {
+                    break
+                } else {
+                    grid[r][c0] = grid[r][c0] xor 1
+                    result -= grid[r][c0] shr 1 and 1 xor 1
+                }
+            }
             for (r in r0 - 1 downTo 0) {
                 if (grid[r][c0] and 1 != 0) {
                     break
@@ -42,17 +47,7 @@ class Solution {
                     result -= grid[r][c0] shr 1 and 1 xor 1
                 }
             }
-
-            for (r in r0 + 1..<m) {
-                if (grid[r][c0] and 1 != 0) {
-                    break
-                } else {
-                    grid[r][c0] = grid[r][c0] xor 1
-                    result -= grid[r][c0] shr 1 and 1 xor 1
-                }
-            }
-
-            for (c in c0 - 1 downTo 0) {
+            for (c in c0..<n) {
                 if (grid[r0][c] and 2 != 0) {
                     break
                 } else {
@@ -60,8 +55,7 @@ class Solution {
                     result -= grid[r0][c] and 1 xor 1
                 }
             }
-
-            for (c in c0 + 1..<n) {
+            for (c in c0 - 1 downTo 0) {
                 if (grid[r0][c] and 2 != 0) {
                     break
                 } else {
