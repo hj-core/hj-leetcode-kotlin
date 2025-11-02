@@ -21,11 +21,17 @@ class Solution {
         // bit 2 is set if it is watched from column direction.
         val grid = Array(m) { IntArray(n) }
 
+        var result = m * n
+
         for ((r0, c0) in walls) {
             grid[r0][c0] = 7
+            result--
         }
 
         for ((r0, c0) in guards) {
+            if (grid[r0][c0] == 0) {
+                result--
+            }
             grid[r0][c0] = 7
 
             for (r in r0 - 1 downTo 0) {
@@ -33,6 +39,7 @@ class Solution {
                     break
                 } else {
                     grid[r][c0] = grid[r][c0] xor 1
+                    result -= grid[r][c0] shr 1 and 1 xor 1
                 }
             }
 
@@ -41,6 +48,7 @@ class Solution {
                     break
                 } else {
                     grid[r][c0] = grid[r][c0] xor 1
+                    result -= grid[r][c0] shr 1 and 1 xor 1
                 }
             }
 
@@ -49,6 +57,7 @@ class Solution {
                     break
                 } else {
                     grid[r0][c] = grid[r0][c] xor 2
+                    result -= grid[r0][c] and 1 xor 1
                 }
             }
 
@@ -57,10 +66,11 @@ class Solution {
                     break
                 } else {
                     grid[r0][c] = grid[r0][c] xor 2
+                    result -= grid[r0][c] and 1 xor 1
                 }
             }
         }
 
-        return grid.sumOf { it.count { v -> v == 0 } }
+        return result
     }
 }
