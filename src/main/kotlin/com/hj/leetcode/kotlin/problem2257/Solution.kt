@@ -25,8 +25,8 @@ class Solution {
 
         for ((r0, c0) in walls) {
             grid[r0][c0] = 7
-            result--
         }
+        result -= walls.size
 
         for ((r0, c0) in guards) {
             grid[r0][c0] = grid[r0][c0] xor 4
