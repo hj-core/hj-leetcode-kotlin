@@ -4,27 +4,28 @@ package com.hj.leetcode.kotlin.problem1578
  * LeetCode page: [1578. Minimum Time to Make Rope Colorful](https://leetcode.com/problems/minimum-time-to-make-rope-colorful/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(N) and Space O(1) where N is the size of colors;
-     */
-    fun minCost(colors: String, neededTime: IntArray): Int {
-        return neededTime.sum() - timeNotRemoved(neededTime, colors)
-    }
+    // Complexity:
+    // Time O(N) and Space O(1) where N is the length of colors.
+    fun minCost(
+        colors: String,
+        neededTime: IntArray,
+    ): Int {
+        var totalCost = neededTime[0]
+        var maxCostInGroup = neededTime[0]
 
-    private fun timeNotRemoved(neededTime: IntArray, colors: String): Int {
-        var result = 0
-        var segmentMaxCost = neededTime[0]
+        for (i in 1..<colors.length) {
+            totalCost += neededTime[i]
 
-        for (index in 1..colors.lastIndex) {
-            val sameColorSegment = colors[index] == colors[index - 1]
-            if (sameColorSegment) {
-                segmentMaxCost = maxOf(segmentMaxCost, neededTime[index])
+            if (colors[i] == colors[i - 1]) {
+                maxCostInGroup =
+                    maxOf(maxCostInGroup, neededTime[i])
             } else {
-                result += segmentMaxCost
-                segmentMaxCost = neededTime[index]
+                totalCost -= maxCostInGroup
+                maxCostInGroup = neededTime[i]
             }
         }
-        result += segmentMaxCost
-        return result
+
+        totalCost -= maxCostInGroup
+        return totalCost
     }
 }
