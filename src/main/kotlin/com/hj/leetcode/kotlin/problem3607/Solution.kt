@@ -24,7 +24,7 @@ class Solution {
             val parent = uf.find(id)
             val group =
                 groups.computeIfAbsent(parent) {
-                    IntArray(1 + uf.rank(parent))
+                    IntArray(1 + uf.componentSize(parent))
                 }
             group[0]++
             group[group[0]] = id
@@ -66,7 +66,7 @@ private class UnionFind(
     size: Int,
 ) {
     private val parent = IntArray(size) { it }
-    private val rank = IntArray(size) { 1 }
+    private val componentSize = IntArray(size) { 1 }
 
     fun find(i: Int): Int {
         if (parent[i] == i) {
@@ -86,15 +86,15 @@ private class UnionFind(
             return false
         }
 
-        if (rank[rootI] < rank[rootJ]) {
+        if (componentSize[rootI] < componentSize[rootJ]) {
             parent[rootI] = rootJ
-            rank[rootJ] += rank[rootI]
+            componentSize[rootJ] += componentSize[rootI]
         } else {
             parent[rootJ] = rootI
-            rank[rootI] += rank[rootJ]
+            componentSize[rootI] += componentSize[rootJ]
         }
         return true
     }
 
-    fun rank(i: Int): Int = rank[i]
+    fun componentSize(i: Int): Int = componentSize[i]
 }
