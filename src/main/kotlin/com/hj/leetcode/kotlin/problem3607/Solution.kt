@@ -17,17 +17,17 @@ class Solution {
             uf.union(u, v)
         }
 
-        // For each group, group[group.size-group[0]] is the
-        // smallest online node in the group.
-        val groups = HashMap<Int, IntArray>()
+        // For each component, component[size-component[0]] is
+        // the smallest online node in the component.
+        val components = HashMap<Int, IntArray>()
         for (id in 1..c) {
-            val parent = uf.find(id)
-            val group =
-                groups.computeIfAbsent(parent) {
-                    IntArray(1 + uf.componentSize(parent))
+            val root = uf.find(id)
+            val comp =
+                components.computeIfAbsent(root) {
+                    IntArray(1 + uf.componentSize(root))
                 }
-            group[0]++
-            group[group[0]] = id
+            comp[0]++
+            comp[comp[0]] = id
         }
 
         val result = mutableListOf<Int>()
@@ -44,18 +44,18 @@ class Solution {
                 continue
             }
 
-            val parent = uf.find(id)
-            val group = checkNotNull(groups[parent])
-            while (0 < group[0] &&
-                isOffline[group[group.size - group[0]]]
+            val root = uf.find(id)
+            val comp = checkNotNull(components[root])
+            while (0 < comp[0] &&
+                isOffline[comp[comp.size - comp[0]]]
             ) {
-                group[0]--
+                comp[0]--
             }
 
-            if (group[0] == 0) {
+            if (comp[0] == 0) {
                 result.add(-1)
             } else {
-                result.add(group[group.size - group[0]])
+                result.add(comp[comp.size - comp[0]])
             }
         }
         return result.toIntArray()
@@ -65,15 +65,17 @@ class Solution {
 private class UnionFind(
     size: Int,
 ) {
-    private val parent = IntArray(size) { it }
-    private val componentSize = IntArray(size) { 1 }
+    private val root = IntArray(size) { it }
+    private val size = IntArray(size) { 1 }
+
+    fun componentSize(i: Int): Int = size[i]
 
     fun find(i: Int): Int {
-        if (parent[i] == i) {
+        if (root[i] == i) {
             return i
         }
-        parent[i] = find(parent[i])
-        return parent[i]
+        root[i] = find(root[i])
+        return root[i]
     }
 
     fun union(
@@ -86,15 +88,13 @@ private class UnionFind(
             return false
         }
 
-        if (componentSize[rootI] < componentSize[rootJ]) {
-            parent[rootI] = rootJ
-            componentSize[rootJ] += componentSize[rootI]
+        if (size[rootI] < size[rootJ]) {
+            root[rootI] = rootJ
+            size[rootJ] += size[rootI]
         } else {
-            parent[rootJ] = rootI
-            componentSize[rootI] += componentSize[rootJ]
+            root[rootJ] = rootI
+            size[rootI] += size[rootJ]
         }
         return true
     }
-
-    fun componentSize(i: Int): Int = componentSize[i]
 }
