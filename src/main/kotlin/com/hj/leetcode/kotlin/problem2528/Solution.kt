@@ -13,15 +13,16 @@ class Solution {
         k: Int,
     ): Long {
         val powers = calcPowers(stations, r)
+        val minPower = powers.min()
 
         if (stations.size <= 1 + r * 2) {
-            return powers.min() + k
+            return minPower + k
         }
 
         // Binary search on the maximum minimum power, which is
         // in range [left-1, right].
-        var left = 1L
-        var right = powers.min() + k
+        var left = minPower + 1
+        var right = minPower + k
 
         while (left <= right) {
             val mid = left + (right - left) / 2
