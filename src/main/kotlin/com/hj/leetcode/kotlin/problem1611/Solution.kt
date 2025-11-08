@@ -7,6 +7,8 @@ class Solution {
     // Complexity:
     // Time O(Log n) and Space O(1).
     fun minimumOneBitOperations(n: Int): Int {
+        // Think about it in the inverted direction: make 0 into
+        // the MSB.
         var result = 0
         var bit = 1
         while (bit <= n) {
