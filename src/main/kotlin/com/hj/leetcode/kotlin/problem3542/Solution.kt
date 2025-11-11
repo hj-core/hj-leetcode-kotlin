@@ -13,13 +13,12 @@ class Solution {
         for (num in nums) {
             while (num < monoStack.last()) {
                 monoStack.removeLast()
-                result++
             }
             if (num > monoStack.last()) {
                 monoStack.add(num)
+                result++
             }
         }
-        result += monoStack.size - 1
         return result
     }
 }
