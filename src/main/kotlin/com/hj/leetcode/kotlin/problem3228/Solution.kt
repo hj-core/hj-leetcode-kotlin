@@ -11,7 +11,7 @@ class Solution {
         var gaps = 0 // 1-0 transitions
         for (i in s.length - 2 downTo 0) {
             if (s[i] == '1') {
-                gaps += '1' - s[i + 1]
+                gaps += s[i] - s[i + 1]
                 result += gaps
             }
         }
