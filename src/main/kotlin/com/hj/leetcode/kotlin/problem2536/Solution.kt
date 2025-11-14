@@ -29,10 +29,10 @@ class Solution {
 
         // Prefix sum to compute the final array
         for (i in 1..<n) {
-            result[i][0] += result[i - 1][0]
             result[0][i] += result[0][i - 1]
         }
         for (i in 1..<n) {
+            result[i][0] += result[i - 1][0]
             for (j in 1..<n) {
                 result[i][j] +=
                     result[i - 1][j] + result[i][j - 1] -
