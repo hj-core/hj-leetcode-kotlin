@@ -2,7 +2,8 @@ package com.hj.leetcode.kotlin.problem2154
 
 class Solution2 {
     // Complexity:
-    // Time O(N) and Space O(1) where N is the length of nums.
+    // Time O(N) and Space O(LogM) where N is the length of nums
+    // and M is the upper bound of values.
     fun findFinalValue(
         nums: IntArray,
         original: Int,
