@@ -29,10 +29,10 @@ class Solution {
         val idxRange = Array(26) { intArrayOf(-1, -1) }
         for ((i, char) in s.withIndex()) {
             val c = char - 'a'
+
+            idxRange[c][1] = i
             if (idxRange[c][0] == -1) {
                 idxRange[c][0] = i
-            } else {
-                idxRange[c][1] = i
             }
         }
         return idxRange
