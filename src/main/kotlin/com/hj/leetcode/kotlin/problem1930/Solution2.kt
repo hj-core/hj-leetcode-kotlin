@@ -17,14 +17,16 @@ class Solution2 {
         val startFreq = Array(26) { intArrayOf() }
 
         for (query in queries) {
-            while (sIdx < query[0]) {
+            val keyIdx = query[0]
+            val c = query[1]
+            val isStart = query[2] == 0
+
+            while (sIdx < keyIdx) {
                 currFreq[s[sIdx] - 'a']++
                 sIdx++
             }
 
-            val c = query[1]
-            val isFirst = query[2] == 0
-            if (isFirst) {
+            if (isStart) {
                 startFreq[c] = currFreq.clone()
             } else {
                 result +=
