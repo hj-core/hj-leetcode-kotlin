@@ -64,9 +64,8 @@ class Solution2 {
             val c = char - 'a'
             if (idxRange[c][0] == -1) {
                 idxRange[c][0] = i
-            } else {
-                idxRange[c][1] = i
             }
+            idxRange[c][1] = i
         }
         return idxRange
     }
