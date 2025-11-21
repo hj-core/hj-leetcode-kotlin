@@ -4,36 +4,37 @@ package com.hj.leetcode.kotlin.problem1930
  * LeetCode page: [1930. Unique Length-3 Palindromic Subsequences](https://leetcode.com/problems/unique-length-3-palindromic-subsequences/);
  */
 class Solution {
-    /*
-     * Time O(KN) and Space O(K)
-     * where N is the length of s and K is the number of possible chars.
-     */
+    // Complexity:
+    // Time O(KN) and Space O(K) where N is the length of s and K
+    // is the number of possible chars.
     fun countPalindromicSubsequence(s: String): Int {
-        val ranges = firstAndLastIndicesOfEachChar(s)
         var result = 0
-        for ((first, last) in ranges) {
-            if (last == s.length) {
-                continue
+        val idxRange = computeCharIndexRange(s)
+
+        for ((first, last) in idxRange) {
+            if (first < last) {
+                val visited = BooleanArray(26)
+                for (i in first + 1..<last) {
+                    visited[s[i] - 'a'] = true
+                }
+                result += visited.count { it }
             }
-            val uniqueChars = hashSetOf<Char>()
-            for (i in first + 1..<last) {
-                uniqueChars.add(s[i])
-            }
-            result += uniqueChars.size
         }
         return result
     }
 
-    private fun firstAndLastIndicesOfEachChar(s: String): Array<IntArray> {
-        val result = Array(26) { intArrayOf(s.length, s.length) }
-        for ((i, c) in s.withIndex()) {
-            val isFirst = result[c - 'a'][0] == s.length
-            if (isFirst) {
-                result[c - 'a'][0] = i
+    private fun computeCharIndexRange(
+        s: String,
+    ): Array<IntArray> {
+        val idxRange = Array(26) { intArrayOf(-1, -1) }
+        for ((i, char) in s.withIndex()) {
+            val c = char - 'a'
+            if (idxRange[c][0] == -1) {
+                idxRange[c][0] = i
             } else {
-                result[c - 'a'][1] = i
+                idxRange[c][1] = i
             }
         }
-        return result
+        return idxRange
     }
 }
