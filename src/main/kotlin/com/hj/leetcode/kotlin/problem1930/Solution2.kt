@@ -46,6 +46,7 @@ class Solution2 {
     ): MutableList<IntArray> {
         val charIndexRange = computeCharIndexRange(s)
         val queries = mutableListOf<IntArray>()
+
         for ((c, idxRange) in charIndexRange.withIndex()) {
             val (first, last) = idxRange
             if (first < last) {
