@@ -7,5 +7,5 @@ class Solution {
     // Complexity:
     // Time O(N) and Space O(1) where N is the length of nums.
     fun minimumOperations(nums: IntArray): Int =
-        nums.sumOf { if (it % 3 == 0) 0 else 1 as Int }
+        nums.count { it % 3 != 0 }
 }
