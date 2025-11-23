@@ -9,10 +9,11 @@ class Solution2 {
     fun maxSumDivThree(nums: IntArray): Int {
         // dp[r]@i:= the maximum sum from nums[..<i] such that it
         // modulo 3 equals r.
-        val dp = intArrayOf(0, Int.MIN_VALUE, Int.MIN_VALUE)
+        var dp = intArrayOf(0, Int.MIN_VALUE, Int.MIN_VALUE)
+        var oldDp = IntArray(3)
 
         for (num in nums) {
-            val oldDp = dp.clone()
+            oldDp = dp.also { dp = oldDp }
             val rem = num % 3
             for (r in 0..<3) {
                 val r2 = (r + rem) % 3
