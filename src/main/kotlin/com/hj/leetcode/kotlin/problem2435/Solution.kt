@@ -16,7 +16,7 @@ class Solution {
         val n = grid[0].size
 
         // dp[c][i]@r:= the number of paths from (0, 0) to (r, c)
-        // whose path-sum mod k equals r.
+        // whose path-sum mod k equals i.
         val dp = Array(n) { IntArray(k) }
 
         dp[0][0] = 1
