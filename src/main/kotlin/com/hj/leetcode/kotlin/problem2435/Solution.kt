@@ -37,7 +37,7 @@ class Solution {
         nums: IntArray,
         shift: Int,
     ) {
-        val netShift = shift % nums.size
+        val netShift = shift.mod(nums.size)
         reverse(nums, 0..<netShift)
         reverse(nums, netShift..<nums.size)
         reverse(nums, nums.indices)
