@@ -11,8 +11,8 @@ class Solution {
         k: Int,
     ): Long {
         // minPrefixSum[r]:= the min prefix sum such that
-        // (length - 1) % k equals r % k. The 1-shift is
-        // introduced to eliminate the index-to-length conversion.
+        // (length - 1) % k equals r. The 1-shift is introduced
+        // to eliminate the index-to-length conversion.
         val minPrefixSum = LongArray(k)
         var prefixSum = 0L
         for (i in 0..<k - 1) {
