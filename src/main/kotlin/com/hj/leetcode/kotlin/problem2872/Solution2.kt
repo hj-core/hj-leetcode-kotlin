@@ -12,8 +12,6 @@ class Solution2 {
         values: IntArray,
         k: Int,
     ): Int {
-        val subtreeSum = IntArray(n) { values[it] % k }
-
         val degreeShift = 40
         val unitDegree = 1L shl degreeShift
         // adjXor[node]:=
@@ -38,6 +36,8 @@ class Solution2 {
         }
 
         var result = 1 // Skip the very last node (component)
+        val subtreeSum = IntArray(n) { values[it] % k }
+
         while (qLast > qHead) {
             val node = nodeQueue[qHead]
             qHead++
