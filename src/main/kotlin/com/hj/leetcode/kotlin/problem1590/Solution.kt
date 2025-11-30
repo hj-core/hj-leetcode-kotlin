@@ -1,34 +1,35 @@
 package com.hj.leetcode.kotlin.problem1590
 
-import kotlin.math.min
-
 /**
  * LeetCode page: [1590. Make Sum Divisible by P](https://leetcode.com/problems/make-sum-divisible-by-p/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(N) and Space O(N) where N is the size of nums.
-     */
+    // Complexity:
+    // Time O(N) and Space O(N) where N is the size of nums.
     fun minSubarray(
         nums: IntArray,
         p: Int,
     ): Int {
-        val sum = nums.fold(0L) { acc, i -> acc + i }
-        val target = (sum % p).toInt()
-        if (target == 0) {
+        val arraySum = nums.sumOf(Int::toLong)
+        val subarrayRem = (arraySum % p).toInt()
+        if (subarrayRem == 0) {
             return 0
         }
 
+        // maxPrefix[rem]:=
+        // the max prefix such that prefix sum % p equals rem.
+        val maxPrefix = hashMapOf(0 to -1)
+        var prefixRem = 0
         var result = nums.size
-        var prefixModSum = 0
-        val latestPrefix = mutableMapOf(0 to -1) // The latest index of prefix sum mod p
+
         for (i in nums.indices) {
-            prefixModSum = (prefixModSum + nums[i]) % p
-            val complement = (prefixModSum - target + p) % p
-            if (complement in latestPrefix) {
-                result = min(result, i - checkNotNull(latestPrefix[complement]))
+            prefixRem = (prefixRem + nums[i]) % p
+            val complement = (prefixRem - subarrayRem).mod(p)
+
+            maxPrefix[complement]?.let {
+                result = minOf(result, i - it)
             }
-            latestPrefix[prefixModSum] = i
+            maxPrefix[prefixRem] = i
         }
         return if (result < nums.size) result else -1
     }
