@@ -7,15 +7,15 @@ class Solution {
     // Complexity:
     // Time O(N) and Space O(N) where N is the length of points.
     fun countTrapezoids(points: Array<IntArray>): Int {
-        // ySize[y]:= the number of points with y coordinate
-        val ySize = points.groupingBy { it[1] }.eachCount()
+        // yCount[y]:= the number of points with y coordinate
+        val yCount = points.groupingBy { it[1] }.eachCount()
         var result = 0L
-        var sumPairs = 0L
+        var totalPairs = 0L
 
-        for ((_, size) in ySize) {
-            val pairs = size.toLong() * (size - 1) / 2
-            result += pairs * sumPairs
-            sumPairs += pairs
+        for ((_, cnt) in yCount) {
+            val pairs = cnt.toLong() * (cnt - 1) / 2
+            result += pairs * totalPairs
+            totalPairs += pairs
         }
         return (result % 1_000_000_007).toInt()
     }
