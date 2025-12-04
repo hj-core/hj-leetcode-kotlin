@@ -15,12 +15,20 @@ class Solution {
         var result = 0
         var countR = 0
         while (i < directions.length) {
-            val dir = directions[i]
-            if (dir == 'R') {
-                countR++
-            } else {
-                result += if (dir == 'L') 1 + countR else countR
-                countR = 0
+            when (directions[i]) {
+                'R' -> {
+                    countR++
+                }
+
+                'L' -> {
+                    result += 1 + countR
+                    countR = 0
+                }
+
+                else -> {
+                    result += countR
+                    countR = 0
+                }
             }
             i++
         }
