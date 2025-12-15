@@ -8,7 +8,7 @@ class Solution {
     // Time O(N) and Space O(1) where N is the length of prices.
     fun getDescentPeriods(prices: IntArray): Long {
         var result = 1L // We start from index 1
-        // Length of the 1-increasing subarray backward
+        // Length of the longest smooth descent period backward
         var extendLen = 1
 
         for (i in 1..<prices.size) {
