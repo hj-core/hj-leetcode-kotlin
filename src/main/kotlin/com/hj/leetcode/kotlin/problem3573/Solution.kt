@@ -25,7 +25,7 @@ class Solution {
 
             // The initial best sell and best short make use of the
             // fact that the old dp[i] already accounts for the best
-            // value after start+2. Another choice is to keep track
+            // value after start+1. Another choice is to keep track
             // of the values at previous start, which eliminates the
             // need to compare with the old dp[i].
             var bestSell = prices[start + 1] + dp[start + 2]
