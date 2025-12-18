@@ -715,6 +715,7 @@ at [LeetCode](https://leetcode.com/hj-core/).
 | [3583. Count Special Triplets](https://leetcode.com/problems/count-special-triplets/)                                                                                                           | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3583/Solution.kt)                                                                               | 2025-12-09    |
 | [3607. Power Grid Maintenance](https://leetcode.com/problems/power-grid-maintenance/)                                                                                                           | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3607/Solution.kt)                                                                               | 2025-11-06    |
 | [3623. Count Number of Trapezoids I](https://leetcode.com/problems/count-number-of-trapezoids-i/)                                                                                               | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3623/Solution.kt)                                                                               | 2025-12-02    |
+| [3652. Best Time to Buy and Sell Stock using Strategy](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-using-strategy/)                                                           | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3652/Solution.kt)                                                                               | 2025-12-18    |
 
 ### Easy
 
