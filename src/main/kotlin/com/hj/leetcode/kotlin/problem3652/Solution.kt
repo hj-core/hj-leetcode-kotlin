@@ -18,8 +18,8 @@ class Solution {
 
         val halfK = k / 2
         var wndGain =
-            -(0..<halfK).fold(0L) { acc, i ->
-                acc + strategy[i] * prices[i]
+            (0..<halfK).fold(0L) { acc, i ->
+                acc - strategy[i] * prices[i]
             } +
                 (halfK..<k).fold(0L) { acc, i ->
                     acc + (1 - strategy[i]) * prices[i]
