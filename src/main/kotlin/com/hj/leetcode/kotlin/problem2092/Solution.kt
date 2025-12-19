@@ -21,6 +21,7 @@ class Solution {
             val start = end
             val t = sortedMeetings[end][2]
 
+            // Blindly connect attendees to the network
             while (end < sortedMeetings.size &&
                 sortedMeetings[end][2] == t
             ) {
@@ -29,6 +30,9 @@ class Solution {
                 end++
             }
 
+            // Every one who is not in the right network disconnects
+            // himself from his parent. At the end, every one who
+            // does not know the secret becomes alone again.
             for (j in start..<end) {
                 val (x, y, _) = sortedMeetings[j]
                 if (uf.find(x) != uf.find(0)) {
