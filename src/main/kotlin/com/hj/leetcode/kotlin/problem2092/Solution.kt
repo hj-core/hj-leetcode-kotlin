@@ -4,40 +4,46 @@ package com.hj.leetcode.kotlin.problem2092
  * LeetCode page: [2092. Find All People With Secret](https://leetcode.com/problems/find-all-people-with-secret/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(n+MLogM) and Space O(n+M) where M is the size of meetings;
-     */
-    fun findAllPeople(n: Int, meetings: Array<IntArray>, firstPerson: Int): List<Int> {
+    // Complexity:
+    // Time O(n+MLogM) and Space O(n+M) where M is the size of
+    // meetings.
+    fun findAllPeople(
+        n: Int,
+        meetings: Array<IntArray>,
+        firstPerson: Int,
+    ): List<Int> {
+        val sortedMeetings = meetings.sortedBy { it[2] }
         val uf = UnionFind(n)
         uf.union(0, firstPerson)
 
-        val sortedMeetings = meetings.sortedBy { it[2] }
-        var start = 0
-        while (start < sortedMeetings.size) {
-            var end = start + 1
+        var end = 0
+        while (end < sortedMeetings.size) {
+            val start = end
+            val t = sortedMeetings[end][2]
+
             while (end < sortedMeetings.size &&
-                sortedMeetings[end][2] == sortedMeetings[start][2]
+                sortedMeetings[end][2] == t
             ) {
+                val (x, y, _) = sortedMeetings[end]
+                uf.union(x, y)
                 end++
             }
 
-            for (i in start..<end) {
-                uf.union(sortedMeetings[i][0], sortedMeetings[i][1])
-            }
-            for (i in start..<end) {
-                if (uf.find(sortedMeetings[i][0]) != uf.find(0)) {
-                    uf.weirdRest(sortedMeetings[i][0])
-                    uf.weirdRest(sortedMeetings[i][1])
+            for (j in start..<end) {
+                val (x, y, _) = sortedMeetings[j]
+                if (uf.find(x) != uf.find(0)) {
+                    uf.weirdReset(x)
+                    uf.weirdReset(y)
                 }
             }
-
-            start = end
         }
+
         return (0..<n).filter { uf.find(it) == uf.find(0) }
     }
 
-    private class UnionFind(size: Int) {
-
+    private class UnionFind(
+        size: Int,
+    ) {
         private val parent = IntArray(size) { it }
         private val rank = IntArray(size)
 
@@ -48,17 +54,26 @@ class Solution {
             return parent[x]
         }
 
-        fun union(x: Int, y: Int) {
+        fun union(
+            x: Int,
+            y: Int,
+        ) {
             val xParent = find(x)
             val yParent = find(y)
-
             if (xParent == yParent) {
                 return
             }
 
+            val cmpRank = rank[xParent] - rank[yParent]
             when {
-                rank[xParent] < rank[yParent] -> parent[xParent] = yParent
-                rank[xParent] > rank[yParent] -> parent[yParent] = xParent
+                cmpRank < 0 -> {
+                    parent[xParent] = yParent
+                }
+
+                cmpRank > 0 -> {
+                    parent[yParent] = xParent
+                }
+
                 else -> {
                     parent[xParent] = yParent
                     rank[yParent]++
@@ -66,7 +81,7 @@ class Solution {
             }
         }
 
-        fun weirdRest(x: Int) {
+        fun weirdReset(x: Int) {
             parent[x] = x
             rank[x] = 0
         }
