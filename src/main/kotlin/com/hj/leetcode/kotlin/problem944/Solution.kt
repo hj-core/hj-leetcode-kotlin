@@ -4,20 +4,21 @@ package com.hj.leetcode.kotlin.problem944
  * LeetCode page: [944. Delete Columns to Make Sorted](https://leetcode.com/problems/delete-columns-to-make-sorted/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(N) and Space O(1) where N is the flat length of strs;
-     */
+    // Complexity:
+    // Time O(NM) and Space O(M) where N is the length of strs and
+    // M is the length of each string in strs.
     fun minDeletionSize(strs: Array<String>): Int {
-        val wordLength = strs[0].length
-        var minDeletion = 0
-        for (charIndex in 0 until wordLength) {
-            for (wordIndex in 1 until strs.size) {
-                if (strs[wordIndex][charIndex] < strs[wordIndex - 1][charIndex]) {
-                    minDeletion++
-                    break
-                }
+        val n = strs.size
+        val strLen = strs[0].length
+
+        val shouldDelete = BooleanArray(strLen)
+        for (i in 1..<n) {
+            for (j in 0..<strLen) {
+                shouldDelete[j] =
+                    shouldDelete[j] || (strs[i - 1][j] > strs[i][j])
             }
         }
-        return minDeletion
+
+        return shouldDelete.count { it }
     }
 }
