@@ -18,7 +18,7 @@ class Solution2 {
         // if we keep the column i.
         val dp = IntArray(m)
         for (first in m - 1 downTo 0) {
-            dp[first] = 0
+            dp[first] = 0 // Temporarily exclude first
             var next = first + 1
             while (next + dp[first] < m) {
                 if (dp[first] < dp[next] &&
@@ -28,7 +28,7 @@ class Solution2 {
                 }
                 next++
             }
-            dp[first] += 1
+            dp[first] += 1 // Add 1 for first
 
             maxKeep = maxOf(maxKeep, dp[first])
         }
