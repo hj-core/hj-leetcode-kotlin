@@ -10,6 +10,7 @@ class Solution {
     fun minDeletionSize(strs: Array<String>): Int {
         val m = strs[0].length
         val strsT = transpose(strs)
+        var result = m - 1
 
         // dp[i]:= the minimum deletions for strs[:][i:] if we keep
         // the column i.
@@ -27,9 +28,10 @@ class Solution {
                 }
                 next++
             }
+            result = minOf(result, first + dp[first])
         }
 
-        return dp.indices.minOf { it + dp[it] }
+        return result
     }
 
     private fun transpose(strs: Array<String>): Array<CharArray> {
