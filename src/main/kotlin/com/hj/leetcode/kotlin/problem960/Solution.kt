@@ -26,6 +26,7 @@ class Solution {
                 }
                 next++
             }
+
             result = minOf(result, first + dp[first])
         }
 
