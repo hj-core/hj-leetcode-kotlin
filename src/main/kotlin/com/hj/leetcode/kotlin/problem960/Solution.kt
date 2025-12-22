@@ -19,12 +19,10 @@ class Solution {
             dp[first] = m - first - 1
             var next = first + 1
             while (next - first - 1 < dp[first]) {
-                if (isValidNext(strsT[first], strsT[next])) {
-                    dp[first] =
-                        minOf(
-                            dp[first],
-                            next - first - 1 + dp[next],
-                        )
+                if (next - first - 1 + dp[next] < dp[first] &&
+                    isValidNext(strsT[first], strsT[next])
+                ) {
+                    dp[first] = next - first - 1 + dp[next]
                 }
                 next++
             }

@@ -21,8 +21,10 @@ class Solution2 {
             dp[first] = 0
             var next = first + 1
             while (next + dp[first] < m) {
-                if (isValidNext(strsT[first], strsT[next])) {
-                    dp[first] = maxOf(dp[first], dp[next])
+                if (dp[first] < dp[next] &&
+                    isValidNext(strsT[first], strsT[next])
+                ) {
+                    dp[first] = dp[next]
                 }
                 next++
             }
