@@ -18,17 +18,14 @@ class Solution {
                 max(suffixMaxValue[i + 1], sortedEvents[i][2])
         }
 
-        var result = 0
-        for ((_, end, value) in sortedEvents) {
+        return sortedEvents.maxOf { (_, end, value) ->
             val suffix =
                 sortedEvents.partitionPoint { (start, _, _) ->
                     start <= end
                 }
 
-            result = max(result, value + suffixMaxValue[suffix])
+            value + suffixMaxValue[suffix]
         }
-
-        return result
     }
 
     /**
