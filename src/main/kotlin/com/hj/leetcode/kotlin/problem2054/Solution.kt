@@ -6,51 +6,54 @@ import kotlin.math.max
  * LeetCode page: [2054. Two Best Non-Overlapping Events](https://leetcode.com/problems/two-best-non-overlapping-events/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(NLogN) and Space O(N) where N is the length of events.
-     */
+    // Complexity:
+    // Time O(NLogN) and Space O(N) where N is the length of events.
     fun maxTwoEvents(events: Array<IntArray>): Int {
-        val sortedEvents = events.sortedBy { (start, end, value) -> end }
-        val prefixMaxValues = prefixMaxValues(sortedEvents)
-        var result = prefixMaxValues.last()
+        val sortedEvents =
+            events.sortedBy { (start, end, value) -> start }
 
-        for ((start, _, value) in sortedEvents) {
-            if (start <= sortedEvents[0][1]) {
-                continue
-            }
-            val leftSize = sortedEvents.partitionPoint { (_, end, _) -> end < start }
-            result = max(result, value + prefixMaxValues[leftSize - 1])
+        val suffixMaxValue = IntArray(events.size + 1)
+        for (i in events.indices.reversed()) {
+            suffixMaxValue[i] =
+                max(suffixMaxValue[i + 1], sortedEvents[i][2])
         }
-        return result
-    }
 
-    private fun prefixMaxValues(sortedEvents: List<IntArray>): IntArray {
-        // event = [start, end, value]
-        val result = IntArray(sortedEvents.size)
-        result[0] = sortedEvents[0][2]
-        for (i in 1..<result.size) {
-            result[i] = max(sortedEvents[i][2], result[i - 1])
+        var result = 0
+        for ((_, end, value) in sortedEvents) {
+            val suffix =
+                sortedEvents.partitionPoint { (start, _, _) ->
+                    start <= end
+                }
+
+            result = max(result, value + suffixMaxValue[suffix])
         }
+
         return result
     }
 
     /**
-     * Require the original list can be partitioned into left and right according to [isLeft].
+     * Returns the size of the first partition.
      *
-     * Return the size of the left partition.
+     * The list is assumed to be comprised of all elements
+     * satisfying the predicate and then all elements that do not.
      */
-    private fun <T> List<T>.partitionPoint(isLeft: (T) -> Boolean): Int {
+    private fun <T> List<T>.partitionPoint(
+        pred: (T) -> Boolean,
+    ): Int {
+        // The size is within the range [low, high+1]
         var low = 0
         var high = lastIndex
 
         while (low <= high) {
-            val mid = low + (high - low) / 2
-            if (isLeft(this[mid])) {
+            val mid = (low + high) ushr 1
+
+            if (pred(this[mid])) {
                 low = mid + 1
             } else {
                 high = mid - 1
             }
         }
+
         return low
     }
 }
