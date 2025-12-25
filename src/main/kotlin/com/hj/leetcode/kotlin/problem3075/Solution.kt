@@ -6,34 +6,23 @@ import java.util.*
  * LeetCode page: [3075. Maximize Happiness of Selected Children](https://leetcode.com/problems/maximize-happiness-of-selected-children/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(NLogk) and Space O(k) where N is the size of happiness;
-     */
-    fun maximumHappinessSum(happiness: IntArray, k: Int): Long {
-        return happiness
-            .kHappiest(k)
-            .sumWithReduction();
-    }
+    // Complexity:
+    // Time O(NLogk) and Space O(k) where N is the size of happiness.
+    fun maximumHappinessSum(
+        happiness: IntArray,
+        k: Int,
+    ): Long {
+        val minPq = PriorityQueue<Int>()
+        for (h in happiness) {
+            minPq.offer(h)
 
-    private fun IntArray.kHappiest(k: Int): List<Int> {
-        val pq = PriorityQueue<Int>()
-        for (happiness in this) {
-            pq.offer(happiness)
-            if (pq.size > k) {
-                pq.poll()
+            if (minPq.size > k) {
+                minPq.poll()
             }
         }
 
-        return buildList {
-            repeat(pq.size) { add(pq.poll()) }
-        }.asReversed()
-    }
-
-    private fun List<Int>.sumWithReduction(): Long {
-        var result = 0L
-        for ((reduction, happiness) in this.withIndex()) {
-            result += (happiness - reduction).coerceAtLeast(0)
+        return (k - 1 downTo 0).sumOf {
+            maxOf(0, minPq.poll() - it).toLong()
         }
-        return result
     }
 }
