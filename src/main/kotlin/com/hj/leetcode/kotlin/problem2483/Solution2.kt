@@ -4,26 +4,27 @@ package com.hj.leetcode.kotlin.problem2483
  * LeetCode page: [2483. Minimum Penalty for a Shop](https://leetcode.com/problems/minimum-penalty-for-a-shop/);
  */
 class Solution2 {
-    /* Complexity:
-     * Time O(N) and Space O(1) where N is the length of customers;
-     */
+    // Complexity:
+    // Time O(N) and Space O(1) where N is the length of customers.
     fun bestClosingTime(customers: String): Int {
-        var relativePenalty = 0
-        var minRelativePenalty = 0
-        var result = 0
+        // We minimize an indirect goal: penalty - totalY
+        var penalty2 = 0
+        var minPenalty2 = 0
+        var bestHour = 0
 
-        for (stop in 1..customers.length) {
-            when (customers[stop - 1]) {
-                'Y' -> relativePenalty--
-                'N' -> relativePenalty++
-                else -> throw IllegalArgumentException()
+        for ((t, c) in customers.withIndex()) {
+            if (c == 'Y') {
+                penalty2--
+            } else {
+                penalty2++
             }
 
-            if (relativePenalty < minRelativePenalty) {
-                minRelativePenalty = relativePenalty
-                result = stop
+            if (penalty2 < minPenalty2) {
+                minPenalty2 = penalty2
+                bestHour = t + 1
             }
         }
-        return result
+
+        return bestHour
     }
 }
