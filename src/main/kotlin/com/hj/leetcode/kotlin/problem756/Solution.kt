@@ -30,9 +30,8 @@ class Solution {
         )
     }
 
-    // groupWidth2Bottom groups the valid three-blocks by their
-    // two-block bottoms and uses a bitmask to indicate the
-    // permitted tops.
+    // Groups the valid three-blocks by their two-block bottoms and
+    // uses a bitmask to indicate the permitted tops.
     private fun groupWidth2Bottoms(
         allowed: List<String>,
     ): IntArray {
