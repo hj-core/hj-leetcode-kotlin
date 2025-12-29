@@ -53,7 +53,7 @@ class Solution {
         pyramid: IntArray,
         currLevel: Int,
         currIndex: Int,
-        // key= bottom, val= bit mask of permitted tops
+        // key= bottom, val= bitmask of permitted tops
         width2Bottom: IntArray,
         cannotBuild: HashSet<Int>, // val= bottom
     ): Boolean {
