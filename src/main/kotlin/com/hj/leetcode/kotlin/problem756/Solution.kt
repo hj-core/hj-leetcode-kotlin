@@ -10,29 +10,25 @@ class Solution {
     fun pyramidTransition(
         bottom: String,
         allowed: List<String>,
-    ): Boolean =
-        canBuild(
+    ): Boolean {
+        val width2Bottom = groupWidth2Bottoms(allowed)
+
+        val isBadBottom =
+            bottom.windowed(2).any {
+                width2Bottom[encodeBottom(it)] == 0
+            }
+        if (isBadBottom) {
+            return false
+        }
+
+        return canBuild(
             newPyramid(bottom),
             bottom.length - 2,
             0,
-            groupWidth2Bottoms(allowed),
+            width2Bottom,
             HashSet(),
         )
-
-    // Creates a new pyramid representing the initial state.
-    private fun newPyramid(bottom: String): IntArray {
-        val n = bottom.length
-        val pyramid = IntArray(n)
-        pyramid[n - 1] = encodeBottom(bottom)
-        return pyramid
     }
-
-    // Encodes each letter of bottom into 3-bit sequences. A–F map
-    // to 1–6, with later indices occupying higher-order bits.
-    private fun encodeBottom(bottom: String): Int =
-        bottom.foldIndexed(0) { index, acc, ch ->
-            (ch.code and 7) shl (index * 3) or acc
-        }
 
     // groupWidth2Bottom groups the valid three-blocks by their
     // two-block bottoms and uses a bitmask to indicate the
@@ -46,7 +42,23 @@ class Solution {
             val top = threeBlock[2].code and 7
             result[bottom] = 1 shl top or result[bottom]
         }
+
         return result
+    }
+
+    // Encodes each letter of bottom into 3-bit sequences. A–F map
+    // to 1–6, with later indices occupying higher-order bits.
+    private fun encodeBottom(bottom: String): Int =
+        bottom.foldIndexed(0) { index, acc, ch ->
+            (ch.code and 7) shl (index * 3) or acc
+        }
+
+    // Creates a new pyramid representing the initial state.
+    private fun newPyramid(bottom: String): IntArray {
+        val n = bottom.length
+        val pyramid = IntArray(n)
+        pyramid[n - 1] = encodeBottom(bottom)
+        return pyramid
     }
 
     private fun canBuild(
