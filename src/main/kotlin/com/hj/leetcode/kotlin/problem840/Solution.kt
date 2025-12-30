@@ -4,42 +4,48 @@ package com.hj.leetcode.kotlin.problem840
  * LeetCode page: [840. Magic Squares In Grid](https://leetcode.com/problems/magic-squares-in-grid/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(MN) and Space O(1) where M is the number of rows in grid
-     * and N is the number of columns in grid;
-     */
-    fun numMagicSquaresInside(grid: Array<IntArray>): Int {
-        if (grid.size < 3 || grid[0].size < 3) {
-            return 0
-        }
-
-        val magicSquares = mutableSetOf(
-            listOf(listOf(4, 3, 8), listOf(9, 5, 1), listOf(2, 7, 6)),
-            listOf(listOf(2, 7, 6), listOf(9, 5, 1), listOf(4, 3, 8)),
-            listOf(listOf(8, 3, 4), listOf(1, 5, 9), listOf(6, 7, 2)),
-            listOf(listOf(6, 7, 2), listOf(1, 5, 9), listOf(8, 3, 4)),
-            listOf(listOf(6, 1, 8), listOf(7, 5, 3), listOf(2, 9, 4)),
-            listOf(listOf(8, 1, 6), listOf(3, 5, 7), listOf(4, 9, 2)),
-            listOf(listOf(2, 9, 4), listOf(7, 5, 3), listOf(6, 1, 8)),
-            listOf(listOf(4, 9, 2), listOf(3, 5, 7), listOf(8, 1, 6)),
-        )
-
-        var result = 0
-        for (top in 0..(grid.size - 3)) {
-            for (left in 0..(grid[top].size - 3)) {
-                if (grid[top + 1][left + 1] != 5) {
-                    continue
-                }
-                val square = listOf(
-                    listOf(grid[top][left], grid[top][left + 1], grid[top][left + 2]),
-                    listOf(grid[top + 1][left], grid[top + 1][left + 1], grid[top + 1][left + 2]),
-                    listOf(grid[top + 2][left], grid[top + 2][left + 1], grid[top + 2][left + 2]),
-                )
-                if (square in magicSquares) {
-                    result += 1
-                }
+    // Complexity:
+    // Time O(MN) and Space O(1) where M and N are the number of
+    // rows and columns in grid, respectively.
+    fun numMagicSquaresInside(grid: Array<IntArray>): Int =
+        (1..<grid.size - 1).sumOf { r0 ->
+            (1..<grid[r0].size - 1).count { c0 ->
+                isMagicSquare(grid, r0, c0)
             }
         }
-        return result
+
+    // isMagicSquare returns whether the square center at (r0, c0)
+    // is magic.
+    private fun isMagicSquare(
+        grid: Array<IntArray>,
+        r0: Int,
+        c0: Int,
+    ): Boolean {
+        // We use the following criteria:
+        // - The central element must be 5.
+        // - Elements adjacent to the center must be odd.
+        // - The numbers 1–9 must appear exactly once.
+        // - Each row must sum to 15.
+        // - Each column must sum to 15.
+        if (grid[r0][c0] != 5 || grid[r0][c0 - 1] and 1 == 0) {
+            return false
+        }
+
+        var mask = 0L
+        for (dr in 0..<3) {
+            val r = r0 + dr - 1
+            for (dc in 0..<3) {
+                val c = c0 + dc - 1
+                val v = grid[r][c].toLong()
+
+                // rowSum + colSum + seen
+                mask +=
+                    (v shl (dr shl 3)) +
+                    (v shl (24 + (dc shl 3))) +
+                    (1L shl (48 + v).toInt())
+            }
+        }
+
+        return mask == 0x3FE_0F0F0F_0F0F0F
     }
 }
