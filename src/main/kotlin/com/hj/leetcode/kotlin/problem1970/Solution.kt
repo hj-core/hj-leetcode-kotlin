@@ -25,14 +25,8 @@ class Solution {
 
             uf.markWater(pos)
 
-            for (dr in -1..1) {
-                val adjR = r + dr
-                if (adjR !in 1..row) {
-                    continue
-                }
-
-                for (dc in -1..1) {
-                    val adjC = c + dc
+            for (adjR in maxOf(1, r - 1)..minOf(row, r + 1)) {
+                for (adjC in (c - 1)..(c + 1)) {
                     when {
                         adjC < 1 -> {
                             uf.union(pos, posLeft)
