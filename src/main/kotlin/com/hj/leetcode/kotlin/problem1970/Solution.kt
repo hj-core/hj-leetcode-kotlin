@@ -52,7 +52,9 @@ class Solution {
             }
         }
 
-        return cells.size - 1
+        throw IllegalStateException(
+            "The maximum possible result is row*(col-1) < len(cells)",
+        )
     }
 
     private fun positionNumber(
