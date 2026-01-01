@@ -13,13 +13,12 @@ class Solution {
             }
         }
 
-        val result = IntArray(digits.size)
-        var carry = 1
+        val result = digits.clone()
         for (i in digits.indices.reversed()) {
-            val sum = digits[i] + carry
+            val sum = digits[i] + 1
             if (sum < 10) {
                 result[i] = sum
-                carry = 0
+                break
             } else {
                 result[i] = sum - 10
             }
