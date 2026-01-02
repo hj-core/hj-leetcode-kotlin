@@ -72,7 +72,7 @@ class Solution {
     // Time O(NLogM) and Space O(M) where M is 14 for the current
     // constraints.
     //
-    // Always compare with nums[0] to make the duplicate number a
+    // Always compare with nums[0] to make the duplicated number a
     // majority in nums[1:] and find duplicated number by bit
     // counts.
     fun repeatedNTimesByBitCount(nums: IntArray): Int {
