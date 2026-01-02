@@ -66,7 +66,7 @@ class Solution {
             }
         }
 
-        return nums[1]
+        return nums[nums.size - 1]
     }
 
     // Complexity:
