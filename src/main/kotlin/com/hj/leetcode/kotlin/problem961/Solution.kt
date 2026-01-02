@@ -11,8 +11,8 @@ class Solution {
     //
     // Sieve with step 1.
     fun repeatedNTimes(nums: IntArray): Int {
-        for (i in nums.indices step 2) {
-            if (nums[i] == nums[i + 1]) {
+        for (i in 1..<nums.size) {
+            if (nums[i] == nums[i - 1]) {
                 return nums[i]
             }
         }
