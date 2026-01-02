@@ -74,7 +74,7 @@ class Solution {
     // constraints.
     //
     // Always compare with nums[0] to make the duplicated number a
-    // majority in nums[1:] and find duplicated number by bit
+    // majority in nums[1:] and find the duplicated number by bit
     // counts.
     fun repeatedNTimesByBitCount(nums: IntArray): Int {
         // max possible nums[i] <= 10^4 < 2^14
