@@ -65,6 +65,7 @@ class Solution {
                 return nums[i]
             }
         }
+
         return nums[1]
     }
 
