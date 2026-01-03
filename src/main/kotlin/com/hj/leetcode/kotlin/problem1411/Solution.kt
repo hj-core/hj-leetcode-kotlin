@@ -4,7 +4,7 @@ package com.hj.leetcode.kotlin.problem1411
  * LeetCode page: [1411. Number of Ways to Paint N × 3 Grid](https://leetcode.com/problems/number-of-ways-to-paint-n-3-grid/);
  */
 class Solution {
-    val module = 1_000_000_007
+    val modulus = 1_000_000_007
 
     // Complexity:
     // Time O(Log n) and Space O(1).
@@ -19,12 +19,12 @@ class Solution {
                 n - 1,
             )
 
-        return (
-            (a[0][0] + a[0][1] + a[1][0] + a[1][1]) * 6 % module
-        ).toInt()
+        return (a[0][0] + a[0][1] + a[1][0] + a[1][1])
+            .let { it * 6 % modulus }
+            .toInt()
     }
 
-    // Returns a^exp % module where a is a 2 by 2 matrix.
+    // Returns a^exp % modulus where a is a 2 by 2 matrix.
     private fun matPowMod(
         a: Array<LongArray>,
         exp: Int,
@@ -49,19 +49,19 @@ class Solution {
         return result
     }
 
-    // Returns a * b % module where a and b are 2 by 2 matrices.
+    // Returns a * b % modulus where a and b are 2 by 2 matrices.
     fun matMulMod(
         a: Array<LongArray>,
         b: Array<LongArray>,
     ): Array<LongArray> =
         arrayOf(
             longArrayOf(
-                (a[0][0] * b[0][0] + a[0][1] * b[1][0]) % module,
-                (a[0][0] * b[0][1] + a[0][1] * b[1][1]) % module,
+                (a[0][0] * b[0][0] + a[0][1] * b[1][0]) % modulus,
+                (a[0][0] * b[0][1] + a[0][1] * b[1][1]) % modulus,
             ),
             longArrayOf(
-                (a[1][0] * b[0][0] + a[1][1] * b[1][0]) % module,
-                (a[1][0] * b[0][1] + a[1][1] * b[1][1]) % module,
+                (a[1][0] * b[0][0] + a[1][1] * b[1][0]) % modulus,
+                (a[1][0] * b[0][1] + a[1][1] * b[1][1]) % modulus,
             ),
         )
 }
