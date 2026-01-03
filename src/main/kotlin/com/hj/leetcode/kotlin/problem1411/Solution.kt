@@ -37,7 +37,6 @@ class Solution {
 
         var newBase = a
         var newExp = exp
-
         while (newExp > 0) {
             if (newExp and 1 == 1) {
                 result = matMulMod(result, newBase)
@@ -46,6 +45,7 @@ class Solution {
             newBase = matMulMod(newBase, newBase)
             newExp = newExp shr 1
         }
+
         return result
     }
 
