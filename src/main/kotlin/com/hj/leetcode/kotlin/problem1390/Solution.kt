@@ -1,5 +1,6 @@
 package com.hj.leetcode.kotlin.problem1390
 
+import kotlin.math.ceil
 import kotlin.math.sqrt
 
 /**
@@ -19,19 +20,18 @@ class Solution {
         var sum = 1 + num
         var divisorCount = 2
 
-        val pBound = sqrt(num.toDouble()).toInt()
-        for (p in 2..pBound) {
+        val pBound = ceil(sqrt(num.toDouble())).toInt()
+        if (num == pBound * pBound) {
+            return 0
+        }
+
+        for (p in 2..<pBound) {
             if (num % p == 0) {
                 if (divisorCount == 4) {
                     return 0
                 }
 
-                val q = num / p
-                if (q == p) {
-                    return 0
-                }
-
-                sum += p + q
+                sum += p + num / p
                 divisorCount += 2
             }
         }
