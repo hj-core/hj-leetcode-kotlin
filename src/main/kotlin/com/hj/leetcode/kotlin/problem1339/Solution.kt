@@ -31,16 +31,14 @@ class Solution {
 
     private fun dfs(
         root: TreeNode,
-        onEachSubtreeSum: (Int) -> Unit,
+        onEachSubtree: (nodeSum: Int) -> Unit,
     ): Int {
-        val leftSum =
-            root.left?.let { dfs(it, onEachSubtreeSum) } ?: 0
+        val nodeSum =
+            root.`val` +
+                (root.left?.let { dfs(it, onEachSubtree) } ?: 0) +
+                (root.right?.let { dfs(it, onEachSubtree) } ?: 0)
 
-        val rightSum =
-            root.right?.let { dfs(it, onEachSubtreeSum) } ?: 0
-
-        val treeSum = leftSum + rightSum + root.`val`
-        onEachSubtreeSum(treeSum)
-        return treeSum
+        onEachSubtree(nodeSum)
+        return nodeSum
     }
 }
