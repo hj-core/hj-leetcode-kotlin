@@ -6,29 +6,41 @@ import com.hj.leetcode.kotlin.common.model.TreeNode
  * LeetCode page: [1339. Maximum Product of Splitted Binary Tree](https://leetcode.com/problems/maximum-product-of-splitted-binary-tree/description/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(N) and Space O(H) where N and H are the number of nodes and height of root;
-     */
+    // Complexity:
+    // Time O(N) and Space O(N) where N is the number of nodes in root.
     fun maxProduct(root: TreeNode?): Int {
-        val sum = root.sum {}
-        var maxProduct = Long.MIN_VALUE
-        val updateMaxProduct = { subTreeSum: Long ->
-            maxProduct = maxOf(maxProduct, subTreeSum * (sum - subTreeSum))
+        checkNotNull(root)
+        val treeSum = sumOfNodes(root)
+
+        var maxProduct = 0L
+        dfs(root) { subtreeSum ->
+            maxProduct =
+                maxOf(
+                    maxProduct,
+                    subtreeSum.toLong() * (treeSum - subtreeSum),
+                )
         }
-        root?.left.sum(updateMaxProduct)
-        root?.right.sum(updateMaxProduct)
-        return toOutput(maxProduct)
+
+        return (maxProduct % (1e9 + 7)).toInt()
     }
 
-    private fun TreeNode?.sum(sideEffect: (subTreeSum: Long) -> Unit): Long {
-        if (this == null) return 0L
-        val sum = `val` + left.sum(sideEffect) + right.sum(sideEffect)
-        sideEffect(sum)
-        return sum
-    }
+    private fun sumOfNodes(root: TreeNode): Int =
+        root.`val` +
+            (root.left?.let { sumOfNodes(it) } ?: 0) +
+            (root.right?.let { sumOfNodes(it) } ?: 0)
 
-    private fun toOutput(maxProduct: Long): Int {
-        val modulo = 1_000_000_007
-        return (maxProduct % modulo).toInt()
+    private fun dfs(
+        root: TreeNode,
+        onEachSubtreeSum: (Int) -> Unit,
+    ): Int {
+        val leftSum =
+            root.left?.let { dfs(it, onEachSubtreeSum) } ?: 0
+
+        val rightSum =
+            root.right?.let { dfs(it, onEachSubtreeSum) } ?: 0
+
+        val treeSum = leftSum + rightSum + root.`val`
+        onEachSubtreeSum(treeSum)
+        return treeSum
     }
 }
