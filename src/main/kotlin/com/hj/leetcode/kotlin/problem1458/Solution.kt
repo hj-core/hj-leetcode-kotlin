@@ -34,8 +34,7 @@ class Solution {
                     maxOf(
                         dp[j], // dp[i+1][j]
                         dp[j + 1], // dp[i][j+1]
-                        nums1[i] * nums2[j],
-                        nums1[i] * nums2[j] + oldNext,
+                        nums1[i] * nums2[j] + maxOf(0, oldNext),
                     ).also { oldNext = dp[j] }
             }
         }
