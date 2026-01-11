@@ -34,9 +34,9 @@ class Solution {
                 monoStack.isNotEmpty() &&
                 monoStack.last().second >= height
             ) {
-                val (lastIndex, lastHeight) = monoStack.removeLast()
-                maximal = maxOf(maximal, (i - lastIndex) * lastHeight)
-                left = lastIndex
+                val (lastLeft, lastHeight) = monoStack.removeLast()
+                maximal = maxOf(maximal, (i - lastLeft) * lastHeight)
+                left = lastLeft
             }
 
             monoStack.add(Pair(left, height))
