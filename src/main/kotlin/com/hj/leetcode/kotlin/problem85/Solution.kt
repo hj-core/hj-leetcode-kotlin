@@ -25,7 +25,7 @@ class Solution {
     private fun maximalRectangleInHistogram(histogram: IntArray): Int {
         // Store strictly increasing (left, height) pairs, where
         // histogram[..<left] < height and histogram[left..] >= height.
-        val monoStack = mutableListOf(Pair(-1, 0))
+        val monoStack = mutableListOf<Pair<Int, Int>>()
         var maximal = 0
 
         for ((i, height) in histogram.withIndex()) {
