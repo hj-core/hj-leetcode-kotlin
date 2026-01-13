@@ -59,13 +59,11 @@ class Solution {
 
     private fun unpackYWidth(packed: Long): Pair<Int, Int> {
         val y = (packed shr 32).toInt()
-
-        var width = (packed and 0x7fff_ffffL).toInt()
-        val sign = (packed shr 31) and 1
-        if (sign == 1L) {
-            width = -width
-        }
-
+        val width =
+            (packed and 0x7fffffff).toInt().let {
+                val sign = (packed shr 31) and 1
+                if (sign == 0L) it else -it
+            }
         return y to width
     }
 }
