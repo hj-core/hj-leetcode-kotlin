@@ -91,6 +91,10 @@ private class SegmentTree(
     private val xToIndex = xToIndex(sortedXs)
     private val fullWidth = sortedXs[n] - sortedXs[0]
 
+    // Returns a map of (x, index_of_x_in_sortedXs).
+    private fun xToIndex(sortedXs: IntArray): Map<Int, Int> =
+        sortedXs.withIndex().associate { (i, x) -> x to i }
+
     init {
         build(1, 0, n - 1)
     }
@@ -134,10 +138,6 @@ private class SegmentTree(
             }
         }
     }
-
-    // Returns a map of (x, index_of_x_in_sortedXs).
-    private fun xToIndex(sortedXs: IntArray): Map<Int, Int> =
-        sortedXs.withIndex().associate { (i, x) -> x to i }
 
     // Lazily adds the addend over nodes[l..=r].
     private fun rangeAdd(
