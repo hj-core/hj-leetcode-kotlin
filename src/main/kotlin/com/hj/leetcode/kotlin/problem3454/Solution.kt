@@ -83,16 +83,15 @@ class Solution {
 private class SegmentTree(
     private val sortedXs: IntArray,
 ) {
-    private val n = sortedXs.size - 1
-
-    // root is at index 1.
-    private val nodes = Array(n * 4) { IntArray(3) }
-
     // A map of (x, index_of_x_in_sortedXs).
     private val xToIndex =
         sortedXs.withIndex().associate { (i, x) -> x to i }
 
+    private val n = sortedXs.size - 1
     private val fullWidth = sortedXs[n] - sortedXs[0]
+
+    // root is at index 1.
+    private val nodes = Array(n * 4) { IntArray(3) }
 
     init {
         build(1, 0, n - 1)
