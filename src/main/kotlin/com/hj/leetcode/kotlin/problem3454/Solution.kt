@@ -88,12 +88,11 @@ private class SegmentTree(
     // root is at index 1.
     private val nodes = Array(n * 4) { IntArray(3) }
 
-    private val xToIndex = xToIndex(sortedXs)
-    private val fullWidth = sortedXs[n] - sortedXs[0]
-
-    // Returns a map of (x, index_of_x_in_sortedXs).
-    private fun xToIndex(sortedXs: IntArray): Map<Int, Int> =
+    // A map of (x, index_of_x_in_sortedXs).
+    private val xToIndex =
         sortedXs.withIndex().associate { (i, x) -> x to i }
+
+    private val fullWidth = sortedXs[n] - sortedXs[0]
 
     init {
         build(1, 0, n - 1)
