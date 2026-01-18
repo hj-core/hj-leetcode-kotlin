@@ -8,33 +8,24 @@ class Solution {
     // Time O(MN*min(M,N)^2) and Space O(MN), where M and N are the
     // number of rows and columns of grid, respectively.
     fun largestMagicSquare(grid: Array<IntArray>): Int {
-        val suffixSums = SuffixSums(grid)
+        val sumQuery = SumQuery(grid)
         val m = grid.size
         val n = grid[0].size
 
-        var maxSize = 1
-        var r = 0
-        while (r + maxSize < m) {
-            var c = 0
-            while (c + maxSize < n) {
-                var size = minOf(m - r, n - c)
-                while (size > maxSize &&
-                    !isMagicSquare(r, c, size, suffixSums)
-                ) {
-                    size--
+        for (size in minOf(m, n) downTo 2) {
+            for (r in 0..m - size) {
+                for (c in 0..n - size) {
+                    if (isMagicSquare(r, c, size, sumQuery)) {
+                        return size
+                    }
                 }
-
-                maxSize = size
-                c++
             }
-
-            r++
         }
 
-        return maxSize
+        return 1
     }
 
-    private class SuffixSums(
+    private class SumQuery(
         grid: Array<IntArray>,
     ) {
         private val m = grid.size
@@ -109,10 +100,10 @@ class Solution {
         r: Int,
         c: Int,
         size: Int,
-        suffixSums: SuffixSums,
+        sumQuery: SumQuery,
     ): Boolean {
-        val dg1Sum = suffixSums.dg1Sum(r, c, size)
-        val dg2Sum = suffixSums.dg2Sum(r, c + size - 1, size)
+        val dg1Sum = sumQuery.dg1Sum(r, c, size)
+        val dg2Sum = sumQuery.dg2Sum(r, c + size - 1, size)
 
         if (dg1Sum != dg2Sum) {
             return false
@@ -120,7 +111,7 @@ class Solution {
 
         val anyBadRow =
             (r..<r + size).any {
-                suffixSums.rowSum(it, c, c + size) != dg1Sum
+                sumQuery.rowSum(it, c, c + size) != dg1Sum
             }
         if (anyBadRow) {
             return false
@@ -128,7 +119,7 @@ class Solution {
 
         val allColumnsOk =
             (c..<c + size).all {
-                suffixSums.columnSum(it, r, r + size) == dg1Sum
+                sumQuery.columnSum(it, r, r + size) == dg1Sum
             }
         return allColumnsOk
     }
