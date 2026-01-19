@@ -16,22 +16,19 @@ class Solution {
         val suffixSum2d = suffixSum2d(mat)
 
         var nextSize = 1
-        var r = 0
-        while (r + nextSize <= m) {
-            var c = 0
-            while (c + nextSize <= n) {
-                while (
-                    r + nextSize <= m &&
-                    c + nextSize <= n &&
-                    subMatSum(suffixSum2d, r, c, nextSize) <= threshold
+        for (r in mat.indices.reversed()) {
+            for (c in n - nextSize downTo 0) {
+                if (subMatSum(
+                        suffixSum2d,
+                        r,
+                        c,
+                        nextSize,
+                    ) <= threshold
                 ) {
                     nextSize++
+                    break
                 }
-
-                c++
             }
-
-            r++
         }
 
         return nextSize - 1
