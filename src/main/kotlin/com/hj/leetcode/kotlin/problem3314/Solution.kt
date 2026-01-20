@@ -11,8 +11,7 @@ class Solution {
             if (nums[i] == 2) {
                 -1
             } else {
-                val m = nums[i] and (nums[i] + 1)
-                m + ((nums[i] - m) shr 1)
+                (nums[i] + (nums[i] and (nums[i] + 1))) shr 1
             }
         }
 }
