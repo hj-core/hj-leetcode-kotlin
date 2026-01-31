@@ -4,28 +4,29 @@ package com.hj.leetcode.kotlin.problem744
  * LeetCode page: [744. Find Smallest Letter Greater Than Target](https://leetcode.com/problems/find-smallest-letter-greater-than-target/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(LogN) and Space O(1) where N is the size of letters;
-     */
-    fun nextGreatestLetter(letters: CharArray, target: Char): Char {
-        if (target < letters.first()) {
+    // Complexity:
+    // Time O(LogN) and Space O(1) where N is the length of letters.
+    fun nextGreatestLetter(
+        letters: CharArray,
+        target: Char,
+    ): Char {
+        if (letters.last() <= target) {
             return letters.first()
         }
 
-        if (target >= letters.last()) {
-            return letters.first()
-        }
-
-        var lowerBound = 0
-        var upperBound = letters.lastIndex
-        while (lowerBound < upperBound) {
-            val mid = (lowerBound + upperBound) ushr 1
+        // Binary search for the next greater index, which is in the
+        // range [left, right].
+        var left = 0
+        var right = letters.lastIndex
+        while (left < right) {
+            val mid = (left + right) ushr 1
             if (letters[mid] <= target) {
-                lowerBound = mid + 1
+                left = mid + 1
             } else {
-                upperBound = mid
+                right = mid
             }
         }
-        return letters[lowerBound]
+
+        return letters[left]
     }
 }
