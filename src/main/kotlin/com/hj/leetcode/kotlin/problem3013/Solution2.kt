@@ -11,7 +11,8 @@ class Solution2 {
         k: Int,
         dist: Int,
     ): Long {
-        // Pqs of (i, nums[i]), sorted by different orders
+        // Pqs of (i, nums[i]), sorted by different orders. They may
+        // contain numbers that are out of the current window.
         val small =
             PriorityQueue<IntArray>(compareBy({ -it[1] }, { it[0] }))
         val big =
@@ -30,7 +31,7 @@ class Solution2 {
 
         // The number of valid numbers in small
         var smallSize = k - 1
-        // The largest value in the last size k-1 smallSum
+        // The largest number in the last size k-1 smallSum
         var threshold = small.first()[1]
         var minSmallSum = smallSum
 
@@ -47,6 +48,8 @@ class Solution2 {
                 small.poll()
             }
 
+            // Only a nums[i] > threshold may improve the last size k-1
+            // smallSum.
             if (nums[i] >= threshold) {
                 big.offer(intArrayOf(i, nums[i]))
             } else {
