@@ -54,7 +54,7 @@ class Solution {
             } else if (small.first()[1] > big.first()[1]) {
                 smallSum += big.first()[1] - small.first()[1]
                 val firstSmall = checkNotNull(small.pollFirst())
-                val firstBig = big.poll()
+                val firstBig = checkNotNull(big.poll())
                 small.add(firstBig)
                 big.add(firstSmall)
             }
