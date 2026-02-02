@@ -48,9 +48,9 @@ class Solution {
             }
 
             if (small.size < k - 1) {
-                val added = checkNotNull(big.poll())
-                smallSum += added[1]
-                small.add(added)
+                val firstBig = checkNotNull(big.poll())
+                smallSum += firstBig[1]
+                small.add(firstBig)
             } else if (small.first()[1] > big.first()[1]) {
                 smallSum += big.first()[1] - small.first()[1]
                 val firstSmall = checkNotNull(small.pollFirst())
