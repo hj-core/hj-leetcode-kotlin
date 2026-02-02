@@ -11,6 +11,7 @@ class Solution2 {
         k: Int,
         dist: Int,
     ): Long {
+        // Pqs of (i, nums[i]), sorted by different orders
         val small =
             PriorityQueue<IntArray>(compareBy({ -it[1] }, { it[0] }))
         val big =
@@ -29,7 +30,7 @@ class Solution2 {
 
         // The number of valid numbers in small
         var smallSize = k - 1
-        // Threshold of value which may improve minSmallSum
+        // The largest value in the last size k-1 smallSum
         var threshold = small.first()[1]
         var minSmallSum = smallSum
 
