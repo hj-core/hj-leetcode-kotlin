@@ -47,7 +47,7 @@ class Solution2 {
                 small.poll()
             }
 
-            // Only a nums[i] > threshold may improve the last size k-1
+            // Only a nums[i] < threshold may improve the last size k-1
             // smallSum.
             if (nums[i] >= threshold) {
                 big.offer(intArrayOf(i, nums[i]))
