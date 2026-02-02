@@ -4,8 +4,7 @@ import java.util.*
 
 class Solution2 {
     // Complexity:
-    // Time O(NLogD) and Space O(D) where N is the length of nums and D
-    // is dist.
+    // Time O(NLogN) and Space O(N) where N is the length of nums.
     fun minimumCost(
         nums: IntArray,
         k: Int,
