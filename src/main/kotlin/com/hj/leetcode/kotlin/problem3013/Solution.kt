@@ -28,9 +28,9 @@ class Solution {
             smallSum += nums[i]
         }
         while (small.size >= k) {
-            val popped = checkNotNull(small.pollFirst())
-            smallSum -= popped[1]
-            big.offer(popped)
+            val firstSmall = checkNotNull(small.pollFirst())
+            smallSum -= firstSmall[1]
+            big.offer(firstSmall)
         }
 
         var minSmallSum = smallSum
