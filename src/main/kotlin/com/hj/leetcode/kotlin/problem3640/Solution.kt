@@ -16,7 +16,6 @@ class Solution {
         // - maxLM covers the range l..<q.
         // - maxPrefixR covers the range q..=r with a min length of two.
         // - maxSuffixR covers the range q..<r (i.e., the next l..<p).
-        //  increasing    decreasing  increasing    decreasing
         var maxSum = minInf
         var maxLM = minInf
         var prefixR = nums[0].toLong()
