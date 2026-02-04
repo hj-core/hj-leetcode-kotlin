@@ -9,16 +9,16 @@ class Solution {
     fun maxSumTrionic(nums: IntArray): Long {
         val minInf = -(1L shl 60)
 
-        //  increasing    decreasing   increasing    decreasing
-        // |-----L-----|-----Mid1-----|-----R-----|-----Mid2-----|
+        //  increasing    decreasing     increasing    decreasing
+        // |-----L-----|-----M_1-----|-----R-----|-----M_2-----|
         //
         // For the indices (l, p, q, r):
-        // - maxSuffixL covers the range l..<p.
-        // - midSum covers the range p..<q.
-        // - maxPrefixR covers the range q..=r.
+        // - maxLmSum covers the range l..<q.
+        // - maxPrefixR covers the range q..=r with a min length of two.
+        // - maxSuffixR covers the range q..<r (i.e., the next l..<p).
+        //  increasing    decreasing  increasing    decreasing
         var maxSum = minInf
-        var maxSuffixL = minInf
-        var midSum = 0L
+        var maxLmSum = minInf
         var prefixR = nums[0].toLong()
         var maxPrefixR = minInf
         var maxSuffixR = minInf
@@ -28,20 +28,18 @@ class Solution {
                 prefixR += nums[i + 1]
                 maxPrefixR = maxOf(maxPrefixR, prefixR)
                 maxSuffixR = maxOf(maxSuffixR, 0) + nums[i]
-                maxSum = maxOf(maxSum, maxSuffixL + midSum + maxPrefixR)
+                maxSum = maxOf(maxSum, maxLmSum + maxPrefixR)
             } else if (nums[i] > nums[i + 1]) {
                 if (maxPrefixR > minInf) {
-                    maxSuffixL = maxSuffixR
-                    midSum = 0L
+                    maxLmSum = maxSuffixR
                     maxPrefixR = minInf
                     maxSuffixR = minInf
                 }
-                midSum += nums[i]
+                maxLmSum += nums[i]
                 prefixR = nums[i + 1].toLong()
             } else {
-                maxSuffixL = minInf
-                midSum = 0L
-                prefixR = nums[i].toLong()
+                maxLmSum = minInf
+                prefixR = nums[i + 1].toLong()
                 maxPrefixR = minInf
                 maxSuffixR = minInf
             }
