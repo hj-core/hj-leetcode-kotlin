@@ -152,6 +152,7 @@ at [LeetCode](https://leetcode.com/hj-core/).
 | [3495. Minimum Operations to Make Array Elements Zero](https://leetcode.com/problems/minimum-operations-to-make-array-elements-zero/)                                     | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3495/Solution.kt), [Solution2](src/main/kotlin/com/hj/leetcode/kotlin/problem3495/Solution2.kt) | 2025-09-06    |
 | [3510. Minimum Pair Removal to Sort Array II](https://leetcode.com/problems/minimum-pair-removal-to-sort-array-ii/)                                                       | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3510/Solution.kt)                                                                               | 2026-01-23    |
 | [3539. Find Sum of Array Product of Magical Sequences](https://leetcode.com/problems/find-sum-of-array-product-of-magical-sequences/)                                     | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3539/Solution.kt)                                                                               | 2025-10-12    |
+| [3640. Trionic Array II](https://leetcode.com/problems/trionic-array-ii/)                                                                                                 | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3640/Solution.kt)                                                                               | 2026-02-04    |
 
 ### Medium
 
