@@ -13,12 +13,12 @@ class Solution {
         // |-----L-----|-----M_1-----|-----R-----|-----M_2-----|
         //
         // For the indices (l, p, q, r):
-        // - maxLmSum covers the range l..<q.
+        // - maxLM covers the range l..<q.
         // - maxPrefixR covers the range q..=r with a min length of two.
         // - maxSuffixR covers the range q..<r (i.e., the next l..<p).
         //  increasing    decreasing  increasing    decreasing
         var maxSum = minInf
-        var maxLmSum = minInf
+        var maxLM = minInf
         var prefixR = nums[0].toLong()
         var maxPrefixR = minInf
         var maxSuffixR = minInf
@@ -28,17 +28,17 @@ class Solution {
                 prefixR += nums[i + 1]
                 maxPrefixR = maxOf(maxPrefixR, prefixR)
                 maxSuffixR = maxOf(maxSuffixR, 0) + nums[i]
-                maxSum = maxOf(maxSum, maxLmSum + maxPrefixR)
+                maxSum = maxOf(maxSum, maxLM + maxPrefixR)
             } else if (nums[i] > nums[i + 1]) {
                 if (maxPrefixR > minInf) {
-                    maxLmSum = maxSuffixR
+                    maxLM = maxSuffixR
                     maxPrefixR = minInf
                     maxSuffixR = minInf
                 }
-                maxLmSum += nums[i]
+                maxLM += nums[i]
                 prefixR = nums[i + 1].toLong()
             } else {
-                maxLmSum = minInf
+                maxLM = minInf
                 prefixR = nums[i + 1].toLong()
                 maxPrefixR = minInf
                 maxSuffixR = minInf
