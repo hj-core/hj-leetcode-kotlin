@@ -20,19 +20,16 @@ class Solution {
         var maxLM = minInf
         var prefixR = nums[0].toLong()
         var maxSuffixR = minInf
-        var outsideM = true
 
         for (i in 0..<nums.size - 1) {
             if (nums[i] < nums[i + 1]) {
                 prefixR += nums[i + 1]
                 maxSum = maxOf(maxSum, maxLM + prefixR)
                 maxSuffixR = maxOf(maxSuffixR, 0) + nums[i]
-                outsideM = true
             } else if (nums[i] > nums[i + 1]) {
-                if (outsideM) {
+                if (maxSuffixR > minInf) {
                     maxLM = maxSuffixR
                     maxSuffixR = minInf
-                    outsideM = false
                 }
                 maxLM += nums[i]
                 prefixR = nums[i + 1].toLong()
@@ -40,7 +37,6 @@ class Solution {
                 maxLM = minInf
                 prefixR = nums[i + 1].toLong()
                 maxSuffixR = minInf
-                // outsideM = true
             }
         }
 
