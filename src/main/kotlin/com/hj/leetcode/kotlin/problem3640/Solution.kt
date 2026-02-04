@@ -14,32 +14,31 @@ class Solution {
         //
         // For the indices (l, p, q, r):
         // - maxLM covers the range l..<q.
-        // - maxPrefixR covers the range q..=r with a min length of two.
+        // - prefixR covers the range q..=r with a min length of two.
         // - maxSuffixR covers the range q..<r (i.e., the next l..<p).
         var maxSum = minInf
         var maxLM = minInf
         var prefixR = nums[0].toLong()
-        var maxPrefixR = minInf
         var maxSuffixR = minInf
+        var outsideM = true
 
         for (i in 0..<nums.size - 1) {
             if (nums[i] < nums[i + 1]) {
                 prefixR += nums[i + 1]
-                maxPrefixR = maxOf(maxPrefixR, prefixR)
+                maxSum = maxOf(maxSum, maxLM + prefixR)
                 maxSuffixR = maxOf(maxSuffixR, 0) + nums[i]
-                maxSum = maxOf(maxSum, maxLM + maxPrefixR)
+                outsideM = true
             } else if (nums[i] > nums[i + 1]) {
-                if (maxPrefixR > minInf) {
+                if (outsideM) {
                     maxLM = maxSuffixR
-                    maxPrefixR = minInf
                     maxSuffixR = minInf
+                    outsideM = false
                 }
                 maxLM += nums[i]
                 prefixR = nums[i + 1].toLong()
             } else {
                 maxLM = minInf
                 prefixR = nums[i + 1].toLong()
-                maxPrefixR = minInf
                 maxSuffixR = minInf
             }
         }
