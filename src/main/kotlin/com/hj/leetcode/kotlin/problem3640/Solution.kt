@@ -9,7 +9,7 @@ class Solution {
     fun maxSumTrionic(nums: IntArray): Long {
         val minInf = -(1L shl 60)
 
-        //  increasing    decreasing     increasing    decreasing
+        //  increasing   decreasing   increasing   decreasing
         // |-----L-----|-----M_1-----|-----R-----|-----M_2-----|
         //
         // For the indices (l, p, q, r):
