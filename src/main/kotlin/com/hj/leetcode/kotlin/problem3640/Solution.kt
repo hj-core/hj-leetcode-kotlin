@@ -4,54 +4,46 @@ package com.hj.leetcode.kotlin.problem3640
  * LeetCode page: [3640. Trionic Array II](https://leetcode.com/problems/trionic-array-ii/);
  */
 class Solution {
+    // Complexity:
+    // Time O(N) and Space O(1) where N is the length of nums.
     fun maxSumTrionic(nums: IntArray): Long {
-        var maxSum = -(1L shl 52)
-        var midLen = 0
+        val minInf = -(1L shl 60)
+
+        //  increasing    decreasing   increasing    decreasing
+        // |-----L-----|-----Mid1-----|-----R-----|-----Mid2-----|
+        //
+        // For the indices (l, p, q, r):
+        // - maxSuffixL covers the range l..<p.
+        // - midSum covers the range p..<q.
+        // - maxPrefixR covers the range q..=r.
+        var maxSum = minInf
+        var maxSuffixL = minInf
         var midSum = 0L
+        var prefixR = nums[0].toLong()
+        var maxPrefixR = minInf
+        var maxSuffixR = minInf
 
-        var q = 1
-        while (q < nums.size - 1) {
-            if (nums[q] > nums[q + 1]) {
-                midLen++
-                midSum += nums[q]
-                q++
-            } else if (nums[q] == nums[q + 1] || midLen == 0) {
-                midLen = 0
-                midSum = 0L
-                q++
-            } else if (nums[q - midLen - 1] >= nums[q - midLen]) {
-                midLen = 0
-                midSum = 0L
-                q++
+        for (i in 0..<nums.size - 1) {
+            if (nums[i] < nums[i + 1]) {
+                prefixR += nums[i + 1]
+                maxPrefixR = maxOf(maxPrefixR, prefixR)
+                maxSuffixR = maxOf(maxSuffixR, 0) + nums[i]
+                maxSum = maxOf(maxSum, maxSuffixL + midSum + maxPrefixR)
+            } else if (nums[i] > nums[i + 1]) {
+                if (maxPrefixR > minInf) {
+                    maxSuffixL = maxSuffixR
+                    midSum = 0L
+                    maxPrefixR = minInf
+                    maxSuffixR = minInf
+                }
+                midSum += nums[i]
+                prefixR = nums[i + 1].toLong()
             } else {
-                var l = q - midLen - 1
-                var leftSum = 0L
-                var maxLeftSum = nums[l].toLong()
-                while (l >= 0 && nums[l] < nums[l + 1]) {
-                    leftSum += nums[l]
-                    if (leftSum > maxLeftSum) {
-                        maxLeftSum = leftSum
-                    }
-                    l--
-                }
-
-                var r = q + 1
-                var rightSum = nums[q].toLong()
-                var maxRightSum = (nums[q] + nums[r]).toLong()
-                while (r < nums.size && nums[r - 1] < nums[r]) {
-                    rightSum += nums[r]
-                    if (rightSum > maxRightSum) {
-                        maxRightSum = rightSum
-                    }
-                    r++
-                }
-                r--
-
-                maxSum =
-                    maxOf(maxSum, midSum + maxLeftSum + maxRightSum)
-                q = r
-                midLen = 0
+                maxSuffixL = minInf
                 midSum = 0L
+                prefixR = nums[i].toLong()
+                maxPrefixR = minInf
+                maxSuffixR = minInf
             }
         }
 
