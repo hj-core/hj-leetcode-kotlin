@@ -40,6 +40,7 @@ class Solution {
                 maxLM = minInf
                 prefixR = nums[i + 1].toLong()
                 maxSuffixR = minInf
+                // outsideM = true
             }
         }
 
