@@ -1,6 +1,6 @@
 [versions]
-kotlin = "2.3.0"
-kotlinx-serialization-json = "1.10.0-RC"
+kotlin = "2.3.10"
+kotlinx-serialization-json = "1.10.0"
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
