@@ -12,17 +12,13 @@ class Solution {
     ): Int {
         val nums = nums.sortedArray()
 
-        var maxRetain = 0
-        var j = 0
-        for (i in nums.indices) {
-            val threshold = nums[i].toLong() * k
-            while (j < nums.size && nums[j] <= threshold) {
-                j++
+        var left = 0
+        for (right in nums.indices) {
+            if (nums[left] * k.toLong() < nums[right]) {
+                left++
             }
-
-            maxRetain = maxOf(maxRetain, j - i)
         }
 
-        return nums.size - maxRetain
+        return left
     }
 }
