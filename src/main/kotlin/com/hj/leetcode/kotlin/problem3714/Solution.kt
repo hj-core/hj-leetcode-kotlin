@@ -20,8 +20,8 @@ class Solution {
         val freq = intArrayOf(0, 0, 0)
 
         // key =
-        //   56            54            36           18           0
-        //   | target_mask |   r_freq_c  |  r_freq_b  |  r_freq_a  |
+        //   56            54           36           18           0
+        //   | target_mask |  r_freq_c  |  r_freq_b  |  r_freq_a  |
         //
         // value = minimum prefix
         val bestPrefix = hashMapOf<PackedFreq, Int>()
