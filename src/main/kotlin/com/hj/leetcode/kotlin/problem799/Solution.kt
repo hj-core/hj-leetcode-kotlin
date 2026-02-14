@@ -4,26 +4,25 @@ package com.hj.leetcode.kotlin.problem799
  * LeetCode page: [799. Champagne Tower](https://leetcode.com/problems/champagne-tower/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(query_row^2) and Space O(query_row);
-     */
-    fun champagneTower(poured: Int, query_row: Int, query_glass: Int): Double {
-        if (query_glass > query_row) {
-            return 0.0
-        }
+    // Complexity:
+    // Time O(query_row * query_glass) and Space O(query_glass).
+    fun champagneTower(
+        poured: Int,
+        query_row: Int,
+        query_glass: Int,
+    ): Double {
+        // dp[c]@r:= total champagne received by glass (r, c)
+        val dp = DoubleArray(query_glass + 2)
+        dp[0] = poured.toDouble()
 
-        // dp[j]@i::= total liquid fall into the j_th glass of the i_th row
-        val dp = DoubleArray(query_row + 1)
-
-        dp[0] = poured.toDouble() // Base case dp[0]@i=0
-        for (row in 0 until query_row) {
-            // Update the dp of the next row in place
-            for (glass in row downTo 0) {
-                val halfFall = (dp[glass] - 1.0).coerceAtLeast(0.0) / 2.0
-                dp[glass] = halfFall
-                dp[glass + 1] += halfFall
+        for (r in 0..<query_row) {
+            for (c in minOf(query_glass, r) downTo 0) {
+                val toNext = maxOf(0.0, (dp[c] - 1.0)) / 2
+                dp[c] = toNext
+                dp[c + 1] += toNext
             }
         }
-        return dp[query_glass].coerceAtMost(1.0)
+
+        return minOf(1.0, dp[query_glass])
     }
 }
