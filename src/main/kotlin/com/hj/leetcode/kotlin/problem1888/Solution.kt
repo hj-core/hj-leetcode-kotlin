@@ -22,10 +22,12 @@ class Solution {
     }
 
     private fun minFlipsOddLen(s: String): Int {
-        // rotates-then-flips, initial value shift by p1 + 1
+        // rotates-then-flips, initial value shifted by final_p1 + 1
         var minP3 = -1
         var maxP3 = -1
         var p1 = 0
+        // We target a partial 0101... pattern that we rotate the s[..=i]
+        // to the back and make that part 1010...
         for ((i, s) in s.withIndex()) {
             p1 += (s.code xor i) and 1
             minP3 = minOf(minP3, i - 2 * p1)
