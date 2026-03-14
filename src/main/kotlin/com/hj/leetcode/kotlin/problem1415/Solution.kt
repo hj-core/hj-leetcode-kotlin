@@ -5,33 +5,33 @@ package com.hj.leetcode.kotlin.problem1415
  */
 class Solution {
     // Complexity:
-    // Time O(n) and Space O(n), treating the size of char set as constant.
+    // Time O(n) and Space O(n).
     fun getHappyString(
         n: Int,
         k: Int,
     ): String {
-        if (maxK(n) < k) {
+        val k0 = k - 1 // Change from 1-indexed to 0-indexed position
+        if (k0 shr (n - 1) > 2) {
             return ""
         }
-        val chars = "abc"
-        val result = StringBuilder()
-        var cnt = 0
-        var prev = chars.length
-        for (i in 1..n) {
-            val p = 1 shl (n - i) // The number of valid permutations by (n-i) chars
-            var q = (k - cnt - 1) / p
-            cnt += p * q
-            if (prev <= q) {
-                q++
-            }
-            result.append(chars[q])
-            prev = q
-        }
-        return result.toString()
-    }
 
-    private fun maxK(n: Int): Int {
-        require(n < 31) { "`n` will overflow Int" }
-        return 3 * (1 shl (n - 1))
+        var last = k0 shr (n - 1) // index of the last char in "abc"
+        val sb = StringBuilder()
+        sb.append("abc"[last])
+
+        // transition[ord][last]:= index of the next char
+        val transition =
+            arrayOf(
+                intArrayOf(1, 0, 0),
+                intArrayOf(2, 2, 1),
+            )
+
+        for (i in (n - 2) downTo 0) {
+            val ord = k0 shr i and 1
+            last = transition[ord][last]
+            sb.append("abc"[last])
+        }
+
+        return sb.toString()
     }
 }
