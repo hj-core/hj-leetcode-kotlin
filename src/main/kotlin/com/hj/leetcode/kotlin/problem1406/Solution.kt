@@ -35,7 +35,7 @@ class Solution {
         var suffixSum = 0
         for (start in stoneValue.lastIndex downTo 0) {
             suffixSum += stoneValue[start]
-            val currentResult = suffixSum - subProblemResults.min()!!
+            val currentResult = suffixSum - subProblemResults.min()
             subProblemResults.addFirst(currentResult)
             subProblemResults.removeLast()
         }
@@ -46,9 +46,13 @@ class Solution {
         return Pair(firstPlayerScore, secondPlayerScore)
     }
 
-    private fun gameResult(aliceScore: Int, bobScore: Int): String = when {
-        aliceScore > bobScore -> "Alice"
-        aliceScore < bobScore -> "Bob"
-        else -> "Tie"
-    }
+    private fun gameResult(
+        aliceScore: Int,
+        bobScore: Int,
+    ): String =
+        when {
+            aliceScore > bobScore -> "Alice"
+            aliceScore < bobScore -> "Bob"
+            else -> "Tie"
+        }
 }

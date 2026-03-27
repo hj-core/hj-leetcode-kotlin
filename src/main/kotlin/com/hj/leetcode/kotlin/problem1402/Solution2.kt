@@ -19,7 +19,7 @@ class Solution2 {
         repeat(sortedSatisfaction.size) {
             updateNextPrefixResult(end, sortedSatisfaction, prefixResult)
             end++
-            maxResult = maxOf(maxResult, prefixResult.max()!!)
+            maxResult = maxOf(maxResult, prefixResult.max())
         }
         return maxResult
     }
@@ -27,19 +27,21 @@ class Solution2 {
     private fun updateNextPrefixResult(
         currentEnd: Int,
         sortedSatisfaction: List<Int>,
-        currentResult: IntArray
+        currentResult: IntArray,
     ) {
         val newEnd = currentEnd + 1
         val maxDishes = newEnd + 1
         val likeOfNewDish = sortedSatisfaction[newEnd]
         // update for the case that all dishes are prepared
-        currentResult[maxDishes] = currentResult[maxDishes - 1] + maxDishes * likeOfNewDish
+        currentResult[maxDishes] =
+            currentResult[maxDishes - 1] + maxDishes * likeOfNewDish
         // update for the remaining cases
         for (numDishes in maxDishes - 1 downTo 1) {
             val resultIfDiscardNewDish = currentResult[numDishes]
             val resultIfPrepareNewDish =
                 currentResult[numDishes - 1] + numDishes * likeOfNewDish
-            currentResult[numDishes] = maxOf(resultIfDiscardNewDish, resultIfPrepareNewDish)
+            currentResult[numDishes] =
+                maxOf(resultIfDiscardNewDish, resultIfPrepareNewDish)
         }
     }
 }
