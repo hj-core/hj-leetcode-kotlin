@@ -11,12 +11,12 @@ class Solution2 {
         fruits: IntArray,
         baskets: IntArray,
     ): Int {
-        val tree = MaxSegmentTree.new(baskets)
+        val tree = MaxSegmentTree2.new(baskets)
         return fruits.count { !tree.place(it) }
     }
 }
 
-private class MaxSegmentTree(
+private class MaxSegmentTree2(
     // The value of nodes, from root to leaves and level
     // by level. We place the root at index 1.
     private val values: IntArray,
@@ -72,7 +72,7 @@ private class MaxSegmentTree(
     }
 
     companion object {
-        fun new(baskets: IntArray): MaxSegmentTree {
+        fun new(baskets: IntArray): MaxSegmentTree2 {
             var halfSize = 1
             while (halfSize < baskets.size) {
                 halfSize *= 2
@@ -88,7 +88,7 @@ private class MaxSegmentTree(
                 values[i] = maxOf(values[j - 1], values[j])
                 j -= 2
             }
-            return MaxSegmentTree(values)
+            return MaxSegmentTree2(values)
         }
     }
 }
