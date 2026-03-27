@@ -8,8 +8,8 @@ class Solution {
      * Time O(N) and Space O(1) where N is the size of salary;
      */
     fun average(salary: IntArray): Double {
-        val minSalary = salary.min()!!
-        val maxSalary = salary.max()!!
+        val minSalary = salary.min()
+        val maxSalary = salary.max()
         val sumSalary = salary.sum().toDouble()
         // Return average salary excluding the minimum and maximum salary
         return (sumSalary - minSalary - maxSalary) / (salary.size - 2)

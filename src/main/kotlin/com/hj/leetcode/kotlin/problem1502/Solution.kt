@@ -8,8 +8,8 @@ class Solution {
      * Time O(N) and Space O(N) where N is the size of arr;
      */
     fun canMakeArithmeticProgression(arr: IntArray): Boolean {
-        val min = arr.min()!!
-        val max = arr.max()!!
+        val min = arr.min()
+        val max = arr.max()
 
         val isNonIntCommonDifference = (max - min) % (arr.size - 1) != 0
         if (isNonIntCommonDifference) {
@@ -21,10 +21,10 @@ class Solution {
             return true
         }
 
-        return arr.all { (it - min) % commonDifference == 0 } && arr.noDuplicates()
+        return arr.all { (it - min) % commonDifference == 0 } &&
+            arr.noDuplicates()
     }
 
-    private fun IntArray.noDuplicates(): Boolean {
-        return this.toHashSet().size == this.size
-    }
+    private fun IntArray.noDuplicates(): Boolean =
+        this.toHashSet().size == this.size
 }
