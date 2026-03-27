@@ -5,10 +5,12 @@ package com.hj.leetcode.kotlin.problem146
  */
 class Solution2
 
-private class LRUCache(
+private class LRUCache2(
     val capacity: Int,
 ) : LinkedHashMap<Int, Int>(capacity, 0.75f, true) {
-    override fun removeEldestEntry(eldest: MutableMap.MutableEntry<Int, Int>?): Boolean = super.size > capacity
+    override fun removeEldestEntry(
+        eldest: MutableMap.MutableEntry<Int, Int>?,
+    ): Boolean = super.size > capacity
 
-    override fun get(key: Int): Int? = super.get(key) ?: -1
+    override fun get(key: Int): Int = super.get(key) ?: -1
 }
