@@ -14,7 +14,7 @@ class Solution {
         if (s1[0] != s2[0] && s1[0] != s2[2]) {
             return false
         }
-        if (s1[0].code + s1[2].code != s2[0].code + s2[2].code) {
+        if (s1[0].code xor s1[2].code xor s2[0].code xor s2[2].code != 0) {
             return false
         }
 
@@ -22,6 +22,6 @@ class Solution {
         if (s1[1] != s2[1] && s1[1] != s2[3]) {
             return false
         }
-        return s1[1].code + s1[3].code == s2[1].code + s2[3].code
+        return s1[1].code xor s1[3].code xor s2[1].code xor s2[3].code == 0
     }
 }
