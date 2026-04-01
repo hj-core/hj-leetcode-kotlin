@@ -15,34 +15,41 @@ class Solution {
         val robots = Array(n) { i -> Robot.new(i, healths[i], directions[i]) }
         robots.sortBy { positions[it.index()] }
 
-        val survived = mutableListOf<Robot>()
+        var top = -1 // Use robots as stack
         var i = 0
         while (i < n) {
             when {
-                robots[i].isRight() || survived.isEmpty() || survived.last().isLeft() -> {
-                    survived.add(robots[i])
+                robots[i].isRight() || top < 0 || robots[top].isLeft() -> {
+                    top++
+                    robots[top] = robots[i]
                     i++
                 }
 
-                survived.last().health() < robots[i].health() -> {
-                    survived.removeLast()
+                robots[top].health() < robots[i].health() -> {
+                    top--
                     robots[i] = robots[i].decHealth()
                 }
 
-                survived.last().health() > robots[i].health() -> {
-                    survived[survived.lastIndex] = survived.last().decHealth()
+                robots[top].health() > robots[i].health() -> {
+                    robots[top] = robots[top].decHealth()
                     i++
                 }
 
                 else -> {
-                    survived.removeLast()
+                    top--
                     i++
                 }
             }
         }
 
-        survived.sortBy { it.packed } // Sort by index
-        return survived.map(Robot::health)
+        val survived = top + 1
+        val maxRobot = Robot.new(n, 0, 'L')
+        for (i in survived..<n) {
+            robots[i] = maxRobot
+        }
+        robots.sortBy { it.packed } // Sort by index
+
+        return List(survived) { i -> robots[i].health() }
     }
 
     @JvmInline
