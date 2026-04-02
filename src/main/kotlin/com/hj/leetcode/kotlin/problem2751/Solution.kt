@@ -4,62 +4,84 @@ package com.hj.leetcode.kotlin.problem2751
  * LeetCode page: [2751. Robot Collisions](https://leetcode.com/problems/robot-collisions/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(NLogN) and Space O(N) where N is the number of robots;
-     */
-    fun survivedRobotsHealths(positions: IntArray, healths: IntArray, directions: String): List<Int> {
-        val remainingRobots = robotsAtStart(positions, healths, directions)
-        collideAll(remainingRobots)
-        remainingRobots.sortBy { it.index }
-        return remainingRobots.map { it.health }
-    }
-
-    private fun robotsAtStart(
+    // Complexity:
+    // Time O(NLogN) and Space O(N) where N is the number of robots.
+    fun survivedRobotsHealths(
         positions: IntArray,
         healths: IntArray,
         directions: String,
-    ): MutableList<Robot> = positions.indices.mapTo(mutableListOf()) { index ->
-        Robot(index, positions[index], healths[index], directions[index])
-    }
+    ): List<Int> {
+        val n = positions.size
+        val robots = Array(n) { i -> Robot.new(i, healths[i], directions[i]) }
+        robots.sortBy { positions[it.index()] }
 
-    private data class Robot(
-        val index: Int,
-        val position: Int,
-        val health: Int,
-        val direction: Char,
-    )
+        var top = -1 // Use robots as stack
+        var i = 0
+        while (i < n) {
+            when {
+                robots[i].isRight() || top < 0 || robots[top].isLeft() -> {
+                    top++
+                    robots[top] = robots[i]
+                    i++
+                }
 
-    private fun collideAll(robots: MutableList<Robot>) {
-        robots.sortBy { it.position }
-        // Use robots in-place as stack and perform all collisions
-        var stackPtr = -1
-        for (robot in robots) {
-            var winner = robot
-            while (stackPtr >= 0
-                && robots[stackPtr].direction == 'R'
-                && winner.direction == 'L'
-            ) {
-                val challenger = robots[stackPtr]
-                stackPtr--
-                winner = collide(challenger, winner)
-            }
-            if (winner.health > 0) {
-                stackPtr++
-                robots[stackPtr] = winner
+                robots[top].health() < robots[i].health() -> {
+                    top--
+                    robots[i] = robots[i].decHealth()
+                }
+
+                robots[top].health() > robots[i].health() -> {
+                    robots[top] = robots[top].decHealth()
+                    i++
+                }
+
+                else -> {
+                    top--
+                    i++
+                }
             }
         }
-        // Pop the robots above stackPtr
-        repeat(robots.lastIndex - stackPtr) {
-            robots.removeLast()
+
+        val survived = top + 1
+        val maxRobot = Robot.new(n, 0, 'L')
+        for (i in survived..<n) {
+            robots[i] = maxRobot
         }
+        robots.sortBy { it.packed } // Sort by index
+
+        return List(survived) { i -> robots[i].health() }
     }
 
-    private fun collide(left: Robot, right: Robot): Robot {
-        require(left.direction == 'R' && right.direction == 'L')
-        return when {
-            left.health > right.health -> left.copy(health = left.health - 1)
-            left.health < right.health -> right.copy(health = right.health - 1)
-            else -> left.copy(health = 0)
+    @JvmInline
+    private value class Robot(
+        val packed: Long,
+    ) {
+        fun index(): Int = (this.packed shr INDEX_SHIFT).toInt()
+
+        fun health(): Int = (this.packed and HEALTH_MASK).toInt()
+
+        fun decHealth(): Robot = Robot(this.packed - 1L)
+
+        fun isLeft(): Boolean = ((this.packed and DIR_MASK) shr DIR_SHIFT) == 0L
+
+        fun isRight(): Boolean = !this.isLeft()
+
+        companion object {
+            private const val HEALTH_MASK: Long = 0x3fff_ffff
+            private const val DIR_MASK: Long = 0xc000_0000
+            private const val DIR_SHIFT: Int = 30
+            private const val INDEX_SHIFT: Int = 32
+
+            fun new(
+                index: Int,
+                health: Int,
+                direction: Char,
+            ): Robot {
+                val dir = if (direction == 'L') 0L else 1L
+                val packed =
+                    (index.toLong() shl INDEX_SHIFT) or (dir shl DIR_SHIFT) or health.toLong()
+                return Robot(packed)
+            }
         }
     }
 }
