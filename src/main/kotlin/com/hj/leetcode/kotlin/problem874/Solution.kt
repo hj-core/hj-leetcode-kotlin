@@ -6,29 +6,28 @@ import kotlin.math.max
  * LeetCode page: [874. Walking Robot Simulation](https://leetcode.com/problems/walking-robot-simulation/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(kN+M) and Space O(M) where N is the size of commands, M is the size of obstacles
-     * and k is the maximum movements in a single command.
-     */
+    // Complexity:
+    // Time O(kN+M) and Space O(M) where N is the size of commands, M is the size of obstacles
+    // and k is the maximum movements in a single command.
     fun robotSim(
         commands: IntArray,
         obstacles: Array<IntArray>,
     ): Int {
-        val obstacleSet = obstacles.asSequence().map { Position(it[0], it[1]) }.toSet()
-        var result = 0
-        var position = Position(0, 0)
+        val obstacles = obstacles.mapTo(HashSet()) { Position(it[0], it[1]) }
+        var robot = Position(0, 0)
         var direction = Direction.North
-
+        var maxD2 = 0
         for (command in commands) {
             when (command) {
                 -2 -> direction = direction.turnedLeft()
                 -1 -> direction = direction.turnedRight()
-                in 1..9 -> position = position.moved(direction, command, obstacleSet)
+                in 1..9 -> robot = robot.moved(direction, command, obstacles)
                 else -> throw IllegalArgumentException("Invalid command")
             }
-            result = max(result, position.squaredDistance())
+            maxD2 = max(maxD2, robot.squaredDistance())
         }
-        return result
+
+        return maxD2
     }
 
     private data class Position(
@@ -40,18 +39,19 @@ class Solution {
             steps: Int,
             obstacles: Set<Position>,
         ): Position {
-            var result = this
-            for (step in 1..steps) {
-                val tryMove = result.moved(direction)
-                if (tryMove in obstacles) {
-                    break
+            var newPos = this
+            repeat(steps) {
+                val tryMoved = newPos.moved(direction)
+                if (tryMoved in obstacles) {
+                    return newPos
                 }
-                result = tryMove
+                newPos = tryMoved
             }
-            return result
+            return newPos
         }
 
-        private fun moved(direction: Direction): Position = Position(x + direction.dx, y + direction.dy)
+        private fun moved(direction: Direction): Position =
+            Position(x + direction.dx, y + direction.dy)
 
         fun squaredDistance(): Int = x * x + y * y
     }
