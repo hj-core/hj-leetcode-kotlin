@@ -11,15 +11,19 @@ class Solution {
             return colors.size - 1
         }
 
-        var maxD = 0
-        var second = colors.size // the smallest i that colors[i] != colors[0]
-        for (i in 1..<colors.size) {
-            if (colors[i] != colors[0]) {
-                maxD = i
-                second = minOf(second, i)
-            } else {
-                maxD = maxOf(maxD, i - second)
-            }
+        val second = colors.indexOfFirst { it != colors[0] }
+        if (second == -1) {
+            return 0
+        }
+
+        var maxD = second
+        for (i in second + 1..<colors.size) {
+            maxD =
+                if (colors[i] != colors[0]) {
+                    i
+                } else {
+                    maxOf(maxD, i - second)
+                }
         }
 
         return maxD
