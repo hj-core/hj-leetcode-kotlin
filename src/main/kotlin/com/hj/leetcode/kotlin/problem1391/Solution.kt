@@ -27,27 +27,27 @@ class Solution {
         seen[r][c] = true
         return when (grid[r][c]) {
             1 -> {
-                tryDfsLeft(r, c, grid, seen) || tryDfsRight(r, c, grid, seen)
+                dfsLeft(r, c, grid, seen) || dfsRight(r, c, grid, seen)
             }
 
             2 -> {
-                tryDfsUp(r, c, grid, seen) || tryDfsDown(r, c, grid, seen)
+                dfsUp(r, c, grid, seen) || dfsDown(r, c, grid, seen)
             }
 
             3 -> {
-                tryDfsLeft(r, c, grid, seen) || tryDfsDown(r, c, grid, seen)
+                dfsLeft(r, c, grid, seen) || dfsDown(r, c, grid, seen)
             }
 
             4 -> {
-                tryDfsRight(r, c, grid, seen) || tryDfsDown(r, c, grid, seen)
+                dfsRight(r, c, grid, seen) || dfsDown(r, c, grid, seen)
             }
 
             5 -> {
-                tryDfsLeft(r, c, grid, seen) || tryDfsUp(r, c, grid, seen)
+                dfsLeft(r, c, grid, seen) || dfsUp(r, c, grid, seen)
             }
 
             6 -> {
-                tryDfsRight(r, c, grid, seen) || tryDfsUp(r, c, grid, seen)
+                dfsRight(r, c, grid, seen) || dfsUp(r, c, grid, seen)
             }
 
             else -> {
@@ -56,14 +56,14 @@ class Solution {
         }
     }
 
-    private fun tryDfsLeft(
+    private fun dfsLeft(
         r: Int,
         c: Int,
         grid: Array<IntArray>,
         seen: Array<BooleanArray>,
     ): Boolean = c > 0 && grid[r][c - 1] in intArrayOf(1, 4, 6) && dfs(r, c - 1, grid, seen)
 
-    private fun tryDfsRight(
+    private fun dfsRight(
         r: Int,
         c: Int,
         grid: Array<IntArray>,
@@ -72,14 +72,14 @@ class Solution {
         c < grid[r].lastIndex && grid[r][c + 1] in intArrayOf(1, 3, 5) &&
             dfs(r, c + 1, grid, seen)
 
-    private fun tryDfsUp(
+    private fun dfsUp(
         r: Int,
         c: Int,
         grid: Array<IntArray>,
         seen: Array<BooleanArray>,
     ): Boolean = r > 0 && grid[r - 1][c] in intArrayOf(2, 3, 4) && dfs(r - 1, c, grid, seen)
 
-    private fun tryDfsDown(
+    private fun dfsDown(
         r: Int,
         c: Int,
         grid: Array<IntArray>,
