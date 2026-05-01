@@ -12,23 +12,42 @@ class Solution {
         grid: Array<IntArray>,
         x: Int,
     ): Int {
+        if (!hasUniqueRemainder(grid, x)) {
+            return -1
+        }
+
+        val values = sortedValues(grid)
+        val midValue = values[values.size / 2]
+        return countOperations(values, midValue, x)
+    }
+
+    private fun hasUniqueRemainder(
+        grid: Array<IntArray>,
+        modulus: Int,
+    ): Boolean {
+        val remainder = grid[0][0] % modulus
+        return grid.all { row -> row.all { it % modulus == remainder } }
+    }
+
+    private fun sortedValues(grid: Array<IntArray>): IntArray {
         val m = grid.size
         val n = grid[0].size
-        val requiredRem = grid[0][0] % x
 
-        val heights = IntArray(m * n)
+        val values = IntArray(m * n)
         var i = 0
         for (row in grid) {
             for (value in row) {
-                if (value % x != requiredRem) {
-                    return -1
-                }
-                heights[i++] = value
+                values[i++] = value
             }
         }
-        heights.sort()
 
-        val median = heights[heights.size / 2]
-        return heights.sumOf { abs(it - median) / x }
+        values.sort()
+        return values
     }
+
+    private fun countOperations(
+        values: IntArray,
+        targetValue: Int,
+        x: Int,
+    ): Int = values.sumOf { abs(it - targetValue) / x }
 }
