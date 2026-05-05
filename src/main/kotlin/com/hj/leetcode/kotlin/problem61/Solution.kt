@@ -6,46 +6,56 @@ import com.hj.leetcode.kotlin.common.model.ListNode
  * LeetCode page: [61. Rotate List](https://leetcode.com/problems/rotate-list/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(N) and Space O(1) where N is the number of nodes in head;
-     */
-    fun rotateRight(head: ListNode?, k: Int): ListNode? {
-        val (tail, numNodes) = head.getTailAndNumberOfNodes()
-        if (numNodes == 0) return null
+    // Complexity:
+    // Time O(N) and Space O(1) where N is the number of nodes in head.
+    fun rotateRight(
+        head: ListNode?,
+        k: Int,
+    ): ListNode? {
+        val (size, last) = getSizeAndLast(head)
+        if (size == 0 || size == 1) {
+            return head
+        }
 
-        val netShift = k % numNodes
-        if (netShift == 0) return head
+        val k = k % size
+        if (k == 0) {
+            return head
+        }
 
-        val newHeadPosition = numNodes - netShift + 1
-        val nodeBeforeNewHead = head.getNthNode(newHeadPosition - 1)
-        val newHead = nodeBeforeNewHead?.next
+        checkNotNull(last).next = head
+        val newLast = checkNotNull(getNode(head, size - k - 1))
+        val newHead = checkNotNull(newLast.next)
+        newLast.next = null
 
-        nodeBeforeNewHead?.next = null
-        tail?.next = head
         return newHead
     }
 
-    private fun ListNode?.getTailAndNumberOfNodes(): Pair<ListNode?, Int> {
-        if (this == null) return Pair(null, 0)
-
-        var tail = this
-        var numNodes = 1
-
-        while (tail?.next != null) {
-            numNodes++
-            tail = tail.next
+    private fun getSizeAndLast(head: ListNode?): Pair<Int, ListNode?> {
+        if (head == null) {
+            return Pair(0, null)
         }
-        return Pair(tail, numNodes)
+
+        var size = 1
+        var last: ListNode = head
+        while (last.next != null) {
+            size++
+            last = checkNotNull(last.next)
+        }
+
+        return Pair(size, last)
     }
 
-    private fun ListNode?.getNthNode(n: Int): ListNode? {
-        var position = 1
-        var node = this
-
-        while (position < n && node != null) {
-            position++
+    private fun getNode(
+        head: ListNode?,
+        index: Int,
+    ): ListNode? {
+        var node = head
+        var i = 0
+        while (i < index && node != null) {
+            i++
             node = node.next
         }
+
         return node
     }
 }
