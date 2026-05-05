@@ -12,7 +12,7 @@ class Solution {
         head: ListNode?,
         k: Int,
     ): ListNode? {
-        val (size, last) = getSizeAndLast(head)
+        val (size, oldTail) = getSizeAndTail(head)
         if (size == 0 || size == 1) {
             return head
         }
@@ -22,27 +22,23 @@ class Solution {
             return head
         }
 
-        checkNotNull(last).next = head
-        val newLast = checkNotNull(getNode(head, size - k - 1))
-        val newHead = checkNotNull(newLast.next)
-        newLast.next = null
+        checkNotNull(oldTail).next = head
+        val newTail = checkNotNull(getNode(head, size - k - 1))
+        val newHead = checkNotNull(newTail.next)
+        newTail.next = null
 
         return newHead
     }
 
-    private fun getSizeAndLast(head: ListNode?): Pair<Int, ListNode?> {
-        if (head == null) {
-            return Pair(0, null)
-        }
-
+    private fun getSizeAndTail(head: ListNode?): Pair<Int, ListNode?> {
+        var tail = head ?: return Pair(0, null)
         var size = 1
-        var last: ListNode = head
-        while (last.next != null) {
+        while (tail.next != null) {
             size++
-            last = checkNotNull(last.next)
+            tail = checkNotNull(tail.next)
         }
 
-        return Pair(size, last)
+        return Pair(size, tail)
     }
 
     private fun getNode(
