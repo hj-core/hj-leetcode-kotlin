@@ -32,13 +32,13 @@ class Solution {
 
     private fun ListNode?.sizeAndTail(): Pair<Int, ListNode?> {
         var tail = this ?: return Pair(0, null)
-        var length = 1
+        var size = 1
         while (tail.next != null) {
-            length++
+            size++
             tail = checkNotNull(tail.next)
         }
 
-        return Pair(length, tail)
+        return Pair(size, tail)
     }
 
     private fun ListNode?.get(index: Int): ListNode? {
