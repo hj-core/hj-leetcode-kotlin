@@ -82,6 +82,7 @@ class Solution {
         val lm = grid.size - 2 * layer
         val ln = grid[0].size - 2 * layer
         val corners = intArrayOf(ln - 1, lm + ln - 2, ln * 2 + lm - 3, (lm + ln - 2) * 2)
+
         return when (index) {
             in 0..<corners[0] -> Pair(layer, layer + index)
             in corners[0]..<corners[1] -> Pair(layer + index - corners[0], layer + ln - 1)
