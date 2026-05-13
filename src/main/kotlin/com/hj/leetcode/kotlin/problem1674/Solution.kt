@@ -12,11 +12,11 @@ class Solution {
     ): Int {
         val n = nums.size
         val line = IntArray(2 * limit + 2)
+        line[1] = n
         for (i in 0..<n / 2) {
             val a = minOf(nums[i], nums[n - 1 - i])
             val b = maxOf(nums[i], nums[n - 1 - i])
-            val sum = a + b
-            line[1] += 2
+            val sum = nums[i] + nums[n - 1 - i]
             line[a + 1] -= 1
             line[sum] -= 1
             line[sum + 1] += 1
