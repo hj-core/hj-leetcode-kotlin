@@ -9,10 +9,7 @@ class Solution {
     fun canReach(
         arr: IntArray,
         start: Int,
-    ): Boolean {
-        val visited = BooleanArray(arr.size)
-        return dfs(start, arr, visited)
-    }
+    ): Boolean = dfs(start, arr, BooleanArray(arr.size))
 
     private fun dfs(
         start: Int,
