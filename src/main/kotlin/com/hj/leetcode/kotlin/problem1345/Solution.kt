@@ -4,57 +4,53 @@ package com.hj.leetcode.kotlin.problem1345
  * LeetCode page: [1345. Jump Game IV](https://leetcode.com/problems/jump-game-iv/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(N) and Space O(N) where N is the size of arr;
-     */
+    // Complexity:
+    // Time O(N) and Space O(N) where N is the size of arr.
     fun minJumps(arr: IntArray): Int {
-        var step = 0
-        val indicesAtStep = ArrayDeque<Int>().apply { addLast(0) }
-        val visited = BooleanArray(arr.size).apply { this[0] = true }
-        val pendingIndices = arr.groupPendingIndicesByValue()
+        val visited = BooleanArray(arr.size)
+        val bfsQueue = ArrayDeque<Int>()
+        val valueIndices = arr.groupIndicesByValue()
 
-        while (indicesAtStep.isNotEmpty()) {
-            repeat(indicesAtStep.size) {
-                val currIndex = indicesAtStep.removeFirst()
-                if (currIndex == arr.lastIndex) {
-                    return step
+        var jumps = 0
+        bfsQueue.add(0)
+        visited[0] = true
+
+        while (!visited[arr.lastIndex]) {
+            jumps++
+            repeat(bfsQueue.size) {
+                val currIndex = bfsQueue.removeFirst()
+
+                val left = currIndex - 1
+                if (0 <= left && !visited[left]) {
+                    bfsQueue.add(left)
+                    visited[left] = true
                 }
 
-                val prevIndex = currIndex - 1
-                if (prevIndex >= 0 && !visited[prevIndex]) {
-                    indicesAtStep.addLast(prevIndex)
-                    visited[prevIndex] = true
+                val right = currIndex + 1
+                if (right < arr.size && !visited[right]) {
+                    bfsQueue.add(right)
+                    visited[right] = true
                 }
 
-                val nextIndex = currIndex + 1
-                if (nextIndex < arr.size && !visited[nextIndex]) {
-                    indicesAtStep.addLast(nextIndex)
-                    visited[nextIndex] = true
-                }
-
-                val currValue = arr[currIndex]
-                val indicesWithSameValue = pendingIndices[currValue] ?: mutableListOf()
-                for (index in indicesWithSameValue) {
+                val teleport = valueIndices.remove(arr[currIndex]) ?: emptyList()
+                for (index in teleport) {
                     if (!visited[index]) {
-                        indicesAtStep.addLast(index)
+                        bfsQueue.add(index)
                         visited[index] = true
                     }
                 }
-                indicesWithSameValue.clear()
             }
-
-            step++
         }
-        throw IllegalStateException()
+
+        return jumps
     }
 
-    private fun IntArray.groupPendingIndicesByValue(): Map<Int, MutableList<Int>> {
-        val result = hashMapOf<Int, MutableList<Int>>()
-        for (index in 1 until size) {
-            result
-                .computeIfAbsent(this[index]) { mutableListOf() }
-                .add(index)
+    private fun IntArray.groupIndicesByValue(): MutableMap<Int, MutableList<Int>> {
+        val map = mutableMapOf<Int, MutableList<Int>>()
+        for ((index, value) in this.withIndex()) {
+            map.computeIfAbsent(value) { mutableListOf() }.add(index)
         }
-        return result
+
+        return map
     }
 }
