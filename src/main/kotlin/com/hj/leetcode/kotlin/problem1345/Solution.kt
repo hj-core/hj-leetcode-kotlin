@@ -50,6 +50,7 @@ class Solution {
         for ((index, value) in this.withIndex()) {
             map.computeIfAbsent(value) { mutableListOf() }.add(index)
         }
+
         return map
     }
 }
