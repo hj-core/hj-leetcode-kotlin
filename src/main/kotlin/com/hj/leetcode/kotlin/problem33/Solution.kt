@@ -4,39 +4,36 @@ package com.hj.leetcode.kotlin.problem33
  * LeetCode page: [33. Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(LogN) and Space O(1) where N is the size of nums;
-     */
-    fun search(nums: IntArray, target: Int): Int {
-        val (fromIndex, toIndex) =
-            if (target > nums.last()) Pair(0, indexOfMin(nums)) else Pair(indexOfMin(nums), nums.size)
-        return nums
-            .binarySearch(target, fromIndex, toIndex)
-            .let { if (it < 0) -1 else it }
-    }
+    // Complexity:
+    // Time O(LogN) and Space O(1) where N is the size of nums.
+    fun search(
+        nums: IntArray,
+        target: Int,
+    ): Int {
+        // is target in the first increasing subarray
+        val bit0 = if (target < nums[0]) 0 else 1
 
-    /**
-     * [nums] should be a sorted array with distinct values, and it may be rotated.
-     *
-     * Return the index of the minimum value in [nums].
-     */
-    private fun indexOfMin(nums: IntArray): Int {
-        if (nums.size == 1 || nums[0] < nums.last()) {
-            return 0
-        }
-
+        // Binary search for the index over range [left, right]
         var left = 0
-        var right = nums.lastIndex
+        var right = nums.size - 1
 
         while (left <= right) {
-            val mid = left + (right - left) / 2
+            val mid = (left + right) ushr 1
+            if (nums[mid] == target) {
+                return mid
+            }
 
-            when {
-                nums[mid] > nums[mid + 1] -> return mid + 1
-                nums[mid] < nums[0] -> right = mid
-                else -> left = mid + 1
+            val bit1 = if (nums[mid] < nums[0]) 0 else 2
+            val bit2 = if (nums[mid] < target) 0 else 4
+
+            val mask = bit0 or bit1 or bit2
+            if (mask == 0 || mask == 3 || mask == 6) {
+                left = mid + 1
+            } else {
+                right = mid - 1
             }
         }
-        throw IllegalStateException()
+
+        return -1
     }
 }
