@@ -23,11 +23,11 @@ class Solution {
                 return mid
             }
 
-            val bit1 = if (nums[mid] < nums[0]) 0 else 2
-            val bit2 = if (nums[mid] < target) 0 else 4
+            val bit1 = if (nums[mid] < nums[0]) 0 else 1
+            val bit2 = if (nums[mid] < target) 0 else 1
 
-            val mask = bit0 or bit1 or bit2
-            if (mask == 0 || mask == 3 || mask == 6) {
+            val mask = bit0 xor bit1 xor bit2
+            if (mask == 0) {
                 left = mid + 1
             } else {
                 right = mid - 1
