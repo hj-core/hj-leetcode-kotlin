@@ -14,8 +14,8 @@ class Solution {
         val indexValues = IntArray(n) { pack(it, arr[it]) }
         indexValues.sort() // sort by value and break ties by index
 
-        val leftNearest = computeLeftNearestLargerIndex(arr)
-        val rightNearest = computeRightNearestLargerIndex(arr)
+        val prevGreater = computePrevGreaterIndex(arr)
+        val nextGreater = computeNextGreaterIndex(arr)
 
         // maxVisited[i]:= the maximum number of indices we can visit if we start
         // from index i.
@@ -27,14 +27,14 @@ class Solution {
             maxVisited[i]++
             result = maxOf(result, maxVisited[i])
 
-            val left = leftNearest[i]
-            if (i - left <= d) {
-                maxVisited[left] = maxOf(maxVisited[left], maxVisited[i])
+            val prev = prevGreater[i]
+            if (i - prev <= d) {
+                maxVisited[prev] = maxOf(maxVisited[prev], maxVisited[i])
             }
 
-            val right = rightNearest[i]
-            if (right - i <= d) {
-                maxVisited[right] = maxOf(maxVisited[right], maxVisited[i])
+            val next = nextGreater[i]
+            if (next - i <= d) {
+                maxVisited[next] = maxOf(maxVisited[next], maxVisited[i])
             }
         }
 
@@ -56,29 +56,27 @@ class Solution {
 
     private fun getIndex(indexValue: Int): Int = indexValue and 0xFFF
 
-    private fun computeLeftNearestLargerIndex(arr: IntArray): IntArray {
-        val nearestLargerIndex = IntArray(arr.size) { -2 * arr.size }
+    private fun computePrevGreaterIndex(arr: IntArray): IntArray {
+        val prevGreater = IntArray(arr.size) { -2 * arr.size }
         for (i in 1 until arr.size) {
-            var j = i - 1
-            while (0 <= j && arr[j] <= arr[i]) {
-                j = nearestLargerIndex[j]
+            prevGreater[i] = i - 1
+            while (0 <= prevGreater[i] && arr[prevGreater[i]] <= arr[i]) {
+                prevGreater[i] = prevGreater[prevGreater[i]]
             }
-            nearestLargerIndex[i] = j
         }
 
-        return nearestLargerIndex
+        return prevGreater
     }
 
-    private fun computeRightNearestLargerIndex(arr: IntArray): IntArray {
-        val nearestLargerIndex = IntArray(arr.size) { 2 * arr.size }
+    private fun computeNextGreaterIndex(arr: IntArray): IntArray {
+        val nextGreater = IntArray(arr.size) { 2 * arr.size }
         for (i in arr.lastIndex - 1 downTo 0) {
-            var j = i + 1
-            while (j < arr.size && arr[j] <= arr[i]) {
-                j = nearestLargerIndex[j]
+            nextGreater[i] = i + 1
+            while (nextGreater[i] < arr.size && arr[nextGreater[i]] <= arr[i]) {
+                nextGreater[i] = nextGreater[nextGreater[i]]
             }
-            nearestLargerIndex[i] = j
         }
 
-        return nearestLargerIndex
+        return nextGreater
     }
 }
