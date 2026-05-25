@@ -21,7 +21,7 @@ class Solution {
         line[1]--
 
         var sweep = 0
-        for (i in 0 until n - 1) {
+        for (i in 0 until n - minJump) {
             sweep += line[i]
             if (sweep > 0 && s[i] == '0') {
                 line[minOf(i + minJump, n)]++
