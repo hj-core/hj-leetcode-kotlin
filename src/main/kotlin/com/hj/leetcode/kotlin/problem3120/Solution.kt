@@ -9,10 +9,10 @@ class Solution {
     fun numberOfSpecialChars(word: String): Int {
         val visited = intArrayOf(0, 0) // bit flag for 'A' to 'Z' and 'a' to 'z'
         for (c in word) {
-            val shift = c - 'A'
-            val i = shift shr 5
-            val j = shift and 0x1F
-            visited[i] = visited[i] or (1 shl j)
+            val d = c - 'A'
+            val isLower = d shr 5
+            val pos = d and 0x1F
+            visited[isLower] = visited[isLower] or (1 shl pos)
         }
 
         return (visited[0] and visited[1]).countOneBits()
