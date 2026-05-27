@@ -5,9 +5,10 @@ package com.hj.leetcode.kotlin.problem3120
  */
 class Solution {
     // Complexity:
-    // Time O(N+M) and Space O(1) where N is the length of word.
-    fun numberOfSpecialChars(word: String): Int {
-        val visited = word.fold(0L) { acc, ch -> 1L shl (ch - 'A') or acc }
-        return (visited shr 32 and visited).countOneBits()
-    }
+    // Time O(N) and Space O(1) where N is the length of word.
+    fun numberOfSpecialChars(word: String): Int =
+        word
+            .fold(0L) { visited, c -> 1L shl (c - 'A') or visited }
+            .let { it shr 32 and it }
+            .countOneBits()
 }
