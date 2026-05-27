@@ -7,9 +7,9 @@ class Solution {
     // Complexity:
     // Time O(N) and Space O(1) where N is the length of word.
     fun numberOfSpecialChars(word: String): Int {
-        // visited & (1 << (c - 'A')) = 1 if c in word
+        // visited >> (c - 'A') & 1 = 1 if c in word
         var visited = 0L
-        // inOrder & (1 << (lower(c) - 'a')) = 1 if no lower(c) after upper(c)
+        // inOrder >> (lower(c) - 'a') & 1 = 1 if no lower(c) after upper(c)
         var inOrder = 0xFFFF_FFFF
 
         for (c in word) {
