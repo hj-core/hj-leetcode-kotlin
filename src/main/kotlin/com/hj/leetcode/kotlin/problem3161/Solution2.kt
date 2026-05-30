@@ -10,10 +10,10 @@ class Solution2 {
     // Time O(NLogN) and Space O(N) where N is the length of queries.
     fun getResults(queries: Array<IntArray>): List<Boolean> {
         val trimmedSize = queries.indexOfLast { it[0] == 2 } + 1
-        val points = collectUniquePoints(queries, 0..<trimmedSize).apply { sort() }
-        val pointIndex = points.withIndex().associate { (index, point) -> point to index }
-        val obstacles = TreeSet<Int>()
-        val maxTree = MaxSegmentTree(points.size)
+        val allObstacles = collectUniqueObstacles(queries, 0..<trimmedSize).apply { sort() }
+        val obstacleIndex = allObstacles.withIndex().associate { (index, point) -> point to index }
+        val maxTree = MaxSegmentTree(allObstacles.size)
+        val nowObstacles = TreeSet<Int>()
 
         val results = mutableListOf<Boolean>()
         for (i in 0..<trimmedSize) {
@@ -22,23 +22,26 @@ class Solution2 {
                 1 -> { // install obstacle
                     val x = q[1]
 
-                    val floor = obstacles.floor(x) ?: 0
+                    val floor = nowObstacles.floor(x) ?: 0
                     if (floor == x) {
                         continue
                     }
-                    val ceiling = obstacles.ceiling(x) ?: points.last()
-                    // We only update the endpoints, which is sufficient to alter the range values
-                    maxTree.update(checkNotNull(pointIndex[x]), x - floor)
-                    maxTree.update(checkNotNull(pointIndex[ceiling]), ceiling - x)
-                    obstacles.add(x)
+                    maxTree.update(checkNotNull(obstacleIndex[x]), x - floor)
+
+                    val ceiling = nowObstacles.ceiling(x)
+                    ceiling?.let {
+                        maxTree.update(checkNotNull(obstacleIndex[it]), it - x)
+                    }
+
+                    nowObstacles.add(x)
                 }
 
                 2 -> { // query
                     val (_, x, size) = q
-                    val floor = obstacles.lower(x) ?: 0
+                    val floor = nowObstacles.lower(x) ?: 0
                     val canPlace =
                         (x - floor >= size) ||
-                            (pointIndex[floor]?.let { maxTree.query(it) >= size } ?: false)
+                            (obstacleIndex[floor]?.let { maxTree.query(it) >= size } ?: false)
                     results.add(canPlace)
                 }
             }
@@ -47,13 +50,15 @@ class Solution2 {
         return results
     }
 
-    private fun collectUniquePoints(
+    private fun collectUniqueObstacles(
         queries: Array<IntArray>,
         indexRange: IntRange,
     ): IntArray {
         val points = hashSetOf<Int>()
         for (i in indexRange) {
-            points.add(queries[i][1])
+            if (queries[i][0] == 1) {
+                points.add(queries[i][1])
+            }
         }
         return points.toIntArray()
     }
