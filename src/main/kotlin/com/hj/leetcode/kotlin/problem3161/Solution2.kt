@@ -9,36 +9,36 @@ class Solution2 {
     // Complexity:
     // Time O(NLogN) and Space O(N) where N is the length of queries.
     fun getResults(queries: Array<IntArray>): List<Boolean> {
-        val trimmedSize = queries.indexOfLast { it[0] == 2 } + 1
-        val allObstacles = collectUniqueObstacles(queries, 0..<trimmedSize).apply { sort() }
+        val effectiveSize = queries.indexOfLast { it[0] == 2 } + 1
+        val allObstacles = collectUniqueObstacles(queries, 0..<effectiveSize).apply { sort() }
         val obstacleIndex = allObstacles.withIndex().associate { (index, point) -> point to index }
         val maxTree = MaxSegmentTree(allObstacles.size)
-        val nowObstacles = TreeSet<Int>()
+        val activeObstacles = TreeSet<Int>()
 
         val results = mutableListOf<Boolean>()
-        for (i in 0..<trimmedSize) {
-            val q = queries[i]
-            when (q[0]) {
+        for (i in 0..<effectiveSize) {
+            val query = queries[i]
+            when (query[0]) {
                 1 -> { // install obstacle
-                    val x = q[1]
+                    val x = query[1]
 
-                    val floor = nowObstacles.floor(x) ?: 0
-                    if (floor == x) {
+                    val prev = activeObstacles.floor(x) ?: 0
+                    if (prev == x) {
                         continue
                     }
-                    maxTree.update(checkNotNull(obstacleIndex[x]), x - floor)
+                    maxTree.update(checkNotNull(obstacleIndex[x]), x - prev)
 
-                    val ceiling = nowObstacles.ceiling(x)
-                    ceiling?.let {
+                    val next = activeObstacles.ceiling(x)
+                    next?.let {
                         maxTree.update(checkNotNull(obstacleIndex[it]), it - x)
                     }
 
-                    nowObstacles.add(x)
+                    activeObstacles.add(x)
                 }
 
-                2 -> { // query
-                    val (_, x, size) = q
-                    val floor = nowObstacles.lower(x) ?: 0
+                2 -> { // query placement
+                    val (_, x, size) = query
+                    val floor = activeObstacles.lower(x) ?: 0
                     val canPlace =
                         (x - floor >= size) ||
                             (obstacleIndex[floor]?.let { maxTree.query(it) >= size } ?: false)

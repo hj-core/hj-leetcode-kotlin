@@ -9,32 +9,32 @@ class Solution {
     // Complexity:
     // Time O(NLogN) and Space O(N) where N is the length of queries.
     fun getResults(queries: Array<IntArray>): List<Boolean> {
-        val trimmedSize = queries.indexOfLast { it[0] == 2 } + 1
-        val points = collectUniquePoints(queries, 0..<trimmedSize).apply { sort() }
-        val pointIndex = points.withIndex().associate { (index, point) -> point to index }
-        val obstacles = TreeSet<Int>()
-        val maxTree = MaxSegmentTree(points)
+        val effectiveSize = queries.indexOfLast { it[0] == 2 } + 1
+        val allPoints = collectUniquePoints(queries, 0..<effectiveSize).apply { sort() }
+        val pointIndex = allPoints.withIndex().associate { (index, point) -> point to index }
+        val activeObstacles = TreeSet<Int>()
+        val maxTree = MaxSegmentTree(allPoints)
 
         val results = mutableListOf<Boolean>()
-        for (i in 0..<trimmedSize) {
-            val q = queries[i]
-            when (q[0]) {
+        for (i in 0..<effectiveSize) {
+            val query = queries[i]
+            when (query[0]) {
                 1 -> { // install obstacle
-                    val x = q[1]
-                    val floor = obstacles.floor(x) ?: 0
-                    if (floor == x) {
+                    val x = query[1]
+                    val prev = activeObstacles.floor(x) ?: 0
+                    if (prev == x) {
                         continue
                     }
-                    val ceiling = obstacles.ceiling(x) ?: points.last()
-                    val fromIndex = checkNotNull(pointIndex[x]) + 1
-                    val toIndex = checkNotNull(pointIndex[ceiling])
-                    val delta = floor - x
+                    val next = activeObstacles.ceiling(x) ?: allPoints.last()
+                    val fromIndex = 1 + checkNotNull(pointIndex[x])
+                    val toIndex = checkNotNull(pointIndex[next])
+                    val delta = prev - x
                     maxTree.update(fromIndex..toIndex, delta)
-                    obstacles.add(x)
+                    activeObstacles.add(x)
                 }
 
-                2 -> { // query
-                    val (_, x, size) = q
+                2 -> { // query placement
+                    val (_, x, size) = query
                     val toIndex = checkNotNull(pointIndex[x])
                     val maxSpace = maxTree.query(toIndex)
                     results.add(size <= maxSpace)
