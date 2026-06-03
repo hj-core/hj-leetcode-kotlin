@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.kotlin.jvm)
-    alias(libs.plugins.kotlin.serialization)
 }
 
 group = "com.hj"
@@ -11,17 +10,11 @@ repositories {
 }
 
 dependencies {
-    implementation(libs.kotlinx.serialization.json)
     testImplementation(kotlin("test"))
 }
 
 tasks.test {
     useJUnitPlatform()
-}
-
-tasks.wrapper {
-    gradleVersion = "9.4.1"
-    distributionType = Wrapper.DistributionType.ALL
 }
 
 kotlin {
