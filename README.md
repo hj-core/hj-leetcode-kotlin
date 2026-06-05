@@ -772,6 +772,7 @@ at [LeetCode](https://leetcode.com/hj-core/).
 | [3660. Jump Game IX](https://leetcode.com/problems/jump-game-ix/)                                                                                                                               | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3660/Solution.kt)                                                                               | 2026-05-07    |
 | [3713. Longest Balanced Substring I](https://leetcode.com/problems/longest-balanced-substring-i/)                                                                                               | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3713/Solution.kt)                                                                               | 2026-02-12    |
 | [3714. Longest Balanced Substring II](https://leetcode.com/problems/longest-balanced-substring-ii/)                                                                                             | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3714/Solution.kt)                                                                               | 2026-02-13    |
+| [3751. Total Waviness of Numbers in Range I](https://leetcode.com/problems/total-waviness-of-numbers-in-range-i/)                                                                               | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3751/Solution.kt)                                                                               | 2026-06-04    |
 
 ### Easy
 
