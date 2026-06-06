@@ -19,7 +19,8 @@ class Solution2 {
         val digitsOfNum = toNum.toString().map { it.digitToInt() }.reversed()
         val length = digitsOfNum.size
         var suffixWavinessOfNum = countWaviness(digitsOfNum)
-        // dp[i][d0]:= the total waviness of length i+1 numbers starting with d0
+        // dp[i][d0]:= the total waviness of length i+1 numbers starting with d0;
+        // space-optimized to only keep the most recent two sub results.
         val dp = Array(2) { LongArray(10) }
 
         // digits = [..., d2, d1, d0]
@@ -60,8 +61,8 @@ class Solution2 {
 
             totalWaviness -=
                 when {
-                    d0 < d1 -> d2Weight * (d1 - minOf(d1 - 1, d2) - 1)
-                    d0 > d1 -> d2Weight * (9 - maxOf(d1, d2))
+                    d0 < d1 -> d2Weight * (d1 - a)
+                    d0 > d1 -> d2Weight * (10 - b)
                     else -> 0
                 }
 
