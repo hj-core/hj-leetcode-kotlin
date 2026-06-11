@@ -7,12 +7,12 @@ class Solution {
     // Complexity:
     // Time O(N) and Space O(N) where N is the length of edges.
     fun assignEdgeWeights(edges: Array<IntArray>): Int {
-        val adjList = computeAdjacencyList(edges)
+        val adjList = buildAdjacencyList(edges)
         val height = dfsHeight(1, adjList, 0)
-        return computeWays(height)
+        return computeWays(height) // 2^(height-1) % 1_000_000_007
     }
 
-    private fun computeAdjacencyList(edges: Array<IntArray>): List<List<Int>> {
+    private fun buildAdjacencyList(edges: Array<IntArray>): List<List<Int>> {
         val n = edges.size + 1
         val adjList = List(n + 1) { mutableListOf<Int>() }
         for ((u, v) in edges) {
@@ -24,14 +24,14 @@ class Solution {
     }
 
     private fun dfsHeight(
-        node: Int,
+        root: Int,
         adjacencyList: List<List<Int>>,
         parent: Int,
     ): Int {
         var height = 0
-        for (child in adjacencyList[node]) {
+        for (child in adjacencyList[root]) {
             if (child != parent) {
-                height = maxOf(height, 1 + dfsHeight(child, adjacencyList, node))
+                height = maxOf(height, 1 + dfsHeight(child, adjacencyList, root))
             }
         }
         return height
