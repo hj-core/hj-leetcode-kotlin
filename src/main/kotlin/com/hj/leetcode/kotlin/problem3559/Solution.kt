@@ -82,7 +82,7 @@ class Solution {
             if (depth[other] > 0) {
                 val lca = compressFind(ancestor, other)
                 val distance = depth[node] + depth[other] - 2 * depth[lca]
-                answers[queryIndex] = if (distance == 0) 0 else computeWays(distance)
+                answers[queryIndex] = computeWays(distance)
             }
         }
     }
@@ -97,9 +97,13 @@ class Solution {
         return ancestor[node]
     }
 
-    // Returns 2^(distance - 1) % 1_000_000_007 where distance > 0.
+    // Returns 2^(distance - 1) % 1_000_000_007 where distance >= 0.
     private fun computeWays(distance: Int): Int {
-        require(distance > 0)
+        require(distance >= 0)
+        if (distance == 0) {
+            return 0
+        }
+
         val modulus = 1_000_000_007
         var ways = 1L
         var base = 2L
