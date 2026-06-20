@@ -42,32 +42,54 @@ class Solution {
             cleaned[0][1] = minOf(cleaned[0][1], 1)
         }
 
-        val indices =
-            TreeSet(
-                compareBy<Int> { cleaned[it][1] }.thenBy { cleaned[it][0] },
-            )
-        indices.addAll(cleaned.indices)
-
-        while (indices.isNotEmpty()) {
-            val index = checkNotNull(indices.pollFirst())
-            if (index > 0) {
-                val maxLeft = cleaned[index][1] + cleaned[index][0] - cleaned[index - 1][0]
-                if (cleaned[index - 1][1] > maxLeft) {
-                    indices.remove(index - 1)
-                    cleaned[index - 1][1] = maxLeft
-                    indices.add(index - 1)
-                }
-            }
-            if (index < cleaned.lastIndex) {
-                val maxRight = cleaned[index][1] + cleaned[index + 1][0] - cleaned[index][0]
-                if (cleaned[index + 1][1] > maxRight) {
-                    indices.remove(index + 1)
-                    cleaned[index + 1][1] = maxRight
-                    indices.add(index + 1)
-                }
-            }
+        for (i in 1..<cleaned.size) {
+            cleaned[i][1] =
+                minOf(cleaned[i][1], cleaned[i - 1][1] + cleaned[i][0] - cleaned[i - 1][0])
+        }
+        for (i in cleaned.lastIndex downTo 1) {
+            cleaned[i - 1][1] =
+                minOf(cleaned[i - 1][1], cleaned[i][1] + cleaned[i][0] - cleaned[i - 1][0])
         }
 
         return cleaned
     }
+
+//    private fun cleanedRestrictions(restrictions: Array<IntArray>): Array<out IntArray> {
+//        if (restrictions.isEmpty()) {
+//            return emptyArray()
+//        }
+//
+//        val cleaned = restrictions.sortedArrayWith { r1, r2 -> r1[0] - r2[0] }
+//        if (cleaned[0][0] == 2) {
+//            cleaned[0][1] = minOf(cleaned[0][1], 1)
+//        }
+//
+//        val indices =
+//            TreeSet(
+//                compareBy<Int> { cleaned[it][1] }.thenBy { cleaned[it][0] },
+//            )
+//        indices.addAll(cleaned.indices)
+//
+//        while (indices.isNotEmpty()) {
+//            val index = checkNotNull(indices.pollFirst())
+//            if (index > 0) {
+//                val maxLeft = cleaned[index][1] + cleaned[index][0] - cleaned[index - 1][0]
+//                if (cleaned[index - 1][1] > maxLeft) {
+//                    indices.remove(index - 1)
+//                    cleaned[index - 1][1] = maxLeft
+//                    indices.add(index - 1)
+//                }
+//            }
+//            if (index < cleaned.lastIndex) {
+//                val maxRight = cleaned[index][1] + cleaned[index + 1][0] - cleaned[index][0]
+//                if (cleaned[index + 1][1] > maxRight) {
+//                    indices.remove(index + 1)
+//                    cleaned[index + 1][1] = maxRight
+//                    indices.add(index + 1)
+//                }
+//            }
+//        }
+//
+//        return cleaned
+//    }
 }
