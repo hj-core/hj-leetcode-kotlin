@@ -1,7 +1,5 @@
 package com.hj.leetcode.kotlin.problem1840
 
-import java.util.TreeSet
-
 /**
  * LeetCode page: [1840. Maximum Building Height](https://leetcode.com/problems/maximum-building-height/);
  */
@@ -20,8 +18,11 @@ class Solution {
         var maxHeight = 0
         var restriction = intArrayOf(1, 0)
         for (nextRestriction in restrictions) {
-            val height = restriction[1] + nextRestriction[0] - restriction[0]
-            maxHeight = maxOf(maxHeight, (height + nextRestriction[1]) / 2)
+            maxHeight =
+                maxOf(
+                    maxHeight,
+                    (restriction[1] + nextRestriction[0] - restriction[0] + nextRestriction[1]) / 2,
+                )
             restriction = nextRestriction
         }
 
