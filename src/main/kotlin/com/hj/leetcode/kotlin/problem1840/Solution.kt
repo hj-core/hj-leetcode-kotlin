@@ -32,6 +32,7 @@ class Solution {
         return maxHeight
     }
 
+    // Return the tightened restrictions ordered by increasing ID.
     private fun cleanedRestrictions(restrictions: Array<IntArray>): Array<out IntArray> {
         if (restrictions.isEmpty()) {
             return emptyArray()
