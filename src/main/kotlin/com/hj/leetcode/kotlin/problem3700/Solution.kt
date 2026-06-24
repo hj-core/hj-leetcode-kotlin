@@ -6,6 +6,8 @@ package com.hj.leetcode.kotlin.problem3700
 class Solution {
     // Complexity:
     // Time O(m^3 Log n) and Space O(m^2) where m is r - l.
+    //
+    // TODO: [Berlekamp–Massey algorithm](https://en.wikipedia.org/wiki/Berlekamp%E2%80%93Massey_algorithm)
     fun zigZagArrays(
         n: Int,
         l: Int,
