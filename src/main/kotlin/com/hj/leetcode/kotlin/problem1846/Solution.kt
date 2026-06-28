@@ -9,11 +9,7 @@ class Solution {
     fun maximumElementAfterDecrementingAndRearranging(arr: IntArray): Int {
         val numFreq = IntArray(arr.size + 1)
         for (num in arr) {
-            if (num < arr.size) {
-                numFreq[num] += 1
-            } else {
-                numFreq[arr.size] += 1
-            }
+            numFreq[minOf(num, arr.size)] += 1
         }
 
         var maxElement = 0
