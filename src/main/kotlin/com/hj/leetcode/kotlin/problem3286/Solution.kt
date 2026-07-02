@@ -15,13 +15,13 @@ class Solution {
         val m = grid.size
         val n = grid[0].size
         val minHealth = Array(m) { IntArray(n) { Int.MAX_VALUE } }
-        val queue = ArrayDeque<Pair<Int, Int>>()
+        val deque = ArrayDeque<Pair<Int, Int>>()
 
         // 0-1 BFS
         minHealth[0][0] = grid[0][0] + 1
-        queue.add(Pair(0, 0))
-        while (queue.isNotEmpty()) {
-            val (r, c) = queue.removeFirst()
+        deque.add(Pair(0, 0))
+        while (deque.isNotEmpty()) {
+            val (r, c) = deque.removeFirst()
             for (i in 0..<4) {
                 val nextR = r + dirs[i]
                 val nextC = c + dirs[i + 1]
@@ -34,9 +34,9 @@ class Solution {
 
                 minHealth[nextR][nextC] = minHealth[r][c] + grid[nextR][nextC]
                 if (grid[nextR][nextC] == 0) {
-                    queue.addFirst(Pair(nextR, nextC))
+                    deque.addFirst(Pair(nextR, nextC))
                 } else {
-                    queue.add(Pair(nextR, nextC))
+                    deque.add(Pair(nextR, nextC))
                 }
             }
         }
