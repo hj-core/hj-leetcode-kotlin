@@ -11,14 +11,15 @@ class Solution {
         grid: List<List<Int>>,
         health: Int,
     ): Boolean {
+        val dirs = intArrayOf(-1, 0, 1, 0, -1)
         val m = grid.size
         val n = grid[0].size
-        val dirs = intArrayOf(-1, 0, 1, 0, -1)
         val minHealth = Array(m) { IntArray(n) { Int.MAX_VALUE } }
         val queue = ArrayDeque<Pair<Int, Int>>()
+
+        // 0-1 BFS
         minHealth[0][0] = grid[0][0] + 1
         queue.add(Pair(0, 0))
-        // 0-1 BFS
         while (queue.isNotEmpty()) {
             val (r, c) = queue.removeFirst()
             for (i in 0..<4) {
@@ -30,15 +31,16 @@ class Solution {
                 if (minHealth[nextR][nextC] != Int.MAX_VALUE) {
                     continue
                 }
+
+                minHealth[nextR][nextC] = minHealth[r][c] + grid[nextR][nextC]
                 if (grid[nextR][nextC] == 0) {
-                    minHealth[nextR][nextC] = minHealth[r][c]
                     queue.addFirst(Pair(nextR, nextC))
                 } else {
-                    minHealth[nextR][nextC] = minHealth[r][c] + 1
                     queue.add(Pair(nextR, nextC))
                 }
             }
         }
+
         return minHealth[m - 1][n - 1] <= health
     }
 }
