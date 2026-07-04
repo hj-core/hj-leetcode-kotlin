@@ -4,24 +4,24 @@ package com.hj.leetcode.kotlin.problem2492
  * LeetCode page: [2492. Minimum Score of a Path Between Two Cities](https://leetcode.com/problems/minimum-score-of-a-path-between-two-cities/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(E) and Space O(E) where E is the size of roads;
-     */
-    fun minScore(n: Int, roads: Array<IntArray>): Int {
-        val roadMap = convertToRoadMap(roads)
+    // Complexity:
+    // Time O(n + E) and Space O(E) where E is the length of roads.
+    fun minScore(
+        n: Int,
+        roads: Array<IntArray>,
+    ): Int {
+        val roadMap = buildRoadMap(roads)
+        val visited = BooleanArray(n + 1)
         var minScore = Int.MAX_VALUE
-        var isCityNReachable = false
 
-        dfs(1, roadMap) { road ->
-            if (road.distance < minScore) minScore = road.distance
-            if (road.destination == n) isCityNReachable = true
+        dfs(1, roadMap, visited) { road ->
+            minScore = minOf(minScore, road.distance)
         }
-
-        check(isCityNReachable)
+        check(visited[n])
         return minScore
     }
 
-    private fun convertToRoadMap(roads: Array<IntArray>): Map<Int, List<Road>> {
+    private fun buildRoadMap(roads: Array<IntArray>): Map<Int, List<Road>> {
         val roadMap = hashMapOf<Int, MutableList<Road>>()
         for ((u, v, distance) in roads) {
             roadMap.computeIfAbsent(u) { mutableListOf() }.add(Road(u, v, distance))
@@ -30,21 +30,26 @@ class Solution {
         return roadMap
     }
 
-    private class Road(val origin: Int, val destination: Int, val distance: Int)
+    private class Road(
+        val fromCity: Int,
+        val toCity: Int,
+        val distance: Int,
+    )
 
     private fun dfs(
-        origin: Int,
+        start: Int,
         roadMap: Map<Int, List<Road>>,
-        visited: MutableSet<Int> = hashSetOf(),
-        sideEffect: (road: Road) -> Unit
+        visited: BooleanArray,
+        onEachRoad: (road: Road) -> Unit,
     ) {
-        if (origin in visited) return
+        if (visited[start]) {
+            return
+        }
 
-        visited.add(origin)
-        val roads = roadMap[origin] ?: emptyList()
-        for (road in roads) {
-            sideEffect(road)
-            dfs(road.destination, roadMap, visited, sideEffect)
+        visited[start] = true
+        for (road in roadMap[start] ?: return) {
+            onEachRoad(road)
+            dfs(road.toCity, roadMap, visited, onEachRoad)
         }
     }
 }
