@@ -790,6 +790,7 @@ at [LeetCode](https://leetcode.com/hj-core/).
 | [3713. Longest Balanced Substring I](https://leetcode.com/problems/longest-balanced-substring-i/)                                                                                               | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3713/Solution.kt)                                                                               | 2026-02-12    |
 | [3714. Longest Balanced Substring II](https://leetcode.com/problems/longest-balanced-substring-ii/)                                                                                             | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3714/Solution.kt)                                                                               | 2026-02-13    |
 | [3751. Total Waviness of Numbers in Range I](https://leetcode.com/problems/total-waviness-of-numbers-in-range-i/)                                                                               | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3751/Solution.kt)                                                                               | 2026-06-04    |
+| [3756. Concatenate Non-Zero Digits and Multiply by Sum II](https://leetcode.com/problems/concatenate-non-zero-digits-and-multiply-by-sum-ii/)                                                   | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3756/Solution.kt)                                                                               | 2026-07-06    |
 
 ### Easy
 
