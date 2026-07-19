@@ -19,7 +19,7 @@ class Solution {
         var start = -1 // Index of the last added char
         while (targets != 0) {
             var i = start + 1
-            var minChar = 'z'
+            var minChar = 'z' + 1
             while (i < s.length && suffixSeen[i] and targets == targets) {
                 val inTargets = targets shr (s[i] - 'a') and 1 == 1
                 if (inTargets && s[i] < minChar) {
