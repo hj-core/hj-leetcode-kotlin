@@ -16,7 +16,6 @@ class Solution {
             List(n) { c ->
                 val oldIndex = (r * n + c - k).let { if (it < 0) it + size else it }
                 get(grid, oldIndex)
-
             }
         }
     }
