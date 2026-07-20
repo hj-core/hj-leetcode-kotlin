@@ -12,8 +12,8 @@ class Solution {
         val n = grid[0].size
         val size = m * n
         val k = k % size
-        return MutableList(m) { r ->
-            MutableList(n) { c ->
+        return List(m) { r ->
+            List(n) { c ->
                 val oldIndex = (r * n + c - k).let { if (it < 0) it + size else it }
                 get(grid, oldIndex)
 
