@@ -20,15 +20,12 @@ class Solution {
                 continue
             }
             val c = 'a' + i
-            if (freq and 1 == 1) {
-                builder[s.length / 2] = c
-            }
-            repeat(freq / 2) {
-                builder[left++] = c
-            }
-            repeat(freq / 2) {
-                builder[right--] = c
-            }
+            repeat(freq / 2) { builder[left++] = c }
+            repeat(freq / 2) { builder[right--] = c }
+        }
+
+        if (s.length and 1 == 1) {
+            builder[s.length / 2] = s[s.length / 2]
         }
 
         return builder.concatToString()
