@@ -4,36 +4,22 @@ package com.hj.leetcode.kotlin.problem486
  * LeetCode page: [486. Predict the Winner](https://leetcode.com/problems/predict-the-winner/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(N^2) and Space O(N^2) where N is the size of nums;
-     */
-    fun PredictTheWinner(nums: IntArray): Boolean {
-        if (nums.size.isEven()) {
-            return true
+    // Complexity:
+    // Time O(N^2) and Space O(N) where N is the length of nums.
+    fun predictTheWinner(nums: IntArray): Boolean {
+        val n = nums.size
+        if (n % 2 == 0) {
+            return true // player 1 can pick all odd indices or all even indices
         }
-        return maxScoreLead(nums) >= 0
-    }
 
-    private fun Int.isEven(): Boolean = this and 1 == 0
-
-    private fun maxScoreLead(
-        nums: IntArray,
-        gameRange: IntRange = nums.indices,
-        memoization: MutableMap<IntRange, Int> = hashMapOf()
-    ): Int {
-        if (gameRange in memoization) {
-            return checkNotNull(memoization[gameRange])
-        }
-        with(gameRange) {
-            if (first == last) {
-                return nums[first]
+        // dp[i]@len:= the maximum score lead of first player in a game of nums[i..<i+len]
+        val dp = nums.clone() // base case: len = 1
+        for (len in 2..n) {
+            for (i in 0..(n - len)) {
+                dp[i] = maxOf(nums[i] - dp[i + 1], nums[i + len - 1] - dp[i])
             }
-            val result = maxOf(
-                nums[first] - maxScoreLead(nums, (first + 1)..last, memoization),
-                nums[last] - maxScoreLead(nums, first until last, memoization)
-            )
-            memoization[gameRange] = result
-            return result
         }
+
+        return dp[0] >= 0
     }
 }
