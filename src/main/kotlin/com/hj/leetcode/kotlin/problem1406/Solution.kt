@@ -4,55 +4,27 @@ package com.hj.leetcode.kotlin.problem1406
  * LeetCode page: [1406. Stone Game III](https://leetcode.com/problems/stone-game-iii/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(N) and Space O(1) where N is the size of stoneValue;
-     */
+    // Complexity:
+    // Time O(N) and Space O(1) where N is the length of stoneValue.
     fun stoneGameIII(stoneValue: IntArray): String {
-        val (aliceScore, bobScore) = playerScores(stoneValue)
-        return gameResult(aliceScore, bobScore)
-    }
+        // dp[j]@i := the maximum score lead of the first player for a game with stoneValue[i+j..]
+        val dp = IntArray(3) // base case i = stoneValue.size
 
-    private fun playerScores(stoneValue: IntArray): Pair<Int, Int> {
-        /* (By dynamic programming)
-         * Define the sub problem as the score of the first player when playing game with
-         * the suffix arrays of stoneValue.
-         *
-         * Only the three most recent sub results are stored, which is sufficient to solve
-         * the original problem.
-         */
-        val subProblemResults = ArrayDeque<Int>()
+        for (i in stoneValue.indices.reversed()) {
+            val a = stoneValue[i]
+            val b = a + stoneValue.getOrElse(i + 1) { 0 }
+            val c = b + stoneValue.getOrElse(i + 2) { 0 }
 
-        /* Add base cases that 0 score for suffix arrays stoneValue[size:], stoneValue[size+1:]
-         * and stoneValue[size+2:].
-         */
-        subProblemResults.apply {
-            addLast(0)
-            addLast(0)
-            addLast(0)
+            val cur = maxOf(a - dp[0], b - dp[1], c - dp[2])
+            dp[2] = dp[1]
+            dp[1] = dp[0]
+            dp[0] = cur
         }
 
-        // Solve the sub problem in descending order of the suffix array start index
-        var suffixSum = 0
-        for (start in stoneValue.lastIndex downTo 0) {
-            suffixSum += stoneValue[start]
-            val currentResult = suffixSum - subProblemResults.min()
-            subProblemResults.addFirst(currentResult)
-            subProblemResults.removeLast()
-        }
-
-        // Compute and return the play scores
-        val firstPlayerScore = subProblemResults.first()
-        val secondPlayerScore = suffixSum - firstPlayerScore
-        return Pair(firstPlayerScore, secondPlayerScore)
-    }
-
-    private fun gameResult(
-        aliceScore: Int,
-        bobScore: Int,
-    ): String =
-        when {
-            aliceScore > bobScore -> "Alice"
-            aliceScore < bobScore -> "Bob"
+        return when {
+            dp[0] > 0 -> "Alice"
+            dp[0] < 0 -> "Bob"
             else -> "Tie"
         }
+    }
 }
