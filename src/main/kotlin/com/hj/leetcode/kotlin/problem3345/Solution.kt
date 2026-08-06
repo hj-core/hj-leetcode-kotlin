@@ -10,13 +10,27 @@ class Solution {
         n: Int,
         t: Int,
     ): Int {
-        val digits = n.toString().map { it.digitToInt() }
-        val base = (0..<digits.lastIndex).fold(1) { acc, i -> acc * digits[i] }
-        for (d in digits.last()..<10) {
+        val lastDigit = n % 10
+        if (lastDigit == 0) {
+            return n
+        }
+
+        val base = digitProduct(n) / lastDigit
+        for (d in lastDigit..<10) {
             if (base * d % t == 0) {
-                return n - digits.last() + d
+                return n - lastDigit + d
             }
         }
-        return n - digits.last() + 10
+        return n - lastDigit + 10
+    }
+
+    private fun digitProduct(num: Int): Int {
+        var product = 1
+        var x = num
+        while (x > 0) {
+            product *= x % 10
+            x /= 10
+        }
+        return product
     }
 }
