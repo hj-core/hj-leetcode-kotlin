@@ -19,12 +19,9 @@ class Solution {
             seen = 1L shl nums[i] or seen
         }
 
-        seen = seen shr minOf(sum, 63)
-        while (seen and 1L > 0L) {
-            sum++
-            seen = seen shr 1
+        if (sum > 63) {
+            return sum
         }
-
-        return sum
+        return sum + ((seen shr sum) + 1).countTrailingZeroBits()
     }
 }
