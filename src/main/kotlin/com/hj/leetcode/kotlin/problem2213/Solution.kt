@@ -91,25 +91,29 @@ class Solution {
         newChar: Char,
         left: Int,
         right: Int,
-    ): Int =
-        when {
+    ): Int {
+        require(s[sIdx] != newChar)
+        return when {
             left == -1 -> 0
             s[left] != newChar -> sIdx - left
             s.getOrNull(sIdx + 1) != newChar -> sIdx + 1 - left
             else -> right - left + tree.queryLen(right)
         }
+    }
 
     private fun computeSIdxLen(
         s: CharArray,
         tree: MaxSegmentTree,
         sIdx: Int,
         newChar: Char,
-    ): Int =
-        when {
+    ): Int {
+        require(s[sIdx] != newChar)
+        return when {
             s.getOrNull(sIdx - 1) == newChar -> 0
             s.getOrNull(sIdx + 1) != newChar -> 1
             else -> 1 + tree.queryLen(sIdx + 1)
         }
+    }
 
     private class MaxSegmentTree(
         private val inputSize: Int,
