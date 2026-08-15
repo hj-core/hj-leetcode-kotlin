@@ -107,7 +107,7 @@ class Solution {
             }
         }
 
-        private fun updateTree(
+        private tailrec fun updateTree(
             treeIdx: Int,
             value: Int,
         ) {
