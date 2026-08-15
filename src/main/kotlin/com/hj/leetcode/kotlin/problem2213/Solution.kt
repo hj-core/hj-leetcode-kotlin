@@ -1,5 +1,6 @@
 package com.hj.leetcode.kotlin.problem2213
 
+import com.sun.source.tree.Tree
 import java.util.TreeSet
 
 /**
@@ -15,20 +16,10 @@ class Solution {
         queryIndices: IntArray,
     ): IntArray {
         val s = s.toCharArray()
-
         val tree = MaxSegmentTree(s.size)
         val breaks = TreeSet<Int>() // where s[i] != s[i-1]
 
-        var lastBreak = 0
-        for (sIdx in 1..<s.size) {
-            if (s[sIdx] != s[sIdx - 1]) {
-                breaks.add(lastBreak)
-                tree.update(lastBreak, sIdx - lastBreak)
-                lastBreak = sIdx
-            }
-        }
-        breaks.add(lastBreak)
-        tree.update(lastBreak, s.size - lastBreak)
+        initTreeAndBreaks(s, tree, breaks)
 
         val answers = IntArray(queryIndices.size)
         for (i in answers.indices) {
@@ -44,22 +35,11 @@ class Solution {
             val right = breaks.higher(sIdx) ?: s.size
 
             // Update Left
-            val leftLen =
-                when {
-                    left == -1 -> 0
-                    s[left] != newChar -> sIdx - left
-                    s.getOrNull(sIdx + 1) != newChar -> sIdx + 1 - left
-                    else -> right - left + tree.queryLen(right)
-                }
+            val leftLen = computeLeftLen(s, tree, sIdx, newChar, left, right)
             tree.update(left, leftLen)
 
             // Update sIdx
-            val sIdxLen =
-                when {
-                    s.getOrNull(left) == newChar -> 0
-                    s.getOrNull(sIdx + 1) != newChar -> 1
-                    else -> 1 + tree.queryLen(right)
-                }
+            val sIdxLen = computeSIdxLen(s, tree, sIdx, newChar)
             tree.update(sIdx, sIdxLen)
             if (sIdxLen > 0) {
                 breaks.add(sIdx)
@@ -69,14 +49,14 @@ class Solution {
 
             // Update sIdx + 1
             if (right != sIdx + 1) {
-                breaks.add(sIdx + 1)
                 tree.update(sIdx + 1, right - sIdx - 1)
+                breaks.add(sIdx + 1)
             }
 
             // Update right
             if (right == sIdx + 1 && s.getOrNull(right) == newChar) {
-                breaks.remove(right)
                 tree.update(right, 0)
+                breaks.remove(right)
             }
 
             s[sIdx] = newChar
@@ -85,6 +65,51 @@ class Solution {
 
         return answers
     }
+
+    private fun initTreeAndBreaks(
+        s: CharArray,
+        tree: MaxSegmentTree,
+        breaks: TreeSet<Int>,
+    ) {
+        var lastBreak = 0
+        for (sIdx in 1..<s.size) {
+            if (s[sIdx] != s[sIdx - 1]) {
+                tree.update(lastBreak, sIdx - lastBreak)
+                breaks.add(lastBreak)
+                lastBreak = sIdx
+            }
+        }
+
+        tree.update(lastBreak, s.size - lastBreak)
+        breaks.add(lastBreak)
+    }
+
+    private fun computeLeftLen(
+        s: CharArray,
+        tree: MaxSegmentTree,
+        sIdx: Int,
+        newChar: Char,
+        left: Int,
+        right: Int,
+    ): Int =
+        when {
+            left == -1 -> 0
+            s[left] != newChar -> sIdx - left
+            s.getOrNull(sIdx + 1) != newChar -> sIdx + 1 - left
+            else -> right - left + tree.queryLen(right)
+        }
+
+    private fun computeSIdxLen(
+        s: CharArray,
+        tree: MaxSegmentTree,
+        sIdx: Int,
+        newChar: Char,
+    ): Int =
+        when {
+            s.getOrNull(sIdx - 1) == newChar -> 0
+            s.getOrNull(sIdx + 1) != newChar -> 1
+            else -> 1 + tree.queryLen(sIdx + 1)
+        }
 
     private class MaxSegmentTree(
         private val inputSize: Int,
