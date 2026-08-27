@@ -26,12 +26,13 @@ class Solution {
         val result = StringBuilder()
         while (prefixLen >= 0) {
             val cIdx = target[prefixLen] - 'a'
+
             val next = (cIdx + 1..<26).firstOrNull { charFreq[it] > 0 }
             if (next != null) {
                 result.append(target, 0, prefixLen)
                 result.append('a' + next)
                 charFreq[next]--
-                break
+                return appendMinSuffix(result, charFreq).toString()
             }
 
             prefixLen--
@@ -40,16 +41,7 @@ class Solution {
             }
         }
 
-        if (prefixLen == -1) {
-            return ""
-        }
-        for (cIdx in 0..<26) {
-            repeat(charFreq[cIdx]) {
-                val c = 'a' + cIdx
-                result.append(c)
-            }
-        }
-        return result.toString()
+        return ""
     }
 
     private fun findLongestPrefixAndRemainingChars(
@@ -73,5 +65,18 @@ class Solution {
         }
 
         return Pair(prefixLen, charFreq)
+    }
+
+    private fun appendMinSuffix(
+        builder: StringBuilder,
+        charFreq: IntArray,
+    ): StringBuilder {
+        for (cIdx in 0..<26) {
+            repeat(charFreq[cIdx]) {
+                val c = 'a' + cIdx
+                builder.append(c)
+            }
+        }
+        return builder
     }
 }
