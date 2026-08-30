@@ -7,6 +7,16 @@ class Solution {
     // Complexity:
     // Time O(N) and Space O(1) where N is the length of nums.
     fun minimumDeletions(nums: IntArray): Int {
+        val (minIdx, maxIdx) = indexOfMinAndMax(nums)
+        val (left, right) = if (minIdx < maxIdx) Pair(minIdx, maxIdx) else Pair(maxIdx, minIdx)
+        return minOf(
+            right + 1,
+            nums.size - left,
+            left + 1 + nums.size - right,
+        )
+    }
+
+    private fun indexOfMinAndMax(nums: IntArray): Pair<Int, Int> {
         var minIdx = 0
         var minValue = nums[0]
         var maxIdx = 0
@@ -21,12 +31,6 @@ class Solution {
                 maxValue = nums[i]
             }
         }
-
-        val (a, b) = if (minIdx < maxIdx) Pair(minIdx, maxIdx) else Pair(maxIdx, minIdx)
-        return minOf(
-            b + 1,
-            nums.size - a,
-            a + 1 + nums.size - b,
-        )
+        return Pair(minIdx, maxIdx)
     }
 }
