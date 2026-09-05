@@ -811,6 +811,7 @@ at [LeetCode](https://leetcode.com/hj-core/).
 | [3756. Concatenate Non-Zero Digits and Multiply by Sum II](https://leetcode.com/problems/concatenate-non-zero-digits-and-multiply-by-sum-ii/)                                                   | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3756/Solution.kt)                                                                               | 2026-07-06    |
 | [3867. Sum of GCD of Formed Pairs](https://leetcode.com/problems/sum-of-gcd-of-formed-pairs/)                                                                                                   | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3867/Solution.kt)                                                                               | 2026-07-16    |
 | [3876. Construct Uniform Parity Array II](https://leetcode.com/problems/construct-uniform-parity-array-ii/)                                                                                     | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3876/Solution.kt)                                                                               | 2026-09-03    |
+| [3904. Smallest Stable Index II](https://leetcode.com/problems/smallest-stable-index-ii/)                                                                                                       | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3904/Solution.kt)                                                                               | 2026-09-05    |
 
 ### Easy
 
