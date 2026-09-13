@@ -11,8 +11,8 @@ class Solution {
         img2: Array<IntArray>,
     ): Int {
         val n = img1.size
-        val img1 = IntArray(n) { toInt(img1[it]) }
-        val img2 = IntArray(n) { toInt(img2[it]) }
+        val img1 = toIntArray(img1)
+        val img2 = toIntArray(img2)
 
         var maxOverlap = 0
         for (dr in -(n - 1)..<n) {
@@ -24,9 +24,12 @@ class Solution {
         return maxOverlap
     }
 
-    private fun toInt(row: IntArray): Int =
-        row.foldIndexed(0) { index, acc, bit ->
-            bit shl (row.lastIndex - index) or acc
+    private fun toIntArray(img: Array<IntArray>): IntArray =
+        IntArray(img.size) {
+            val row = img[it]
+            row.foldIndexed(0) { index, acc, bit ->
+                bit shl (row.lastIndex - index) or acc
+            }
         }
 
     private fun countOverlap(
