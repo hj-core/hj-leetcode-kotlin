@@ -18,5 +18,8 @@ class Solution {
         end1: Int,
         start2: Int,
         end2: Int,
-    ): Boolean = maxOf(start1, start2) < minOf(end1, end2)
+    ): Boolean {
+        // maxOf(start1, start2) < minOf(end1, end2) with start1 <= end1 and start2 <= end2
+        return end1 > start2 && end2 > start1
+    }
 }
