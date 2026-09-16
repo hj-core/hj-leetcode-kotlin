@@ -11,7 +11,7 @@ class Solution {
         k: Int,
     ): Int {
         val modulo = 1_000_000_007
-        // dp[i]@k:= numberOfSets(i, k)
+        // dp[i]@k:= numberOfSets(i+1, k)
         val dp = IntArray(n) { 1 } // base case k = 0
         for (i in 0..<k) {
             var prefixSum = 1
