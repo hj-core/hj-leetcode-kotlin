@@ -17,11 +17,17 @@ class Solution2 {
         r: Int,
         modulo: Int,
     ): Int {
-        val a = ((n - r + 1)..n).fold(1L) { acc, i -> (acc * i) % modulo }
-        val b = (1..r).fold(1L) { acc, i -> (acc * i) % modulo }
+        val a = productMod(n - r + 1, n, modulo)
+        val b = productMod(1, r, modulo)
         val bInv = quickPow(b, modulo - 2, modulo) // Fermat's little theorem
         return (a * bInv).mod(modulo)
     }
+
+    private fun productMod(
+        from: Int,
+        to: Int,
+        modulo: Int,
+    ): Long = (from..to).fold(1L) { acc, i -> (acc * i) % modulo }
 
     // Returns (base^exponent) % modulo.
     private fun quickPow(

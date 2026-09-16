@@ -14,7 +14,7 @@ class Solution {
         // dp[i]@k:= numberOfSets(i, k)
         val dp = IntArray(n) { 1 } // base case k = 0
         for (i in 0..<k) {
-            var prefixSum = dp[i]
+            var prefixSum = 1
             dp[i] = 0
             for (j in (i + 1)..<n) {
                 val tmp = dp[j]
