@@ -16,20 +16,20 @@ class Solution {
         suffixMinLen[n] = n + 1
 
         var result = n + 1
-        var subarraySum = 0 // Sum(arr[left..<right])
-        var right = n
-        for (left in n - 1 downTo 0) {
-            subarraySum += arr[left]
-            while (subarraySum > target) {
-                right--
-                subarraySum -= arr[right]
+        var sum = 0 // Sum(arr[start..<end])
+        var end = n
+        for (start in n - 1 downTo 0) {
+            sum += arr[start]
+            while (sum > target) {
+                end--
+                sum -= arr[end]
             }
 
-            suffixMinLen[left] = suffixMinLen[left + 1]
-            if (subarraySum == target) {
-                val len = right - left
-                result = minOf(result, len + suffixMinLen[right])
-                suffixMinLen[left] = minOf(suffixMinLen[left], len)
+            suffixMinLen[start] = suffixMinLen[start + 1]
+            if (sum == target) {
+                val len = end - start
+                result = minOf(result, len + suffixMinLen[end])
+                suffixMinLen[start] = minOf(suffixMinLen[start], len)
             }
         }
 
