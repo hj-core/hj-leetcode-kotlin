@@ -11,30 +11,31 @@ class Solution {
         target: Int,
     ): Int {
         val n = arr.size
-        var minLenSum = n + 1
         // suffixMinLen[i] := the min length of a subarray in arr[i..] whose sum equals target
         val suffixMinLen = IntArray(n + 1)
         suffixMinLen[n] = n + 1
-        var windowSum = 0 // Sum(arr[left..<right]
+
+        var result = n + 1
+        var subarraySum = 0 // Sum(arr[left..<right])
         var right = n
         for (left in n - 1 downTo 0) {
-            windowSum += arr[left]
-            while (windowSum > target) {
+            subarraySum += arr[left]
+            while (subarraySum > target) {
                 right--
-                windowSum -= arr[right]
+                subarraySum -= arr[right]
             }
 
             suffixMinLen[left] = suffixMinLen[left + 1]
-            if (windowSum == target) {
+            if (subarraySum == target) {
                 val len = right - left
-                minLenSum = minOf(minLenSum, len + suffixMinLen[right])
+                result = minOf(result, len + suffixMinLen[right])
                 suffixMinLen[left] = minOf(suffixMinLen[left], len)
             }
         }
 
-        if (minLenSum > n) {
+        if (result > n) {
             return -1
         }
-        return minLenSum
+        return result
     }
 }
