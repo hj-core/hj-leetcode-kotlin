@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem1520
  */
 class Solution {
     // Complexity:
-    // Time O(N + (M^2)LogN + MLogM) and Space O(N+M) where N is the length of s
+    // Time O(N + (M^2)LogN + M^3 + MLogM) and Space O(N+M) where N is the length of s
     // and M is the size of char set (i.e., 26).
     fun maxNumOfSubstrings(s: String): List<String> {
         val charIndices = Array(26) { mutableListOf<Int>() }
