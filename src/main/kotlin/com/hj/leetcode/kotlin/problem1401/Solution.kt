@@ -15,20 +15,8 @@ class Solution {
         x2: Int,
         y2: Int,
     ): Boolean {
-        val x = closest(xCenter, x1..x2)
-        val y = closest(yCenter, y1..y2)
-        return square(x - xCenter) <= square(radius) - square(y - yCenter)
+        val dx = xCenter.coerceIn(x1, x2) - xCenter
+        val dy = yCenter.coerceIn(y1, y2) - yCenter
+        return dx * dx <= radius * radius - dy * dy
     }
-
-    private fun closest(
-        p0: Int,
-        range: IntRange,
-    ): Int =
-        when {
-            p0 < range.first -> range.first
-            p0 > range.last -> range.last
-            else -> p0
-        }
-
-    private fun square(x: Int): Int = x * x
 }
