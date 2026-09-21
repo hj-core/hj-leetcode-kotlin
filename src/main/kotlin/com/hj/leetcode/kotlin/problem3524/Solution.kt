@@ -5,7 +5,7 @@ package com.hj.leetcode.kotlin.problem3524
  */
 class Solution {
     // Complexity:
-    // Time O(kN) and Space O(k+N) where N is the length of nums.
+    // Time O(kN) and Space O(k) where N is the length of nums.
     fun resultArray(
         nums: IntArray,
         k: Int,
