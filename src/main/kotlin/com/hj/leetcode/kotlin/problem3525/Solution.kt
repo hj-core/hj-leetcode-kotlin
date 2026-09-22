@@ -44,8 +44,9 @@ class Solution {
             }
 
             // Initialize internal nodes
-            for (treeIndex in halfSize - 1 downTo 1) {
-                merged(tree[treeIndex * 2], tree[treeIndex * 2 + 1]).copyInto(tree[treeIndex])
+            for (parent in halfSize - 1 downTo 1) {
+                val left = parent shl 1
+                merged(tree[left], tree[left + 1]).copyInto(tree[parent])
             }
 
             return tree
@@ -67,21 +68,19 @@ class Solution {
             index: Int,
             value: Int,
         ) {
-            var treeIndex = tree.size / 2 + index
-
             // Update leaf
             val modK = value % k
-            tree[treeIndex].fill(0)
-            tree[treeIndex][k] = modK
-            tree[treeIndex][modK] = 1
+            val leaf = tree[index + tree.size / 2]
+            leaf[leaf[k]] = 0
+            leaf[modK] = 1
+            leaf[k] = modK
 
             // Update internal nodes
-            while (1 < treeIndex) {
-                val right = treeIndex or 1
-                val left = right xor 1
-                val parent = left shr 1
-                merged(tree[left], tree[right]).copyInto(tree[parent])
-                treeIndex = parent
+            var parent = tree.size / 2 + index shr 1
+            while (parent > 0) {
+                val left = parent shl 1
+                merged(tree[left], tree[left + 1]).copyInto(tree[parent])
+                parent = parent shr 1
             }
         }
 
