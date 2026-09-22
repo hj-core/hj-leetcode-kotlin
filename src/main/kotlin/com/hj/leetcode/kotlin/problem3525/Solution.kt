@@ -47,13 +47,13 @@ class Solution {
             for (right in size - 1 downTo 3 step 2) {
                 val left = right - 1
                 val parent = left shr 1
-                merge(tree[left], tree[right]).copyInto(tree[parent])
+                merged(tree[left], tree[right]).copyInto(tree[parent])
             }
 
             return tree
         }
 
-        private fun merge(
+        private fun merged(
             left: IntArray,
             right: IntArray,
         ): IntArray {
@@ -82,7 +82,7 @@ class Solution {
                 val right = treeIndex or 1
                 val left = right xor 1
                 val parent = left shr 1
-                merge(tree[left], tree[right]).copyInto(tree[parent])
+                merged(tree[left], tree[right]).copyInto(tree[parent])
                 treeIndex = parent
             }
         }
@@ -113,7 +113,7 @@ class Solution {
 
             val left = queryRange(parent * 2, parentStart, mid, queryStart, mid)
             val right = queryRange(parent * 2 + 1, mid, parentEnd, mid, queryEnd)
-            return merge(left, right)
+            return merged(left, right)
         }
     }
 }
