@@ -29,13 +29,13 @@ class Solution {
 
         private fun build(nums: IntArray): Array<IntArray> {
             val size =
-                nums.size
-                    .takeHighestOneBit()
-                    .let { if (it == nums.size) it * 2 else it * 4 }
+                nums.size.takeHighestOneBit().let {
+                    if (it == nums.size) it * 2 else it * 4
+                }
             val tree = Array(size) { IntArray(k + 1).apply { this[k] = 1 } }
+            val halfSize = size / 2
 
             // Initialize leaves
-            val halfSize = size / 2
             for ((index, num) in nums.withIndex()) {
                 val modK = num % k
                 val leaf = tree[index + halfSize]
@@ -44,10 +44,8 @@ class Solution {
             }
 
             // Initialize internal nodes
-            for (right in size - 1 downTo 3 step 2) {
-                val left = right - 1
-                val parent = left shr 1
-                merged(tree[left], tree[right]).copyInto(tree[parent])
+            for (treeIndex in halfSize - 1 downTo 1) {
+                merged(tree[treeIndex * 2], tree[treeIndex * 2 + 1]).copyInto(tree[treeIndex])
             }
 
             return tree
