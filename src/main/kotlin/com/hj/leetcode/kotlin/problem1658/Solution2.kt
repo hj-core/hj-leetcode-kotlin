@@ -10,21 +10,23 @@ class Solution2 {
         nums: IntArray,
         x: Int,
     ): Int {
-        val sum = nums.sum()
-        if (sum < x) {
+        var extra = nums.sum() - x // the sum of the remaining part
+        if (extra < 0) {
             return -1
+        }
+        if (extra == 0) {
+            return nums.size
         }
 
         var maxWidth = -1 // the maximum width of the remaining part
-        var shortage = sum - x
         var left = 0
         for (right in nums.indices) {
-            shortage -= nums[right]
-            while (shortage < 0) {
-                shortage += nums[left]
+            extra -= nums[right]
+            while (extra < 0) {
+                extra += nums[left]
                 left++
             }
-            if (shortage == 0) {
+            if (extra == 0) {
                 maxWidth = maxOf(maxWidth, right - left + 1)
             }
         }
