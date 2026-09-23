@@ -21,11 +21,10 @@ class Solution {
             return if (prefixSum == x) maxPrefixLen else -1
         }
 
-        var minOps = nums.size + 1
+        var minOps = if (prefixSum == x) maxPrefixLen else nums.size + 1
         var suffixLen = 0
         var suffixSum = 0
-        prefixSum += nums[maxPrefixLen]
-        for (prefixLen in maxPrefixLen downTo 0) {
+        for (prefixLen in maxPrefixLen - 1 downTo 0) {
             prefixSum -= nums[prefixLen]
             while (prefixSum + suffixSum < x) {
                 suffixLen++
