@@ -10,28 +10,28 @@ class Solution {
         nums: IntArray,
         x: Int,
     ): Int {
+        var shortage = x
+
         var maxPrefixLen = 0
-        var prefixSum = 0
-        while (maxPrefixLen < nums.size && prefixSum < x) {
-            prefixSum += nums[maxPrefixLen]
+        while (maxPrefixLen < nums.size && 0 < shortage) {
+            shortage -= nums[maxPrefixLen]
             maxPrefixLen++
         }
 
         if (maxPrefixLen == nums.size) {
-            return if (prefixSum == x) maxPrefixLen else -1
+            return if (shortage == 0) maxPrefixLen else -1
         }
 
-        var minOps = if (prefixSum == x) maxPrefixLen else nums.size + 1
+        var minOps = if (shortage == 0) maxPrefixLen else nums.size + 1
         var suffixLen = 0
-        var suffixSum = 0
         for (prefixLen in maxPrefixLen - 1 downTo 0) {
-            prefixSum -= nums[prefixLen]
-            while (prefixSum + suffixSum < x) {
+            shortage += nums[prefixLen]
+            while (shortage > 0) {
                 suffixLen++
-                suffixSum += nums[nums.size - suffixLen]
+                shortage -= nums[nums.size - suffixLen]
             }
 
-            if (prefixSum + suffixSum == x) {
+            if (shortage == 0) {
                 minOps = minOf(minOps, prefixLen + suffixLen)
             }
         }
