@@ -6,25 +6,27 @@ package com.hj.leetcode.kotlin.problem3550
 class Solution {
     private val digitSum = precomputeDigitSum()
 
+    fun smallestIndex(nums: IntArray): Int {
+        val maxDigitSum = 27
+        val maxIndex = minOf(nums.size - 1, maxDigitSum)
+        return (0..maxIndex).firstOrNull { it == digitSum[nums[it]] } ?: -1
+    }
+
     private fun precomputeDigitSum(): IntArray {
-        val digitSum = IntArray(1001) // the maximum num is 1000
+        val sum = IntArray(1001) // the maximum num is 1000
+
         var headUnit = 1
         while (headUnit < 1000) {
             for (headDigit in 1..<10) {
                 val head = headDigit * headUnit
                 for (tail in 0..<headUnit) {
-                    digitSum[head + tail] = headDigit + digitSum[tail]
+                    sum[head + tail] = headDigit + sum[tail]
                 }
             }
             headUnit *= 10
         }
-        digitSum[1000] = 1
-        return digitSum
-    }
+        sum[1000] = 1
 
-    fun smallestIndex(nums: IntArray): Int {
-        val maxDigitSum = 27
-        val maxIndex = minOf(nums.size - 1, maxDigitSum)
-        return (0..maxIndex).firstOrNull { it == digitSum[nums[it]] } ?: -1
+        return sum
     }
 }
