@@ -111,6 +111,16 @@ class Solution {
         operands.add(right)
     }
 
+    private fun processLast(
+        operands: MutableList<Operand>,
+        ops: MutableList<Operator>,
+    ) {
+        val right = operands.removeLast()
+        val left = operands.removeLast()
+        val op = ops.removeLast()
+        operands.add(eval(left, right, op))
+    }
+
     private fun eval(
         left: Operand,
         right: Operand,
@@ -121,14 +131,4 @@ class Solution {
             Operator.Cross -> left.cross(right)
             Operator.Null -> throw IllegalArgumentException()
         }
-
-    private fun processLast(
-        operands: MutableList<Operand>,
-        ops: MutableList<Operator>,
-    ) {
-        val right = operands.removeLast()
-        val left = operands.removeLast()
-        val op = ops.removeLast()
-        operands.add(eval(left, right, op))
-    }
 }
