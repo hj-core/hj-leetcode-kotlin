@@ -14,26 +14,19 @@ class Solution {
         val knowledgeMap = knowledge.associateBy { it[0] }
 
         val builder = StringBuilder()
-        var openIdx = -1
-        for ((i, c) in s.withIndex()) {
-            when (c) {
-                '(' -> {
-                    openIdx = i
-                }
-
-                ')' -> {
-                    val key = s.substring(openIdx + 1, i)
-                    val value = knowledgeMap[key]?.get(1) ?: '?'
-                    builder.append(value)
-                    openIdx = -1
-                }
-
-                else -> {
-                    if (openIdx == -1) {
-                        builder.append(c)
-                    }
-                }
+        var i = 0
+        while (i < s.length) {
+            if (s[i] == '(') {
+                val closedAt = s.indexOf(')', i + 1)
+                val key = s.substring(i + 1, closedAt)
+                val value = knowledgeMap[key]?.get(1) ?: '?'
+                builder.append(value)
+                i = closedAt
+            } else {
+                builder.append(s[i])
             }
+
+            i++
         }
 
         return builder.toString()
