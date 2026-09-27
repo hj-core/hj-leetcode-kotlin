@@ -4,46 +4,49 @@ package com.hj.leetcode.kotlin.problem1190
  * LeetCode page: [1190. Reverse Substrings Between Each Pair of Parentheses](https://leetcode.com/problems/reverse-substrings-between-each-pair-of-parentheses/);
  */
 class Solution {
-    /* Complexity:
-     * Time O(N) and Space O(N) where N is the length of s;
-     */
+    // Complexity:
+    // Time O(N) and Space O(N) where N is the length of s.
     fun reverseParentheses(s: String): String {
-        val parenthesesIndices = parenthesesIndices(s)
-        val leftToRight = parenthesesIndices.associate { it.first to it.second }
-        val rightToLeft = parenthesesIndices.associate { it.second to it.first }
+        val (teleport, count) = buildTeleport(s)
 
-        val builder = StringBuilder()
+        val result = CharArray(s.length - 2 * count)
+        var next = 0
         var i = 0
-        var direction = 1
-        // Each pair of parentheses is like a wormhole that teleports to another end
-        while (builder.length < s.length - 2 * parenthesesIndices.size) {
-            when (s[i]) {
+        var step = 1
+        while (i < s.length) {
+            if (s[i] == '(' || s[i] == ')') {
+                i = teleport[i]
+                step = -step
+            } else {
+                result[next] = s[i]
+                next++
+            }
+
+            i += step
+        }
+
+        return String(result)
+    }
+
+    private fun buildTeleport(s: String): Pair<IntArray, Int> {
+        val teleport = IntArray(s.length) { -128 }
+        var count = 0
+        val opens = mutableListOf<Int>()
+        for ((i, c) in s.withIndex()) {
+            when (c) {
                 '(' -> {
-                    i = checkNotNull(leftToRight[i])
-                    direction *= -1
+                    opens.add(i)
+                    count++
                 }
 
                 ')' -> {
-                    i = checkNotNull(rightToLeft[i])
-                    direction *= -1
+                    val open = opens.removeLast()
+                    teleport[open] = i
+                    teleport[i] = open
                 }
-
-                else -> builder.append(s[i])
-            }
-            i += direction
-        }
-        return builder.toString()
-    }
-
-    private fun parenthesesIndices(s: String): List<Pair<Int, Int>> {
-        val result = mutableListOf<Pair<Int, Int>>()
-        val lefts = mutableListOf<Int>() // Indices of pending left parentheses
-        for ((i, char) in s.withIndex()) {
-            when (char) {
-                '(' -> lefts.add(i)
-                ')' -> result.add(Pair(lefts.removeLast(), i))
             }
         }
-        return result
+
+        return Pair(teleport, count)
     }
 }
