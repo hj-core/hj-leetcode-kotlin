@@ -10,26 +10,27 @@ class Solution {
         val result = mutableListOf<String>()
         val len = n * 2
         val builder = CharArray(len)
-        for (mask in (1 shl n) - 1..<(1 shl len)) {
-            if (mask.countOneBits() != n) {
-                continue
-            }
-
-            var valid = true
-            var closes = 0
-            for (shf in 0..<len) {
-                val bit = mask shr shf and 1
-                closes += bit
-                if (closes * 2 > shf + 1) {
-                    valid = false
-                    break
+        var mask = (1 shl n) - 1
+        while (mask < 1 shl len) {
+            val ones = mask.countOneBits()
+            if (ones == n) {
+                var valid = true
+                var closes = 0
+                for (shf in 0..<len) {
+                    val bit = mask shr shf and 1
+                    closes += bit
+                    if (closes * 2 > shf + 1) {
+                        valid = false
+                        break
+                    }
+                    builder[shf] = '(' + bit
                 }
-                builder[shf] = '(' + bit
-            }
 
-            if (valid) {
-                result.add(String(builder))
+                if (valid) {
+                    result.add(String(builder))
+                }
             }
+            mask += if (ones < n) 1 else mask.takeLowestOneBit()
         }
 
         return result
