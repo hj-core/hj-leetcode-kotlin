@@ -5,25 +5,23 @@ package com.hj.leetcode.kotlin.problem22
  */
 class Solution {
     // Complexity:
-    // Time O(4^n * n) and Space O(4^n * n).
+    // Time O(comb(2n, n) * n) and Space O(comb(2n, n) * n).
     fun generateParenthesis(n: Int): List<String> {
         val result = mutableListOf<String>()
         val len = n * 2
         val builder = CharArray(len)
         var mask = (1 shl n) - 1
         while (mask < 1 shl len) {
-            var valid = true
-            var closes = 0
+            var netOpen = 0
             for (shf in 0..<len) {
                 val bit = mask shr shf and 1
-                closes += bit
-                if (closes * 2 > shf + 1) {
-                    valid = false
+                netOpen += 1 - (bit shl 1)
+                if (netOpen < 0) {
                     break
                 }
                 builder[shf] = '(' + bit
             }
-            if (valid) {
+            if (netOpen == 0) {
                 result.add(String(builder))
             }
 
@@ -36,6 +34,7 @@ class Solution {
     private fun gospersHack(x: Int): Int {
         val c = x and -x
         val r = x + c
-        return (((r xor x) ushr 2) / c) or r
+        val s = 2 + c.countTrailingZeroBits()
+        return (r xor x) ushr s or r
     }
 }
