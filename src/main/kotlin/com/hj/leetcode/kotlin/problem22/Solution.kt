@@ -12,27 +12,30 @@ class Solution {
         val builder = CharArray(len)
         var mask = (1 shl n) - 1
         while (mask < 1 shl len) {
-            val ones = mask.countOneBits()
-            if (ones == n) {
-                var valid = true
-                var closes = 0
-                for (shf in 0..<len) {
-                    val bit = mask shr shf and 1
-                    closes += bit
-                    if (closes * 2 > shf + 1) {
-                        valid = false
-                        break
-                    }
-                    builder[shf] = '(' + bit
+            var valid = true
+            var closes = 0
+            for (shf in 0..<len) {
+                val bit = mask shr shf and 1
+                closes += bit
+                if (closes * 2 > shf + 1) {
+                    valid = false
+                    break
                 }
-
-                if (valid) {
-                    result.add(String(builder))
-                }
+                builder[shf] = '(' + bit
             }
-            mask += if (ones < n) 1 else mask.takeLowestOneBit()
+            if (valid) {
+                result.add(String(builder))
+            }
+
+            mask = gospersHack(mask)
         }
 
         return result
+    }
+
+    private fun gospersHack(x: Int): Int {
+        val c = x and -x
+        val r = x + c
+        return (((r xor x) ushr 2) / c) or r
     }
 }
