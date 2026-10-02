@@ -12,8 +12,7 @@ class Solution {
         val builder = CharArray(len)
         var mask = (1 shl n) - 1
         while (mask < 1 shl len) {
-            val netOpen = fillSequence(mask, builder)
-            if (netOpen == 0) {
+            if (fillSequence(mask, builder)) {
                 result.add(String(builder))
             }
             mask = gospersHack(mask)
@@ -24,17 +23,17 @@ class Solution {
     private fun fillSequence(
         mask: Int,
         out: CharArray,
-    ): Int {
+    ): Boolean {
         var netOpen = 0
         for (shf in out.indices) {
             val bit = mask shr shf and 1
             netOpen += 1 - (bit shl 1)
             if (netOpen < 0) {
-                return netOpen
+                return false
             }
             out[shf] = '(' + bit
         }
-        return netOpen
+        return netOpen == 0
     }
 
     private fun gospersHack(x: Int): Int {
