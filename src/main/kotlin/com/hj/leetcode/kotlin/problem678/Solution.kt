@@ -7,44 +7,38 @@ class Solution {
     // Complexity:
     // Time O(N) and Space O(N) where N is the length of s.
     fun checkValidString(s: String): Boolean {
+        // We can use stack for stars instead of deque because it is popped
+        // only when opens is empty.
+        val stars = mutableListOf<Int>()
         val opens = mutableListOf<Int>()
-        val stars = ArrayDeque<Int>()
         for ((i, c) in s.withIndex()) {
             when (c) {
-                '(' -> {
-                    opens.add(i)
-                }
-
                 '*' -> {
                     stars.add(i)
                 }
 
+                '(' -> {
+                    opens.add(i)
+                }
+
                 ')' -> {
-                    if (opens.isNotEmpty()) {
-                        opens.removeLast()
-                    } else if (stars.isNotEmpty()) {
-                        stars.removeFirst()
-                    } else {
-                        return false
+                    when {
+                        opens.isNotEmpty() -> opens.removeLast()
+                        stars.isNotEmpty() -> stars.removeLast()
+                        else -> return false
                     }
                 }
             }
         }
 
-        if (opens.isEmpty()) {
-            return true
-        }
         if (opens.size > stars.size) {
             return false
         }
-        var i = 0
-        var j = 0
-        while (i < opens.size && j < stars.size) {
-            if (opens[i] < stars[j]) {
-                i++
+        while (stars.isNotEmpty() && opens.isNotEmpty()) {
+            if (stars.removeLast() < opens.removeLast()) {
+                return false
             }
-            j++
         }
-        return i == opens.size
+        return opens.isEmpty()
     }
 }
