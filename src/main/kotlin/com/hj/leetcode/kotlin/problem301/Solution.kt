@@ -42,13 +42,11 @@ class Solution {
 
         // dfs with memoization to determine the valid masks
         val memoization =
-            Array(reducedSize + 1) {
+            Array(reducedSize) {
                 Array(targetPair + 1) { Array(targetPair + 1) { mutableListOf<Int>() } }
             }
-        memoization[reducedSize][targetPair][targetPair].add(
-            charMask ushr reducedSize shl reducedSize,
-        )
-        dfs(s, 0, 0, 0, targetPair, charMask, memoization)
+        val visited = Array(reducedSize) { Array(targetPair + 1) { BooleanArray(targetPair + 1) } }
+        dfs(s, 0, 0, 0, targetPair, charMask, visited, memoization)
         return memoization[0][0][0].map { convertMaskToString(s, it) }
     }
 
@@ -59,16 +57,23 @@ class Solution {
         prevClose: Int,
         targetPair: Int,
         charMask: Int,
+        visited: Array<Array<BooleanArray>>,
         memoization: Array<Array<Array<MutableList<Int>>>>,
     ): List<Int> {
-        val reducedSize = memoization.size - 1
-        val memo = memoization[i][prevOpen][prevClose]
+        val reducedSize = memoization.size
         if (i == reducedSize) {
+            if (prevOpen == targetPair && prevClose == targetPair) {
+                return listOf(charMask ushr reducedSize shl reducedSize)
+            }
+            return emptyList()
+        }
+
+        val memo = memoization[i][prevOpen][prevClose]
+        if (visited[i][prevOpen][prevClose]) {
             return memo
         }
-        if (memo.isNotEmpty()) {
-            return memo
-        }
+        visited[i][prevOpen][prevClose] = true
+
         if (prevOpen == targetPair && prevClose == targetPair) {
             memo.add(charMask ushr i shl i)
             return memo
@@ -82,7 +87,7 @@ class Solution {
             }
             // pick all lowercases
             val mask = ((1 shl j) - 1) ushr i shl i
-            for (m2 in dfs(s, j, prevOpen, prevClose, targetPair, charMask, memoization)) {
+            for (m2 in dfs(s, j, prevOpen, prevClose, targetPair, charMask, visited, memoization)) {
                 memo.add(mask or m2)
             }
             return memo
@@ -95,7 +100,7 @@ class Solution {
                 j++
             }
             // skip the current group of '('
-            memo.addAll(dfs(s, j, prevOpen, prevClose, targetPair, charMask, memoization))
+            memo.addAll(dfs(s, j, prevOpen, prevClose, targetPair, charMask, visited, memoization))
             // pick a prefix from the current group of '('
             var mask = 0
             val maxPick = minOf(j - i, targetPair - prevOpen)
@@ -108,6 +113,7 @@ class Solution {
                     prevClose,
                     targetPair,
                     charMask,
+                    visited,
                     memoization,
                 )) {
                     memo.add(mask or m2)
@@ -123,7 +129,7 @@ class Solution {
                 j++
             }
             // skip the current group of ')'
-            memo.addAll(dfs(s, j, prevOpen, prevClose, targetPair, charMask, memoization))
+            memo.addAll(dfs(s, j, prevOpen, prevClose, targetPair, charMask, visited, memoization))
             // pick a prefix from the current group of ')'
             var mask = 0
             val maxPick = minOf(j - i, targetPair - prevClose, prevOpen - prevClose)
@@ -136,6 +142,7 @@ class Solution {
                     prevClose + pick,
                     targetPair,
                     charMask,
+                    visited,
                     memoization,
                 )) {
                     memo.add(mask or m2)
