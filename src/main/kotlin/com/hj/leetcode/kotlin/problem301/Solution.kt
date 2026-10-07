@@ -34,7 +34,7 @@ class Solution {
             }
         }
 
-        // there is only one way to process the substring after last '('
+        // there is only one way to process the substring after last ')'
         val reducedSize = lastClose + 1
         if (reducedSize == 0) {
             return listOf(convertMaskToString(s, charMask))
