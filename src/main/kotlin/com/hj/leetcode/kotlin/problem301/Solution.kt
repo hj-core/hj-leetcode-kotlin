@@ -41,11 +41,18 @@ class Solution {
         }
 
         // dfs with memoization to determine the valid masks
+        val visited =
+            Array(reducedSize) {
+                Array(targetPair + 1) {
+                    BooleanArray(it + 1)
+                }
+            }
         val memoization =
             Array(reducedSize) {
-                Array(targetPair + 1) { Array(targetPair + 1) { mutableListOf<Int>() } }
+                Array(targetPair + 1) {
+                    Array(it + 1) { mutableListOf<Int>() }
+                }
             }
-        val visited = Array(reducedSize) { Array(targetPair + 1) { BooleanArray(targetPair + 1) } }
         dfs(s, 0, 0, 0, targetPair, charMask, visited, memoization)
         return memoization[0][0][0].map { convertMaskToString(s, it) }
     }
