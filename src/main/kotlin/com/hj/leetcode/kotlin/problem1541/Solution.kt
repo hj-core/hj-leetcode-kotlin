@@ -11,11 +11,23 @@ class Solution {
         var netOpen = 0
         var count = 0 // 1 if a ')' has not yet found the second ')'
         for (c in s) {
+            // +-------------+--------------+--------------+
+            // | c&1 \ count | 0            | 1            |
+            // + ------------+------------- + -------------+
+            // | 0           | netOpen++    | netOpen++    |
+            // |             | added        | added++      |
+            // |             | count = 0    | count = 0    |
+            // + ------------+------------- + -------------+
+            // | 1           | netOpen--    | netOpen      |
+            // |             | added        | added        |
+            // |             | count = 1    | count = 0    |
+            // +-------------+--------------+--------------+
             val v = c.code and 1
             netOpen += 1 - (v shl 1) + (v and count)
-            added += (netOpen ushr 31) + (v xor count and count)
-            netOpen += netOpen ushr 31
+            added += v xor count and count
             count = v xor count and v
+            added += netOpen ushr 31
+            netOpen += netOpen ushr 31
         }
         added += netOpen * 2 + count
         return added
