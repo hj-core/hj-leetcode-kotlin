@@ -13,19 +13,19 @@ class Solution {
         for (c in s) {
             // +-------------+--------------+--------------+
             // | c&1 \ count | 0            | 1            |
-            // + ------------+------------- + -------------+
-            // | 0           | netOpen++    | netOpen++    |
-            // |             | added        | added++      |
-            // |             | count = 0    | count = 0    |
-            // + ------------+------------- + -------------+
-            // | 1           | netOpen--    | netOpen      |
-            // |             | added        | added        |
-            // |             | count = 1    | count = 0    |
             // +-------------+--------------+--------------+
-            val v = c.code and 1
-            netOpen += 1 - (v shl 1) + (v and count)
-            added += v xor count and count
-            count = v xor count and v
+            // | 0           | added        | added++      |
+            // |             | count = 0    | count = 0    |
+            // |             | netOpen++    | netOpen++    |
+            // +-------------+--------------+--------------+
+            // | 1           | added        | added        |
+            // |             | count = 1    | count = 0    |
+            // |             | netOpen--    | netOpen      |
+            // +-------------+--------------+--------------+
+            val v = c.code and 1 xor count
+            added += count and v
+            count = c.code and v
+            netOpen += 1 - count - (c.code and 1)
             added += netOpen ushr 31
             netOpen += netOpen ushr 31
         }
