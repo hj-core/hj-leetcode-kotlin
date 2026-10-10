@@ -30,7 +30,7 @@ class Solution {
             i--
         }
 
-        var sum = (0..<i).fold(0L) { acc, i -> acc + square(diff[i].toLong()) }
+        var sum = (0..<i).sumOf { square(diff[it].toLong()) }
         val tailSize = n - i
         val furtherDown = quota / tailSize
         val extraSize = quota % tailSize
