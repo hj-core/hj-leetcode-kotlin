@@ -8,12 +8,11 @@ class Solution {
     // Time O(sqrt(N)) and Space O(1) where N is the length of nums.
     fun sumOfSquares(nums: IntArray): Int {
         val n = nums.size
-        var sum = 0
         var i = 1
+        var sum = 0
         while (i * i < n) {
             if (n % i == 0) {
-                sum += square(nums[i - 1])
-                sum += square(nums[(n / i) - 1])
+                sum += square(nums[i - 1]) + square(nums[(n / i) - 1])
             }
             i++
         }
