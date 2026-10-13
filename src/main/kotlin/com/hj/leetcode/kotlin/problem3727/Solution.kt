@@ -23,7 +23,7 @@ class Solution {
         return result
     }
 
-    // Moves the k smallest values in nums to the front of it.
+    // Moves the k smallest values in nums[indexRange] to the front of it.
     private fun quickSelect(
         nums: IntArray,
         indexRange: IntRange,
