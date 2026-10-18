@@ -39,6 +39,7 @@ class Solution {
         return (factor * smallWays % modulo * largeWays).mod(modulo)
     }
 
+    // Computes C(n, k) % modulo.
     private fun combination(
         n: Int,
         k: Int,
@@ -67,7 +68,7 @@ class Solution {
         return Pair(facMod, invFacMod)
     }
 
-    // Returns b^p mod m.
+    // Computes base^exp mod modulo.
     private fun powMod(
         base: Int,
         exp: Int,
