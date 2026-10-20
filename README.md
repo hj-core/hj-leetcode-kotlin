@@ -180,6 +180,7 @@ at [LeetCode](https://leetcode.com/hj-core/).
 | [3699. Number of ZigZag Arrays I](https://leetcode.com/problems/number-of-zigzag-arrays-i/)                                                                               | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3699/Solution.kt), [Solution2](src/main/kotlin/com/hj/leetcode/kotlin/problem3699/Solution2.kt) | 2026-06-23    |
 | [3700. Number of ZigZag Arrays II](https://leetcode.com/problems/number-of-zigzag-arrays-ii/)                                                                             | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3700/Solution.kt)                                                                               | 2026-06-24    |
 | [3753. Total Waviness of Numbers in Range II](https://leetcode.com/problems/total-waviness-of-numbers-in-range-ii/)                                                       | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3753/Solution.kt), [Solution2](src/main/kotlin/com/hj/leetcode/kotlin/problem3753/Solution2.kt) | 2026-06-06    |
+| [3886. Sum of Sortable Integers](https://leetcode.com/problems/sum-of-sortable-integers/)                                                                                 | [Solution](src/main/kotlin/com/hj/leetcode/kotlin/problem3886/Solution.kt)                                                                               | 2026-10-20    |
 
 ### Medium
 
