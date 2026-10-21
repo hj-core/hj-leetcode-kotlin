@@ -21,7 +21,7 @@ class Solution {
             isMidSorted = isMidSorted && s[i - 1] <= s[i]
         }
 
-        if (s.last() >= midMax) {
+        if (midMax <= s.last()) {
             return when {
                 s[0] <= midMin -> if (isMidSorted) 0 else 1
                 s[0] <= midMax -> 1
@@ -29,7 +29,7 @@ class Solution {
             }
         }
 
-        if (s.last() >= midMin) {
+        if (midMin <= s.last()) {
             return if (s[0] <= midMin) 1 else 2
         }
 
