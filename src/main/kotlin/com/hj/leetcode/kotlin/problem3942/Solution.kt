@@ -7,12 +7,12 @@ class Solution {
     // Complexity:
     // Time O(N) and Space O(1) where N is the length of nums.
     fun minOperations(nums: IntArray): Int {
-        val ascPivot = findPivot(nums, true)
+        val ascPivot = findPivot(nums, false)
         if (ascPivot != -1) {
             return minOf(ascPivot, 2 + nums.size - ascPivot)
         }
 
-        val descPivot = findPivot(nums, false)
+        val descPivot = findPivot(nums, true)
         if (descPivot != -1) {
             return minOf(2 + descPivot, nums.size - descPivot)
         }
@@ -22,10 +22,10 @@ class Solution {
 
     private fun findPivot(
         nums: IntArray,
-        forward: Boolean,
+        backward: Boolean,
     ): Int {
-        val indices = if (forward) nums.indices else nums.indices.reversed()
-        var pivot = if (forward) 0 else nums.size - 1
+        val indices = if (backward) nums.indices.reversed() else nums.indices
+        var pivot = if (backward) nums.size - 1 else 0
         var prev = nums[pivot]
         var turned = false
         for (i in indices) {
