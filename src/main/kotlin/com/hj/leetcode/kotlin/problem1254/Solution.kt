@@ -36,11 +36,12 @@ class Solution {
             return true
         }
         visited[r0][c0] = true
-        var isClosed = true
-        isClosed = dfs(grid, r0 - 1, c0, visited) && isClosed
-        isClosed = dfs(grid, r0 + 1, c0, visited) && isClosed
-        isClosed = dfs(grid, r0, c0 - 1, visited) && isClosed
-        isClosed = dfs(grid, r0, c0 + 1, visited) && isClosed
-        return isClosed
+        // Prevent short-circuit evaluation which could fail test cases
+        // like `grid = [[1,1,0,1,1],[1,0,0,0,1],[1,1,1,1,1]]`.
+        val above = dfs(grid, r0 - 1, c0, visited)
+        val below = dfs(grid, r0 + 1, c0, visited)
+        val left = dfs(grid, r0, c0 - 1, visited)
+        val right = dfs(grid, r0, c0 + 1, visited)
+        return above && below && left && right
     }
 }
