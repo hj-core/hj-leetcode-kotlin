@@ -7,7 +7,7 @@ import java.util.PriorityQueue
  */
 class Solution {
     // Complexity:
-    // Time O(nk + kE*Log(n)) and Space O(nk+kE) where E is the length of edges.
+    // Time O(???) and Space O(???).
     fun shortestPath(
         n: Int,
         edges: Array<IntArray>,
