@@ -11,21 +11,20 @@ class Solution {
         val modulo = 1_000_000_007
         val m = grid.size
         val n = grid[0].size
-        // dp[j]@i:= the number of ways to arrive cell(i, j) from the left and the top
-        val dp = Array(n + 1) { intArrayOf(0, 0) }
-        dp[0] = intArrayOf(0, 1)
+        // topPaths[j]@i:= the number of ways to arrive cell(i, j) from the above
+        val topPaths = IntArray(n)
+        topPaths[0] = 1
         for (i in 0..<m) {
+            var leftPaths = 0
             for (j in 0..<n) {
                 if (grid[i][j] == 0) {
-                    val newWays = dp[j].sum() % modulo
-                    dp[j + 1][0] = newWays
-                    dp[j][1] = newWays
+                    leftPaths = (leftPaths + topPaths[j]) % modulo
+                    topPaths[j] = leftPaths
                 } else {
-                    dp[j + 1][0] = dp[j][1]
-                    dp[j][1] = dp[j][0]
+                    leftPaths = topPaths[j].also { topPaths[j] = leftPaths }
                 }
             }
         }
-        return dp[n][0]
+        return topPaths[n - 1]
     }
 }
