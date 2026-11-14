@@ -30,14 +30,14 @@ class Solution {
         var subtraction = 0
         var minSum = sumFreq.higherKey(subtraction) ?: Int.MAX_VALUE
         for (i in 0..<(n - l)) {
+            subtraction += nums[i]
             leave(sumFreq, prefixSumL)
+            prefixSumL += nums[i + l]
             if (i + r < n) {
                 prefixSumR += nums[i + r]
                 join(sumFreq, prefixSumR)
             }
 
-            prefixSumL += nums[i + l]
-            subtraction += nums[i]
             sumFreq.higherKey(subtraction)?.let {
                 minSum = minOf(minSum, it - subtraction)
             }
