@@ -9,11 +9,12 @@ class Solution2 {
     fun numOfSubarrays(arr: IntArray): Int {
         val mod = 1_000_000_007
         var prefixSum = 0
-        val parityCount = intArrayOf(1, 0) // The count of previous prefix sums by parity.
+        var oddPrefixSums = 0
         for (num in arr) {
             prefixSum += num
-            parityCount[prefixSum and 1]++
+            oddPrefixSums += prefixSum and 1
         }
-        return (parityCount[0].toLong() * parityCount[1]).mod(mod)
+        val evenPrefixSums = 1L + arr.size - oddPrefixSums
+        return (oddPrefixSums * evenPrefixSums).mod(mod)
     }
 }
