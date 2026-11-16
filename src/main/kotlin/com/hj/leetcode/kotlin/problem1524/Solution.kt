@@ -5,23 +5,19 @@ package com.hj.leetcode.kotlin.problem1524
  */
 class Solution {
     // Complexity:
-    // Time O(N) and Space O(1) where N is the length of `arr`.
+    // Time O(N) and Space O(1) where N is the length of arr.
     fun numOfSubarrays(arr: IntArray): Int {
         val mod = 1_000_000_007
-        var oddSumPrefixCnt = 0
-        var evenSumPrefixCnt = 1
-        var isPrefixSumOdd = false
-
+        // The parity of the current prefix sum and the count of previous prefix sums
+        // by parity.
+        var parity = 0
+        val parityCount = intArrayOf(1, 0)
+        var result = 0
         for (num in arr) {
-            if (num and 1 == 1) {
-                isPrefixSumOdd = !isPrefixSumOdd
-            }
-            if (isPrefixSumOdd) {
-                oddSumPrefixCnt++
-            } else {
-                evenSumPrefixCnt++
-            }
+            parity = (parity + num) and 1
+            parityCount[parity]++
+            result = (result + parityCount[parity xor 1]) % mod
         }
-        return ((oddSumPrefixCnt.toLong() * evenSumPrefixCnt) % mod).toInt()
+        return result
     }
 }
